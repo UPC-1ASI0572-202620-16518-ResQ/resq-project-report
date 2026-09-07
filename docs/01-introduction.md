@@ -87,7 +87,20 @@ Sabremos que hemos tenido éxito cuando los administradores y responsables de se
 6. Creemos que lograremos incrementar el uso recurrente de la plataforma para actividades de supervisión y seguimiento si los administradores y responsables de seguridad pueden analizar posteriormente las emergencias ocurridas mediante una funcionalidad de registro e historial de los eventos detectados, las mediciones registradas y las respuestas ejecutadas por el sistema.
 
 #### 1.2.2.4. Lean UX Canvas
-[INSERTAR ARTEFACTO + EXPLICACIÓN]
+
+El Lean UX Canvas sintetiza los principales elementos identificados durante el Lean UX Process, relacionando el problema de negocio, los resultados esperados, los usuarios, los beneficios, las posibles soluciones y las hipótesis planteadas.
+
+![LeanUXCanvas-ResQ](../assets/images/chapter-01-introduction/LeanUXCanvas-ResQ.png)
+
+**Link del Canvas:** https://miro.com/app/board/uXjVHqdK0Tc=/?share_link_id=104899432918
+
+En **Business Problem** se identificó que los sistemas de seguridad en edificios suelen funcionar de manera aislada y requieren intervención humana para coordinar la respuesta ante una emergencia. En **Business Outcomes** se definieron comportamientos esperados como el interés por adoptar la plataforma, la renovación del servicio, el uso recurrente y la disposición a pagar por sus funcionalidades.
+
+En **Users and Customers** se consideró como usuarios principales a los administradores y responsables de seguridad, mientras que los ocupantes del edificio representan el segmento beneficiado por las alertas y mecanismos de evacuación. Los **User Benefits** se enfocan en comprender rápidamente el estado del edificio, identificar el tipo y ubicación del riesgo, conocer las respuestas ejecutadas y mantener acciones críticas aun sin conexión a Internet.
+
+Las **Solution Ideas** incluyen el monitoreo por zonas, detección y clasificación local mediante Edge Computing, activación automática de actuadores, alertas diferenciadas, identificación de la zona afectada e historial de eventos. A partir de estas soluciones se formularon las hipótesis que deberán ser validadas durante el desarrollo del proyecto.
+
+Finalmente, se identificó como principales aspectos a validar; la confianza de los usuarios en la automatización, la capacidad del sistema para clasificar correctamente los riesgos y la comprensión de las alertas por parte de los ocupantes. Para ello se llevarán a cabo entrevistas, pruebas de prototipo y pruebas de concepto con el dispositivo IoT.
 
 ## 1.3. Segmentos objetivo
 [COMPLETAR]
