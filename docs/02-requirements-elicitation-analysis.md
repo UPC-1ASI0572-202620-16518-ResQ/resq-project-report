@@ -588,7 +588,333 @@ Preguntas complementarias:
 **Pregunta principal 26: Si tuviera que resumir en una frase cuál considera que debería ser el principio más importante al gestionar una emergencia dentro de su organización, ¿qué diría?**
 
 ### 2.2.2. Registro de entrevistas
-[COMPLETAR]
+
+Para el proceso de Needfinding se consideran seis entrevistas, distribuidas en tres representantes por cada segmento objetivo. Las entrevistas serán registradas en video y consolidadas en un único material audiovisual como evidencia de la investigación.
+
+Para cada participante se presenta su información general, la referencia correspondiente dentro del video y un resumen descriptivo de los principales datos obtenidos durante la entrevista. Los resúmenes consideran características demográficas, background, personalidad, habilidades, objetivos, frustraciones, tecnología, dispositivos, navegador, canales digitales, marcas e influencias, así como información relacionada con sus actividades y experiencias en la gestión de emergencias.
+
+#### Segmento objetivo #1: Propietarios y administradores de edificaciones
+
+##### Entrevista 1 — Carlos Alberto Mendoza Ríos
+
+| Información | Detalle |
+|---|---|
+| Nombres | Carlos Alberto |
+| Apellidos | Mendoza Ríos |
+| Edad | 37 años |
+| Género | Masculino |
+| Distrito de residencia | Santiago de Surco |
+| Ocupación / Cargo | Administrador de edificio residencial |
+| Segmento objetivo | Propietarios y administradores de edificaciones |
+| Fecha de entrevista | [COMPLETAR] |
+| Inicio en el video | [COMPLETAR - hh:mm:ss] |
+| Duración | [COMPLETAR - mm:ss] |
+| URL del video | [COMPLETAR] |
+
+![Entrevista 1 - Carlos Alberto Mendoza Ríos](../../assets/images/chapter-02-requirements-elicitation-analysis/interview-01-carlos-mendoza.png)
+
+**Resumen de la entrevista**
+
+Carlos Alberto Mendoza Ríos es un administrador de edificios residenciales de 37 años que reside en Santiago de Surco. Es casado y tiene dos hijos. Estudió Administración de Empresas y cuenta con aproximadamente nueve años de experiencia relacionada con la administración de condominios y edificaciones. Además de administrar un edificio residencial, brinda asesoría independiente a juntas de propietarios en asuntos administrativos y de mantenimiento.
+
+Se describe como una persona organizada y preventiva, que prefiere anticiparse a los problemas y contar con evidencia antes de tomar decisiones importantes. Entre las habilidades que considera fundamentales se encuentran la organización, comunicación, coordinación de personal, capacidad de reacción bajo presión y conocimiento básico de herramientas tecnológicas.
+
+Actualmente administra un edificio residencial de doce pisos ubicado en Miraflores, con 84 departamentos, dos sótanos de estacionamiento y una ocupación aproximada de entre 190 y 220 personas en momentos de mayor concurrencia. Considera como zonas críticas los sótanos, tableros eléctricos, cuarto de bombas, área de gas, ascensores y escaleras de evacuación.
+
+Entre sus principales actividades relacionadas con seguridad se encuentran la revisión diaria de novedades e informes, coordinación de mantenimientos preventivos, simulacros, revisión de incidencias, contacto con proveedores y actualización de protocolos. Considera especialmente importantes la atención oportuna de alertas y la verificación del correcto funcionamiento de los equipos de seguridad.
+
+El edificio utiliza CCTV, detectores de humo, central de alarma contra incendios, extintores, luces de emergencia, alarmas sonoras, control de acceso y otros sensores. Sin embargo, señala que estos sistemas no se encuentran completamente integrados, debido a que cámaras, alarmas y control de acceso operan mediante interfaces independientes.
+
+Como experiencia relevante, relató un incidente en el que se detectó humo en uno de los sótanos. La alerta fue recibida por seguridad y posteriormente comunicada mediante llamada telefónica. Debido a que inicialmente no se conocía la ubicación exacta, el personal tuvo que realizar una verificación física mientras otro vigilante consultaba las cámaras. La identificación del origen tomó aproximadamente cinco o seis minutos. Durante ese periodo manifestó preocupación por disponer de información incompleta y por desconocer si existían personas en peligro.
+
+Entre sus principales frustraciones se encuentra la dificultad para conocer rápidamente la ubicación exacta de una emergencia y la dependencia de llamadas y verificaciones manuales. Como alternativa ante la falta de integración, utiliza llamadas telefónicas, WhatsApp y CCTV para coordinar con el personal.
+
+En cuanto a tecnología, utiliza principalmente una laptop Lenovo con Windows y un smartphone Samsung Galaxy con Android. Su navegador principal es Google Chrome, aunque también utiliza Microsoft Edge en algunas plataformas administrativas. Entre sus servicios y aplicaciones habituales se encuentran WhatsApp, Gmail, Google Drive, Excel, sistemas de cámaras y la plataforma del proveedor del control de acceso.
+
+Para situaciones críticas considera conveniente recibir una notificación inmediata acompañada de una llamada cuando la gravedad lo amerite. La información que considera indispensable ante una alerta incluye el tipo de emergencia, ubicación exacta, piso o zona, hora, gravedad, evolución de la situación y responsable que se encuentra atendiendo el evento.
+
+Los incidentes son registrados actualmente mediante un cuaderno de ocurrencias, archivos de Excel y correos electrónicos. Señala que consultar información histórica puede resultar difícil debido a la dispersión de los registros. Entre las métricas que considera útiles se encuentran la cantidad de incidentes por zona, tiempo de respuesta, falsas alarmas y equipos con mayor frecuencia de fallas.
+
+Considera indispensable que las funciones críticas continúen operando localmente ante una pérdida de Internet. Respecto a la automatización, acepta acciones como alarmas o señalización automática cuando la detección sea confiable, pero considera que las acciones de mayor impacto deben contar con reglas claras o algún nivel de confirmación humana.
+
+En la toma de decisiones de compra participan la administración y la junta de propietarios. Los criterios más importantes son confiabilidad, soporte técnico, garantía, mantenimiento, integración con la infraestructura existente y precio. Reconoce marcas como Hikvision y Dahua, y sus decisiones también son influenciadas por personal técnico, proveedores especializados, miembros de la junta y experiencias de otros administradores.
+
+Finalmente, identifica como prioridades la localización rápida del problema, la reducción de verificaciones manuales y la centralización de información. Resume su principal preocupación con la siguiente frase: **“Durante una emergencia, cada minuto que pasamos buscando información es un minuto que podríamos estar usando para proteger a las personas.”**
+
+---
+
+##### Entrevista 2 — Patricia Elena Salazar Núñez
+
+| Información | Detalle |
+|---|---|
+| Nombres | Patricia Elena |
+| Apellidos | Salazar Núñez |
+| Edad | 32 años |
+| Género | Femenino |
+| Distrito de residencia | San Borja |
+| Ocupación / Cargo | Copropietaria y administradora de edificio de uso mixto |
+| Segmento objetivo | Propietarios y administradores de edificaciones |
+| Fecha de entrevista | [COMPLETAR] |
+| Inicio en el video | [COMPLETAR - hh:mm:ss] |
+| Duración | [COMPLETAR - mm:ss] |
+| URL del video | [COMPLETAR] |
+
+![Entrevista 2 - Patricia Elena Salazar Núñez](../../assets/images/chapter-02-requirements-elicitation-analysis/interview-02-patricia-salazar.png)
+
+**Resumen de la entrevista**
+
+Patricia Elena Salazar Núñez tiene 32 años, reside en San Borja, es soltera y vive con su madre. Es arquitecta y se desempeña como copropietaria y administradora de un edificio de uso mixto, actividad que realiza desde hace aproximadamente seis años.
+
+Se considera una persona práctica y analítica, con disposición para utilizar nuevas tecnologías siempre que estas simplifiquen las actividades existentes. Entre sus principales habilidades se encuentran la coordinación de proveedores, lectura de planos, planificación de mantenimiento, gestión presupuestal y utilización de herramientas digitales.
+
+La edificación que administra se encuentra en Surquillo y posee ocho pisos. Los tres primeros corresponden a oficinas y pequeños negocios, mientras que los niveles superiores son residenciales. Aproximadamente 150 personas circulan diariamente por la infraestructura. Identifica como áreas de mayor riesgo el estacionamiento, los tableros eléctricos, la zona de gas y los locales que mantienen equipos eléctricos funcionando durante largos periodos.
+
+Sus principales actividades relacionadas con seguridad son la coordinación de mantenimientos, revisión de reportes, supervisión de inspecciones, gestión de proveedores y recepción de información cuando ocurre un incidente. Los reportes son revisados varias veces por semana, mientras que los mantenimientos siguen calendarios mensuales o trimestrales.
+
+Actualmente utilizan cámaras, detectores de humo, alarmas, extintores, luces de emergencia y control de acceso. Sin embargo, cada sistema utiliza interfaces diferentes, obligando al personal a consultar distintas plataformas.
+
+Como experiencia relevante, relató una fuga de gas que fue detectada inicialmente por una residente debido al olor. El vigilante verificó físicamente la zona, posteriormente se contactó al responsable de mantenimiento, se cerró la llave correspondiente y se ventiló el área antes de la intervención de un técnico. El origen fue confirmado aproximadamente diez minutos después del primer reporte.
+
+Durante el incidente manifestó preocupación e incertidumbre. Su principal frustración fue que la detección dependiera de que una persona percibiera el olor, considerando que el problema podría haber permanecido sin identificar durante más tiempo. La información que hubiera considerado más útil era la ubicación exacta, nivel de concentración de gas y evolución de dicha concentración.
+
+Utiliza principalmente una MacBook Air con macOS y un iPhone con iOS. Safari es su navegador principal, aunque utiliza Google Chrome cuando alguna plataforma presenta mayor compatibilidad. Entre sus herramientas habituales se encuentran WhatsApp, Gmail, Google Drive, Notion, Excel y aplicaciones de proveedores.
+
+Su canal preferido para emergencias sería una notificación push inmediata, acompañada por una llamada o alarma cuando la situación sea crítica. Actualmente consulta información histórica mediante correos electrónicos, documentos almacenados en Google Drive y conversaciones de WhatsApp, proceso que considera poco práctico. Para localizar incidentes considera útiles filtros por fecha, tipo, piso o zona y estado.
+
+La edificación no mantiene actualmente indicadores automatizados, pero considera relevantes métricas como incidentes por mes, tiempos de respuesta, zonas con mayor cantidad de problemas, dispositivos con fallas y mantenimientos pendientes.
+
+Respecto a conectividad, considera indispensable que las funciones críticas continúen operando localmente cuando no exista conexión a Internet. Se muestra favorable a automatizar alarmas, notificaciones, señalización y determinadas acciones preventivas, aunque considera necesaria la intervención humana para acciones que pudieran generar riesgos adicionales.
+
+Los accesos a información deberían diferenciarse según los roles de administración y seguridad. En cuanto a nuevas adquisiciones, ella identifica alternativas y solicita cotizaciones antes de presentarlas a los demás propietarios. Sus criterios de decisión incluyen costo total, mantenimiento, facilidad de instalación, soporte, compatibilidad e impacto de la instalación sobre la infraestructura existente.
+
+Reconoce marcas como Hikvision y Yale, aunque afirma valorar principalmente la calidad del soporte. Sus decisiones son influenciadas por arquitectos, ingenieros, proveedores, otros administradores y recomendaciones vinculadas con Defensa Civil.
+
+Entre sus principales preocupaciones se encuentran la detección tardía, la fragmentación de información y la necesidad de supervisar las instalaciones cuando no se encuentra físicamente en ellas. Resume su expectativa mediante la frase: **“No quiero enterarme de un problema cuando ya se convirtió en una emergencia.”**
+
+---
+
+##### Entrevista 3 — Jorge Luis Villanueva Paredes
+
+| Información | Detalle |
+|---|---|
+| Nombres | Jorge Luis |
+| Apellidos | Villanueva Paredes |
+| Edad | 30 años |
+| Género | Masculino |
+| Distrito de residencia | San Borja |
+| Ocupación / Cargo | Facility Manager de edificio corporativo |
+| Segmento objetivo | Propietarios y administradores de edificaciones |
+| Fecha de entrevista | [COMPLETAR] |
+| Inicio en el video | [COMPLETAR - hh:mm:ss] |
+| Duración | [COMPLETAR - mm:ss] |
+| URL del video | [COMPLETAR] |
+
+![Entrevista 3 - Jorge Luis Villanueva Paredes](../../assets/images/chapter-02-requirements-elicitation-analysis/interview-03-jorge-villanueva.png)
+
+**Resumen de la entrevista**
+
+Jorge Luis Villanueva Paredes reside en San Borja y trabaja como Facility Manager de un edificio corporativo. Es ingeniero industrial y desarrolla actividades relacionadas con operaciones, mantenimiento, infraestructura y gestión de seguridad.
+
+Se describe como una persona metódica y orientada al cumplimiento de procedimientos. Considera necesario que las responsabilidades estén claramente establecidas y mantiene una postura cuidadosa frente a la incorporación de tecnologías nuevas, debido a que prioriza confiabilidad, soporte y continuidad operativa.
+
+Entre sus principales habilidades identifica gestión operativa, evaluación de riesgos, planificación de mantenimiento, coordinación con proveedores y gestión de personal.
+
+La infraestructura que gestiona corresponde a un edificio corporativo de quince pisos ubicado en San Isidro, en el cual trabajan aproximadamente 700 personas. Dispone de sistema contra incendios, CCTV, control de acceso, detectores, alarmas, rociadores, luces de emergencia y generación eléctrica de respaldo.
+
+Entre sus actividades habituales se encuentran inspecciones, coordinación de mantenimientos, revisión de incidencias, reuniones con seguridad, simulacros y seguimiento de proveedores. Considera especialmente importante que los protocolos puedan ejecutarse correctamente incluso cuando una persona específica no se encuentre disponible.
+
+Cuando ocurre una emergencia, la alerta llega al centro de control. Seguridad identifica inicialmente la zona mediante cámaras o verificación presencial y posteriormente se activa el protocolo y escalamiento correspondiente. Entre los actores involucrados se encuentran el centro de control, seguridad, mantenimiento, brigadistas, Facility Management y servicios externos en incidentes de mayor gravedad.
+
+Como experiencia significativa describió una falsa alarma provocada por el funcionamiento incorrecto de un detector. La alerta generó una verificación física y posteriormente se identificó la falla del dispositivo. Considera que las falsas alarmas generan pérdida de tiempo y pueden disminuir progresivamente la confianza de los ocupantes y operadores en el sistema.
+
+La información que considera más importante durante una situación crítica incluye ubicación, sensor que produjo el evento, tipo de riesgo, estado del dispositivo, cámaras cercanas y confirmación del personal.
+
+Utiliza una laptop HP con Windows y un iPhone. Su navegador principal en la oficina es Microsoft Edge y utiliza Safari en su teléfono. Entre sus herramientas digitales se encuentran Outlook, Microsoft Teams, Excel, plataformas de mantenimiento, CCTV y sistemas de control de acceso.
+
+Para emergencias considera adecuado que el centro de control reciba las alertas directamente, mientras que los responsables externos deberían recibir notificaciones móviles y llamadas según la severidad.
+
+Identifica como uno de los principales problemas la existencia de distintos proveedores y plataformas no integradas. Actualmente esta fragmentación se resuelve mediante procedimientos y operadores que consultan diferentes pantallas.
+
+Los incidentes son registrados mediante sistemas de gestión de mantenimiento y reportes formales. Entre sus indicadores habituales se encuentran cantidad de incidencias, disponibilidad de equipos, mantenimientos pendientes y tiempos de atención. Considera útil añadir indicadores de falsas alarmas por sensor y tendencias por zona.
+
+Los sistemas críticos mantienen funcionamiento local ante una pérdida de Internet y disponen de UPS, baterías y generación eléctrica de respaldo. Considera viable la automatización de alertas, registro de eventos y señalización, pero exige validación adicional para acciones que puedan afectar significativamente a las personas o la infraestructura.
+
+Los accesos se gestionan mediante roles diferenciados entre operadores, administradores y proveedores. Para una adquisición tecnológica, Facility Management realiza la propuesta, mientras que seguridad y tecnologías de información participan en la evaluación y operaciones o finanzas realizan la aprobación. Los criterios principales son confiabilidad, certificaciones, integración, soporte, disponibilidad de repuestos y costo total de propiedad.
+
+Reconoce marcas como Honeywell, Bosch, Siemens e Hikvision. Sus decisiones son influenciadas por normativa, consultores especializados, experiencia de proveedores y casos de otras instalaciones.
+
+Sus principales dificultades son los sistemas separados, las falsas alarmas y la dependencia de los operadores para correlacionar información. Resume su perspectiva mediante la frase: **“En seguridad, automatizar es útil solamente cuando también puedes confiar en lo que estás automatizando.”**
+
+---
+
+#### Segmento objetivo #2: Empresas e instituciones con infraestructura propia
+
+##### Entrevista 4 — Daniela Alejandra Rojas Medina
+
+| Información | Detalle |
+|---|---|
+| Nombres | Daniela Alejandra |
+| Apellidos | Rojas Medina |
+| Edad | 34 años |
+| Género | Femenino |
+| Distrito de residencia | La Molina |
+| Ocupación / Cargo | Jefa de Seguridad y Prevención |
+| Tipo de organización | Universidad privada |
+| Segmento objetivo | Empresas e instituciones con infraestructura propia |
+| Fecha de entrevista | [COMPLETAR] |
+| Inicio en el video | [COMPLETAR - hh:mm:ss] |
+| Duración | [COMPLETAR - mm:ss] |
+| URL del video | [COMPLETAR] |
+
+![Entrevista 4 - Daniela Alejandra Rojas Medina](../../assets/images/chapter-02-requirements-elicitation-analysis/interview-04-daniela-rojas.png)
+
+**Resumen de la entrevista**
+
+Daniela Alejandra Rojas Medina tiene 34 años y reside en La Molina. Es casada y no tiene hijos. Es ingeniera industrial, cuenta con especialización en seguridad y salud ocupacional y posee aproximadamente ocho años de experiencia profesional. Actualmente se desempeña como Jefa de Seguridad y Prevención en una universidad privada.
+
+Se describe como una persona planificada, pero capaz de tomar decisiones rápidamente cuando ocurre una emergencia. Valora especialmente el uso de protocolos, indicadores y evidencia. Entre sus principales habilidades se encuentran gestión de riesgos, liderazgo, comunicación, coordinación, análisis de incidentes y capacitación.
+
+Supervisa un campus universitario compuesto por pabellones académicos, laboratorios, estacionamientos, cafeterías, áreas administrativas y espacios de alta circulación. En horas de mayor concurrencia, la instalación puede recibir más de seis mil personas. Considera que la diversidad de edificios, la cantidad de usuarios y la presencia permanente de estudiantes y visitantes incrementan la complejidad de la gestión de emergencias.
+
+Entre sus tareas habituales se encuentran supervisión de incidentes, revisión diaria de reportes, simulacros, capacitación, coordinación con mantenimiento, análisis de riesgos y revisión de protocolos. Considera especialmente importantes la prevención, respuesta inicial y coordinación entre áreas.
+
+La universidad utiliza CCTV, control de acceso, sistemas contra incendios, alarmas, comunicaciones internas y diferentes sensores. La información está parcialmente centralizada en un centro de monitoreo, aunque determinados sistemas pertenecen a mantenimiento o infraestructura.
+
+Como incidente representativo relató un caso de humo producido por el sobrecalentamiento de un equipo en un laboratorio. La situación comenzó con el reporte de un usuario y una alerta recibida por seguridad. Posteriormente se aisló el área, se verificó el laboratorio, mantenimiento interrumpió la alimentación del equipo y se evacuó temporalmente a las personas cercanas. La identificación precisa de la zona tomó aproximadamente seis minutos.
+
+La principal dificultad fue determinar rápidamente cuál de los laboratorios generaba el problema. Durante la emergencia experimentó un estado de alerta y preocupación por controlar la situación sin generar pánico innecesario.
+
+Considera indispensable conocer la zona exacta, tipo de riesgo, cantidad aproximada de personas, estado de evacuación y evolución del incidente.
+
+Utiliza una laptop Dell con Windows y un Samsung Galaxy con Android. Microsoft Edge es su navegador en la computadora corporativa y Google Chrome en el smartphone. Sus principales herramientas son Microsoft Teams, Outlook, Excel, SharePoint, WhatsApp y distintas plataformas internas.
+
+Considera apropiado recibir alertas críticas mediante notificaciones push en el smartphone y simultáneamente dentro del centro de control.
+
+Los incidentes son registrados digitalmente en un sistema interno. Entre las métricas analizadas se encuentran incidentes por tipo y sede, tiempos de atención, mantenimientos y cumplimiento de simulacros. Considera que sería útil medir con mayor precisión el tiempo entre detección, confirmación y respuesta, además de las falsas alarmas por zona.
+
+Considera obligatorio que los sistemas críticos continúen operando localmente ante la pérdida de Internet y que dispongan de respaldo energético. Se muestra favorable a automatizar notificaciones, alarmas, registro de eventos y determinadas señalizaciones, mientras que acciones con gran impacto operativo deberían requerir validación adicional.
+
+La incorporación de nuevas tecnologías involucra a seguridad, infraestructura, tecnologías de información y compras. Los criterios principales son confiabilidad, escalabilidad, soporte, integración, seguridad de la información y costo. Reconoce marcas como Honeywell, Bosch e Hikvision, y sus decisiones son influenciadas por normativa, auditorías, consultores, experiencias de otras universidades y proveedores.
+
+Identifica también necesidades particulares para estudiantes con movilidad reducida o discapacidades visuales y auditivas, por lo que considera inadecuado depender de un único tipo de alerta.
+
+Sus prioridades son detección temprana, coordinación entre áreas e información precisa por zona. Resume su visión mediante la frase: **“En un campus grande, detectar una emergencia no basta; todos deben saber qué está pasando y qué les corresponde hacer.”**
+
+---
+
+##### Entrevista 5 — Miguel Ángel Torres Castillo
+
+| Información | Detalle |
+|---|---|
+| Nombres | Miguel Ángel |
+| Apellidos | Torres Castillo |
+| Edad | 36 años |
+| Género | Masculino |
+| Distrito de residencia | San Isidro |
+| Ocupación / Cargo | Jefe de Operaciones |
+| Tipo de organización | Clínica privada |
+| Segmento objetivo | Empresas e instituciones con infraestructura propia |
+| Fecha de entrevista | [COMPLETAR] |
+| Inicio en el video | [COMPLETAR - hh:mm:ss] |
+| Duración | [COMPLETAR - mm:ss] |
+| URL del video | [COMPLETAR] |
+
+![Entrevista 5 - Miguel Ángel Torres Castillo](../../assets/images/chapter-02-requirements-elicitation-analysis/interview-05-miguel-torres.png)
+
+**Resumen de la entrevista**
+
+Miguel Ángel Torres Castillo tiene 36 años, reside en San Isidro, está casado y tiene dos hijos. Es ingeniero industrial y trabaja como Jefe de Operaciones de una clínica privada. Cuenta con experiencia en operaciones y gestión dentro del sector salud.
+
+Se considera una persona orientada a procedimientos y continuidad operativa. Entre sus principales habilidades se encuentran gestión de crisis, coordinación, priorización, mantenimiento y análisis de riesgos.
+
+La clínica posee ocho pisos con áreas de emergencia, hospitalización, consultorios, laboratorio, estacionamiento y zonas técnicas. Durante el día existe una elevada circulación de pacientes, visitantes y trabajadores. Señala como característica particular del sector salud que determinados pacientes dependen de equipos médicos o no pueden evacuar por cuenta propia.
+
+Entre sus actividades habituales se encuentran revisión de eventos, coordinación de mantenimiento, aseguramiento de continuidad de servicios críticos, participación en simulacros y validación de planes de contingencia.
+
+Actualmente utilizan CCTV, sistemas contra incendios, alarmas, control de acceso, monitoreo energético y otros sistemas técnicos. Algunos se encuentran integrados, mientras que otros operan de manera independiente.
+
+Como incidente real relató la aparición de olor a quemado en un tablero eléctrico ubicado cerca de un área de atención al público. La situación fue reportada inicialmente por personal del área. Posteriormente mantenimiento y seguridad verificaron la zona, aislaron el tablero y redistribuyeron temporalmente determinadas operaciones. El evento fue controlado aproximadamente quince minutos después.
+
+Su principal dificultad fue determinar con rapidez el alcance real de la situación evitando que una acción preventiva afectara servicios más críticos. La situación le generó preocupación y presión por tomar decisiones correctas.
+
+Considera indispensable contar con información sobre ubicación, origen, impacto potencial y servicios dependientes del área afectada.
+
+Utiliza una laptop Lenovo con Windows y un iPhone. Google Chrome es su navegador habitual en la computadora y Safari en el smartphone. Utiliza Microsoft 365, Microsoft Teams, correo electrónico, Excel, plataformas de mantenimiento y sistemas internos de la clínica.
+
+Para situaciones críticas prefiere las llamadas telefónicas, complementadas con notificaciones digitales para el seguimiento. Considera que actualmente puede duplicarse o perderse información al utilizar simultáneamente llamadas, correo electrónico, Teams y mensajería.
+
+Los incidentes son registrados mediante un sistema interno y reportes de operaciones. La búsqueda histórica se realiza principalmente mediante fecha, área y tipo de evento. Entre los indicadores revisados se encuentran disponibilidad de servicios, número de incidentes, tiempos de atención y mantenimientos. Le interesaría poder medir el tiempo de detección antes de que una persona deba reportar manualmente un problema.
+
+Considera indispensable que los sistemas críticos continúen operando sin Internet y que las áreas esenciales dispongan de respaldo energético. Se muestra favorable a utilizar automatización para detectar, alertar y ejecutar determinadas acciones preventivas, aunque considera que una evacuación de pacientes críticos siempre requiere coordinación humana.
+
+Los accesos deberían diferenciarse entre operadores, mantenimiento, seguridad y administración. Para la adquisición de nuevas tecnologías participan operaciones, tecnologías de información, mantenimiento, compras y dirección. Los principales criterios son confiabilidad, continuidad, soporte, integración, seguridad y costo de mantenimiento.
+
+Reconoce marcas como Siemens, Schneider Electric y Bosch. Sus decisiones son influenciadas por normativa del sector salud, especialistas, proveedores, auditorías y experiencias de otras clínicas.
+
+Considera especialmente importantes las necesidades de pacientes con movilidad reducida, pacientes sedados, adultos mayores, visitantes y personas con dificultades visuales o auditivas. Su principal frustración es contar con múltiples tecnologías y continuar dependiendo de cadenas de llamadas para comprender la situación.
+
+Resume su perspectiva mediante la frase: **“En una clínica, responder rápido importa, pero responder correctamente importa todavía más.”**
+
+---
+
+##### Entrevista 6 — Andrea Lucía Cárdenas Vega
+
+| Información | Detalle |
+|---|---|
+| Nombres | Andrea Lucía |
+| Apellidos | Cárdenas Vega |
+| Edad | 39 años |
+| Género | Femenino |
+| Distrito de residencia | Pueblo Libre |
+| Ocupación / Cargo | Gerente de Infraestructura |
+| Tipo de organización | Centro comercial |
+| Segmento objetivo | Empresas e instituciones con infraestructura propia |
+| Fecha de entrevista | [COMPLETAR] |
+| Inicio en el video | [COMPLETAR - hh:mm:ss] |
+| Duración | [COMPLETAR - mm:ss] |
+| URL del video | [COMPLETAR] |
+
+![Entrevista 6 - Andrea Lucía Cárdenas Vega](../../assets/images/chapter-02-requirements-elicitation-analysis/interview-06-andrea-cardenas.png)
+
+**Resumen de la entrevista**
+
+Andrea Lucía Cárdenas Vega tiene 39 años, reside en Pueblo Libre, es divorciada y tiene una hija. Es ingeniera civil y trabaja como Gerente de Infraestructura de un centro comercial. Cuenta con experiencia en gestión de infraestructura y varios años específicamente en centros comerciales.
+
+Se describe como una persona práctica, orientada a resultados y con preferencia por disponer de información antes de tomar decisiones, aunque reconoce que durante una emergencia no siempre es posible contar con todos los datos. Entre sus principales habilidades se encuentran coordinación de equipos, gestión de proveedores, análisis de riesgos, planificación y manejo de situaciones críticas.
+
+La infraestructura que administra cuenta con varios niveles comerciales, estacionamientos, patio de comidas, salas técnicas y áreas de servicio. Durante fines de semana puede recibir decenas de miles de visitantes. Considera que la elevada concurrencia y el desconocimiento de los protocolos por parte de los visitantes aumentan significativamente la complejidad de una evacuación.
+
+Entre sus tareas habituales se encuentran revisión de incidencias, supervisión de mantenimiento, coordinación con seguridad, evaluación de proveedores y seguimiento de infraestructura crítica.
+
+El centro comercial utiliza CCTV, sistemas de detección contra incendios, alarmas, rociadores, control de acceso interno, monitoreo de áreas técnicas y sistemas de ventilación. Existe una central de operaciones, aunque todavía deben utilizarse diferentes plataformas.
+
+Como experiencia de emergencia relató un incidente de humo proveniente de un establecimiento del patio de comidas. La situación fue detectada mediante una alarma y un reporte de seguridad. El personal verificó la zona, aisló el área cercana, se interrumpió el funcionamiento de equipos del establecimiento y se evaluó la necesidad de realizar una evacuación mayor. El incidente fue controlado aproximadamente ocho minutos después.
+
+Su principal dificultad fue gestionar la situación en un entorno con gran cantidad de personas sin generar pánico. Durante el incidente experimentó presión debido a la posibilidad de tener que movilizar a una gran cantidad de visitantes.
+
+La información que considera crítica incluye ubicación exacta, gravedad, evolución del evento, cantidad de personas cercanas y disponibilidad de rutas.
+
+Utiliza una laptop Dell con Windows, un iPhone y ocasionalmente una tablet. Google Chrome es su navegador principal y utiliza Safari en el iPhone. Entre sus herramientas digitales se encuentran Microsoft Teams, Outlook, Excel, Power BI, WhatsApp y diferentes sistemas internos.
+
+Para operaciones considera necesarias alertas en tiempo real dentro del centro de control, mientras que los responsables deberían recibir notificaciones móviles.
+
+Los incidentes se registran mediante un sistema de incidencias y reportes de seguridad. Entre las métricas utilizadas se encuentran incidentes por área, tiempos de resolución, fallas de equipos y mantenimientos. Considera útil disponer además del tiempo transcurrido entre la primera señal y la confirmación, así como mapas de zonas con mayor recurrencia de eventos.
+
+La búsqueda histórica se realiza principalmente mediante fecha, establecimiento, zona, categoría y severidad.
+
+Considera indispensable que los sistemas críticos mantengan operación local cuando no exista conexión a Internet y que dispongan de mecanismos de respaldo energético. Respecto a automatización, considera especialmente apropiadas las alertas, señalización, registro y determinadas acciones técnicas de mitigación; sin embargo, decisiones que puedan generar una evacuación total deberían contar con controles adicionales.
+
+Los accesos se gestionan mediante perfiles diferenciados para seguridad, operaciones, mantenimiento y administración. En la adquisición de nuevas tecnologías participan el área responsable, tecnologías de información, compras y gerencia. Los criterios considerados incluyen escalabilidad, integración, soporte, confiabilidad, experiencia del proveedor y costo.
+
+Reconoce marcas como Bosch, Honeywell, Schneider e Hikvision. Sus decisiones también son influenciadas por normativas, auditorías, consultores, experiencias de otros centros comerciales y proveedores.
+
+Entre las barreras de adopción identifica la dificultad de instalar nuevas tecnologías sin afectar las operaciones y la necesidad de integrarlas con múltiples plataformas existentes.
+
+Considera importante contemplar las necesidades de niños, adultos mayores, personas con movilidad reducida, personas con discapacidad y visitantes extranjeros mediante señales visuales y sonoras, rutas accesibles y personal capacitado.
+
+Su principal frustración es disponer de numerosos sistemas y aun así necesitar varias personas para correlacionar toda la información. Sus prioridades son identificar rápidamente dónde ocurre un evento, comprender su gravedad y coordinar una respuesta sin generar caos.
+
+Resume su expectativa mediante la frase: **“Una buena herramienta de seguridad no debería darnos más información; debería ayudarnos a entender rápidamente la información importante.”**
 
 ### 2.2.3. Análisis de entrevistas
 [COMPLETAR]
