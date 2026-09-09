@@ -913,7 +913,211 @@ Su principal frustración es disponer de numerosos sistemas y aun así necesitar
 Resume su expectativa mediante la frase: **“Una buena herramienta de seguridad no debería darnos más información; debería ayudarnos a entender rápidamente la información importante.”**
 
 ### 2.2.3. Análisis de entrevistas
-[COMPLETAR]
+
+A partir de las entrevistas realizadas se analizaron de manera independiente los resultados correspondientes a cada segmento objetivo. Para cada segmento se consideraron tres participantes, por lo que cada entrevistado representa aproximadamente el 33.3 % de la muestra de su grupo.
+
+El análisis permitió identificar características demográficas y profesionales, comportamientos, preferencias tecnológicas, objetivos, necesidades, frustraciones y patrones relacionados con la manera en que actualmente se gestionan situaciones de emergencia. Los porcentajes presentados corresponden exclusivamente a los participantes entrevistados y permiten identificar las características predominantes que serán consideradas posteriormente en la construcción de los User Personas y demás artefactos de Needfinding.
+
+#### Segmento objetivo #1: Propietarios y administradores de edificaciones
+
+##### Características objetivas
+
+| Característica | Resultado |
+|---|---|
+| Rango de edad | El 100 % de los entrevistados se encuentra entre los 30 y 39 años. |
+| Género | El 66.7 % corresponde al género masculino y el 33.3 % al género femenino. |
+| Ubicación | El 100 % reside en distritos de Lima Metropolitana. El 66.7 % reside en San Borja y el 33.3 % en Santiago de Surco. |
+| Estado civil | El 66.7 % indicó estar casado y el 33.3 % soltero. |
+| Formación profesional | El 100 % cuenta con formación profesional vinculada con administración, arquitectura o ingeniería. |
+| Rol profesional | El 100 % desempeña funciones directamente relacionadas con administración, infraestructura, mantenimiento u operaciones de edificaciones. |
+| Experiencia | El 100 % cuenta con experiencia previa en actividades relacionadas con la administración, mantenimiento u operación de edificaciones. |
+| Tipo de infraestructura gestionada | La muestra incluye edificaciones residenciales, de uso mixto y corporativas. |
+| Uso de computadora | El 100 % utiliza una laptop como parte de sus actividades laborales. |
+| Uso de smartphone | El 100 % utiliza un smartphone como herramienta complementaria para realizar o supervisar sus actividades. |
+| Sistema operativo de computadora | El 66.7 % utiliza Windows y el 33.3 % utiliza macOS. |
+| Sistema operativo móvil | El 66.7 % utiliza iOS y el 33.3 % utiliza Android. |
+| Navegador principal en computadora | Se identificó una distribución de 33.3 % para Google Chrome, 33.3 % para Microsoft Edge y 33.3 % para Safari como navegador principal. |
+| Uso de correo electrónico | El 100 % utiliza correo electrónico como parte de sus actividades laborales. |
+| Uso de hojas de cálculo | El 100 % utiliza Excel para actividades relacionadas con administración, seguimiento o registro. |
+| Uso de WhatsApp | El 66.7 % utiliza WhatsApp como medio de comunicación o coordinación durante sus actividades. |
+
+##### Actividades y comportamiento actual
+
+El 100 % de los entrevistados realiza actividades relacionadas con la revisión de incidencias, supervisión de seguridad y coordinación de mantenimiento. Además, el 66.7 % participa directamente en simulacros o actividades relacionadas con protocolos de emergencia.
+
+El 100 % manifestó utilizar diferentes sistemas de seguridad dentro de las edificaciones, incluyendo CCTV, alarmas, sistemas contra incendios, detectores y control de acceso. Sin embargo, también el 100 % indicó que la información de estos sistemas se encuentra total o parcialmente distribuida entre diferentes plataformas, interfaces o proveedores.
+
+Ante una alerta, el 100 % de los entrevistados señaló que actualmente existe algún nivel de verificación humana antes de confirmar determinadas situaciones. Esta verificación puede involucrar la revisión de cámaras, comunicación con personal de seguridad o desplazamiento físico hacia la zona afectada.
+
+Asimismo, el 100 % considera importante conocer rápidamente la ubicación o zona donde ocurre un incidente. La localización del evento aparece de manera recurrente como uno de los datos necesarios antes de tomar decisiones o activar procedimientos adicionales.
+
+##### Tecnología y canales de interacción
+
+Los resultados muestran un perfil con uso frecuente de tecnología tanto desde computadoras como desde dispositivos móviles. El 100 % utiliza una combinación de laptop y smartphone para desarrollar o supervisar sus actividades.
+
+En cuanto a comunicación durante situaciones críticas, el 100 % considera necesario disponer de un medio de alerta inmediata. Los entrevistados mencionaron notificaciones del sistema, alertas móviles y llamadas telefónicas como mecanismos adecuados dependiendo de la gravedad del evento.
+
+El 66.7 % utiliza actualmente WhatsApp como mecanismo complementario cuando necesita coordinar acciones o compartir información que no se encuentra centralizada en los sistemas disponibles. Este comportamiento evidencia que las herramientas de mensajería funcionan actualmente como una alternativa para cubrir limitaciones de integración o comunicación.
+
+Respecto a la consulta de información histórica, el 66.7 % señaló que los registros se encuentran distribuidos entre diferentes medios, como correos electrónicos, documentos, hojas de cálculo o conversaciones, dificultando la búsqueda posterior de información.
+
+##### Características subjetivas
+
+El 100 % evidencia una orientación hacia la prevención, planificación o seguimiento estructurado de las actividades. Aunque existen diferencias en el nivel de apertura hacia nuevas tecnologías, los tres participantes coinciden en que una herramienta utilizada para seguridad debe ser confiable y facilitar el trabajo existente.
+
+El 100 % manifestó emociones negativas relacionadas con situaciones reales de emergencia, principalmente preocupación, incertidumbre, presión o desconfianza cuando la información disponible no era suficiente para comprender rápidamente lo ocurrido.
+
+También se observa una actitud favorable hacia la automatización. El 100 % considera aceptable automatizar determinadas acciones, especialmente alertas, notificaciones, señalización o registro de eventos. Sin embargo, el 100 % considera igualmente necesario mantener validación humana o mecanismos manuales para aquellas acciones que puedan tener consecuencias importantes sobre las personas o la infraestructura.
+
+##### Principales necesidades y frustraciones
+
+| Hallazgo | Porcentaje |
+|---|---:|
+| Necesidad de conocer rápidamente la ubicación del incidente | 100 % |
+| Existencia de sistemas o fuentes de información separadas | 100 % |
+| Necesidad de reducir el tiempo utilizado para comprender una emergencia | 100 % |
+| Uso de verificación humana para confirmar determinados eventos | 100 % |
+| Interés en disponer de métricas e historial de incidentes | 100 % |
+| Necesidad de funcionamiento local ante pérdida de Internet | 100 % |
+| Aceptación de automatización con mecanismos de control o validación | 100 % |
+| Necesidad de diferentes roles y niveles de acceso | 100 % |
+| Consideración de integración como criterio para nuevas tecnologías | 100 % |
+| Consideración de soporte como criterio de adquisición | 100 % |
+| Dificultades para consultar información histórica dispersa | 66.7 % |
+| Uso de mensajería instantánea como mecanismo alternativo de coordinación | 66.7 % |
+
+La fragmentación de información constituye el patrón más recurrente del segmento. Los entrevistados gestionan edificaciones que ya cuentan con diversos mecanismos de seguridad, pero deben consultar distintas plataformas o coordinar manualmente con otras personas para obtener una visión completa de lo que sucede.
+
+También se identifica como necesidad común disminuir el tiempo transcurrido entre la detección de una situación y su correcta comprensión. No se busca únicamente recibir una alarma, sino conocer qué ocurrió, dónde ocurrió, qué nivel de riesgo presenta y quién está atendiendo la situación.
+
+Respecto al registro de información, existe interés en contar con indicadores como cantidad de incidentes, tiempos de respuesta, falsas alarmas, zonas con mayor recurrencia y equipos que presentan fallas. Esto evidencia la necesidad de disponer no solamente de información en tiempo real, sino también de información histórica que permita realizar seguimiento y análisis.
+
+En materia de inclusión, el 100 % reconoce que una emergencia puede involucrar adultos mayores, personas con movilidad reducida, personas con discapacidad o visitantes que desconocen la infraestructura. Por ello, los mecanismos de comunicación y orientación no deberían depender exclusivamente de una alarma sonora.
+
+Finalmente, el 100 % considera el español como el idioma más apropiado para la operación general del personal, aunque algunos participantes tienen experiencia utilizando interfaces o terminología técnica en inglés.
+
+##### Perfil predominante del segmento
+
+Los resultados permiten identificar como perfil predominante a un profesional responsable de administrar u operar una edificación, acostumbrado a coordinar con personal de seguridad, mantenimiento y proveedores. Utiliza habitualmente computadora y smartphone, consulta información mediante diferentes plataformas y requiere disponer de datos confiables antes de tomar decisiones.
+
+Su principal objetivo es mantener la seguridad de los ocupantes y responder oportunamente ante situaciones de riesgo. Entre sus principales frustraciones se encuentran la fragmentación de los sistemas, la necesidad de realizar verificaciones manuales y la dificultad para disponer inmediatamente de información completa sobre una emergencia.
+
+Este perfil valora especialmente la confiabilidad, integración, soporte y continuidad de las herramientas tecnológicas. Presenta una actitud favorable hacia la automatización siempre que esta disponga de reglas claras, información verificable y mecanismos de control humano.
+
+---
+
+#### Segmento objetivo #2: Empresas e instituciones con infraestructura propia
+
+##### Características objetivas
+
+| Característica | Resultado |
+|---|---|
+| Rango de edad | El 100 % de los entrevistados se encuentra entre los 30 y 39 años. |
+| Género | El 66.7 % corresponde al género femenino y el 33.3 % al género masculino. |
+| Ubicación | El 100 % reside en Lima Metropolitana. |
+| Formación profesional | El 100 % cuenta con formación en ingeniería. |
+| Área de responsabilidad | El 100 % desempeña cargos relacionados con seguridad, operaciones o infraestructura. |
+| Experiencia profesional | El 100 % cuenta con varios años de experiencia en actividades relacionadas con la gestión de instalaciones y operaciones. |
+| Tipo de organización | Se encuentran representados los sectores educativo, salud y comercial. |
+| Infraestructura de alta concurrencia | El 100 % trabaja en instalaciones utilizadas diariamente por una cantidad considerable de trabajadores, usuarios o visitantes. |
+| Uso de laptop | El 100 % utiliza laptop como herramienta de trabajo. |
+| Sistema operativo de computadora | El 100 % utiliza Windows. |
+| Uso de smartphone | El 100 % utiliza smartphone. |
+| Sistema operativo móvil | El 66.7 % utiliza iOS y el 33.3 % utiliza Android. |
+| Navegador principal en computadora | El 66.7 % utiliza Google Chrome y el 33.3 % utiliza Microsoft Edge. |
+| Navegador móvil | El 66.7 % utiliza Safari y el 33.3 % utiliza Google Chrome. |
+| Uso de Microsoft Teams | El 100 % utiliza Microsoft Teams dentro de sus actividades laborales. |
+| Uso de correo electrónico | El 100 % utiliza correo electrónico. |
+| Uso de Excel | El 100 % utiliza Excel para actividades de seguimiento, análisis o gestión. |
+| Uso de WhatsApp | El 66.7 % mencionó utilizar WhatsApp dentro de sus canales de interacción. |
+
+##### Actividades y comportamiento actual
+
+El 100 % participa directamente en actividades relacionadas con gestión de incidentes, mantenimiento, supervisión de infraestructura o coordinación de seguridad. En todos los casos estas actividades requieren interacción con diferentes áreas de la organización.
+
+El 100 % trabaja con infraestructura que utiliza diversos sistemas de seguridad, entre ellos CCTV, alarmas, detección contra incendios, control de acceso y otros sistemas especializados. Asimismo, el 100 % indicó que existe algún nivel de separación entre las plataformas o sistemas disponibles, aun cuando la organización disponga de una central de monitoreo o sistemas parcialmente integrados.
+
+En las experiencias de incidentes analizadas, el 100 % contó con participación humana en la detección, confirmación o atención del evento. En el 66.7 % de los casos, una alerta tecnológica estuvo acompañada de un reporte realizado por una persona, mientras que en el 33.3 % el primer aviso dependió directamente de una observación humana.
+
+El 100 % considera indispensable conocer con precisión la ubicación y el alcance del incidente antes de tomar decisiones. Además, en este segmento adquiere especial relevancia conocer qué personas, servicios o áreas pueden verse afectadas.
+
+##### Tecnología y canales de interacción
+
+El 100 % utiliza Windows en sus equipos de trabajo y complementa sus actividades mediante smartphones. Google Chrome representa el navegador principal del 66.7 % de la muestra, mientras que Microsoft Edge es utilizado principalmente por el 33.3 %.
+
+Microsoft Teams, correo electrónico y Excel son utilizados por el 100 % de los participantes. Adicionalmente, el 66.7 % utiliza WhatsApp como mecanismo de comunicación complementaria.
+
+Para situaciones críticas, el 100 % considera necesario utilizar mecanismos de comunicación inmediata y diferenciados según el contexto. Entre ellos se encuentran alertas del centro de control, notificaciones móviles y llamadas telefónicas. Los resultados evidencian una preferencia por comunicaciones multicanal en lugar de depender de un único medio.
+
+El 100 % de las organizaciones representadas dispone de registros digitales de incidentes y utiliza algún tipo de indicador para realizar seguimiento. Entre los indicadores mencionados aparecen incidentes por zona o tipo, tiempos de atención, disponibilidad de equipos y mantenimientos.
+
+Además, el 100 % expresó interés en medir con mayor precisión el tiempo relacionado con la detección y confirmación de los incidentes.
+
+##### Características subjetivas
+
+El 100 % de los entrevistados presenta una orientación hacia la planificación, los procedimientos, el análisis de riesgos o la toma de decisiones basada en información. Debido al nivel de responsabilidad de sus cargos, existe una preocupación recurrente por reducir el tiempo de respuesta sin generar acciones que puedan aumentar el riesgo.
+
+Durante las experiencias de emergencia relatadas, el 100 % manifestó situaciones de preocupación, presión o estado de alerta. Una característica común es la necesidad de tomar decisiones considerando simultáneamente la seguridad de las personas y el impacto de las acciones sobre las operaciones de la organización.
+
+El 100 % mantiene una actitud favorable hacia el uso de automatización para alertas, notificaciones, registro, señalización o acciones preventivas específicas. Sin embargo, también el 100 % considera que decisiones de alto impacto deben mantener algún nivel de supervisión o validación humana.
+
+##### Principales necesidades y frustraciones
+
+| Hallazgo | Porcentaje |
+|---|---:|
+| Necesidad de identificar rápidamente la ubicación del incidente | 100 % |
+| Necesidad de coordinación entre diferentes áreas | 100 % |
+| Existencia de información distribuida entre diferentes sistemas o equipos | 100 % |
+| Participación humana en la confirmación o atención de incidentes | 100 % |
+| Necesidad de consultar información e indicadores históricos | 100 % |
+| Interés en medir tiempos de detección, confirmación o respuesta | 100 % |
+| Necesidad de funcionamiento local ante pérdida de Internet | 100 % |
+| Existencia de mecanismos de respaldo energético | 100 % |
+| Aceptación de automatización para determinadas acciones | 100 % |
+| Necesidad de validación humana para acciones de alto impacto | 100 % |
+| Necesidad de diferentes roles y niveles de acceso | 100 % |
+| Integración como criterio para adoptar nueva tecnología | 100 % |
+| Confiabilidad como criterio de adopción | 100 % |
+| Soporte como criterio de adopción | 100 % |
+| Participación de varias áreas en la evaluación de nuevas tecnologías | 100 % |
+
+La principal dificultad identificada en este segmento corresponde a la necesidad de coordinar información y acciones entre múltiples áreas. Seguridad, mantenimiento, operaciones, infraestructura y tecnologías de información pueden participar en distintos momentos del proceso, por lo que disponer de información consistente resulta especialmente importante.
+
+Otro patrón común es la necesidad de mantener continuidad operativa. Las organizaciones representadas gestionan infraestructuras en las que una emergencia puede afectar simultáneamente personas y servicios esenciales. Por esta razón, el 100 % considera necesario que las funciones críticas mantengan capacidad de operación local ante problemas de conectividad.
+
+En este segmento también existe un interés marcado por la información cuantitativa. El 100 % utiliza indicadores y expresó interés en mejorar el seguimiento de variables relacionadas con tiempos de detección, confirmación y atención. Esto permitirá posteriormente considerar necesidades de visualización y análisis histórico de eventos.
+
+Respecto a la incorporación de nuevas tecnologías, el 100 % indicó que la decisión involucra múltiples áreas de la organización. Entre los criterios compartidos se encuentran confiabilidad, integración, soporte y costo. Asimismo, aspectos como seguridad de la información, escalabilidad y continuidad operativa aparecen como criterios relevantes dentro del proceso de evaluación.
+
+En materia de inclusión, el 100 % identifica la existencia de personas que pueden requerir mecanismos diferenciados durante una emergencia, incluyendo personas con movilidad reducida, discapacidad visual o auditiva, adultos mayores y visitantes que desconocen las instalaciones. Los participantes coinciden en la necesidad de utilizar mecanismos de alerta y orientación que no dependan exclusivamente de señales sonoras.
+
+El español aparece como idioma principal para la operación en el 100 % de los casos, aunque se reconoce la utilidad de disponer de determinadas indicaciones o interfaces también en inglés dependiendo del tipo de organización y usuarios atendidos.
+
+##### Perfil predominante del segmento
+
+El perfil predominante corresponde a un profesional con formación en ingeniería y experiencia en seguridad, operaciones o infraestructura, responsable de instalaciones con alta concurrencia de personas. Su trabajo requiere coordinación permanente con diferentes áreas y utilización frecuente de herramientas digitales, sistemas de monitoreo y plataformas corporativas.
+
+Su objetivo principal es asegurar una respuesta rápida y coordinada que proteja a las personas sin comprometer innecesariamente la continuidad de las operaciones. Necesita conocer la ubicación, severidad, evolución e impacto de un evento para tomar decisiones y coordinar a los responsables correspondientes.
+
+Sus principales frustraciones se relacionan con la información fragmentada, la necesidad de consultar diferentes fuentes y la dependencia de coordinación humana para obtener una visión completa de la situación. Este perfil valora tecnologías confiables, escalables e integrables con la infraestructura existente, así como la posibilidad de contar con información histórica, métricas y distintos niveles de acceso.
+
+Presenta una actitud favorable hacia la automatización cuando esta permite disminuir los tiempos de detección y respuesta, pero mantiene una clara preferencia por conservar supervisión humana sobre aquellas acciones que puedan afectar significativamente a las personas o a las operaciones.
+
+---
+
+#### Síntesis de los resultados
+
+Aunque ambos segmentos presentan contextos y niveles de responsabilidad diferentes, se identificaron necesidades comunes relevantes para el desarrollo posterior de los artefactos de Needfinding.
+
+El 100 % de los participantes de ambos segmentos trabaja actualmente con más de un sistema o fuente de información relacionada con seguridad. La fragmentación de información y la necesidad de comprender rápidamente una situación aparecen como problemas recurrentes.
+
+También existe coincidencia respecto a la importancia de identificar con precisión la zona afectada, recibir información oportuna, mantener registros históricos y disponer de mecanismos de funcionamiento local ante problemas de conectividad.
+
+En relación con la automatización, ambos segmentos muestran una postura favorable para acciones de alerta, comunicación, registro y señalización, pero mantienen la necesidad de intervención humana para decisiones de mayor impacto.
+
+La principal diferencia se encuentra en el contexto de operación. Los propietarios y administradores presentan una relación más directa con la gestión cotidiana de una edificación y con la coordinación de personal, propietarios y proveedores. En cambio, los responsables de empresas e instituciones operan dentro de estructuras organizacionales con múltiples áreas, una mayor cantidad de usuarios y necesidades adicionales relacionadas con continuidad operativa, escalabilidad y coordinación interdepartamental.
+
+Estos patrones permitirán representar en los User Personas las características predominantes de cada segmento y servirán como base para establecer sus tareas, objetivos, frustraciones, comportamientos, preferencias tecnológicas y necesidades durante las siguientes actividades de Needfinding.
 
 ## 2.3. Needfinding
 
