@@ -607,7 +607,7 @@ Preguntas complementarias:
 | Duración | 12:47 |
 | URL del video | [Entrevista a Juan Jose Meza Huanacune](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQDFyv3V8lzPQbp3k7bGe3aBAdY0-3KDcBEdEi1Ho2acls0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=tfOQ92) |
 
-![Entrevista 1 - Carlos Alberto Mendoza Ríos](../../assets/images/chapter-02-requirements-elicitation-analysis/interview-01-carlos-mendoza.png)
+![Entrevista 1 - Juan Jose Meza Huanacune](../../assets/images/chapter-02-requirements-elicitation-analysis/Entrevista1-Juan-Jose-Meza-Huanacune.png)
 
 **Resumen de la entrevista**
 
