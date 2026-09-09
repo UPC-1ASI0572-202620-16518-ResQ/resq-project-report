@@ -595,17 +595,17 @@ Preguntas complementarias:
 
 | Información | Detalle |
 |---|---|
-| Nombres | Carlos Alberto |
-| Apellidos | Mendoza Ríos |
+| Nombres | Juan Jose |
+| Apellidos | Meza Huanacune |
 | Edad | 37 años |
 | Género | Masculino |
 | Distrito de residencia | Santiago de Surco |
 | Ocupación / Cargo | Administrador de edificio residencial |
 | Segmento objetivo | Propietarios y administradores de edificaciones |
-| Fecha de entrevista | [COMPLETAR] |
-| Inicio en el video | [COMPLETAR - hh:mm:ss] |
-| Duración | [COMPLETAR - mm:ss] |
-| URL del video | [COMPLETAR] |
+| Fecha de entrevista | 08/09/26 |
+| Inicio en el video | 00:00 |
+| Duración | 12:47 |
+| URL del video | [Entrevista a Juan Jose Meza Huanacune](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQDFyv3V8lzPQbp3k7bGe3aBAdY0-3KDcBEdEi1Ho2acls0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=tfOQ92) |
 
 ![Entrevista 1 - Carlos Alberto Mendoza Ríos](../../assets/images/chapter-02-requirements-elicitation-analysis/interview-01-carlos-mendoza.png)
 
