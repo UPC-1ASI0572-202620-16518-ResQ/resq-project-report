@@ -589,10 +589,6 @@ Preguntas complementarias:
 
 ### 2.2.2. Registro de entrevistas
 
-Para el proceso de Needfinding se consideran seis entrevistas, distribuidas en tres representantes por cada segmento objetivo. Las entrevistas serán registradas en video y consolidadas en un único material audiovisual como evidencia de la investigación.
-
-Para cada participante se presenta su información general, la referencia correspondiente dentro del video y un resumen descriptivo de los principales datos obtenidos durante la entrevista. Los resúmenes consideran características demográficas, background, personalidad, habilidades, objetivos, frustraciones, tecnología, dispositivos, navegador, canales digitales, marcas e influencias, así como información relacionada con sus actividades y experiencias en la gestión de emergencias.
-
 #### Segmento objetivo #1: Propietarios y administradores de edificaciones
 
 ##### Entrevista 1 — Carlos Alberto Mendoza Ríos
