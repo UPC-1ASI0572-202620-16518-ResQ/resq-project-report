@@ -591,7 +591,7 @@ Preguntas complementarias:
 
 #### Segmento objetivo #1: Propietarios y administradores de edificaciones
 
-##### Entrevista 1 — Carlos Alberto Mendoza Ríos
+##### Entrevista 1 — Juan Jose Meza Huanacune
 
 | Información | Detalle |
 |---|---|
@@ -611,7 +611,7 @@ Preguntas complementarias:
 
 **Resumen de la entrevista**
 
-Carlos Alberto Mendoza Ríos es un administrador de edificios residenciales de 37 años que reside en Santiago de Surco. Es casado y tiene dos hijos. Estudió Administración de Empresas y cuenta con aproximadamente nueve años de experiencia relacionada con la administración de condominios y edificaciones. Además de administrar un edificio residencial, brinda asesoría independiente a juntas de propietarios en asuntos administrativos y de mantenimiento.
+Juan Jose Meza Huanacune es un administrador de edificios residenciales de 37 años que reside en Santiago de Surco. Es casado y tiene dos hijos. Estudió Administración de Empresas y cuenta con aproximadamente nueve años de experiencia relacionada con la administración de condominios y edificaciones. Además de administrar un edificio residencial, brinda asesoría independiente a juntas de propietarios en asuntos administrativos y de mantenimiento.
 
 Se describe como una persona organizada y preventiva, que prefiere anticiparse a los problemas y contar con evidencia antes de tomar decisiones importantes. Entre las habilidades que considera fundamentales se encuentran la organización, comunicación, coordinación de personal, capacidad de reacción bajo presión y conocimiento básico de herramientas tecnológicas.
 
