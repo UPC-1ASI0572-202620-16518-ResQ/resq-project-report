@@ -114,8 +114,6 @@ El siguiente artefacto representa visualmente la relación entre los Business Go
 
 ![Impact Mapping - ResQ](/assets/images/chapter-03-requirements-specification/Impact-Mapping-ResQ.png)
 
-**Link del Impact Mapping en UXPressia:** [COMPLETAR]
-
 ### Análisis del Impact Mapping
 
 El primer Business Goal se encuentra orientado a comprobar que las principales capacidades operativas de ResQ aportan valor durante una situación de riesgo. Para ambos User Personas resulta fundamental poder reconocer el estado de la infraestructura, identificar la zona afectada, conocer el tipo y nivel del riesgo y disponer de visibilidad sobre las acciones ejecutadas. Por ello, sus principales Deliverables se concentran en el monitoreo, la detección, la localización, las alertas y el seguimiento de las respuestas.
@@ -128,6 +126,50 @@ En conjunto, el Impact Mapping mantiene trazabilidad desde los objetivos de nego
 
 ## 3.3. Product Backlog
 
+El Product Backlog de ResQ organiza y prioriza las User Stories y Technical Stories definidas para los productos digitales de la solución. La priorización considera principalmente el valor que cada historia aporta al modelo de negocio, a los segmentos objetivo y a la validación de las principales hipótesis planteadas para la propuesta.
+
+Las historias relacionadas con el Landing Page se encuentran entre los primeros elementos del backlog debido a que este producto permitirá comunicar la propuesta de valor de ResQ y apoyar la validación temprana del interés de los segmentos objetivo. Posteriormente, se priorizan las capacidades principales del producto IoT relacionadas con monitoreo, identificación de riesgos, localización de emergencias, alertas y respuesta.
+
+Las estimaciones se expresan mediante Story Points utilizando los valores 1, 2, 3, 5 y 8. Estos valores representan el esfuerzo relativo necesario para implementar cada historia considerando su complejidad, incertidumbre e integración con los diferentes componentes de la solución.
+
 | Order | User Story ID | Title | Description | Story Points |
 |---:|---|---|---|---:|
-| 1 | [US01] | [Título] | [Descripción] | [1/2/3/5/8] |
+| 1 | US20 | Conocer la propuesta de ResQ | Como visitante, quiero comprender qué problema aborda ResQ y cómo funciona la propuesta, para determinar si resulta relevante para mis necesidades de seguridad y gestión de emergencias. | 2 |
+| 2 | US21 | Conocer los beneficios para propietarios y administradores | Como visitante del segmento de propietarios y administradores de edificaciones, quiero conocer los beneficios de ResQ aplicables a la gestión de un edificio, para evaluar si la solución responde a mis necesidades. | 2 |
+| 3 | US22 | Conocer los beneficios para empresas e instituciones | Como visitante del segmento de empresas e instituciones con infraestructura propia, quiero conocer los beneficios de ResQ para instalaciones con múltiples zonas, para evaluar su aporte a la seguridad y coordinación operativa. | 2 |
+| 4 | US23 | Acceder al producto digital correspondiente | Como visitante, quiero acceder desde el Landing Page al producto digital correspondiente, para continuar mi experiencia con ResQ según mi segmento y dispositivo. | 2 |
+| 5 | US01 | Monitorear el estado general de una edificación | Como propietario, administrador o responsable institucional, quiero conocer el estado general de la edificación, para identificar oportunamente si existe alguna situación que requiera atención. | 5 |
+| 6 | US04 | Identificar el tipo y nivel de riesgo | Como responsable de seguridad o administración, quiero conocer el tipo y nivel de riesgo detectado, para evaluar la situación y tomar decisiones con mayor rapidez. | 8 |
+| 7 | US05 | Identificar la zona afectada | Como responsable de una edificación, quiero conocer la ubicación del riesgo detectado, para dirigir la respuesta hacia la zona correcta sin perder tiempo en localizar el incidente. | 3 |
+| 8 | US07 | Recibir alertas de emergencia | Como responsable de una edificación, quiero recibir alertas cuando se detecte una situación de riesgo, para conocer oportunamente qué ocurre y poder realizar el seguimiento correspondiente. | 5 |
+| 9 | US09 | Ejecutar respuestas automáticas mediante actuadores | Como responsable de una edificación, quiero que determinadas acciones de seguridad se ejecuten automáticamente según el riesgo detectado, para reducir el tiempo de respuesta durante los primeros momentos de una emergencia. | 8 |
+| 10 | US10 | Consultar las respuestas ejecutadas | Como responsable de una edificación, quiero conocer qué acciones se ejecutaron durante una emergencia, para tener visibilidad sobre la respuesta realizada por el sistema. | 3 |
+| 11 | US02 | Monitorear el estado por zonas | Como responsable de una edificación, quiero conocer el estado individual de cada zona monitoreada, para identificar rápidamente dónde existe una condición anómala. | 5 |
+| 12 | US03 | Consultar mediciones y estado de dispositivos IoT | Como responsable de una edificación, quiero conocer las mediciones obtenidas y el estado de los dispositivos IoT, para verificar las condiciones monitoreadas y detectar posibles fallas de los equipos. | 5 |
+| 13 | US08 | Activar alertas sonoras y visuales | Como responsable de seguridad, quiero que una emergencia pueda generar señales sonoras y visuales, para advertir a los ocupantes mediante más de un mecanismo de comunicación. | 5 |
+| 14 | US19 | Mantener respuestas críticas sin conexión a Internet | Como responsable de una edificación, quiero que las funciones críticas de detección y respuesta continúen localmente cuando se pierde Internet, para mantener la capacidad de reacción durante una emergencia. | 8 |
+| 15 | US12 | Realizar seguimiento del estado de un incidente | Como responsable de seguridad u operaciones, quiero conocer el estado actual y el responsable de atención de un incidente, para coordinar las acciones hasta su cierre. | 5 |
+| 16 | US11 | Validar acciones de alto impacto | Como responsable autorizado, quiero confirmar determinadas acciones antes de su ejecución cuando requieran intervención humana, para evitar respuestas automáticas que puedan generar un riesgo adicional. | 5 |
+| 17 | US06 | Supervisar remotamente la edificación | Como propietario, administrador o responsable institucional, quiero consultar remotamente el estado de las zonas y eventos de la edificación, para mantener la supervisión aunque no me encuentre físicamente en las instalaciones. | 3 |
+| 18 | US13 | Consultar el historial de incidentes | Como propietario, administrador o responsable institucional, quiero consultar los incidentes registrados anteriormente, para realizar seguimiento y analizar situaciones ocurridas en la edificación. | 3 |
+| 19 | US14 | Buscar y filtrar incidentes históricos | Como responsable de una edificación, quiero localizar incidentes utilizando diferentes criterios, para encontrar información histórica sin revisar manualmente múltiples registros. | 5 |
+| 20 | US15 | Consultar el detalle histórico de un incidente | Como responsable de una edificación, quiero revisar las mediciones y acciones asociadas con un incidente, para comprender cómo evolucionó y cómo respondió el sistema. | 5 |
+| 21 | US16 | Consultar indicadores de seguridad | Como propietario, administrador o responsable institucional, quiero consultar indicadores obtenidos de los eventos registrados, para identificar tendencias y evaluar la gestión de seguridad de las instalaciones. | 8 |
+| 22 | US17 | Acceder de forma autenticada | Como responsable autorizado, quiero acceder a la plataforma mediante una identidad válida, para consultar únicamente la información asociada con mis responsabilidades. | 3 |
+| 23 | US18 | Gestionar permisos según el rol | Como responsable de una organización, quiero que las capacidades de acceso estén diferenciadas según el rol del usuario, para proteger información y acciones sensibles. | 5 |
+| 24 | TS04 | Procesar localmente reglas de detección y respuesta | Como Developer, quiero procesar localmente las condiciones de riesgo y reglas de respuesta, para que las funciones críticas no dependan permanentemente de servicios Cloud. | 8 |
+| 25 | TS03 | Capturar información desde los Embedded Systems | Como Developer, quiero que la Embedded Application recolecte mediciones de los sensores conectados, para proporcionar información al Edge necesaria para detectar situaciones de riesgo. | 8 |
+| 26 | TS02 | Proveer comunicación mediante Edge API | Como Developer, quiero disponer de un Edge API para recibir información de los dispositivos y coordinar acciones locales, para desacoplar los Embedded Systems de los servicios remotos. | 8 |
+| 27 | TS01 | Proveer servicios mediante RESTful API | Como Developer, quiero disponer de un RESTful API para exponer los recursos de ResQ, para integrar las aplicaciones Web y Mobile con los servicios de la plataforma. | 8 |
+| 28 | TS05 | Sincronizar eventos después de una pérdida de conectividad | Como Developer, quiero conservar temporalmente la información generada durante una interrupción de conectividad y sincronizarla al restablecerse la comunicación, para evitar la pérdida del historial de eventos. | 8 |
+| 29 | TS06 | Integrar un servicio externo de notificaciones | Como Developer, quiero integrar un servicio externo que permita entregar notificaciones a los responsables, para complementar la comunicación de alertas generadas por ResQ. | 5 |
+| 30 | TS07 | Procesar información cuantitativa para indicadores | Como Developer, quiero procesar los datos de eventos y mediciones mediante cálculos cuantitativos, para proporcionar los indicadores requeridos por las aplicaciones de ResQ. | 8 |
+| 31 | TS08 | Mantener una experiencia adaptable entre dispositivos | Como Developer, quiero que las aplicaciones orientadas a los usuarios puedan utilizarse en diferentes dimensiones de dispositivo, para mantener disponibles las funciones esenciales desde computadoras y dispositivos móviles. | 5 |
+
+### Product Backlog en Jira
+
+El Product Backlog se mantiene también en Jira, donde las historias se encuentran registradas y ordenadas de acuerdo con la prioridad definida para el producto. La herramienta permitirá posteriormente seleccionar las historias correspondientes a cada Sprint y realizar el seguimiento de su evolución durante el desarrollo.
+
+![Product Backlog - ResQ](../assets/images/chapter-03-requirements-specification/Product-Backlog-ResQ.png)
+
+**Link del Product Backlog:** [COMPLETAR]
