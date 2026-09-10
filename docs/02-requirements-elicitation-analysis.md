@@ -9,10 +9,150 @@
 ## 2.1. Competidores
 
 ### 2.1.1. Análisis competitivo
-[COMPLETAR]
+Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos el siguiente Lanscape:
+
+<table style="background-color:transparent; border-collapse:collapse; width:548px; table-layout:fixed; font-family:Arial,sans-serif; font-size:12px; line-height:16px; color:inherit; border:1px solid currentColor;">
+  <colgroup>
+    <col style="width:66px;">
+    <col style="width:54px;">
+    <col style="width:57px;">
+    <col style="width:98px;">
+    <col style="width:91px;">
+    <col style="width:90px;">
+    <col style="width:92px;">
+  </colgroup>
+
+  <tr style="background-color:transparent; ">
+    <th colspan="7" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; text-align:left; height:17px;">
+      Competitive Analysis Landscape
+    </th>
+  </tr>
+  <tr style="background-color:transparent; height:49px;">
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
+      ¿Por qué llevar a cabo este análisis?
+    </td>
+    <td colspan="5" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Determinar las ventajas competitivas de ResQ mediante el uso de tecnologías IoT, procesamiento local y automatización de respuestas, con el fin de ofrecer a propietarios, administradores, empresas e instituciones una plataforma de seguridad capaz de prevenir, detectar e interpretar distintos riesgos en edificaciones y ejecutar acciones automáticas según el tipo y contexto del evento.  </td>
+  </tr>
+
+  <tr style="background-color:transparent; height:50px;">
+    <td colspan="3" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
+      &nbsp;
+    </td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">ResQ<br><img src="../assets/images/chapter-02-requirements-elicitation-analysis/ResQ-logo.png" alt="Logo de ResQ" width="70" style="display:block; width:70px; max-width:100%; height:auto; margin:6px auto;"></td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">ProSentry<br><img src="../assets/images/chapter-02-requirements-elicitation-analysis/competidor-1.png" alt="Logo de ProSentry" width="70" style="display:block; width:70px; max-width:100%; height:auto; margin:6px auto;"></td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Siemens Building X<br><img src="../assets/images/chapter-02-requirements-elicitation-analysis/competidor-2.png" alt="Logo de Siemens Building X" width="70" style="display:block; width:70px; max-width:100%; height:auto; margin:6px auto;"></td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Honeywell EBI<br><img src="../assets/images/chapter-02-requirements-elicitation-analysis/competidor-3.png" alt="Logo de Honeywell EBI" width="70" style="display:block; width:70px; max-width:100%; height:auto; margin:6px auto;"></td>
+  </tr>
+
+  <tr style="background-color:transparent; height:65px;">
+    <td rowspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; text-align:center; vertical-align:middle;">
+      <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Perfil</span>
+    </td>
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Overview</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma IoT orientada a la prevención, detección y respuesta ante riesgos en edificaciones. Integra sensores, monitoreo digital, procesamiento local y actuadores.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma IoT de monitoreo preventivo de propiedades. Detecta fugas, temperatura, humedad, fallas y otras condiciones que pueden causar daños.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma digital para la gestión inteligente de edificios. Centraliza operaciones, mantenimiento, energía, seguridad y protección.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma empresarial que integra gestión del edificio, seguridad, control de accesos, videovigilancia y protección contra incendios.</td>
+  </tr>
+  <tr style="background-color:transparent; height:82px;">
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
+      Ventaja competitiva<br>¿Qué valor ofrece a los clientes?
+    </td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Arquitectura IoT modular que integra distintos riesgos y ejecuta respuestas automáticas según sensores, zona, horario y contexto.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Detección temprana de riesgos de la propiedad, monitoreo continuo y control de ciertos dispositivos, como válvulas.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Ecosistema amplio y escalable para administrar múltiples funciones e instalaciones desde una sola plataforma.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Integra sistemas críticos del edificio y permite automatizar procedimientos y flujos de trabajo ante eventos.</td>
+  </tr>
+
+  <tr style="background-color:transparent; height:66px;">
+    <td rowspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; text-align:center; vertical-align:middle;">
+      <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Perfil de Marketing</span>
+    </td>
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Mercado objetivo</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Propietarios y administradores de edificaciones, empresas e instituciones con infraestructura propia.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Propietarios, administradores y operadores de edificios residenciales y comerciales.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Propietarios, operadores y administradores de edificios, campus y organizaciones de diversos sectores.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Medianas y grandes organizaciones con edificios, campus e infraestructuras complejas.</td>
+  </tr>
+  <tr style="background-color:transparent; height:66px;">
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Estrategias de marketing</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Estrategia B2B basada en demostraciones de la solución, contacto directo con administradores y organizaciones y alianzas con empresas vinculadas a automatización de edificios.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Estrategia B2B enfocada en reducción de daños, demostraciones, evaluaciones y casos de uso.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Venta consultiva B2B, contenido especializado, casos por industria y socios tecnológicos.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Venta empresarial mediante especialistas e integradores, demostraciones y soluciones personalizadas.</td>
+  </tr>
+
+  <tr style="background-color:transparent; height:66px;">
+    <td rowspan="3" style="background-color:transparent; color:inherit; border:1px solid currentColor; text-align:center; vertical-align:middle;">
+      <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Perfil de Producto</span>
+    </td>
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Productos &amp; Servicios</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Solución IoT compuesta por dispositivos de monitoreo, procesamiento local y actuadores, integrada con una plataforma centralizada para supervisar riesgos, generar alertas y ejecutar respuestas automáticas ante diferentes eventos en edificaciones.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Sensores inalámbricos para fugas de agua y gas, temperatura, humedad, puertas y otros riesgos, con plataforma de monitoreo.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Building X incluye aplicaciones para operaciones, seguridad, incendios, energía, análisis e integración de equipos.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">EBI integra gestión del edificio, seguridad, videovigilancia, control de accesos, incendios y sistemas de terceros.</td>
+  </tr>
+  <tr style="background-color:transparent; height:49px;">
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Precios &amp; Costos</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modelo basado en implementación de sensores y un servicio recurrente de monitoreo. El costo dependerá de la cantidad de dispositivos, tamaño de la propiedad y funcionalidades requeridas.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Costo según cantidad de sensores, tamaño de la propiedad y funcionalidades requeridas.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modelo empresarial basado en suscripciones, aplicaciones, dispositivos y servicios de integración.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Costo según licencias, sistemas integrados, infraestructura y servicios profesionales.</td>
+  </tr>
+  <tr style="background-color:transparent; height:66px;">
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
+      Canales de distribución<br>(Web y/o Móvil)
+    </td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma web de monitoreo con alertas y acceso móvil para responsables y administradores.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma accesible por web y dispositivos móviles, con notificaciones ante eventos.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma cloud con acceso web y herramientas móviles según la aplicación utilizada.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Interfaces web y acceso remoto, además de opciones de uso desde móviles y tablets.</td>
+  </tr>
+
+  <tr style="background-color:transparent; height:66px;">
+    <td rowspan="4" style="background-color:transparent; color:inherit; border:1px solid currentColor; text-align:center; vertical-align:middle;">
+      <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Análisis SWOT</span>
+    </td>
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Fortalezas</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modularidad; integración de riesgos; procesamiento local; respuestas automáticas; componentes IoT accesibles.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Solución especializada; variedad de sensores; monitoreo continuo; alertas automáticas; integraciones.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Marca consolidada; amplia experiencia; alta escalabilidad; gran capacidad de integración.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Experiencia en automatización; integración de sistemas críticos; arquitectura escalable.</td>
+  </tr>
+  <tr style="background-color:transparent; height:50px;">
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Debilidades</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Necesidad de fortalecer la validación en entornos reales, demostrar escalabilidad y consolidar su posicionamiento frente a soluciones ya establecidas en el mercado.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Enfoque principal en mitigación de daños a la propiedad, con menor énfasis en coordinación integral de emergencias.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Puede implicar mayor complejidad y costo para organizaciones con necesidades específicas.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Requiere integración especializada e infraestructura, lo que aumenta la complejidad.</td>
+  </tr>
+  <tr style="background-color:transparent; height:49px;">
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Oportunidades</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Crecimiento de edificios inteligentes; mayor preocupación por seguridad; expansión a más sensores y sectores.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Ampliación hacia nuevas categorías de seguridad y automatización, y expansión geográfica.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Mayor digitalización de edificios, IA, automatización y gestión centralizada.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modernización de edificios existentes y crecimiento de IoT e integración tecnológica.</td>
+  </tr>
+  <tr style="background-color:transparent; height:49px;">
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Amenazas</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Competencia de empresas consolidadas; requisitos normativos; riesgos de ciberseguridad.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Aparición de soluciones IoT de menor costo y expansión de grandes plataformas.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Competidores especializados más ágiles y económicos, y evolución tecnológica acelerada.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataformas cloud más flexibles, soluciones de menor costo y necesidad de modernización continua.</td>
+  </tr>
+</table>
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
-[COMPLETAR]
+
+ResQ se diferenciará de competidores como ProSentry, Siemens Building X y Honeywell EBI mediante una propuesta de seguridad IoT modular y contextual. Frente a la fortaleza de Siemens Building X y Honeywell EBI, que cuentan con ecosistemas amplios y consolidados para la gestión de edificaciones, ResQ buscará competir mediante una solución más enfocada y adaptable, permitiendo que cada organización implemente únicamente los dispositivos y funcionalidades que necesite y pueda ampliar el sistema progresivamente según sus riesgos y características.
+
+Para aprovechar las debilidades identificadas en la competencia, ResQ aplicará una estrategia de respuesta contextual automatizada. Mientras que ProSentry se enfoca principalmente en el monitoreo y mitigación de riesgos asociados a la propiedad, ResQ buscará relacionar información proveniente de distintos dispositivos con factores como la zona, el horario y el tipo de evento para determinar qué situación está ocurriendo y ejecutar una respuesta específica. De esta manera, diferentes riesgos podrán generar alertas y acciones distintas según el contexto en el que se produzcan.
+
+Como táctica de implementación, ResQ priorizará una arquitectura modular que permita incorporar sensores y actuadores de manera progresiva. Esto facilitará que una organización pueda comenzar con las funcionalidades de seguridad que considere prioritarias y posteriormente ampliar la solución hacia nuevas zonas, tipos de riesgo o mecanismos de respuesta sin tener que reemplazar completamente la infraestructura instalada.
+
+Nuestra estrategia frente a las oportunidades del mercado estará orientada al crecimiento de las tecnologías IoT y a la necesidad de mejorar la prevención y seguridad en edificios, empresas e instituciones. ResQ utilizará un modelo basado en la instalación de dispositivos y un servicio recurrente de monitoreo, permitiendo adaptar la cantidad de dispositivos, zonas y funcionalidades a las características de cada cliente. Como táctica comercial, se podrán realizar demostraciones e implementaciones iniciales en espacios controlados para evidenciar el funcionamiento de la solución y facilitar su adopción.
+
+Finalmente, para afrontar amenazas como la presencia de empresas internacionales consolidadas, los riesgos de ciberseguridad y la dependencia de conectividad, ResQ priorizará el procesamiento local de eventos críticos. Esto permitirá que determinadas acciones puedan ejecutarse directamente en los dispositivos IoT sin depender exclusivamente de servicios externos, reduciendo el tiempo de respuesta y manteniendo funciones esenciales ante interrupciones temporales de conexión. Asimismo, la solución buscará mantener una arquitectura escalable que permita incorporar nuevas tecnologías y mecanismos de seguridad conforme evolucionen las necesidades del mercado.
 
 ## 2.2. Entrevistas
 
