@@ -35,13 +35,15 @@ Los User Personas representan los dos segmentos objetivo de ResQ: propietarios y
 
 Carlos Mendoza, de 37 años, representa al administrador de un edificio residencial que coordina seguridad y mantenimiento tanto desde la oficina como fuera de la instalación. Es organizado y preventivo, pero depende de llamadas, mensajes y sistemas separados para comprender una alerta. Su necesidad principal consiste en conocer el tipo de riesgo, su ubicación y evolución, y quién está atendiendo el evento. Para ResQ, este perfil orienta el monitoreo remoto por zonas, las alertas comprensibles y la consulta de las respuestas ejecutadas por el sistema.
 
-IMAGEN
+
+
+![User Persona de Carlos Mendoza](../assets/images/chapter-02-requirements-elicitation-analysis/CarlosMendozaUserPerson.png)
 
 **Segmento objetivo #2: Empresas e instituciones con infraestructura propia — Daniela Rojas**
 
 Daniela Rojas, de 34 años, representa a los responsables de seguridad institucional que coordinan varios edificios y equipos de trabajo. Como jefa de Seguridad y Prevención de una universidad, necesita identificar el ambiente afectado y compartir información precisa con seguridad, mantenimiento y brigadistas. Su principal dificultad es reconstruir la situación a partir de fuentes distribuidas mientras protege a una población numerosa. Este perfil orienta a ResQ hacia la supervisión por zonas, la trazabilidad de eventos y la comunicación diferenciada según las responsabilidades de cada usuario.
 
-IMAGEN
+![User Persona de Daniela Rojas](../assets/images/chapter-02-requirements-elicitation-analysis/DanielaRojasUserPerson.png)
 
 ### 2.3.2. User Task Matrix
 
@@ -79,21 +81,20 @@ La comparación muestra que ambos perfiles asignan una severidad alta a la ident
 
 ### 2.3.3. User Journey Mapping
 
-Los User Journey Maps describen la experiencia actual planteada en los guiones, desde la recepción de una alerta hasta el registro posterior. Se utiliza un recorrido **As-Is** para distinguir las acciones y canales actuales de las oportunidades propuestas para ResQ. Las emociones son interpretaciones cualitativas del escenario; no representan resultados de una evaluación de satisfacción ni mejoras ya comprobadas.
+Los User Journey Maps describen la experiencia actual planteada en los guiones, desde la recepción de una alerta hasta el registro posterior. Se utiliza un recorrido As-Is para distinguir las acciones y canales actuales de las oportunidades propuestas para ResQ. Las emociones son interpretaciones cualitativas del escenario; no representan resultados de una evaluación de satisfacción ni mejoras ya comprobadas.
 
 **Segmento objetivo #1: Carlos Mendoza — Atención de una alerta de humo en el sótano**
 
-El recorrido presenta a Carlos fuera del edificio cuando recibe una llamada por una alerta de humo. Su objetivo es comprender la ubicación y gravedad del problema, coordinar con el personal y seguir la atención. El punto de mayor incertidumbre aparece mientras vigilancia revisa el sótano y las cámaras sin una vista unificada. Este escenario procede del guion 1 y permite explorar cómo ResQ podría disminuir la fragmentación de información durante la respuesta.
+El recorrido presenta a Carlos fuera del edificio cuando recibe una llamada por una alerta de humo. Su objetivo es comprender la ubicación y gravedad del problema, coordinar con el personal y seguir la atención. El punto de mayor incertidumbre aparece mientras vigilancia revisa el sótano y las cámaras sin una vista unificada.
 
-IMAGEN
+![User Journey Map de Carlos Mendoza](../assets/images/chapter-02-requirements-elicitation-analysis/Customerjourneymap1.png)
 
 **Segmento objetivo #2: Daniela Rojas — Atención de una alerta en un laboratorio universitario**
 
-El recorrido de Daniela aborda una alerta de humo asociada con el sobrecalentamiento de un equipo de laboratorio. Su objetivo es identificar el ambiente afectado, coordinar a seguridad y mantenimiento, y dar seguimiento a la respuesta sin generar confusión entre los ocupantes. La dificultad principal consiste en ubicar el laboratorio exacto y reunir información de varias áreas. El escenario del guion 4 orienta las oportunidades de ResQ hacia una localización precisa y un registro compartido de la evolución del evento.
+El recorrido de Daniela aborda una alerta de humo asociada con el sobrecalentamiento de un equipo de laboratorio. Su objetivo es identificar el ambiente afectado, coordinar a seguridad y mantenimiento, y dar seguimiento a la respuesta sin generar confusión entre los ocupantes. La dificultad principal consiste en ubicar el laboratorio exacto y reunir información de varias áreas.
 
-IMAGEN
+![User Journey Map de Daniela Rojas](../assets/images/chapter-02-requirements-elicitation-analysis/Customerjourneymap2.png)
 
-Los dos recorridos sitúan la mayor incertidumbre entre el aviso inicial y la comprensión del evento. ResQ debería facilitar la identificación de la zona y mostrar las mediciones y respuestas automáticas pertinentes. La continuidad local propuesta en el capítulo I debe distinguirse de la disponibilidad del acceso remoto: si se pierde conectividad, la interfaz no debería presentar datos antiguos como actuales. Las decisiones de coordinación y evacuación permanecen sujetas a los protocolos y responsabilidades de cada instalación.
 
 ### 2.3.4. Empathy Mapping
 
@@ -103,13 +104,13 @@ Los mapas de empatía complementan los perfiles y recorridos al relacionar lo qu
 
 El mapa de Carlos refleja la tensión entre su intención de prevenir incidentes y la dependencia de otras personas para reunir información durante una alerta. Aunque dispone de cámaras y alarmas, necesita comprender lo que ocurre cuando no está presente. La oportunidad para ResQ consiste en ofrecer información contextualizada y trazable que le permita coordinar con mayor claridad y conocer qué respuesta ha ejecutado el sistema.
 
-IMAGEN
+![Mapa de empatía de Carlos Mendoza](../assets/images/chapter-02-requirements-elicitation-analysis/CarlosMendozaEmpathy.png)
 
 **Segmento objetivo #2: Daniela Rojas — Empresas e instituciones con infraestructura propia**
 
 El mapa de Daniela muestra que la confianza en una respuesta depende de que los distintos equipos comprendan el mismo evento y sus responsabilidades. La dispersión de información aumenta la presión al coordinar una instalación concurrida. Para ResQ, este perfil plantea la necesidad de localizar el riesgo con precisión, facilitar el seguimiento y comunicar la información adecuada a cada rol, sin asumir que una alarma por sí sola resuelve la coordinación.
 
-IMAGEN
+![Mapa de empatía de Daniela Rojas](../assets/images/chapter-02-requirements-elicitation-analysis/DanielaRojasEmpathy.png)
 
 
 Ambos mapas sugieren que centralizar información aporta valor cuando ayuda a comprender el riesgo y la respuesta. Carlos necesita mantener visibilidad a distancia; Daniela necesita coordinar áreas y zonas distintas. En ambos casos, la confianza en la automatización requiere conocer qué ocurrió y por qué se ejecutó una acción. Las alertas para ocupantes también deben ser comprensibles y considerar a quienes requieren asistencia, sin limitar la comunicación a una sola señal sonora.
