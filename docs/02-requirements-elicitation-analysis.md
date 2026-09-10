@@ -1358,7 +1358,19 @@ El Big Picture de ResQ ilustra visualmente cómo la plataforma entrega valor en 
 
 En la arquitectura de ResQ, el flujo se construye como una cadena continua de causa y efecto: un Actor (como un sensor o administrador) o una Política automática ejecuta un Comando (la acción en azul) sobre un Agregado (el componente del sistema), el cual procesa la lógica y emite un Evento de Dominio (el hecho consumado en naranja). A su vez, este evento cumple un doble propósito: actualiza una Vista (interfaz en verde) para informar al usuario y dispara nuevas Políticas (reglas en morado) que pueden interactuar con Sistemas Externos (rosa) o lanzar automáticamente el siguiente comando, conectando sin interrupciones la detección local con la gestión en la nube.
 ## 2.5. Ubiquitous Language
+El Lenguaje Ubicuo (Ubiquitous Language) es un pilar fundamental en el Diseño Guiado por el Dominio (DDD). Su objetivo es establecer un glosario estricto y compartido entre los desarrolladores, los administradores y los expertos del negocio, garantizando que no existan ambigüedades técnicas ni operativas.
 
 | Término | Definición |
-|---|---|
-| [Term in English] | [Definición] |
+
+| [Building] | [Definición] |
+| [Term in English] | [Infraestructura física (residencial, comercial o institucional) que se encuentra bajo el monitoreo y gestión de la plataforma ResQ.] |
+| [Zone] | [Subdivisión lógica y física dentro de una Edificación (ej. pasillo, sótano, comedor) que permite localizar el origen exacto de las mediciones y los riesgos.] |
+| [IoT Device] | [Hardware instalado en las Zonas. Se divide en dos tipos: Sensores (capturan variables ambientales/físicas) y Actuadores (ejecutan respuestas físicas, como alarmas o válvulas).] |
+| [Anomalous Condition] | [Lectura o estado reportado por un Sensor que supera los umbrales seguros predefinidos, pero que aún requiere clasificación.] |
+| [Risk] | [Amenaza confirmada y clasificada (ej. fuga de gas, sismo, incendio) que desencadena los protocolos de seguridad. Tiene asociado un Nivel (gravedad) y un Tipo.] |
+| [Automatic Response] | [Acción de seguridad ejecutada de forma inmediata por los actuadores (ej. luces de evacuación, sirenas) sin necesidad de intervención humana.] |
+| [High-Impact Action] | [Respuesta física que, por su potencial de generar un riesgo adicional o interrumpir operaciones, requiere obligatoriamente la Confirmación manual de un usuario humano antes de ejecutarse.] |
+| [Incident] | [Registro formal e histórico de un Riesgo detectado. Agrupa toda la información relacionada: fecha, Zona afectada, respuestas ejecutadas y el estado actual de atención.] |
+| [Authorized Manager] | [Usuario de la plataforma (administrador, facility manager o jefe de seguridad) con los permisos necesarios para gestionar Zonas, confirmar Acciones de Alto Impacto y cerrar Incidentes.] |
+| [Edge Computing] | [Capacidad de la infraestructura local para procesar datos de los sensores y ejecutar Respuestas Automáticas de manera autónoma, garantizando la Continuidad Operativa ante la pérdida de conexión a Internet.] |
+| [Detection/Response Rule] | [Configuración lógica que determina qué condiciones disparan una alerta y qué acciones específicas deben ejecutarse según el contexto, horario y tipo de Riesgo.] |
