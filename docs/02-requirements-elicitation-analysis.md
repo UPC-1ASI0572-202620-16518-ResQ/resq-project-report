@@ -802,24 +802,24 @@ Sus prioridades son detección temprana, coordinación entre áreas e informaci�
 
 | Información | Detalle |
 |---|---|
-| Nombres | Miguel Ángel |
-| Apellidos | Torres Castillo |
-| Edad | 36 años |
+| Nombres | Carlos Andres |
+| Apellidos | Coca Lavado |
+| Edad | 24 años |
 | Género | Masculino |
 | Distrito de residencia | San Isidro |
 | Ocupación / Cargo | Jefe de Operaciones |
 | Tipo de organización | Clínica privada |
 | Segmento objetivo | Empresas e instituciones con infraestructura propia |
-| Fecha de entrevista | [COMPLETAR] |
-| Inicio en el video | [COMPLETAR - hh:mm:ss] |
-| Duración | [COMPLETAR - mm:ss] |
-| URL del video | [COMPLETAR] |
+| Fecha de entrevista | 9/09/2026 |
+| Inicio en el video | 00:03 |
+| Duración | 09:20 |
+| URL del video | [Carlos Andres Coca Lavado](https://upcedupe-my.sharepoint.com/personal/u202320442_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202320442%5Fupc%5Fedu%5Fpe%2FDocuments%2FEntrevistas%20%2D%20IoT%20%2D%20Grupo%203%20%2D%2016518%2FEntrevista%202%2DSegmento2%2DIoT%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Eceddbbe0%2De5e0%2D4f0d%2D97bc%2D29873327ecec) |
 
-![Entrevista 5 - Miguel Ángel Torres Castillo](../../assets/images/chapter-02-requirements-elicitation-analysis/interview-05-miguel-torres.png)
+![Entrevista 5 - Carlos Andres Coca Lavado](../assets/images/chapter-02-requirements-elicitation-analysis/Entrevista5-Carlos-Andres-Coca-Lavado.png)
 
 **Resumen de la entrevista**
 
-Miguel Ángel Torres Castillo tiene 36 años, reside en San Isidro, está casado y tiene dos hijos. Es ingeniero industrial y trabaja como Jefe de Operaciones de una clínica privada. Cuenta con experiencia en operaciones y gestión dentro del sector salud.
+Carlos Andres Coca Lavado tiene 24 años, reside en San Isidro, está casado y tiene dos hijos. Es ingeniero industrial y trabaja como Jefe de Operaciones de una clínica privada. Cuenta con experiencia en operaciones y gestión dentro del sector salud.
 
 Se considera una persona orientada a procedimientos y continuidad operativa. Entre sus principales habilidades se encuentran gestión de crisis, coordinación, priorización, mantenimiento y análisis de riesgos.
 
