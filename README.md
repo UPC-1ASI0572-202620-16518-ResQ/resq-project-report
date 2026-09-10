@@ -32,7 +32,7 @@ INGENIERÍA DE SOFTWARE
 <div align="center" style="line-height: 1.8; text-align: center;">
   <p>U202320442 — Quispe Barzola, Fabricio Fabian</p>
   <p>U202324129 — Chacaliaza Minaya, Eduardo Fabian</p>
-  <p>Guerrero Vasquez, Jhon Danny</p>
+  <p>U202116246 - Guerrero Vasquez, Jhon Danny</p>
   <p>Uasdasd</p>
   <p>Usdasda</p>
   
