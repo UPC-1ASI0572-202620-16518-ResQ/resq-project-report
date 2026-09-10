@@ -757,12 +757,12 @@ Sus principales dificultades son los sistemas separados, las falsas alarmas y la
 | Ocupación / Cargo | Jefa de Seguridad y Prevención |
 | Tipo de organización | Universidad privada |
 | Segmento objetivo | Empresas e instituciones con infraestructura propia |
-| Fecha de entrevista | [COMPLETAR] |
-| Inicio en el video | [COMPLETAR - hh:mm:ss] |
-| Duración | [COMPLETAR - mm:ss] |
-| URL del video | [COMPLETAR] |
+| Fecha de entrevista | 9/09/2026 |
+| Inicio en el video | 00:01 |
+| Duración | 13:02 |
+| URL del video | [Daniela Alejandra Rojas Medina](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQDh0EbU73b3SaH_ayMZ75xrAalLpznANe_RgHGcjwdaS4g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=792iP1) |
 
-![Entrevista 4 - Daniela Alejandra Rojas Medina](../../assets/images/chapter-02-requirements-elicitation-analysis/interview-04-daniela-rojas.png)
+![Entrevista 4 - Daniela Alejandra Rojas Medina](../assets/images/chapter-02-requirements-elicitation-analysis/interview-04-daniela-rojas.png)
 
 **Resumen de la entrevista**
 
