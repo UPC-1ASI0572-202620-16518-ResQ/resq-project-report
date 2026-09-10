@@ -689,27 +689,27 @@ Entre sus principales preocupaciones se encuentran la detección tardía, la fra
 
 ---
 
-##### Entrevista 3 — Jorge Luis Villanueva Paredes
+##### Entrevista 3 — Sebastián Abel Cosquillo Yglesias
 
 | Información | Detalle |
 |---|---|
-| Nombres | Jorge Luis |
-| Apellidos | Villanueva Paredes |
-| Edad | 30 años |
+| Nombres | Sebastián Abel |
+| Apellidos | Cosquillo Yglesias |
+| Edad | 28 años |
 | Género | Masculino |
 | Distrito de residencia | San Borja |
 | Ocupación / Cargo | Facility Manager de edificio corporativo |
 | Segmento objetivo | Propietarios y administradores de edificaciones |
-| Fecha de entrevista | [COMPLETAR] |
-| Inicio en el video | [COMPLETAR - hh:mm:ss] |
-| Duración | [COMPLETAR - mm:ss] |
-| URL del video | [COMPLETAR] |
+| Fecha de entrevista | 09/09/2026 |
+| Inicio en el video | 00:00 |
+| Duración | 10:53 |
+| URL del video | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQCHFYEzIcVHRr60BDIm7Ov8AXJMY7yKqx4e_W7qxFo1niI?e=SFTAed&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQCHFYEzIcVHRr60BDIm7Ov8AXJMY7yKqx4e_W7qxFo1niI?e=SFTAed&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
 
-![Entrevista 3 - Jorge Luis Villanueva Paredes](../../assets/images/chapter-02-requirements-elicitation-analysis/interview-03-jorge-villanueva.png)
+![Entrevista 3 - Sebastián Abel Cosquillo Yglesias](../assets/images/chapter-02-requirements-elicitation-analysis/Entrevista3-Sebastian-Abel-Cosquillo-Yglesias.png)
 
 **Resumen de la entrevista**
 
-Jorge Luis Villanueva Paredes reside en San Borja y trabaja como Facility Manager de un edificio corporativo. Es ingeniero industrial y desarrolla actividades relacionadas con operaciones, mantenimiento, infraestructura y gestión de seguridad.
+Sebastián Abel Cosquillo Yglesias reside en San Borja y trabaja como Facility Manager de un edificio corporativo. Es ingeniero industrial y desarrolla actividades relacionadas con operaciones, mantenimiento, infraestructura y gestión de seguridad.
 
 Se describe como una persona metódica y orientada al cumplimiento de procedimientos. Considera necesario que las responsabilidades estén claramente establecidas y mantiene una postura cuidadosa frente a la incorporación de tecnologías nuevas, debido a que prioriza confiabilidad, soporte y continuidad operativa.
 
