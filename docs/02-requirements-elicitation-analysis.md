@@ -1350,8 +1350,13 @@ El mapa de Daniela muestra que la confianza en una respuesta depende de que los 
 Ambos mapas sugieren que centralizar información aporta valor cuando ayuda a comprender el riesgo y la respuesta. Carlos necesita mantener visibilidad a distancia; Daniela necesita coordinar áreas y zonas distintas. En ambos casos, la confianza en la automatización requiere conocer qué ocurrió y por qué se ejecutó una acción. Las alertas para ocupantes también deben ser comprensibles y considerar a quienes requieren asistencia, sin limitar la comunicación a una sola señal sonora.
 
 ## 2.4. Big Picture EventStorming
-[INSERTAR DIAGRAMA + EXPLICACIÓN]
+El Big Picture de ResQ ilustra visualmente cómo la plataforma entrega valor en situaciones críticas, mapeando el ciclo de vida completo de una emergencia. A nivel empresarial, muestra cómo un incidente físico desencadena automáticamente acciones de protección inmediatas, alerta a los responsables sin demoras y registra cada paso para su gestión y auditoría posterior. De esta forma, este esquema demuestra cómo la solución elimina los cuellos de botella manuales, reduce drásticamente los tiempos de respuesta y garantiza la seguridad y continuidad operativa del edificio de principio a fin.
 
+
+![Diagra de Picture EventStorming](../assets/images/chapter-02-requirements-elicitation-analysis/Picture%20EventStorming.png)
+
+
+En la arquitectura de ResQ, el flujo se construye como una cadena continua de causa y efecto: un Actor (como un sensor o administrador) o una Política automática ejecuta un Comando (la acción en azul) sobre un Agregado (el componente del sistema), el cual procesa la lógica y emite un Evento de Dominio (el hecho consumado en naranja). A su vez, este evento cumple un doble propósito: actualiza una Vista (interfaz en verde) para informar al usuario y dispara nuevas Políticas (reglas en morado) que pueden interactuar con Sistemas Externos (rosa) o lanzar automáticamente el siguiente comando, conectando sin interrupciones la detección local con la gestión en la nube.
 ## 2.5. Ubiquitous Language
 
 | Término | Definición |
