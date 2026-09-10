@@ -639,23 +639,23 @@ Finalmente, identifica como prioridades la localización rápida del problema, l
 
 ---
 
-##### Entrevista 2 — Patricia Elena Salazar Núñez
+##### Entrevista 2 — Camila Torres Vega
 
 | Información | Detalle |
 |---|---|
-| Nombres | Patricia Elena |
-| Apellidos | Salazar Núñez |
+| Nombres | Camila |
+| Apellidos | Torres Vega |
 | Edad | 32 años |
 | Género | Femenino |
 | Distrito de residencia | San Borja |
 | Ocupación / Cargo | Copropietaria y administradora de edificio de uso mixto |
 | Segmento objetivo | Propietarios y administradores de edificaciones |
-| Fecha de entrevista | [COMPLETAR] |
-| Inicio en el video | [COMPLETAR - hh:mm:ss] |
-| Duración | [COMPLETAR - mm:ss] |
-| URL del video | [COMPLETAR] |
+| Fecha de entrevista | 09/09/2026 |
+| Inicio en el video | 00:00 |
+| Duración | 10:23 |
+| URL del video | [Camila Torres Vega](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQAPP8zr8hl9SJxRu5hGW4HTAYU1RbWhVcaLcvTYusyyp0g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=LCM4my) |
 
-![Entrevista 2 - Patricia Elena Salazar Núñez](../../assets/images/chapter-02-requirements-elicitation-analysis/interview-02-patricia-salazar.png)
+![Entrevista 2 - Camila Torres Vega](../assets/images/chapter-02-requirements-elicitation-analysis/Camila-Torres-Vega-Entrevista2-Segmento2.jpg)
 
 **Resumen de la entrevista**
 
