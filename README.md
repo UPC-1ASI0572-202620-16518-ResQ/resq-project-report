@@ -32,7 +32,7 @@ INGENIERÍA DE SOFTWARE
 <div align="center" style="line-height: 1.8; text-align: center;">
   <p>U202320442 — Quispe Barzola, Fabricio Fabian</p>
   <p>U202324129 — Chacaliaza Minaya, Eduardo Fabian</p>
-  <p>uasdaasadaa</p>
+  <p>Guerrero Vasquez, Jhon Danny</p>
   <p>Uasdasd</p>
   <p>Usdasda</p>
   
@@ -152,7 +152,7 @@ INGENIERÍA DE SOFTWARE
 
   <!-- BLOQUE 2 -->
   <tr>
-    <td>Integrante</td>
+    <td>Jhon Guerrero V.</td>
     <td>
       <ul>
         <li>2.3 Needfinding</li>
