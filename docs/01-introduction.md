@@ -185,25 +185,32 @@ Este segmento está conformado por propietarios, administradores, facility manag
 - **Actitudes:** Valoran soluciones que permitan actuar rápidamente ante eventos críticos y que puedan integrarse progresivamente con la infraestructura existente.
 - **Necesidades clave:** Monitoreo en tiempo real, identificación de la zona afectada, activación automática de alarmas y actuadores, registro de eventos y reducción del tiempo de respuesta ante emergencias.
 
-### Segmento objetivo #2: Empresas e instituciones con infraestructura propia
+### Segmento objetivo #2: Empresas integradoras de automatización y gestión de edificios inteligentes
 
-Este segmento incluye empresas, universidades, colegios, clínicas, centros comerciales, hoteles, industrias e instituciones públicas o privadas que cuentan con edificaciones propias y requieren proteger a trabajadores, estudiantes, clientes, pacientes o visitantes ante situaciones como sismos, fugas de gas o incendios.
+Este segmento incluye empresas especializadas en automatización de edificios, integración IoT, Building Management Systems (BMS) y gestión técnica de infraestructura. Estas organizaciones pueden incorporar ResQ dentro de los proyectos que implementan para sus clientes, funcionando como aliados tecnológicos y canales de integración de la solución.
 
 #### Aspectos demográficos y organizacionales
 
-- **Tipo de organización:** Empresas e instituciones públicas o privadas.
-- **Tamaño:** Principalmente medianas y grandes organizaciones con alta concurrencia de personas.
-- **Responsables de decisión:** Jefes de seguridad, operaciones, mantenimiento, infraestructura, prevención de riesgos y administración.
+- **Tipo de organización:** Empresas B2B dedicadas a automatización de edificios, integración IoT, sistemas BMS y gestión técnica de infraestructura.
+
+- **Tamaño:** Principalmente pequeñas, medianas y grandes empresas que desarrollan proyectos de automatización e integración tecnológica para organizaciones con infraestructura propia.
+
+- **Responsables de decisión:** Gerentes de proyectos, ingenieros de automatización, responsables de integración, gerentes comerciales, responsables de innovación y directores técnicos.
+
 - **Rango de edad de los responsables:** Aproximadamente entre 28 y 60 años.
 
 #### Aspectos geográficos
 
-- **Ubicación:** Principalmente zonas urbanas de Lima Metropolitana y principales ciudades del Perú.
-- **Tipo de infraestructura:** Edificios corporativos, campus educativos, centros de salud, instalaciones comerciales, hoteles y complejos industriales.
+- **Ubicación:** Principalmente Lima Metropolitana y principales ciudades del Perú donde se desarrollan proyectos de automatización, modernización e implementación de edificios inteligentes.
+
+- **Ámbito de operación:** Edificios corporativos, campus educativos, centros de salud, instalaciones comerciales, hoteles, complejos industriales y otras infraestructuras que requieren automatización y monitoreo técnico.
 
 #### Aspectos psicográficos
 
-- **Dolor principal:** Dificultad para coordinar una respuesta rápida y centralizada cuando ocurre una emergencia en diferentes zonas de una instalación.
-- **Intereses:** Protección de personas, continuidad operativa, cumplimiento de protocolos de seguridad, digitalización y automatización de procesos.
-- **Actitudes:** Buscan soluciones confiables, escalables y capaces de integrarse con diferentes sensores y sistemas de seguridad.
-- **Necesidades clave:** Detección temprana de riesgos, monitoreo por zonas, activación automática de alarmas y rutas de evacuación, centralización de información y almacenamiento del historial de incidentes.
+- **Dolor principal:** Necesidad de incorporar nuevas capacidades de monitoreo, detección y respuesta ante emergencias dentro de sus proyectos de automatización sin desarrollar toda la solución desde cero.
+
+- **Intereses:** Automatización de edificios, IoT, interoperabilidad, sistemas BMS, digitalización de infraestructura, integración de sensores, escalabilidad y desarrollo de edificios inteligentes.
+
+- **Actitudes:** Buscan soluciones modulares, confiables, escalables y fáciles de integrar con la infraestructura tecnológica que ya implementan para sus clientes.
+
+- **Necesidades clave:** Compatibilidad con diferentes sensores y dispositivos, integración mediante protocolos o APIs, configuración por zonas o edificios, monitoreo centralizado, escalabilidad e incorporación sencilla de ResQ dentro de proyectos de automatización existentes.
