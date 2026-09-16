@@ -678,7 +678,7 @@ A continuación, se presentan sus principales características demográficas, ge
 
 ### Segmento objetivo #1: Propietarios y administradores de edificaciones
 
-Este segmento está conformado por propietarios, administradores, facility managers y responsables de la gestión de edificios residenciales, comerciales o de uso mixto que buscan mejorar la capacidad de detección y respuesta ante situaciones de emergencia.
+Este segmento está conformado por propietarios, administradores, facility managers y responsables de la gestión de edificios residenciales, comerciales o de uso mixto que buscan mejorar la capacidad de detección y respuesta ante situaciones de emergencia. Según el INDECI, entre 2012 y 2023 se registraron 3,005 incendios urbanos en el departamento de Lima, lo que evidencia la necesidad de contar con mecanismos de monitoreo y respuesta oportuna ante eventos críticos en edificaciones.
 
 #### Aspectos demográficos
 
@@ -701,7 +701,7 @@ Este segmento está conformado por propietarios, administradores, facility manag
 
 ### Segmento objetivo #2: Empresas integradoras de automatización y gestión de edificios inteligentes
 
-Este segmento incluye empresas especializadas en automatización de edificios, integración IoT, Building Management Systems (BMS) y gestión técnica de infraestructura. Estas organizaciones pueden incorporar ResQ dentro de los proyectos que implementan para sus clientes, funcionando como aliados tecnológicos y canales de integración de la solución.
+Este segmento incluye empresas especializadas en automatización de edificios, integración IoT, Building Management Systems (BMS) y gestión técnica de infraestructura. Estas organizaciones desarrollan soluciones de automatización y gestión de edificios para sus clientes y enfrentan la necesidad de incorporar capacidades de detección, monitoreo y respuesta ante emergencias dentro de infraestructuras que utilizan distintos dispositivos y sistemas. Según la Encuesta de Transformación Digital 2022 de PAD-RTM, realizada a 404 organizaciones peruanas, el 29 % indicó utilizar tecnologías de Internet of Things (IoT), lo que evidencia la presencia de este tipo de tecnologías en el entorno empresarial y la necesidad de soluciones que puedan integrarse con ellas.
 
 #### Aspectos demográficos y organizacionales
 
@@ -721,13 +721,13 @@ Este segmento incluye empresas especializadas en automatización de edificios, i
 
 #### Aspectos psicográficos
 
-- **Dolor principal:** Necesidad de incorporar nuevas capacidades de monitoreo, detección y respuesta ante emergencias dentro de sus proyectos de automatización sin desarrollar toda la solución desde cero.
+- **Dolor principal:** Dificultad para integrar funciones de detección y respuesta ante emergencias en edificios que utilizan distintos sensores, dispositivos y sistemas de automatización.
 
 - **Intereses:** Automatización de edificios, IoT, interoperabilidad, sistemas BMS, digitalización de infraestructura, integración de sensores, escalabilidad y desarrollo de edificios inteligentes.
 
 - **Actitudes:** Buscan soluciones modulares, confiables, escalables y fáciles de integrar con la infraestructura tecnológica que ya implementan para sus clientes.
 
-- **Necesidades clave:** Compatibilidad con diferentes sensores y dispositivos, integración mediante protocolos o APIs, configuración por zonas o edificios, monitoreo centralizado, escalabilidad e incorporación sencilla de ResQ dentro de proyectos de automatización existentes.
+- **Necesidades clave:** Una solución fácil de integrar con diferentes sensores y sistemas de automatización, que pueda configurarse según cada edificio, adaptarse a distintos proyectos y escalar conforme aumenten las zonas o dispositivos conectados.
 
 # Capítulo II: Requirements Elicitation & Analysis
 
