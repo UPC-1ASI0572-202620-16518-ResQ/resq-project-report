@@ -740,7 +740,7 @@ Este segmento incluye empresas especializadas en automatización de edificios, i
 ## 2.1. Competidores
 
 ### 2.1.1. Análisis competitivo
-Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos el siguiente Lanscape:
+Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos el siguiente Landscape:
 
 <table style="background-color:transparent; border-collapse:collapse; width:548px; table-layout:fixed; font-family:Arial,sans-serif; font-size:12px; line-height:16px; color:inherit; border:1px solid currentColor;">
   <colgroup>
@@ -762,7 +762,7 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
       ¿Por qué llevar a cabo este análisis?
     </td>
-    <td colspan="5" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Determinar las ventajas competitivas de ResQ mediante el uso de tecnologías IoT, procesamiento local y automatización de respuestas, con el fin de ofrecer a propietarios, administradores, empresas e instituciones una plataforma de seguridad capaz de prevenir, detectar e interpretar distintos riesgos en edificaciones y ejecutar acciones automáticas según el tipo y contexto del evento.  </td>
+    <td colspan="5" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Analizar las características y propuestas de valor de competidores indirectos relacionados con el monitoreo, automatización y gestión de edificios, con el fin de identificar oportunidades de diferenciación para ResQ mediante tecnologías IoT, procesamiento Edge y automatización de respuestas ante situaciones de riesgo.  </td>
   </tr>
 
   <tr style="background-color:transparent; height:50px;">
@@ -780,7 +780,7 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
       <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Perfil</span>
     </td>
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Overview</td>
-    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma IoT orientada a la prevención, detección y respuesta ante riesgos en edificaciones. Integra sensores, monitoreo digital, procesamiento local y actuadores.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma IoT orientada al monitoreo, detección y respuesta ante riesgos en edificaciones. Integra sensores, monitoreo digital, procesamiento Edge y actuadores.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma IoT de monitoreo preventivo de propiedades. Detecta fugas, temperatura, humedad, fallas y otras condiciones que pueden causar daños.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma digital para la gestión inteligente de edificios. Centraliza operaciones, mantenimiento, energía, seguridad y protección.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma empresarial que integra gestión del edificio, seguridad, control de accesos, videovigilancia y protección contra incendios.</td>
@@ -800,7 +800,7 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
       <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Perfil de Marketing</span>
     </td>
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Mercado objetivo</td>
-    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Propietarios y administradores de edificaciones, empresas e instituciones con infraestructura propia.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Propietarios y administradores de edificaciones, así como empresas integradoras de automatización y gestión de edificios inteligentes.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Propietarios, administradores y operadores de edificios residenciales y comerciales.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Propietarios, operadores y administradores de edificios, campus y organizaciones de diversos sectores.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Medianas y grandes organizaciones con edificios, campus e infraestructuras complejas.</td>
@@ -825,10 +825,10 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
   </tr>
   <tr style="background-color:transparent; height:49px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Precios &amp; Costos</td>
-    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modelo basado en implementación de sensores y un servicio recurrente de monitoreo. El costo dependerá de la cantidad de dispositivos, tamaño de la propiedad y funcionalidades requeridas.</td>
-    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Costo según cantidad de sensores, tamaño de la propiedad y funcionalidades requeridas.</td>
-    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modelo empresarial basado en suscripciones, aplicaciones, dispositivos y servicios de integración.</td>
-    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Costo según licencias, sistemas integrados, infraestructura y servicios profesionales.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modelo basado en una implementación inicial de sensores y dispositivos IoT, complementada con una suscripción recurrente para el acceso a la plataforma de monitoreo, alertas, historial e integraciones. El costo dependerá de la cantidad de dispositivos, tamaño de la propiedad y funcionalidades contratadas.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Sensores con un costo aproximado de US$60 a US$80 por unidad y una tarifa mensual generalmente entre US$4 y US$9 por inquilino, que incluye monitoreo, dashboard, alertas y soporte.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modelo basado en suscripciones anuales a aplicaciones y APIs, con costos adicionales asociados a conectividad, dispositivos e implementación según las necesidades del proyecto.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modelo empresarial basado en licencias y suscripciones según la solución contratada. Los costos dependen de la infraestructura, integraciones, implementación y servicios requeridos.</td>
   </tr>
   <tr style="background-color:transparent; height:66px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
@@ -845,7 +845,7 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
       <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Análisis SWOT</span>
     </td>
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Fortalezas</td>
-    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modularidad; integración de riesgos; procesamiento local; respuestas automáticas; componentes IoT accesibles.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Arquitectura modular; integración de diferentes riesgos; procesamiento Edge; respuestas automáticas locales; capacidad de integración con diferentes dispositivos IoT.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Solución especializada; variedad de sensores; monitoreo continuo; alertas automáticas; integraciones.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Marca consolidada; amplia experiencia; alta escalabilidad; gran capacidad de integración.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Experiencia en automatización; integración de sistemas críticos; arquitectura escalable.</td>
@@ -859,14 +859,14 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
   </tr>
   <tr style="background-color:transparent; height:49px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Oportunidades</td>
-    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Crecimiento de edificios inteligentes; mayor preocupación por seguridad; expansión a más sensores y sectores.</td>
-    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Ampliación hacia nuevas categorías de seguridad y automatización, y expansión geográfica.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Creciente adopción de IoT y automatización en edificios; modernización de infraestructura; mayor demanda de monitoreo y respuesta ante riesgos; oportunidades de alianza con empresas integradoras.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Creciente demanda de monitoreo preventivo en edificaciones, adopción de sensores IoT y expansión del mercado de automatización de propiedades.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Mayor digitalización de edificios, IA, automatización y gestión centralizada.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modernización de edificios existentes y crecimiento de IoT e integración tecnológica.</td>
   </tr>
   <tr style="background-color:transparent; height:49px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Amenazas</td>
-    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Competencia de empresas consolidadas; requisitos normativos; riesgos de ciberseguridad.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Presencia de soluciones consolidadas; exigencias normativas; riesgos de ciberseguridad y rápida evolución tecnológica.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Aparición de soluciones IoT de menor costo y expansión de grandes plataformas.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Competidores especializados más ágiles y económicos, y evolución tecnológica acelerada.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataformas cloud más flexibles, soluciones de menor costo y necesidad de modernización continua.</td>
@@ -875,15 +875,13 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
-ResQ se diferenciará de competidores como ProSentry, Siemens Building X y Honeywell EBI mediante una propuesta de seguridad IoT modular y contextual. Frente a la fortaleza de Siemens Building X y Honeywell EBI, que cuentan con ecosistemas amplios y consolidados para la gestión de edificaciones, ResQ buscará competir mediante una solución más enfocada y adaptable, permitiendo que cada organización implemente únicamente los dispositivos y funcionalidades que necesite y pueda ampliar el sistema progresivamente según sus riesgos y características.
+Para afrontar las fortalezas de competidores indirectos como ProSentry, Siemens Building X y Honeywell EBI, ResQ buscará diferenciarse mediante una propuesta IoT modular y especializada en la detección y respuesta ante riesgos en edificaciones. Frente a plataformas consolidadas y de amplio alcance como Siemens Building X y Honeywell EBI, ResQ priorizará una solución más enfocada y adaptable, permitiendo implementar únicamente los dispositivos y funcionalidades necesarios y ampliar el sistema progresivamente según las características y riesgos de cada edificación.
 
-Para aprovechar las debilidades identificadas en la competencia, ResQ aplicará una estrategia de respuesta contextual automatizada. Mientras que ProSentry se enfoca principalmente en el monitoreo y mitigación de riesgos asociados a la propiedad, ResQ buscará relacionar información proveniente de distintos dispositivos con factores como la zona, el horario y el tipo de evento para determinar qué situación está ocurriendo y ejecutar una respuesta específica. De esta manera, diferentes riesgos podrán generar alertas y acciones distintas según el contexto en el que se produzcan.
+Para aprovechar las debilidades identificadas en la competencia, ResQ aplicará una estrategia de respuesta contextual automatizada. Mientras que algunas soluciones se concentran principalmente en el monitoreo, mitigación de daños o gestión integral del edificio, ResQ buscará relacionar información proveniente de distintos dispositivos con factores como la zona, el horario y el tipo de evento para determinar la situación detectada y ejecutar una respuesta específica. Como táctica, se implementarán reglas configurables que permitan generar diferentes alertas y acciones automáticas según el contexto del riesgo.
 
-Como táctica de implementación, ResQ priorizará una arquitectura modular que permita incorporar sensores y actuadores de manera progresiva. Esto facilitará que una organización pueda comenzar con las funcionalidades de seguridad que considere prioritarias y posteriormente ampliar la solución hacia nuevas zonas, tipos de riesgo o mecanismos de respuesta sin tener que reemplazar completamente la infraestructura instalada.
+Como estrategia frente a las oportunidades del mercado, ResQ aprovechará la creciente adopción de tecnologías IoT y automatización en edificaciones, así como la necesidad de mejorar la detección y respuesta ante situaciones de riesgo. La startup utilizará un modelo basado en una implementación inicial de dispositivos IoT y una suscripción recurrente para acceder a funcionalidades como monitoreo, alertas, historial e integraciones. Como tácticas comerciales, se realizarán demostraciones, pruebas piloto e implementaciones iniciales en espacios controlados, además de establecer alianzas con empresas integradoras de automatización y gestión de edificios inteligentes.
 
-Nuestra estrategia frente a las oportunidades del mercado estará orientada al crecimiento de las tecnologías IoT y a la necesidad de mejorar la prevención y seguridad en edificios, empresas e instituciones. ResQ utilizará un modelo basado en la instalación de dispositivos y un servicio recurrente de monitoreo, permitiendo adaptar la cantidad de dispositivos, zonas y funcionalidades a las características de cada cliente. Como táctica comercial, se podrán realizar demostraciones e implementaciones iniciales en espacios controlados para evidenciar el funcionamiento de la solución y facilitar su adopción.
-
-Finalmente, para afrontar amenazas como la presencia de empresas internacionales consolidadas, los riesgos de ciberseguridad y la dependencia de conectividad, ResQ priorizará el procesamiento local de eventos críticos. Esto permitirá que determinadas acciones puedan ejecutarse directamente en los dispositivos IoT sin depender exclusivamente de servicios externos, reduciendo el tiempo de respuesta y manteniendo funciones esenciales ante interrupciones temporales de conexión. Asimismo, la solución buscará mantener una arquitectura escalable que permita incorporar nuevas tecnologías y mecanismos de seguridad conforme evolucionen las necesidades del mercado.
+Finalmente, para afrontar amenazas como la presencia de empresas consolidadas, los riesgos de ciberseguridad, la evolución tecnológica y la dependencia de conectividad, ResQ priorizará el procesamiento Edge de eventos críticos. Esto permitirá que determinadas acciones puedan ejecutarse localmente sin depender exclusivamente de servicios en la nube, manteniendo funciones esenciales ante interrupciones temporales de conexión. Asimismo, se buscará mantener una arquitectura modular, escalable e interoperable que permita incorporar nuevos dispositivos, tecnologías y mecanismos de respuesta conforme evolucionen las necesidades de los clientes y del mercado.
 
 ## 2.2. Entrevistas
 
@@ -1526,7 +1524,7 @@ Finalmente, identifica como prioridades la localización rápida del problema, l
 | Duración | 10:23 |
 | URL del video | [Camila Torres Vega](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQAPP8zr8hl9SJxRu5hGW4HTAYU1RbWhVcaLcvTYusyyp0g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=LCM4my) |
 
-![Entrevista 2 - Camila Torres Vega](assets/images/chapter-02-requirements-elicitation-analysis/Camila-Torres-Vega-Entrevista2-Segmento2.jpg)
+![Entrevista 2 - Camila Torres Vega](assets/images/chapter-02-requirements-elicitation-analysis/Camila-Torres-Vega-Entrevista2-Segmento2.png)
 
 **Resumen de la entrevista**
 
