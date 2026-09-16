@@ -11,6 +11,7 @@ El curso contribuye al **ABET Student Outcome 5**.
 | Trabaja en equipo para proporcionar liderazgo en forma conjunta | [Nombre] | [COMPLETAR] | [COMPLETAR] |
 | Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos | [Nombre] | [COMPLETAR] | [COMPLETAR] |
 
+
 ### TB1
 [Actualizar]
 
