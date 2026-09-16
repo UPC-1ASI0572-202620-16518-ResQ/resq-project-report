@@ -336,116 +336,116 @@ INGENIERÍA DE SOFTWARE
 
 # Contenido
 
-- [Student Outcome](docs/00-student-outcome.md)
+- [Student Outcome](#student-outcome)
 
-- [Capítulo I: Introducción](docs/01-introduction.md)
-  - [1.1. Startup Profile](docs/01-introduction.md#11-startup-profile)
-    - [1.1.1. Descripción de la Startup](docs/01-introduction.md#111-descripción-de-la-startup)
-    - [1.1.2. Perfiles de integrantes del equipo](docs/01-introduction.md#112-perfiles-de-integrantes-del-equipo)
-  - [1.2. Solution Profile](docs/01-introduction.md#12-solution-profile)
-    - [1.2.1. Antecedentes y problemática](docs/01-introduction.md#121-antecedentes-y-problemática)
-    - [1.2.2. Lean UX Process](docs/01-introduction.md#122-lean-ux-process)
-      - [1.2.2.1. Lean UX Problem Statements](docs/01-introduction.md#1221-lean-ux-problem-statements)
-      - [1.2.2.2. Lean UX Assumptions](docs/01-introduction.md#1222-lean-ux-assumptions)
-      - [1.2.2.3. Lean UX Hypothesis Statements](docs/01-introduction.md#1223-lean-ux-hypothesis-statements)
-      - [1.2.2.4. Lean UX Canvas](docs/01-introduction.md#1224-lean-ux-canvas)
-  - [1.3. Segmentos objetivo](docs/01-introduction.md#13-segmentos-objetivo)
+- [Capítulo I: Introducción](#capítulo-i-introducción)
+  - [1.1. Startup Profile](#11-startup-profile)
+    - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
+    - [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
+  - [1.2. Solution Profile](#12-solution-profile)
+    - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
+    - [1.2.2. Lean UX Process](#122-lean-ux-process)
+      - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
+      - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
+      - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
+      - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
+  - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
 
-- [Capítulo II: Requirements Elicitation & Analysis](docs/02-requirements-elicitation-analysis.md)
-  - [2.1. Competidores](docs/02-requirements-elicitation-analysis.md#21-competidores)
-    - [2.1.1. Análisis competitivo](docs/02-requirements-elicitation-analysis.md#211-análisis-competitivo)
-    - [2.1.2. Estrategias y tácticas frente a competidores](docs/02-requirements-elicitation-analysis.md#212-estrategias-y-tácticas-frente-a-competidores)
-  - [2.2. Entrevistas](docs/02-requirements-elicitation-analysis.md#22-entrevistas)
-    - [2.2.1. Diseño de entrevistas](docs/02-requirements-elicitation-analysis.md#221-diseño-de-entrevistas)
-    - [2.2.2. Registro de entrevistas](docs/02-requirements-elicitation-analysis.md#222-registro-de-entrevistas)
-    - [2.2.3. Análisis de entrevistas](docs/02-requirements-elicitation-analysis.md#223-análisis-de-entrevistas)
-  - [2.3. Needfinding](docs/02-requirements-elicitation-analysis.md#23-needfinding)
-    - [2.3.1. User Personas](docs/02-requirements-elicitation-analysis.md#231-user-personas)
-    - [2.3.2. User Task Matrix](docs/02-requirements-elicitation-analysis.md#232-user-task-matrix)
-    - [2.3.3. User Journey Mapping](docs/02-requirements-elicitation-analysis.md#233-user-journey-mapping)
-    - [2.3.4. Empathy Mapping](docs/02-requirements-elicitation-analysis.md#234-empathy-mapping)
-  - [2.4. Big Picture EventStorming](docs/02-requirements-elicitation-analysis.md#24-big-picture-eventstorming)
-  - [2.5. Ubiquitous Language](docs/02-requirements-elicitation-analysis.md#25-ubiquitous-language)
+- [Capítulo II: Requirements Elicitation & Analysis](#capítulo-ii-requirements-elicitation--analysis)
+  - [2.1. Competidores](#21-competidores)
+    - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
+    - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
+  - [2.2. Entrevistas](#22-entrevistas)
+    - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
+    - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
+    - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
+  - [2.3. Needfinding](#23-needfinding)
+    - [2.3.1. User Personas](#231-user-personas)
+    - [2.3.2. User Task Matrix](#232-user-task-matrix)
+    - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
+    - [2.3.4. Empathy Mapping](#234-empathy-mapping)
+  - [2.4. Big Picture EventStorming](#24-big-picture-eventstorming)
+  - [2.5. Ubiquitous Language](#25-ubiquitous-language)
 
-- [Capítulo III: Requirements Specification](docs/03-requirements-specification.md)
-  - [3.1. User Stories](docs/03-requirements-specification.md#31-user-stories)
-  - [3.2. Impact Mapping](docs/03-requirements-specification.md#32-impact-mapping)
-  - [3.3. Product Backlog](docs/03-requirements-specification.md#33-product-backlog)
+- [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
+  - [3.1. User Stories](#31-user-stories)
+  - [3.2. Impact Mapping](#32-impact-mapping)
+  - [3.3. Product Backlog](#33-product-backlog)
 
-- [Capítulo IV: Solution Software Design](docs/04-solution-software-design.md)
-  - [4.1. Strategic-Level Domain-Driven Design](docs/04-solution-software-design.md#41-strategic-level-domain-driven-design)
-    - [4.1.1. Design-Level EventStorming](docs/04-solution-software-design.md#411-design-level-eventstorming)
-      - [4.1.1.1. Candidate Context Discovery](docs/04-solution-software-design.md#4111-candidate-context-discovery)
-      - [4.1.1.2. Domain Message Flows Modeling](docs/04-solution-software-design.md#4112-domain-message-flows-modeling)
-      - [4.1.1.3. Bounded Context Canvases](docs/04-solution-software-design.md#4113-bounded-context-canvases)
-    - [4.1.2. Context Mapping](docs/04-solution-software-design.md#412-context-mapping)
-    - [4.1.3. Software Architecture](docs/04-solution-software-design.md#413-software-architecture)
-      - [4.1.3.1. Software Architecture System Landscape Diagram](docs/04-solution-software-design.md#4131-software-architecture-system-landscape-diagram)
-      - [4.1.3.2. Software Architecture Context Level Diagrams](docs/04-solution-software-design.md#4132-software-architecture-context-level-diagrams)
-      - [4.1.3.2. Software Architecture Container Level Diagrams](docs/04-solution-software-design.md#4132-software-architecture-container-level-diagrams)
-      - [4.1.3.3. Software Architecture Deployment Diagrams](docs/04-solution-software-design.md#4133-software-architecture-deployment-diagrams)
-  - [4.2. Tactical-Level Domain-Driven Design](docs/04-solution-software-design.md#42-tactical-level-domain-driven-design)
-    - [4.2.X. Bounded Context: \<Bounded Context Name\>](docs/04-solution-software-design.md#42x-bounded-context-bounded-context-name)
-      - [4.2.X.1. Domain Layer](docs/04-solution-software-design.md#42x1-domain-layer)
-      - [4.2.X.2. Interface Layer](docs/04-solution-software-design.md#42x2-interface-layer)
-      - [4.2.X.3. Application Layer](docs/04-solution-software-design.md#42x3-application-layer)
-      - [4.2.X.4. Infrastructure Layer](docs/04-solution-software-design.md#42x4-infrastructure-layer)
-      - [4.2.X.5. Bounded Context Software Architecture Component Level Diagrams](docs/04-solution-software-design.md#42x5-bounded-context-software-architecture-component-level-diagrams)
-      - [4.2.X.6. Bounded Context Software Architecture Code Level Diagrams](docs/04-solution-software-design.md#42x6-bounded-context-software-architecture-code-level-diagrams)
-      - [4.2.X.6.1. Bounded Context Domain Layer Class Diagrams](docs/04-solution-software-design.md#42x61-bounded-context-domain-layer-class-diagrams)
-      - [4.2.X.6.2. Bounded Context Database Design Diagram](docs/04-solution-software-design.md#42x62-bounded-context-database-design-diagram)
+- [Capítulo IV: Solution Software Design](#capítulo-iv-solution-software-design)
+  - [4.1. Strategic-Level Domain-Driven Design](#41-strategic-level-domain-driven-design)
+    - [4.1.1. Design-Level EventStorming](#411-design-level-eventstorming)
+      - [4.1.1.1. Candidate Context Discovery](#4111-candidate-context-discovery)
+      - [4.1.1.2. Domain Message Flows Modeling](#4112-domain-message-flows-modeling)
+      - [4.1.1.3. Bounded Context Canvases](#4113-bounded-context-canvases)
+    - [4.1.2. Context Mapping](#412-context-mapping)
+    - [4.1.3. Software Architecture](#413-software-architecture)
+      - [4.1.3.1. Software Architecture System Landscape Diagram](#4131-software-architecture-system-landscape-diagram)
+      - [4.1.3.2. Software Architecture Context Level Diagrams](#4132-software-architecture-context-level-diagrams)
+      - [4.1.3.2. Software Architecture Container Level Diagrams](#4132-software-architecture-container-level-diagrams)
+      - [4.1.3.3. Software Architecture Deployment Diagrams](#4133-software-architecture-deployment-diagrams)
+  - [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
+    - [4.2.X. Bounded Context: \<Bounded Context Name\>](#42x-bounded-context-)
+      - [4.2.X.1. Domain Layer](#42x1-domain-layer)
+      - [4.2.X.2. Interface Layer](#42x2-interface-layer)
+      - [4.2.X.3. Application Layer](#42x3-application-layer)
+      - [4.2.X.4. Infrastructure Layer](#42x4-infrastructure-layer)
+      - [4.2.X.5. Bounded Context Software Architecture Component Level Diagrams](#42x5-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.X.6. Bounded Context Software Architecture Code Level Diagrams](#42x6-bounded-context-software-architecture-code-level-diagrams)
+      - [4.2.X.6.1. Bounded Context Domain Layer Class Diagrams](#42x61-bounded-context-domain-layer-class-diagrams)
+      - [4.2.X.6.2. Bounded Context Database Design Diagram](#42x62-bounded-context-database-design-diagram)
 
-- [Capítulo V: Solution UI/UX Design](docs/05-solution-ui-ux-design.md)
-  - [5.1. Style Guidelines](docs/05-solution-ui-ux-design.md#51-style-guidelines)
-    - [5.1.1. General Style Guidelines](docs/05-solution-ui-ux-design.md#511-general-style-guidelines)
-    - [5.1.2. Web, Mobile and IoT Style Guidelines](docs/05-solution-ui-ux-design.md#512-web-mobile-and-iot-style-guidelines)
-  - [5.2. Information Architecture](docs/05-solution-ui-ux-design.md#52-information-architecture)
-    - [5.2.1. Organization Systems](docs/05-solution-ui-ux-design.md#521-organization-systems)
-    - [5.2.2. Labeling Systems](docs/05-solution-ui-ux-design.md#522-labeling-systems)
-    - [5.2.3. SEO Tags and Meta Tags](docs/05-solution-ui-ux-design.md#523-seo-tags-and-meta-tags)
-    - [5.2.4. Searching Systems](docs/05-solution-ui-ux-design.md#524-searching-systems)
-    - [5.2.5. Navigation Systems](docs/05-solution-ui-ux-design.md#525-navigation-systems)
-  - [5.3. Landing Page UI Design](docs/05-solution-ui-ux-design.md#53-landing-page-ui-design)
-    - [5.3.1. Landing Page Wireframe](docs/05-solution-ui-ux-design.md#531-landing-page-wireframe)
-    - [5.3.2. Landing Page Mock-up](docs/05-solution-ui-ux-design.md#532-landing-page-mock-up)
-  - [5.4. Applications UX/UI Design](docs/05-solution-ui-ux-design.md#54-applications-uxui-design)
-    - [5.4.1. Applications Wireframes](docs/05-solution-ui-ux-design.md#541-applications-wireframes)
-    - [5.4.2. Applications Wireflow Diagrams](docs/05-solution-ui-ux-design.md#542-applications-wireflow-diagrams)
-    - [5.4.2. Applications Mock-ups](docs/05-solution-ui-ux-design.md#542-applications-mock-ups)
-    - [5.4.3. Applications User Flow Diagrams](docs/05-solution-ui-ux-design.md#543-applications-user-flow-diagrams)
-  - [5.5. Applications Prototyping](docs/05-solution-ui-ux-design.md#55-applications-prototyping)
-  - [5.6. IoT Device Design](docs/05-solution-ui-ux-design.md#56-iot-device-design)
+- [Capítulo V: Solution UI/UX Design](#capítulo-v-solution-uiux-design)
+  - [5.1. Style Guidelines](#51-style-guidelines)
+    - [5.1.1. General Style Guidelines](#511-general-style-guidelines)
+    - [5.1.2. Web, Mobile and IoT Style Guidelines](#512-web-mobile-and-iot-style-guidelines)
+  - [5.2. Information Architecture](#52-information-architecture)
+    - [5.2.1. Organization Systems](#521-organization-systems)
+    - [5.2.2. Labeling Systems](#522-labeling-systems)
+    - [5.2.3. SEO Tags and Meta Tags](#523-seo-tags-and-meta-tags)
+    - [5.2.4. Searching Systems](#524-searching-systems)
+    - [5.2.5. Navigation Systems](#525-navigation-systems)
+  - [5.3. Landing Page UI Design](#53-landing-page-ui-design)
+    - [5.3.1. Landing Page Wireframe](#531-landing-page-wireframe)
+    - [5.3.2. Landing Page Mock-up](#532-landing-page-mock-up)
+  - [5.4. Applications UX/UI Design](#54-applications-uxui-design)
+    - [5.4.1. Applications Wireframes](#541-applications-wireframes)
+    - [5.4.2. Applications Wireflow Diagrams](#542-applications-wireflow-diagrams)
+    - [5.4.2. Applications Mock-ups](#542-applications-mock-ups)
+    - [5.4.3. Applications User Flow Diagrams](#543-applications-user-flow-diagrams)
+  - [5.5. Applications Prototyping](#55-applications-prototyping)
+  - [5.6. IoT Device Design](#56-iot-device-design)
 
-- [Capítulo VI: Product Implementation, Validation & Deployment](docs/06-product-implementation-validation-deployment.md)
-  - [6.1. Software Configuration Management](docs/06-product-implementation-validation-deployment.md#61-software-configuration-management)
-    - [6.1.1. Software Development Environment Configuration](docs/06-product-implementation-validation-deployment.md#611-software-development-environment-configuration)
-    - [6.1.2. Source Code Management](docs/06-product-implementation-validation-deployment.md#612-source-code-management)
-    - [6.1.3. Source Code Style Guide & Conventions](docs/06-product-implementation-validation-deployment.md#613-source-code-style-guide--conventions)
-    - [6.1.4. Software Deployment Configuration](docs/06-product-implementation-validation-deployment.md#614-software-deployment-configuration)
-  - [6.2. Landing Page, Services & Applications Implementation](docs/06-product-implementation-validation-deployment.md#62-landing-page-services--applications-implementation)
-    - [6.2.X. Sprint n](docs/06-product-implementation-validation-deployment.md#62x-sprint-n)
-      - [6.2.X.1. Sprint Planning n](docs/06-product-implementation-validation-deployment.md#62x1-sprint-planning-n)
-      - [6.2.X.2. Aspect Leaders and Collaborators](docs/06-product-implementation-validation-deployment.md#62x2-aspect-leaders-and-collaborators)
-      - [6.2.X.3. Sprint Backlog n](docs/06-product-implementation-validation-deployment.md#62x3-sprint-backlog-n)
-      - [6.2.X.4. Development Evidence for Sprint Review](docs/06-product-implementation-validation-deployment.md#62x4-development-evidence-for-sprint-review)
-      - [6.2.X.5. Testing Suite Evidence for Sprint Review](docs/06-product-implementation-validation-deployment.md#62x5-testing-suite-evidence-for-sprint-review)
-      - [6.2.X.6. Execution Evidence for Sprint Review](docs/06-product-implementation-validation-deployment.md#62x6-execution-evidence-for-sprint-review)
-      - [6.2.X.7. Services Documentation Evidence for Sprint Review](docs/06-product-implementation-validation-deployment.md#62x7-services-documentation-evidence-for-sprint-review)
-      - [6.2.X.8. Software Deployment Evidence for Sprint Review](docs/06-product-implementation-validation-deployment.md#62x8-software-deployment-evidence-for-sprint-review)
-      - [6.2.X.9. Team Collaboration Insights during Sprint](docs/06-product-implementation-validation-deployment.md#62x9-team-collaboration-insights-during-sprint)
-  - [6.3. Validation Interviews](docs/06-product-implementation-validation-deployment.md#63-validation-interviews)
-    - [6.3.1. Diseño de Entrevistas](docs/06-product-implementation-validation-deployment.md#631-diseño-de-entrevistas)
-    - [6.3.2. Registro de Entrevistas](docs/06-product-implementation-validation-deployment.md#632-registro-de-entrevistas)
-    - [6.3.3. Evaluaciones según heurísticas](docs/06-product-implementation-validation-deployment.md#633-evaluaciones-según-heurísticas)
-  - [6.4. Video About-the-Product](docs/06-product-implementation-validation-deployment.md#64-video-about-the-product)
+- [Capítulo VI: Product Implementation, Validation & Deployment](#capítulo-vi-product-implementation-validation--deployment)
+  - [6.1. Software Configuration Management](#61-software-configuration-management)
+    - [6.1.1. Software Development Environment Configuration](#611-software-development-environment-configuration)
+    - [6.1.2. Source Code Management](#612-source-code-management)
+    - [6.1.3. Source Code Style Guide & Conventions](#613-source-code-style-guide--conventions)
+    - [6.1.4. Software Deployment Configuration](#614-software-deployment-configuration)
+  - [6.2. Landing Page, Services & Applications Implementation](#62-landing-page-services--applications-implementation)
+    - [6.2.X. Sprint n](#621-sprint-1)
+      - [6.2.X.1. Sprint Planning n](#6211-sprint-planning-1)
+      - [6.2.X.2. Aspect Leaders and Collaborators](#6212-aspect-leaders-and-collaborators)
+      - [6.2.X.3. Sprint Backlog n](#6213-sprint-backlog-1)
+      - [6.2.X.4. Development Evidence for Sprint Review](#6214-development-evidence-for-sprint-review)
+      - [6.2.X.5. Testing Suite Evidence for Sprint Review](#6215-testing-suite-evidence-for-sprint-review)
+      - [6.2.X.6. Execution Evidence for Sprint Review](#6216-execution-evidence-for-sprint-review)
+      - [6.2.X.7. Services Documentation Evidence for Sprint Review](#6217-services-documentation-evidence-for-sprint-review)
+      - [6.2.X.8. Software Deployment Evidence for Sprint Review](#6218-software-deployment-evidence-for-sprint-review)
+      - [6.2.X.9. Team Collaboration Insights during Sprint](#6219-team-collaboration-insights-during-sprint)
+  - [6.3. Validation Interviews](#63-validation-interviews)
+    - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
+    - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
+    - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
+  - [6.4. Video About-the-Product](#64-video-about-the-product)
 
-- [Conclusiones](docs/07-conclusions.md)
-  - [Conclusiones y recomendaciones](docs/07-conclusions.md#conclusiones-y-recomendaciones)
-  - [Video About-the-Team](docs/07-conclusions.md#video-about-the-team)
+- [Conclusiones](#conclusiones)
+  - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
+  - [Video About-the-Team](#video-about-the-team)
 
-- [Bibliografía](docs/08-bibliography.md)
+- [Bibliografía](#bibliografía)
 
-- [Anexos](docs/09-annexes.md)
+- [Anexos](#anexos)
 
 
 ## Registro de Versiones del Informe 
@@ -658,7 +658,7 @@ Sabremos que hemos tenido éxito cuando los representantes de ambos segmentos ut
 
 El Lean UX Canvas sintetiza los principales elementos identificados durante el Lean UX Process, relacionando el problema de negocio, los resultados esperados, los usuarios, los beneficios, las posibles soluciones y las hipótesis planteadas.
 
-![LeanUXCanvas-ResQ](../assets/images/chapter-01-introduction/LeanUXCanvas-ResQ.png)
+![LeanUXCanvas-ResQ](assets/images/chapter-01-introduction/LeanUXCanvas-ResQ.png)
 
 **Link del Canvas:** https://miro.com/app/board/uXjVHqdK0Tc=/?share_link_id=104899432918
 
@@ -769,10 +769,10 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
     <td colspan="3" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
       &nbsp;
     </td>
-    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">ResQ<br><img src="../assets/images/chapter-02-requirements-elicitation-analysis/ResQ-logo.png" alt="Logo de ResQ" width="70" style="display:block; width:70px; max-width:100%; height:auto; margin:6px auto;"></td>
-    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">ProSentry<br><img src="../assets/images/chapter-02-requirements-elicitation-analysis/competidor-1.png" alt="Logo de ProSentry" width="70" style="display:block; width:70px; max-width:100%; height:auto; margin:6px auto;"></td>
-    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Siemens Building X<br><img src="../assets/images/chapter-02-requirements-elicitation-analysis/competidor-2.png" alt="Logo de Siemens Building X" width="70" style="display:block; width:70px; max-width:100%; height:auto; margin:6px auto;"></td>
-    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Honeywell EBI<br><img src="../assets/images/chapter-02-requirements-elicitation-analysis/competidor-3.png" alt="Logo de Honeywell EBI" width="70" style="display:block; width:70px; max-width:100%; height:auto; margin:6px auto;"></td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">ResQ<br><img src="assets/images/chapter-02-requirements-elicitation-analysis/ResQ-logo.png" alt="Logo de ResQ" width="70" style="display:block; width:70px; max-width:100%; height:auto; margin:6px auto;"></td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">ProSentry<br><img src="assets/images/chapter-02-requirements-elicitation-analysis/competidor-1.png" alt="Logo de ProSentry" width="70" style="display:block; width:70px; max-width:100%; height:auto; margin:6px auto;"></td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Siemens Building X<br><img src="assets/images/chapter-02-requirements-elicitation-analysis/competidor-2.png" alt="Logo de Siemens Building X" width="70" style="display:block; width:70px; max-width:100%; height:auto; margin:6px auto;"></td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Honeywell EBI<br><img src="assets/images/chapter-02-requirements-elicitation-analysis/competidor-3.png" alt="Logo de Honeywell EBI" width="70" style="display:block; width:70px; max-width:100%; height:auto; margin:6px auto;"></td>
   </tr>
 
   <tr style="background-color:transparent; height:65px;">
@@ -1478,7 +1478,7 @@ Preguntas complementarias:
 | Duración | 12:47 |
 | URL del video | [Entrevista a Juan Jose Meza Huanacune](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQDFyv3V8lzPQbp3k7bGe3aBAdY0-3KDcBEdEi1Ho2acls0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=tfOQ92) |
 
-![Entrevista 1 - Juan Jose Meza Huanacune](../assets/images/chapter-02-requirements-elicitation-analysis/Entrevista1-Juan-Jose-Meza-Huanacune.png)
+![Entrevista 1 - Juan Jose Meza Huanacune](assets/images/chapter-02-requirements-elicitation-analysis/Entrevista1-Juan-Jose-Meza-Huanacune.png)
 
 **Resumen de la entrevista**
 
@@ -1526,7 +1526,7 @@ Finalmente, identifica como prioridades la localización rápida del problema, l
 | Duración | 10:23 |
 | URL del video | [Camila Torres Vega](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQAPP8zr8hl9SJxRu5hGW4HTAYU1RbWhVcaLcvTYusyyp0g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=LCM4my) |
 
-![Entrevista 2 - Camila Torres Vega](../assets/images/chapter-02-requirements-elicitation-analysis/Camila-Torres-Vega-Entrevista2-Segmento2.jpg)
+![Entrevista 2 - Camila Torres Vega](assets/images/chapter-02-requirements-elicitation-analysis/Camila-Torres-Vega-Entrevista2-Segmento2.jpg)
 
 **Resumen de la entrevista**
 
@@ -1576,7 +1576,7 @@ Entre sus principales preocupaciones se encuentran la detección tardía, la fra
 | Duración | 10:53 |
 | URL del video | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQCHFYEzIcVHRr60BDIm7Ov8AXJMY7yKqx4e_W7qxFo1niI?e=SFTAed&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQCHFYEzIcVHRr60BDIm7Ov8AXJMY7yKqx4e_W7qxFo1niI?e=SFTAed&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
 
-![Entrevista 3 - Sebastián Abel Cosquillo Yglesias](../assets/images/chapter-02-requirements-elicitation-analysis/Entrevista3-Sebastian-Abel-Cosquillo-Yglesias.png)
+![Entrevista 3 - Sebastián Abel Cosquillo Yglesias](assets/images/chapter-02-requirements-elicitation-analysis/Entrevista3-Sebastian-Abel-Cosquillo-Yglesias.png)
 
 **Resumen de la entrevista**
 
@@ -1633,7 +1633,7 @@ Sus principales dificultades son los sistemas separados, las falsas alarmas y la
 | Duración | 13:02 |
 | URL del video | [Daniela Alejandra Rojas Medina](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQDh0EbU73b3SaH_ayMZ75xrAalLpznANe_RgHGcjwdaS4g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=792iP1) |
 
-![Entrevista 4 - Daniela Alejandra Rojas Medina](../assets/images/chapter-02-requirements-elicitation-analysis/interview-04-daniela-rojas.png)
+![Entrevista 4 - Daniela Alejandra Rojas Medina](assets/images/chapter-02-requirements-elicitation-analysis/interview-04-daniela-rojas.png)
 
 **Resumen de la entrevista**
 
@@ -1686,7 +1686,7 @@ Sus prioridades son detección temprana, coordinación entre áreas e informaci�
 | Duración | 09:20 |
 | URL del video | [Carlos Andres Coca Lavado](https://upcedupe-my.sharepoint.com/personal/u202320442_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202320442%5Fupc%5Fedu%5Fpe%2FDocuments%2FEntrevistas%20%2D%20IoT%20%2D%20Grupo%203%20%2D%2016518%2FEntrevista%202%2DSegmento2%2DIoT%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Eceddbbe0%2De5e0%2D4f0d%2D97bc%2D29873327ecec) |
 
-![Entrevista 5 - Carlos Andres Coca Lavado](../assets/images/chapter-02-requirements-elicitation-analysis/Entrevista5-Carlos-Andres-Coca-Lavado.png)
+![Entrevista 5 - Carlos Andres Coca Lavado](assets/images/chapter-02-requirements-elicitation-analysis/Entrevista5-Carlos-Andres-Coca-Lavado.png)
 
 **Resumen de la entrevista**
 
@@ -1741,7 +1741,7 @@ Resume su perspectiva mediante la frase: **“En una clínica, responder rápido
 | Duración | [COMPLETAR - mm:ss] |
 | URL del video | [COMPLETAR] |
 
-![Entrevista 6 - Andrea Lucía Cárdenas Vega](../../assets/images/chapter-02-requirements-elicitation-analysis/interview-06-andrea-cardenas.png)
+![Entrevista 6 - Andrea Lucía Cárdenas Vega](assets/images/chapter-02-requirements-elicitation-analysis/interview-06-andrea-cardenas.png)
 
 **Resumen de la entrevista**
 
@@ -2002,13 +2002,13 @@ Carlos Mendoza, de 37 años, representa al administrador de un edificio residenc
 
 
 
-![User Persona de Carlos Mendoza](../assets/images/chapter-02-requirements-elicitation-analysis/CarlosMendozaUserPerson.png)
+![User Persona de Carlos Mendoza](assets/images/chapter-02-requirements-elicitation-analysis/CarlosMendozaUserPerson.png)
 
 **Segmento objetivo #2: Empresas e instituciones con infraestructura propia — Daniela Rojas**
 
 Daniela Rojas, de 34 años, representa a los responsables de seguridad institucional que coordinan varios edificios y equipos de trabajo. Como jefa de Seguridad y Prevención de una universidad, necesita identificar el ambiente afectado y compartir información precisa con seguridad, mantenimiento y brigadistas. Su principal dificultad es reconstruir la situación a partir de fuentes distribuidas mientras protege a una población numerosa. Este perfil orienta a ResQ hacia la supervisión por zonas, la trazabilidad de eventos y la comunicación diferenciada según las responsabilidades de cada usuario.
 
-![User Persona de Daniela Rojas](../assets/images/chapter-02-requirements-elicitation-analysis/DanielaRojasUserPerson.png)
+![User Persona de Daniela Rojas](assets/images/chapter-02-requirements-elicitation-analysis/DanielaRojasUserPerson.png)
 
 ### 2.3.2. User Task Matrix
 
@@ -2052,13 +2052,13 @@ Los User Journey Maps describen la experiencia actual planteada en los guiones, 
 
 El recorrido presenta a Carlos fuera del edificio cuando recibe una llamada por una alerta de humo. Su objetivo es comprender la ubicación y gravedad del problema, coordinar con el personal y seguir la atención. El punto de mayor incertidumbre aparece mientras vigilancia revisa el sótano y las cámaras sin una vista unificada.
 
-![User Journey Map de Carlos Mendoza](../assets/images/chapter-02-requirements-elicitation-analysis/Customerjourneymap1.png)
+![User Journey Map de Carlos Mendoza](assets/images/chapter-02-requirements-elicitation-analysis/Customerjourneymap1.png)
 
 **Segmento objetivo #2: Daniela Rojas — Atención de una alerta en un laboratorio universitario**
 
 El recorrido de Daniela aborda una alerta de humo asociada con el sobrecalentamiento de un equipo de laboratorio. Su objetivo es identificar el ambiente afectado, coordinar a seguridad y mantenimiento, y dar seguimiento a la respuesta sin generar confusión entre los ocupantes. La dificultad principal consiste en ubicar el laboratorio exacto y reunir información de varias áreas.
 
-![User Journey Map de Daniela Rojas](../assets/images/chapter-02-requirements-elicitation-analysis/Customerjourneymap2.png)
+![User Journey Map de Daniela Rojas](assets/images/chapter-02-requirements-elicitation-analysis/Customerjourneymap2.png)
 
 
 ### 2.3.4. Empathy Mapping
@@ -2069,13 +2069,13 @@ Los mapas de empatía complementan los perfiles y recorridos al relacionar lo qu
 
 El mapa de Carlos refleja la tensión entre su intención de prevenir incidentes y la dependencia de otras personas para reunir información durante una alerta. Aunque dispone de cámaras y alarmas, necesita comprender lo que ocurre cuando no está presente. La oportunidad para ResQ consiste en ofrecer información contextualizada y trazable que le permita coordinar con mayor claridad y conocer qué respuesta ha ejecutado el sistema.
 
-![Mapa de empatía de Carlos Mendoza](../assets/images/chapter-02-requirements-elicitation-analysis/CarlosMendozaEmpathy.png)
+![Mapa de empatía de Carlos Mendoza](assets/images/chapter-02-requirements-elicitation-analysis/CarlosMendozaEmpathy.png)
 
 **Segmento objetivo #2: Daniela Rojas — Empresas e instituciones con infraestructura propia**
 
 El mapa de Daniela muestra que la confianza en una respuesta depende de que los distintos equipos comprendan el mismo evento y sus responsabilidades. La dispersión de información aumenta la presión al coordinar una instalación concurrida. Para ResQ, este perfil plantea la necesidad de localizar el riesgo con precisión, facilitar el seguimiento y comunicar la información adecuada a cada rol, sin asumir que una alarma por sí sola resuelve la coordinación.
 
-![Mapa de empatía de Daniela Rojas](../assets/images/chapter-02-requirements-elicitation-analysis/DanielaRojasEmpathy.png)
+![Mapa de empatía de Daniela Rojas](assets/images/chapter-02-requirements-elicitation-analysis/DanielaRojasEmpathy.png)
 
 
 Ambos mapas sugieren que centralizar información aporta valor cuando ayuda a comprender el riesgo y la respuesta. Carlos necesita mantener visibilidad a distancia; Daniela necesita coordinar áreas y zonas distintas. En ambos casos, la confianza en la automatización requiere conocer qué ocurrió y por qué se ejecutó una acción. Las alertas para ocupantes también deben ser comprensibles y considerar a quienes requieren asistencia, sin limitar la comunicación a una sola señal sonora.
