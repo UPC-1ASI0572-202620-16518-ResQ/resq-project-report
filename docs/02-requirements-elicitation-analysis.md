@@ -1263,7 +1263,7 @@ Estos patrones permitirán representar en los User Personas las características
 
 ### 2.3.1. User Personas
 
-Los User Personas representan los dos segmentos objetivo de ResQ: propietarios y administradores de edificaciones, y empresas e instituciones con infraestructura propia. Permiten relacionar las responsabilidades de quienes supervisan la seguridad con sus objetivos, dificultades y condiciones de uso de una solución IoT.
+Los User Personas representan los dos segmentos objetivo de ResQ: propietarios y administradores de edificaciones, y empresas integradoras de automatización y gestión de edificios inteligentes. Permiten relacionar las responsabilidades de cada perfil con sus objetivos, dificultades y condiciones de uso de una solución IoT.
 
 **Segmento objetivo #1: Propietarios y administradores de edificaciones — Carlos Mendoza**
 
@@ -1273,11 +1273,11 @@ Carlos Mendoza, de 37 años, representa al administrador de un edificio residenc
 
 ![User Persona de Carlos Mendoza](../assets/images/chapter-02-requirements-elicitation-analysis/CarlosMendozaUserPerson.png)
 
-**Segmento objetivo #2: Empresas e instituciones con infraestructura propia — Daniela Rojas**
+**Segmento objetivo #2: Empresas integradoras de automatización y gestión de edificios inteligentes — Luis Herrera Campos**
 
-Daniela Rojas, de 34 años, representa a los responsables de seguridad institucional que coordinan varios edificios y equipos de trabajo. Como jefa de Seguridad y Prevención de una universidad, necesita identificar el ambiente afectado y compartir información precisa con seguridad, mantenimiento y brigadistas. Su principal dificultad es reconstruir la situación a partir de fuentes distribuidas mientras protege a una población numerosa. Este perfil orienta a ResQ hacia la supervisión por zonas, la trazabilidad de eventos y la comunicación diferenciada según las responsabilidades de cada usuario.
+Luis Herrera Campos, de 42 años, representa a quienes evalúan e integran tecnologías de automatización en edificios de clientes. Es gerente técnico de una integradora B2B de sistemas BMS y supervisa arquitecturas, selección de equipos, pruebas y puesta en marcha. 
 
-![User Persona de Daniela Rojas](../assets/images/chapter-02-requirements-elicitation-analysis/DanielaRojasUserPerson.png)
+![User Persona de Luis Herrera Campos](../assets\images\chapter-02-requirements-elicitation-analysis\userperson_LuisHerreraCampos.png)
 
 ### 2.3.2. User Task Matrix
 
@@ -1297,25 +1297,24 @@ La User Task Matrix organiza las principales tareas de cada User Persona según 
 | Consultar antecedentes de incidentes por fecha, tipo o zona | Media | Media |
 | Evaluar nuevas alternativas de seguridad y presentarlas a la junta | Baja | Media |
 
-**Segmento objetivo #2: Daniela Rojas — Empresas e instituciones con infraestructura propia**
+**Segmento objetivo #2: Luis Herrera Campos — Empresas integradoras de automatización y gestión de edificios inteligentes**
 
 | Tarea | Frecuencia | Severidad |
 |---|---|---|
-| Revisar reportes e incidentes del campus | Alta | Alta |
-| Localizar el ambiente afectado y comprender el tipo de riesgo | Media | Alta |
-| Coordinar a seguridad, mantenimiento y brigadas según el protocolo | Media | Alta |
-| Evaluar el alcance del incidente y la necesidad de evacuación | Media | Alta |
-| Supervisar la evolución del incidente hasta su control | Media | Alta |
-| Coordinar inspecciones de las zonas e instalaciones | Alta | Alta |
-| Coordinar mantenimientos y simulacros | Media | Alta |
-| Analizar incidentes y tiempos de atención | Media | Media |
-| Evaluar soluciones con infraestructura, TI y compras | Baja | Media |
+| Levantar equipos, planos, comunicaciones, variables y protocolos de cada proyecto | Media | Alta |
+| Revisar diseños y validar la arquitectura de integración | Alta | Alta |
+| Coordinar al equipo técnico y resolver bloqueos de integración | Alta | Alta |
+| Evaluar compatibilidad, documentación y soporte de equipos o soluciones externas | Media | Alta |
+| Seleccionar componentes o proveedores según requisitos técnicos y comerciales | Media | Alta |
+| Configurar dispositivos y verificar señales, datos y comandos en pruebas de oficina | Media | Alta |
+| Validar en campo la integración, conectividad y funcionamiento local | Media | Alta |
+| Documentar la solución, capacitar al cliente y acompañar su aceptación | Media | Alta |
+| Dar seguimiento a fallas, ajustes y mantenimiento después de la entrega | Media | Alta |
 
-La comparación muestra que ambos perfiles asignan una severidad alta a la identificación del riesgo, la coordinación de la respuesta y la verificación de los sistemas de seguridad. Carlos requiere supervisar un edificio incluso cuando se encuentra fuera de él, mientras que Daniela debe coordinar distintas áreas y zonas dentro de una infraestructura extensa. Las tareas de evaluación tecnológica tienen una frecuencia baja porque se realizan de manera ocasional, aunque apoyan la mejora continua de la seguridad.
 
 ### 2.3.3. User Journey Mapping
 
-Los User Journey Maps describen la experiencia actual planteada en los guiones, desde la recepción de una alerta hasta el registro posterior. Se utiliza un recorrido As-Is para distinguir las acciones y canales actuales de las oportunidades propuestas para ResQ. Las emociones son interpretaciones cualitativas del escenario; no representan resultados de una evaluación de satisfacción ni mejoras ya comprobadas.
+Los User Journey Maps describen experiencias actuales planteadas en los guiones. El recorrido del primer segmento sigue la atención de una alerta; el del segundo sigue la evaluación e integración de tecnología en un proyecto de automatización. Ambos son recorridos As-Is que distinguen los canales y problemas actuales de las oportunidades propuestas para ResQ. Las emociones son interpretaciones cualitativas, no mediciones de satisfacción ni mejoras comprobadas.
 
 **Segmento objetivo #1: Carlos Mendoza — Atención de una alerta de humo en el sótano**
 
@@ -1323,16 +1322,16 @@ El recorrido presenta a Carlos fuera del edificio cuando recibe una llamada por 
 
 ![User Journey Map de Carlos Mendoza](../assets/images/chapter-02-requirements-elicitation-analysis/Customerjourneymap1.png)
 
-**Segmento objetivo #2: Daniela Rojas — Atención de una alerta en un laboratorio universitario**
+**Segmento objetivo #2: Luis Herrera Campos — Evaluación e integración de una solución de automatización**
 
-El recorrido de Daniela aborda una alerta de humo asociada con el sobrecalentamiento de un equipo de laboratorio. Su objetivo es identificar el ambiente afectado, coordinar a seguridad y mantenimiento, y dar seguimiento a la respuesta sin generar confusión entre los ocupantes. La dificultad principal consiste en ubicar el laboratorio exacto y reunir información de varias áreas.
+El caso del hotel relatado por Luis muestra un levantamiento de sistemas de distintas generaciones, decisiones sobre compatibilidad y gateways, pruebas en oficina y en campo, aceptación y ajustes posteriores.
 
-![User Journey Map de Daniela Rojas](../assets/images/chapter-02-requirements-elicitation-analysis/Customerjourneymap2.png)
+![User Journey Map de Luis Herrera Campos](../assets\images\chapter-02-requirements-elicitation-analysis\Customerjourneymap2.png)
 
 
 ### 2.3.4. Empathy Mapping
 
-Los mapas de empatía complementan los perfiles y recorridos al relacionar lo que cada responsable necesita hacer con lo que ve, escucha, dice, piensa y siente. Su contenido sintetiza los guiones y explicita interpretaciones de diseño; no representa observaciones de campo realizadas por el equipo. Los bloques de dificultades y beneficios esperados permiten traducir esas perspectivas en necesidades que deberán validarse.
+Los mapas de empatía complementan los perfiles y recorridos al relacionar lo que cada persona necesita hacer con lo que ve, escucha, dice, piensa y siente. Su contenido sintetiza los guiones y explicita interpretaciones de diseño; no representa observaciones de campo realizadas por el equipo. Los bloques de dificultades y beneficios esperados permiten traducir esas perspectivas en necesidades que deberán validarse.
 
 **Segmento objetivo #1: Carlos Mendoza — Propietarios y administradores de edificaciones**
 
@@ -1340,14 +1339,14 @@ El mapa de Carlos refleja la tensión entre su intención de prevenir incidentes
 
 ![Mapa de empatía de Carlos Mendoza](../assets/images/chapter-02-requirements-elicitation-analysis/CarlosMendozaEmpathy.png)
 
-**Segmento objetivo #2: Daniela Rojas — Empresas e instituciones con infraestructura propia**
+**Segmento objetivo #2: Luis Herrera Campos — Empresas integradoras de automatización y gestión de edificios inteligentes**
 
-El mapa de Daniela muestra que la confianza en una respuesta depende de que los distintos equipos comprendan el mismo evento y sus responsabilidades. La dispersión de información aumenta la presión al coordinar una instalación concurrida. Para ResQ, este perfil plantea la necesidad de localizar el riesgo con precisión, facilitar el seguimiento y comunicar la información adecuada a cada rol, sin asumir que una alarma por sí sola resuelve la coordinación.
+El mapa de Luis refleja la tensión entre la promesa de conectar sistemas de un edificio y la evidencia técnica que necesita para comprometer una implementación. 
 
-![Mapa de empatía de Daniela Rojas](../assets/images/chapter-02-requirements-elicitation-analysis/DanielaRojasEmpathy.png)
+![Mapa de empatía de Luis Herrera Campos](../assets\images\chapter-02-requirements-elicitation-analysis\empathymapping2.png)
 
 
-Ambos mapas sugieren que centralizar información aporta valor cuando ayuda a comprender el riesgo y la respuesta. Carlos necesita mantener visibilidad a distancia; Daniela necesita coordinar áreas y zonas distintas. En ambos casos, la confianza en la automatización requiere conocer qué ocurrió y por qué se ejecutó una acción. Las alertas para ocupantes también deben ser comprensibles y considerar a quienes requieren asistencia, sin limitar la comunicación a una sola señal sonora.
+Ambos mapas muestran que la interoperabilidad importa por motivos diferentes. Carlos necesita comprender el riesgo y la respuesta en su edificio; Luis necesita evaluar si la tecnología puede integrarse y mantenerse en proyectos de clientes. Por ello, la evidencia de pruebas, la operación local de funciones críticas y la claridad sobre los límites de integración son esenciales para que una empresa integradora considere incorporar ResQ.
 
 ## 2.4. Big Picture EventStorming
 [INSERTAR DIAGRAMA + EXPLICACIÓN]
