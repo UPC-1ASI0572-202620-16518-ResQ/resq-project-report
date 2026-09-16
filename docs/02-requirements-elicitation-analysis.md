@@ -885,24 +885,24 @@ Sus principales dificultades son los sistemas separados, las falsas alarmas y la
 
 #### Segmento objetivo #2: Empresas e instituciones con infraestructura propia
 
-##### Entrevista 4 — Daniela Alejandra Rojas Medina
+##### Entrevista 4 — Luis Herrera Campos
 
 | Información | Detalle |
 |---|---|
-| Nombres | Daniela Alejandra |
-| Apellidos | Rojas Medina |
-| Edad | 34 años |
-| Género | Femenino |
-| Distrito de residencia | La Molina |
-| Ocupación / Cargo | Jefa de Seguridad y Prevención |
-| Tipo de organización | Universidad privada |
-| Segmento objetivo | Empresas e instituciones con infraestructura propia |
-| Fecha de entrevista | 9/09/2026 |
+| Nombres | Luis |
+| Apellidos | Herrera Campos |
+| Edad | 42 años |
+| Género | Masculino |
+| Distrito de residencia | San Borja |
+| Ocupación / Cargo | Gerente técnico |
+| Tipo de organización | Integradora B2B mediana especializada en automatización y Building Management Systems |
+| Segmento objetivo | Empresas que integran tecnologías de automatización y gestión de edificios |
+| Fecha de entrevista | 15/09/2026 |
 | Inicio en el video | 00:01 |
-| Duración | 13:02 |
-| URL del video | [Daniela Alejandra Rojas Medina](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQDh0EbU73b3SaH_ayMZ75xrAalLpznANe_RgHGcjwdaS4g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=792iP1) |
+| Duración | 17:06 |
+| URL del video | [Luis Herrera Campos](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202222001_upc_edu_pe/IQCNoLaQg5cCQqe-sn_Nu9KNAZiQmSfcgE85DpNm-rRCaeo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Pocrij) |
 
-![Entrevista 4 - Daniela Alejandra Rojas Medina](../assets/images/chapter-02-requirements-elicitation-analysis/interview-04-daniela-rojas.png)
+![Entrevista 4 - Luis Herrera Campos](../assets/images/chapter-02-requirements-elicitation-analysis/entrevistaLuisSegmento2.png)
 
 **Resumen de la entrevista**
 
