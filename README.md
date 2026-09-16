@@ -1173,11 +1173,17 @@ Preguntas complementarias:
 
 ---
 
-#### Segmento objetivo #2: Empresas e instituciones con infraestructura propia
+#### Segmento objetivo #2: Empresas integradoras de automatización y gestión de edificios inteligentes
 
-Las entrevistas dirigidas a este segmento buscan comprender tanto el perfil del responsable entrevistado como el contexto organizacional en el que se desarrollan los procesos de seguridad. Se consideran especialmente la coordinación entre áreas, los protocolos institucionales, la continuidad operativa, las tecnologías utilizadas y el proceso de toma de decisiones frente a situaciones de emergencia.
+Las entrevistas dirigidas a este segmento buscan comprender cómo las empresas especializadas en automatización de edificios, integración IoT y Building Management Systems (BMS) evalúan, integran y mantienen nuevas soluciones tecnológicas dentro de los proyectos que desarrollan para sus clientes.
 
-**Pregunta principal 1: ¿Podría presentarse y contarnos brevemente sobre usted?**
+La investigación considera distintos perfiles que participan en este proceso, como gerentes técnicos, ingenieros de proyectos e integración, responsables de innovación y responsables comerciales. De esta manera, se busca comprender tanto los criterios técnicos de interoperabilidad e implementación como los factores comerciales y organizacionales que influyen en la incorporación de una nueva tecnología al portafolio de una empresa integradora.
+
+Las preguntas se plantean de forma abierta y semiestructurada. Las preguntas principales permiten mantener una estructura comparable entre los participantes, mientras que las preguntas complementarias se utilizan para profundizar en experiencias, comportamientos, criterios de decisión y situaciones reales mencionadas por cada entrevistado.
+
+La entrevista prioriza conocer procesos y experiencias actuales antes de presentar la propuesta de ResQ, con el propósito de evitar inducir respuestas y obtener evidencia sobre necesidades reales del segmento.
+
+**Pregunta principal 1: ¿Podría presentarse y contarnos brevemente sobre usted y su trayectoria profesional?**
 
 Preguntas complementarias:
 
@@ -1187,276 +1193,305 @@ Preguntas complementarias:
 - ¿En qué distrito reside actualmente?
 - ¿Cuál es su estado civil?
 - ¿Cómo está conformada su familia?
+- ¿Cuál es su formación profesional?
+- ¿Cuántos años de experiencia tiene en automatización, IoT, BMS o integración tecnológica?
+- ¿Cómo llegó a desempeñarse en este sector?
 
-**Pregunta principal 2: ¿Cuál es su cargo actual y qué responsabilidades tiene dentro de la organización?**
-
-Preguntas complementarias:
-
-- ¿Cuál es su profesión o formación?
-- ¿A qué área pertenece?
-- ¿Cuánto tiempo lleva desempeñando estas funciones?
-- ¿Cuántos años de experiencia posee?
-- ¿Qué responsabilidades tiene relacionadas con seguridad, operaciones, mantenimiento o infraestructura?
-
-**Pregunta principal 3: ¿Cómo describiría su forma de trabajar y de tomar decisiones?**
+**Pregunta principal 2: ¿Cuál es su cargo actual y qué responsabilidades tiene dentro de la empresa integradora?**
 
 Preguntas complementarias:
 
-- ¿Cómo suele actuar frente a una situación inesperada?
-- ¿Qué importancia tienen los procedimientos para usted?
-- ¿Qué tan importante es contar con información antes de tomar una decisión?
-- ¿Qué habilidades considera fundamentales para su cargo?
-- ¿Qué tan cómodo se siente utilizando nuevas tecnologías?
+- ¿En qué área trabaja?
+- ¿Qué decisiones dependen directamente de usted?
+- ¿Participa en diseño, integración, implementación, gestión de proyectos, evaluación de proveedores o actividades comerciales?
+- ¿Con qué otros perfiles o áreas trabaja habitualmente?
+- ¿En qué etapas de un proyecto suele participar?
 
-**Pregunta principal 4: ¿Podría describir la organización y la infraestructura sobre la cual tiene responsabilidad?**
-
-Preguntas complementarias:
-
-- ¿A qué sector pertenece la organización?
-- ¿Qué tipo de instalaciones posee?
-- ¿Cuántas personas aproximadamente utilizan la infraestructura?
-- ¿Cuántas zonas, edificios o pabellones existen?
-- ¿Cuáles son las áreas críticas?
-- ¿Existen horarios de mayor concurrencia?
-- ¿Qué tipos de usuarios utilizan las instalaciones?
-
-**Pregunta principal 5: ¿Qué áreas y personas participan actualmente en la gestión de seguridad y emergencias?**
+**Pregunta principal 3: ¿Cómo describiría su forma de trabajar y de tomar decisiones cuando aparece un problema técnico o comercial?**
 
 Preguntas complementarias:
 
-- ¿Participa seguridad?
-- ¿Mantenimiento?
-- ¿Operaciones?
-- ¿Infraestructura?
-- ¿Tecnologías de información?
-- ¿Administración?
-- ¿Brigadistas?
-- ¿Cómo se coordinan entre ellas?
-- ¿Quién tiene la responsabilidad principal?
+- ¿Se considera una persona analítica, práctica, preventiva u orientada a procedimientos?
+- ¿Cómo actúa cuando aparece una situación que no había previsto?
+- ¿Qué tan importante es disponer de información antes de tomar una decisión?
+- ¿Cómo maneja situaciones donde existe presión por parte del cliente?
+- ¿Qué habilidades considera fundamentales para realizar correctamente su trabajo?
+- ¿Qué tan cómodo se siente evaluando o utilizando nuevas tecnologías?
 
-**Pregunta principal 6: ¿Qué actividades relacionadas con seguridad realiza usted regularmente?**
+**Pregunta principal 4: ¿Qué tipo de proyectos desarrolla normalmente la empresa y qué tecnologías suelen integrar?**
 
 Preguntas complementarias:
 
-- ¿Revisa incidencias?
-- ¿Supervisa mantenimientos?
-- ¿Participa en inspecciones?
-- ¿Participa en simulacros?
-- ¿Revisa protocolos?
-- ¿Con qué frecuencia realiza estas actividades?
-- ¿Cuáles considera de mayor importancia?
+- ¿Trabajan con edificios corporativos, hoteles, clínicas, instituciones educativas, centros comerciales, industria u otros sectores?
+- ¿Implementan sistemas BMS?
+- ¿Trabajan con HVAC, iluminación, energía, bombas, seguridad u otros subsistemas?
+- ¿Integran sensores y dispositivos IoT?
+- ¿Trabajan con sistemas existentes de diferentes fabricantes?
+- ¿Los proyectos suelen involucrar un edificio o múltiples edificios y sedes?
 
-**Pregunta principal 7: ¿Qué sistemas utiliza actualmente la organización para detectar, monitorear o responder ante situaciones de riesgo?**
-
-Preguntas complementarias:
-
-- ¿Qué sensores o sistemas de detección utilizan?
-- ¿Utilizan CCTV, alarmas o sistemas contra incendios?
-- ¿Existe un centro de control?
-- ¿Los sistemas se encuentran integrados?
-- ¿Pertenecen a diferentes áreas o proveedores?
-- ¿Qué sistemas necesitan supervisión humana?
-
-**Pregunta principal 8: Cuando ocurre una emergencia, ¿cómo se coordina actualmente la respuesta desde que se detecta hasta que el incidente termina?**
+**Pregunta principal 5: ¿Qué actividades realiza usted con mayor frecuencia dentro de estos proyectos?**
 
 Preguntas complementarias:
 
-- ¿Quién recibe inicialmente la alerta?
-- ¿Quién verifica el incidente?
-- ¿Cómo se identifica la zona?
-- ¿Qué áreas intervienen?
-- ¿Cómo se escala la situación?
-- ¿Quién puede ordenar una evacuación?
-- ¿Cómo se comunica la información?
-- ¿Cómo se determina que la emergencia terminó?
-- ¿Quién registra posteriormente el incidente?
+- ¿Realiza levantamientos técnicos?
+- ¿Diseña o revisa arquitecturas?
+- ¿Configura dispositivos o plataformas?
+- ¿Realiza programación o integración?
+- ¿Participa en pruebas y puesta en marcha?
+- ¿Realiza reuniones con clientes o proveedores?
+- ¿Participa en propuestas comerciales?
+- ¿Realiza documentación o capacitación?
+- ¿Con qué frecuencia realiza cada una de estas actividades?
+- ¿Cuáles considera más importantes para que un proyecto sea exitoso?
 
-**Pregunta principal 9: ¿Podría contarnos sobre una emergencia o incidente real que haya tenido que gestionar?**
-
-Preguntas complementarias:
-
-- ¿Qué ocurrió?
-- ¿Cómo fue detectado?
-- ¿Qué hizo primero?
-- ¿Qué personas o áreas intervinieron?
-- ¿Qué ocurrió después?
-- ¿Cuánto tardaron en identificar el problema?
-- ¿Cuánto tardaron en controlarlo?
-- ¿Qué dificultades encontraron?
-- ¿Qué información hizo falta?
-- ¿Cuál fue el resultado?
-
-**Pregunta principal 10: ¿Qué dificultades aparecen cuando diferentes áreas deben responder simultáneamente ante una emergencia?**
+**Pregunta principal 6: Pensando en un proyecto reciente, ¿podría describir el proceso completo que siguieron para incorporar una tecnología nueva desde que apareció la necesidad hasta su puesta en funcionamiento?**
 
 Preguntas complementarias:
 
-- ¿Existen retrasos?
-- ¿Se duplica información?
-- ¿Se pierde información entre áreas?
-- ¿Existen dificultades para saber quién es responsable?
-- ¿Dependen de llamadas, radio o mensajería?
-- ¿Existen plataformas separadas?
+- ¿Cómo apareció la necesidad?
+- ¿Qué hicieron primero?
+- ¿Realizaron un levantamiento de la infraestructura existente?
+- ¿Qué información necesitaron recopilar?
+- ¿Cómo evaluaron las posibles alternativas?
+- ¿Quiénes participaron en la decisión?
+- ¿Realizaron pruebas o pilotos antes de implementar?
+- ¿Cómo fue la instalación y configuración?
+- ¿Qué criterios utilizaron para aceptar finalmente la integración?
+- ¿Qué ocurrió después de entregar el proyecto?
+- ¿Existe una etapa posterior de soporte o ajustes?
 
-**Pregunta principal 11: ¿Qué información considera indispensable para tomar decisiones durante una emergencia?**
-
-Preguntas complementarias:
-
-- ¿Ubicación exacta?
-- ¿Tipo y gravedad del riesgo?
-- ¿Cantidad de personas afectadas?
-- ¿Evolución del incidente?
-- ¿Servicios o áreas afectadas?
-- ¿Estado de las rutas de evacuación?
-- ¿Quién está atendiendo el incidente?
-
-**Pregunta principal 12: ¿Cómo reciben actualmente las alertas y comunicaciones importantes?**
+**Pregunta principal 7: ¿En qué etapas de ese proceso suelen aparecer las mayores dificultades o incertidumbres?**
 
 Preguntas complementarias:
 
-- ¿Utilizan llamadas?
-- ¿Radio?
-- ¿WhatsApp?
-- ¿Correo?
-- ¿Microsoft Teams u otras plataformas?
-- ¿Notificaciones móviles?
-- ¿Paneles o centros de control?
-- ¿Cuál considera el canal más apropiado para una emergencia crítica?
+- ¿Los problemas aparecen durante el levantamiento, diseño, selección de equipos, integración, pruebas o puesta en marcha?
+- ¿Ha ocurrido que una tecnología se comporte de manera diferente a lo indicado por el fabricante?
+- ¿Han aparecido incompatibilidades que no habían sido previstas?
+- ¿Qué consecuencias generan estos problemas sobre el proyecto?
+- ¿Generan horas adicionales de ingeniería?
+- ¿Pueden afectar el presupuesto o el cronograma?
+- ¿Cómo suele sentirse cuando estos problemas aparecen durante una implementación?
+- ¿Qué situación le genera mayor preocupación?
 
-**Pregunta principal 13: ¿Qué dispositivos y herramientas tecnológicas utiliza habitualmente en su trabajo?**
+**Pregunta principal 8: ¿Con qué tecnologías, protocolos o mecanismos de integración trabajan con mayor frecuencia?**
 
 Preguntas complementarias:
 
-- ¿Utiliza laptop, computadora de escritorio, smartphone o tablet?
-- ¿Cuál utiliza con mayor frecuencia?
+- ¿Utilizan BACnet?
+- ¿Modbus?
+- ¿MQTT?
+- ¿HTTP?
+- ¿APIs REST?
+- ¿Otros protocolos o tecnologías?
+- ¿En qué situaciones utilizan cada uno?
+- ¿Qué ocurre cuando un equipo utiliza un protocolo diferente?
+- ¿Utilizan gateways o capas intermedias de integración?
+
+**Pregunta principal 9: ¿Qué dificultades encuentran al integrar equipos o plataformas de diferentes fabricantes?**
+
+Preguntas complementarias:
+
+- ¿Los sistemas suelen ser realmente abiertos?
+- ¿Han encontrado restricciones de licenciamiento?
+- ¿Existen variables o funciones que no puedan accederse?
+- ¿Qué ocurre cuando un sistema no cuenta con una API o protocolo utilizable?
+- ¿Han tenido que desarrollar adaptadores o capas intermedias?
+- ¿Qué tan frecuente es encontrar documentación incompleta?
+- ¿Qué problemas generan los ecosistemas cerrados?
+
+**Pregunta principal 10: Cuando evalúa técnicamente una nueva solución, ¿qué información y capacidades necesita encontrar para poder integrarla?**
+
+Preguntas complementarias:
+
+- ¿Qué importancia tiene la documentación técnica?
+- ¿Necesita APIs o protocolos abiertos?
+- ¿Qué espera encontrar en la documentación de una API?
+- ¿Necesita ejemplos de solicitudes y respuestas?
+- ¿Es importante conocer la autenticación y los posibles errores?
+- ¿Necesita información sobre eventos o notificaciones?
+- ¿Qué importancia tiene poder realizar pruebas antes de una implementación?
+- ¿Qué importancia tienen los logs y herramientas de diagnóstico?
+- ¿Qué características le hacen confiar técnicamente en una solución?
+- ¿Qué características provocarían que la descarte?
+
+**Pregunta principal 11: ¿Qué tan importante es identificar claramente de qué dispositivo, zona o edificio proviene cada medición, alerta o evento?**
+
+Preguntas complementarias:
+
+- ¿Ha trabajado en proyectos donde la información no estuviera correctamente asociada con una zona o dispositivo?
+- ¿Qué problemas generó?
+- ¿Cómo organizan normalmente dispositivos y puntos de monitoreo?
+- ¿Cómo diferencian instalaciones, edificios, pisos o ambientes?
+- ¿Qué información debería acompañar una alerta para que resulte útil para un operador o integrador?
+
+**Pregunta principal 12: En proyectos de automatización y seguridad, ¿qué nivel de integración observa actualmente entre los distintos sistemas de un edificio?**
+
+Preguntas complementarias:
+
+- ¿El BMS, los sistemas contra incendios, CCTV, control de acceso y otros sistemas suelen funcionar de manera integrada o independiente?
+- ¿Los clientes solicitan cada vez mayor centralización?
+- ¿Ha participado en algún proyecto donde la separación entre sistemas generara dificultades?
+- ¿Qué consecuencias tiene para los operadores utilizar diferentes plataformas?
+- ¿Qué tipos de información suelen intentar centralizar?
+
+**Pregunta principal 13: ¿Qué ocurre con las soluciones que implementan cuando se pierde temporalmente la conexión a Internet?**
+
+Preguntas complementarias:
+
+- ¿Qué funcionalidades deben continuar funcionando localmente?
+- ¿La lectura de sensores debería continuar disponible?
+- ¿Qué acciones críticas no deberían depender de Internet?
+- ¿Qué ocurre con alarmas, ventilación, bombas u otros actuadores?
+- ¿Qué información puede almacenarse temporalmente?
+- ¿Cómo manejan la sincronización cuando se restablece la conexión?
+- ¿Qué funcionalidades considera aceptable mantener únicamente en la nube?
+
+**Pregunta principal 14: Cuando un cliente necesita una funcionalidad que su empresa no desarrolla directamente, ¿cómo deciden entre desarrollarla internamente o integrar una solución de terceros?**
+
+Preguntas complementarias:
+
+- ¿Qué criterios utilizan para tomar esa decisión?
+- ¿Evalúan si la funcionalidad pertenece al core del negocio?
+- ¿Qué ventajas encuentran en trabajar con una solución especializada?
+- ¿Qué responsabilidades adicionales implica desarrollar una solución internamente?
+- ¿Qué características debe tener una solución externa para que consideren integrarla?
+- ¿Qué factores harían que la descarten?
+
+**Pregunta principal 15: ¿Cómo evalúan y seleccionan nuevos fabricantes, proveedores o socios tecnológicos?**
+
+Preguntas complementarias:
+
+- ¿Quién identifica inicialmente una posible solución?
+- ¿Quién realiza la evaluación técnica?
+- ¿Quién participa en la evaluación comercial?
+- ¿Realizan demostraciones, pruebas de concepto o pilotos?
+- ¿Qué importancia tienen las referencias de otros proyectos?
+- ¿Qué importancia tienen el precio y el modelo comercial?
+- ¿Qué importancia tienen el soporte y la capacitación?
+- ¿Qué importancia tiene la experiencia previa con el fabricante?
+- ¿Qué importancia tiene la disponibilidad del producto y de repuestos?
+- ¿Quién toma finalmente la decisión?
+
+**Pregunta principal 16: ¿Qué factores generan confianza o desconfianza cuando trabajan con un proveedor tecnológico nuevo?**
+
+Preguntas complementarias:
+
+- ¿Una marca reconocida influye en la decisión?
+- ¿Qué importancia tienen los casos reales de implementación?
+- ¿Qué importancia tiene un piloto funcionando?
+- ¿Qué tan importante es la velocidad de respuesta del soporte?
+- ¿Qué sucede si un proveedor deja de brindar soporte después de la implementación?
+- ¿Qué espera de la relación con un proveedor a largo plazo?
+- ¿Prefieren proveedores puntuales o socios tecnológicos?
+- ¿Qué riesgos asume la integradora frente a su propio cliente cuando incorpora un producto externo?
+
+**Pregunta principal 17: ¿Qué dispositivos, herramientas y canales digitales utiliza habitualmente para realizar su trabajo?**
+
+Preguntas complementarias:
+
+- ¿Utiliza principalmente laptop, computadora de escritorio, smartphone o tablet?
+- ¿Cuál utiliza con mayor frecuencia para actividades técnicas?
+- ¿Cuál utiliza para coordinación?
 - ¿Qué sistema operativo utiliza?
-- ¿Qué dispositivo utiliza cuando se encuentra fuera de las instalaciones?
-- ¿Qué software o servicios digitales utiliza regularmente?
+- ¿Qué navegador web utiliza habitualmente?
+- ¿Utiliza Microsoft Teams?
+- ¿WhatsApp?
+- ¿Correo electrónico?
+- ¿LinkedIn?
+- ¿Qué herramientas técnicas utiliza, como Postman, Visual Studio Code, herramientas MQTT, software BMS o herramientas de fabricantes?
 
-**Pregunta principal 14: ¿Qué navegador web utiliza normalmente?**
-
-Preguntas complementarias:
-
-- ¿Qué navegador utiliza en su computadora?
-- ¿Qué navegador utiliza en su smartphone?
-- ¿Utiliza diferentes navegadores dependiendo de la plataforma?
-
-**Pregunta principal 15: ¿Cómo registran y consultan los incidentes dentro de la organización?**
+**Pregunta principal 18: Cuando necesita investigar una tecnología nueva, ¿qué fuentes, marcas o personas influyen en su decisión?**
 
 Preguntas complementarias:
 
-- ¿Dónde se almacena la información?
-- ¿Quién registra los incidentes?
-- ¿Qué información se conserva?
-- ¿Cómo se consulta posteriormente?
-- ¿Qué criterios utilizan para buscar incidentes anteriores?
-- ¿Quién tiene acceso al historial?
+- ¿Consulta primero documentación oficial?
+- ¿Utiliza GitHub, Stack Overflow, YouTube o foros especializados?
+- ¿Consulta a otros ingenieros o integradores?
+- ¿Influyen distribuidores o fabricantes con los que ya trabajan?
+- ¿Participa en ferias o eventos del sector?
+- ¿Utiliza LinkedIn para conocer nuevas tecnologías?
+- ¿Qué fabricantes conoce o utiliza habitualmente?
+- ¿Qué pesa más en su evaluación: la reputación de la marca, la documentación, el soporte, una demostración o una recomendación?
 
-**Pregunta principal 16: ¿Qué indicadores o reportes utiliza la organización para evaluar la gestión de seguridad?**
-
-Preguntas complementarias:
-
-- ¿Incidentes por tipo o zona?
-- ¿Tiempo de detección?
-- ¿Tiempo de respuesta?
-- ¿Falsas alarmas?
-- ¿Disponibilidad de equipos?
-- ¿Mantenimientos?
-- ¿Cumplimiento de protocolos?
-- ¿Qué información adicional les gustaría medir?
-
-**Pregunta principal 17: ¿Qué impacto puede tener una emergencia sobre la continuidad de las operaciones?**
+**Pregunta principal 19: ¿Cuáles son sus principales objetivos profesionales cuando incorpora una nueva tecnología dentro de un proyecto?**
 
 Preguntas complementarias:
 
-- ¿Qué servicios o áreas no pueden detenerse?
-- ¿Qué ocurre si se pierde Internet?
-- ¿Qué ocurre si se pierde el suministro eléctrico?
-- ¿Existen sistemas de respaldo?
-- ¿Existen procedimientos alternativos?
+- ¿Busca principalmente confiabilidad?
+- ¿Facilidad de integración?
+- ¿Reducir tiempos de implementación?
+- ¿Facilidad de operación para el cliente?
+- ¿Facilidad de mantenimiento?
+- ¿Escalabilidad?
+- ¿Poder reutilizar la solución en futuros proyectos?
+- ¿Qué resultado considera una implementación exitosa?
 
-**Pregunta principal 18: ¿Qué opinión tiene sobre la automatización de determinadas respuestas frente a una emergencia?**
-
-Preguntas complementarias:
-
-- ¿Qué acciones podrían automatizarse?
-- ¿Qué acciones requerirían confirmación?
-- ¿Qué acciones no deberían ejecutarse automáticamente?
-- ¿Qué condiciones serían necesarias para confiar en una respuesta automática?
-- ¿Considera necesario mantener mecanismos manuales de respaldo?
-
-**Pregunta principal 19: ¿Cómo se administran los accesos y permisos relacionados con la información de seguridad?**
+**Pregunta principal 20: ¿Cuáles son las principales frustraciones o preocupaciones que experimenta al evaluar e integrar nuevas soluciones?**
 
 Preguntas complementarias:
 
-- ¿Qué áreas necesitan consultar información?
-- ¿Quién puede modificar configuraciones?
-- ¿Quién puede ejecutar acciones?
-- ¿Qué información considera confidencial?
-- ¿Es importante conocer quién realizó determinada acción?
+- ¿Documentación incompleta?
+- ¿Incompatibilidades?
+- ¿Sistemas cerrados?
+- ¿Problemas que aparecen únicamente durante la instalación en campo?
+- ¿Dependencia excesiva del proveedor?
+- ¿Falta de soporte?
+- ¿Dificultad para mantener la solución después de algunos años?
+- ¿Qué situación le genera mayor presión?
+- ¿Qué aspecto le produce mayor satisfacción cuando una integración funciona correctamente?
 
-**Pregunta principal 20: ¿Cómo se evalúa y aprueba la incorporación de una nueva tecnología de seguridad en la organización?**
-
-Preguntas complementarias:
-
-- ¿Quién identifica la necesidad?
-- ¿Quién evalúa la solución?
-- ¿Participan seguridad, infraestructura o tecnologías de información?
-- ¿Participa el área de compras?
-- ¿Quién aprueba el presupuesto?
-- ¿Qué importancia tienen la integración, escalabilidad, soporte, seguridad y costo?
-- ¿Qué barreras dificultan incorporar nuevas tecnologías?
-
-**Pregunta principal 21: ¿Qué marcas, proveedores o soluciones relacionadas con seguridad conoce o utiliza?**
+**Pregunta principal 21: ¿Qué importancia tienen el mantenimiento y la evolución de una solución después de que el proyecto ya fue entregado?**
 
 Preguntas complementarias:
 
-- ¿Qué proveedores le generan mayor confianza?
-- ¿Qué factores influyen en esa confianza?
-- ¿Qué personas o fuentes influyen en las decisiones?
-- ¿Influyen las normas, auditorías o consultores?
-- ¿Consideran experiencias de otras organizaciones similares?
+- ¿Quién suele encargarse de mantener las integraciones?
+- ¿Qué ocurre cuando cambian versiones de plataformas o dispositivos?
+- ¿Cómo manejan actualizaciones?
+- ¿Qué tan importante es mantener compatibilidad con sistemas existentes?
+- ¿Qué problemas aparecen después de uno, dos o más años?
+- ¿Qué espera de un proveedor durante el ciclo de vida de la solución?
 
-**Pregunta principal 22: ¿Qué necesidades particulares deben considerarse debido a los diferentes tipos de personas que utilizan las instalaciones?**
-
-Preguntas complementarias:
-
-- ¿Existen personas con movilidad reducida?
-- ¿Personas con discapacidad visual o auditiva?
-- ¿Adultos mayores?
-- ¿Niños?
-- ¿Pacientes, estudiantes o visitantes?
-- ¿Personas que no conocen las instalaciones?
-- ¿Cómo se comunican actualmente las indicaciones de emergencia?
-- ¿Cómo se orienta a estas personas durante una evacuación?
-
-**Pregunta principal 23: ¿En qué idioma considera que deberían presentarse las indicaciones y sistemas utilizados por el personal?**
+**Pregunta principal 22: ¿Qué importancia tiene la escalabilidad cuando evalúan una tecnología que podría incorporarse a su portafolio?**
 
 Preguntas complementarias:
 
-- ¿Utilizan actualmente sistemas en español?
-- ¿Utilizan sistemas en inglés?
-- ¿Existen usuarios para quienes el idioma pueda dificultar la comprensión?
+- ¿Debe funcionar tanto en instalaciones pequeñas como grandes?
+- ¿Debe soportar múltiples edificios?
+- ¿Debe poder utilizarse para diferentes clientes?
+- ¿Qué características técnicas evalúan para determinar si una solución puede escalar?
+- ¿Qué limitaciones impedirían incorporarla en proyectos de mayor tamaño?
 
-**Pregunta principal 24: ¿Qué términos utilizan habitualmente dentro de la organización para referirse a los eventos, personas y acciones relacionadas con emergencias?**
-
-Preguntas complementarias:
-
-- ¿Cómo denominan una alerta o incidente?
-- ¿Cómo denominan los distintos niveles de emergencia?
-- ¿Qué términos utilizan para las áreas responsables?
-- ¿Qué términos utilizan para el escalamiento, evacuación o cierre de un incidente?
-
-**Pregunta principal 25: ¿Cuáles considera que son actualmente los principales problemas relacionados con la gestión de emergencias en la organización?**
+**Pregunta principal 23: Desde su experiencia, ¿qué cambios o necesidades observa actualmente en el mercado de automatización y edificios inteligentes?**
 
 Preguntas complementarias:
 
-- ¿Cuáles son los tres problemas más importantes?
-- ¿Cuál debería resolverse primero?
-- ¿Cuál genera mayor impacto sobre las personas o las operaciones?
-- ¿Qué resultado espera conseguir al mejorar la gestión de emergencias?
-- ¿Qué le generaría mayor confianza o tranquilidad?
+- ¿Existe mayor interés por centralizar información?
+- ¿Ha aumentado la necesidad de monitoreo remoto?
+- ¿Existe mayor interés en IoT?
+- ¿Qué importancia está adquiriendo la analítica?
+- ¿Qué solicitan actualmente los clientes respecto a interoperabilidad?
+- ¿Qué oportunidades observa para nuevas soluciones especializadas?
 
-**Pregunta principal 26: Si tuviera que resumir en una frase cuál considera que debería ser el principio más importante al gestionar una emergencia dentro de su organización, ¿qué diría?**
+**Pregunta principal 24: Si pudiera mejorar un solo aspecto de las tecnologías o soluciones que actualmente integra, ¿qué cambiaría y por qué?**
+
+Preguntas complementarias:
+
+- ¿Mejoraría la interoperabilidad?
+- ¿La documentación?
+- ¿La estandarización?
+- ¿El soporte?
+- ¿La facilidad de configuración?
+- ¿El mantenimiento?
+- ¿La escalabilidad?
+- ¿Qué impacto tendría esa mejora sobre su trabajo y sobre los proyectos que realizan?
+
+**Pregunta principal 25: ¿Hay algún aspecto importante sobre automatización, IoT, integración de sistemas o relación con proveedores que considere relevante y que no hayamos abordado?**
+
+Preguntas complementarias:
+
+- ¿Existe algún problema recurrente que no hayamos mencionado?
+- ¿Hay alguna necesidad que actualmente no esté siendo atendida?
+- ¿Qué recomendaría considerar al desarrollar una solución que deba integrarse con sistemas existentes?
 
 ### 2.2.2. Registro de entrevistas
 
@@ -1616,379 +1651,296 @@ Sus principales dificultades son los sistemas separados, las falsas alarmas y la
 
 #### Segmento objetivo #2: Empresas e instituciones con infraestructura propia
 
-##### Entrevista 4 — Daniela Alejandra Rojas Medina
+##### Entrevista 4 — Luis Herrera Campos
 
 | Información | Detalle |
 |---|---|
-| Nombres | Daniela Alejandra |
-| Apellidos | Rojas Medina |
-| Edad | 34 años |
-| Género | Femenino |
-| Distrito de residencia | La Molina |
-| Ocupación / Cargo | Jefa de Seguridad y Prevención |
-| Tipo de organización | Universidad privada |
-| Segmento objetivo | Empresas e instituciones con infraestructura propia |
-| Fecha de entrevista | 9/09/2026 |
-| Inicio en el video | 00:01 |
-| Duración | 13:02 |
-| URL del video | [Daniela Alejandra Rojas Medina](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQDh0EbU73b3SaH_ayMZ75xrAalLpznANe_RgHGcjwdaS4g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=792iP1) |
-
-![Entrevista 4 - Daniela Alejandra Rojas Medina](assets/images/chapter-02-requirements-elicitation-analysis/interview-04-daniela-rojas.png)
-
-**Resumen de la entrevista**
-
-Daniela Alejandra Rojas Medina tiene 34 años y reside en La Molina. Es casada y no tiene hijos. Es ingeniera industrial, cuenta con especialización en seguridad y salud ocupacional y posee aproximadamente ocho años de experiencia profesional. Actualmente se desempeña como Jefa de Seguridad y Prevención en una universidad privada.
-
-Se describe como una persona planificada, pero capaz de tomar decisiones rápidamente cuando ocurre una emergencia. Valora especialmente el uso de protocolos, indicadores y evidencia. Entre sus principales habilidades se encuentran gestión de riesgos, liderazgo, comunicación, coordinación, análisis de incidentes y capacitación.
-
-Supervisa un campus universitario compuesto por pabellones académicos, laboratorios, estacionamientos, cafeterías, áreas administrativas y espacios de alta circulación. En horas de mayor concurrencia, la instalación puede recibir más de seis mil personas. Considera que la diversidad de edificios, la cantidad de usuarios y la presencia permanente de estudiantes y visitantes incrementan la complejidad de la gestión de emergencias.
-
-Entre sus tareas habituales se encuentran supervisión de incidentes, revisión diaria de reportes, simulacros, capacitación, coordinación con mantenimiento, análisis de riesgos y revisión de protocolos. Considera especialmente importantes la prevención, respuesta inicial y coordinación entre áreas.
-
-La universidad utiliza CCTV, control de acceso, sistemas contra incendios, alarmas, comunicaciones internas y diferentes sensores. La información está parcialmente centralizada en un centro de monitoreo, aunque determinados sistemas pertenecen a mantenimiento o infraestructura.
-
-Como incidente representativo relató un caso de humo producido por el sobrecalentamiento de un equipo en un laboratorio. La situación comenzó con el reporte de un usuario y una alerta recibida por seguridad. Posteriormente se aisló el área, se verificó el laboratorio, mantenimiento interrumpió la alimentación del equipo y se evacuó temporalmente a las personas cercanas. La identificación precisa de la zona tomó aproximadamente seis minutos.
-
-La principal dificultad fue determinar rápidamente cuál de los laboratorios generaba el problema. Durante la emergencia experimentó un estado de alerta y preocupación por controlar la situación sin generar pánico innecesario.
-
-Considera indispensable conocer la zona exacta, tipo de riesgo, cantidad aproximada de personas, estado de evacuación y evolución del incidente.
-
-Utiliza una laptop Dell con Windows y un Samsung Galaxy con Android. Microsoft Edge es su navegador en la computadora corporativa y Google Chrome en el smartphone. Sus principales herramientas son Microsoft Teams, Outlook, Excel, SharePoint, WhatsApp y distintas plataformas internas.
-
-Considera apropiado recibir alertas críticas mediante notificaciones push en el smartphone y simultáneamente dentro del centro de control.
-
-Los incidentes son registrados digitalmente en un sistema interno. Entre las métricas analizadas se encuentran incidentes por tipo y sede, tiempos de atención, mantenimientos y cumplimiento de simulacros. Considera que sería útil medir con mayor precisión el tiempo entre detección, confirmación y respuesta, además de las falsas alarmas por zona.
-
-Considera obligatorio que los sistemas críticos continúen operando localmente ante la pérdida de Internet y que dispongan de respaldo energético. Se muestra favorable a automatizar notificaciones, alarmas, registro de eventos y determinadas señalizaciones, mientras que acciones con gran impacto operativo deberían requerir validación adicional.
-
-La incorporación de nuevas tecnologías involucra a seguridad, infraestructura, tecnologías de información y compras. Los criterios principales son confiabilidad, escalabilidad, soporte, integración, seguridad de la información y costo. Reconoce marcas como Honeywell, Bosch e Hikvision, y sus decisiones son influenciadas por normativa, auditorías, consultores, experiencias de otras universidades y proveedores.
-
-Identifica también necesidades particulares para estudiantes con movilidad reducida o discapacidades visuales y auditivas, por lo que considera inadecuado depender de un único tipo de alerta.
-
-Sus prioridades son detección temprana, coordinación entre áreas e información precisa por zona. Resume su visión mediante la frase: **“En un campus grande, detectar una emergencia no basta; todos deben saber qué está pasando y qué les corresponde hacer.”**
-
----
-
-##### Entrevista 5 — Miguel Ángel Torres Castillo
-
-| Información | Detalle |
-|---|---|
-| Nombres | Carlos Andres |
-| Apellidos | Coca Lavado |
-| Edad | 24 años |
+| Nombres | Luis |
+| Apellidos | Herrera Campos |
+| Edad | 42 años |
 | Género | Masculino |
-| Distrito de residencia | San Isidro |
-| Ocupación / Cargo | Jefe de Operaciones |
-| Tipo de organización | Clínica privada |
-| Segmento objetivo | Empresas e instituciones con infraestructura propia |
-| Fecha de entrevista | 9/09/2026 |
-| Inicio en el video | 00:03 |
-| Duración | 09:20 |
-| URL del video | [Carlos Andres Coca Lavado](https://upcedupe-my.sharepoint.com/personal/u202320442_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202320442%5Fupc%5Fedu%5Fpe%2FDocuments%2FEntrevistas%20%2D%20IoT%20%2D%20Grupo%203%20%2D%2016518%2FEntrevista%202%2DSegmento2%2DIoT%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2Eceddbbe0%2De5e0%2D4f0d%2D97bc%2D29873327ecec) |
-
-![Entrevista 5 - Carlos Andres Coca Lavado](assets/images/chapter-02-requirements-elicitation-analysis/Entrevista5-Carlos-Andres-Coca-Lavado.png)
-
-**Resumen de la entrevista**
-
-Carlos Andres Coca Lavado tiene 24 años, reside en San Isidro, está casado y tiene dos hijos. Es ingeniero industrial y trabaja como Jefe de Operaciones de una clínica privada. Cuenta con experiencia en operaciones y gestión dentro del sector salud.
-
-Se considera una persona orientada a procedimientos y continuidad operativa. Entre sus principales habilidades se encuentran gestión de crisis, coordinación, priorización, mantenimiento y análisis de riesgos.
-
-La clínica posee ocho pisos con áreas de emergencia, hospitalización, consultorios, laboratorio, estacionamiento y zonas técnicas. Durante el día existe una elevada circulación de pacientes, visitantes y trabajadores. Señala como característica particular del sector salud que determinados pacientes dependen de equipos médicos o no pueden evacuar por cuenta propia.
-
-Entre sus actividades habituales se encuentran revisión de eventos, coordinación de mantenimiento, aseguramiento de continuidad de servicios críticos, participación en simulacros y validación de planes de contingencia.
-
-Actualmente utilizan CCTV, sistemas contra incendios, alarmas, control de acceso, monitoreo energético y otros sistemas técnicos. Algunos se encuentran integrados, mientras que otros operan de manera independiente.
-
-Como incidente real relató la aparición de olor a quemado en un tablero eléctrico ubicado cerca de un área de atención al público. La situación fue reportada inicialmente por personal del área. Posteriormente mantenimiento y seguridad verificaron la zona, aislaron el tablero y redistribuyeron temporalmente determinadas operaciones. El evento fue controlado aproximadamente quince minutos después.
-
-Su principal dificultad fue determinar con rapidez el alcance real de la situación evitando que una acción preventiva afectara servicios más críticos. La situación le generó preocupación y presión por tomar decisiones correctas.
-
-Considera indispensable contar con información sobre ubicación, origen, impacto potencial y servicios dependientes del área afectada.
-
-Utiliza una laptop Lenovo con Windows y un iPhone. Google Chrome es su navegador habitual en la computadora y Safari en el smartphone. Utiliza Microsoft 365, Microsoft Teams, correo electrónico, Excel, plataformas de mantenimiento y sistemas internos de la clínica.
-
-Para situaciones críticas prefiere las llamadas telefónicas, complementadas con notificaciones digitales para el seguimiento. Considera que actualmente puede duplicarse o perderse información al utilizar simultáneamente llamadas, correo electrónico, Teams y mensajería.
-
-Los incidentes son registrados mediante un sistema interno y reportes de operaciones. La búsqueda histórica se realiza principalmente mediante fecha, área y tipo de evento. Entre los indicadores revisados se encuentran disponibilidad de servicios, número de incidentes, tiempos de atención y mantenimientos. Le interesaría poder medir el tiempo de detección antes de que una persona deba reportar manualmente un problema.
-
-Considera indispensable que los sistemas críticos continúen operando sin Internet y que las áreas esenciales dispongan de respaldo energético. Se muestra favorable a utilizar automatización para detectar, alertar y ejecutar determinadas acciones preventivas, aunque considera que una evacuación de pacientes críticos siempre requiere coordinación humana.
-
-Los accesos deberían diferenciarse entre operadores, mantenimiento, seguridad y administración. Para la adquisición de nuevas tecnologías participan operaciones, tecnologías de información, mantenimiento, compras y dirección. Los principales criterios son confiabilidad, continuidad, soporte, integración, seguridad y costo de mantenimiento.
-
-Reconoce marcas como Siemens, Schneider Electric y Bosch. Sus decisiones son influenciadas por normativa del sector salud, especialistas, proveedores, auditorías y experiencias de otras clínicas.
-
-Considera especialmente importantes las necesidades de pacientes con movilidad reducida, pacientes sedados, adultos mayores, visitantes y personas con dificultades visuales o auditivas. Su principal frustración es contar con múltiples tecnologías y continuar dependiendo de cadenas de llamadas para comprender la situación.
-
-Resume su perspectiva mediante la frase: **“En una clínica, responder rápido importa, pero responder correctamente importa todavía más.”**
-
----
-
-##### Entrevista 6 — Andrea Lucía Cárdenas Vega
-
-| Información | Detalle |
-|---|---|
-| Nombres | Andrea Lucía |
-| Apellidos | Cárdenas Vega |
-| Edad | 39 años |
-| Género | Femenino |
-| Distrito de residencia | Pueblo Libre |
-| Ocupación / Cargo | Gerente de Infraestructura |
-| Tipo de organización | Centro comercial |
-| Segmento objetivo | Empresas e instituciones con infraestructura propia |
+| Distrito de residencia | San Borja |
+| Ocupación / Cargo | Gerente técnico |
+| Tipo de organización | Empresa integradora B2B mediana especializada en automatización y Building Management Systems (BMS) |
+| Segmento objetivo | Empresas integradoras de automatización y gestión de edificios inteligentes |
 | Fecha de entrevista | [COMPLETAR] |
 | Inicio en el video | [COMPLETAR - hh:mm:ss] |
 | Duración | [COMPLETAR - mm:ss] |
 | URL del video | [COMPLETAR] |
 
-![Entrevista 6 - Andrea Lucía Cárdenas Vega](assets/images/chapter-02-requirements-elicitation-analysis/interview-06-andrea-cardenas.png)
+![Entrevista 4 - Luis Herrera Campos](assets/images/chapter-02-requirements-elicitation-analysis/interview-04-luis-herrera.png)
 
 **Resumen de la entrevista**
 
-Andrea Lucía Cárdenas Vega tiene 39 años, reside en Pueblo Libre, es divorciada y tiene una hija. Es ingeniera civil y trabaja como Gerente de Infraestructura de un centro comercial. Cuenta con experiencia en gestión de infraestructura y varios años específicamente en centros comerciales.
+Luis Herrera Campos tiene 42 años, reside en San Borja, es casado y vive con su esposa y sus dos hijos. Es ingeniero electrónico, cuenta con especializaciones en automatización y control y posee aproximadamente quince años de experiencia en el sector. Inició su trayectoria como ingeniero de automatización, posteriormente asumió funciones relacionadas con gestión de proyectos y actualmente se desempeña como gerente técnico de una empresa integradora B2B especializada en automatización y Building Management Systems.
 
-Se describe como una persona práctica, orientada a resultados y con preferencia por disponer de información antes de tomar decisiones, aunque reconoce que durante una emergencia no siempre es posible contar con todos los datos. Entre sus principales habilidades se encuentran coordinación de equipos, gestión de proveedores, análisis de riesgos, planificación y manejo de situaciones críticas.
+Dentro de la organización supervisa el diseño de las soluciones implementadas, las arquitecturas de integración, la selección de equipos y las actividades de puesta en marcha. También brinda soporte al equipo comercial cuando una propuesta requiere sustento técnico especializado. Considera fundamentales las habilidades relacionadas con integración de sistemas, resolución de problemas, gestión de proyectos y comunicación con perfiles técnicos, comerciales y representantes del cliente.
 
-La infraestructura que administra cuenta con varios niveles comerciales, estacionamientos, patio de comidas, salas técnicas y áreas de servicio. Durante fines de semana puede recibir decenas de miles de visitantes. Considera que la elevada concurrencia y el desconocimiento de los protocolos por parte de los visitantes aumentan significativamente la complejidad de una evacuación.
+Se describe como una persona analítica frente a problemas técnicos. Prefiere comprender primero la causa de una falla antes de realizar modificaciones, aunque reconoce que durante una puesta en marcha también debe tomar decisiones rápidamente debido a la presión de los clientes y los plazos establecidos.
 
-Entre sus tareas habituales se encuentran revisión de incidencias, supervisión de mantenimiento, coordinación con seguridad, evaluación de proveedores y seguimiento de infraestructura crítica.
+La empresa desarrolla principalmente proyectos de automatización de edificios e integra sistemas relacionados con HVAC, iluminación, energía, bombas, seguridad y plataformas BMS. Entre sus actividades más frecuentes se encuentran la coordinación y revisión técnica, que realiza prácticamente todos los días; las reuniones con clientes, varias veces por semana; y la selección de equipos durante las etapas de diseño. La puesta en marcha se realiza con menor frecuencia debido a que corresponde a una etapa específica de cada proyecto.
 
-El centro comercial utiliza CCTV, sistemas de detección contra incendios, alarmas, rociadores, control de acceso interno, monitoreo de áreas técnicas y sistemas de ventilación. Existe una central de operaciones, aunque todavía deben utilizarse diferentes plataformas.
+Considera que las actividades más importantes para asegurar el éxito de un proyecto son definir correctamente la arquitectura desde las primeras etapas y ejecutar pruebas adecuadas. Señala que un error de diseño inicial puede mantenerse durante el resto del proyecto y generar mayores dificultades posteriormente.
 
-Como experiencia de emergencia relató un incidente de humo proveniente de un establecimiento del patio de comidas. La situación fue detectada mediante una alarma y un reporte de seguridad. El personal verificó la zona, aisló el área cercana, se interrumpió el funcionamiento de equipos del establecimiento y se evaluó la necesidad de realizar una evacuación mayor. El incidente fue controlado aproximadamente ocho minutos después.
+Como experiencia reciente describió un proyecto de modernización del sistema de gestión de un hotel que contaba con equipos pertenecientes a diferentes generaciones y necesitaba centralizar su información. El proceso comenzó mediante un levantamiento de equipos, tableros, planos, comunicaciones y protocolos existentes. Posteriormente se elaboró una arquitectura preliminar y se determinó qué dispositivos podían conservarse, cuáles requerían gateways y cuáles debían reemplazarse.
 
-Su principal dificultad fue gestionar la situación en un entorno con gran cantidad de personas sin generar pánico. Durante el incidente experimentó presión debido a la posibilidad de tener que movilizar a una gran cantidad de visitantes.
+Los principales criterios utilizados para seleccionar tecnologías fueron compatibilidad, costo, disponibilidad, soporte y experiencia previa con el fabricante. Antes de realizar la implementación definitiva, el equipo ejecutó pruebas en oficina y posteriormente realizó la instalación, configuración y pruebas de campo.
 
-La información que considera crítica incluye ubicación exacta, gravedad, evolución del evento, cantidad de personas cercanas y disponibilidad de rutas.
+Luis identifica la integración de equipos de terceros como una de las etapas con mayor incertidumbre. Señala que algunos fabricantes declaran utilizar protocolos abiertos como BACnet, pero pueden existir variables no disponibles, restricciones específicas o licencias adicionales. Estas incompatibilidades generan horas de ingeniería no consideradas inicialmente y pueden afectar el cronograma del proyecto.
 
-Utiliza una laptop Dell con Windows, un iPhone y ocasionalmente una tablet. Google Chrome es su navegador principal y utiliza Safari en el iPhone. Entre sus herramientas digitales se encuentran Microsoft Teams, Outlook, Excel, Power BI, WhatsApp y diferentes sistemas internos.
+Respecto a los sistemas relacionados con seguridad y emergencias, observa que el BMS, los sistemas contra incendios, CCTV y control de acceso suelen operar mediante plataformas independientes. Los clientes buscan progresivamente una mayor centralización, pero las restricciones de algunos sistemas pueden impedir una integración completa.
 
-Para operaciones considera necesarias alertas en tiempo real dentro del centro de control, mientras que los responsables deberían recibir notificaciones móviles.
+Considera que las funciones críticas deben seguir operando incluso ante una pérdida temporal de Internet. Alarmas, control local, ventilación, bombas y otros mecanismos esenciales deberían mantenerse localmente, mientras que reportes remotos, históricos en la nube y acceso externo pueden depender de la conectividad.
 
-Los incidentes se registran mediante un sistema de incidencias y reportes de seguridad. Entre las métricas utilizadas se encuentran incidentes por área, tiempos de resolución, fallas de equipos y mantenimientos. Considera útil disponer además del tiempo transcurrido entre la primera señal y la confirmación, así como mapas de zonas con mayor recurrencia de eventos.
+Para sus actividades utiliza principalmente una laptop y complementa la coordinación mediante smartphone. Su navegador habitual es Google Chrome. Utiliza Microsoft Teams, correo electrónico y WhatsApp, además de herramientas BMS, Postman y utilidades relacionadas con BACnet y Modbus.
 
-La búsqueda histórica se realiza principalmente mediante fecha, establecimiento, zona, categoría y severidad.
+Al evaluar nuevas tecnologías consulta a otros ingenieros, integradores, distribuidores y documentación de fabricantes. Reconoce marcas como Schneider Electric, Siemens, Honeywell y Johnson Controls, aunque considera que una marca conocida no determina por sí sola una decisión.
 
-Considera indispensable que los sistemas críticos mantengan operación local cuando no exista conexión a Internet y que dispongan de mecanismos de respaldo energético. Respecto a automatización, considera especialmente apropiadas las alertas, señalización, registro y determinadas acciones técnicas de mitigación; sin embargo, decisiones que puedan generar una evacuación total deberían contar con controles adicionales.
+Para integrar una solución externa espera encontrar buena documentación, APIs o protocolos abiertos, soporte y evidencia real de funcionamiento. Evita soluciones cerradas que generen dependencia excesiva del proveedor.
 
-Los accesos se gestionan mediante perfiles diferenciados para seguridad, operaciones, mantenimiento y administración. En la adquisición de nuevas tecnologías participan el área responsable, tecnologías de información, compras y gerencia. Los criterios considerados incluyen escalabilidad, integración, soporte, confiabilidad, experiencia del proveedor y costo.
+Su principal objetivo profesional es implementar sistemas confiables que posteriormente puedan ser operados por el cliente sin depender completamente de la empresa integradora. Su mayor frustración consiste en resolver incompatibilidades que no fueron indicadas previamente en la documentación. También destaca como necesidad fundamental el mantenimiento y la interoperabilidad a largo plazo.
 
-Reconoce marcas como Bosch, Honeywell, Schneider e Hikvision. Sus decisiones también son influenciadas por normativas, auditorías, consultores, experiencias de otros centros comerciales y proveedores.
+---
 
-Entre las barreras de adopción identifica la dificultad de instalar nuevas tecnologías sin afectar las operaciones y la necesidad de integrarlas con múltiples plataformas existentes.
+##### Entrevista 5 — Andrea Paredes Salazar
 
-Considera importante contemplar las necesidades de niños, adultos mayores, personas con movilidad reducida, personas con discapacidad y visitantes extranjeros mediante señales visuales y sonoras, rutas accesibles y personal capacitado.
+| Información | Detalle |
+|---|---|
+| Nombres | Andrea |
+| Apellidos | Paredes Salazar |
+| Edad | 33 años |
+| Género | Femenino |
+| Distrito de residencia | Jesús María |
+| Ocupación / Cargo | Ingeniera de proyectos e integración IoT |
+| Tipo de organización | Empresa integradora pequeña especializada en IoT, sensores, dashboards y modernización de infraestructura |
+| Segmento objetivo | Empresas integradoras de automatización y gestión de edificios inteligentes |
+| Fecha de entrevista | [COMPLETAR] |
+| Inicio en el video | [COMPLETAR - hh:mm:ss] |
+| Duración | [COMPLETAR - mm:ss] |
+| URL del video | [COMPLETAR] |
 
-Su principal frustración es disponer de numerosos sistemas y aun así necesitar varias personas para correlacionar toda la información. Sus prioridades son identificar rápidamente dónde ocurre un evento, comprender su gravedad y coordinar una respuesta sin generar caos.
+![Entrevista 5 - Andrea Paredes Salazar](assets/images/chapter-02-requirements-elicitation-analysis/interview-05-andrea-paredes.png)
 
-Resume su expectativa mediante la frase: **“Una buena herramienta de seguridad no debería darnos más información; debería ayudarnos a entender rápidamente la información importante.”**
+**Resumen de la entrevista**
+
+Andrea Paredes Salazar tiene 33 años, reside en Jesús María, es soltera y vive con su hermana. Es ingeniera electrónica y cuenta con aproximadamente seis años de experiencia profesional. Actualmente trabaja como ingeniera de proyectos e integración IoT dentro de una empresa integradora pequeña especializada en IoT, sensores, dashboards y modernización de infraestructura.
+
+Participa en distintas etapas de los proyectos, desde el levantamiento inicial hasta la instalación, programación, integración y pruebas. Considera fundamentales las habilidades de investigación y resolución de problemas, además de conocimientos de redes, programación básica, electrónica y comunicación con personas que no necesariamente poseen formación técnica.
+
+Se describe como una persona persistente al enfrentar problemas desconocidos. Procura reproducir el problema, revisar logs, realizar pruebas y descartar posibles causas hasta encontrar el origen.
+
+Dentro de una semana habitual desarrolla levantamientos, configuración de dispositivos, programación, integración, pruebas y documentación. Considera particularmente importantes las pruebas y el levantamiento inicial, ya que información incorrecta obtenida al comienzo puede generar dificultades durante toda la implementación.
+
+Como experiencia reciente describió un proyecto de monitoreo de diferentes áreas de un almacén mediante temperatura, humedad y estados de equipos. El proceso comenzó con un levantamiento destinado a determinar puntos de instalación, disponibilidad de alimentación, cobertura de red y variables necesarias.
+
+Posteriormente evaluaron dispositivos de una marca con la cual no habían trabajado anteriormente. Durante las pruebas analizaron comunicación, estabilidad, frecuencia de transmisión, documentación y capacidad de integración con su broker y dashboard.
+
+Aunque el fabricante declaraba soporte para MQTT, la estructura de los mensajes resultó limitada, por lo que fue necesario implementar una capa intermedia de transformación. Esta situación generó frustración porque añadió trabajo técnico que no había sido contemplado inicialmente.
+
+Andrea trabaja habitualmente con MQTT, Modbus, HTTP, APIs REST y algunas integraciones BACnet. Cuando un sistema no cuenta con una API o protocolo adecuado, puede ser necesario utilizar un gateway o incluso descartar la integración si el esfuerzo requerido resulta demasiado elevado.
+
+Al revisar una API espera encontrar autenticación, endpoints, ejemplos de solicitudes y respuestas, estructura de datos, errores y eventos disponibles. También considera fundamental identificar correctamente el dispositivo y la zona desde la cual se origina cada evento.
+
+Cuando una necesidad no es cubierta directamente por la empresa, primero buscan soluciones existentes. Si una alternativa puede integrarse y resulta económicamente conveniente, prefieren utilizarla antes que desarrollar completamente la funcionalidad desde cero.
+
+Para confiar técnicamente en una solución considera fundamental realizar pruebas reales. Una documentación deficiente, comportamiento inestable o restricciones que obliguen a trabajar exclusivamente con dispositivos de una misma marca pueden provocar que descarte una tecnología.
+
+Respecto a conectividad, considera que la lectura de sensores y las acciones críticas deben seguir operando localmente cuando se pierde Internet. También valora que la información pueda almacenarse temporalmente y sincronizarse posteriormente. Los reportes o históricos pueden depender de la recuperación de conectividad.
+
+Utiliza principalmente una laptop para actividades técnicas y un smartphone para coordinación e instalaciones. Su navegador habitual es Google Chrome. Entre sus herramientas se encuentran Visual Studio Code, Postman, herramientas MQTT, dashboards, Excel y herramientas proporcionadas por fabricantes.
+
+Para comunicarse utiliza Microsoft Teams, WhatsApp y correo electrónico. Cuando necesita aprender una nueva tecnología consulta primero documentación oficial y después utiliza recursos como YouTube, Stack Overflow, GitHub y foros técnicos. También utiliza LinkedIn para seguir empresas relacionadas con IoT.
+
+Ha trabajado con marcas como Schneider Electric y Siemens, aunque considera que una buena documentación puede resultar más importante que el reconocimiento de la marca cuando debe realizar personalmente la integración.
+
+Su principal objetivo consiste en lograr una integración estable y posteriormente sencilla de mantener. Su mayor frustración es encontrar documentación incompleta. Antes de una instalación le preocupa especialmente que una solución que funcionó correctamente en laboratorio presente problemas de red, interferencias, distancias o infraestructura cuando se instala en un entorno real.
+
+Finalmente, considera que el ecosistema actual debería utilizar estándares realmente interoperables y depender menos de plataformas cerradas.
+
+---
+
+##### Entrevista 6 — Ricardo Núñez Valdivia
+
+| Información | Detalle |
+|---|---|
+| Nombres | Ricardo |
+| Apellidos | Núñez Valdivia |
+| Edad | 49 años |
+| Género | Masculino |
+| Distrito de residencia | La Molina |
+| Ocupación / Cargo | Gerente comercial e innovación |
+| Tipo de organización | Empresa integradora B2B de edificios inteligentes |
+| Segmento objetivo | Empresas integradoras de automatización y gestión de edificios inteligentes |
+| Fecha de entrevista | [COMPLETAR] |
+| Inicio en el video | [COMPLETAR - hh:mm:ss] |
+| Duración | [COMPLETAR - mm:ss] |
+| URL del video | [COMPLETAR] |
+
+![Entrevista 6 - Ricardo Núñez Valdivia](assets/images/chapter-02-requirements-elicitation-analysis/interview-06-ricardo-nunez.png)
+
+**Resumen de la entrevista**
+
+Ricardo Núñez Valdivia tiene 49 años, reside en La Molina, es casado y vive con su esposa y una hija. Es ingeniero electrónico y posteriormente realizó estudios relacionados con gestión comercial. Cuenta con cerca de veinte años de experiencia en el sector.
+
+Actualmente se desempeña como gerente comercial e innovación dentro de una empresa integradora B2B de edificios inteligentes que desarrolla proyectos para empresas corporativas, clínicas, hoteles, industria y educación. Su función consiste en identificar tecnologías que puedan incorporarse al portafolio, evaluar oportunidades comerciales y trabajar conjuntamente con el equipo técnico para validar nuevas soluciones.
+
+Considera fundamentales las habilidades de comprensión tecnológica, negociación, comunicación y conocimiento de las necesidades del cliente. Se describe como una persona pragmática al tomar decisiones. Valora la opinión del equipo técnico, pero también analiza si una solución genera valor real y puede sostenerse comercialmente.
+
+Entre sus actividades habituales se encuentran reuniones con clientes, evaluación de oportunidades, reuniones con fabricantes, elaboración de propuestas comerciales y búsqueda de nuevas soluciones. Mantiene conversaciones con clientes diariamente y evalúa nuevos proveedores algunas veces al mes.
+
+Considera particularmente importante comprender correctamente el problema del cliente y seleccionar la tecnología adecuada, debido a que una mala elección puede trasladar dificultades hacia la implementación.
+
+Como experiencia reciente describió la evaluación de una tecnología para mejorar el monitoreo energético de varias sedes. Debido a que la empresa no contaba con una solución específica, buscaron diferentes fabricantes y realizaron reuniones con tres alternativas.
+
+Las opciones fueron filtradas primero mediante requisitos técnicos y posteriormente mediante precio, soporte, referencias y modelo comercial. Los finalistas pasaron por una prueba técnica destinada a verificar su estabilidad y capacidad de integración.
+
+En la decisión participaron Ricardo, el gerente técnico y un ingeniero de proyectos. Después del piloto negociaron las condiciones comerciales y la tecnología fue incorporada dentro de la propuesta presentada al cliente.
+
+Considera que el proceso no termina después de la venta, ya que posteriormente aparecen implementación, capacitación y soporte. Para Ricardo, es durante esas etapas cuando realmente puede determinarse si un proveedor puede convertirse en un socio tecnológico.
+
+Según su experiencia, los clientes normalmente presentan un problema antes que solicitar una marca determinada. Entre las necesidades habituales menciona centralización de edificios, ahorro energético y mejora del mantenimiento. El valor de la empresa integradora consiste en seleccionar y conectar distintas tecnologías para resolver esas necesidades.
+
+Identifica la falta de referencias como una barrera relevante para empresas tecnológicas nuevas. Los clientes suelen preguntar dónde ha sido implementado el producto, quién lo utiliza y quién responderá ante posibles fallas. Sin embargo, una empresa pequeña puede generar confianza mediante un producto adecuado, un piloto exitoso y el respaldo de una empresa integradora.
+
+Cuando una funcionalidad no forma parte del portafolio, evalúan si realmente resulta estratégico desarrollarla internamente. En muchos casos consideran más conveniente integrar una solución especializada ya existente.
+
+Para que una solución externa sea atractiva debe cumplir tanto condiciones técnicas como comerciales. El equipo técnico presta especial atención a APIs, protocolos, documentación y soporte, mientras que desde la perspectiva comercial debe existir un modelo viable para ambas organizaciones.
+
+Ricardo observa un incremento en la demanda de centralización, analítica y monitoreo remoto. Los clientes buscan evitar depender de numerosas plataformas independientes dentro de una misma edificación.
+
+Utiliza laptop y smartphone. Para comunicación utiliza principalmente el teléfono, mientras que para propuestas y evaluaciones prefiere la laptop. Utiliza Microsoft Edge en computadora y Google Chrome en smartphone. Sus principales canales digitales son Outlook, Microsoft Teams, WhatsApp y LinkedIn.
+
+Conoce nuevas tecnologías y proveedores mediante ferias, fabricantes, distribuidores, contactos del sector y LinkedIn. Reconoce marcas como Siemens, Honeywell, Schneider Electric y Johnson Controls. Considera que las marcas conocidas facilitan la conversación con el cliente, pero también valora recomendaciones, demostraciones y casos reales de implementación.
+
+De un proveedor espera capacitación, soporte, documentación, precios claros y reglas comerciales bien definidas. Su principal preocupación consiste en que un proveedor no tenga capacidad para continuar brindando soporte después del primer proyecto. Un piloto exitoso y una respuesta rápida ante consultas técnicas aumentan considerablemente su confianza.
+
+Su principal objetivo al incorporar una tecnología nueva consiste en resolver una necesidad real del cliente y, al mismo tiempo, ampliar las capacidades del portafolio. Su mayor frustración aparece cuando una solución presenta una demostración atractiva, pero carece de respuestas claras sobre integración, mantenimiento o soporte.
+
+Finalmente, considera que la relación con un proveedor debe mantenerse a largo plazo. Cuando una empresa integradora utiliza una tecnología dentro de un proyecto también compromete su reputación frente al cliente, por lo que busca socios tecnológicos y no únicamente productos. También considera fundamental la escalabilidad: una solución debe poder extenderse desde un edificio pequeño hacia múltiples edificios y clientes sin perder estabilidad ni generar dificultades excesivas.
 
 ### 2.2.3. Análisis de entrevistas
 
-A partir de las entrevistas realizadas se analizaron de manera independiente los resultados correspondientes a cada segmento objetivo. Para cada segmento se consideraron tres participantes, por lo que cada entrevistado representa aproximadamente el 33.3 % de la muestra de su grupo.
+A partir de las entrevistas realizadas se analizaron de manera independiente los resultados correspondientes a cada segmento objetivo. Para cada segmento se consideraron tres participantes, por lo que cada entrevistado representa aproximadamente el 33.3 % de la muestra correspondiente.
 
-El análisis permitió identificar características demográficas y profesionales, comportamientos, preferencias tecnológicas, objetivos, necesidades, frustraciones y patrones relacionados con la manera en que actualmente se gestionan situaciones de emergencia. Los porcentajes presentados corresponden exclusivamente a los participantes entrevistados y permiten identificar las características predominantes que serán consideradas posteriormente en la construcción de los User Personas y demás artefactos de Needfinding.
+El análisis considera características objetivas, como edad, género, ubicación, formación profesional, rol, experiencia, dispositivos, navegadores y canales digitales; así como características subjetivas relacionadas con personalidad, comportamiento, objetivos, necesidades, frustraciones, criterios de decisión y actitudes frente a la tecnología.
+
+Los porcentajes presentados corresponden exclusivamente a los participantes entrevistados y tienen un propósito descriptivo dentro de la muestra estudiada. Estos resultados no buscan generalizar estadísticamente a toda la población, sino identificar los patrones predominantes que servirán como sustento para la construcción de los User Personas y los demás artefactos de Needfinding.
+
+---
 
 #### Segmento objetivo #1: Propietarios y administradores de edificaciones
 
 ##### Características objetivas
 
-| Característica | Resultado |
-|---|---|
-| Rango de edad | El 100 % de los entrevistados se encuentra entre los 30 y 39 años. |
-| Género | El 66.7 % corresponde al género masculino y el 33.3 % al género femenino. |
-| Ubicación | El 100 % reside en distritos de Lima Metropolitana. El 66.7 % reside en San Borja y el 33.3 % en Santiago de Surco. |
-| Estado civil | El 66.7 % indicó estar casado y el 33.3 % soltero. |
-| Formación profesional | El 100 % cuenta con formación profesional vinculada con administración, arquitectura o ingeniería. |
-| Rol profesional | El 100 % desempeña funciones directamente relacionadas con administración, infraestructura, mantenimiento u operaciones de edificaciones. |
-| Experiencia | El 100 % cuenta con experiencia previa en actividades relacionadas con la administración, mantenimiento u operación de edificaciones. |
-| Tipo de infraestructura gestionada | La muestra incluye edificaciones residenciales, de uso mixto y corporativas. |
-| Uso de computadora | El 100 % utiliza una laptop como parte de sus actividades laborales. |
-| Uso de smartphone | El 100 % utiliza un smartphone como herramienta complementaria para realizar o supervisar sus actividades. |
-| Sistema operativo de computadora | El 66.7 % utiliza Windows y el 33.3 % utiliza macOS. |
-| Sistema operativo móvil | El 66.7 % utiliza iOS y el 33.3 % utiliza Android. |
-| Navegador principal en computadora | Se identificó una distribución de 33.3 % para Google Chrome, 33.3 % para Microsoft Edge y 33.3 % para Safari como navegador principal. |
-| Uso de correo electrónico | El 100 % utiliza correo electrónico como parte de sus actividades laborales. |
-| Uso de hojas de cálculo | El 100 % utiliza Excel para actividades relacionadas con administración, seguimiento o registro. |
-| Uso de WhatsApp | El 66.7 % utiliza WhatsApp como medio de comunicación o coordinación durante sus actividades. |
+El análisis de las características objetivas permite identificar el perfil demográfico, profesional y tecnológico predominante entre los propietarios y administradores entrevistados.
 
-##### Actividades y comportamiento actual
+![Cuadro estadístico de características objetivas - Segmento 1](assets/images/chapter-02-requirements-elicitation-analysis/interview-analysis-segment-01-objective.png)
 
-El 100 % de los entrevistados realiza actividades relacionadas con la revisión de incidencias, supervisión de seguridad y coordinación de mantenimiento. Además, el 66.7 % participa directamente en simulacros o actividades relacionadas con protocolos de emergencia.
+En relación con la edad, el 66.7 % de los entrevistados se encuentra entre los 30 y 39 años, mientras que el 33.3 % se encuentra entre los 20 y 29 años. Respecto al género, el 66.7 % corresponde al género masculino y el 33.3 % al femenino.
 
-El 100 % manifestó utilizar diferentes sistemas de seguridad dentro de las edificaciones, incluyendo CCTV, alarmas, sistemas contra incendios, detectores y control de acceso. Sin embargo, también el 100 % indicó que la información de estos sistemas se encuentra total o parcialmente distribuida entre diferentes plataformas, interfaces o proveedores.
+El 100 % reside en Lima Metropolitana. Específicamente, el 66.7 % reside en San Borja y el 33.3 % en Santiago de Surco. Asimismo, el 100 % cuenta con formación profesional y desarrolla actividades directamente vinculadas con la administración, operación, mantenimiento o gestión de infraestructura de edificaciones.
 
-Ante una alerta, el 100 % de los entrevistados señaló que actualmente existe algún nivel de verificación humana antes de confirmar determinadas situaciones. Esta verificación puede involucrar la revisión de cámaras, comunicación con personal de seguridad o desplazamiento físico hacia la zona afectada.
+Las edificaciones representadas en la muestra corresponden a tres contextos distintos: residencial, uso mixto y corporativo, lo que permite observar necesidades compartidas en diferentes tipos de infraestructura.
 
-Asimismo, el 100 % considera importante conocer rápidamente la ubicación o zona donde ocurre un incidente. La localización del evento aparece de manera recurrente como uno de los datos necesarios antes de tomar decisiones o activar procedimientos adicionales.
+Desde la perspectiva tecnológica, el 100 % utiliza una laptop y un smartphone como herramientas habituales de trabajo. En computadoras, el 66.7 % utiliza Windows y el 33.3 % macOS. Respecto al navegador principal, existe una distribución equivalente: 33.3 % utiliza Google Chrome, 33.3 % Microsoft Edge y 33.3 % Safari.
 
-##### Tecnología y canales de interacción
-
-Los resultados muestran un perfil con uso frecuente de tecnología tanto desde computadoras como desde dispositivos móviles. El 100 % utiliza una combinación de laptop y smartphone para desarrollar o supervisar sus actividades.
-
-En cuanto a comunicación durante situaciones críticas, el 100 % considera necesario disponer de un medio de alerta inmediata. Los entrevistados mencionaron notificaciones del sistema, alertas móviles y llamadas telefónicas como mecanismos adecuados dependiendo de la gravedad del evento.
-
-El 66.7 % utiliza actualmente WhatsApp como mecanismo complementario cuando necesita coordinar acciones o compartir información que no se encuentra centralizada en los sistemas disponibles. Este comportamiento evidencia que las herramientas de mensajería funcionan actualmente como una alternativa para cubrir limitaciones de integración o comunicación.
-
-Respecto a la consulta de información histórica, el 66.7 % señaló que los registros se encuentran distribuidos entre diferentes medios, como correos electrónicos, documentos, hojas de cálculo o conversaciones, dificultando la búsqueda posterior de información.
+El 100 % utiliza correo electrónico y Excel dentro de sus actividades laborales, mientras que el 66.7 % utiliza WhatsApp como mecanismo frecuente de comunicación y coordinación.
 
 ##### Características subjetivas
 
-El 100 % evidencia una orientación hacia la prevención, planificación o seguimiento estructurado de las actividades. Aunque existen diferencias en el nivel de apertura hacia nuevas tecnologías, los tres participantes coinciden en que una herramienta utilizada para seguridad debe ser confiable y facilitar el trabajo existente.
+El análisis subjetivo permite identificar comportamientos, necesidades, frustraciones, objetivos y criterios de decisión compartidos por los representantes del segmento.
 
-El 100 % manifestó emociones negativas relacionadas con situaciones reales de emergencia, principalmente preocupación, incertidumbre, presión o desconfianza cuando la información disponible no era suficiente para comprender rápidamente lo ocurrido.
+![Cuadro estadístico de características subjetivas - Segmento 1](assets/images/chapter-02-requirements-elicitation-analysis/interview-analysis-segment-01-subjective.png)
 
-También se observa una actitud favorable hacia la automatización. El 100 % considera aceptable automatizar determinadas acciones, especialmente alertas, notificaciones, señalización o registro de eventos. Sin embargo, el 100 % considera igualmente necesario mantener validación humana o mecanismos manuales para aquellas acciones que puedan tener consecuencias importantes sobre las personas o la infraestructura.
+El 100 % de los entrevistados presenta una forma de trabajo orientada a la prevención, el análisis o el seguimiento estructurado de sus responsabilidades. Aunque existen diferencias individuales, los tres participantes consideran fundamental disponer de información confiable antes de tomar decisiones relacionadas con la seguridad.
 
-##### Principales necesidades y frustraciones
+El 100 % trabaja actualmente con diferentes sistemas o fuentes de información relacionadas con seguridad que no se encuentran completamente integrados. Esta fragmentación obliga a consultar diferentes plataformas, comunicarse con otras personas o realizar verificaciones adicionales para comprender una situación.
 
-| Hallazgo | Porcentaje |
-|---|---:|
-| Necesidad de conocer rápidamente la ubicación del incidente | 100 % |
-| Existencia de sistemas o fuentes de información separadas | 100 % |
-| Necesidad de reducir el tiempo utilizado para comprender una emergencia | 100 % |
-| Uso de verificación humana para confirmar determinados eventos | 100 % |
-| Interés en disponer de métricas e historial de incidentes | 100 % |
-| Necesidad de funcionamiento local ante pérdida de Internet | 100 % |
-| Aceptación de automatización con mecanismos de control o validación | 100 % |
-| Necesidad de diferentes roles y niveles de acceso | 100 % |
-| Consideración de integración como criterio para nuevas tecnologías | 100 % |
-| Consideración de soporte como criterio de adquisición | 100 % |
-| Dificultades para consultar información histórica dispersa | 66.7 % |
-| Uso de mensajería instantánea como mecanismo alternativo de coordinación | 66.7 % |
+La necesidad de identificar rápidamente la ubicación del incidente aparece en el 100 % de los entrevistados. Asimismo, el 100 % manifestó que durante determinadas alertas existe algún nivel de verificación humana antes de confirmar el evento o ejecutar acciones de mayor impacto.
 
-La fragmentación de información constituye el patrón más recurrente del segmento. Los entrevistados gestionan edificaciones que ya cuentan con diversos mecanismos de seguridad, pero deben consultar distintas plataformas o coordinar manualmente con otras personas para obtener una visión completa de lo que sucede.
+El 100 % considera que las funciones críticas deberían continuar operando localmente cuando se pierde la conexión a Internet. También el 100 % mantiene una actitud favorable hacia la automatización de alertas, notificaciones, señalización o registro de eventos, pero considera necesaria la supervisión o validación humana cuando una acción pueda generar consecuencias importantes sobre personas o infraestructura.
 
-También se identifica como necesidad común disminuir el tiempo transcurrido entre la detección de una situación y su correcta comprensión. No se busca únicamente recibir una alarma, sino conocer qué ocurrió, dónde ocurrió, qué nivel de riesgo presenta y quién está atendiendo la situación.
+La integración y el soporte aparecen como criterios relevantes para la adopción de nuevas tecnologías en el 100 % de los casos. Además, el 100 % manifestó interés en contar con información histórica o indicadores que permitan realizar seguimiento de los incidentes.
 
-Respecto al registro de información, existe interés en contar con indicadores como cantidad de incidentes, tiempos de respuesta, falsas alarmas, zonas con mayor recurrencia y equipos que presentan fallas. Esto evidencia la necesidad de disponer no solamente de información en tiempo real, sino también de información histórica que permita realizar seguimiento y análisis.
-
-En materia de inclusión, el 100 % reconoce que una emergencia puede involucrar adultos mayores, personas con movilidad reducida, personas con discapacidad o visitantes que desconocen la infraestructura. Por ello, los mecanismos de comunicación y orientación no deberían depender exclusivamente de una alarma sonora.
-
-Finalmente, el 100 % considera el español como el idioma más apropiado para la operación general del personal, aunque algunos participantes tienen experiencia utilizando interfaces o terminología técnica en inglés.
+En el 66.7 % de los casos existen dificultades para consultar información histórica debido a que los registros se encuentran distribuidos entre documentos, correos, hojas de cálculo o conversaciones. De forma relacionada, el 66.7 % utiliza WhatsApp como mecanismo complementario de coordinación.
 
 ##### Perfil predominante del segmento
 
-Los resultados permiten identificar como perfil predominante a un profesional responsable de administrar u operar una edificación, acostumbrado a coordinar con personal de seguridad, mantenimiento y proveedores. Utiliza habitualmente computadora y smartphone, consulta información mediante diferentes plataformas y requiere disponer de datos confiables antes de tomar decisiones.
+Los resultados permiten identificar como perfil predominante a un profesional responsable de administrar u operar una edificación, acostumbrado a coordinar con personal de seguridad, mantenimiento, propietarios y proveedores.
 
-Su principal objetivo es mantener la seguridad de los ocupantes y responder oportunamente ante situaciones de riesgo. Entre sus principales frustraciones se encuentran la fragmentación de los sistemas, la necesidad de realizar verificaciones manuales y la dificultad para disponer inmediatamente de información completa sobre una emergencia.
+Utiliza habitualmente una computadora y un smartphone, consulta diferentes sistemas y necesita disponer de información confiable antes de tomar decisiones. Su principal objetivo es mantener la seguridad de los ocupantes y reaccionar oportunamente ante situaciones de riesgo.
 
-Este perfil valora especialmente la confiabilidad, integración, soporte y continuidad de las herramientas tecnológicas. Presenta una actitud favorable hacia la automatización siempre que esta disponga de reglas claras, información verificable y mecanismos de control humano.
+Sus principales frustraciones se relacionan con la fragmentación de los sistemas, la necesidad de realizar verificaciones manuales y la dificultad para conocer inmediatamente qué ocurre y dónde ocurre. El segmento presenta una actitud favorable hacia la automatización, siempre que esta sea confiable y mantenga mecanismos adecuados de control humano.
 
 ---
 
-#### Segmento objetivo #2: Empresas e instituciones con infraestructura propia
+#### Segmento objetivo #2: Empresas integradoras de automatización y gestión de edificios inteligentes
 
 ##### Características objetivas
 
-| Característica | Resultado |
-|---|---|
-| Rango de edad | El 100 % de los entrevistados se encuentra entre los 30 y 39 años. |
-| Género | El 66.7 % corresponde al género femenino y el 33.3 % al género masculino. |
-| Ubicación | El 100 % reside en Lima Metropolitana. |
-| Formación profesional | El 100 % cuenta con formación en ingeniería. |
-| Área de responsabilidad | El 100 % desempeña cargos relacionados con seguridad, operaciones o infraestructura. |
-| Experiencia profesional | El 100 % cuenta con varios años de experiencia en actividades relacionadas con la gestión de instalaciones y operaciones. |
-| Tipo de organización | Se encuentran representados los sectores educativo, salud y comercial. |
-| Infraestructura de alta concurrencia | El 100 % trabaja en instalaciones utilizadas diariamente por una cantidad considerable de trabajadores, usuarios o visitantes. |
-| Uso de laptop | El 100 % utiliza laptop como herramienta de trabajo. |
-| Sistema operativo de computadora | El 100 % utiliza Windows. |
-| Uso de smartphone | El 100 % utiliza smartphone. |
-| Sistema operativo móvil | El 66.7 % utiliza iOS y el 33.3 % utiliza Android. |
-| Navegador principal en computadora | El 66.7 % utiliza Google Chrome y el 33.3 % utiliza Microsoft Edge. |
-| Navegador móvil | El 66.7 % utiliza Safari y el 33.3 % utiliza Google Chrome. |
-| Uso de Microsoft Teams | El 100 % utiliza Microsoft Teams dentro de sus actividades laborales. |
-| Uso de correo electrónico | El 100 % utiliza correo electrónico. |
-| Uso de Excel | El 100 % utiliza Excel para actividades de seguimiento, análisis o gestión. |
-| Uso de WhatsApp | El 66.7 % mencionó utilizar WhatsApp dentro de sus canales de interacción. |
+El análisis de las características objetivas permite identificar el perfil demográfico, profesional y tecnológico de los representantes de empresas dedicadas a automatización de edificios, integración IoT y Building Management Systems.
 
-##### Actividades y comportamiento actual
+![Cuadro estadístico de características objetivas - Segmento 2](assets/images/chapter-02-requirements-elicitation-analysis/interview-analysis-segment-02-objective.png)
 
-El 100 % participa directamente en actividades relacionadas con gestión de incidentes, mantenimiento, supervisión de infraestructura o coordinación de seguridad. En todos los casos estas actividades requieren interacción con diferentes áreas de la organización.
+En relación con la edad, el 33.3 % de los entrevistados se encuentra entre los 30 y 39 años, mientras que el 66.7 % se encuentra entre los 40 y 49 años. Respecto al género, el 66.7 % corresponde al género masculino y el 33.3 % al femenino.
 
-El 100 % trabaja con infraestructura que utiliza diversos sistemas de seguridad, entre ellos CCTV, alarmas, detección contra incendios, control de acceso y otros sistemas especializados. Asimismo, el 100 % indicó que existe algún nivel de separación entre las plataformas o sistemas disponibles, aun cuando la organización disponga de una central de monitoreo o sistemas parcialmente integrados.
+El 100 % reside en Lima Metropolitana, con participantes ubicados en San Borja, Jesús María y La Molina. Cada distrito representa el 33.3 % de la muestra.
 
-En las experiencias de incidentes analizadas, el 100 % contó con participación humana en la detección, confirmación o atención del evento. En el 66.7 % de los casos, una alerta tecnológica estuvo acompañada de un reporte realizado por una persona, mientras que en el 33.3 % el primer aviso dependió directamente de una observación humana.
+El 100 % cuenta con formación en Ingeniería Electrónica y posee experiencia profesional directamente relacionada con tecnología, automatización o integración. El 100 % posee seis o más años de experiencia en el sector, mientras que el 66.7 % cuenta con más de diez años de trayectoria profesional.
 
-El 100 % considera indispensable conocer con precisión la ubicación y el alcance del incidente antes de tomar decisiones. Además, en este segmento adquiere especial relevancia conocer qué personas, servicios o áreas pueden verse afectadas.
+Los perfiles profesionales representan distintas etapas del proceso de integración: el 33.3 % corresponde a dirección técnica, el 33.3 % a ingeniería de proyectos e integración IoT y el 33.3 % a gestión comercial e innovación. De esta manera, la muestra incorpora perspectivas técnicas, operativas y comerciales.
 
-##### Tecnología y canales de interacción
+El 100 % utiliza una laptop y un smartphone como herramientas habituales. Respecto al navegador utilizado principalmente desde la computadora, el 66.7 % utiliza Google Chrome y el 33.3 % Microsoft Edge.
 
-El 100 % utiliza Windows en sus equipos de trabajo y complementa sus actividades mediante smartphones. Google Chrome representa el navegador principal del 66.7 % de la muestra, mientras que Microsoft Edge es utilizado principalmente por el 33.3 %.
-
-Microsoft Teams, correo electrónico y Excel son utilizados por el 100 % de los participantes. Adicionalmente, el 66.7 % utiliza WhatsApp como mecanismo de comunicación complementaria.
-
-Para situaciones críticas, el 100 % considera necesario utilizar mecanismos de comunicación inmediata y diferenciados según el contexto. Entre ellos se encuentran alertas del centro de control, notificaciones móviles y llamadas telefónicas. Los resultados evidencian una preferencia por comunicaciones multicanal en lugar de depender de un único medio.
-
-El 100 % de las organizaciones representadas dispone de registros digitales de incidentes y utiliza algún tipo de indicador para realizar seguimiento. Entre los indicadores mencionados aparecen incidentes por zona o tipo, tiempos de atención, disponibilidad de equipos y mantenimientos.
-
-Además, el 100 % expresó interés en medir con mayor precisión el tiempo relacionado con la detección y confirmación de los incidentes.
+Microsoft Teams, WhatsApp y correo electrónico son utilizados por el 100 % de los entrevistados como canales de comunicación profesional. Además, el 66.7 % mencionó LinkedIn como una fuente utilizada para conocer empresas, tecnologías o proveedores.
 
 ##### Características subjetivas
 
-El 100 % de los entrevistados presenta una orientación hacia la planificación, los procedimientos, el análisis de riesgos o la toma de decisiones basada en información. Debido al nivel de responsabilidad de sus cargos, existe una preocupación recurrente por reducir el tiempo de respuesta sin generar acciones que puedan aumentar el riesgo.
+El análisis subjetivo del segmento permite identificar los criterios mediante los cuales las empresas integradoras evalúan tecnologías, afrontan problemas de interoperabilidad y deciden incorporar soluciones externas dentro de los proyectos que desarrollan para sus clientes.
 
-Durante las experiencias de emergencia relatadas, el 100 % manifestó situaciones de preocupación, presión o estado de alerta. Una característica común es la necesidad de tomar decisiones considerando simultáneamente la seguridad de las personas y el impacto de las acciones sobre las operaciones de la organización.
+![Cuadro estadístico de características subjetivas - Segmento 2](assets/images/chapter-02-requirements-elicitation-analysis/interview-analysis-segment-02-subjective.png)
 
-El 100 % mantiene una actitud favorable hacia el uso de automatización para alertas, notificaciones, registro, señalización o acciones preventivas específicas. Sin embargo, también el 100 % considera que decisiones de alto impacto deben mantener algún nivel de supervisión o validación humana.
+El 100 % de los entrevistados considera la capacidad de integración e interoperabilidad como un factor fundamental al evaluar una nueva tecnología. Los tres participantes mencionaron dificultades relacionadas con compatibilidad, protocolos, APIs, documentación o integración entre productos de diferentes fabricantes.
 
-##### Principales necesidades y frustraciones
+El 100 % considera necesario disponer de documentación técnica, soporte y mecanismos adecuados de integración antes de incorporar una solución externa. APIs, protocolos abiertos, documentación comprensible y capacidad de soporte aparecen como factores recurrentes en la evaluación.
 
-| Hallazgo | Porcentaje |
-|---|---:|
-| Necesidad de identificar rápidamente la ubicación del incidente | 100 % |
-| Necesidad de coordinación entre diferentes áreas | 100 % |
-| Existencia de información distribuida entre diferentes sistemas o equipos | 100 % |
-| Participación humana en la confirmación o atención de incidentes | 100 % |
-| Necesidad de consultar información e indicadores históricos | 100 % |
-| Interés en medir tiempos de detección, confirmación o respuesta | 100 % |
-| Necesidad de funcionamiento local ante pérdida de Internet | 100 % |
-| Existencia de mecanismos de respaldo energético | 100 % |
-| Aceptación de automatización para determinadas acciones | 100 % |
-| Necesidad de validación humana para acciones de alto impacto | 100 % |
-| Necesidad de diferentes roles y niveles de acceso | 100 % |
-| Integración como criterio para adoptar nueva tecnología | 100 % |
-| Confiabilidad como criterio de adopción | 100 % |
-| Soporte como criterio de adopción | 100 % |
-| Participación de varias áreas en la evaluación de nuevas tecnologías | 100 % |
+Asimismo, el 100 % considera importante realizar una prueba, demostración técnica o piloto antes de confiar plenamente en una tecnología nueva. Esto evidencia que la adopción no depende solamente de una presentación comercial, sino de comprobar que la solución puede integrarse y funcionar en condiciones reales.
 
-La principal dificultad identificada en este segmento corresponde a la necesidad de coordinar información y acciones entre múltiples áreas. Seguridad, mantenimiento, operaciones, infraestructura y tecnologías de información pueden participar en distintos momentos del proceso, por lo que disponer de información consistente resulta especialmente importante.
+El 100 % indicó que, cuando existe una solución especializada adecuada, puede resultar preferible integrarla antes que desarrollar internamente toda la funcionalidad. Esta decisión busca evitar asumir innecesariamente actividades adicionales de desarrollo, mantenimiento, pruebas y soporte.
 
-Otro patrón común es la necesidad de mantener continuidad operativa. Las organizaciones representadas gestionan infraestructuras en las que una emergencia puede afectar simultáneamente personas y servicios esenciales. Por esta razón, el 100 % considera necesario que las funciones críticas mantengan capacidad de operación local ante problemas de conectividad.
+En los tres participantes aparece también una preocupación relacionada con el mantenimiento posterior a la implementación. El 100 % considera importante que una tecnología continúe siendo estable, mantenible y respaldada por el proveedor después de su instalación inicial.
 
-En este segmento también existe un interés marcado por la información cuantitativa. El 100 % utiliza indicadores y expresó interés en mejorar el seguimiento de variables relacionadas con tiempos de detección, confirmación y atención. Esto permitirá posteriormente considerar necesidades de visualización y análisis histórico de eventos.
+El 100 % manifestó frustraciones relacionadas con soluciones cuya compatibilidad, documentación o facilidad de integración no corresponde con lo esperado inicialmente. Estas situaciones pueden generar horas adicionales de ingeniería, retrasos, modificaciones de arquitectura o dificultades para mantener posteriormente la solución.
 
-Respecto a la incorporación de nuevas tecnologías, el 100 % indicó que la decisión involucra múltiples áreas de la organización. Entre los criterios compartidos se encuentran confiabilidad, integración, soporte y costo. Asimismo, aspectos como seguridad de la información, escalabilidad y continuidad operativa aparecen como criterios relevantes dentro del proceso de evaluación.
+La reputación de una marca puede influir en el proceso, pero el 100 % considera que esta no es suficiente por sí sola para determinar una decisión. La documentación, las pruebas, el soporte, las recomendaciones y los casos reales también influyen en la confianza hacia una tecnología.
 
-En materia de inclusión, el 100 % identifica la existencia de personas que pueden requerir mecanismos diferenciados durante una emergencia, incluyendo personas con movilidad reducida, discapacidad visual o auditiva, adultos mayores y visitantes que desconocen las instalaciones. Los participantes coinciden en la necesidad de utilizar mecanismos de alerta y orientación que no dependan exclusivamente de señales sonoras.
+Respecto a la continuidad ante pérdida de conectividad, el 66.7 % mencionó explícitamente que las funciones críticas deberían continuar operando localmente sin depender permanentemente de Internet.
 
-El español aparece como idioma principal para la operación en el 100 % de los casos, aunque se reconoce la utilidad de disponer de determinadas indicaciones o interfaces también en inglés dependiendo del tipo de organización y usuarios atendidos.
+La escalabilidad fue mencionada explícitamente por el 33.3 % como un criterio necesario para determinar si una tecnología puede utilizarse no solamente en un edificio, sino también en múltiples edificios y clientes.
 
 ##### Perfil predominante del segmento
 
-El perfil predominante corresponde a un profesional con formación en ingeniería y experiencia en seguridad, operaciones o infraestructura, responsable de instalaciones con alta concurrencia de personas. Su trabajo requiere coordinación permanente con diferentes áreas y utilización frecuente de herramientas digitales, sistemas de monitoreo y plataformas corporativas.
+Los resultados permiten identificar como perfil predominante a un profesional con formación técnica y experiencia en automatización, IoT o integración de sistemas, que participa en la evaluación, implementación o incorporación comercial de nuevas tecnologías.
 
-Su objetivo principal es asegurar una respuesta rápida y coordinada que proteja a las personas sin comprometer innecesariamente la continuidad de las operaciones. Necesita conocer la ubicación, severidad, evolución e impacto de un evento para tomar decisiones y coordinar a los responsables correspondientes.
+Su trabajo exige conectar soluciones pertenecientes a distintos fabricantes y adaptarlas a la infraestructura disponible en los proyectos de sus clientes. Por esta razón, valora especialmente la interoperabilidad, documentación, estabilidad, soporte, pruebas y facilidad de mantenimiento.
 
-Sus principales frustraciones se relacionan con la información fragmentada, la necesidad de consultar diferentes fuentes y la dependencia de coordinación humana para obtener una visión completa de la situación. Este perfil valora tecnologías confiables, escalables e integrables con la infraestructura existente, así como la posibilidad de contar con información histórica, métricas y distintos niveles de acceso.
+Su principal objetivo es incorporar tecnologías confiables que puedan integrarse con sistemas existentes sin generar un esfuerzo desproporcionado de implementación o mantenimiento. Sus principales frustraciones aparecen cuando una solución presenta incompatibilidades no documentadas, ecosistemas cerrados o requerimientos técnicos que solo se descubren durante las etapas de prueba o puesta en marcha.
 
-Presenta una actitud favorable hacia la automatización cuando esta permite disminuir los tiempos de detección y respuesta, pero mantiene una clara preferencia por conservar supervisión humana sobre aquellas acciones que puedan afectar significativamente a las personas o a las operaciones.
+Este segmento no evalúa únicamente el producto. También evalúa la capacidad del proveedor para actuar como un socio tecnológico, responder ante problemas y sostener la solución durante su ciclo de vida.
 
 ---
 
 #### Síntesis de los resultados
 
-Aunque ambos segmentos presentan contextos y niveles de responsabilidad diferentes, se identificaron necesidades comunes relevantes para el desarrollo posterior de los artefactos de Needfinding.
+Los resultados muestran diferencias claras entre ambos segmentos.
 
-El 100 % de los participantes de ambos segmentos trabaja actualmente con más de un sistema o fuente de información relacionada con seguridad. La fragmentación de información y la necesidad de comprender rápidamente una situación aparecen como problemas recurrentes.
+Los propietarios y administradores de edificaciones se concentran principalmente en la operación cotidiana de una infraestructura y en la necesidad de comprender y responder rápidamente ante situaciones de riesgo. Para este segmento, la fragmentación de sistemas genera dificultades al momento de localizar un incidente, reunir información y coordinar la respuesta.
 
-También existe coincidencia respecto a la importancia de identificar con precisión la zona afectada, recibir información oportuna, mantener registros históricos y disponer de mecanismos de funcionamiento local ante problemas de conectividad.
+Las empresas integradoras, en cambio, analizan el problema desde la implementación tecnológica. Su principal preocupación se relaciona con la capacidad de incorporar una nueva solución dentro de infraestructuras que ya poseen dispositivos, plataformas y sistemas pertenecientes a diferentes fabricantes.
 
-En relación con la automatización, ambos segmentos muestran una postura favorable para acciones de alerta, comunicación, registro y señalización, pero mantienen la necesidad de intervención humana para decisiones de mayor impacto.
+En ambos segmentos la integración constituye un aspecto relevante, aunque desde perspectivas diferentes. Para los administradores significa disponer de una visión más clara y centralizada de la infraestructura; para los integradores significa contar con protocolos, APIs, documentación y mecanismos que permitan incorporar nuevas capacidades dentro de proyectos existentes.
 
-La principal diferencia se encuentra en el contexto de operación. Los propietarios y administradores presentan una relación más directa con la gestión cotidiana de una edificación y con la coordinación de personal, propietarios y proveedores. En cambio, los responsables de empresas e instituciones operan dentro de estructuras organizacionales con múltiples áreas, una mayor cantidad de usuarios y necesidades adicionales relacionadas con continuidad operativa, escalabilidad y coordinación interdepartamental.
-
-Estos patrones permitirán representar en los User Personas las características predominantes de cada segmento y servirán como base para establecer sus tareas, objetivos, frustraciones, comportamientos, preferencias tecnológicas y necesidades durante las siguientes actividades de Needfinding.
+Los resultados del análisis servirán como base para actualizar los User Personas y los demás artefactos de Needfinding, manteniendo trazabilidad entre las características representadas y la evidencia recopilada durante las entrevistas.
 
 ## 2.3. Needfinding
 
