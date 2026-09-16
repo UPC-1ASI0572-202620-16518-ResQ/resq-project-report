@@ -1328,7 +1328,6 @@ El caso del hotel relatado por Luis muestra un levantamiento de sistemas de dist
 
 ![User Journey Map de Luis Herrera Campos](../assets\images\chapter-02-requirements-elicitation-analysis\Customerjourneymap2.png)
 
-
 ### 2.3.4. Empathy Mapping
 
 Los mapas de empatía complementan los perfiles y recorridos al relacionar lo que cada persona necesita hacer con lo que ve, escucha, dice, piensa y siente. Su contenido sintetiza los guiones y explicita interpretaciones de diseño; no representa observaciones de campo realizadas por el equipo. Los bloques de dificultades y beneficios esperados permiten traducir esas perspectivas en necesidades que deberán validarse.
