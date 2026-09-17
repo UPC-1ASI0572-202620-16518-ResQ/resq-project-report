@@ -2378,7 +2378,22 @@ De esta manera, Incident Management conserva la trazabilidad de los responsables
 ![DomainMessageFlowsModeling_Scenario4](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario4.png)
 
 #### 4.1.1.3. Bounded Context Canvases
-[COMPLETAR]
+Luego de identificar los Candidate Bounded Contexts de ResQ, se elaboraron sus respectivos **Bounded Context Canvases** para detallar responsabilidades, lenguaje ubicuo, reglas de negocio, capacidades y relaciones con otros contextos.
+
+El proceso siguió un enfoque iterativo basado en **Context Overview Definition**, **Business Rules Distillation & Ubiquitous Language Capture**, **Capability Analysis**, **Capability Layering**, **Dependencies Capture** y **Design Critique**.
+
+Los Bounded Contexts fueron trabajados en orden de importancia, priorizando primero aquellos que concentran el mayor valor del negocio y que participan directamente en el flujo principal de ResQ.
+
+A continuación, se presentan los Bounded Context Canvases definidos:
+
+![BoundedContextCanvases_RiskDetection](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_RiskDetection.png)
+![BoundedContextCanvases_Alert&ResponseManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_Alert&ResponseManagement.png)
+![BoundedContextCanvases_IncidentManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_IncidentManagement.png)
+![BoundedContextCanvases_Monitoring](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_Monitoring.png)
+![BoundedContextCanvases_DeviceManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_DeviceManagement.png)
+![BoundedContextCanvases_BuildingManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_BuildingManagement.png)
+![BoundedContextCanvases_UserManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_UserManagement.png)
+![BoundedContextCanvases_IAM](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_IAM.png)
 
 ### 4.1.2. Context Mapping
 [COMPLETAR]
