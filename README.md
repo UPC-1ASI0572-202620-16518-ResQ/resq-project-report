@@ -1659,14 +1659,14 @@ Sus principales dificultades son los sistemas separados, las falsas alarmas y la
 | Género | Masculino |
 | Distrito de residencia | San Borja |
 | Ocupación / Cargo | Gerente técnico |
-| Tipo de organización | Empresa integradora B2B mediana especializada en automatización y Building Management Systems (BMS) |
-| Segmento objetivo | Empresas integradoras de automatización y gestión de edificios inteligentes |
-| Fecha de entrevista | [COMPLETAR] |
-| Inicio en el video | [COMPLETAR - hh:mm:ss] |
-| Duración | [COMPLETAR - mm:ss] |
-| URL del video | [COMPLETAR] |
+| Tipo de organización | Integradora B2B mediana especializada en automatización y Building Management Systems |
+| Segmento objetivo | Empresas que integran tecnologías de automatización y gestión de edificios |
+| Fecha de entrevista | 15/09/2026 |
+| Inicio en el video | 00:01 |
+| Duración | 17:06 |
+| URL del video | [Luis Herrera Campos](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202222001_upc_edu_pe/IQCNoLaQg5cCQqe-sn_Nu9KNAZiQmSfcgE85DpNm-rRCaeo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Pocrij) |
 
-![Entrevista 4 - Luis Herrera Campos](assets/images/chapter-02-requirements-elicitation-analysis/interview-04-luis-herrera.png)
+![Entrevista 4 - Luis Herrera Campos](assets/images/chapter-02-requirements-elicitation-analysis/entrevistaLuisSegmento2.png)
 
 **Resumen de la entrevista**
 
@@ -1944,7 +1944,7 @@ Los resultados del análisis servirán como base para actualizar los User Person
 
 ### 2.3.1. User Personas
 
-Los User Personas representan los dos segmentos objetivo de ResQ: propietarios y administradores de edificaciones, y empresas e instituciones con infraestructura propia. Permiten relacionar las responsabilidades de quienes supervisan la seguridad con sus objetivos, dificultades y condiciones de uso de una solución IoT.
+Los User Personas representan los dos segmentos objetivo de ResQ: propietarios y administradores de edificaciones, y empresas integradoras de automatización y gestión de edificios inteligentes. Permiten relacionar las responsabilidades de cada perfil con sus objetivos, dificultades y condiciones de uso de una solución IoT.
 
 **Segmento objetivo #1: Propietarios y administradores de edificaciones — Carlos Mendoza**
 
@@ -1954,19 +1954,22 @@ Carlos Mendoza, de 37 años, representa al administrador de un edificio residenc
 
 ![User Persona de Carlos Mendoza](assets/images/chapter-02-requirements-elicitation-analysis/CarlosMendozaUserPerson.png)
 
-**Segmento objetivo #2: Empresas e instituciones con infraestructura propia — Daniela Rojas**
+**Segmento objetivo #2: Empresas integradoras de automatización y gestión de edificios inteligentes — Alex Rivera**
 
-Daniela Rojas, de 34 años, representa a los responsables de seguridad institucional que coordinan varios edificios y equipos de trabajo. Como jefa de Seguridad y Prevención de una universidad, necesita identificar el ambiente afectado y compartir información precisa con seguridad, mantenimiento y brigadistas. Su principal dificultad es reconstruir la situación a partir de fuentes distribuidas mientras protege a una población numerosa. Este perfil orienta a ResQ hacia la supervisión por zonas, la trazabilidad de eventos y la comunicación diferenciada según las responsabilidades de cada usuario.
+Alex Rivera es un profesional que evalúa e integra tecnologías de automatización, IoT y BMS en proyectos de clientes. 
 
-![User Persona de Daniela Rojas](assets/images/chapter-02-requirements-elicitation-analysis/DanielaRojasUserPerson.png)
+
+![User Persona de Alex Rivera, arquetipo del integrador](assets/images/chapter-02-requirements-elicitation-analysis/segmento-2-user-persona.png)
+
+
 
 ### 2.3.2. User Task Matrix
 
-La User Task Matrix organiza las principales tareas de cada User Persona según su frecuencia y severidad. La frecuencia indica qué tan seguido se realiza una actividad, mientras que la severidad representa el impacto que tendría no ejecutarla correctamente. Ambas dimensiones se clasifican como alta, media o baja.
+La User Task Matrix organiza tareas que cada User Persona realiza independientemente de que ResQ exista. La frecuencia indica qué tan seguido se realiza una actividad y la importancia expresa su relevancia para cumplir las responsabilidades del perfil. Ambas dimensiones se clasifican como alta, media o baja. Las valoraciones son una interpretación cualitativa de los relatos; no representan frecuencias medidas ni porcentajes de la población.
 
 **Segmento objetivo #1: Carlos Mendoza — Propietarios y administradores de edificaciones**
 
-| Tarea | Frecuencia | Severidad |
+| Tarea | Frecuencia | Importancia |
 |---|---|---|
 | Revisar novedades y condiciones de seguridad del edificio | Alta | Alta |
 | Identificar el tipo de alerta, su ubicación y gravedad | Media | Alta |
@@ -1978,25 +1981,24 @@ La User Task Matrix organiza las principales tareas de cada User Persona según 
 | Consultar antecedentes de incidentes por fecha, tipo o zona | Media | Media |
 | Evaluar nuevas alternativas de seguridad y presentarlas a la junta | Baja | Media |
 
-**Segmento objetivo #2: Daniela Rojas — Empresas e instituciones con infraestructura propia**
+**Segmento objetivo #2: Alex Rivera — Empresas integradoras de automatización y gestión de edificios inteligentes**
 
-| Tarea | Frecuencia | Severidad |
+| Tarea | Frecuencia | Importancia |
 |---|---|---|
-| Revisar reportes e incidentes del campus | Alta | Alta |
-| Localizar el ambiente afectado y comprender el tipo de riesgo | Media | Alta |
-| Coordinar a seguridad, mantenimiento y brigadas según el protocolo | Media | Alta |
-| Evaluar el alcance del incidente y la necesidad de evacuación | Media | Alta |
-| Supervisar la evolución del incidente hasta su control | Media | Alta |
-| Coordinar inspecciones de las zonas e instalaciones | Alta | Alta |
-| Coordinar mantenimientos y simulacros | Media | Alta |
-| Analizar incidentes y tiempos de atención | Media | Media |
-| Evaluar soluciones con infraestructura, TI y compras | Baja | Media |
+| Comprender las necesidades del cliente y definir el alcance del proyecto | Alta | Alta |
+| Levantar equipos, zonas, planos y condiciones de conectividad | Media | Alta |
+| Revisar documentación, protocolos y compatibilidad de los sistemas | Alta | Alta |
+| Diseñar y revisar la arquitectura de integración | Alta | Alta |
+| Evaluar proveedores y realizar pruebas de concepto o pilotos | Media | Alta |
+| Configurar dispositivos e integrar sistemas de distintos fabricantes | Alta | Alta |
+| Validar en campo mediciones, comandos y funcionamiento sin Internet | Media | Alta |
+| Documentar la solución, capacitar al cliente y coordinar la entrega | Media | Alta |
+| Dar soporte, mantener la compatibilidad y evaluar ampliaciones | Alta | Alta |
 
-La comparación muestra que ambos perfiles asignan una severidad alta a la identificación del riesgo, la coordinación de la respuesta y la verificación de los sistemas de seguridad. Carlos requiere supervisar un edificio incluso cuando se encuentra fuera de él, mientras que Daniela debe coordinar distintas áreas y zonas dentro de una infraestructura extensa. Las tareas de evaluación tecnológica tienen una frecuencia baja porque se realizan de manera ocasional, aunque apoyan la mejora continua de la seguridad.
 
 ### 2.3.3. User Journey Mapping
 
-Los User Journey Maps describen la experiencia actual planteada en los guiones, desde la recepción de una alerta hasta el registro posterior. Se utiliza un recorrido As-Is para distinguir las acciones y canales actuales de las oportunidades propuestas para ResQ. Las emociones son interpretaciones cualitativas del escenario; no representan resultados de una evaluación de satisfacción ni mejoras ya comprobadas.
+Los User Journey Maps describen experiencias actuales planteadas en los guiones. El recorrido del primer segmento sigue la atención de una alerta; el del segundo sigue la evaluación e integración de tecnología en un proyecto de automatización. Ambos son recorridos As-Is que distinguen los canales y problemas actuales de las oportunidades propuestas para ResQ. Las emociones son interpretaciones cualitativas, no mediciones de satisfacción ni mejoras comprobadas.
 
 **Segmento objetivo #1: Carlos Mendoza — Atención de una alerta de humo en el sótano**
 
@@ -2004,16 +2006,16 @@ El recorrido presenta a Carlos fuera del edificio cuando recibe una llamada por 
 
 ![User Journey Map de Carlos Mendoza](assets/images/chapter-02-requirements-elicitation-analysis/Customerjourneymap1.png)
 
-**Segmento objetivo #2: Daniela Rojas — Atención de una alerta en un laboratorio universitario**
+**Segmento objetivo #2: Alex Rivera — Evaluación e integración de una solución de automatización**
 
-El recorrido de Daniela aborda una alerta de humo asociada con el sobrecalentamiento de un equipo de laboratorio. Su objetivo es identificar el ambiente afectado, coordinar a seguridad y mantenimiento, y dar seguimiento a la respuesta sin generar confusión entre los ocupantes. La dificultad principal consiste en ubicar el laboratorio exacto y reunir información de varias áreas.
+El Journey combina el levantamiento y modernización relatados por Luis, las pruebas de comunicación y problemas de campo descritos por Andrea, y la evaluación de proveedores y soporte explicados por Ricardo. Sus cinco etapas agrupan el recorrido completo: comprender, levantar, proponer un diseño, evaluar y probar, ajustar el diseño, implementar, poner en marcha, entregar y mantener. El diseño inicial es preliminar y se revisa a partir de los resultados del piloto.
 
-![User Journey Map de Daniela Rojas](assets/images/chapter-02-requirements-elicitation-analysis/Customerjourneymap2.png)
+![User Journey Map As-Is de Alex Rivera](assets/images/chapter-02-requirements-elicitation-analysis/segmento-2-journey-map.png)
 
 
 ### 2.3.4. Empathy Mapping
 
-Los mapas de empatía complementan los perfiles y recorridos al relacionar lo que cada responsable necesita hacer con lo que ve, escucha, dice, piensa y siente. Su contenido sintetiza los guiones y explicita interpretaciones de diseño; no representa observaciones de campo realizadas por el equipo. Los bloques de dificultades y beneficios esperados permiten traducir esas perspectivas en necesidades que deberán validarse.
+Los mapas de empatía complementan los perfiles y recorridos al relacionar lo que cada persona necesita hacer con lo que ve, escucha, dice, piensa y siente. Su contenido sintetiza los guiones y explicita interpretaciones de diseño; no representa observaciones de campo realizadas por el equipo. Los bloques de dificultades y beneficios esperados permiten traducir esas perspectivas en necesidades que deberán validarse.
 
 **Segmento objetivo #1: Carlos Mendoza — Propietarios y administradores de edificaciones**
 
@@ -2021,14 +2023,14 @@ El mapa de Carlos refleja la tensión entre su intención de prevenir incidentes
 
 ![Mapa de empatía de Carlos Mendoza](assets/images/chapter-02-requirements-elicitation-analysis/CarlosMendozaEmpathy.png)
 
-**Segmento objetivo #2: Daniela Rojas — Empresas e instituciones con infraestructura propia**
+**Segmento objetivo #2: Alex Rivera — Empresas integradoras de automatización y gestión de edificios inteligentes**
 
-El mapa de Daniela muestra que la confianza en una respuesta depende de que los distintos equipos comprendan el mismo evento y sus responsabilidades. La dispersión de información aumenta la presión al coordinar una instalación concurrida. Para ResQ, este perfil plantea la necesidad de localizar el riesgo con precisión, facilitar el seguimiento y comunicar la información adecuada a cada rol, sin asumir que una alarma por sí sola resuelve la coordinación.
+El mapa sintetiza la necesidad de comprobar la interoperabilidad antes de comprometer el proyecto, reducir trabajo adicional y mantener el respaldo del proveedor después de la entrega. Integra las perspectivas técnica, de implementación y comercial presentes en los relatos de los entrevistados.
 
-![Mapa de empatía de Daniela Rojas](assets/images/chapter-02-requirements-elicitation-analysis/DanielaRojasEmpathy.png)
+![Mapa de empatía de Alex Rivera](assets/images/chapter-02-requirements-elicitation-analysis/segmento-2-empathy-map.png)
 
 
-Ambos mapas sugieren que centralizar información aporta valor cuando ayuda a comprender el riesgo y la respuesta. Carlos necesita mantener visibilidad a distancia; Daniela necesita coordinar áreas y zonas distintas. En ambos casos, la confianza en la automatización requiere conocer qué ocurrió y por qué se ejecutó una acción. Las alertas para ocupantes también deben ser comprensibles y considerar a quienes requieren asistencia, sin limitar la comunicación a una sola señal sonora.
+Ambos mapas muestran que la interoperabilidad importa por motivos diferentes. Carlos necesita comprender el riesgo y la respuesta en su edificio; Alex necesita evaluar si la tecnología puede integrarse y mantenerse en proyectos de clientes. Por ello, la evidencia de pruebas, la operación local de funciones críticas y la claridad sobre los límites de integración son esenciales para que una empresa integradora considere incorporar ResQ.
 
 ## 2.4. Big Picture EventStorming
 [INSERTAR DIAGRAMA + EXPLICACIÓN]
@@ -2339,6 +2341,2500 @@ La siguiente imagen muestra el Product Backlog de ResQ registrado en Trello:
 
 ##### 4.2.X.6.2. Bounded Context Database Design Diagram
 [INSERTAR DIAGRAMA + EXPLICACIÓN]
+
+### 4.2.1. Bounded Context: Identity and Access Management
+
+The **Identity and Access Management (IAM)** Bounded Context is responsible for managing the identity, authentication, role assignment, permissions, and authorization mechanisms required to protect the information and operations available in ResQ.
+
+This Bounded Context supports the access-control needs of the platform by ensuring that only authenticated identities can interact with protected resources and that each operation is executed according to the permissions associated with the roles assigned to the user.
+
+Its responsibilities are mainly derived from the requirements related to authenticated access and role-based authorization. In particular, ResQ requires users to authenticate before accessing protected capabilities and requires operations to be restricted according to the roles and permissions assigned to each identity.
+
+The Identity and Access Management Bounded Context primarily supports **US26 — Assign roles and responsibilities**, **US27 — Authenticated access**, and the authorization constraint defined by **TS06 — Provide services through the RESTful API**.
+
+The IAM Bounded Context does not manage personal profile information such as names, phone numbers, preferences, or other user-specific information. Those responsibilities belong to the **User Bounded Context**. IAM only maintains the information required to identify, authenticate, and authorize a user.
+
+Similarly, IAM does not manage buildings, zones, devices, measurements, incidents, alerts, or risk-detection rules. It only provides the authentication and authorization mechanisms that other Bounded Contexts can use when their operations require access control.
+
+The main responsibilities of this Bounded Context are:
+
+- Authenticate an identity using valid credentials.
+- Reject authentication attempts when the credentials are invalid.
+- Maintain the authentication-related state of an identity.
+- Associate identities with roles within an organizational scope.
+- Determine the permissions granted by each role.
+- Prevent duplicated role assignments within the same organization.
+- Verify whether an authenticated identity is authorized to perform a protected operation.
+- Reject protected operations when the authenticated identity does not have the required permission.
+- Maintain the IAM domain model independently from the personal information managed by the User Bounded Context.
+
+The principal concepts identified for the Identity and Access Management Bounded Context are **Identity**, **Role**, **Role Assignment**, **Permission**, **Login Identifier**, **Credential Hash**, and **Identity Status**.
+
+#### Class Dictionary
+
+The following table summarizes the main classes and interfaces that form the Identity and Access Management Bounded Context.
+
+| Class / Interface | Layer | Purpose | Main attributes | Main operations | Main relationships |
+|---|---|---|---|---|---|
+| `Identity` | Domain | Represents the authentication and authorization identity associated with a ResQ user. It is the Aggregate Root responsible for maintaining authentication state and role assignments. | `identityId: UUID`, `userId: UUID`, `loginIdentifier: LoginIdentifier`, `credentialHash: CredentialHash`, `status: IdentityStatus`, `roleAssignments: Set<RoleAssignment>` | `assignRole(roleId, organizationId)`, `hasRole(roleId, organizationId)`, `roleIdsFor(organizationId)`, `isActive()` | Owns `RoleAssignment`; composes `LoginIdentifier` and `CredentialHash`; uses `IdentityStatus`. |
+| `Role` | Domain | Represents a named authorization role and the permissions granted by that role. | `roleId: UUID`, `name: String`, `permissions: Set<Permission>` | `grants(permissionCode)`, `getPermissions()` | Composes `Permission` values. |
+| `RoleAssignment` | Domain | Represents the assignment of a role to an identity within a specific organization. | `assignmentId: UUID`, `roleId: UUID`, `organizationId: UUID` | `matches(roleId, organizationId)` | Owned by `Identity`; references `Role` by `roleId`; uses `organizationId` as an external authorization-scope reference. |
+| `LoginIdentifier` | Domain | Value Object that represents the identifier used by an identity during authentication. The exact format remains independent from the personal profile managed by the User Bounded Context. | `value: String` | `value()` | Composed by `Identity`. |
+| `CredentialHash` | Domain | Value Object that represents the protected representation of the authentication secret. Plain-text credentials are never stored in the domain model. | `value: String` | `value()` | Composed by `Identity`. |
+| `Permission` | Domain | Value Object that identifies a capability required to execute a protected operation. | `code: String` | `code()`, `equals()` | Composed by `Role`. |
+| `IdentityStatus` | Domain | Enumeration that represents whether an identity can currently be used for authentication. | `ACTIVE`, `DISABLED` | — | Used by `Identity`. |
+| `IdentityRepository` | Domain | Repository abstraction used to retrieve and persist Identity aggregates without coupling the Domain Layer to a persistence technology. | — | `findById(identityId)`, `findByLoginIdentifier(loginIdentifier)`, `save(identity)` | Persists and retrieves `Identity` aggregates. |
+| `RoleRepository` | Domain | Repository abstraction used to retrieve roles and their associated permissions. | — | `findById(roleId)`, `findAllByIds(roleIds)` | Retrieves `Role` aggregates. |
+| `AuthorizationService` | Domain | Domain Service responsible for evaluating whether the roles assigned to an identity grant a required permission inside an organizational scope. | — | `isAuthorized(identity, roles, permissionCode, organizationId)` | Evaluates `Identity` and `Role` data using `permissionCode` and `organizationId`. |
+| `AuthenticateCommand` | Application | Represents a request to authenticate an identity. | `loginIdentifier: String`, `credentialSecret: String` | — | Handled by `AuthenticateCommandHandler`. |
+| `AuthenticateCommandHandler` | Application | Coordinates the authentication use case using the domain model and the required infrastructure abstractions. | Dependencies on `IdentityRepository`, `CredentialVerifier`, `AuthenticationSessionProvider` | `handle(command)` | Uses `IdentityRepository`, `CredentialVerifier`, and `AuthenticationSessionProvider`. |
+| `AssignRoleCommand` | Application | Represents a request to assign a valid role to an identity within an organization. | `identityId: UUID`, `roleId: UUID`, `organizationId: UUID` | — | Handled by `AssignRoleCommandHandler`. |
+| `AssignRoleCommandHandler` | Application | Coordinates role assignment and validates the conditions required before modifying the Identity aggregate. | Dependencies on `IdentityRepository`, `RoleRepository`, `OrganizationMembershipValidator` | `handle(command)` | Uses `IdentityRepository`, `RoleRepository`, and `OrganizationMembershipValidator`. |
+| `CheckPermissionQuery` | Application | Represents an authorization request for an identity, permission, and organization. | `identityId: UUID`, `permissionCode: String`, `organizationId: UUID` | — | Handled by `CheckPermissionQueryHandler`. |
+| `CheckPermissionQueryHandler` | Application | Retrieves the identity and its roles and delegates the authorization decision to the Domain Layer. | Dependencies on `IdentityRepository`, `RoleRepository`, `AuthorizationService` | `handle(query)` | Uses `IdentityRepository`, `RoleRepository`, and `AuthorizationService`. |
+| `AuthenticationResult` | Application | Represents the successful result of an authentication process without exposing credential information. | `identityId: UUID`, `sessionToken: String` | — | Returned by `AuthenticateCommandHandler`. |
+| `CredentialVerifier` | Application | Abstraction used to compare a credential received during authentication against the stored protected credential representation. | — | `matches(rawCredential, credentialHash)` | Used by `AuthenticateCommandHandler`; implemented by `CredentialHashVerifier`. |
+| `AuthenticationSessionProvider` | Application | Abstraction responsible for generating the representation required to maintain an authenticated session. | — | `createSession(identityId)` | Used by `AuthenticateCommandHandler`; implemented by `AuthenticationSessionProviderAdapter`. |
+| `OrganizationMembershipValidator` | Application | Abstraction used to validate that the target user belongs to the organization in which a role is being assigned. | — | `belongsToOrganization(userId, organizationId)` | Used by `AssignRoleCommandHandler`; implemented by `OrganizationMembershipAdapter`. |
+| `AuthenticationController` | Interface | Receives authentication requests and delegates them to the corresponding Application Layer command handler. | Dependency on `AuthenticateCommandHandler` | `authenticate(request)` | Delegates to `AuthenticateCommandHandler`. |
+| `RoleAssignmentController` | Interface | Receives authorized requests for role assignment and delegates the operation to the Application Layer. | Dependency on `AssignRoleCommandHandler` | `assignRole(identityId, request)` | Delegates to `AssignRoleCommandHandler`. |
+| `AuthorizationFilter` | Interface | Intercepts protected requests and verifies that the authenticated identity has the permission required by the requested operation. | Dependency on `CheckPermissionQueryHandler` | `authorize(requestContext)` | Delegates authorization checks to `CheckPermissionQueryHandler`. |
+| `IdentityRepositoryAdapter` | Infrastructure | Implements `IdentityRepository` using the persistence mechanism selected for the ResQ Cloud RESTful API. | Persistence dependency | `findById()`, `findByLoginIdentifier()`, `save()` | Implements `IdentityRepository`. |
+| `RoleRepositoryAdapter` | Infrastructure | Implements `RoleRepository` and reconstructs roles together with their permissions from persistent storage. | Persistence dependency | `findById()`, `findAllByIds()` | Implements `RoleRepository`. |
+| `CredentialHashVerifier` | Infrastructure | Implements credential verification using the security mechanism adopted by the backend implementation. | Security-library dependency | `matches()` | Implements `CredentialVerifier`. |
+| `AuthenticationSessionProviderAdapter` | Infrastructure | Implements the creation of the authenticated-session representation consumed by the client applications. | Security/session dependency | `createSession()` | Implements `AuthenticationSessionProvider`. |
+| `OrganizationMembershipAdapter` | Infrastructure | Provides the mechanism required to verify organizational membership without transferring ownership of user or organization information to IAM. | Dependency on the source responsible for organizational membership information | `belongsToOrganization()` | Implements `OrganizationMembershipValidator`. |
+
+The relationships among these classes preserve the limits of the Bounded Context. `Identity` maintains only the `userId` that references the user associated with the authentication identity. The User profile itself is not duplicated inside IAM.
+
+Likewise, `RoleAssignment` uses an `organizationId` to indicate the authorization scope of the assignment, but IAM does not model or administer the organization itself.
+
+---
+
+#### 4.2.1.1. Domain Layer
+
+The **Domain Layer** contains the business concepts, rules, and abstractions that define identity and access management inside ResQ. This layer does not depend on HTTP, database engines, security libraries, or application frameworks.
+
+The principal Aggregate Root is `Identity`.
+
+An `Identity` represents the security identity associated with a ResQ user. It contains the minimum information required to authenticate the user and determine the roles assigned to that identity.
+
+The `userId` attribute acts only as an external reference to the user represented in the User Bounded Context. Personal information is deliberately excluded from the IAM domain model.
+
+`Identity` owns its collection of `RoleAssignment` objects. A role assignment establishes that the identity has a specific role inside an organization.
+
+The `Identity` Aggregate Root is responsible for protecting the consistency of these assignments. In particular, the same role must not be assigned more than once to the same identity within the same organization.
+
+##### Identity
+
+**Category:** Aggregate Root / Entity.
+
+**Purpose:** Represent the security identity used to authenticate a ResQ user and maintain the role assignments associated with that identity.
+
+**Attributes:**
+
+- `identityId: UUID` — Unique identifier of the identity.
+- `userId: UUID` — External reference to the corresponding user.
+- `loginIdentifier: LoginIdentifier` — Identifier used during authentication.
+- `credentialHash: CredentialHash` — Protected representation of the authentication credential.
+- `status: IdentityStatus` — Current authentication status of the identity.
+- `roleAssignments: Set<RoleAssignment>` — Roles assigned to the identity in different organizations.
+
+**Operations:**
+
+- `assignRole(roleId, organizationId)` — Adds a valid role assignment while preventing duplication.
+- `hasRole(roleId, organizationId)` — Indicates whether the identity already has the specified role within the organization.
+- `roleIdsFor(organizationId)` — Obtains the role identifiers that apply to an organizational scope.
+- `isActive()` — Indicates whether the identity is enabled for authentication.
+
+##### Role
+
+**Category:** Aggregate Root / Entity.
+
+**Purpose:** Represent an authorization role containing the permissions that enable specific protected operations.
+
+**Attributes:**
+
+- `roleId: UUID`
+- `name: String`
+- `permissions: Set<Permission>`
+
+**Operations:**
+
+- `grants(permissionCode)` — Indicates whether the role contains the requested permission.
+- `getPermissions()` — Returns the permissions associated with the role.
+
+The current scope requires the assignment and evaluation of valid roles. Creation or administrative modification of roles is not included as a use case because no current User Story requires that capability.
+
+##### RoleAssignment
+
+**Category:** Entity owned by `Identity`.
+
+**Purpose:** Represent the association between an identity, a role, and the organization in which the role applies.
+
+**Attributes:**
+
+- `assignmentId: UUID`
+- `roleId: UUID`
+- `organizationId: UUID`
+
+**Operations:**
+
+- `matches(roleId, organizationId)` — Determines whether the assignment corresponds to a specific role and organization.
+
+The `organizationId` is treated as an external reference. IAM does not own the lifecycle of the organization.
+
+##### LoginIdentifier
+
+**Category:** Value Object.
+
+**Purpose:** Encapsulate the identifier presented during authentication.
+
+**Attribute:**
+
+- `value: String`
+
+The value is kept independent from the User profile because authentication identity and personal-profile information belong to different responsibilities.
+
+##### CredentialHash
+
+**Category:** Value Object.
+
+**Purpose:** Represent the protected form of an authentication credential.
+
+**Attribute:**
+
+- `value: String`
+
+Plain-text credentials must never be persisted as part of the domain state.
+
+##### Permission
+
+**Category:** Value Object.
+
+**Purpose:** Represent an authorization capability required to execute a protected operation.
+
+**Attribute:**
+
+- `code: String`
+
+Permissions are associated with roles. Authorization is therefore determined from the permissions granted by the roles assigned to the identity.
+
+##### IdentityStatus
+
+**Category:** Enumeration.
+
+**Values:**
+
+- `ACTIVE`
+- `DISABLED`
+
+Only an active identity can complete the authentication process successfully.
+
+##### IdentityRepository
+
+**Category:** Repository Interface.
+
+**Purpose:** Define the persistence operations required by the Domain and Application Layers without depending on a specific database technology.
+
+**Operations:**
+
+- `findById(identityId)`
+- `findByLoginIdentifier(loginIdentifier)`
+- `save(identity)`
+
+##### RoleRepository
+
+**Category:** Repository Interface.
+
+**Purpose:** Retrieve roles and permissions required during role assignment and authorization.
+
+**Operations:**
+
+- `findById(roleId)`
+- `findAllByIds(roleIds)`
+
+##### AuthorizationService
+
+**Category:** Domain Service.
+
+**Purpose:** Evaluate authorization when the decision requires information from the identity and one or more roles.
+
+**Operation:**
+
+- `isAuthorized(identity, roles, permissionCode, organizationId)`
+
+The service considers only roles assigned to the identity within the organization associated with the protected operation.
+
+##### Business Rules
+
+The Identity and Access Management domain applies the following business rules:
+
+1. An identity must exist before it can be authenticated.
+
+2. Only an identity with `ACTIVE` status can complete authentication successfully.
+
+3. Authentication succeeds only when the credential provided by the user corresponds to the protected credential representation stored for the identity.
+
+4. Invalid credentials must not establish an authenticated session.
+
+5. A role can only be assigned when both the identity and the role are valid.
+
+6. Before assigning a role in an organization, the associated user must belong to that organization.
+
+7. The same role cannot be assigned more than once to the same identity inside the same organization.
+
+8. A role assignment is valid only for the organizational scope associated with the assignment.
+
+9. A protected operation is authorized only when at least one role assigned to the identity in the corresponding organization grants the required permission.
+
+10. When the required permission is absent, the protected operation must be rejected.
+
+These rules allow the IAM Bounded Context to implement authenticated and role-based access while keeping user-profile, building, device, monitoring, incident, and risk-management information outside its domain boundary.
+
+---
+
+#### 4.2.1.2. Interface Layer
+
+The **Interface Layer** exposes the capabilities of the Identity and Access Management Bounded Context to clients and other parts of the ResQ platform.
+
+Its responsibility is to receive requests, validate their basic representation, translate them into Commands or Queries from the Application Layer, and convert the resulting responses into the representation expected by the client.
+
+Business rules are not implemented in this layer.
+
+The principal components are `AuthenticationController`, `RoleAssignmentController`, and `AuthorizationFilter`.
+
+##### AuthenticationController
+
+`AuthenticationController` receives authentication requests from ResQ client applications.
+
+Its main responsibility is to construct an `AuthenticateCommand` using the authentication data received from the client and delegate its execution to `AuthenticateCommandHandler`.
+
+The controller does not directly compare credentials and does not query the database.
+
+Conceptually, the RESTful interaction represents the creation of an authenticated session.
+
+Example resource:
+
+```text
+POST /api/v1/auth/sessions
+```
+
+The request contains the login identifier and authentication credential.
+
+A successful response represents the authenticated identity and the session information generated by the platform.
+
+Invalid credentials are returned as an authentication failure without exposing whether a specific credential or internal record caused the failure.
+
+##### RoleAssignmentController
+
+`RoleAssignmentController` receives requests to associate a valid role with an identity inside an organization.
+
+Conceptually, the operation is represented as the creation of a role-assignment resource.
+
+Example resource:
+
+```text
+POST /api/v1/iam/identities/{identityId}/role-assignments
+```
+
+The request identifies:
+
+- the role to assign;
+- the organization in which the role must apply.
+
+The controller delegates the operation to `AssignRoleCommandHandler`.
+
+The endpoint itself is a protected operation and therefore can only be executed when the authenticated caller has the permission required to perform role assignments.
+
+##### AuthorizationFilter
+
+`AuthorizationFilter` protects RESTful API operations that require an authenticated and authorized identity.
+
+Before a protected request reaches its corresponding controller, the filter identifies:
+
+- the authenticated identity;
+- the organization associated with the request;
+- the permission required by the protected operation.
+
+It then creates a `CheckPermissionQuery` and delegates the authorization decision to `CheckPermissionQueryHandler`.
+
+If the result indicates that the required permission is absent, the request is rejected before the protected operation is executed.
+
+This behavior supports the requirement that unauthorized requests must not execute protected operations.
+
+#### 4.2.1.3. Application Layer
+
+The Application Layer coordinates the use cases supported by IAM.
+
+This layer orchestrates domain objects, repositories, and external abstractions but does not contain infrastructure-specific persistence or cryptographic implementation details.
+
+Three principal application flows are considered:
+
+- Authentication.
+- Role assignment.
+- Authorization verification.
+
+##### AuthenticateCommand
+
+`AuthenticateCommand` represents an authentication attempt.
+
+**Attributes:**
+
+- `loginIdentifier: String`
+- `credentialSecret: String`
+
+The plain credential exists only during the authentication request and is never stored as part of the domain state.
+
+##### AuthenticateCommandHandler
+
+`AuthenticateCommandHandler` coordinates the authentication process.
+
+The handler performs the following sequence:
+
+1. Receives an `AuthenticateCommand`.
+2. Builds or validates the corresponding `LoginIdentifier`.
+3. Uses `IdentityRepository` to locate the identity associated with the login identifier.
+4. Verifies that the identity exists.
+5. Verifies that the identity is active.
+6. Delegates credential comparison to `CredentialVerifier`.
+7. Rejects the operation if the credential is invalid.
+8. Requests the creation of an authenticated session through `AuthenticationSessionProvider`.
+9. Returns an `AuthenticationResult`.
+
+The handler does not know which hashing algorithm, session format, or backend security library is used.
+
+##### AuthenticationResult
+
+`AuthenticationResult` represents the result of a successful authentication process.
+
+**Attributes:**
+
+- `identityId: UUID`
+- `sessionToken: String`
+
+`sessionToken` represents an opaque session credential from the point of view of the Application Layer. Its concrete implementation depends on the security mechanism selected for the backend.
+
+##### AssignRoleCommand
+
+`AssignRoleCommand` represents the assignment of a role to an identity in a specific organization.
+
+**Attributes:**
+
+- `identityId: UUID`
+- `roleId: UUID`
+- `organizationId: UUID`
+
+##### AssignRoleCommandHandler
+
+`AssignRoleCommandHandler` coordinates the role-assignment use case.
+
+Its execution flow is:
+
+1. Receive the `AssignRoleCommand`.
+2. Retrieve the target `Identity` from `IdentityRepository`.
+3. Retrieve the requested `Role` from `RoleRepository`.
+4. Verify through `OrganizationMembershipValidator` that the user referenced by the identity belongs to the specified organization.
+5. Verify through the `Identity` Aggregate Root that the same role assignment does not already exist.
+6. Invoke `Identity.assignRole(roleId, organizationId)`.
+7. Persist the modified aggregate through `IdentityRepository`.
+
+Authorization of the user requesting this operation is performed before execution of the protected operation through the IAM authorization mechanism.
+
+##### CheckPermissionQuery
+
+`CheckPermissionQuery` represents a request to determine whether an identity can execute a protected operation.
+
+**Attributes:**
+
+- `identityId: UUID`
+- `permissionCode: String`
+- `organizationId: UUID`
+
+##### CheckPermissionQueryHandler
+
+`CheckPermissionQueryHandler` coordinates authorization verification.
+
+Its execution flow is:
+
+1. Retrieve the `Identity`.
+2. Reject the authorization when the identity does not exist or is inactive.
+3. Obtain the role identifiers assigned to the identity within the requested organization.
+4. Retrieve the corresponding `Role` aggregates.
+5. Delegate evaluation to `AuthorizationService`.
+6. Return whether the required permission is granted.
+
+This design centralizes authorization evaluation and prevents each protected Bounded Context from reimplementing IAM rules independently.
+
+##### CredentialVerifier
+
+`CredentialVerifier` is an Application Layer abstraction that prevents authentication use cases from depending directly on a cryptographic or security framework.
+
+**Operation:**
+
+- `matches(rawCredential, credentialHash)`
+
+##### AuthenticationSessionProvider
+
+`AuthenticationSessionProvider` is responsible for abstracting session creation.
+
+**Operation:**
+
+- `createSession(identityId)`
+
+The exact representation of the session is an implementation concern of the Infrastructure Layer.
+
+##### OrganizationMembershipValidator
+
+`OrganizationMembershipValidator` represents the dependency required to verify the acceptance criterion that a role can be assigned only to a user belonging to the corresponding organization.
+
+**Operation:**
+
+- `belongsToOrganization(userId, organizationId)`
+
+The IAM Bounded Context does not become responsible for managing organizations or user profiles because of this validation. It only consumes the minimum information necessary to protect the role-assignment invariant.
+
+#### 4.2.1.4. Infrastructure Layer
+
+The Infrastructure Layer contains the technical implementations required by the Identity and Access Management Bounded Context.
+
+It implements the repository and service abstractions defined by the Domain and Application Layers and encapsulates persistence, credential-security, authenticated-session generation, and integration details.
+
+The principal infrastructure components are IdentityRepositoryAdapter, RoleRepositoryAdapter, CredentialHashVerifier, AuthenticationSessionProviderAdapter, and OrganizationMembershipAdapter.
+
+##### IdentityRepositoryAdapter
+
+`IdentityRepositoryAdapter` implements the `IdentityRepository` interface.
+
+Its responsibilities are:
+
+- retrieve an `Identity` using its identifier;
+- retrieve an `Identity` using its login identifier;
+- reconstruct the `Identity` Aggregate from persisted data;
+- persist modifications to the `Identity` and its Role Assignments.
+
+The Domain Layer is therefore independent from the database technology selected for the ResQ backend.
+
+##### RoleRepositoryAdapter
+
+`RoleRepositoryAdapter` implements `RoleRepository`.
+
+It retrieves:
+
+- role information;
+- the permissions associated with a role;
+- multiple roles required during authorization evaluation.
+
+The adapter reconstructs the Role domain representation before returning it to the Application Layer.
+
+##### CredentialHashVerifier
+
+`CredentialHashVerifier` implements `CredentialVerifier`.
+
+Its responsibility is to compare the credential received during authentication with the protected credential representation associated with the identity.
+
+The comparison must be implemented through the security mechanism selected for the backend.
+
+Plain-text authentication credentials are not persisted.
+
+##### AuthenticationSessionProviderAdapter
+
+`AuthenticationSessionProviderAdapter` implements `AuthenticationSessionProvider`.
+
+Its responsibility is to generate the session representation that will allow subsequent requests to identify an authenticated identity.
+
+The concrete token or session technology remains encapsulated in the Infrastructure Layer and is not exposed as a dependency of the Domain Layer.
+
+##### OrganizationMembershipAdapter
+
+`OrganizationMembershipAdapter` implements `OrganizationMembershipValidator`.
+
+It obtains the minimum information required to determine whether the user associated with an identity belongs to the organization where a role assignment is requested.
+
+IAM does not persist or modify the complete user profile or organization model.
+
+The final communication mechanism used by this adapter must remain consistent with the Context Mapping defined for ResQ.
+
+##### Persistence considerations
+
+The IAM persistence model must maintain referential integrity between IAM-owned objects while avoiding direct ownership of objects that belong to other Bounded Contexts.
+
+For that reason:
+
+- `user_id` is stored as an external identifier and is not used to reproduce the User aggregate inside IAM.
+- `organization_id` is stored as an external authorization-scope identifier.
+- relationships among identities, roles, permissions, and role assignments are managed internally by IAM.
+- credentials are stored only in their protected representation.
+- duplicate role assignments for the same identity, role, and organization must be prevented through a domain invariant and a persistence-level unique constraint.
+
+#### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+The Component Level Diagram for the Identity and Access Management Bounded Context presents the internal components that collaborate inside the ResQ Cloud RESTful API container to provide authentication and authorization capabilities.
+
+The diagram must represent the following main components:
+
+- Authentication Interface Component, responsible for receiving authentication requests.
+- Role Assignment Interface Component, responsible for receiving requests for assigning roles.
+- Authorization Interface Component, responsible for protecting operations that require authorization.
+- IAM Application Component, containing the authentication, role-assignment, and authorization use cases.
+- IAM Domain Component, containing the Identity, Role, Permission, Role Assignment, and authorization business rules.
+- IAM Persistence Component, implementing repositories for identities, roles, permissions, and role assignments.
+- Credential Security Component, responsible for credential verification.
+- Authentication Session Component, responsible for generating the authenticated-session representation.
+- Organization Membership Integration Component, responsible for obtaining the minimum external information required to validate organizational membership.
+
+The main interaction flow represented in the diagram is:
+
+```text
+Client Application
+        |
+        v
+IAM Interface Components
+        |
+        v
+IAM Application Component
+        |
+        v
+IAM Domain Component
+        |
+        +----------------------+
+        |                      |
+        v                      v
+Persistence Component   Infrastructure Security/
+                        Integration Components
+        |
+        v
+IAM Persistence Storage
+```
+
+Authentication requests enter through the Authentication Interface Component and are coordinated by the Application Layer. Credential verification is delegated to the Infrastructure Layer while the Identity Aggregate remains responsible for its authentication state.
+
+Protected operations pass through the Authorization Interface Component. The Application Layer retrieves the identity and roles involved, while the Domain Layer evaluates whether the corresponding permission is granted.
+
+Role-assignment requests are also processed through the Application Layer and must satisfy both the authorization rules and the membership constraint before the Identity Aggregate is modified.
+
+**DIAGRAM — IAM Component Level Diagram**
+
+![Identity and Access Management Component Level Diagram](assets/images/chapter-04-solution-software-design/iam/iam-component-level-diagram.png) <!-- When creating the final C4 Component Diagram, include the concrete backend framework, ORM/persistence technology and communication protocols selected by the team. -->
+
+#### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
+
+The Code Level Diagrams provide a detailed representation of the implementation-oriented structure of the Identity and Access Management Bounded Context.
+
+For IAM, this level is represented through two complementary diagrams:
+
+- Domain Layer Class Diagram, which represents the classes, interfaces, enumerations, methods, attributes, relationships, directions, and multiplicities that form the domain model.
+- Database Design Diagram, which represents the persistence structures required to store identities, roles, permissions, and role assignments.
+
+The two diagrams represent different perspectives of the same Bounded Context. The class diagram describes the object-oriented domain model, while the database diagram describes how the persistent state required by that model is stored.
+
+##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+The Domain Layer Class Diagram represents the implementation-oriented structure of the IAM domain model.
+
+The diagram must include the following elements:
+
+**Aggregate Roots and Entities**
+
+- `Identity`
+- `Role`
+- `RoleAssignment`
+
+**Value Objects**
+
+- `LoginIdentifier`
+- `CredentialHash`
+- `Permission`
+
+**Enumeration**
+
+- `IdentityStatus`
+
+**Repository Interfaces**
+
+- `IdentityRepository`
+- `RoleRepository`
+
+**Domain Service**
+
+- `AuthorizationService`
+
+The principal relationships to represent are:
+
+- `Identity` is associated with exactly one `LoginIdentifier`.
+- `Identity` is associated with exactly one `CredentialHash`.
+- `Identity` has exactly one `IdentityStatus`.
+- `Identity` contains zero or more `RoleAssignment` entities.
+- Each `RoleAssignment` references one `Role` through `roleId`.
+- Each `RoleAssignment` applies to one organization through `organizationId`.
+- `Role` contains zero or more `Permission` Value Objects.
+- `IdentityRepository` manages persistence for `Identity`.
+- `RoleRepository` retrieves `Role` aggregates.
+- `AuthorizationService` evaluates `Identity` and `Role` data using `permissionCode` and `organizationId`; it does not depend directly on `Permission`.
+
+The class diagram must show visibility for attributes and operations using the UML conventions:
+
+- `+` for public.
+- `-` for private.
+- `#` for protected.
+
+It must also indicate relationship direction and multiplicity whenever applicable.
+
+A conceptual multiplicity reference for the final diagram is:
+
+```text
+Identity "1" *-- "0..*" RoleAssignment
+Identity "1" *-- "1" LoginIdentifier
+Identity "1" *-- "1" CredentialHash
+Identity "1" --> "1" IdentityStatus
+
+Role "1" *-- "0..*" Permission
+
+RoleAssignment ..> Role : references by roleId
+```
+
+organizationId and userId are represented as external identifiers rather than object relationships to aggregates belonging to other Bounded Contexts.
+
+**DIAGRAM — IAM Domain Layer Class Diagram**
+
+![Identity and Access Management Domain Layer Class Diagram](assets/images/chapter-04-solution-software-design/iam/iam-domain-layer-class-diagram.png)
+
+##### 4.2.1.6.2. Bounded Context Database Design Diagram
+
+The Identity and Access Management Database Design persists only the information owned by IAM.
+
+The proposed logical persistence model contains the following tables:
+
+###### `iam_identities`
+
+Stores the authentication identity associated with a ResQ user.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `identity_id` | UUID | PRIMARY KEY | Unique identifier of the IAM identity. |
+| `user_id` | UUID | NOT NULL, UNIQUE | External reference to the corresponding user. |
+| `login_identifier` | VARCHAR | NOT NULL, UNIQUE | Identifier used during authentication. |
+| `credential_hash` | VARCHAR | NOT NULL | Protected representation of the authentication credential. |
+| `status` | VARCHAR | NOT NULL | Current status of the identity. |
+
+The table does not store names, phone numbers, preferences, or other User-profile information.
+
+###### `iam_roles`
+
+Stores the roles available for IAM authorization.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `role_id` | UUID | PRIMARY KEY | Unique role identifier. |
+| `name` | VARCHAR | NOT NULL, UNIQUE | Role name. |
+
+The current design requires roles to exist and be assignable but does not define a User Story for role creation or role administration.
+
+###### `iam_permissions`
+
+Stores the authorization permissions used to protect ResQ operations.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `code` | VARCHAR(150) | PRIMARY KEY | Stable permission code used by authorization rules and the identity of the persisted Permission value. |
+
+###### `iam_role_permissions`
+
+Represents the many-to-many relationship between roles and permissions.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `role_id` | UUID | PRIMARY KEY, FOREIGN KEY | References `iam_roles.role_id`. |
+| `permission_code` | VARCHAR(150) | PRIMARY KEY, FOREIGN KEY | References `iam_permissions.code`. |
+
+The composite primary key `(role_id, permission_code)` prevents the same permission from being associated with the same role more than once. The foreign keys connect `role_id` to `iam_roles.role_id` and `permission_code` to `iam_permissions.code`.
+
+###### `iam_role_assignments`
+
+Stores role assignments made to identities inside an organization.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `assignment_id` | UUID | PRIMARY KEY | Unique assignment identifier. |
+| `identity_id` | UUID | NOT NULL, FOREIGN KEY | References `iam_identities.identity_id`. |
+| `role_id` | UUID | NOT NULL, FOREIGN KEY | References `iam_roles.role_id`. |
+| `organization_id` | UUID | NOT NULL | External identifier of the organization in which the role applies. |
+
+A unique constraint must be defined over:
+
+`(identity_id, role_id, organization_id)`
+
+This constraint complements the domain invariant that prevents duplicated role assignments for the same identity within the same organization.
+
+The internal database relationships are:
+
+```text
+iam_identities
+      |
+      | 1
+      |
+      | 0..*
+      v
+iam_role_assignments
+      |
+      | *               *
+      +-------> iam_roles --------+
+                    |              |
+                    | *            | *
+                    |              |
+                    v              |
+             iam_role_permissions |
+             (role_id,             |
+              permission_code)     |
+                    |              |
+                    | *            |
+                    v              |
+             iam_permissions <-----+
+             (code PK)
+```
+
+user_id and organization_id are intentionally treated as external references instead of foreign keys to tables owned by other Bounded Contexts. This avoids coupling the IAM persistence model directly to the internal database representation of other domain contexts.
+
+The final Database Design Diagram must identify:
+
+- tables;
+- columns;
+- primary keys;
+- foreign keys;
+- unique constraints;
+- cardinalities;
+- relationships among IAM tables.
+
+**DIAGRAM — IAM Database Design Diagram**
+
+![Identity and Access Management Database Design Diagram](assets/images/chapter-04-solution-software-design/iam/iam-database-design-diagram.png)
+
+### 4.2.2. Bounded Context: Risk Detection
+
+The **Risk Detection** Bounded Context is responsible for evaluating monitored information against configured detection rules in order to identify situations of risk, determine their type and severity, preserve the evidence that originated each detection, and maintain the location context required to understand where the detected condition occurred.
+
+This Bounded Context represents the domain knowledge involved in transforming valid monitored measurements into meaningful risk detections. It does not own the physical sensors that produce the measurements, the devices associated with those sensors, the buildings and zones where the devices are installed, or the alerts and responses executed after a risk is detected.
+
+The Risk Detection Bounded Context primarily supports **US06 — Know the detected risk type**, **US07 — Know the risk level**, **US08 — Know the risk location**, **US09 — Consult the detection context**, **US24 — Configure a detection condition**, **US28 — Maintain critical functions without Internet**, and **TS03 — Process detection rules locally**.
+
+Risk Detection consumes valid measurements produced by the monitoring flow and evaluates them using active detection rules. When a condition is satisfied, the Bounded Context creates or updates a risk detection and generates the information required for the rest of the ResQ platform to continue the emergency-management flow.
+
+A central architectural requirement of this Bounded Context is that critical detection must remain available even when Internet connectivity with Cloud services is interrupted. For that reason, active detection rules required for critical operation must also be available in the Edge environment, where measurements can be evaluated locally.
+
+The Bounded Context therefore participates in two main execution environments:
+
+- **ResQ Cloud RESTful API**, where authorized users configure detection rules and consult persisted risk detections and their evidence.
+- **ResQ Edge Service**, where active detection rules are available locally and incoming measurements can be evaluated without permanently depending on Cloud connectivity.
+
+Risk Detection does not generate user notifications, execute actuator commands, manage incident lifecycle, or own connectivity-recovery queues. Those responsibilities belong to other Bounded Contexts such as Alert & Response Management, Incident, and Connectivity.
+
+Similarly, Risk Detection does not reproduce the complete models of Measurement, Device, Building, or Zone. It only maintains the external references and evidence necessary to justify a risk-detection decision.
+
+The principal concepts identified for the Risk Detection Bounded Context are **Detection Rule**, **Detection Condition**, **Risk Detection**, **Detection Evidence**, **Risk Location**, **Risk Type**, **Severity Level**, and **Severity Change**.
+
+#### Class Dictionary
+
+The following table summarizes the principal classes and interfaces identified for the Risk Detection Bounded Context.
+
+| Class / Interface | Layer | Runtime | Purpose | Main attributes | Main operations | Main relationships |
+|---|---|---|---|---|---|---|
+| `DetectionRule` | Domain | Cloud / Edge | Aggregate Root that represents an active or inactive rule used to determine whether a monitored value represents a risk condition. | `ruleId: UUID`, `riskType: RiskType`, `severityLevel: SeverityLevel`, `condition: DetectionCondition`, `status: DetectionRuleStatus` | `updateCondition(condition)`, `activate()`, `deactivate()`, `isActive()`, `supports(variableType)` | Composes one `DetectionCondition`, one `RiskType`, one `SeverityLevel`, and one `DetectionRuleStatus`. |
+| `DetectionCondition` | Domain | Cloud / Edge | Value Object that defines the comparison that must be performed against a monitored variable. | `variableType: String`, `operator: ComparisonOperator`, `threshold: Decimal` | `isValid()`, `matches(variableType, value)` | Owned by `DetectionRule`; uses `ComparisonOperator`. |
+| `RiskDetection` | Domain | Cloud / Edge | Aggregate Root that represents a detected risk together with its current severity, location, evidence, and severity-change traceability. | `riskDetectionId: UUID`, `ruleId: UUID`, `riskType: RiskType`, `currentSeverity: SeverityLevel`, `location: RiskLocation`, `detectedAt: Instant`, `evidence: List<DetectionEvidence>`, `severityChanges: List<SeverityChange>` | `addEvidence(evidence)`, `updateSeverity(newSeverity, changedAt)`, `hasSeverity(severity)` | Composes `RiskLocation`, `DetectionEvidence`, `SeverityChange`, `RiskType`, and `SeverityLevel`; references a `DetectionRule` by `ruleId`. |
+| `DetectionEvidence` | Domain | Cloud / Edge | Value Object containing the monitored information used as evidence for a risk-detection decision. | `measurementId: UUID`, `deviceId: UUID`, `variableType: String`, `value: Decimal`, `measuredAt: Instant` | `matchesVariable(variableType)` | Owned by `RiskDetection`; references Measurement and Device through external identifiers. |
+| `RiskLocation` | Domain | Cloud / Edge | Value Object that represents the known location context of a detection without reproducing the Building domain model. | `buildingId: UUID?`, `zoneId: UUID?`, `resolutionStatus: LocationResolutionStatus` | `isResolved()` | Owned by `RiskDetection`; uses external Building/Zone identifiers. |
+| `SeverityChange` | Domain | Cloud | Entity owned by `RiskDetection` that preserves a transition between severity levels. | `severityChangeId: UUID`, `previousSeverity: SeverityLevel`, `newSeverity: SeverityLevel`, `changedAt: Instant` | — | Owned by `RiskDetection`; uses `SeverityLevel` values. |
+| `RiskType` | Domain | Cloud / Edge | Value Object representing the type of risk identified by a detection rule. | `code: String` | `code()`, `equals(other)` | Used by `DetectionRule` and `RiskDetection`. |
+| `SeverityLevel` | Domain | Cloud / Edge | Value Object representing the severity assigned to a risk without imposing a fixed severity catalog that is not defined by the current requirements. | `code: String` | `code()`, `equals(other)` | Used by `DetectionRule`, `RiskDetection`, and `SeverityChange`. |
+| `DetectionRuleStatus` | Domain | Cloud / Edge | Enumeration representing whether a detection rule can participate in evaluation. | `ACTIVE`, `INACTIVE` | — | Used by `DetectionRule`. |
+| `ComparisonOperator` | Domain | Cloud / Edge | Enumeration representing the comparison operation performed by a detection condition. | `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `LESS_THAN`, `LESS_THAN_OR_EQUAL`, `EQUAL` | — | Used by `DetectionCondition`. |
+| `LocationResolutionStatus` | Domain | Cloud / Edge | Enumeration indicating whether the location of a detected risk could be resolved from the available device context. | `RESOLVED`, `UNRESOLVED` | — | Used by `RiskLocation`. |
+| `DetectionRuleRepository` | Domain | Cloud / Edge | Repository abstraction for retrieving and persisting detection rules. | — | `findById(ruleId)`, `findActiveByVariableType(variableType)`, `save(rule)` | Persists and retrieves `DetectionRule` aggregates. |
+| `RiskDetectionRepository` | Domain | Cloud | Repository abstraction for persisted risk detections. | — | `findById(riskDetectionId)`, `save(riskDetection)` | Persists and retrieves `RiskDetection` aggregates. |
+| `RiskEvaluationService` | Domain | Edge | Domain Service responsible for determining whether an active detection rule is satisfied by valid detection evidence. | — | `matches(rule, evidence)` | Evaluates `DetectionRule` against `DetectionEvidence`. |
+| `RiskDetectedEvent` | Domain | Edge | Domain Event produced when a detection rule is satisfied and a risk detection must continue through the distributed ResQ flow. | `riskDetectionId: UUID`, `ruleId: UUID`, `riskType: String`, `severity: String`, `buildingId: UUID?`, `zoneId: UUID?`, `occurredAt: Instant` | — | Generated from `RiskDetection` and published through an application abstraction. |
+| `ConfigureDetectionRuleCommand` | Application | Cloud | Represents the request to configure a detection rule. | `riskTypeCode: String`, `severityCode: String`, `variableType: String`, `operator: String`, `threshold: Decimal` | — | Handled by `ConfigureDetectionRuleCommandHandler`. |
+| `ConfigureDetectionRuleCommandHandler` | Application | Cloud | Coordinates detection-rule creation or configuration. | Dependencies on `DetectionRuleRepository` and `DetectionRuleDistributor` | `handle(command)` | Creates/updates `DetectionRule` and requests distribution to Edge. |
+| `ChangeDetectionRuleStatusCommand` | Application | Cloud | Represents a request to activate or deactivate an existing detection rule. | `ruleId: UUID`, `active: boolean` | — | Handled by `ChangeDetectionRuleStatusCommandHandler`. |
+| `ChangeDetectionRuleStatusCommandHandler` | Application | Cloud | Coordinates rule activation/deactivation while preserving rule validity. | Dependencies on `DetectionRuleRepository` and `DetectionRuleDistributor` | `handle(command)` | Modifies `DetectionRule` and distributes the resulting state. |
+| `MeasurementReceivedEventHandler` | Application | Edge | Handles a valid monitored measurement delivered to Risk Detection and coordinates its local evaluation. | Dependencies on `DetectionRuleRepository`, `RiskLocationResolver`, `RiskEvaluationService`, `RiskDetectionEventPublisher` | `handle(event)` | Evaluates measurement evidence using active local `DetectionRule` aggregates. |
+| `UpdateLocalDetectionRuleEventHandler` | Application | Edge | Applies a detection-rule update received from Cloud to the Edge rule replica. | Dependency on `DetectionRuleRepository` | `handle(event)` | Persists the Edge representation of `DetectionRule`. |
+| `RiskDetectionReceivedEventHandler` | Application | Cloud | Processes synchronized risk-detection information received from the Edge flow and persists the corresponding detection state. | Dependency on `RiskDetectionRepository` | `handle(event)` | Reconstructs or updates `RiskDetection`. |
+| `GetRiskDetectionQuery` | Application | Cloud | Represents a request for the current information of a persisted risk detection. | `riskDetectionId: UUID` | — | Handled by `GetRiskDetectionQueryHandler`. |
+| `GetRiskDetectionQueryHandler` | Application | Cloud | Retrieves a persisted risk detection for application clients. | Dependency on `RiskDetectionRepository` | `handle(query)` | Reads `RiskDetection`. |
+| `GetRiskDetectionEvidenceQuery` | Application | Cloud | Represents a request for the evidence associated with a detection. | `riskDetectionId: UUID` | — | Handled by `GetRiskDetectionEvidenceQueryHandler`. |
+| `GetRiskDetectionEvidenceQueryHandler` | Application | Cloud | Retrieves the evidence and severity traceability associated with a detection. | Dependency on `RiskDetectionRepository` | `handle(query)` | Reads `RiskDetection`, `DetectionEvidence`, and `SeverityChange`. |
+| `DetectionRuleDistributor` | Application | Cloud | Abstraction used to distribute the rule state required by the Edge execution environment. | — | `distribute(rule)` | Implemented by `DetectionRuleDistributionAdapter`. |
+| `RiskLocationResolver` | Application | Edge | Abstraction used to resolve Building and Zone identifiers from the device associated with a measurement. | — | `resolve(deviceId)` | Implemented by `RiskLocationIntegrationAdapter`. |
+| `RiskDetectionEventPublisher` | Application | Edge | Abstraction used to publish a locally generated risk-detection event without coupling the Application Layer to a message broker or connectivity mechanism. | — | `publish(event)` | Implemented by `RiskDetectionEventPublisherAdapter`. |
+| `DetectionRuleController` | Interface | Cloud | Receives authorized REST requests for configuring and activating/deactivating detection rules. | Dependencies on detection-rule command handlers | `configure(request)`, `changeStatus(ruleId, request)` | Delegates to Application Layer command handlers. |
+| `RiskDetectionController` | Interface | Cloud | Exposes persisted risk-detection information and its evidence to authorized clients. | Dependencies on risk-detection query handlers | `getById(id)`, `getEvidence(id)` | Delegates to Application Layer query handlers. |
+| `RiskDetectionEventConsumer` | Interface | Cloud | Receives synchronized risk-detection events produced by the distributed Edge flow. | Dependency on `RiskDetectionReceivedEventHandler` | `consume(event)` | Delegates incoming detection events to the Application Layer. |
+| `MeasurementConsumer` | Interface | Edge | Receives valid measurements from the local monitoring flow and forwards them for rule evaluation. | Dependency on `MeasurementReceivedEventHandler` | `consume(measurement)` | Delegates incoming measurement events to the Edge Application Layer. |
+| `DetectionRuleReplicaConsumer` | Interface | Edge | Receives rule updates distributed from Cloud. | Dependency on `UpdateLocalDetectionRuleEventHandler` | `consume(ruleUpdate)` | Delegates rule updates to the Edge Application Layer. |
+| `DetectionRuleRepositoryAdapter` | Infrastructure | Cloud | Implements `DetectionRuleRepository` using the Cloud persistence technology selected by the team. | Persistence dependency | `findById()`, `findActiveByVariableType()`, `save()` | Implements `DetectionRuleRepository`. |
+| `RiskDetectionRepositoryAdapter` | Infrastructure | Cloud | Implements `RiskDetectionRepository` for risk detections, evidence, and severity changes. | Persistence dependency | `findById()`, `save()` | Implements `RiskDetectionRepository`. |
+| `DetectionRuleDistributionAdapter` | Infrastructure | Cloud | Implements detection-rule distribution toward the Edge execution environment. | Messaging/integration dependency | `distribute(rule)` | Implements `DetectionRuleDistributor`. |
+| `EdgeDetectionRuleRepositoryAdapter` | Infrastructure | Edge | Implements local detection-rule persistence using the Edge persistence stack. | Peewee / SQLite dependency | `findById()`, `findActiveByVariableType()`, `save()` | Edge implementation of `DetectionRuleRepository`. |
+| `RiskLocationIntegrationAdapter` | Infrastructure | Edge | Obtains Building and Zone references associated with the device without making Risk Detection owner of those domains. | Integration dependency | `resolve(deviceId)` | Implements `RiskLocationResolver`. |
+| `RiskDetectionEventPublisherAdapter` | Infrastructure | Edge | Publishes locally detected risk events to the downstream distributed flow. | Messaging/connectivity dependency | `publish(event)` | Implements `RiskDetectionEventPublisher`. |
+
+The design deliberately separates the ownership of risk-detection concepts from information owned by other Bounded Contexts.
+
+`DetectionEvidence` contains `measurementId` and `deviceId` as external references and as evidence snapshots, but Risk Detection does not manage the complete Measurement or Device aggregates.
+
+`RiskLocation` maintains `buildingId` and `zoneId` only as external location references. The lifecycle of buildings and zones remains outside Risk Detection.
+
+Likewise, `RiskDetectedEvent` communicates that a risk has been detected, but Risk Detection does not create alerts, send notifications, execute actuators, or manage the lifecycle of an incident.
+
+---
+
+#### 4.2.2.1. Domain Layer
+
+The **Domain Layer** represents the rules and concepts required to transform monitored quantitative information into a meaningful risk detection.
+
+The Domain Layer remains independent from HTTP, Flask, Cloud frameworks, SQLite, messaging technologies, and external services.
+
+The principal Aggregate Roots are `DetectionRule` and `RiskDetection`.
+
+##### DetectionRule
+
+**Category:** Aggregate Root.
+
+**Purpose:** Represent a configurable rule that determines whether a monitored variable satisfies a condition associated with a specific type and severity of risk.
+
+**Attributes:**
+
+- `ruleId: UUID` — Unique identifier of the detection rule.
+- `riskType: RiskType` — Type of risk represented by the rule.
+- `severityLevel: SeverityLevel` — Severity produced when the rule is satisfied.
+- `condition: DetectionCondition` — Quantitative condition evaluated against monitored information.
+- `status: DetectionRuleStatus` — Indicates whether the rule participates in evaluation.
+
+**Operations:**
+
+- `updateCondition(condition)` — Replaces the current detection condition with a valid condition.
+- `activate()` — Activates the rule only when its configuration is valid.
+- `deactivate()` — Prevents the rule from participating in future evaluations.
+- `isActive()` — Indicates whether the rule can currently be evaluated.
+- `supports(variableType)` — Indicates whether the rule applies to the specified monitored variable.
+
+A rule that contains an invalid condition must not be activated.
+
+##### DetectionCondition
+
+**Category:** Value Object.
+
+**Purpose:** Represent the comparison performed against a monitored value.
+
+**Attributes:**
+
+- `variableType: String`
+- `operator: ComparisonOperator`
+- `threshold: Decimal`
+
+**Operations:**
+
+- `isValid()` — Validates that the condition contains the information required for evaluation.
+- `matches(variableType, value)` — Determines whether the provided monitored value satisfies the condition.
+
+The condition does not contain information about a physical sensor model. It operates using the monitored variable and value so that the detection domain remains independent from specific hardware.
+
+##### RiskDetection
+
+**Category:** Aggregate Root.
+
+**Purpose:** Represent a risk that has been detected and preserve the contextual information required to explain the detection.
+
+**Attributes:**
+
+- `riskDetectionId: UUID`
+- `ruleId: UUID`
+- `riskType: RiskType`
+- `currentSeverity: SeverityLevel`
+- `location: RiskLocation`
+- `detectedAt: Instant`
+- `evidence: List<DetectionEvidence>`
+- `severityChanges: List<SeverityChange>`
+
+**Operations:**
+
+- `addEvidence(evidence)` — Adds monitored evidence associated with the same detection.
+- `updateSeverity(newSeverity, changedAt)` — Updates the current severity and preserves the previous value as part of the severity-change history.
+- `hasSeverity(severity)` — Indicates whether the detection currently has the specified severity.
+
+A Risk Detection does not become an Incident. Incident lifecycle and operational follow-up belong to the Incident Bounded Context.
+
+##### DetectionEvidence
+
+**Category:** Value Object.
+
+**Purpose:** Preserve the relevant monitored information used to justify the result of the detection process.
+
+**Attributes:**
+
+- `measurementId: UUID`
+- `deviceId: UUID`
+- `variableType: String`
+- `value: Decimal`
+- `measuredAt: Instant`
+
+**Operation:**
+
+- `matchesVariable(variableType)`
+
+The object maintains the measurement and device identifiers as external references. Risk Detection does not modify the source Measurement or Device.
+
+##### RiskLocation
+
+**Category:** Value Object.
+
+**Purpose:** Represent the location associated with a risk detection.
+
+**Attributes:**
+
+- `buildingId: UUID?`
+- `zoneId: UUID?`
+- `resolutionStatus: LocationResolutionStatus`
+
+**Operation:**
+
+- `isResolved()`
+
+When the available device context allows the location to be determined, the status is `RESOLVED`.
+
+When a valid location cannot be determined, Risk Detection must represent that fact explicitly through `UNRESOLVED` instead of inventing a location.
+
+##### SeverityChange
+
+**Category:** Entity owned by `RiskDetection`.
+
+**Purpose:** Preserve traceability when the severity associated with an existing detection changes.
+
+**Attributes:**
+
+- `severityChangeId: UUID`
+- `previousSeverity: SeverityLevel`
+- `newSeverity: SeverityLevel`
+- `changedAt: Instant`
+
+This entity directly supports the requirement that a severity update must preserve traceability of the previous state.
+
+##### RiskType
+
+**Category:** Value Object.
+
+**Purpose:** Identify the type of risk represented by a rule and a detection.
+
+**Attribute:**
+
+- `code: String`
+
+A closed enumeration of fire, gas, seismic, or other risks is intentionally not imposed because the current requirements do not define an exhaustive fixed catalog.
+
+##### SeverityLevel
+
+**Category:** Value Object.
+
+**Purpose:** Represent the severity associated with a risk.
+
+**Attribute:**
+
+- `code: String`
+
+The domain does not impose a fixed `LOW/MEDIUM/HIGH` enumeration because the current requirements establish the existence of a risk level but do not define a mandatory severity scale.
+
+##### DetectionRuleStatus
+
+**Category:** Enumeration.
+
+**Values:**
+
+- `ACTIVE`
+- `INACTIVE`
+
+Only active rules participate in measurement evaluation.
+
+##### ComparisonOperator
+
+**Category:** Enumeration.
+
+**Values:**
+
+- `GREATER_THAN`
+- `GREATER_THAN_OR_EQUAL`
+- `LESS_THAN`
+- `LESS_THAN_OR_EQUAL`
+- `EQUAL`
+
+These operators allow a quantitative monitored value to be compared with a configured threshold without coupling the domain to a particular sensor.
+
+##### LocationResolutionStatus
+
+**Category:** Enumeration.
+
+**Values:**
+
+- `RESOLVED`
+- `UNRESOLVED`
+
+##### DetectionRuleRepository
+
+**Category:** Repository Interface.
+
+**Purpose:** Provide persistence operations for `DetectionRule` while keeping the Domain Layer independent from Cloud or Edge persistence technologies.
+
+**Operations:**
+
+- `findById(ruleId)`
+- `findActiveByVariableType(variableType)`
+- `save(rule)`
+
+The same abstraction can have different Infrastructure implementations for Cloud persistence and Edge SQLite persistence.
+
+##### RiskDetectionRepository
+
+**Category:** Repository Interface.
+
+**Purpose:** Persist and retrieve `RiskDetection` aggregates in the Cloud persistence environment.
+
+**Operations:**
+
+- `findById(riskDetectionId)`
+- `save(riskDetection)`
+
+##### RiskEvaluationService
+
+**Category:** Domain Service.
+
+**Purpose:** Evaluate whether a valid monitored evidence item satisfies an active detection rule.
+
+**Operation:**
+
+- `matches(rule, evidence)`
+
+The service coordinates the domain comparison when the evaluation requires both a `DetectionRule` and `DetectionEvidence`.
+
+##### RiskDetectedEvent
+
+**Category:** Domain Event.
+
+**Purpose:** Represent the fact that a configured risk condition was detected locally and must continue through the distributed ResQ flow.
+
+**Attributes:**
+
+- `riskDetectionId: UUID`
+- `ruleId: UUID`
+- `riskType: String`
+- `severity: String`
+- `buildingId: UUID?`
+- `zoneId: UUID?`
+- `occurredAt: Instant`
+
+The event communicates the detection result but does not define the alert, notification, actuator command, or incident that may subsequently be created by other Bounded Contexts.
+
+##### Business Rules
+
+The Risk Detection domain applies the following business rules:
+
+1. A detection rule must contain a valid detection condition before it can be activated.
+
+2. An inactive detection rule must not participate in measurement evaluation.
+
+3. A detection rule can only evaluate monitored information corresponding to the variable type defined in its condition.
+
+4. Only valid monitored information delivered to Risk Detection may participate in evaluation.
+
+5. When a monitored value does not satisfy the configured condition, Risk Detection must not create a positive risk detection from that rule.
+
+6. When an active detection rule is satisfied, the resulting detection uses the `RiskType` and `SeverityLevel` defined by that rule.
+
+7. Every positive risk detection must preserve the relevant monitored evidence that originated the decision.
+
+8. Evidence must retain the measurement identifier, device identifier, monitored variable, value, and original measurement time.
+
+9. When multiple relevant measurements participate in the evolution of the same detection, the corresponding evidence must remain associated with that detection.
+
+10. Risk Detection must attempt to resolve the Building and Zone associated with the originating device.
+
+11. When the location cannot be resolved using valid information, the detection must be marked with an unresolved location instead of being assigned an unverified location.
+
+12. When the severity of an existing detection changes, the previous severity, new severity, and change time must remain traceable.
+
+13. Critical detection rules required for local operation must remain available in the Edge environment so that measurement evaluation does not permanently depend on Cloud connectivity.
+
+14. A successful local risk evaluation generates the domain information required to continue the distributed emergency-processing flow.
+
+15. Risk Detection does not create Alerts, Notifications, Actuator Commands, or Incidents directly.
+
+16. Temporary storage and later synchronization of remote events during an Internet interruption are not owned by Risk Detection; those responsibilities belong to the Connectivity flow.
+
+---
+
+#### 4.2.2.2. Interface Layer
+
+The **Interface Layer** exposes the Risk Detection capabilities to external clients and receives information from other parts of the distributed ResQ architecture.
+
+Because Risk Detection participates in both Cloud and Edge execution, the Interface Layer contains different entry points according to the runtime.
+
+The Cloud Interface Layer exposes authorized configuration and query operations.
+
+The Edge Interface Layer receives monitored measurements and replicas of active detection rules required for local evaluation.
+
+Business rules are not implemented in the Interface Layer.
+
+##### DetectionRuleController
+
+**Runtime:** Cloud.
+
+`DetectionRuleController` receives authorized REST requests related to detection-rule configuration.
+
+Its responsibilities include:
+
+- receiving the information required to configure a detection rule;
+- validating the basic request representation;
+- creating a `ConfigureDetectionRuleCommand`;
+- creating a `ChangeDetectionRuleStatusCommand`;
+- delegating operations to the corresponding Application Layer handlers.
+
+Example conceptual resources:
+
+```text
+POST /api/v1/risk-detection/rules
+PATCH /api/v1/risk-detection/rules/{ruleId}/status
+```
+
+The controller does not directly determine whether a condition is valid and does not persist rules directly.
+
+##### RiskDetectionController
+
+**Runtime:** Cloud.
+
+`RiskDetectionController` provides authorized access to persisted risk detections and their evidence.
+
+Example conceptual resources:
+
+```text
+GET /api/v1/risk-detections/{riskDetectionId}
+GET /api/v1/risk-detections/{riskDetectionId}/evidence
+```
+
+The controller delegates query execution to `GetRiskDetectionQueryHandler` and `GetRiskDetectionEvidenceQueryHandler`.
+
+It does not access the database directly.
+
+##### RiskDetectionEventConsumer
+
+**Runtime:** Cloud.
+
+`RiskDetectionEventConsumer` receives synchronized risk-detection information produced by the distributed Edge flow.
+
+Its responsibility is to translate an incoming integration representation into the application representation expected by `RiskDetectionReceivedEventHandler`.
+
+The consumer does not implement synchronization-retry logic because temporary event preservation and reconnection behavior belong to the Connectivity responsibility.
+
+##### MeasurementConsumer
+
+**Runtime:** Edge.
+
+`MeasurementConsumer` receives valid monitored information from the local measurement-processing flow.
+
+It transforms the incoming representation into the information expected by `MeasurementReceivedEventHandler`.
+
+The consumer does not evaluate detection rules directly.
+
+##### DetectionRuleReplicaConsumer
+
+**Runtime:** Edge.
+
+`DetectionRuleReplicaConsumer` receives detection-rule updates distributed from Cloud.
+
+It delegates the update to `UpdateLocalDetectionRuleEventHandler`, allowing the Edge runtime to maintain the local rule information required for autonomous detection.
+
+The Interface Layer remains independent from the internal persistence implementation used for those rules.
+
+#### 4.2.2.3. Application Layer
+
+The Application Layer coordinates the Risk Detection use cases across the Cloud and Edge runtimes.
+
+It uses Domain Layer objects and repository abstractions while remaining independent from database engines, message brokers, Cloud frameworks, and Edge persistence implementation details.
+
+The main application capabilities are:
+
+- detection-rule configuration;
+- detection-rule activation and deactivation;
+- distribution of detection rules to Edge;
+- local measurement evaluation;
+- location resolution;
+- publication of locally detected risks;
+- Cloud persistence of synchronized detections;
+- consultation of detections and their evidence.
+
+##### ConfigureDetectionRuleCommand
+
+**Runtime:** Cloud.
+
+Represents a request to configure a detection rule.
+
+**Attributes:**
+
+- `riskTypeCode: String`
+- `severityCode: String`
+- `variableType: String`
+- `operator: String`
+- `threshold: Decimal`
+
+##### ConfigureDetectionRuleCommandHandler
+
+**Runtime:** Cloud.
+
+Coordinates detection-rule configuration.
+
+Its execution flow is:
+
+1. Receive a `ConfigureDetectionRuleCommand`.
+2. Build the corresponding `RiskType`.
+3. Build the corresponding `SeverityLevel`.
+4. Build a `DetectionCondition`.
+5. Validate the detection condition.
+6. Create or update the `DetectionRule`.
+7. Persist the aggregate through `DetectionRuleRepository`.
+8. Request rule distribution through `DetectionRuleDistributor`.
+
+Invalid conditions must not produce an active detection rule.
+
+##### ChangeDetectionRuleStatusCommand
+
+**Runtime:** Cloud.
+
+Represents a request to activate or deactivate a detection rule.
+
+**Attributes:**
+
+- `ruleId: UUID`
+- `active: boolean`
+
+##### ChangeDetectionRuleStatusCommandHandler
+
+**Runtime:** Cloud.
+
+Coordinates changes in the operational state of a detection rule.
+
+The handler:
+
+1. Retrieves the `DetectionRule`.
+2. When activation is requested, delegates validity enforcement to the aggregate.
+3. Activates or deactivates the rule.
+4. Persists the resulting rule state.
+5. Requests distribution of the new state toward the Edge runtime.
+
+The handler does not duplicate the rule-validity invariant outside the Domain Layer.
+
+##### MeasurementReceivedEventHandler
+
+**Runtime:** Edge.
+
+Coordinates the local evaluation of an incoming monitored measurement.
+
+Its execution flow is:
+
+1. Receive the valid measurement representation from `MeasurementConsumer`.
+2. Construct the corresponding `DetectionEvidence`.
+3. Retrieve active detection rules compatible with the measurement variable using `DetectionRuleRepository`.
+4. Request the location associated with the originating `deviceId` through `RiskLocationResolver`.
+5. Evaluate every applicable rule through `RiskEvaluationService`.
+6. Ignore rules whose conditions are not satisfied.
+7. When a rule is satisfied, create or update the corresponding `RiskDetection` domain information.
+8. Associate the measurement evidence with the detection.
+9. Preserve severity changes when the current severity differs from the new severity.
+10. Create a `RiskDetectedEvent`.
+11. Publish the event through `RiskDetectionEventPublisher`.
+
+This flow is designed to run locally and therefore does not require a Cloud request to perform the critical rule evaluation.
+
+##### UpdateLocalDetectionRuleEventHandler
+
+**Runtime:** Edge.
+
+Coordinates the local application of a detection-rule update distributed from Cloud.
+
+Its execution flow is:
+
+1. Receive the distributed detection-rule representation.
+2. Reconstruct the corresponding `DetectionRule`.
+3. Persist the current rule state through the Edge implementation of `DetectionRuleRepository`.
+
+This allows the Edge runtime to continue evaluating critical rules even during temporary loss of Cloud connectivity.
+
+##### RiskDetectionReceivedEventHandler
+
+**Runtime:** Cloud.
+
+Coordinates persistence of a risk-detection event received from the Edge flow.
+
+Its responsibilities are:
+
+- Receive the synchronized detection information.
+- Reconstruct or update the corresponding `RiskDetection`.
+- Preserve the detection evidence included in the event flow.
+- Preserve severity-change information when applicable.
+- Persist the resulting aggregate through `RiskDetectionRepository`.
+
+The handler does not implement offline event queues or retransmission policies.
+
+##### GetRiskDetectionQuery
+
+**Runtime:** Cloud.
+
+**Attribute:**
+
+- `riskDetectionId: UUID`
+
+Represents a request to obtain the current persisted information associated with a risk detection.
+
+##### GetRiskDetectionQueryHandler
+
+**Runtime:** Cloud.
+
+Retrieves the corresponding `RiskDetection` through `RiskDetectionRepository` and provides its current domain representation to the Interface Layer.
+
+##### GetRiskDetectionEvidenceQuery
+
+**Runtime:** Cloud.
+
+**Attribute:**
+
+- `riskDetectionId: UUID`
+
+Represents a request to obtain the evidence and traceability associated with a detection.
+
+##### GetRiskDetectionEvidenceQueryHandler
+
+**Runtime:** Cloud.
+
+Retrieves the corresponding `RiskDetection` and exposes:
+
+- measurement evidence;
+- originating device references;
+- current risk type;
+- current severity;
+- resolved or unresolved location;
+- severity changes.
+
+##### DetectionRuleDistributor
+
+**Runtime:** Cloud.
+
+Application abstraction responsible for requesting distribution of the rule information required by Edge.
+
+**Operation:**
+
+- `distribute(rule)`
+
+The Application Layer does not depend on the transport mechanism used for distribution.
+
+##### RiskLocationResolver
+
+**Runtime:** Edge.
+
+Application abstraction used to resolve the location associated with the originating device.
+
+**Operation:**
+
+- `resolve(deviceId)`
+
+It returns a `RiskLocation` without transferring ownership of Device, Building, or Zone to the Risk Detection Bounded Context.
+
+##### RiskDetectionEventPublisher
+
+**Runtime:** Edge.
+
+Application abstraction responsible for publishing a `RiskDetectedEvent`.
+
+**Operation:**
+
+- `publish(event)`
+
+The interface isolates the Application Layer from messaging and connectivity technologies.
+
+#### 4.2.2.4. Infrastructure Layer
+
+The Infrastructure Layer contains the technical implementations required for persistence, distributed rule propagation, location integration, and publication of risk-detection events.
+
+Cloud and Edge use different infrastructure implementations while maintaining the same domain concepts.
+
+##### DetectionRuleRepositoryAdapter
+
+**Runtime:** Cloud.
+
+`DetectionRuleRepositoryAdapter` implements `DetectionRuleRepository` using the persistence technology selected for the ResQ Cloud RESTful API.
+
+Its responsibilities are:
+
+- retrieve detection rules by identifier;
+- retrieve active rules according to their monitored variable;
+- reconstruct `DetectionRule` aggregates;
+- persist detection-rule configuration and status.
+
+The Cloud persistence framework must remain consistent with the Web Services technology selected by the team.
+
+##### RiskDetectionRepositoryAdapter
+
+**Runtime:** Cloud.
+
+`RiskDetectionRepositoryAdapter` implements `RiskDetectionRepository`.
+
+Its responsibilities include persistence and reconstruction of:
+
+- `RiskDetection`;
+- `DetectionEvidence`;
+- `SeverityChange`;
+- current severity;
+- resolved or unresolved location references.
+
+##### DetectionRuleDistributionAdapter
+
+**Runtime:** Cloud.
+
+`DetectionRuleDistributionAdapter` implements `DetectionRuleDistributor`.
+
+It communicates detection-rule changes toward the Edge runtime using the integration mechanism selected by the overall ResQ architecture.
+
+Its responsibility is limited to delivering the rule representation required by Edge.
+
+The exact transport must remain aligned with the final Context Mapping and Container architecture.
+
+##### EdgeDetectionRuleRepositoryAdapter
+
+**Runtime:** Edge.
+
+`EdgeDetectionRuleRepositoryAdapter` implements `DetectionRuleRepository` using the Edge persistence stack required for the project.
+
+For the Edge Services implementation, the Project Statement establishes:
+
+- Python as programming language;
+- Flask for Edge Services;
+- Peewee ORM;
+- SQLite.
+
+The adapter therefore provides local persistence of detection rules required for autonomous operation.
+
+Its responsibilities include:
+
+- storing the latest distributed rule state;
+- retrieving active local rules by monitored variable;
+- preserving rule availability during temporary loss of Cloud connectivity.
+
+##### RiskLocationIntegrationAdapter
+
+**Runtime:** Edge.
+
+`RiskLocationIntegrationAdapter` implements `RiskLocationResolver`.
+
+It obtains the minimum device-location context required to identify:
+
+- `buildingId`;
+- `zoneId`;
+- whether the location could be resolved.
+
+The adapter does not reproduce or modify Building, Zone, or Device aggregates.
+
+Its final integration mechanism must be consistent with the Context Mapping defined by the team.
+
+##### RiskDetectionEventPublisherAdapter
+
+**Runtime:** Edge.
+
+`RiskDetectionEventPublisherAdapter` implements `RiskDetectionEventPublisher`.
+
+It publishes locally generated `RiskDetectedEvent` objects to the distributed ResQ flow.
+
+The adapter does not own:
+
+- event retry policies;
+- pending-event queues during network interruption;
+- synchronization lifecycle.
+
+Those responsibilities belong to the connectivity mechanism used by ResQ.
+
+##### Persistence considerations
+
+Risk Detection requires different persistence responsibilities in Cloud and Edge.
+
+Cloud persistence stores the authoritative detection-rule configuration and the risk-detection history required by the user-facing applications.
+
+It persists:
+
+- detection rules;
+- current detection state;
+- evidence associated with detections;
+- severity-change traceability.
+
+Edge persistence stores the local rule representation required to evaluate critical conditions without permanent Cloud connectivity.
+
+It does not need to duplicate the complete Cloud risk-detection history.
+
+This separation allows the Bounded Context to support local critical evaluation without assigning connectivity synchronization responsibilities to Risk Detection.
+
+#### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+The Risk Detection Bounded Context participates in more than one deployable Container. For that reason, its Component Level architecture is represented through separate C4 Component Diagrams for the Cloud and Edge environments.
+
+The diagrams must preserve the same domain boundary while representing the responsibilities deployed in each Container.
+
+##### Risk Detection — ResQ Cloud RESTful API Component Diagram
+
+The Cloud Component Diagram represents the components inside the ResQ Cloud RESTful API that participate in Risk Detection.
+
+The principal components are:
+
+- Detection Rule API, responsible for receiving authorized detection-rule configuration operations.
+- Risk Detection Query API, responsible for exposing persisted detection information and evidence.
+- Risk Detection Event Consumer, responsible for receiving synchronized detection events produced by Edge.
+- Risk Detection Application, responsible for coordinating Cloud use cases.
+- Risk Detection Domain, containing the domain model used by the Cloud capabilities.
+- Cloud Risk Detection Persistence, implementing persistence of rules and detections.
+- Detection Rule Distribution, responsible for propagating rule changes toward Edge.
+
+The main Cloud flow is conceptually:
+
+```text
+Web / Mobile Application
+          |
+          v
+Detection Rule API / Risk Detection Query API
+          |
+          v
+Risk Detection Application
+          |
+          v
+Risk Detection Domain
+          |
+          +------------------------+
+          |                        |
+          v                        v
+Cloud Persistence       Detection Rule Distribution
+          |                        |
+          v                        v
+ResQ Cloud Database          Edge Runtime
+```
+
+Risk-detection events synchronized from Edge enter through the Risk Detection Event Consumer, are processed by the Application Layer, and are persisted using the Domain and Infrastructure Layers.
+
+The final C4 diagram must show the concrete Cloud technology once the Web Services stack is officially selected by the team.
+
+**DIAGRAM — Risk Detection Cloud Component Level Diagram**
+
+![Risk Detection Cloud Component Level Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-cloud-component-level-diagram.png)
+
+##### Risk Detection — ResQ Edge Service Component Diagram
+
+The Edge Component Diagram represents the components responsible for local risk evaluation inside the ResQ Edge Service.
+
+The principal components are:
+
+- Measurement Consumer, responsible for receiving valid locally available measurements.
+- Detection Rule Replica Consumer, responsible for receiving current detection-rule states from Cloud.
+- Edge Risk Detection Application, responsible for coordinating local evaluation.
+- Risk Evaluation Domain, containing the detection-rule and risk-evaluation domain logic.
+- Local Detection Rule Persistence, responsible for storing local rule replicas using Peewee and SQLite.
+- Risk Location Integration, responsible for obtaining the location references associated with an originating device.
+- Risk Detection Event Publisher, responsible for publishing the result of a successful local detection.
+
+The principal local execution flow is:
+
+```text
+Local Measurement Flow
+          |
+          v
+Measurement Consumer
+          |
+          v
+Edge Risk Detection Application
+          |
+          v
+Risk Evaluation Domain
+      /            \
+     v              v
+Local Rule      Risk Location
+Persistence     Integration
+     |
+     v
+Risk Detection Event
+     |
+     v
+Risk Detection Event Publisher
+     |
+     v
+Distributed ResQ Flow
+```
+
+The Edge rule-update flow is:
+
+```text
+Cloud Rule Distribution
+          |
+          v
+Detection Rule Replica Consumer
+          |
+          v
+Edge Risk Detection Application
+          |
+          v
+Local Detection Rule Persistence
+```
+
+The Edge implementation must use the technology established by the Project Statement for Edge Services: Python, Flask, Peewee ORM, and SQLite.
+
+**DIAGRAM Risk Detection Edge Component Level Diagram**
+
+![Risk Detection Edge Component Level Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-edge-component-level-diagram.png)
+
+#### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
+
+The Code Level Diagrams provide a more detailed representation of the implementation-oriented structure of the Risk Detection Bounded Context.
+
+For Risk Detection, the Code Level is represented by:
+
+- Domain Layer Class Diagram, describing the object-oriented domain model, including Aggregate Roots, Entities, Value Objects, enumerations, Domain Services, Repository interfaces, attributes, methods, visibility, relationships, and multiplicities.
+- Database Design Diagram, describing the relational persistence structures required by the Cloud and Edge portions of the Bounded Context.
+
+The diagrams must remain consistent with the four-layer design described above.
+
+##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+The Domain Layer Class Diagram represents the implementation-oriented structure of the Risk Detection domain model.
+
+The diagram must include the following elements.
+
+**Aggregate Roots**
+
+- `DetectionRule`
+- `RiskDetection`
+
+**Entity**
+
+- `SeverityChange`
+
+**Value Objects**
+
+- `DetectionCondition`
+- `DetectionEvidence`
+- `RiskLocation`
+- `RiskType`
+- `SeverityLevel`
+
+**Enumerations**
+
+- `DetectionRuleStatus`
+- `ComparisonOperator`
+- `LocationResolutionStatus`
+
+**Repository Interfaces**
+
+- `DetectionRuleRepository`
+- `RiskDetectionRepository`
+
+**Domain Service**
+
+- `RiskEvaluationService`
+
+**Domain Event**
+
+- `RiskDetectedEvent`
+
+The principal relationships to represent are:
+
+- `DetectionRule` composes exactly one `DetectionCondition`.
+- `DetectionRule` composes exactly one `RiskType`.
+- `DetectionRule` composes exactly one `SeverityLevel`.
+- `DetectionRule` uses exactly one `DetectionRuleStatus`.
+- `DetectionCondition` uses exactly one `ComparisonOperator`.
+- `RiskDetection` composes exactly one `RiskType`.
+- `RiskDetection` composes exactly one current `SeverityLevel`.
+- `RiskDetection` composes exactly one `RiskLocation`.
+- `RiskDetection` owns one or more `DetectionEvidence` values.
+- `RiskDetection` owns zero or more `SeverityChange` entities.
+- `RiskLocation` uses exactly one `LocationResolutionStatus`.
+- `SeverityChange` references a previous and a new `SeverityLevel`.
+- `RiskDetection` references its originating `DetectionRule` through `ruleId`.
+- `DetectionRuleRepository` persists and retrieves `DetectionRule`.
+- `RiskDetectionRepository` persists and retrieves `RiskDetection`.
+- `RiskEvaluationService` evaluates `DetectionRule` and `DetectionEvidence`.
+- `RiskDetectedEvent` is produced from a successful Risk Detection evaluation.
+
+The diagram must show UML visibility conventions:
+
+- `+` for public members;
+- `-` for private members;
+- `#` for protected members when applicable.
+
+A conceptual multiplicity reference is:
+
+```text
+DetectionRule "1" *-- "1" DetectionCondition
+DetectionRule "1" *-- "1" RiskType
+DetectionRule "1" *-- "1" SeverityLevel
+DetectionRule "1" --> "1" DetectionRuleStatus
+
+DetectionCondition "1" --> "1" ComparisonOperator
+
+RiskDetection "1" *-- "1" RiskType
+RiskDetection "1" *-- "1" SeverityLevel
+RiskDetection "1" *-- "1" RiskLocation
+RiskDetection "1" *-- "1..*" DetectionEvidence
+RiskDetection "1" *-- "0..*" SeverityChange
+
+RiskLocation "1" --> "1" LocationResolutionStatus
+
+SeverityChange --> SeverityLevel : previous/new
+
+RiskDetection ..> DetectionRule : references by ruleId
+
+DetectionRuleRepository ..> DetectionRule : persists
+RiskDetectionRepository ..> RiskDetection : persists
+
+RiskEvaluationService ..> DetectionRule : evaluates
+RiskEvaluationService ..> DetectionEvidence : evaluates
+```
+
+The following concepts must not appear as owned domain classes inside Risk Detection:
+
+- Measurement
+- Device
+- Building
+- Zone
+- Alert
+- Incident
+- Actuator
+
+Their identifiers may appear as external references when required by the detection process.
+
+**DIAGRAM — Risk Detection Domain Layer Class Diagram**
+
+ ![Risk Detection Domain Layer Class Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-domain-layer-class-diagram.png)
+
+##### 4.2.2.6.2. Bounded Context Database Design Diagram
+
+The Risk Detection Database Design represents the persistence required by the Bounded Context across the Cloud and Edge execution environments.
+
+Cloud persistence stores the authoritative detection-rule definitions and the persisted detection history.
+
+Edge persistence stores the local detection-rule replicas required for autonomous evaluation.
+
+The persistence model deliberately avoids creating foreign-key dependencies to tables owned by other Bounded Contexts.
+
+###### Cloud Persistence
+
+###### `risk_detection_rules`
+
+Stores the authoritative detection-rule configuration.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `rule_id` | UUID | PRIMARY KEY | Unique identifier of the detection rule. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Risk type produced when the condition is satisfied. |
+| `severity_code` | VARCHAR(50) | NOT NULL | Severity associated with the rule. |
+| `variable_type` | VARCHAR(100) | NOT NULL | Monitored variable evaluated by the rule. |
+| `comparison_operator` | VARCHAR(40) | NOT NULL | Comparison operator applied to the monitored value. |
+| `threshold` | DECIMAL(12,4) | NOT NULL | Quantitative threshold used by the condition. |
+| `status` | VARCHAR(20) | NOT NULL | Current rule status (ACTIVE or INACTIVE). |
+
+DetectionCondition, RiskType, and SeverityLevel are Value Objects and therefore their persistent values are embedded within the detection-rule record instead of being modeled as independent aggregate tables.
+
+###### `risk_detections`
+
+Stores persisted risk detections received from the distributed Edge flow.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `risk_detection_id` | UUID | PRIMARY KEY | Unique identifier of the detected risk. |
+| `rule_id` | UUID | NOT NULL, FOREIGN KEY | References `risk_detection_rules.rule_id`. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Risk type identified at detection time. |
+| `current_severity_code` | VARCHAR(50) | NOT NULL | Current severity of the detection. |
+| `building_id` | UUID | NULL | External Building reference when location can be resolved. |
+| `zone_id` | UUID | NULL | External Zone reference when location can be resolved. |
+| `location_status` | VARCHAR(20) | NOT NULL | Indicates whether the detection location was resolved. |
+| `detected_at` | TIMESTAMP | NOT NULL | Original detection time. |
+
+building_id and zone_id are intentionally not foreign keys to tables owned by other Bounded Contexts.
+
+###### `risk_detection_evidence`
+
+Stores the monitored evidence associated with each persisted risk detection.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `risk_detection_id` | UUID | PRIMARY KEY, FOREIGN KEY | References `risk_detections.risk_detection_id`. |
+| `measurement_id` | UUID | PRIMARY KEY | External identifier of the monitored measurement. |
+| `device_id` | UUID | NOT NULL | External identifier of the originating device. |
+| `variable_type` | VARCHAR(100) | NOT NULL | Monitored variable represented by the evidence. |
+| `measured_value` | DECIMAL(12,4) | NOT NULL | Value used during evaluation. |
+| `measured_at` | TIMESTAMP | NOT NULL | Original measurement time. |
+
+The composite primary key:
+
+`(risk_detection_id, measurement_id)`
+
+prevents the same monitored evidence from being associated more than once with the same risk detection.
+
+measurement_id and device_id are external references and therefore do not create direct database ownership relationships with Monitoring or Device persistence.
+
+###### `risk_severity_changes`
+
+Stores severity transitions associated with persisted risk detections.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `severity_change_id` | UUID | PRIMARY KEY | Unique identifier of the severity-change entity. |
+| `risk_detection_id` | UUID | NOT NULL, FOREIGN KEY | References `risk_detections.risk_detection_id`. |
+| `previous_severity_code` | VARCHAR(50) | NOT NULL | Severity before the change. |
+| `new_severity_code` | VARCHAR(50) | NOT NULL | Severity after the change. |
+| `changed_at` | TIMESTAMP | NOT NULL | Moment when the severity change occurred. |
+
+This table preserves the traceability required when a risk changes severity.
+
+###### Edge Persistence
+
+###### `edge_detection_rules`
+
+Stores the detection-rule representation required for local evaluation in the Edge SQLite database.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `rule_id` | UUID | PRIMARY KEY | Identifier of the Cloud detection rule represented locally. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Risk type produced by the rule. |
+| `severity_code` | VARCHAR(50) | NOT NULL | Severity associated with the rule. |
+| `variable_type` | VARCHAR(100) | NOT NULL | Monitored variable evaluated locally. |
+| `comparison_operator` | VARCHAR(40) | NOT NULL | Comparison operator used by the local condition. |
+| `threshold` | DECIMAL(12,4) | NOT NULL | Quantitative threshold used for evaluation. |
+| `status` | VARCHAR(20) | NOT NULL | Current local rule status. |
+
+This table is not an independent source of rule ownership. It is the local Edge representation required so critical rules can continue to be evaluated without permanent Cloud connectivity.
+
+The Edge persistence implementation must use SQLite with Peewee ORM, according to the Edge Services technology required by the Project Statement.
+
+The internal Cloud relationships are conceptually:
+
+```text
+risk_detection_rules
+        |
+        | 1
+        |
+        | 0..*
+        v
+risk_detections
+        |
+        +------------------------+
+        |                        |
+        | 1                      | 1
+        |                        |
+        | 1..*                   | 0..*
+        v                        v
+risk_detection_evidence    risk_severity_changes
+```
+
+The final Database Design Diagram must clearly distinguish:
+
+- Cloud Persistence
+  - `risk_detection_rules`
+  - `risk_detections`
+  - `risk_detection_evidence`
+  - `risk_severity_changes`
+
+- Edge SQLite
+  - `edge_detection_rules`
+
+The diagram must identify:
+
+- all tables;
+- all columns;
+- primary keys;
+- foreign keys;
+- composite keys;
+- nullable external references;
+- cardinalities;
+- Cloud versus Edge persistence boundaries.
+
+No database table for Alert, Incident, Device, Measurement, Building, Zone, Actuator, or Connectivity pending events must be introduced inside the Risk Detection persistence boundary.
+
+**DIAGRAM — Risk Detection Database Design Diagram**
+
+![Risk Detection Database Design Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-database-design-diagram.png)
+
+
+### 4.2.3. Bounded Context: Building Management
+
+
+#### 4.2.3.1. Domain Layer
+
+**Aggregates**
+
+`Building`
+
+Raíz del aggregate que representa una edificación de una organización. Mantiene su identificación, dirección, estado administrativo y zonas. Todas las modificaciones de una zona se realizan a través de Building.
+
+| Atributo | Tipo de dato | Visibilidad | Descripción |
+|---|---|---|---|
+| id | Guid | Private | Identificador interno e inmutable de la edificación. |
+| organizationId | Guid | Private | Organización a la que pertenece la edificación. |
+| buildingCode | BuildingCode | Private | Código único dentro de la organización. |
+| name | string | Private | Nombre de la edificación, entre 1 y 120 caracteres. |
+| description | string? | Private | Descripción opcional de hasta 500 caracteres. |
+| address | BuildingAddress | Private | Dirección física de la edificación. |
+| administrativeStatus | LocationAdministrativeStatus | Private | Estado administrativo ACTIVE o INACTIVE. |
+| zones | List\<Zone\> | Private | Zonas de la edificación; puede estar vacía al registrarse. |
+| createdAt | DateTimeOffset | Private | Fecha y hora UTC de registro. |
+| updatedAt | DateTimeOffset | Private | Fecha y hora UTC de la última modificación del agregado. |
+| version | long | Private | Versión del agregado, incluidos los cambios en sus zonas. |
+
+| Método | Tipo de retorno | Descripción |
+|---|---|---|
+| Register(...) | Building | Registra una edificación activa, inicialmente sin zonas. |
+| UpdateDetails(name, description, address) | void | Actualiza los datos descriptivos y la dirección. |
+| ChangeAdministrativeStatus(status) | void | Activa o desactiva administrativamente la edificación. |
+| AddZone(zoneCode, name, description, floorLabel) | Zone | Agrega una zona activa a una edificación activa y verifica que su código no se repita. |
+| UpdateZone(zoneId, name, description, floorLabel) | void | Modifica los datos de una zona perteneciente a la edificación. |
+| ChangeZoneAdministrativeStatus(zoneId, status) | void | Cambia el estado de una zona; su activación exige una edificación activa. |
+| IsAvailableForAssignment(zoneId?) | bool | Comprueba si la edificación y, cuando se indica, la zona están disponibles para asignar dispositivos. |
+
+**Entities**
+
+`Zone`
+
+**Descripción:** Área física de una edificación, como una cocina, un almacén o una sala técnica. Tiene identidad propia y pertenece a un único Building. No contiene dispositivos, mediciones ni reglas de detección.
+
+| Atributo | Tipo de dato | Visibilidad | Descripción |
+|---|---|---|---|
+| id | Guid | Private | Identificador interno e inmutable de la zona. |
+| zoneCode | ZoneCode | Private | Código único dentro de la edificación. |
+| name | string | Private | Nombre de la zona, entre 1 y 120 caracteres. |
+| description | string? | Private | Descripción opcional de hasta 500 caracteres. |
+| floorLabel | string? | Private | Referencia opcional del nivel, hasta 50 caracteres; por ejemplo, Piso 2 o Sótano 1. |
+| administrativeStatus | LocationAdministrativeStatus | Private | Estado administrativo propio de la zona. |
+| createdAt | DateTimeOffset | Private | Fecha y hora UTC de creación. |
+| updatedAt | DateTimeOffset | Private | Fecha y hora UTC de su última modificación. |
+
+El nivel es un dato descriptivo; esta propuesta no incorpora un agregado Floor ni una jerarquía de zonas. Zone no tiene repositorio independiente ni cambia de edificación. Si el área física se reemplaza, se registra otra zona y se desactiva la anterior para conservar sus referencias.
+
+**Value Objects**
+
+| Value Object (`record`) | Atributos | Validación y significado |
+|---|---|---|
+| BuildingCode | value: string | Entre 1 y 64 caracteres; letras ASCII, números, guion y guion bajo. Se eliminan espacios exteriores y se convierte a mayúsculas. |
+| ZoneCode | value: string | Aplica la misma normalización que BuildingCode; su unicidad se limita a la edificación. |
+| BuildingAddress | streetAddress: string, district: string, city: string, countryCode: string | Dirección de hasta 200 caracteres; distrito y ciudad de hasta 100; código de país de dos letras mayúsculas, por ejemplo PE. Todos los campos son obligatorios. |
+
+Los identificadores rechazan `Guid.Empty`. Los códigos, la organización y la pertenencia de una zona son inmutables. Las propiedades públicas de records en C# utilizan PascalCase; los campos de los contratos JSON se presentan en camelCase.
+
+**Enumerations**
+
+| Enumeración | Valores | Significado |
+|---|---|---|
+| LocationAdministrativeStatus | ACTIVE, INACTIVE | Ubicación habilitada o deshabilitada administrativamente para nuevas asignaciones. |
+
+Desactivar una edificación impide nuevas asignaciones tanto a ella como a sus zonas, pero conserva el estado propio de cada zona. Al reactivarla, solo quedan disponibles las zonas que conservan ACTIVE. No se eliminan asociaciones existentes ni se confirma ninguna acción sobre equipos físicos. Estos estados y las reglas de normalización son decisiones de diseño propuestas para desarrollar US21 y US22; no se presentan como requisitos explícitos de sus criterios de aceptación.
+
+**Commands**
+
+`organizationId` procede del contexto autorizado. `expectedVersion` corresponde siempre a la versión de Building, incluso al modificar una zona.
+
+| Command (`record`) | Datos |
+|---|---|
+| RegisterBuildingCommand | organizationId, buildingCode, name, description?, address |
+| UpdateBuildingDetailsCommand | organizationId, buildingId, name, description?, address, expectedVersion |
+| ChangeBuildingAdministrativeStatusCommand | organizationId, buildingId, administrativeStatus, expectedVersion |
+| AddZoneToBuildingCommand | organizationId, buildingId, zoneCode, name, description?, floorLabel?, expectedVersion |
+| UpdateZoneCommand | organizationId, buildingId, zoneId, name, description?, floorLabel?, expectedVersion |
+| ChangeZoneAdministrativeStatusCommand | organizationId, buildingId, zoneId, administrativeStatus, expectedVersion |
+
+**Queries**
+
+| Query (`record`) | Datos | Resultado |
+|---|---|---|
+| GetBuildingByIdQuery | organizationId, buildingId | Building? |
+| GetBuildingsQuery | organizationId, administrativeStatus?, page, size | PagedResult\<Building\> |
+| GetZonesByBuildingIdQuery | organizationId, buildingId, administrativeStatus?, page, size | PagedResult\<Zone\> |
+| GetZoneByIdQuery | organizationId, buildingId, zoneId | Zone? |
+
+**Services**
+
+| Interfaz | Método | Tipo de retorno |
+|---|---|---|
+| IBuildingCommandService | Handle(RegisterBuildingCommand) | Building |
+| IBuildingCommandService | Handle(UpdateBuildingDetailsCommand) | Building |
+| IBuildingCommandService | Handle(ChangeBuildingAdministrativeStatusCommand) | Building |
+| IBuildingCommandService | Handle(AddZoneToBuildingCommand) | Building |
+| IBuildingCommandService | Handle(UpdateZoneCommand) | Building |
+| IBuildingCommandService | Handle(ChangeZoneAdministrativeStatusCommand) | Building |
+| IBuildingQueryService | Handle(GetBuildingByIdQuery) | Building? |
+| IBuildingQueryService | Handle(GetBuildingsQuery) | PagedResult\<Building\> |
+| IBuildingQueryService | Handle(GetZonesByBuildingIdQuery) | PagedResult\<Zone\> |
+| IBuildingQueryService | Handle(GetZoneByIdQuery) | Zone? |
+
+`IBuildingRepository` declara el contrato de persistencia del agregado. `BuildingReadScope` representa las edificaciones y zonas visibles para el solicitante; `BuildingFilters` y `ZoneFilters` contienen los filtros de consulta. Estos contratos no dependen del framework web ni de clases internas de IAM. `PagedResult<T>` contiene Items, Page, Size, TotalElements y TotalPages.
+
+**Domain Events**
+
+| Evento | Se produce cuando |
+|---|---|
+| BuildingRegistered | Se registra una edificación. |
+| BuildingDetailsUpdated | Cambian sus datos descriptivos o dirección. |
+| BuildingAdministrativeStatusChanged | Cambia el estado administrativo de la edificación. |
+| ZoneAddedToBuilding | Se agrega una zona. |
+| ZoneDetailsUpdated | Cambian los datos descriptivos de una zona. |
+| ZoneAdministrativeStatusChanged | Cambia el estado administrativo de una zona. |
+
+Cada cambio efectivo incrementa una vez la versión de Building y genera un evento. Repetir valores existentes no produce un cambio adicional. El mensaje de integración contiene eventId, eventType, schemaVersion, organizationId, buildingId, aggregateVersion, occurredAt y una instantánea de la edificación con sus zonas. Los cambios de zona incluyen además affectedZoneId. La aplicación conserva el mensaje mediante una outbox para informar a los consumidores sin compartir tablas.
+
+#### 4.2.3.2. Interface Layer
+
+**REST Controllers**
+
+`BuildingsController`
+
+**Descripción:** Expone el registro y consulta de edificaciones y zonas. Construye comandos y consultas, aplica el contrato HTTP y transforma los resultados en recursos. Las rutas anidadas expresan que cada zona pertenece a una edificación.
+
+| Método | Ruta | Descripción | Respuesta exitosa |
+|---|---|---|---|
+| RegisterBuilding() | POST /api/v1/buildings | Registra una edificación. | 201, BuildingResource, Location y ETag |
+| GetBuildings() | GET /api/v1/buildings | Lista edificaciones; admite administrativeStatus, page y size. | 200, BuildingPageResource |
+| GetBuildingById() | GET /api/v1/buildings/{buildingId} | Consulta una edificación y sus zonas visibles. | 200, BuildingResource y ETag |
+| UpdateBuildingDetails() | PUT /api/v1/buildings/{buildingId}/details | Actualiza nombre, descripción y dirección. | 200, BuildingResource y ETag |
+| ChangeBuildingAdministrativeStatus() | PUT /api/v1/buildings/{buildingId}/administrative-status | Activa o desactiva la edificación. | 200, BuildingResource y ETag |
+| AddZoneToBuilding() | POST /api/v1/buildings/{buildingId}/zones | Agrega una zona a la edificación. | 201, BuildingResource, Location de la zona y ETag |
+| GetZonesByBuildingId() | GET /api/v1/buildings/{buildingId}/zones | Lista zonas; admite administrativeStatus, page y size. | 200, ZonePageResource |
+| GetZoneById() | GET /api/v1/buildings/{buildingId}/zones/{zoneId} | Consulta una zona de la edificación indicada. | 200, ZoneResource |
+| UpdateZone() | PUT /api/v1/buildings/{buildingId}/zones/{zoneId}/details | Actualiza los datos de una zona. | 200, BuildingResource y ETag |
+| ChangeZoneAdministrativeStatus() | PUT /api/v1/buildings/{buildingId}/zones/{zoneId}/administrative-status | Activa o desactiva una zona. | 200, BuildingResource y ETag |
+
+Los PUT y el POST de creación de una zona requieren `If-Match` con el ETag de Building, obtenido en GET /buildings/{buildingId}. Los comandos devuelven el agregado actualizado y su nuevo ETag; una zona no tiene versión independiente. La paginación comienza en cero, con tamaño predeterminado 20 y máximo 100, y utiliza un orden estable por createdAt e id. No se exponen operaciones DELETE.
+
+**Resources**
+
+| Resource (`record`) | Contenido |
+|---|---|
+| RegisterBuildingResource | buildingCode, name, description?, address |
+| UpdateBuildingDetailsResource | name, description?, address |
+| ChangeBuildingAdministrativeStatusResource | administrativeStatus |
+| AddZoneToBuildingResource | zoneCode, name, description?, floorLabel? |
+| UpdateZoneResource | name, description?, floorLabel? |
+| ChangeZoneAdministrativeStatusResource | administrativeStatus |
+| BuildingAddressResource | streetAddress, district, city, countryCode |
+| BuildingResource | id, organizationId, buildingCode, name, description?, address, administrativeStatus, zones, createdAt, updatedAt, version |
+| ZoneResource | id, buildingId, zoneCode, name, description?, floorLabel?, administrativeStatus, availableForAssignment, createdAt, updatedAt |
+| BuildingPageResource | items: List\<BuildingResource\>, page, size, totalElements, totalPages |
+| ZonePageResource | items: List\<ZoneResource\>, page, size, totalElements, totalPages |
+| ErrorResource | code, message, fieldErrors?, traceId |
+
+`availableForAssignment` se calcula con el estado de Building y Zone; no se almacena como columna. Los filtros de estado de zonas se refieren a su estado propio. Los recursos de entrada no aceptan organizationId, IDs generados, fechas ni versión como campos editables. Todas las salidas, incluidas las zonas anidadas y los totales, respetan el alcance autorizado.
+
+**Assemblers**
+
+| Assembler | Responsabilidad |
+|---|---|
+| RegisterBuildingCommandFromResourceAssembler | Construye RegisterBuildingCommand con el recurso y la organización autorizada. |
+| UpdateBuildingDetailsCommandFromResourceAssembler | Construye UpdateBuildingDetailsCommand con el recurso, buildingId y versión esperada. |
+| ChangeBuildingAdministrativeStatusCommandFromResourceAssembler | Construye ChangeBuildingAdministrativeStatusCommand. |
+| AddZoneToBuildingCommandFromResourceAssembler | Construye AddZoneToBuildingCommand usando la versión de Building. |
+| UpdateZoneCommandFromResourceAssembler | Construye UpdateZoneCommand con buildingId, zoneId y versión esperada. |
+| ChangeZoneAdministrativeStatusCommandFromResourceAssembler | Construye ChangeZoneAdministrativeStatusCommand. |
+| BuildingQueriesFromRequestAssembler | Convierte parámetros de ruta y consulta en las cuatro consultas del dominio. |
+| BuildingResourceFromEntityAssembler | Convierte Building y las zonas visibles en BuildingResource. |
+| ZoneResourceFromEntityAssembler | Convierte Zone y el estado de su Building en ZoneResource. |
+| BuildingPageResourceFromPageAssembler | Construye BuildingPageResource. |
+| ZonePageResourceFromPageAssembler | Construye ZonePageResource. |
+
+**Contrato de errores**
+
+| Código HTTP | Situación |
+|---|---|
+| 400 | Identificadores vacíos, campos, estados o paginación inválidos. |
+| 401 | Identidad ausente o inválida. |
+| 403 | Falta permiso para registrar o modificar la ubicación. |
+| 404 | Edificación o zona no encontrada dentro del ámbito visible, incluida una zona que no pertenece a la edificación indicada. |
+| 409 | Código duplicado; creación o activación de una zona en una edificación inactiva. |
+| 412 | La versión de Building ya cambió. |
+| 428 | Falta If-Match al modificar un agregado existente. |
+| 503 | No puede completarse una validación de autorización obligatoria. |
+
+
+**Fachada de integración**
+
+`BuildingsContextFacade` expone `ValidateAssignment(organizationId, buildingId, zoneId?)` a contextos autorizados. Utiliza `IBuildingQueryService` para comprobar organización, existencia, pertenencia de la zona y disponibilidad administrativa. Devuelve `BuildingAssignmentValidation` con organizationId, buildingId, zoneId, buildingVersion y availableForAssignment; no entrega entidades persistentes. Una ubicación inexistente o no visible responde como no encontrada y una ubicación inactiva no se considera disponible. Device traduce la respuesta a su contrato local `ValidatedAssignment`. Esta fachada completa el componente ya representado en el diagrama.
+
+#### 4.2.3.3. Application Layer
+
+`BuildingCommandServiceImpl`
+
+**Descripción:** Implementa IBuildingCommandService. Verifica permisos, carga el agregado, aplica sus reglas y persiste Building, sus zonas y el mensaje outbox en una transacción local.
+
+| Método | Descripción |
+|---|---|
+| Handle(RegisterBuildingCommand) | Comprueba permiso de creación en la organización y código disponible; registra la edificación activa con versión 1. |
+| Handle(UpdateBuildingDetailsCommand) | Verifica acceso y versión; actualiza nombre, descripción y dirección. |
+| Handle(ChangeBuildingAdministrativeStatusCommand) | Cambia el estado de Building sin eliminar zonas ni modificar sus estados propios. |
+| Handle(AddZoneToBuildingCommand) | Verifica acceso, versión y edificación activa; agrega una zona con código único dentro del agregado. |
+| Handle(UpdateZoneCommand) | Comprueba que la zona pertenece al Building y es editable por el solicitante; actualiza sus datos descriptivos. |
+| Handle(ChangeZoneAdministrativeStatusCommand) | Cambia el estado propio de la zona; exige Building activo para activarla. |
+
+Toda modificación de Zone incrementa la versión de Building. Una escritura compara expectedVersion con la versión almacenada y revierte la transacción completa ante conflicto. Las restricciones únicas de MySQL también protegen frente a registros simultáneos. Una edificación o zona inactiva puede conservar y corregir sus datos descriptivos.
+
+`BuildingQueryServiceImpl`
+
+**Descripción:** Implementa IBuildingQueryService sin modificar datos. Aplica los filtros y el alcance de IAM antes de paginar o calcular los totales.
+
+| Método | Descripción |
+|---|---|
+| Handle(GetBuildingByIdQuery) | Obtiene una edificación dentro de la organización y el alcance del solicitante. |
+| Handle(GetBuildingsQuery) | Lista las edificaciones visibles por estado administrativo. |
+| Handle(GetZonesByBuildingIdQuery) | Lista las zonas visibles de la edificación indicada. |
+| Handle(GetZoneByIdQuery) | Obtiene una zona comprobando su edificación, organización y alcance autorizado. |
+
+**Puertos de aplicación e integración**
+
+| Puerto | Métodos principales | Responsabilidad |
+|---|---|---|
+| IBuildingAccessGateway | RequirePermission(action, organizationId, buildingId?, zoneId?); GetReadScope(organizationId): BuildingReadScope | Valida permisos de IAM para la organización y ubicación. La creación de una edificación exige permiso a nivel de organización. |
+| IBuildingOutboxRepository | Append(message); FindPending(batchSize); MarkPublished(eventId); RecordFailure(eventId, nextAttemptAt) | Conserva los mensajes de integración y su estado de publicación. |
+| IBuildingEventPublisher | Publish(message) | Entrega mensajes a los consumidores mediante el transporte configurado. |
+
+`BuildingIntegrationEventMapper` construye el mensaje con la instantánea del agregado. `BuildingOutboxDispatcher` publica mensajes pendientes y reintenta los fallidos. Los consumidores deduplican por eventId y aplican únicamente versiones superiores a la conocida. Un fallo de publicación posterior al commit conserva el mensaje pendiente.
+
+**Coordinación con Device Management**
+
+Buildings conserva los identificadores de edificaciones y zonas, incluso cuando están inactivas. Esta entrega utiliza desactivación reversible; no incorpora retiro definitivo ni eliminación física. Devices consulta la fachada al registrar, reasignar o activar un equipo. Desactivar una ubicación bloquea futuras validaciones, pero no borra dispositivos ni altera mediciones o incidentes anteriores.
+
+La validación describe la disponibilidad en el momento de la consulta. Si una asignación y una desactivación se ejecutan simultáneamente en servicios separados, la consulta por sí sola no garantiza atomicidad entre contextos. La integración deberá revalidar o reconciliar esa asignación ante cambios concurrentes; no se interpreta una respuesta válida como una reserva permanente. Las instantáneas históricas conservadas por Monitoring e Incident Management no se reescriben al renombrar una ubicación.
+
+#### 4.2.3.4. Infrastructure Layer
+
+**Persistencia del agregado**
+
+`IBuildingRepository` / `RelationalBuildingRepository`
+
+**Descripción:** IBuildingRepository define el contrato del dominio. RelationalBuildingRepository guarda el agregado y consulta sus zonas en MySQL. No se publica un repositorio de escritura independiente para Zone.
+
+| Método del puerto | Tipo de retorno | Descripción |
+|---|---|---|
+| FindByIdAndOrganizationId(buildingId, organizationId) | Building? | Recupera Building con sus zonas dentro de una organización; la aplicación verifica además el alcance de acceso. |
+| FindPage(organizationId, filters, readScope, page, size) | PagedResult\<Building\> | Consulta edificaciones visibles y aplica el filtro de estado. |
+| FindZonesPage(organizationId, buildingId, filters, readScope, page, size) | PagedResult\<Zone\> | Consulta zonas mediante su relación con Building y aplica el alcance antes de paginar. |
+| FindZoneById(organizationId, buildingId, zoneId) | Zone? | Busca una zona que pertenezca a la edificación y organización indicadas. |
+| ExistsByOrganizationIdAndBuildingCode(organizationId, buildingCode) | bool | Detecta códigos de edificación repetidos. |
+| Save(building, expectedVersion?) | Building | Inserta o actualiza Building y sus zonas de forma atómica, con control de versión. |
+
+La unicidad del código de zona se verifica dentro del agregado y mediante UNIQUE(building_id, zone_code). Las consultas de zonas siempre se restringen por la organización del Building; no se acepta zoneId como prueba suficiente de acceso.
+
+**Adaptadores**
+
+| Componente | Puerto implementado | Descripción |
+|---|---|---|
+| IamBuildingAccessAdapter | IBuildingAccessGateway | Adapta los permisos y el alcance de IAM. |
+| RelationalBuildingOutboxRepository | IBuildingOutboxRepository | Persiste mensajes en la misma transacción y base de datos del agregado. |
+| BuildingEventPublisherAdapter | IBuildingEventPublisher | Publica mensajes mediante el transporte de integración elegido. |
+| BuildingPersistenceMapper | No aplica | Convierte Building, Zone y sus value objects hacia y desde registros relacionales. |
+
+
+#### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Diagrama de componentes de Building Management](assets/images/chapter-04-solution-software-design/buildings-components.png)
+
+Web y Mobile son contenedores separados y consumen BuildingsController. Los servicios de aplicación coordinan reglas de Building y Zone y persistencia en MySQL. Device valida ubicaciones mediante BuildingsContextFacade. La vista muestra el flujo principal; los adaptadores de IAM y publicación outbox se detallan en las capas anteriores para mantener el diagrama simple.
+
+#### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
+
+![Diagrama UML del agregado Building](assets/images/chapter-04-solution-software-design/buildings-domain-model.png)
+![Diagrama UML de contratos de Building Management](assets/images/chapter-04-solution-software-design/buildings-domain-contracts.png)
+
+Building es la raíz y contiene cero o más zonas, cada una perteneciente a una única edificación. Los value objects encapsulan códigos y dirección; los contratos de comandos, consultas y repositorio operan sobre esa estructura. Renombrar una zona mantiene su identidad y referencias, en correspondencia con US22, AC2.
+
+##### 4.2.3.6.2. Bounded Context Database Design Diagram
+
+![Diagrama relacional de Building Management](assets/images/chapter-04-solution-software-design/buildings-database.png)
+
+`zones.building_id` referencia a `buildings.id`. Los códigos son únicos por organización o edificación, respectivamente. `building_outbox` conserva los mensajes de integración en la misma transacción que el agregado; es una tabla técnica. `organization_id` es una referencia externa, sin FK hacia otro bounded context. La versión de Building también controla los cambios en sus zonas.
+
+### 4.2.4. Bounded Context: Device Management
+
+#### 4.2.4.1. Domain Layer
+
+**Aggregates**
+
+`Device`
+
+Raíz del aggregate que representa un equipo IoT registrado en una organización. Controla sus características, capacidades y asignación física. Un mismo equipo puede medir varias variables y ejecutar acciones; por ello se utiliza una colección de capacidades en lugar de exigir que sea exclusivamente sensor o actuador.
+
+| Atributo | Tipo de dato | Visibilidad | Descripción |
+|---|---|---|---|
+| id | Guid | Private | Identificador interno e inmutable del dispositivo. |
+| organizationId | Guid | Private | Identificador de la organización propietaria del registro; no representa al usuario que lo creó. |
+| deviceCode | DeviceCode | Private | Código estable y único dentro de la organización. |
+| name | string | Private | Nombre visible del equipo; obligatorio, de 1 a 120 caracteres. |
+| description | string? | Private | Descripción administrativa opcional, hasta 500 caracteres. |
+| specifications | DeviceSpecifications | Private | Fabricante, modelo y número de serie, cuando se conocen. |
+| assignment | DeviceAssignment | Private | Edificación obligatoria y zona opcional donde está instalado. |
+| externalReference | ExternalDeviceReference? | Private | Correspondencia opcional con un equipo de un sistema externo. |
+| administrativeStatus | DeviceAdministrativeStatus | Private | Estado administrativo del registro. |
+| capabilities | List\<DeviceCapability\> | Private | Capacidades de medición y actuación que pertenecen al agregado. |
+| createdAt | DateTimeOffset | Private | Fecha y hora UTC del registro. |
+| updatedAt | DateTimeOffset | Private | Fecha y hora UTC de la última modificación. |
+| version | long | Private | Versión para controlar modificaciones concurrentes y ordenar eventos. |
+
+| Método | Tipo de retorno | Descripción |
+|---|---|---|
+| Register(...) | Device | Crea el agregado en estado `INACTIVE` con al menos una capacidad válida. |
+| UpdateDetails(name, description, specifications) | void | Modifica datos descriptivos sin alterar la identidad del equipo. |
+| ReplaceCapabilities(capabilityDefinitions) | void | Sustituye las capacidades de un dispositivo inactivo; conserva el ID de las capacidades cuyo código no cambia. |
+| AssignTo(assignment) | void | Cambia la edificación o zona de un dispositivo inactivo, previa validación externa de la ubicación. |
+| ChangeAdministrativeStatus(status) | void | Aplica una transición válida del ciclo de vida administrativo. |
+
+**Entities**
+
+`DeviceCapability`
+
+**Descripción:** Capacidad individual de un dispositivo. Tiene identidad propia dentro del agregado y solo se modifica a través de `Device`; no tiene repositorio ni controlador independiente.
+
+| Atributo | Tipo de dato | Visibilidad | Descripción |
+|---|---|---|---|
+| id | Guid | Private | Identificador de la capacidad. |
+| code | string | Private | Código estable, de 1 a 80 caracteres, único dentro del dispositivo; por ejemplo, `ambient_temperature` o `close_valve`. |
+| kind | CapabilityKind | Private | `MEASUREMENT` o `ACTUATION`. |
+| unit | string? | Private | Unidad de una medición, hasta 30 caracteres; no aplica a capacidades de actuación. |
+
+Las capacidades describen lo que el equipo puede hacer. No contienen valores medidos, reglas, parámetros de ejecución, resultados de acciones ni datos de conexión. Los ejemplos de códigos son ilustrativos; no constituyen un catálogo de hardware ya seleccionado.
+
+**Value Objects**
+
+| Value Object (`record`) | Atributos | Validación y significado |
+|---|---|---|
+| DeviceCode | value: string | Entre 1 y 64 caracteres; espacios exteriores eliminados y conversión a mayúsculas. Se propone admitir letras ASCII, números, guion y guion bajo. |
+| DeviceSpecifications | manufacturer: string?, model: string?, serialNumber: string? | Metadatos opcionales de hasta 100 caracteres cada uno. El número de serie no sustituye al identificador interno ni se presume único entre fabricantes. |
+| DeviceAssignment | buildingId: Guid, zoneId: Guid? | Siempre exige una edificación. Si existe zona, esta debe pertenecer a esa edificación y a la misma organización. La comprobación de existencia se coordina desde Application Layer. |
+| ExternalDeviceReference | sourceSystem: string, externalDeviceId: string | Ambos valores son obligatorios si se proporciona la referencia, de hasta 80 y 120 caracteres. Identifican al equipo en una instancia de integración dentro de la organización. |
+| CapabilityDefinition | code: string, kind: CapabilityKind, unit: string? | Entrada inmutable para crear o reemplazar capacidades; aplica las mismas reglas que `DeviceCapability`, sin aceptar su ID desde el cliente. |
+
+`sourceSystem` identifica una **instancia** de integración, por ejemplo `bms-campus-norte`, y no solo el nombre del fabricante. Se normaliza a minúsculas y admite letras ASCII, números, guion y guion bajo; `externalDeviceId` conserva mayúsculas y minúsculas y se compara exactamente tras quitar espacios exteriores. La referencia externa y `deviceCode` son inmutables en esta propuesta; sustituir físicamente el equipo requiere registrar otro `Device` y retirar el anterior.
+
+**Enumerations**
+
+| Enumeración | Valores | Significado |
+|---|---|---|
+| DeviceAdministrativeStatus | INACTIVE, ACTIVE, RETIRED | Registrado y deshabilitado administrativamente; habilitado administrativamente; retirado de manera definitiva. |
+| CapabilityKind | MEASUREMENT, ACTUATION | Capacidad para producir una medición o para recibir una acción. |
+
+El ciclo administrativo propuesto admite INACTIVE → ACTIVE, ACTIVE → INACTIVE e INACTIVE → RETIRED. RETIRED es terminal; retirar un equipo activo exige desactivarlo primero. Estos estados no equivalen a conectado/desconectado ni al resultado de una prueba de integración. Las modificaciones de ubicación o capacidades solo se permiten en INACTIVE; un equipo retirado permanece consultable y no editable.
+
+**Commands**
+
+Los comandos representan intenciones de modificación. `organizationId` se obtiene del contexto autorizado del solicitante. `expectedVersion` se obtiene de `If-Match` para impedir que una edición sobrescriba cambios más recientes.
+
+| Command (`record`) | Datos |
+|---|---|
+| RegisterDeviceCommand | organizationId, deviceCode, name, description?, specifications, assignment, externalReference?, capabilities: List\<CapabilityDefinition\> |
+| UpdateDeviceDetailsCommand | organizationId, deviceId, name, description?, specifications, expectedVersion |
+| ReplaceDeviceCapabilitiesCommand | organizationId, deviceId, capabilities: List\<CapabilityDefinition\>, expectedVersion |
+| AssignDeviceToLocationCommand | organizationId, deviceId, buildingId, zoneId?, expectedVersion |
+| ChangeDeviceAdministrativeStatusCommand | organizationId, deviceId, administrativeStatus, expectedVersion |
+
+**Queries**
+
+| Query (`record`) | Datos | Resultado |
+|---|---|---|
+| GetDeviceByIdQuery | organizationId, deviceId | Device? |
+| GetDevicesQuery | organizationId, buildingId?, zoneId?, administrativeStatus?, page, size | PagedResult\<Device\> |
+| GetDeviceByExternalReferenceQuery | organizationId, sourceSystem, externalDeviceId | Device? |
+
+**Services**
+
+| Interfaz | Métodos | Tipo de retorno |
+|---|---|---|
+| IDeviceCommandService | Handle(RegisterDeviceCommand) | Device |
+| IDeviceCommandService | Handle(UpdateDeviceDetailsCommand) | Device |
+| IDeviceCommandService | Handle(ReplaceDeviceCapabilitiesCommand) | Device |
+| IDeviceCommandService | Handle(AssignDeviceToLocationCommand) | Device |
+| IDeviceCommandService | Handle(ChangeDeviceAdministrativeStatusCommand) | Device |
+| IDeviceQueryService | Handle(GetDeviceByIdQuery) | Device? |
+| IDeviceQueryService | Handle(GetDevicesQuery) | PagedResult\<Device\> |
+| IDeviceQueryService | Handle(GetDeviceByExternalReferenceQuery) | Device? |
+
+`IDeviceRepository` es el puerto de persistencia del agregado, declarado en el dominio. Su implementación se describe en Infrastructure Layer. Los servicios anteriores son contratos; `DeviceCommandServiceImpl` y `DeviceQueryServiceImpl` son sus implementaciones de aplicación. La separación de comandos y consultas no exige bases de datos diferentes.
+
+Los contratos auxiliares `DeviceReadScope` y `DeviceFilters` contienen identificadores de ubicaciones autorizadas y filtros de consulta, respectivamente; no dependen de clases de IAM, del framework web ni de la infraestructura. `PagedResult<T>` contiene `Items`, `Page`, `Size`, `TotalElements` y `TotalPages`. Las propiedades públicas de records en C# siguen PascalCase; los nombres camelCase de las tablas de entrada y salida corresponden a su representación JSON. Los identificadores obligatorios rechazan `Guid.Empty`.
+
+**Domain Events**
+
+| Evento | Se produce cuando |
+|---|---|
+| DeviceRegistered | Se registra un dispositivo. |
+| DeviceDetailsUpdated | Cambian sus datos descriptivos. |
+| DeviceCapabilitiesReplaced | Cambia su conjunto de capacidades. |
+| DeviceAssignedToLocation | Cambia su asignación física. |
+| DeviceAdministrativeStatusChanged | Se aplica una transición administrativa. |
+
+Los eventos se producen únicamente ante cambios efectivos. La aplicación los convierte en mensajes de integración con `eventId`, `eventType`, `schemaVersion`, `organizationId`, `deviceId`, `aggregateVersion`, `occurredAt` y una instantánea del catálogo del dispositivo. El evento de asignación incluye también la asignación anterior. La instantánea contiene metadatos, capacidades, estado y asignación; no contiene mediciones ni credenciales. Permite que Monitoring y Alert & Response Management actualicen su referencia del equipo sin acceder a las tablas de Devices.
+
+#### 4.2.4.2. Interface Layer
+
+**REST Controllers**
+
+`DevicesController`
+
+**Descripción:** Recibe solicitudes autenticadas, valida su forma, construye comandos o consultas y transforma los resultados en recursos REST. Las reglas del agregado permanecen en Domain Layer y la coordinación de permisos, ubicación y persistencia se ejecuta en Application Layer.
+
+| Método | Ruta | Descripción | Respuesta exitosa |
+|---|---|---|---|
+| RegisterDevice() | POST /api/v1/devices | Registra el equipo con sus capacidades y ubicación inicial. | 201, DeviceResource, Location y ETag |
+| GetDevices() | GET /api/v1/devices | Lista los dispositivos visibles para el solicitante; admite buildingId, zoneId, administrativeStatus, page y size. | 200, DevicePageResource |
+| GetDeviceById() | GET /api/v1/devices/{deviceId} | Consulta un dispositivo de la organización autorizada. | 200, DeviceResource y ETag |
+| GetDeviceByExternalReference() | GET /api/v1/devices/by-external-reference?sourceSystem=...&externalDeviceId=... | Resuelve un identificador de una integración. | 200, DeviceResource y ETag |
+| UpdateDeviceDetails() | PUT /api/v1/devices/{deviceId}/details | Sustituye sus datos descriptivos. | 200, DeviceResource y ETag |
+| ReplaceDeviceCapabilities() | PUT /api/v1/devices/{deviceId}/capabilities | Sustituye el conjunto de capacidades de un equipo inactivo. | 200, DeviceResource y ETag |
+| AssignDeviceToLocation() | PUT /api/v1/devices/{deviceId}/assignment | Asigna o reasigna un equipo inactivo a una edificación y, opcionalmente, una zona. | 200, DeviceResource y ETag |
+| ChangeDeviceAdministrativeStatus() | PUT /api/v1/devices/{deviceId}/administrative-status | Habilita, deshabilita o retira administrativamente el equipo. | 200, DeviceResource y ETag |
+
+Las modificaciones con `PUT` requieren `If-Match` con el ETag obtenido al consultar el recurso, derivado de `version`. Se propone paginación desde cero, tamaño predeterminado 20, máximo 100 y orden estable por `createdAt` e `id`. Las consultas sin filtros tampoco devuelven dispositivos fuera del ámbito autorizado. Los dispositivos retirados siguen siendo consultables; el filtro administrativo permite excluirlos. No se expone eliminación física.
+
+**Resources**
+
+| Resource (`record`) | Contenido |
+|---|---|
+| RegisterDeviceResource | deviceCode, name, description?, specifications, assignment, externalReference?, capabilities |
+| UpdateDeviceDetailsResource | name, description?, specifications |
+| ReplaceDeviceCapabilitiesResource | capabilities: List\<CapabilityDefinitionResource\> |
+| AssignDeviceToLocationResource | buildingId, zoneId? |
+| ChangeDeviceAdministrativeStatusResource | administrativeStatus |
+| DeviceSpecificationsResource | manufacturer?, model?, serialNumber? |
+| DeviceAssignmentResource | buildingId, zoneId? |
+| ExternalDeviceReferenceResource | sourceSystem, externalDeviceId |
+| CapabilityDefinitionResource | code, kind, unit? |
+| DeviceCapabilityResource | id, code, kind, unit? |
+| DeviceResource | id, organizationId, deviceCode, name, description?, specifications, assignment, externalReference?, administrativeStatus, capabilities, createdAt, updatedAt, version |
+| DevicePageResource | items: List\<DeviceResource\>, page, size, totalElements, totalPages |
+| ErrorResource | code, message, fieldErrors?, traceId |
+
+Los recursos de entrada no aceptan `organizationId`, IDs internos de capacidades, fechas ni versión como campos editables. La organización activa se obtiene de un contexto de acceso validado; en usuarios con varias organizaciones, IAM verifica la selección. No se exponen credenciales de equipos o integraciones.
+
+**Assemblers**
+
+| Assembler | Responsabilidad |
+|---|---|
+| RegisterDeviceCommandFromResourceAssembler | Construye RegisterDeviceCommand con el recurso y la organización autorizada. |
+| UpdateDeviceDetailsCommandFromResourceAssembler | Construye UpdateDeviceDetailsCommand con el recurso, deviceId, organización y versión esperada. |
+| ReplaceDeviceCapabilitiesCommandFromResourceAssembler | Construye ReplaceDeviceCapabilitiesCommand. |
+| AssignDeviceToLocationCommandFromResourceAssembler | Construye AssignDeviceToLocationCommand. |
+| ChangeDeviceAdministrativeStatusCommandFromResourceAssembler | Construye ChangeDeviceAdministrativeStatusCommand. |
+| DeviceQueriesFromRequestAssembler | Convierte parámetros de ruta y consulta en las tres consultas del dominio. |
+| DeviceResourceFromEntityAssembler | Convierte Device y sus objetos anidados en DeviceResource. |
+| DevicePageResourceFromPageAssembler | Convierte una página de agregados en DevicePageResource. |
+
+**Contrato de errores**
+
+| Código HTTP | Situación |
+|---|---|
+| 400 | Campos, tipos, enumeraciones, capacidades o parámetros de paginación inválidos; falta una parte de la referencia externa. |
+| 401 | Identidad ausente o inválida. |
+| 403 | Solicitante autenticado sin permiso para la operación o la ubicación seleccionada. |
+| 404 | Dispositivo no encontrado dentro del ámbito visible, o ubicación inexistente dentro del ámbito autorizado. |
+| 409 | Código o referencia externa duplicados; transición prohibida; edición de un equipo retirado o cambio de ubicación/capacidades de un equipo activo; zona incompatible con la edificación. |
+| 412 | If-Match no coincide con la versión vigente. |
+| 428 | Falta If-Match en una modificación que lo requiere. |
+| 503 | No puede completarse una validación obligatoria contra IAM o Buildings; no se registra el cambio. |
+
+Las lecturas de IDs ajenos al ámbito visible responden 404 sin revelar metadatos de otras organizaciones. Los errores de infraestructura no se convierten en permisos concedidos ni en ubicaciones válidas.
+
+**Fachada de integración**
+
+`DevicesContextFacade` expone `GetDeviceCatalogEntry(organizationId, deviceId)` para consultas entre contextos autorizados. Devuelve `DeviceCatalogEntry` con identidad, ubicación, capacidades, estado y versión, sin entidades persistentes ni tablas compartidas. Utiliza `IDeviceQueryService`; las identidades de servicio también tienen permisos limitados. Esta fachada permite consultar el catálogo inicial o recuperar información, mientras los eventos comunican cambios posteriores.
+
+#### 4.2.4.3. Application Layer
+
+`DeviceCommandServiceImpl`
+
+**Descripción:** Implementa IDeviceCommandService y coordina los casos de uso. Comprueba autorización y alcance, consulta Buildings cuando corresponde, carga el agregado, invoca sus métodos y guarda el resultado junto con los mensajes pendientes de integración en una misma transacción local.
+
+| Método | Descripción |
+|---|---|
+| Handle(RegisterDeviceCommand) | Valida permiso sobre la edificación y zona, comprueba duplicados, verifica la ubicación, crea Device inactivo y persiste DeviceRegistered. |
+| Handle(UpdateDeviceDetailsCommand) | Carga el dispositivo dentro del ámbito autorizado, verifica la versión y modifica sus datos descriptivos. |
+| Handle(ReplaceDeviceCapabilitiesCommand) | Comprueba versión y estado inactivo; valida la colección completa, conserva IDs para códigos existentes y reemplaza las capacidades mediante el agregado. |
+| Handle(AssignDeviceToLocationCommand) | Exige permisos tanto sobre la ubicación actual como sobre la de destino; valida la nueva relación organización–edificación–zona y cambia la asignación del equipo inactivo. |
+| Handle(ChangeDeviceAdministrativeStatusCommand) | Comprueba versión y transición. Al activar, revalida la ubicación; al desactivar o retirar, conserva identidad y referencias históricas. |
+
+La comprobación previa de duplicados mejora el mensaje al usuario, pero las restricciones únicas de la base de datos resuelven también los registros simultáneos. Una escritura usa comparación de versión; si otro proceso modificó el agregado, se revierte toda la transacción y se responde 412. La versión inicial es 1 y aumenta una vez por cambio efectivo. El estado guardado y la instantánea del evento corresponden a la misma versión.
+
+`DeviceQueryServiceImpl`
+
+**Descripción:** Implementa IDeviceQueryService sin modificar el agregado.
+
+| Método | Descripción |
+|---|---|
+| Handle(GetDeviceByIdQuery) | Recupera un equipo filtrando por organización y alcance de acceso del solicitante. |
+| Handle(GetDevicesQuery) | Aplica los filtros solicitados y el alcance autorizado antes de paginar y contar los resultados. |
+| Handle(GetDeviceByExternalReferenceQuery) | Resuelve una referencia externa únicamente dentro de la organización y ubicaciones visibles. |
+
+**Puertos de aplicación e integración**
+
+| Puerto | Métodos principales | Responsabilidad |
+|---|---|---|
+| IBuildingContextGateway | ValidateAssignment(organizationId, buildingId, zoneId?): ValidatedAssignment | Consulta el contrato de Buildings y comprueba existencia, pertenencia y disponibilidad administrativa para la asignación. |
+| IDeviceAccessGateway | RequirePermission(action, organizationId, buildingId, zoneId?); GetReadScope(organizationId): DeviceReadScope | Obtiene de IAM el permiso de operación y las restricciones de visibilidad del solicitante. |
+| IOutboxRepository | Append(message); FindPending(batchSize); MarkPublished(eventId); RecordFailure(eventId, nextAttemptAt) | Almacena y gestiona mensajes de integración pendientes. |
+| IIntegrationEventPublisher | Publish(message) | Entrega un mensaje al transporte de integración elegido. |
+
+#### 4.2.4.4. Infrastructure Layer
+
+**Persistencia del agregado**
+
+`IDeviceRepository` / `RelationalDeviceRepository`
+
+**Descripción:** IDeviceRepository define el contrato del dominio y RelationalDeviceRepository lo implementa mediante el mecanismo de persistencia relacional elegido. La infraestructura mapea los value objects a columnas, carga las capacidades y aplica transacciones, restricciones de unicidad y control de versión.
+
+| Método del puerto | Tipo de retorno | Descripción |
+|---|---|---|
+| FindByIdAndOrganizationId(deviceId, organizationId) | Device? | Carga un agregado dentro de una organización; la aplicación verifica además el alcance sobre su ubicación. |
+| FindByExternalReference(organizationId, sourceSystem, externalDeviceId) | Device? | Busca por referencia externa y organización. |
+| FindPage(organizationId, filters, readScope, page, size) | PagedResult\<Device\> | Filtra por organización, ubicación, estado y alcance de acceso antes de paginar. |
+| ExistsByOrganizationIdAndDeviceCode(organizationId, deviceCode) | bool | Detecta un código administrativo ya registrado. |
+| ExistsByExternalReference(organizationId, sourceSystem, externalDeviceId) | bool | Detecta una referencia externa ya registrada. |
+| Save(device, expectedVersion?) | Device | Inserta un nuevo agregado o actualiza uno existente comparando su versión; guarda sus capacidades en la misma transacción. |
+
+El repositorio no publica un método de eliminación física del agregado. Las capacidades no tienen repositorio público: se insertan, conservan o eliminan como parte de la actualización de Device. La eliminación de una capacidad del catálogo actual no borra los datos históricos que otros contextos ya registraron con su identidad y significado.
+
+**Adaptadores**
+
+| Componente | Puerto implementado | Descripción |
+|---|---|---|
+| BuildingContextAdapter | IBuildingContextGateway | Consume la fachada o API de Buildings y traduce su respuesta a ValidatedAssignment. |
+| IamDeviceAccessAdapter | IDeviceAccessGateway | Adapta el contexto de identidad y las decisiones de autorización de IAM. |
+| RelationalOutboxRepository | IOutboxRepository | Persiste mensajes pendientes en la misma base de datos y transacción del agregado. |
+| IntegrationEventPublisherAdapter | IIntegrationEventPublisher | Publica mensajes mediante el transporte configurado. El diseño no presupone un producto de mensajería. |
+| DevicePersistenceMapper | No aplica | Convierte Device, DeviceCapability y sus value objects hacia y desde los registros relacionales. |
+
+
+#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Diagrama de componentes de Devices](assets/images/chapter-04-solution-software-design/DevicesComponents.png)
+
+#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
+
+![Diagrama UML del agregado Device](assets/images/chapter-04-solution-software-design/devices-domain-model.png)
+
+
+![Diagrama UML de contratos de Devices](assets/images/chapter-04-solution-software-design/devices-domain-contracts.png)
+
+##### 4.2.4.6.2. Bounded Context Database Design Diagram
+
+![Diagrama relacional de Devices](assets/images/chapter-04-solution-software-design/devices-database.png)
+
+
+
+
+
 
 # Capítulo V: Solution UI/UX Design
 
