@@ -591,7 +591,7 @@ El repositorio no publica un método de eliminación física del agregado. Las c
 
 #### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
 
-![Diagrama de componentes de Devices](../assets\images\chapter-04-solution-software-design\DevicesComponents.png)
+![Diagrama de componentes de Devices](../assets/images/chapter-04-solution-software-design/DevicesComponents.png)
 
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
 
