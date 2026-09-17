@@ -2210,6 +2210,9 @@ De esta manera, Incident Management conserva la trazabilidad de los responsables
 ![DomainMessageFlowsModeling_Scenario4](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario4.png)
 
 #### 4.1.1.3. Bounded Context Canvases
+#### *Connectivity Management.*
+
+![Entrevista 2 - Camila Torres Vega](assets/images/chapter-04-solution-software-design/ConnectivityCanvase.png)
 Luego de identificar los Candidate Bounded Contexts de ResQ, se elaboraron sus respectivos **Bounded Context Canvases** para detallar responsabilidades, lenguaje ubicuo, reglas de negocio, capacidades y relaciones con otros contextos.
 
 El proceso siguió un enfoque iterativo basado en **Context Overview Definition**, **Business Rules Distillation & Ubiquitous Language Capture**, **Capability Analysis**, **Capability Layering**, **Dependencies Capture** y **Design Critique**.
@@ -2228,10 +2231,62 @@ A continuación, se presentan los Bounded Context Canvases definidos:
 ![BoundedContextCanvases_IAM](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_IAM.png)
 
 ### 4.1.2. Context Mapping
-[COMPLETAR]
+En esta sección desarrollamos un conjunto de context maps para visualizar las relaciones entre los bounded contexts del sistema de sensores de emergencia. A partir de la información recolectada, exploramos distintas alternativas de diseño, cuestionando cómo cambiaría la estructura si reubicamos, dividimos o agrupamos capabilities. Finalmente, evaluamos cada propuesta considerando patrones como Anti-corruption Layer, Conformist, Customer/Supplier y Shared Kernel, con el fin de definir la mejor aproximación para la arquitectura del dominio. A continuación presentaremos las opciones que contemplamos y la estructura final.
+
+**opcion 1**
+
+En esta estructura mantenemos los cinco bounded contexts separados con relaciones claramente definidas. Las ventajas de este tipo de contexto son por un lado la clara separación de responsabilidades y por otro lado, se especifica que cada contexto se enfoca en una funcionalidad específica. Una de las principales desventajas es que hay una mayor complejidad en la sincronización entre contextos, especialmente con el alto volumen de datos de conectividad.
+
+![Mapping1 - ResQ](assets/images/chapter-04-solution-software-design/mapping1.png)
+
+
+**opcion 2**
+
+Esta alternativa propone unir los contextos de Connectivity Management y Device Management en un solo bounded context. Al hacerlo, se elimina la necesidad de sincronización externa entre el inventario físico de sensores y su estado de red, manteniendo relaciones similares con los demás contextos del sistema.
+
+Esta combinación presenta ventajas como la simplificación de la arquitectura al disminuir la cantidad de bounded contexts, permitiendo una comunicación más directa entre el alta de un dispositivo y su monitoreo de latidos.
+
+No obstante, una desventaja es la combinación de responsabilidades distintas, ya que una parte se enfoca en transacciones de alto rendimiento (recibir miles de heartbeats por segundo) y la otra en procesos administrativos (registrar MAC addresses y zonas). Esto podría generar cuellos de botella en el servidor y el riesgo de que un solo contexto asuma demasiadas funciones.
+
+![Mapping2 - ResQ](assets/images/chapter-04-solution-software-design/mapping1.png)
+
+**opcion 3**
+
+Esta alternativa propone una arquitectura compuesta por cinco bounded contexts bien definidos, con relaciones claras entre ellos. La estructura busca equilibrar la separación de responsabilidades, para permitir que el sistema escale (vital para el procesamiento de redes IoT) y se mantenga con facilidad. Además, asegura tiempos de respuesta críticos ante emergencias.
+
+* Building Management se comunica con Risk Detection y Device Management, proporcionando la información de la ubicación y zonas físicas (edificios, pisos). En ambos casos, la relación es del tipo Customer/Supplier, donde Building es el proveedor.  
+
+* Device Management y Alert & Response Management comparten el modelo del "Sensor" y su criticidad. Por eso, tienen una relación de tipo Shared Kernel, lo que asegura que ambos usen los mismos conceptos al reportar qué aparato falló.  
+
+* Alert & Response Management también se relaciona con Risk Detection, pero en este caso la relación es Conformist. El sistema de alertas utiliza la información del riesgo (sismo, gas), adaptándose a su estructura sin modificarla.
+
+* Connectivity Management se conecta con Device Management mediante una Anti-corruption Layer (ACL). Esta capa traduce los miles de datos técnicos de red y latidos a un formato simple de estados operativos que Device Management pueda entender. Así, se protege el sistema central de la inmensa carga de datos técnicos de IoT.
+
+![Mapping3 - ResQ](assets/images/chapter-04-solution-software-design/mapping1.png)
+
+**Elección**
+Elegimos la opción 3, ya que proporciona el mejor equilibrio entre la separación de responsabilidades, la capacidad de procesamiento de alto rendimiento y el cumplimiento de los requisitos críticos de un sistema de emergencias.
+
+Al definir cinco bounded contexts con relaciones claras, se facilita la evolución independiente de cada parte del sistema. Al separar la gestión de tráfico de red (Connectivity Management) mediante una Anti-corruption Layer, se aísla la carga técnica de los heartbeats constantes, evitando saturar la base de datos de los dispositivos. Asimismo, esta estructura garantiza tiempos de respuesta rápidos al procesar alertas reales de sismos o gas, brindando una plataforma robusta y confiable para la seguridad de los usuarios.
+
 
 #### 4.1.3. Software Architecture
 
+#### 4.1.3.1. Software Architecture System Landscape Diagram
+
+![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_1.png)
+
+### 4.1.3.2. Software Architecture Container Level Diagrams.
+
+Este diagrama muestra que la Plataforma IoT de Emergencias está compuesta por cinco contenedores principales: una **Aplicación Web (SPA)** accesible desde navegadores para la gestión administrativa; una **Aplicación Móvil** para que clientes y técnicos reciban alertas y configuren equipos; una **Cloud API** que gestiona toda la lógica de negocio (usuarios, zonas, reportes); y una **Edge/IoT API** respaldada por un **Broker MQTT** encargado exclusivamente de procesar el alto volumen de datos (telemetría y *heartbeats*) provenientes de los sensores. Finalmente, el sistema utiliza bases de datos separadas: una base de datos relacional en la nube para almacenar la información estructural del sistema y una base de datos optimizada (ej. Time-Series) para el registro histórico de latidos y conectividad.
+
+![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_2.png)
+
+### 4.1.3.3. Software Architecture Deployment Diagrams.
+
+Este diagrama muestra que el sistema se despliega en tres entornos principales: **Microsoft Azure Cloud**, **Dispositivos Cliente** y **Edificios/Zonas Físicas**. En Azure, el sistema utiliza *App Service* para alojar las aplicaciones web y la Cloud API (Spring Boot/Java o Node.js), *Azure Database for PostgreSQL* para los datos relacionales, y *Azure IoT Hub* para gestionar las comunicaciones MQTT de alto rendimiento con los dispositivos físicos. Los usuarios acceden al sistema a través de navegadores web o dispositivos Android/iOS. En cada edificio del cliente, se instalan **Sensores de Emergencia** (ej. detectores de gas/sismo basados en ESP32/Arduino) que envían datos de estado a un **Gateway IoT** local vía WiFi o Serial, el cual transmite esta información al IoT Hub en Azure. Todas las comunicaciones entre componentes utilizan protocolos seguros como HTTPS, MQTT sobre TLS y conexiones cifradas a la base de datos.
+
+![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_3.png)
 La arquitectura de software de ResQ se representa mediante el modelo C4, con el propósito de describir la solución desde distintos niveles de abstracción y mostrar cómo se distribuyen sus principales responsabilidades.
 
 Estas vistas permiten representar la relación de ResQ con sus usuarios y sistemas externos, así como los principales componentes desplegables que conforman la solución y la forma en que se comunican entre sí.
@@ -2242,6 +2297,8 @@ La arquitectura considera la naturaleza distribuida de ResQ, integrando aplicaci
 
 El System Landscape Diagram presenta una vista general del ecosistema de software en el que participa ResQ, mostrando las principales personas, sistemas involucrados y las relaciones existentes entre ellos.
 
+
+## 4.2. Tactical-Level Domain-Driven Design
 Este diagrama permite identificar el alcance de la solución y comprender cómo los diferentes elementos del ecosistema de ResQ interactúan entre sí.
 
 **DIAGRAM — ResQ Software Architecture System Landscape Diagram**
@@ -3034,6 +3091,104 @@ El Database Design Diagram final debe identificar:
 
 ![Identity and Access Management Database Design Diagram](assets/images/chapter-04-solution-software-design/iam/iam-database-design-diagram.png)
 
+### 4.2.9. Bounded Context: Connectivity Management.
+
+El Connectivity Management Bounded Context es responsable de gestionar y supervisar el estado de conexión de red de todos los sensores físicos de emergencia (sismos, fugas de gas, temperatura, etc.) en el sistema. Este contexto asegura que los dispositivos mantengan una comunicación constante mediante señales de vida (heartbeats), detectando caídas de red, gestionando reconexiones y garantizando que el sistema central sepa en tiempo real si un área está desprotegida por falta de conectividad.
+
+#### 4.2.9.1. Domain Layer
+
+La **Domain Layer** del Connectivity Management Bounded Context encapsula la lógica de negocio relacionada con la supervisión de red. En esta capa, se definen los elementos principales del dominio, como agregados, entidades, objetos de valor, comandos, consultas y eventos, que representan los conceptos clave del sistema.
+
+**Aggregates**
+
+1. `SensorConnection`
+   * **Propósito:** Representa el estado de red y la sesión de conectividad actual de un sensor físico específico.
+   * **Atributos:**
+      * `sensorId`: Identificador del dispositivo IoT, representado como un objeto de valor `SensorId`.
+      * `macAddress`: Dirección física del sensor en la red, representado como un objeto de valor `MacAddress`.
+      * `status`: Estado operativo actual de la conexión (`ONLINE`, `OFFLINE`, `TIMEOUT`), representado como un objeto de valor `ConnectionStatus`.
+      * `lastHeartbeat`: Fecha y hora del último latido recibido exitosamente.
+   * **Características:**
+      * Extiende `AuditableAbstractAggregateRoot`, lo que permite auditar el historial de caídas de red.
+      * Gestiona la lógica para determinar si el tiempo transcurrido desde el `lastHeartbeat` excede el límite permitido, cambiando el estado a `TIMEOUT`.
+
+**Entities**
+
+1. `HeartbeatRecord`
+   * **Propósito:** Representa un latido individual enviado por el sensor para notificar que sigue vivo.
+   * **Atributos:**
+      * `timestamp`: Fecha y hora exacta en la que se recibió la señal.
+      * `signalStrength`: Nivel de intensidad de la red, representado como un objeto de valor `SignalStrength`.
+
+**Value Objects**
+
+1. `SensorId`
+   * **Propósito:** Representa el identificador único de un sensor.
+   * **Validaciones:** El identificador no puede ser nulo ni negativo.
+2. `ConnectionStatus`
+   * **Propósito:** Enumera los estados posibles de conectividad (`ONLINE`, `OFFLINE`, `TIMEOUT`).
+3. `SignalStrength`
+   * **Propósito:** Representa la calidad de la conexión inalámbrica.
+   * **Validaciones:** Debe estar dentro de rangos realistas (ej. entre -100 dBm y 0 dBm).
+
+**Commands**
+
+1. `RegisterHeartbeatCommand`
+   * **Propósito:** Representa la solicitud para registrar un nuevo latido.
+   * **Atributos:** `sensorId`, `timestamp`, `signalStrength`.
+2. `MarkSensorOfflineCommand`
+   * **Propósito:** Solicitud interna para forzar el estado de un sensor a desconectado tras superar el tiempo de espera.
+   * **Atributos:** `sensorId`.
+
+**Queries**
+
+1. `GetSensorConnectionStatusQuery`
+   * **Propósito:** Recupera el estado actual de red de un sensor específico.
+2. `GetAllOfflineSensorsQuery`
+   * **Propósito:** Recupera una lista de todos los sensores que actualmente han perdido conexión.
+
+**Events**
+
+1. `ConnectionLostEvent`
+   * **Propósito:** Evento crítico que se dispara cuando un sensor pasa a estado `OFFLINE` o `TIMEOUT`.
+   * **Atributos:** `sensorId`, `lastHeartbeat`.
+2. `HeartbeatReceivedEvent`
+   * **Propósito:** Evento que se dispara cada vez que se registra un latido exitoso.
+
+---
+
+#### 4.2.9.2. Interface Layer
+
+La **Interface Layer** del Connectivity Management Bounded Context expone los puntos de entrada al sistema a través de controladores REST. Esta capa permite la interacción con los dispositivos IoT y facilita la comunicación entre los clientes y el sistema.
+
+**Controllers**
+
+1. `ConnectivityController`
+   * **Propósito:** Gestiona las operaciones de red de los sensores.
+   * **Endpoints:**
+      * `POST /api/v1/connectivity/heartbeats`: Registra un nuevo latido proveniente del dispositivo IoT.
+      * `GET /api/v1/connectivity/sensors/{sensorId}/status`: Obtiene el estado actual de red de un sensor.
+      * `GET /api/v1/connectivity/sensors/offline`: Lista todos los sensores sin conexión.
+   * **Dependencias:**
+      * `ConnectivityCommandService`: Servicio encargado de manejar los comandos relacionados con la conectividad.
+      * `ConnectivityQueryService`: Servicio encargado de manejar las consultas de conectividad.
+
+**Resources**
+
+1. `SensorConnectionResource`
+   * **Propósito:** Representa el estado de conexión expuesto a través de la API REST.
+   * **Atributos:** `sensorId`, `status`, `lastHeartbeatTime`.
+2. `RegisterHeartbeatResource`
+   * **Propósito:** Representa los datos necesarios enviados por el dispositivo IoT para reportar su estado.
+   * **Atributos:** `sensorId`, `signalStrength`.
+
+**Transformers**
+
+1. `SensorConnectionResourceFromEntityAssembler`
+   * **Propósito:** Convierte una entidad `SensorConnection` en un recurso `SensorConnectionResource`.
+   * **Método principal:** `toResourceFromEntity(SensorConnection entity)`.
+
+---
 ### 4.2.2. Bounded Context: Risk Detection
 
 El Bounded Context **Risk Detection** es responsable de evaluar la información monitoreada mediante las reglas de detección configuradas para identificar situaciones de riesgo, determinar su tipo y severidad, preservar la evidencia que originó cada detección y mantener el contexto de ubicación necesario para comprender dónde ocurrió la condición detectada.
@@ -7868,134 +8023,147 @@ Estos conceptos continúan perteneciendo a sus respectivos Bounded Contexts.
 ### 6.1.1. Software Development Environment Configuration
 Documentar herramientas, plataformas, lenguajes, frameworks y configuraciones utilizadas.
 
-### 6.1.2. Source Code Management
-Incluir:
-- URL del repositorio GitHub de cada producto;
-- estrategia GitFlow;
-- convenciones para `feature/*`, `release/*` y `hotfix/*`;
-- Semantic Versioning;
-- Conventional Commits.
+#### 4.2.9.3. Application Layer
 
-### 6.1.3. Source Code Style Guide & Conventions
-Documentar convenciones de código y nomenclatura en inglés para los lenguajes utilizados.
+La **Application Layer** coordina las operaciones de negocio, manejando comandos y consultas, orquestando la lógica de la aplicación y garantizando que las reglas del dominio se cumplan.
 
-### 6.1.4. Software Deployment Configuration
-Documentar configuración y pasos de despliegue de los productos digitales.
-Incluir también el Deployment Diagram solicitado.
+**Command Services**
 
-## 6.2. Landing Page, Services & Applications Implementation
+1. `ConnectivityCommandServiceImpl`
+   * **Propósito:** Gestiona las operaciones relacionadas con el procesamiento de señales de vida y actualización de estados.
+   * **Métodos principales:**
+      * `handle(RegisterHeartbeatCommand command)`: Actualiza el `lastHeartbeat` del sensor. Si estaba `OFFLINE`, lo devuelve a `ONLINE`.
+      * `handle(MarkSensorOfflineCommand command)`: Cambia el estado a `TIMEOUT` tras validar los tiempos de espera.
+   * **Dependencias:**
+      * `SensorConnectionRepository`: Persistencia de las conexiones.
+      * `ExternalDeviceService`: Verifica la existencia del sensor.
 
-> Repetir el bloque `6.2.X` por Sprint.
-> Según las entregas del curso: Sprint 1 (TB1), Sprint 2 (AV2), Sprint 3 (TB2).
+**Query Services**
 
-### 6.2.1. Sprint 1
+1. `ConnectivityQueryServiceImpl`
+   * **Propósito:** Gestiona las consultas relacionadas con los estados de red.
+   * **Métodos principales:**
+      * `handle(GetSensorConnectionStatusQuery query)`: Recupera el estado de un sensor por su ID.
 
-#### 6.2.1.1. Sprint Planning 1
-[COMPLETAR]
+**Event Handlers**
 
-#### 6.2.1.2. Aspect Leaders and Collaborators
-[COMPLETAR]
+1. `SensorTimeoutEventHandler`
+   * **Propósito:** Maneja el evento de evaluación de tiempos de espera para sensores que no han reportado actividad.
+   * **Método principal:** `on(EvaluateSensorTimeoutsEvent event)`: Identifica sensores desconectados y dispara el `MarkSensorOfflineCommand`.
 
-#### 6.2.1.3. Sprint Backlog 1
-[REDACTAR EN EL INFORME; NO SÓLO CAPTURA]
+**Outbound Services (ACL)**
 
-#### 6.2.1.4. Development Evidence for Sprint Review
-[COMPLETAR]
+1. `ExternalAlertService`
+   * **Propósito:** Interactúa con el Alert & Response Management Bounded Context para disparar alarmas de desconexión.
+   * **Método principal:** `triggerDisconnectionAlert(Long sensorId)`.
 
-#### 6.2.1.5. Testing Suite Evidence for Sprint Review
-[COMPLETAR]
+---
 
-#### 6.2.1.6. Execution Evidence for Sprint Review
-[COMPLETAR]
+#### 4.2.9.4. Infrastructure Layer
 
-#### 6.2.1.7. Services Documentation Evidence for Sprint Review
-[COMPLETAR]
+La **Infrastructure Layer** proporciona las implementaciones técnicas necesarias para soportar las operaciones del sistema, incluyendo los repositorios para la persistencia de datos en la base de datos.
 
-#### 6.2.1.8. Software Deployment Evidence for Sprint Review
-[COMPLETAR]
+**Persistencia (JPA Repositories)**
 
-#### 6.2.1.9. Team Collaboration Insights during Sprint
-[COMPLETAR]
+1. `SensorConnectionRepository`
+   * **Propósito:** Proporciona métodos para interactuar con la base de datos de conectividad.
+   * **Métodos principales:**
+      * `findSensorsWithLastHeartbeatBefore(LocalDateTime time)`: Recupera todos los sensores cuyo último latido fue anterior a una fecha límite, útil para detectar caídas de red.
+   * **Características:**
+      * Extiende `JpaRepository`, permitiendo realizar operaciones CRUD sobre la entidad `SensorConnection`.
 
-### 6.2.2. Sprint 2
+**Relaciones entre componentes**
 
-#### 6.2.2.1. Sprint Planning 2
-[COMPLETAR]
+*   **Persistencia:** El repositorio `SensorConnectionRepository` proporciona acceso a los datos almacenados, permitiendo a las capas superiores interactuar con las entidades del dominio.
+*   **Validación:** Los servicios externos (ACL) son utilizados para validar la existencia de los sensores comunicándose con el contexto correspondiente.
 
-#### 6.2.2.2. Aspect Leaders and Collaborators
-[COMPLETAR]
+---
 
-#### 6.2.2.3. Sprint Backlog 2
-[COMPLETAR]
+### 4.2.9.5. Bounded Context Software Architecture Component Level Diagrams
 
-#### 6.2.2.4. Development Evidence for Sprint Review
-[COMPLETAR]
+En esta sección se presenta el diagrama de componentes del **Connectivity Management Bounded Context**, el cual detalla los principales módulos y sus interacciones dentro del contexto delimitado. Este diagrama sigue el enfoque del C4 Model para representar los componentes clave, como servicios de aplicación, controladores, repositorios y servicios externos, junto con sus relaciones.
 
-#### 6.2.2.5. Testing Suite Evidence for Sprint Review
-[COMPLETAR]
+El propósito de este diagrama es proporcionar una visión clara y estructurada de cómo se organizan los componentes dentro del contexto, facilitando la comprensión de su arquitectura y permitiendo identificar puntos de integración y responsabilidades.
 
-#### 6.2.2.6. Execution Evidence for Sprint Review
-[COMPLETAR]
+![Connectivity Management Diagram1](assets/diagram-sources/chapter-04-solution-software-design/Connectivity/Connectivity1.png)
+El **Connectivity Management Bounded Context** está compuesto por los siguientes módulos principales:
 
-#### 6.2.2.7. Services Documentation Evidence for Sprint Review
-[COMPLETAR]
+1. **Application Layer:**
+   * Coordina las operaciones de negocio relacionadas con el monitoreo de conectividad y latidos (*heartbeats*).
+   * Incluye servicios de comandos y consultas que interactúan con la **Domain Layer** y la **Infrastructure Layer**.
+   * Maneja eventos críticos relacionados con la desconexión de sensores y evaluaciones de *timeout*.
 
-#### 6.2.2.8. Software Deployment Evidence for Sprint Review
-[COMPLETAR]
+2. **Interface Layer:**
+   * Expone los puntos de entrada al sistema a través de controladores REST (ej. webhooks para los dispositivos IoT).
+   * Incluye recursos y transformadores que aseguran una representación adecuada de los datos de red y su conversión entre las capas de la aplicación.
 
-#### 6.2.2.9. Team Collaboration Insights during Sprint
-[COMPLETAR]
+3. **Domain Layer:**
+   * Encapsula la lógica de negocio relacionada con la supervisión de red.
+   * Define los agregados, entidades y objetos de valor que representan los conceptos clave del dominio (como el estado de conexión y la intensidad de la señal).
 
-### 6.2.3. Sprint 3
+4. **Infrastructure Layer:**
+   * Proporciona las implementaciones técnicas necesarias para soportar las operaciones del sistema.
+   * Incluye repositorios para la persistencia del estado de los sensores y componentes (ACL) que conectan la lógica de negocio con otros servicios externos de alertas.
 
-#### 6.2.3.1. Sprint Planning 3
-[COMPLETAR]
+### 4.2.9.6. Bounded Context Software Architecture Code Level Diagrams
 
-#### 6.2.3.2. Aspect Leaders and Collaborators
-[COMPLETAR]
+En este apartado se presentan los diagramas que ofrecen un mayor nivel de detalle sobre la implementación de los componentes del **Connectivity Management Bounded Context**. Estos diagramas están diseñados para ilustrar cómo se estructuran las clases, interfaces y relaciones dentro de las capas del contexto, proporcionando una visión técnica que facilita el desarrollo, mantenimiento y evolución del sistema.
 
-#### 6.2.3.3. Sprint Backlog 3
-[COMPLETAR]
+#### 4.2.9.6.1. Bounded Context Domain Layer Class Diagrams
 
-#### 6.2.3.4. Development Evidence for Sprint Review
-[COMPLETAR]
+El diagrama de clases correspondiente a la **Domain Layer** del **Connectivity Management Bounded Context** incluye las clases principales, como agregados, entidades y objetos de valor, así como las interfaces y enumeraciones que definen el comportamiento del dominio. También se destacan las relaciones entre estos elementos, como asociaciones, composiciones y dependencias.
 
-#### 6.2.3.5. Testing Suite Evidence for Sprint Review
-[COMPLETAR]
+![Connectivity Management Diagram2](assets/diagram-sources/chapter-04-solution-software-design/Connectivity/Connectivity2.png)
 
-#### 6.2.3.6. Execution Evidence for Sprint Review
-[COMPLETAR]
+**Elementos principales del diagrama:**
 
-#### 6.2.3.7. Services Documentation Evidence for Sprint Review
-[COMPLETAR]
+1. **Aggregates:**
+   * `SensorConnection`: Agregado principal que encapsula la lógica de negocio relacionada con la sesión de red del dispositivo.
+     * **Atributos:** `sensorId`, `macAddress`, `status`, `lastHeartbeat`.
+     * **Métodos:** `registerHeartbeat()`, `markAsOffline()`, `isTimeoutExceeded()`.
 
-#### 6.2.3.8. Software Deployment Evidence for Sprint Review
-[COMPLETAR]
+2. **Entities:**
+   * `HeartbeatRecord`: Entidad que representa cada señal de vida individual enviada por el sensor.
+     * **Atributos:** `timestamp`, `signalStrength`.
 
-#### 6.2.3.9. Team Collaboration Insights during Sprint
-[COMPLETAR]
+3. **Value Objects:**
+   * `SensorId`: Representa el identificador único del hardware.
+   * `MacAddress`: Representa la dirección de red física del sensor.
+   * `ConnectionStatus`: Enumera los estados posibles de conectividad (`ONLINE`, `OFFLINE`, `TIMEOUT`).
+   * `SignalStrength`: Representa la intensidad de la red (en dBm).
 
-## 6.3. Validation Interviews
+**Relaciones destacadas:**
+* El agregado `SensorConnection` gestiona las relaciones y el registro transaccional con la entidad `HeartbeatRecord` (relación 1 a muchos).
+* Los objetos de valor encapsulan datos inmutables y validaciones específicas de red, asegurando la consistencia en el dominio.
 
-### 6.3.1. Diseño de Entrevistas
-[COMPLETAR]
+#### 4.2.9.6.2. Bounded Context Database Design Diagram
 
-### 6.3.2. Registro de Entrevistas
-[COMPLETAR]
+El diseño de la base de datos para el **Connectivity Management Bounded Context** refleja la estructura del dominio, asegurando que las entidades y relaciones definidas en la **Domain Layer** se representen de manera eficiente en el modelo relacional.
 
-### 6.3.3. Evaluaciones según heurísticas
-[COMPLETAR]
+![Connectivity Management Diagram3](assets/diagram-sources/chapter-04-solution-software-design/Connectivity/Connectivity3.png)
 
-## 6.4. Video About-the-Product
+**Este diseño incluye las siguientes tablas principales:**
 
-Incluir:
-- introducción y resumen del video;
-- tono consistente con el producto;
-- al menos un testimonio positivo de un usuario que participó en validación;
-- screenshot representativo;
-- URL de Microsoft Stream/Clipchamp;
-- URL de YouTube para incrustar en Landing Page;
-- duración/timing.
+1. **SENSOR_CONNECTIONS:**
+   * Representa la sesión operativa y el estado actual de conexión en el sistema.
+   * **Atributos principales:**
+     * `id`: Identificador único de la conexión (PK).
+     * `sensor_id`: Identificador físico del dispositivo asociado (FK).
+     * `mac_address`: Dirección de red del dispositivo.
+     * `status`: Estado actual (`ONLINE`, `OFFLINE`, `TIMEOUT`).
+     * `last_heartbeat`: Fecha y hora del último latido recibido.
+
+2. **HEARTBEAT_LOGS:**
+   * Representa el historial de latidos enviados por los dispositivos.
+   * **Atributos principales:**
+     * `id`: Identificador único del registro (PK).
+     * `sensor_connection_id`: Identificador de la conexión asociada (FK).
+     * `timestamp`: Fecha y hora exacta en la que se recibió la señal.
+     * `signal_strength`: Intensidad de la señal de red reportada.
+
+
+
+
 
 # Conclusiones
 
