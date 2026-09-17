@@ -1,338 +1,138 @@
 <!-- Carátula UPC -->
 
-<p align="center">
+<p align="center" class="cover-logo">
   <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png" alt="Logo UPC" width="200">
 </p>
 
-<h2 align="center">UNIVERSIDAD PERUANA DE CIENCIAS APLICADAS</h2>
+<h2 align="center" class="cover-university">UNIVERSIDAD PERUANA DE CIENCIAS APLICADAS</h2>
 
-<h3 align="center">
+<h3 align="center" class="cover-degree">
 INGENIERÍA DE SOFTWARE
 </h3>
 
-<p align="center"><strong>PERIODO:</strong> 202620 </p>
+<p align="center" class="cover-cycle"><strong>Ciclo académico:</strong> 2026-20 </p>
 
-<p align="center">
-  1ACC0238 - Desarrollo de Soluciones IOT<br>
+<p align="center" class="cover-course">
+  1ASI0572 – Desarrollo de Soluciones IoT<br>
   <strong>NRC:</strong> 16518<br>
-  <strong>Docente:</strong> Jimmy Enrique Sanchez Portugal
+  <strong>Docente:</strong> Jimmy Enrique Sánchez Portugal
 </p>
 
-<hr style="width:60%; border:1px solid #ccc;">
 
-<h1 align="center">Informe de Trabajo Final</h1>
+<h1 align="center" class="cover-title">Informe de Trabajo Final</h1>
 
-<p align="center">
+<p align="center" class="cover-product">
   <strong>Startup:</strong> ResQ<br>
   <strong>Producto:</strong> ResQ
 </p>
 
-<h3 align="center">Integrantes</h3>
+<h3 align="center" class="cover-members-heading">Integrantes</h3>
 
-<div align="center" style="line-height: 1.8; text-align: center;">
-  <p>U202320442 — Quispe Barzola, Fabricio Fabian</p>
-  <p>U202324129 — Chacaliaza Minaya, Eduardo Fabian</p>
-  <p>U202116246 - Guerrero Vasquez, Jhon Danny</p>
-  <p>Uasdasd</p>
-  <p>Usdasda</p>
-  
-</div>
+<table class="cover-members-table">
+  <thead>
+    <tr><th>Código UPC</th><th>Apellidos y Nombres</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>[CÓDIGO UPC PENDIENTE]</td><td>Aliaga Urbina, Wilder Gonzalo</td></tr>
+    <tr><td>U202324129</td><td>Chacaliaza Minaya, Eduardo Fabian</td></tr>
+    <tr><td>U202116246</td><td>Guerrero Vasquez, Jhon Danny</td></tr>
+    <tr><td>[CÓDIGO UPC PENDIENTE]</td><td>Nanfuñay Liza, Pedro Jesus</td></tr>
+    <tr><td>U202320442</td><td>Quispe Barzola, Fabricio Fabian</td></tr>
+    <tr><td>[CÓDIGO UPC PENDIENTE]</td><td>Sánchez Guevara, Iván Fernando</td></tr>
+  </tbody>
+</table>
+
 
 <br>
 
-<p align="center" style="font-weight: bold;">202620</p>
+<p align="center" class="cover-date" style="font-weight: bold;">Septiembre 2026</p>
 
 
-<div style="page-break-after: always;"></div>
+<div style="page-break-after: always; break-after: page;"></div>
 
 
-<!--Registro de versiones-->
-<h1 align="left">Registro de versiones del Informe</h1>
-</br>
-<table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
-  <tr>
-    <td align="center" style="border: 1px solid #ddd; padding: 8px;">Versión</td>
-    <td align="center" style="border: 1px solid #ddd; padding: 8px;">Fecha</td>
-    <td align="center" style="border: 1px solid #ddd; padding: 8px;">Autores</td>
-    <td align="center" style="border: 1px solid #ddd; padding: 8px;">Descripción</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;">AV1</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">fecha</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">
-      <ul>
-        <li>Nombre de integrante</li>
-      </ul>
-    </td>
-    <td style="border: 1px solid #ddd; padding: 8px;">            
-      <ul>
-        <li>El punto que hizo</li>
-        <li>El punto que hizo</li>
-        <li>El punto que hizo</li>
-        <li>El punto que hizo</li>
-        </ul>
-    </td>
-  </tr>
-  <tr>
-  <td style="border: 1px solid #ddd; padding: 8px;">AV1</td>
-  <td style="border: 1px solid #ddd; padding: 8px;">fecha</td>
-  <td style="border: 1px solid #ddd; padding: 8px;">
-    <ul>
-      <li>Nombre de integrante</li>
-    </ul>
-  </td>
-  <td style="border: 1px solid #ddd; padding: 8px;">            
-    <ul>
-      <li>El punto que hizo</li>
-      <li>El punto que hizo</li>
-      <li>El punto que hizo</li>
-      <li>El punto que hizo</li>
-      <li>El punto que hizo</li>
-    </ul>
-  </td>
-</tr>
-</table><br>
+# Registro de Versiones del Informe
 
+| Versión | Fecha | Autor | Descripción de modificación |
+|---|---|---|---|
+| 1.1 | 04/09/2026 | Quispe Barzola, Fabricio Fabian | Creación del repositorio y de la estructura inicial del Project Report, incluyendo README principal, organización de capítulos, recursos y plantillas base del informe. |
+| 1.2 | 08/09/2026 | Sánchez Guevara, Iván Fernando | Incorporación y actualización del Startup Profile y Solution Profile correspondiente al Capítulo I. |
+| 1.3 | 10/09/2026 | Chacaliaza Minaya, Eduardo Fabian | Incorporación de segmentos objetivo, análisis competitivo y Product Backlog dentro de los Capítulos I, II y III. |
+| 1.4 | 11/09/2026 | Aliaga Urbina, Wilder Gonzalo | Incorporación de los principales artefactos de Needfinding: User Personas, User Task Matrix, User Journey Mapping y Empathy Mapping. |
+| 1.5 | 12/09/2026 | Quispe Barzola, Fabricio Fabian | Incorporación y actualización de entrevistas, User Stories e Impact Mapping para los Capítulos II y III. |
+| 1.6 | 14/09/2026 | Nanfuñay Liza, Pedro Jesus | Incorporación de Lean UX, Design-Level EventStorming, Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases. |
+| 1.7 | 15/09/2026 | Guerrero Vasquez, Jhon Danny | Incorporación de Big Picture EventStorming, Ubiquitous Language y elementos del diseño táctico correspondientes a User e Incident. |
+| 1.8 | 16/09/2026 | Quispe Barzola, Fabricio Fabian | Incorporación y actualización del Tactical-Level Domain-Driven Design, incluyendo Identity and Access Management y Risk Detection, junto con sus diagramas técnicos. |
+| 1.9 | 17/09/2026 | Sánchez Guevara, Iván Fernando | Consolidación del Context Mapping, Software Architecture y Bounded Context Connectivity dentro del Capítulo IV. |
+| 1.10 | 17/09/2026 | Quispe Barzola, Fabricio Fabian | Consolidación de la versión correspondiente a AV1, incluyendo integración de los Capítulos I–IV, Student Outcome, Collaboration Insights, Registro de Versiones, evidencias de colaboración, revisión de estructura y ajustes finales de presentación del Project Report. |
 
-<h1>Project Report Collaboration Insights</h1>
+<!-- PENDIENTE: Validar la fecha y el autor de la versión inicial y completar las siguientes versiones con base en el historial real de GitHub. Cada fila debe tener un solo autor y representar una modificación real del documento. -->
 
-<h2>AV1</h2>
+# Project Report Collaboration Insights
 
-<p>Para el desarrollo del informe perteneciente a la entrega AV1, se dividió la implementación de secciones del Capítulo I y II en bloques de trabajo, asignando cada conjunto de secciones a un integrante del equipo.</p>
+## AV1 — Sprint Review
+
+Durante AV1, el equipo distribuyó la elaboración de los Capítulos I, II, III y IV entre sus integrantes, cubriendo Lean UX, UX Research / Needfinding, Requirements Specification, Strategic-Level DDD, Tactical-Level DDD y Software Architecture para ResQ, solución IoT orientada al monitoreo y respuesta coordinada ante emergencias en edificios. La asignación individual y los aportes realizados quedan pendientes de sustento mediante evidencias de Jira y GitHub.
+
+**URL del repositorio público de GitHub:** [resq-project-report](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-project-report.git)
+
+### Organización y distribución del trabajo
+
+Para la entrega AV1, el equipo organizó las actividades del Project Report mediante Jira, distribuyendo responsabilidades de acuerdo con los capítulos y artefactos establecidos para esta entrega. La planificación consideró las dependencias existentes entre la investigación, la especificación de requisitos y el diseño de la solución, permitiendo que los aportes individuales pudieran integrarse progresivamente dentro de los Capítulos I, II, III y IV.
+
+La distribución contempló actividades relacionadas con Lean UX, UX Research, Requirements Specification, Strategic-Level Domain-Driven Design, Software Architecture y Tactical-Level Domain-Driven Design.
 
 <p align="center">
-  <img src="assets/images/annexes/tb1.png" alt="Jira" width="500">
+  <img src="assets/images/general/collaboration/av1-jira-distribution.png"
+       alt="Distribución de actividades del equipo en Jira para AV1"
+       width="900">
 </p>
 
 <p align="center">
-  <img src="assets//images/annexes/AV1.png" alt="Commits" width="500">
+  <strong>Figura 1. Distribución de actividades del equipo para la entrega AV1.</strong>
 </p>
 
-<table align="center" border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
-  <tr>
-    <td align="center"><strong>Integrante</strong></td>
-    <td align="center"><strong>Tareas Asignadas</strong></td>
-  </tr>
+<p align="center">
+  <img src="assets/images/general/collaboration/av1-jira-distribution-2.png"
+       alt="Distribución de actividades del equipo en Jira para AV1 v2"
+       width="900">
+</p>
 
-  <!-- BLOQUE 1 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>Capítulo I – Presentación</strong></li>
-        <li>1.1 Startup Profile</li>
-        <li>1.1.1 Descripción de la Startup</li>
-        <li>1.1.2 Perfiles de integrantes del equipo</li>
-        <li>1.2 Solution Profile</li>
-        <li>1.2.1 Antecedentes y problemática</li>
-        <li>1.2.2 Lean UX Process</li>
-        <li>1.2.2.1 Lean UX Problem Statements</li>
-        <li>1.2.2.2 Lean UX Assumptions</li>
-        <li>1.2.2.3 Lean UX Hypothesis Statements</li>
-        <li>1.2.2.4 Lean UX Canvas</li>
-        <li>1.3 Segmentos objetivo</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>Capítulo II</strong></li>
-        <li>2.1 Competidores</li>
-        <li>2.1.1 Análisis competitivo</li>
-        <li>2.1.2 Estrategias y tácticas frente a competidores</li>
-        <li>2.2 Entrevistas</li>
-        <li>2.2.1 Diseño de entrevistas</li>
-        <li>2.2.2 Registro de entrevistas</li>
-        <li>2.2.3 Análisis de entrevistas</li>
-      </ul>
-    </td>
-  </tr>
+<p align="center">
+  <strong>Figura 2. Distribución de actividades del equipo para la entrega AV1.</strong>
+</p>
 
-  <!-- BLOQUE 2 -->
-  <tr>
-    <td>Jhon Guerrero V.</td>
-    <td>
-      <ul>
-        <li>2.3 Needfinding</li>
-        <li>2.3.1 User Personas</li>
-        <li>2.3.2 User Task Matrix</li>
-        <li>2.3.3 User Journey Mapping</li>
-        <li>2.3.4 Empathy Mapping</li>
-        <li>2.3.5 Big Picture EventStorming</li>
-        <li>2.3.6 Ubiquitous Language</li>
-      </ul>
-    </td>
-  </tr>
+La planificación registrada en Jira permitió identificar las responsabilidades asumidas por cada integrante y verificar la cobertura del alcance correspondiente a AV1. Para el Tactical-Level Domain-Driven Design se distribuyeron los Bounded Contexts **Identity and Access Management (IAM), Risk Detection, Alert & Response Management, Building, Device, Monitoring, User, Incident y Connectivity**, junto con sus respectivos elementos de diseño.
 
-  <!-- BLOQUE 3 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li>2.4 Requirements Specification</li>
-        <li>2.4.1 User Stories</li>
-        <li>2.4.2 Impact Mapping</li>
-        <li>2.4.3 Product Backlog</li>
-      </ul>
-    </td>
-  </tr>
+### Colaboración en el Project Report
 
-  <!-- BLOQUE 4 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li>2.5.1 EventStorming</li>
-        <li>2.5.1.1 Candidate Context Discovery</li>
-        <li>2.5.1.2 Domain Message Flows Modeling</li>
-        <li>2.5.1.3 Bounded Context Canvases</li>
-      </ul>
-    </td>
-  </tr>
+Además de la planificación registrada en Jira, la participación efectiva en la elaboración y evolución del Project Report se evidencia mediante los analíticos de colaboración y el historial de commits del repositorio de GitHub.
 
-  <!-- BLOQUE 5 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li>2.5.2 Context Mapping</li>
-      </ul>
-    </td>
-  </tr>
+<p align="center">
+  <img src="assets/images/general/collaboration/av1-github-contributors.png"
+       alt="Analíticos de colaboración de GitHub para AV1"
+       width="900">
+</p>
 
-  <!-- BLOQUE 6 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li>2.5.3 Software Architecture</li>
-        <li>2.5.3.1 Context Level Diagrams</li>
-        <li>2.5.3.2 Container Level Diagrams</li>
-        <li>2.5.3.3 Deployment Diagrams</li>
-      </ul>
-    </td>
-  </tr>
+<p align="center">
+  <strong>Figura 3. Analíticos de colaboración del repositorio del Project Report durante AV1.</strong>
+</p>
 
-  <!-- BLOQUE 7 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.1 Bounded Context: Bookings</strong></li>
-        <li>2.6.1.1 Domain Layer</li>
-        <li>2.6.1.2 Interface Layer</li>
-        <li>2.6.1.3 Application Layer</li>
-        <li>2.6.1.4 Infrastructure Layer</li>
-        <li>2.6.1.5 Component Level Diagrams</li>
-        <li>2.6.1.6 Code Level Diagrams</li>
-        <li>2.6.1.6.1 Class Diagram</li>
-        <li>2.6.1.6.2 Database Diagram</li>
-</ul>
-    </td>
-  </tr>
-<tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.2 Bounded Context: Payments</strong></li>
-        <li>2.6.2.1 Domain Layer</li>
-        <li>2.6.2.2 Interface Layer</li>
-        <li>2.6.2.3 Application Layer</li>
-        <li>2.6.2.4 Infrastructure Layer</li>
-        <li>2.6.2.5 Component Level Diagrams</li>
-        <li>2.6.2.6 Code Level Diagrams</li>
-        <li>2.6.2.6.1 Class Diagram</li>
-        <li>2.6.2.6.2 Database Diagram</li>
-</ul>
-    </td>
-  </tr>
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.3 Bounded Context: Users</strong></li>
-        <li>2.6.3.1 Domain Layer</li>
-        <li>2.6.3.2 Interface Layer</li>
-        <li>2.6.3.3 Application Layer</li>
-        <li>2.6.3.4 Infrastructure Layer</li>
-        <li>2.6.3.5 Component Level Diagrams</li>
-        <li>2.6.3.6 Code Level Diagrams</li>
-        <li>2.6.3.6.1 Class Diagram</li>
-        <li>2.6.3.6.2 Database Diagram</li>
-      </ul>
-    </td>
-  </tr>
+Los analíticos del repositorio permiten observar la participación de los integrantes en la evolución del Project Report durante la entrega AV1. Esta evidencia complementa la planificación realizada en Jira y permite contrastar las responsabilidades asignadas con las contribuciones registradas en el repositorio.
 
-  <!-- BLOQUE 8 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.4 Bounded Context: Coaches</strong></li>
-        <li>2.6.4.1 Domain Layer</li>
-        <li>2.6.4.2 Interface Layer</li>
-        <li>2.6.4.3 Application Layer</li>
-        <li>2.6.4.4 Infrastructure Layer</li>
-        <li>2.6.4.5 Component Level Diagrams</li>
-        <li>2.6.4.6 Code Level Diagrams</li>
-        <li>2.6.4.6.1 Class Diagram</li>
-        <li>2.6.4.6.2 Database Diagram</li>
-        </ul>
-    </td>
-  </tr>
-<tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.5 Bounded Context: Courts</strong></li>
-        <li>2.6.5.1 Domain Layer</li>
-        <li>2.6.5.2 Interface Layer</li>
-        <li>2.6.5.3 Application Layer</li>
-        <li>2.6.5.4 Infrastructure Layer</li>
-        <li>2.6.5.5 Component Level Diagrams</li>
-        <li>2.6.5.6 Code Level Diagrams</li>
-        <li>2.6.5.6.1 Class Diagram</li>
-        <li>2.6.5.6.2 Database Diagram</li>
-        </ul>
-    </td>
-  </tr>
-<tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.6 Bounded Context: Availabilities</strong></li>
-        <li>2.6.6.1 Domain Layer</li>
-        <li>2.6.6.2 Interface Layer</li>
-        <li>2.6.6.3 Application Layer</li>
-        <li>2.6.6.4 Infrastructure Layer</li>
-        <li>2.6.6.5 Component Level Diagrams</li>
-        <li>2.6.6.6 Code Level Diagrams</li>
-        <li>2.6.6.6.1 Class Diagram</li>
-        <li>2.6.6.6.2 Database Diagram</li>
-        </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.7 Bounded Context: Reviews</strong></li>
-        <li>2.6.7.1 Domain Layer</li>
-        <li>2.6.7.2 Interface Layer</li>
-        <li>2.6.7.3 Application Layer</li>
-        <li>2.6.7.4 Infrastructure Layer</li>
-        <li>2.6.7.5 Component Level Diagrams</li>
-        <li>2.6.7.6 Code Level Diagrams</li>
-        <li>2.6.7.6.1 Class Diagram</li>
-        <li>2.6.7.6.2 Database Diagram</li>
-      </ul>
-    </td>
-  </tr>
+<p align="center">
+  <img src="assets/images/general/collaboration/av1-github-commits.png"
+       alt="Historial de commits del Project Report para AV1"
+       width="900">
+</p>
 
+<p align="center">
+  <strong>Figura 4. Historial de commits realizados durante la elaboración de AV1.</strong>
+</p>
 
-</table>
+El historial de commits permite relacionar las modificaciones realizadas sobre el Project Report con sus respectivos autores y fechas. Estas contribuciones deben mantener coherencia con las modificaciones relevantes registradas en la sección **Registro de Versiones del Informe**.
+
+<div style="page-break-before: always; break-before: page;"></div>
 
 # Contenido
 
@@ -382,143 +182,129 @@ INGENIERÍA DE SOFTWARE
     - [4.1.3. Software Architecture](#413-software-architecture)
       - [4.1.3.1. Software Architecture System Landscape Diagram](#4131-software-architecture-system-landscape-diagram)
       - [4.1.3.2. Software Architecture Context Level Diagrams](#4132-software-architecture-context-level-diagrams)
-      - [4.1.3.2. Software Architecture Container Level Diagrams](#4132-software-architecture-container-level-diagrams)
-      - [4.1.3.3. Software Architecture Deployment Diagrams](#4133-software-architecture-deployment-diagrams)
+      - [4.1.3.3. Software Architecture Container Level Diagrams](#4133-software-architecture-container-level-diagrams)
+      - [4.1.3.4. Software Architecture Deployment Diagrams](#4134-software-architecture-deployment-diagrams)
+
   - [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
-    - [4.2.X. Bounded Context: \<Bounded Context Name\>](#42x-bounded-context-)
-      - [4.2.X.1. Domain Layer](#42x1-domain-layer)
-      - [4.2.X.2. Interface Layer](#42x2-interface-layer)
-      - [4.2.X.3. Application Layer](#42x3-application-layer)
-      - [4.2.X.4. Infrastructure Layer](#42x4-infrastructure-layer)
-      - [4.2.X.5. Bounded Context Software Architecture Component Level Diagrams](#42x5-bounded-context-software-architecture-component-level-diagrams)
-      - [4.2.X.6. Bounded Context Software Architecture Code Level Diagrams](#42x6-bounded-context-software-architecture-code-level-diagrams)
-      - [4.2.X.6.1. Bounded Context Domain Layer Class Diagrams](#42x61-bounded-context-domain-layer-class-diagrams)
-      - [4.2.X.6.2. Bounded Context Database Design Diagram](#42x62-bounded-context-database-design-diagram)
 
-- [Capítulo V: Solution UI/UX Design](#capítulo-v-solution-uiux-design)
-  - [5.1. Style Guidelines](#51-style-guidelines)
-    - [5.1.1. General Style Guidelines](#511-general-style-guidelines)
-    - [5.1.2. Web, Mobile and IoT Style Guidelines](#512-web-mobile-and-iot-style-guidelines)
-  - [5.2. Information Architecture](#52-information-architecture)
-    - [5.2.1. Organization Systems](#521-organization-systems)
-    - [5.2.2. Labeling Systems](#522-labeling-systems)
-    - [5.2.3. SEO Tags and Meta Tags](#523-seo-tags-and-meta-tags)
-    - [5.2.4. Searching Systems](#524-searching-systems)
-    - [5.2.5. Navigation Systems](#525-navigation-systems)
-  - [5.3. Landing Page UI Design](#53-landing-page-ui-design)
-    - [5.3.1. Landing Page Wireframe](#531-landing-page-wireframe)
-    - [5.3.2. Landing Page Mock-up](#532-landing-page-mock-up)
-  - [5.4. Applications UX/UI Design](#54-applications-uxui-design)
-    - [5.4.1. Applications Wireframes](#541-applications-wireframes)
-    - [5.4.2. Applications Wireflow Diagrams](#542-applications-wireflow-diagrams)
-    - [5.4.2. Applications Mock-ups](#542-applications-mock-ups)
-    - [5.4.3. Applications User Flow Diagrams](#543-applications-user-flow-diagrams)
-  - [5.5. Applications Prototyping](#55-applications-prototyping)
-  - [5.6. IoT Device Design](#56-iot-device-design)
+    - [4.2.1. Bounded Context: Identity and Access Management (IAM)](#421-bounded-context-identity-and-access-management-iam)
+      - [4.2.1.1. Domain Layer](#4211-domain-layer)
+      - [4.2.1.2. Interface Layer](#4212-interface-layer)
+      - [4.2.1.3. Application Layer](#4213-application-layer)
+      - [4.2.1.4. Infrastructure Layer](#4214-infrastructure-layer)
+      - [4.2.1.5. Bounded Context Software Architecture Component Level Diagrams](#4215-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.1.6. Bounded Context Software Architecture Code Level Diagrams](#4216-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.1.6.1. Bounded Context Domain Layer Class Diagrams](#42161-bounded-context-domain-layer-class-diagrams)
+        - [4.2.1.6.2. Bounded Context Database Design Diagram](#42162-bounded-context-database-design-diagram)
 
-- [Capítulo VI: Product Implementation, Validation & Deployment](#capítulo-vi-product-implementation-validation--deployment)
-  - [6.1. Software Configuration Management](#61-software-configuration-management)
-    - [6.1.1. Software Development Environment Configuration](#611-software-development-environment-configuration)
-    - [6.1.2. Source Code Management](#612-source-code-management)
-    - [6.1.3. Source Code Style Guide & Conventions](#613-source-code-style-guide--conventions)
-    - [6.1.4. Software Deployment Configuration](#614-software-deployment-configuration)
-  - [6.2. Landing Page, Services & Applications Implementation](#62-landing-page-services--applications-implementation)
-    - [6.2.X. Sprint n](#621-sprint-1)
-      - [6.2.X.1. Sprint Planning n](#6211-sprint-planning-1)
-      - [6.2.X.2. Aspect Leaders and Collaborators](#6212-aspect-leaders-and-collaborators)
-      - [6.2.X.3. Sprint Backlog n](#6213-sprint-backlog-1)
-      - [6.2.X.4. Development Evidence for Sprint Review](#6214-development-evidence-for-sprint-review)
-      - [6.2.X.5. Testing Suite Evidence for Sprint Review](#6215-testing-suite-evidence-for-sprint-review)
-      - [6.2.X.6. Execution Evidence for Sprint Review](#6216-execution-evidence-for-sprint-review)
-      - [6.2.X.7. Services Documentation Evidence for Sprint Review](#6217-services-documentation-evidence-for-sprint-review)
-      - [6.2.X.8. Software Deployment Evidence for Sprint Review](#6218-software-deployment-evidence-for-sprint-review)
-      - [6.2.X.9. Team Collaboration Insights during Sprint](#6219-team-collaboration-insights-during-sprint)
-  - [6.3. Validation Interviews](#63-validation-interviews)
-    - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
-    - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
-    - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
-  - [6.4. Video About-the-Product](#64-video-about-the-product)
+    - [4.2.2. Bounded Context: Risk Detection](#422-bounded-context-risk-detection)
+      - [4.2.2.1. Domain Layer](#4221-domain-layer)
+      - [4.2.2.2. Interface Layer](#4222-interface-layer)
+      - [4.2.2.3. Application Layer](#4223-application-layer)
+      - [4.2.2.4. Infrastructure Layer](#4224-infrastructure-layer)
+      - [4.2.2.5. Bounded Context Software Architecture Component Level Diagrams](#4225-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.2.6. Bounded Context Software Architecture Code Level Diagrams](#4226-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.2.6.1. Bounded Context Domain Layer Class Diagrams](#42261-bounded-context-domain-layer-class-diagrams)
+        - [4.2.2.6.2. Bounded Context Database Design Diagram](#42262-bounded-context-database-design-diagram)
+
+    - [4.2.3. Bounded Context: Alert & Response Management](#423-bounded-context-alert--response-management)
+      - [4.2.3.1. Domain Layer](#4231-domain-layer)
+      - [4.2.3.2. Interface Layer](#4232-interface-layer)
+      - [4.2.3.3. Application Layer](#4233-application-layer)
+      - [4.2.3.4. Infrastructure Layer](#4234-infrastructure-layer)
+      - [4.2.3.5. Bounded Context Software Architecture Component Level Diagrams](#4235-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.3.6. Bounded Context Software Architecture Code Level Diagrams](#4236-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.3.6.1. Bounded Context Domain Layer Class Diagrams](#42361-bounded-context-domain-layer-class-diagrams)
+        - [4.2.3.6.2. Bounded Context Database Design Diagram](#42362-bounded-context-database-design-diagram)
+
+    - [4.2.4. Bounded Context: Building](#424-bounded-context-building)
+      - [4.2.4.1. Domain Layer](#4241-domain-layer)
+      - [4.2.4.2. Interface Layer](#4242-interface-layer)
+      - [4.2.4.3. Application Layer](#4243-application-layer)
+      - [4.2.4.4. Infrastructure Layer](#4244-infrastructure-layer)
+      - [4.2.4.5. Bounded Context Software Architecture Component Level Diagrams](#4245-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.4.6. Bounded Context Software Architecture Code Level Diagrams](#4246-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.4.6.1. Bounded Context Domain Layer Class Diagrams](#42461-bounded-context-domain-layer-class-diagrams)
+        - [4.2.4.6.2. Bounded Context Database Design Diagram](#42462-bounded-context-database-design-diagram)
+
+    - [4.2.5. Bounded Context: Device](#425-bounded-context-device)
+      - [4.2.5.1. Domain Layer](#4251-domain-layer)
+      - [4.2.5.2. Interface Layer](#4252-interface-layer)
+      - [4.2.5.3. Application Layer](#4253-application-layer)
+      - [4.2.5.4. Infrastructure Layer](#4254-infrastructure-layer)
+      - [4.2.5.5. Bounded Context Software Architecture Component Level Diagrams](#4255-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.5.6. Bounded Context Software Architecture Code Level Diagrams](#4256-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.5.6.1. Bounded Context Domain Layer Class Diagrams](#42561-bounded-context-domain-layer-class-diagrams)
+        - [4.2.5.6.2. Bounded Context Database Design Diagram](#42562-bounded-context-database-design-diagram)
+
+    - [4.2.6. Bounded Context: Monitoring](#426-bounded-context-monitoring)
+      - [4.2.6.1. Domain Layer](#4261-domain-layer)
+      - [4.2.6.2. Interface Layer](#4262-interface-layer)
+      - [4.2.6.3. Application Layer](#4263-application-layer)
+      - [4.2.6.4. Infrastructure Layer](#4264-infrastructure-layer)
+      - [4.2.6.5. Bounded Context Software Architecture Component Level Diagrams](#4265-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.6.6. Bounded Context Software Architecture Code Level Diagrams](#4266-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.6.6.1. Bounded Context Domain Layer Class Diagrams](#42661-bounded-context-domain-layer-class-diagrams)
+        - [4.2.6.6.2. Bounded Context Database Design Diagram](#42662-bounded-context-database-design-diagram)
+
+    - [4.2.7. Bounded Context: User](#427-bounded-context-user)
+      - [4.2.7.1. Domain Layer](#4271-domain-layer)
+      - [4.2.7.2. Interface Layer](#4272-interface-layer)
+      - [4.2.7.3. Application Layer](#4273-application-layer)
+      - [4.2.7.4. Infrastructure Layer](#4274-infrastructure-layer)
+      - [4.2.7.5. Bounded Context Software Architecture Component Level Diagrams](#4275-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.7.6. Bounded Context Software Architecture Code Level Diagrams](#4276-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.7.6.1. Bounded Context Domain Layer Class Diagrams](#42761-bounded-context-domain-layer-class-diagrams)
+        - [4.2.7.6.2. Bounded Context Database Design Diagram](#42762-bounded-context-database-design-diagram)
+
+    - [4.2.8. Bounded Context: Incident](#428-bounded-context-incident)
+      - [4.2.8.1. Domain Layer](#4281-domain-layer)
+      - [4.2.8.2. Interface Layer](#4282-interface-layer)
+      - [4.2.8.3. Application Layer](#4283-application-layer)
+      - [4.2.8.4. Infrastructure Layer](#4284-infrastructure-layer)
+      - [4.2.8.5. Bounded Context Software Architecture Component Level Diagrams](#4285-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.8.6. Bounded Context Software Architecture Code Level Diagrams](#4286-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.8.6.1. Bounded Context Domain Layer Class Diagrams](#42861-bounded-context-domain-layer-class-diagrams)
+        - [4.2.8.6.2. Bounded Context Database Design Diagram](#42862-bounded-context-database-design-diagram)
+
+    - [4.2.9. Bounded Context: Connectivity](#429-bounded-context-connectivity)
+      - [4.2.9.1. Domain Layer](#4291-domain-layer)
+      - [4.2.9.2. Interface Layer](#4292-interface-layer)
+      - [4.2.9.3. Application Layer](#4293-application-layer)
+      - [4.2.9.4. Infrastructure Layer](#4294-infrastructure-layer)
+      - [4.2.9.5. Bounded Context Software Architecture Component Level Diagrams](#4295-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.9.6. Bounded Context Software Architecture Code Level Diagrams](#4296-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.9.6.1. Bounded Context Domain Layer Class Diagrams](#42961-bounded-context-domain-layer-class-diagrams)
+        - [4.2.9.6.2. Bounded Context Database Design Diagram](#42962-bounded-context-database-design-diagram)
 
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
-  - [Video About-the-Team](#video-about-the-team)
 
 - [Bibliografía](#bibliografía)
 
 - [Anexos](#anexos)
+  - [Anexo A. Videos de Exposiciones](#anexo-a-videos-de-exposiciones)
+    - [AV1 — Sprint Review](#av1--sprint-review)
 
-
-## Registro de Versiones del Informe 
-
-| Versión | Fecha | Autor | Descripción de modificación |
-|---|---|---|---|
-| 0.1 | [dd/mm/aaaa] | [Integrante] | Creación inicial de la estructura del Project Report. |
-
-**Regla del Project Statement:** cada fila debe tener un solo autor y reflejar adiciones,
-eliminaciones, correcciones o mejoras relevantes del informe.
-
----
-
-## Project Report Collaboration Insights
-
-**URL del repositorio público de GitHub:** [COMPLETAR]
-
-Esta sección debe crecer en cada entrega (AV1, TB1, AV2 y TB2) e incluir:
-
-- explicación de cómo se elaboró colaborativamente el informe;
-- capturas de analíticos de colaboración;
-- capturas/evidencias de commits;
-- interpretación de la participación del equipo;
-- coherencia con el Registro de Versiones del Informe.
-
-Guardar imágenes generales de colaboración en:
-`assets/images/general/collaboration/`
-
-### AV1 — Sprint Review
-[COMPLETAR]
-
-### TB1 — Stage Review
-[COMPLETAR]
-
-### AV2 — Sprint Review
-[COMPLETAR]
-
-### TB2 — Release Review
-[COMPLETAR]
-
----
+<div style="page-break-before: always; break-before: page;"></div>
 
 # Student Outcome
 
-El curso contribuye al **ABET Student Outcome 5**.
+El curso contribuye al cumplimiento del Student Outcome ABET:
 
-## Evidencias por entrega
+**ABET – EAC - Student Outcome 5**
 
-### AV1
+**Criterio:** La capacidad de funcionar efectivamente en un equipo cuyos miembros juntos proporcionan liderazgo, crean un entorno de colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen objetivos.
 
-| Criterio específico | Integrante | Acciones realizadas | Conclusiones |
-|---|---|---|---|
-| Trabaja en equipo para proporcionar liderazgo en forma conjunta | [Nombre] | [COMPLETAR] | [COMPLETAR] |
-| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos | [Nombre] | [COMPLETAR] | [COMPLETAR] |
+En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 5.
+| Criterio específico | Acciones realizadas | Conclusiones |
+|---|---|---|
+| Trabaja en equipo para proporcionar liderazgo en forma conjunta | **Sánchez Guevara, Iván Fernando**<br><br>**AV1**<br>• Tuvo a su cargo el Startup Profile y parte del Solution Profile, desarrollando la descripción de la startup, los perfiles de los integrantes, así como los antecedentes y la problemática de ResQ.<br>• Asumió el desarrollo del Context Mapping y de los diagramas de arquitectura a nivel Context, Container y Deployment, integrando en una representación arquitectónica las responsabilidades e interacciones definidas para los distintos Bounded Contexts.<br>• Desarrolló el Bounded Context Connectivity, incluyendo Domain Layer, Interface Layer, Application Layer, Infrastructure Layer y sus diagramas de diseño correspondientes.<br><br>**Nanfuñay Liza, Pedro Jesus**<br><br>**AV1**<br>• Tuvo a su cargo el proceso de Lean UX, desarrollando Lean UX Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas como base para orientar las decisiones iniciales del equipo.<br>• Asumió el Design-Level EventStorming, incluyendo Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases, contribuyendo a identificar y delimitar las responsabilidades posteriormente distribuidas entre los Bounded Contexts del sistema.<br>• Desarrolló el Bounded Context Monitoring, incluyendo sus capas y diagramas de diseño táctico.<br><br>**Chacaliaza Minaya, Eduardo Fabian**<br><br>**AV1**<br>• Tuvo a su cargo la definición de los segmentos objetivo, el análisis de competidores y las estrategias y tácticas de ResQ frente a la competencia.<br>• Desarrolló el Product Backlog, organizando y priorizando los requisitos funcionales identificados para la solución.<br>• Participó en el Strategic-Level Domain-Driven Design y asumió el desarrollo del System Landscape de la arquitectura.<br>• Desarrolló el Bounded Context Alert & Response Management, especificando sus capas y diagramas técnicos correspondientes.<br><br>**Quispe Barzola, Fabricio Fabian**<br><br>**AV1**<br>• Tuvo a su cargo el proceso de entrevistas, incluyendo su diseño, registro y análisis, proporcionando al equipo información proveniente de representantes de los segmentos objetivo.<br>• Desarrolló las User Stories y el Impact Mapping, trasladando los resultados obtenidos durante la investigación hacia la especificación de requisitos de ResQ.<br>• Desarrolló los Bounded Contexts Identity and Access Management (IAM) y Risk Detection, incluyendo Domain, Interface, Application e Infrastructure Layers, así como los diagramas de componentes, clases y base de datos correspondientes.<br><br>**Aliaga Urbina, Wilder Gonzalo**<br><br>**AV1**<br>• Tuvo a su cargo la elaboración de User Personas, User Task Matrix, User Journey Mapping y Empathy Mapping, estructurando los hallazgos obtenidos durante la investigación de usuarios.<br>• Utilizó estos artefactos para representar necesidades, tareas, frustraciones y recorridos de los segmentos objetivo, aportando información utilizada posteriormente por el equipo en la definición de la solución.<br>• Desarrolló los Bounded Contexts Building y Device, incluyendo sus capas y diagramas de diseño táctico correspondientes.<br><br>**Guerrero Vasquez, Jhon Danny**<br><br>**AV1**<br>• Participó en el proceso de Needfinding y tuvo a su cargo el Big Picture EventStorming y el Ubiquitous Language, contribuyendo a establecer una comprensión común del dominio de ResQ y de sus principales conceptos.<br>• El Big Picture EventStorming desarrollado permitió representar los eventos relevantes del dominio y apoyar posteriormente su descomposición en Bounded Contexts.<br>• Desarrolló los Bounded Contexts User e Incident, incluyendo sus capas, componentes, clases y diseño de persistencia. | Durante AV1, el equipo distribuyó responsabilidades entre sus integrantes en distintas etapas del proceso de ingeniería, abarcando Lean UX, UX Research, Requirements Specification, Strategic-Level Domain-Driven Design, Tactical-Level Domain-Driven Design y Software Architecture. Cada integrante asumió la responsabilidad de artefactos concretos cuyos resultados se relacionan con el trabajo realizado por los demás miembros. Esta organización permitió desarrollar en paralelo los Capítulos I, II, III y IV y posteriormente integrar sus resultados en una propuesta común para ResQ. |
+| **Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos** | **Sánchez Guevara, Iván Fernando**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió responsabilidades relacionadas con la definición inicial de la solución, Context Mapping, Software Architecture y el Bounded Context Connectivity.<br>• Su trabajo en Context Mapping y arquitectura permitió integrar visualmente las relaciones y dependencias existentes entre elementos desarrollados por diferentes miembros del equipo.<br><br>**Nanfuñay Liza, Pedro Jesus**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió la elaboración de los artefactos de Lean UX y Design-Level EventStorming.<br>• Los artefactos de Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases proporcionaron una base común para organizar y distribuir posteriormente el diseño táctico entre los integrantes del equipo.<br>• Complementó este trabajo desarrollando el Bounded Context Monitoring dentro de la distribución acordada para el Capítulo IV.<br><br>**Chacaliaza Minaya, Eduardo Fabian**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió responsabilidades relacionadas con segmentos objetivo, análisis competitivo, Product Backlog, Strategic-Level Domain-Driven Design y Software Architecture.<br>• La organización del Product Backlog contribuyó a estructurar y priorizar el alcance funcional identificado por el equipo.<br>• Complementó el diseño estratégico con el desarrollo del Bounded Context Alert & Response Management, manteniendo relación entre el alcance funcional y el diseño de la solución.<br><br>**Quispe Barzola, Fabricio Fabian**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió las actividades relacionadas con entrevistas, User Stories, Impact Mapping, IAM y Risk Detection.<br>• Los resultados obtenidos en entrevistas fueron utilizados como insumo para la especificación de requisitos, permitiendo mantener trazabilidad entre investigación, necesidades identificadas y funcionalidades propuestas.<br>• El desarrollo de IAM y Risk Detection permitió continuar dicha trazabilidad desde los requisitos hasta el diseño táctico de la solución.<br><br>**Aliaga Urbina, Wilder Gonzalo**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió los principales artefactos de Needfinding y el diseño táctico de Building y Device.<br>• Organizó los resultados de investigación en User Personas, User Task Matrix, User Journey Maps y Empathy Maps, facilitando que el equipo dispusiera de una representación compartida de los usuarios y sus necesidades.<br>• Relacionó posteriormente estos hallazgos con elementos del dominio físico e IoT mediante el desarrollo de Building y Device.<br><br>**Guerrero Vasquez, Jhon Danny**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió actividades relacionadas con Needfinding, Big Picture EventStorming, Ubiquitous Language y los Bounded Contexts User e Incident.<br>• La elaboración del Ubiquitous Language contribuyó a establecer términos y definiciones compartidas para reducir ambigüedades durante el trabajo de los distintos integrantes.<br>• Complementó el modelado general del dominio desarrollando User e Incident dentro de la distribución establecida para el Tactical-Level Domain-Driven Design. | La planificación de AV1 permitió distribuir el alcance del entregable entre los seis integrantes, estableciendo responsabilidades relacionadas entre sí y cubriendo progresivamente la comprensión del problema, investigación de usuarios, especificación de requisitos y diseño de la solución. Los artefactos desarrollados mantienen dependencias entre distintas responsabilidades: las entrevistas alimentan el Needfinding, estos resultados contribuyen a los requisitos, y los requisitos y eventos del dominio orientan la identificación y diseño de los Bounded Contexts y la arquitectura. Esta organización permitió integrar los aportes individuales dentro de una estructura común del Project Report y avanzar hacia los objetivos establecidos para AV1. |
 
-### TB1
-[Actualizar]
-
-### AV2
-[Actualizar]
-
-### TB2
-[Actualizar]
-
-Guardar capturas/evidencias generales relacionadas en:
-`assets/images/general/student-outcome/`
-
-
+<div style="page-break-before: always; break-before: page;"></div>
 
 # Capítulo I: Introducción
-
-> Imágenes del capítulo:
-> `assets/images/chapter-01-introduction/`
 
 ## 1.1. Startup Profile
 
@@ -531,8 +317,9 @@ Con nuestro sistema inteligente e integrado, centralizamos la detección de múl
 
 | Nombres y Apellidos | Código | Descripción | Foto |
 |---|---|---|---|
-| Ivan Fernando Sanchez Guevara | U202218181 | Mi nombre es Fernando Sanchez Guevara, tengo 22 años y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona disciplinada, responsable y puntual al momento de desarrollar las asignaciones de trabajo. Además, me preocupo por mantener una buena coordinación con mi equipo, procurando apoyar a mis compañeros cuando presentan alguna dificultad. Gracias a mi compromiso y disposición para colaborar, he contribuido al desarrollo adecuado de diferentes proyectos grupales, buscando cumplir los objetivos establecidos y resolver los inconvenientes que puedan surgir durante el proceso. | ![foto1](/assets/images/chapter-01-introduction/Fernando.png) |
-| Eduardo Fabian Chacaliza Minaya | U202324129 | Mi nombre es Eduardo Fabian Chacaliza Minaya y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y comprometida con el cumplimiento de los objetivos del equipo. Tengo interés en el desarrollo de soluciones tecnológicas y en la integración de los diferentes componentes de un proyecto. Durante los trabajos grupales procuro mantener una comunicación constante con mis compañeros, colaborar en la resolución de problemas y apoyar en la integración y validación de las distintas partes del proyecto para obtener un resultado consistente y funcional. | ![foto2](/assets/images/chapter-01-introduction/Eduardo.png) |
+| Ivan Fernando Sanchez Guevara | U202218181 | Mi nombre es Fernando Sanchez Guevara, tengo 22 años y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona disciplinada, responsable y puntual al momento de desarrollar las asignaciones de trabajo. Además, me preocupo por mantener una buena coordinación con mi equipo, procurando apoyar a mis compañeros cuando presentan alguna dificultad. Gracias a mi compromiso y disposición para colaborar, he contribuido al desarrollo adecuado de diferentes proyectos grupales, buscando cumplir los objetivos establecidos y resolver los inconvenientes que puedan surgir durante el proceso. | ![foto1](assets/images/chapter-01-introduction/Fernando.png) |
+| Eduardo Fabian Chacaliza Minaya | U202324129 | Mi nombre es Eduardo Fabian Chacaliza Minaya y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y comprometida con el cumplimiento de los objetivos del equipo. Tengo interés en el desarrollo de soluciones tecnológicas y en la integración de los diferentes componentes de un proyecto. Durante los trabajos grupales procuro mantener una comunicación constante con mis compañeros, colaborar en la resolución de problemas y apoyar en la integración y validación de las distintas partes del proyecto para obtener un resultado consistente y funcional. | ![foto2](assets/images/chapter-01-introduction/Eduardo.png) |
+| Fabricio Fabian Quispe Barzola | U202320442 | Mi nombre es Fabricio Fabian Quispe Barzola y actualmente estudio la carrera de Ingeniería de Software. A lo largo del desarrollo de ResQ he participado de manera activa en la organización, investigación y construcción de los distintos artefactos del proyecto, manteniendo una coordinación constante con mis compañeros para que las diferentes partes de la solución mantengan coherencia entre sí. He trabajado en actividades relacionadas con el diseño, registro y análisis de entrevistas, la elaboración de User Stories e Impact Mapping, así como en el diseño de los Bounded Contexts Identity and Access Management (IAM) y Risk Detection. Durante el proceso procuro revisar cómo mis avances se relacionan con el trabajo de los demás integrantes, compartir observaciones, apoyar en la integración de los artefactos y contribuir a resolver inconsistencias cuando aparecen. Me considero una persona responsable, organizada y comprometida con el trabajo colaborativo, buscando que el equipo mantenga una visión común del proyecto y pueda cumplir de manera coordinada los objetivos establecidos para cada entrega. | ![foto3](assets/images/chapter-01-introduction/Fabricio.png) |
 
 ## 1.2. Solution Profile
 
@@ -729,43 +516,42 @@ Este segmento incluye empresas especializadas en automatización de edificios, i
 
 - **Necesidades clave:** Una solución fácil de integrar con diferentes sensores y sistemas de automatización, que pueda configurarse según cada edificio, adaptarse a distintos proyectos y escalar conforme aumenten las zonas o dispositivos conectados.
 
+<div style="page-break-before: always; break-before: page;"></div>
+
 # Capítulo II: Requirements Elicitation & Analysis
 
-> Imágenes del capítulo:
-> `assets/images/chapter-02-requirements-elicitation-analysis/`
->
-> Fuentes editables de diagramas:
-> `assets/diagram-sources/chapter-02-requirements-elicitation-analysis/`
 
 ## 2.1. Competidores
 
 ### 2.1.1. Análisis competitivo
 Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos el siguiente Landscape:
 
-<table style="background-color:transparent; border-collapse:collapse; width:548px; table-layout:fixed; font-family:Arial,sans-serif; font-size:12px; line-height:16px; color:inherit; border:1px solid currentColor;">
+<div style="page-break-before: always; break-before: page;"></div>
+
+<table style="background-color:transparent; border-collapse:collapse; width:100%; max-width:100%; margin:0 auto; table-layout:fixed; font-family:Arial,sans-serif; font-size:12px; line-height:16px; color:inherit; border:1px solid currentColor;">
   <colgroup>
-    <col style="width:66px;">
-    <col style="width:54px;">
-    <col style="width:57px;">
-    <col style="width:98px;">
-    <col style="width:91px;">
-    <col style="width:90px;">
-    <col style="width:92px;">
+    <col style="width:12%;">
+    <col style="width:10%;">
+    <col style="width:10%;">
+    <col style="width:18%;">
+    <col style="width:17%;">
+    <col style="width:16%;">
+    <col style="width:17%;">
   </colgroup>
 
-  <tr style="background-color:transparent; ">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; ">
     <th colspan="7" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; text-align:left; height:17px;">
       Competitive Analysis Landscape
     </th>
   </tr>
-  <tr style="background-color:transparent; height:49px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:49px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
       ¿Por qué llevar a cabo este análisis?
     </td>
     <td colspan="5" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Analizar las características y propuestas de valor de competidores indirectos relacionados con el monitoreo, automatización y gestión de edificios, con el fin de identificar oportunidades de diferenciación para ResQ mediante tecnologías IoT, procesamiento Edge y automatización de respuestas ante situaciones de riesgo.  </td>
   </tr>
 
-  <tr style="background-color:transparent; height:50px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:50px;">
     <td colspan="3" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
       &nbsp;
     </td>
@@ -775,7 +561,7 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Honeywell EBI<br><img src="assets/images/chapter-02-requirements-elicitation-analysis/competidor-3.png" alt="Logo de Honeywell EBI" width="70" style="display:block; width:70px; max-width:100%; height:auto; margin:6px auto;"></td>
   </tr>
 
-  <tr style="background-color:transparent; height:65px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:65px;">
     <td rowspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; text-align:center; vertical-align:middle;">
       <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Perfil</span>
     </td>
@@ -785,7 +571,7 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma digital para la gestión inteligente de edificios. Centraliza operaciones, mantenimiento, energía, seguridad y protección.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma empresarial que integra gestión del edificio, seguridad, control de accesos, videovigilancia y protección contra incendios.</td>
   </tr>
-  <tr style="background-color:transparent; height:82px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:82px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
       Ventaja competitiva<br>¿Qué valor ofrece a los clientes?
     </td>
@@ -795,7 +581,7 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Integra sistemas críticos del edificio y permite automatizar procedimientos y flujos de trabajo ante eventos.</td>
   </tr>
 
-  <tr style="background-color:transparent; height:66px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:66px;">
     <td rowspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; text-align:center; vertical-align:middle;">
       <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Perfil de Marketing</span>
     </td>
@@ -805,7 +591,7 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Propietarios, operadores y administradores de edificios, campus y organizaciones de diversos sectores.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Medianas y grandes organizaciones con edificios, campus e infraestructuras complejas.</td>
   </tr>
-  <tr style="background-color:transparent; height:66px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:66px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Estrategias de marketing</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Estrategia B2B basada en demostraciones de la solución, contacto directo con administradores y organizaciones y alianzas con empresas vinculadas a automatización de edificios.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Estrategia B2B enfocada en reducción de daños, demostraciones, evaluaciones y casos de uso.</td>
@@ -813,7 +599,7 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Venta empresarial mediante especialistas e integradores, demostraciones y soluciones personalizadas.</td>
   </tr>
 
-  <tr style="background-color:transparent; height:66px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:66px;">
     <td rowspan="3" style="background-color:transparent; color:inherit; border:1px solid currentColor; text-align:center; vertical-align:middle;">
       <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Perfil de Producto</span>
     </td>
@@ -823,14 +609,14 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Building X incluye aplicaciones para operaciones, seguridad, incendios, energía, análisis e integración de equipos.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">EBI integra gestión del edificio, seguridad, videovigilancia, control de accesos, incendios y sistemas de terceros.</td>
   </tr>
-  <tr style="background-color:transparent; height:49px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:49px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Precios &amp; Costos</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modelo basado en una implementación inicial de sensores y dispositivos IoT, complementada con una suscripción recurrente para el acceso a la plataforma de monitoreo, alertas, historial e integraciones. El costo dependerá de la cantidad de dispositivos, tamaño de la propiedad y funcionalidades contratadas.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Sensores con un costo aproximado de US$60 a US$80 por unidad y una tarifa mensual generalmente entre US$4 y US$9 por inquilino, que incluye monitoreo, dashboard, alertas y soporte.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modelo basado en suscripciones anuales a aplicaciones y APIs, con costos adicionales asociados a conectividad, dispositivos e implementación según las necesidades del proyecto.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modelo empresarial basado en licencias y suscripciones según la solución contratada. Los costos dependen de la infraestructura, integraciones, implementación y servicios requeridos.</td>
   </tr>
-  <tr style="background-color:transparent; height:66px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:66px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
       Canales de distribución<br>(Web y/o Móvil)
     </td>
@@ -840,7 +626,7 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Interfaces web y acceso remoto, además de opciones de uso desde móviles y tablets.</td>
   </tr>
 
-  <tr style="background-color:transparent; height:66px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:66px;">
     <td rowspan="4" style="background-color:transparent; color:inherit; border:1px solid currentColor; text-align:center; vertical-align:middle;">
       <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Análisis SWOT</span>
     </td>
@@ -850,21 +636,21 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Marca consolidada; amplia experiencia; alta escalabilidad; gran capacidad de integración.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Experiencia en automatización; integración de sistemas críticos; arquitectura escalable.</td>
   </tr>
-  <tr style="background-color:transparent; height:50px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:50px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Debilidades</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Necesidad de fortalecer la validación en entornos reales, demostrar escalabilidad y consolidar su posicionamiento frente a soluciones ya establecidas en el mercado.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Enfoque principal en mitigación de daños a la propiedad, con menor énfasis en coordinación integral de emergencias.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Puede implicar mayor complejidad y costo para organizaciones con necesidades específicas.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Requiere integración especializada e infraestructura, lo que aumenta la complejidad.</td>
   </tr>
-  <tr style="background-color:transparent; height:49px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:49px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Oportunidades</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Creciente adopción de IoT y automatización en edificios; modernización de infraestructura; mayor demanda de monitoreo y respuesta ante riesgos; oportunidades de alianza con empresas integradoras.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Creciente demanda de monitoreo preventivo en edificaciones, adopción de sensores IoT y expansión del mercado de automatización de propiedades.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Mayor digitalización de edificios, IA, automatización y gestión centralizada.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modernización de edificios existentes y crecimiento de IoT e integración tecnológica.</td>
   </tr>
-  <tr style="background-color:transparent; height:49px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:49px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Amenazas</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Presencia de soluciones consolidadas; exigencias normativas; riesgos de ciberseguridad y rápida evolución tecnológica.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Aparición de soluciones IoT de menor costo y expansión de grandes plataformas.</td>
@@ -2041,10 +1827,10 @@ Ambos mapas muestran que la interoperabilidad importa por motivos diferentes. Ca
 |---|---|
 | [Term in English] | [Definición] |
 
+<div style="page-break-before: always; break-before: page;"></div>
+
 # Capítulo III: Requirements Specification
 
-> Imágenes del capítulo:
-> `assets/images/chapter-03-requirements-specification/`
 
 ## 3.1. User Stories
 
@@ -2183,7 +1969,7 @@ Lograr que al menos el **60 % de las administraciones u organizaciones participa
 
 El siguiente artefacto representa visualmente la relación entre los Business Goals, los User Personas, los cambios de comportamiento esperados, los Deliverables y las User Stories identificadas para ResQ.
 
-![Impact Mapping - ResQ](/assets/images/chapter-03-requirements-specification/Impact-Mapping-ResQ.png)
+![Impact Mapping - ResQ](assets/images/chapter-03-requirements-specification/Impact-Mapping-ResQ.png)
 
 ### Análisis del Impact Mapping
 
@@ -2272,26 +2058,151 @@ La siguiente imagen muestra el Product Backlog de ResQ registrado en Trello:
 
 **Link del Product Backlog:** [ResQ - Product Backlog](https://trello.com/invite/b/6aab49b781accd44e61a7276/ATTI008620e96295fff92c9f73aa53404faf8E74AD19/resq-product-backlog)
 
+<div style="page-break-before: always; break-before: page;"></div>
+
 # Capítulo IV: Solution Software Design
 
-> Imágenes del capítulo:
-> `assets/images/chapter-04-solution-software-design/`
->
-> Fuentes editables de diagramas:
-> `assets/diagram-sources/chapter-04-solution-software-design/`
 
 ## 4.1. Strategic-Level Domain-Driven Design
 
 ### 4.1.1. Design-Level EventStorming
 
+Con el objetivo de profundizar el modelado del dominio de ResQ, el equipo realizó una sesión de **Design-Level EventStorming** tomando como referencia el Big Picture EventStorming elaborado previamente. La finalidad fue identificar con mayor detalle los actores, acciones, eventos, reglas y responsabilidades que intervienen en el funcionamiento de la solución.
+
+Durante la sesión se utilizaron los principales elementos de EventStorming: **Actors, Commands, Domain Events, Aggregates, Policies, Read Models y External Systems**. Para mantener coherencia con el Ubiquitous Language previamente definido, se emplearon conceptos como `Building`, `Zone`, `IoT Device`, `Risk`, `Automatic Response`, `High-Impact Action`, `Incident` y `Authorized Manager`.
+
+Durante la reunión se siguieron las siguientes actividades:
+
+- **Exploración del dominio general:** Se revisó el Big Picture EventStorming y se discutieron los principales procesos que intervienen desde la preparación de la plataforma hasta la atención y cierre de una emergencia.
+- **Identificación de actores y usuarios:** Se reconocieron los participantes que interactúan con el sistema, como administradores, responsables autorizados, usuarios de la plataforma y dispositivos IoT.
+- **Identificación de Domain Events:** Se registraron los hechos relevantes que ocurren dentro del dominio, como `Usuario autenticado`, `Medición del sensor registrada`, `Condición anómala detectada`, `Riesgo clasificado y localizado`, `Alerta generada`, `Respuesta automática ejecutada` e `Incidente cerrado`.
+- **Identificación de Commands:** Para cada evento se analizaron las acciones que lo originan, como autenticar usuarios, registrar mediciones, clasificar riesgos, generar alertas, ejecutar respuestas y gestionar incidentes.
+- **Identificación de Policies y reglas del dominio:** Se incorporaron las reglas que reaccionan ante determinados eventos, especialmente las relacionadas con detección de riesgos, respuestas automáticas y acciones de alto impacto.
+- **Identificación de Aggregates, Read Models y External Systems:** Se organizaron los elementos responsables de procesar los comandos, las vistas necesarias para consultar el estado del sistema y los servicios externos que participan en determinados flujos.
+- **Asignación de responsabilidades:** Finalmente, se revisó qué actores y elementos del dominio participan en cada proceso, permitiendo reconocer agrupaciones de responsabilidades que posteriormente servirían para el Candidate Context Discovery.
+
+Como resultado de la sesión se identificaron cuatro procesos principales dentro de ResQ: **Acceso y Configuración**, **Monitoreo y Detección**, **Alerta y Respuesta Automática** y **Gestión y Seguimiento**.
+
+El flujo principal del dominio puede resumirse de la siguiente manera:
+
+**Configuración → Medición registrada → Condición anómala detectada → Riesgo clasificado y localizado → Alerta o respuesta ejecutada → Incidente registrado → Seguimiento → Incidente cerrado**
+
+![Design-Level_EventStorming_ResQ](assets/images/chapter-04-solution-software-design/Design-Level_EventStorming_ResQ.jpg)
+
+El Design-Level EventStorming permitió obtener una visión más detallada del comportamiento del dominio y reconocer con mayor claridad las responsabilidades existentes. Este resultado fue utilizado posteriormente como base para el **Candidate Context Discovery**, donde los elementos del EventStorm fueron agrupados para identificar los Bounded Contexts candidatos de ResQ.
+
 #### 4.1.1.1. Candidate Context Discovery
-[COMPLETAR]
+
+A partir del modelo obtenido en el Design-Level EventStorming, se realizó el **Candidate Context Discovery** con el objetivo de identificar los límites naturales de responsabilidad dentro del dominio de ResQ y proponer los Bounded Contexts que organizarán posteriormente el diseño estratégico de la solución.
+
+Para identificar los contextos candidatos se aplicaron principalmente las técnicas **start-with-value** y **look-for-pivotal-events**. La primera permitió reconocer las capacidades que concentran el principal valor de negocio de ResQ, mientras que la segunda permitió identificar eventos relevantes que representan cambios de responsabilidad dentro del flujo del dominio.
+
+Mediante **start-with-value**, se identificaron **Risk Detection** y **Alert & Response Management** como las capacidades centrales de la solución. `Risk Detection` concentra la lógica encargada de interpretar las mediciones y determinar el tipo, nivel y ubicación de una situación de riesgo, mientras que `Alert & Response Management` determina las alertas y acciones que deben ejecutarse como consecuencia del riesgo identificado.
+
+Posteriormente, mediante **look-for-pivotal-events**, se analizaron eventos relevantes como:
+
+- `Sensor measurement recorded`
+- `Anomalous condition detected`
+- `Risk classified and located`
+- `Alert generated`
+- `Automatic response executed`
+- `Incident registered in history`
+- `Incident closed`
+
+Estos eventos permitieron reconocer transiciones entre las responsabilidades de monitoreo, detección, respuesta y seguimiento. En particular, `Risk classified and located` representa el cambio entre la interpretación de las condiciones monitoreadas y el inicio de las acciones de respuesta, mientras que `Incident registered in history` marca el comienzo del seguimiento formal de la situación.
+
+Como resultado del análisis se identificaron los siguientes Candidate Bounded Contexts:
+
+| Candidate Bounded Context | Descripción |
+|---|---|
+| **IAM** | Gestiona la autenticación y autorización de los usuarios de ResQ, incluyendo validación de identidad, asignación de roles y control de permisos sobre las funcionalidades protegidas. |
+| **User Management** | Gestiona la información, estado y responsabilidades de los usuarios pertenecientes a una organización. |
+| **Building Management** | Gestiona la información de las edificaciones y sus zonas, permitiendo mantener la estructura física que será monitoreada por ResQ. |
+| **Device Management** | Gestiona los dispositivos IoT registrados en la plataforma y su asociación con una edificación o zona determinada. |
+| **Monitoring** | Gestiona las mediciones y estados actuales de las zonas y dispositivos IoT para proporcionar visibilidad sobre las condiciones monitoreadas. |
+| **Risk Detection** | Analiza las mediciones y aplica reglas de detección para identificar condiciones de riesgo y determinar su tipo, nivel y ubicación. |
+| **Alert & Response Management** | Gestiona las alertas y respuestas derivadas de un riesgo, incluyendo señalización, acciones automáticas mediante actuadores y acciones que requieren confirmación humana. |
+| **Incident Management** | Gestiona el ciclo de vida de los incidentes, incluyendo su registro, responsable, estado, evolución y cierre. |
+
+La técnica **start-with-value** permitió reconocer que `Risk Detection` y `Alert & Response Management` concentran el mayor valor de negocio de ResQ, debido a que representan la interpretación de una situación de riesgo y la coordinación de la respuesta correspondiente.
+
+Por otro lado, los demás contextos fueron delimitados al identificar responsabilidades específicas dentro del dominio. `Monitoring` mantiene el estado observado de la infraestructura, `Incident Management` gestiona el seguimiento posterior de una situación, mientras que `IAM`, `User Management`, `Building Management` y `Device Management` proporcionan las capacidades necesarias para preparar y administrar el entorno en el que opera la solución.
+
+Como parte del proceso se realizaron cambios progresivos sobre el EventStorm, comenzando con el modelo sin límites definidos, continuando con la identificación de las capacidades de mayor valor y los eventos pivotales, y finalizando con la delimitación de los ocho Candidate Bounded Contexts.
+
+![CandidateContextDiscovery_Initial](assets/images/chapter-04-solution-software-design/CandidateContextDiscovery_Initial.png)
+
+![CandidateContextDiscovery_Core](assets/images/chapter-04-solution-software-design/CandidateContextDiscovery_Core.png)
+
+![CandidateContextDiscovery_Final](assets/images/chapter-04-solution-software-design/CandidateContextDiscovery_Final.png)
+
+El resultado permitió obtener una primera descomposición del dominio en ocho contextos candidatos. Estos límites serán refinados posteriormente mediante los **Bounded Context Canvases** y el **Context Mapping**, donde se analizarán con mayor detalle sus responsabilidades, reglas de negocio y relaciones.
 
 #### 4.1.1.2. Domain Message Flows Modeling
-[COMPLETAR]
+
+Luego de identificar los Candidate Bounded Contexts de ResQ, se utilizó la técnica de **Domain Storytelling** para representar cómo estos contextos deben colaborar frente a diferentes situaciones del negocio.
+
+Para cada escenario se identificaron los actores involucrados, los Bounded Contexts que participan y los principales mensajes intercambiados entre ellos. Estos mensajes se representan como **Commands, Events y Queries**, permitiendo visualizar qué contexto solicita una acción, cuál procesa la información y qué resultado comunica posteriormente.
+
+Se seleccionaron cuatro escenarios representativos del funcionamiento de ResQ: la configuración inicial de una edificación, la detección y respuesta automática ante un riesgo, la confirmación de una acción de alto impacto y el seguimiento de un incidente. Estos escenarios permiten observar tanto los procesos administrativos como el flujo principal de monitoreo y respuesta ante emergencias.
+
+**Escenario 1: Configuración de una edificación monitoreada**
+
+El primer escenario representa la preparación de la infraestructura antes de iniciar el monitoreo. Un administrador se autentica mediante **IAM** y la información correspondiente al usuario y su organización es gestionada por **User Management**.
+
+Posteriormente, el administrador registra la edificación y define las zonas que serán monitoreadas mediante **Building Management**. Finalmente, los dispositivos IoT son registrados y asociados con las zonas correspondientes a través de **Device Management**.
+
+Como resultado, la infraestructura queda configurada para que las mediciones futuras puedan relacionarse correctamente con un dispositivo, una zona y una edificación.
+
+![DomainMessageFlowsModeling_Scenario1](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario1.png)
+
+**Escenario 2: Detección y respuesta automática ante un riesgo**
+
+Este escenario representa el flujo principal de valor de ResQ. El proceso comienza cuando un dispositivo IoT genera una nueva medición y la envía a **Monitoring**, donde se registra y actualiza el estado observado de la zona.
+
+La información es posteriormente evaluada por **Risk Detection**, que determina si existe una condición de riesgo y establece su tipo, nivel y ubicación. Cuando se confirma un riesgo, esta información es enviada a **Alert & Response Management**, que aplica las políticas correspondientes para generar una alerta y, cuando está permitido, ejecutar una respuesta automática.
+
+Finalmente, los datos del riesgo y de la respuesta realizada son comunicados a **Incident Management**, donde se registra el incidente para permitir su posterior seguimiento.
+
+![DomainMessageFlowsModeling_Scenario2](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario2.png)
+
+**Escenario 3: Confirmación de una acción de alto impacto**
+
+Algunas acciones de seguridad pueden requerir intervención humana debido a su posible impacto. Cuando **Risk Detection** identifica una situación que requiere este tipo de respuesta, **Alert & Response Management** solicita la confirmación de un responsable autorizado.
+
+Antes de permitir la operación, **IAM** valida que el usuario posea los permisos necesarios. Una vez autorizado, el responsable puede confirmar la acción y Alert & Response Management procede con su ejecución.
+
+La decisión tomada y la respuesta realizada son posteriormente comunicadas a **Incident Management**, permitiendo conservar la trazabilidad de la intervención humana. En caso de que el responsable rechace la acción, esta no se ejecuta y la decisión también puede quedar registrada.
+
+![DomainMessageFlowsModeling_Scenario3](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario3.png)
+
+**Escenario 4: Seguimiento y cierre de un incidente**
+
+Una vez registrado un incidente, un responsable de seguridad puede consultar su información mediante **Incident Management**. Desde este contexto se puede conocer el riesgo asociado, las acciones realizadas y el responsable asignado.
+
+Cuando se requiere información actualizada sobre la zona afectada, Incident Management consulta a **Monitoring** para obtener las condiciones actuales. A medida que evoluciona la situación, el responsable puede actualizar el estado del incidente y, cuando la emergencia ha sido controlada, solicitar su cierre.
+
+De esta manera, Incident Management conserva la trazabilidad de los responsables, cambios de estado y acciones realizadas durante todo el ciclo de vida del incidente.
+
+![DomainMessageFlowsModeling_Scenario4](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario4.png)
 
 #### 4.1.1.3. Bounded Context Canvases
-[COMPLETAR]
+Luego de identificar los Candidate Bounded Contexts de ResQ, se elaboraron sus respectivos **Bounded Context Canvases** para detallar responsabilidades, lenguaje ubicuo, reglas de negocio, capacidades y relaciones con otros contextos.
+
+El proceso siguió un enfoque iterativo basado en **Context Overview Definition**, **Business Rules Distillation & Ubiquitous Language Capture**, **Capability Analysis**, **Capability Layering**, **Dependencies Capture** y **Design Critique**.
+
+Los Bounded Contexts fueron trabajados en orden de importancia, priorizando primero aquellos que concentran el mayor valor del negocio y que participan directamente en el flujo principal de ResQ.
+
+A continuación, se presentan los Bounded Context Canvases definidos:
+
+![BoundedContextCanvases_RiskDetection](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_RiskDetection.png)
+![BoundedContextCanvases_Alert&ResponseManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_Alert&ResponseManagement.png)
+![BoundedContextCanvases_IncidentManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_IncidentManagement.png)
+![BoundedContextCanvases_Monitoring](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_Monitoring.png)
+![BoundedContextCanvases_DeviceManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_DeviceManagement.png)
+![BoundedContextCanvases_BuildingManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_BuildingManagement.png)
+![BoundedContextCanvases_UserManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_UserManagement.png)
+![BoundedContextCanvases_IAM](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_IAM.png)
 
 ### 4.1.2. Context Mapping
 [COMPLETAR]
@@ -6942,8 +6853,928 @@ El repositorio no publica un método de eliminación física del agregado. Las c
 
 ![Diagrama relacional de Devices](assets/images/chapter-04-solution-software-design/devices-database.png)
 
+<div style="page-break-before: always; break-before: page;"></div>
+
+### 4.2.6. Bounded Context: Monitoring
+
+El Bounded Context **Monitoring** es responsable de gestionar las mediciones obtenidas desde los dispositivos IoT y mantener una representación actualizada del estado observado de las edificaciones, zonas y dispositivos monitoreados por ResQ.
+
+Su principal propósito es proporcionar visibilidad operacional sobre la infraestructura sin asumir responsabilidades que corresponden a otros Bounded Contexts. Monitoring registra y consulta las condiciones observadas, mientras que **Risk Detection** interpreta estas mediciones para determinar si representan una situación de riesgo.
+
+Este Bounded Context soporta principalmente:
+
+- **US01 — Consultar el estado general de una edificación.**
+- **US02 — Consultar el estado de una zona.**
+- **US03 — Consultar mediciones actuales.**
+- **US04 — Conocer el estado operativo de un dispositivo.**
+- **US05 — Supervisar remotamente una edificación.**
+
+Monitoring participa tanto en el entorno **Edge** como en **Cloud**: en Edge recibe y conserva temporalmente las mediciones provenientes de los dispositivos IoT, mientras que en Cloud almacena la información histórica, mantiene los estados operacionales y expone la información requerida por las aplicaciones Web y Mobile.
+
+Monitoring no administra la configuración de los dispositivos, la estructura de las edificaciones, las reglas de detección, las políticas de respuesta ni el ciclo de vida de los incidentes. Para ello colabora respectivamente con **Device Management**, **Building Management**, **Risk Detection**, **Alert & Response Management** e **Incident Management**.
+
+Los principales conceptos identificados para este Bounded Context son **Measurement**, **Measurement Value**, **Device Monitoring State**, **Zone Monitoring State**, **Device Availability**, **Freshness Policy** y **Monitored Condition**.
+
+Las principales responsabilidades del Bounded Context **Monitoring** son:
+
+- Recibir y registrar las mediciones generadas por los dispositivos IoT.
+- Mantener actualizado el estado operativo de los dispositivos monitoreados.
+- Mantener actualizado el estado operativo de las zonas monitoreadas.
+- Asociar cada medición con el dispositivo, zona y edificación correspondientes.
+- Conservar la fecha y hora original en la que se generó cada medición.
+- Determinar si una medición continúa siendo vigente de acuerdo con la política de actualidad definida.
+- Proporcionar el estado actual de edificaciones, zonas y dispositivos a las aplicaciones de ResQ.
+- Proporcionar mediciones válidas al Bounded Context **Risk Detection** para su posterior evaluación.
+- Proporcionar a **Incident Management** información actualizada sobre las condiciones de una zona cuando sea requerida para el seguimiento de un incidente.
+- Actualizar las representaciones de monitoreo cuando se reciben cambios relevantes relacionados con el estado de un riesgo.
+- Mantener el historial de mediciones de los sensores para su posterior consulta y análisis.
+- Conservar temporalmente las mediciones en el entorno Edge cuando la comunicación con Cloud no se encuentre disponible.
+- Permitir la sincronización posterior de las mediciones pendientes sin modificar el momento original en que fueron obtenidas.
+- Mantener las responsabilidades de Monitoring separadas de la clasificación de riesgos, ejecución de respuestas, gestión de incidentes y administración de dispositivos o edificaciones.
+
+#### Class Dictionary
+
+| Class / Interface | Layer | Runtime | Purpose | Main attributes | Main operations |
+|---|---|---|---|---|---|
+| `Measurement` | Domain | Edge / Cloud | Representa una medición obtenida desde un dispositivo IoT. | `measurementId`, `deviceId`, `buildingId`, `zoneId`, `variableType`, `value`, `unit`, `measuredAt` | `isCurrent(referenceTime, freshnessPolicy)` |
+| `MeasurementValue` | Domain | Edge / Cloud | Value Object que representa el valor cuantitativo y su unidad. | `value`, `unit` | `value()`, `unit()` |
+| `DeviceMonitoringState` | Domain | Cloud | Representa el estado operacional observado de un dispositivo. | `deviceId`, `zoneId`, `availability`, `lastMeasurementAt`, `updatedAt` | `recordCommunication()`, `markUnavailable()`, `isAvailable()` |
+| `ZoneMonitoringState` | Domain | Cloud | Representa el estado operacional observado de una zona. | `zoneId`, `buildingId`, `lastUpdatedAt`, `activeRiskId`, `conditionCode` | `updateObservation()`, `markRiskActive()`, `clearRisk()` |
+| `DeviceAvailability` | Domain | Cloud | Enumeración del estado de disponibilidad observado. | `AVAILABLE`, `UNAVAILABLE`, `UNKNOWN` | — |
+| `FreshnessPolicy` | Domain | Cloud | Value Object que determina cuándo una medición puede considerarse vigente. | `maximumAge` | `isCurrent(measuredAt, referenceTime)` |
+| `MeasurementRepository` | Domain | Cloud / Edge | Abstracción para almacenar y consultar mediciones. | — | `save()`, `findLatestByDevice()`, `findLatestByZone()` |
+| `DeviceMonitoringStateRepository` | Domain | Cloud | Abstracción de persistencia de estados operacionales de dispositivos. | — | `findByDeviceId()`, `save()` |
+| `ZoneMonitoringStateRepository` | Domain | Cloud | Abstracción de persistencia de estados observados de zonas. | — | `findByZoneId()`, `findByBuildingId()`, `save()` |
+| `MonitoringStateService` | Domain | Cloud | Coordina la actualización de estados a partir de nuevas observaciones. | — | `updateDeviceState()`, `updateZoneState()` |
+| `RecordMeasurementCommand` | Application | Edge | Representa el ingreso de una nueva medición. | `deviceId`, `variableType`, `value`, `unit`, `measuredAt` | — |
+| `RecordMeasurementCommandHandler` | Application | Edge | Coordina el registro local y publicación de una medición. | Dependencies | `handle()` |
+| `MeasurementRecordedEvent` | Domain | Edge / Cloud | Representa el hecho de que una medición válida fue registrada. | Measurement data | — |
+| `MeasurementReceivedEventHandler` | Application | Cloud | Procesa una medición proveniente del flujo Edge. | Dependencies | `handle()` |
+| `RiskStateChangedEventHandler` | Application | Cloud | Actualiza la proyección de estado de una zona cuando cambia un riesgo. | Dependencies | `handle()` |
+| `GetBuildingStatusQuery` | Application | Cloud | Solicita el estado actual de una edificación. | `buildingId` | — |
+| `GetBuildingStatusQueryHandler` | Application | Cloud | Construye la vista operacional de una edificación. | Dependencies | `handle()` |
+| `GetZoneStatusQuery` | Application | Cloud | Solicita el estado actual de una zona. | `zoneId` | — |
+| `GetZoneStatusQueryHandler` | Application | Cloud | Recupera el estado observado de una zona. | Dependencies | `handle()` |
+| `GetCurrentMeasurementsQuery` | Application | Cloud | Solicita las mediciones vigentes de un dispositivo o zona. | `deviceId` / `zoneId` | — |
+| `GetCurrentMeasurementsQueryHandler` | Application | Cloud | Recupera mediciones y aplica la política de vigencia. | Dependencies | `handle()` |
+| `GetDeviceStatusQuery` | Application | Cloud | Solicita el estado operacional de un dispositivo. | `deviceId` | — |
+| `GetDeviceStatusQueryHandler` | Application | Cloud | Determina la disponibilidad observada del dispositivo. | Dependencies | `handle()` |
+| `MeasurementEventPublisher` | Application | Edge | Abstracción para publicar mediciones hacia Cloud. | — | `publish()` |
+| `DeviceContextResolver` | Application | Edge / Cloud | Obtiene el contexto mínimo de un dispositivo desde Device Management. | — | `resolve(deviceId)` |
+| `MeasurementIngestionController` | Interface | Edge | Recibe mediciones provenientes del Embedded System. | Handler dependency | `recordMeasurement()` |
+| `MonitoringQueryController` | Interface | Cloud | Expone consultas de monitoreo mediante REST. | Query handlers | `getBuildingStatus()`, `getZoneStatus()`, `getMeasurements()`, `getDeviceStatus()` |
+| `MeasurementEventConsumer` | Interface | Cloud | Consume mediciones publicadas desde Edge. | Handler dependency | `consume()` |
+| `RiskStateEventConsumer` | Interface | Cloud | Consume cambios relevantes provenientes de Risk Detection. | Handler dependency | `consume()` |
+| `EdgeMeasurementRepositoryAdapter` | Infrastructure | Edge | Implementa almacenamiento local temporal mediante SQLite/Peewee. | SQLite / Peewee | `save()`, `findPending()` |
+| `MeasurementEventPublisherAdapter` | Infrastructure | Edge | Publica mediciones hacia el flujo distribuido. | Communication dependency | `publish()` |
+| `MeasurementTimeSeriesRepositoryAdapter` | Infrastructure | Cloud | Persiste mediciones longitudinales en InfluxDB. | InfluxDB | `save()`, `findLatestByDevice()`, `findLatestByZone()` |
+| `MonitoringStateRepositoryAdapter` | Infrastructure | Cloud | Persiste estados operacionales en PostgreSQL. | PostgreSQL | `find()`, `save()` |
+| `DeviceContextIntegrationAdapter` | Infrastructure | Edge / Cloud | Traduce información proveniente de Device Management. | Integration dependency | `resolve()` |
+| `BuildingContextIntegrationAdapter` | Infrastructure | Cloud | Obtiene el contexto mínimo de edificaciones y zonas. | Integration dependency | `resolveZone()`, `resolveBuilding()` |
+
+Monitoring conserva únicamente las referencias externas necesarias para asociar una medición con el dispositivo, zona y edificación correspondientes.
+
+El ciclo de vida de `IoT Device`, `Building` y `Zone` continúa perteneciendo a sus respectivos Bounded Contexts.
+
+---
+
+#### 4.2.6.1. Domain Layer
+
+La **Domain Layer** contiene los conceptos y reglas que permiten representar las mediciones y el estado operacional observado de la infraestructura.
+
+Esta capa es independiente de HTTP, Flask, bases de datos, frameworks Cloud y mecanismos de comunicación.
+
+Los principales Aggregate Roots son `Measurement`, `DeviceMonitoringState` y `ZoneMonitoringState`.
+
+##### Measurement
+
+**Categoría:** Aggregate Root / Entity.
+
+**Propósito:** Representar una observación cuantitativa producida por un dispositivo IoT en un momento determinado.
+
+**Atributos:**
+
+- `measurementId: UUID`
+- `deviceId: UUID`
+- `buildingId: UUID`
+- `zoneId: UUID`
+- `variableType: String`
+- `measurementValue: MeasurementValue`
+- `measuredAt: Instant`
+- `recordedAt: Instant`
+
+`deviceId`, `buildingId` y `zoneId` representan referencias externas hacia otros Bounded Contexts.
+
+**Operaciones:**
+
+- `isCurrent(referenceTime, freshnessPolicy)`
+- `belongsToDevice(deviceId)`
+- `belongsToZone(zoneId)`
+
+Una medición representa un hecho ocurrido y, por lo tanto, no debe ser modificada posteriormente para reflejar nuevos valores.
+
+##### MeasurementValue
+
+**Categoría:** Value Object.
+
+**Propósito:** Representar el valor cuantitativo de una medición junto con su unidad.
+
+**Atributos:**
+
+- `value: Decimal`
+- `unit: String`
+
+##### DeviceMonitoringState
+
+**Categoría:** Aggregate Root.
+
+**Propósito:** Mantener la representación operacional de un dispositivo sin apropiarse de su configuración administrativa.
+
+**Atributos:**
+
+- `deviceId: UUID`
+- `zoneId: UUID`
+- `availability: DeviceAvailability`
+- `lastMeasurementAt: Instant?`
+- `updatedAt: Instant`
+
+**Operaciones:**
+
+- `recordCommunication(measuredAt)`
+- `markUnavailable()`
+- `markAvailable()`
+- `isAvailable()`
+
+##### ZoneMonitoringState
+
+**Categoría:** Aggregate Root.
+
+**Propósito:** Mantener una representación resumida de las condiciones observadas en una zona.
+
+**Atributos:**
+
+- `zoneId: UUID`
+- `buildingId: UUID`
+- `lastUpdatedAt: Instant`
+- `activeRiskId: UUID?`
+- `conditionCode: String`
+
+**Operaciones:**
+
+- `updateObservation(at)`
+- `markRiskActive(riskDetectionId, conditionCode)`
+- `clearRisk()`
+
+`activeRiskId` constituye una referencia externa hacia Risk Detection. Monitoring no administra el riesgo.
+
+##### DeviceAvailability
+
+**Categoría:** Enumeration.
+
+**Valores:**
+
+- `AVAILABLE`
+- `UNAVAILABLE`
+- `UNKNOWN`
+
+La disponibilidad representa el estado observado del dispositivo y no su estado administrativo dentro de Device Management.
+
+##### FreshnessPolicy
+
+**Categoría:** Value Object.
+
+**Propósito:** Determinar si una medición puede presentarse como información actual.
+
+**Atributo:**
+
+- `maximumAge: Duration`
+
+**Operación:**
+
+- `isCurrent(measuredAt, referenceTime)`
+
+Esto permite satisfacer el requerimiento de no presentar una medición antigua como si fuera vigente.
+
+##### MeasurementRepository
+
+**Categoría:** Repository Interface.
+
+**Operaciones:**
+
+- `save(measurement)`
+- `findLatestByDevice(deviceId)`
+- `findLatestByZone(zoneId)`
+- `findByTimeRange(deviceId, from, to)`
+
+##### DeviceMonitoringStateRepository
+
+**Categoría:** Repository Interface.
+
+**Operaciones:**
+
+- `findByDeviceId(deviceId)`
+- `save(deviceMonitoringState)`
+
+##### ZoneMonitoringStateRepository
+
+**Categoría:** Repository Interface.
+
+**Operaciones:**
+
+- `findByZoneId(zoneId)`
+- `findByBuildingId(buildingId)`
+- `save(zoneMonitoringState)`
+
+##### MonitoringStateService
+
+**Categoría:** Domain Service.
+
+**Propósito:** Coordinar actualizaciones del estado operacional cuando estas requieren combinar una nueva observación con el estado previamente conocido.
+
+**Operaciones:**
+
+- `updateDeviceState(state, measurement)`
+- `updateZoneState(state, measurement)`
+- `evaluateAvailability(state, referenceTime, expectedCommunicationPeriod)`
+
+##### Business Rules
+
+El dominio Monitoring aplica las siguientes reglas:
+
+1. Toda medición registrada debe mantener un identificador único.
+
+2. Toda medición debe estar asociada con el dispositivo que la originó.
+
+3. Cuando el contexto de ubicación se encuentra disponible, la medición debe conservar las referencias de la zona y edificación correspondientes.
+
+4. Una medición conserva permanentemente el momento original en el que fue obtenida.
+
+5. Las mediciones históricas no deben modificarse cuando un dispositivo sea posteriormente trasladado a otra zona.
+
+6. Una medición solo puede presentarse como vigente cuando cumple la política de frescura configurada.
+
+7. Cuando no exista una medición vigente, ResQ debe indicar que no dispone de información actual en lugar de presentar información histórica como si fuera reciente.
+
+8. Un dispositivo se considera disponible cuando mantiene comunicación dentro del periodo esperado.
+
+9. Cuando un dispositivo deja de comunicar información durante el periodo establecido, su estado observado debe reflejar indisponibilidad.
+
+10. Monitoring no determina si una medición representa un riesgo.
+
+11. La clasificación del tipo y nivel del riesgo pertenece a Risk Detection.
+
+12. Monitoring puede conservar una referencia a un riesgo activo para construir sus vistas operacionales, pero no administra su ciclo de vida.
+
+13. El estado de una zona debe actualizarse cuando exista nueva información operacional relevante.
+
+14. El estado general de una edificación debe construirse a partir de la información disponible de sus zonas sin apropiarse del modelo de Building Management.
+
+15. Solo mediciones consideradas válidas por el flujo de ingreso pueden ser incorporadas al estado operacional.
+
+---
+
+#### 4.2.6.2. Interface Layer
+
+La **Interface Layer** permite que las aplicaciones, dispositivos y otros Bounded Contexts interactúen con las capacidades de Monitoring. Su responsabilidad es recibir solicitudes o eventos externos, transformar la información recibida al formato requerido por la Application Layer y devolver las respuestas correspondientes.
+
+Monitoring cuenta con interfaces tanto en el entorno **Edge** como en **Cloud**, debido a que las mediciones son recibidas inicialmente cerca del dispositivo y posteriormente son almacenadas y consultadas desde los servicios centrales de ResQ.
+
+##### MeasurementIngestionController
+
+**Runtime:** Edge.
+
+`MeasurementIngestionController` recibe las mediciones enviadas por los dispositivos IoT hacia el Edge Service.
+
+Ejemplo conceptual:
+
+```text
+POST /edge/v1/measurements
+```
+
+La solicitud contiene información como:
+
+- Identificador del dispositivo.
+- Tipo de variable medida.
+- Valor obtenido.
+- Unidad de medida.
+- Fecha y hora original de la medición.
+
+El controlador transforma la información recibida en un `RecordMeasurementCommand` y delega su procesamiento a `RecordMeasurementCommandHandler`.
+
+Este componente no determina si una medición representa una situación de riesgo, ya que dicha responsabilidad corresponde a **Risk Detection**.
+
+##### MonitoringQueryController
+
+**Runtime:** Cloud.
+
+`MonitoringQueryController` expone las operaciones que permiten a las aplicaciones Web y Mobile consultar el estado actual de la infraestructura monitoreada.
+
+Ejemplos conceptuales:
+
+```text
+GET /api/v1/monitoring/buildings/{buildingId}/status
+GET /api/v1/monitoring/zones/{zoneId}/status
+GET /api/v1/monitoring/devices/{deviceId}/status
+GET /api/v1/monitoring/devices/{deviceId}/measurements/current
+```
+
+Estas operaciones permiten consultar:
+
+- Estado general de una edificación.
+- Estado actual de una zona.
+- Disponibilidad de un dispositivo.
+- Mediciones actuales.
+
+Cada solicitud es delegada al Query Handler correspondiente dentro de la Application Layer.
+
+##### MeasurementEventConsumer
+
+**Runtime:** Cloud.
+
+`MeasurementEventConsumer` recibe las mediciones publicadas desde el entorno Edge y las entrega a `MeasurementReceivedEventHandler`.
+
+Su función consiste en adaptar el mensaje recibido al modelo utilizado por la Application Layer, sin implementar reglas del dominio.
+
+##### RiskStateEventConsumer
+
+**Runtime:** Cloud.
+
+`RiskStateEventConsumer` recibe eventos relevantes provenientes de **Risk Detection**, como la detección o finalización de una situación de riesgo.
+
+Estos eventos permiten actualizar la representación operacional de las zonas mostradas por Monitoring.
+
+Monitoring únicamente conserva la información necesaria para representar el estado actual; la lógica utilizada para determinar el riesgo continúa perteneciendo a Risk Detection.
+
+---
+
+#### 4.2.6.3. Application Layer
+
+La **Application Layer** coordina los casos de uso del Bounded Context Monitoring y conecta las interfaces externas con las reglas definidas en la Domain Layer.
+
+Esta capa organiza principalmente los procesos de:
+
+- Registro de mediciones.
+- Publicación de mediciones desde Edge.
+- Almacenamiento de mediciones en Cloud.
+- Actualización del estado de dispositivos y zonas.
+- Consulta del estado de edificaciones.
+- Consulta del estado de zonas.
+- Consulta de mediciones actuales.
+- Consulta de disponibilidad de dispositivos.
+
+##### RecordMeasurementCommand
+
+**Runtime:** Edge.
+
+Representa la solicitud de registrar una nueva medición obtenida desde un dispositivo IoT.
+
+**Atributos:**
+
+- `deviceId: UUID`
+- `variableType: String`
+- `value: Decimal`
+- `unit: String`
+- `measuredAt: Instant`
+
+##### RecordMeasurementCommandHandler
+
+**Runtime:** Edge.
+
+Coordina el ingreso de una nueva medición al sistema.
+
+El flujo principal es:
+
+1. Recibir el `RecordMeasurementCommand`.
+2. Obtener el contexto mínimo del dispositivo mediante `DeviceContextResolver`.
+3. Construir el objeto `Measurement`.
+4. Conservar temporalmente la medición en el entorno Edge cuando sea necesario.
+5. Crear un `MeasurementRecordedEvent`.
+6. Publicar el evento mediante `MeasurementEventPublisher`.
+
+La fecha y hora original de la medición se conserva durante todo el proceso.
+
+##### MeasurementReceivedEventHandler
+
+**Runtime:** Cloud.
+
+Procesa las mediciones provenientes del entorno Edge.
+
+Su flujo principal es:
+
+1. Recibir un `MeasurementRecordedEvent`.
+2. Reconstruir la medición.
+3. Almacenar la medición en la base de datos longitudinal.
+4. Recuperar el estado operacional del dispositivo.
+5. Actualizar la última comunicación del dispositivo.
+6. Recuperar el estado operacional de la zona.
+7. Actualizar la última observación de la zona.
+8. Persistir los estados actualizados.
+
+Una vez registrada, la medición puede ser utilizada por **Risk Detection** para evaluar posibles situaciones de riesgo.
+
+##### RiskStateChangedEventHandler
+
+**Runtime:** Cloud.
+
+Procesa eventos provenientes de Risk Detection cuando cambia el estado de riesgo asociado a una zona.
+
+Permite:
+
+- Asociar un riesgo activo con una zona.
+- Actualizar la condición mostrada en Monitoring.
+- Eliminar la referencia cuando el riesgo deja de estar activo.
+
+Este handler no determina la existencia ni severidad del riesgo.
+
+##### GetBuildingStatusQuery
+
+Representa una solicitud para consultar el estado actual de una edificación.
+
+**Atributo:**
+
+- `buildingId: UUID`
+
+##### GetBuildingStatusQueryHandler
+
+Construye la vista actual de una edificación utilizando los estados disponibles de sus diferentes zonas.
+
+La respuesta puede contener:
+
+- Última actualización.
+- Zonas monitoreadas.
+- Estado operacional de cada zona.
+- Disponibilidad de dispositivos.
+- Referencia a riesgos activos, cuando corresponda.
+
+##### GetZoneStatusQuery
+
+Representa una solicitud para consultar el estado de una zona.
+
+**Atributo:**
+
+- `zoneId: UUID`
+
+##### GetZoneStatusQueryHandler
+
+Recupera la información operacional disponible para la zona indicada, incluyendo su condición actual y la fecha de última actualización.
+
+##### GetCurrentMeasurementsQuery
+
+Permite solicitar las mediciones actuales asociadas con un dispositivo o zona.
+
+Puede contener:
+
+- `deviceId: UUID`, o
+- `zoneId: UUID`.
+
+##### GetCurrentMeasurementsQueryHandler
+
+Obtiene las mediciones más recientes y utiliza `FreshnessPolicy` para determinar si pueden considerarse actuales.
+
+Cuando la última medición supera el periodo permitido, el sistema debe indicar que no existe información vigente en lugar de presentar una medición antigua como actual.
+
+##### GetDeviceStatusQuery
+
+Representa una solicitud para consultar el estado operacional de un dispositivo.
+
+**Atributo:**
+
+- `deviceId: UUID`
+
+##### GetDeviceStatusQueryHandler
+
+Obtiene `DeviceMonitoringState` y devuelve información como:
+
+- Disponibilidad.
+- Última comunicación.
+- Zona asociada.
+- Fecha de última actualización.
+
+##### MeasurementEventPublisher
+
+**Runtime:** Edge.
+
+Abstracción utilizada para publicar las nuevas mediciones hacia el flujo distribuido de ResQ.
+
+**Operación:**
+
+```text
+publish(event)
+```
+
+La Application Layer no depende directamente del mecanismo de comunicación utilizado.
+
+##### DeviceContextResolver
+
+Permite obtener el contexto mínimo necesario del dispositivo que originó una medición.
+
+**Operación:**
+
+```text
+resolve(deviceId)
+```
+
+La información obtenida puede incluir:
+
+- `deviceId`.
+- `buildingId`.
+- `zoneId`.
+
+Monitoring no copia ni administra el modelo completo de Device Management.
+
+---
+
+#### 4.2.6.4. Infrastructure Layer
+
+La **Infrastructure Layer** implementa los mecanismos técnicos necesarios para almacenar, transmitir y recuperar la información utilizada por Monitoring.
+
+Debido a que el Bounded Context maneja distintos tipos de información, se utiliza una estrategia de persistencia diferenciada:
+
+- **InfluxDB** para las mediciones longitudinales o series temporales.
+- **PostgreSQL** para los estados operacionales actuales.
+- **SQLite**, mediante **Peewee ORM**, para el almacenamiento temporal utilizado por el Edge Service.
+
+##### EdgeMeasurementRepositoryAdapter
+
+**Runtime:** Edge.
+
+Implementa el almacenamiento temporal de mediciones mediante **SQLite y Peewee ORM**.
+
+Sus principales responsabilidades son:
+
+- Almacenar mediciones pendientes.
+- Conservar el timestamp original.
+- Recuperar registros pendientes.
+- Actualizar el estado de sincronización cuando la información haya sido enviada correctamente.
+
+Este almacenamiento soporta el patrón **store-and-forward** utilizado cuando existe una interrupción temporal de la conectividad.
+
+##### MeasurementEventPublisherAdapter
+
+**Runtime:** Edge.
+
+Implementa `MeasurementEventPublisher`.
+
+Se encarga de transmitir las mediciones registradas hacia los servicios Cloud mediante el mecanismo de comunicación definido por la arquitectura general de ResQ.
+
+##### MeasurementTimeSeriesRepositoryAdapter
+
+**Runtime:** Cloud.
+
+Implementa la persistencia de mediciones utilizando **InfluxDB**.
+
+InfluxDB resulta apropiado para esta información debido a que las mediciones se generan continuamente y se encuentran asociadas a un instante de tiempo.
+
+Permite realizar operaciones como:
+
+- Registrar una medición.
+- Obtener la medición más reciente de un dispositivo.
+- Consultar mediciones de una zona.
+- Recuperar series de mediciones dentro de un intervalo temporal.
+
+##### MonitoringStateRepositoryAdapter
+
+**Runtime:** Cloud.
+
+Implementa la persistencia de `DeviceMonitoringState` y `ZoneMonitoringState` utilizando **PostgreSQL**.
+
+PostgreSQL almacena los estados operacionales actuales que requieren consistencia y consultas frecuentes desde la aplicación.
+
+##### DeviceContextIntegrationAdapter
+
+Permite obtener la información necesaria desde **Device Management**.
+
+Este adapter traduce el contrato externo hacia la representación que Monitoring necesita, evitando depender directamente del modelo interno de Device Management.
+
+##### BuildingContextIntegrationAdapter
+
+Permite obtener el contexto mínimo necesario desde **Building Management**, principalmente la relación entre edificaciones y zonas.
+
+Monitoring utiliza esta información como referencia, pero no modifica ni administra estos elementos.
+
+##### Consideraciones de persistencia
+
+Monitoring utiliza una estrategia de persistencia políglota:
+
+- Las **mediciones históricas** se almacenan en InfluxDB debido a su naturaleza temporal.
+- Los **estados actuales de dispositivos y zonas** se almacenan en PostgreSQL.
+- Las **mediciones pendientes del Edge Service** se conservan temporalmente en SQLite.
+
+Esta separación permite utilizar el almacenamiento más adecuado según las características de cada tipo de dato.
+
+---
+
+#### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams
+
+Monitoring participa tanto en el **ResQ Edge Service** como en el **ResQ Cloud RESTful API**. Por esta razón, se representan dos Component Level Diagrams.
+
+##### Monitoring — ResQ Edge Service Component Diagram
+
+Los principales componentes del entorno Edge son:
+
+- **Measurement Ingestion Interface**, encargado de recibir mediciones del Embedded Application.
+- **Edge Monitoring Application**, responsable de coordinar el registro y publicación de las mediciones.
+- **Monitoring Domain**, que contiene los conceptos y reglas relacionados con las mediciones.
+- **Local Measurement Buffer**, encargado de conservar temporalmente las mediciones utilizando SQLite y Peewee.
+- **Device Context Integration**, utilizado para obtener información mínima sobre el dispositivo y su ubicación.
+- **Measurement Event Publisher**, encargado de transmitir las mediciones hacia Cloud.
+
+El flujo principal puede representarse de la siguiente manera:
+
+```text
+ESP32 / Embedded Application
+            |
+            v
+Measurement Ingestion Interface
+            |
+            v
+Edge Monitoring Application
+            |
+            v
+Monitoring Domain
+       /           \
+      v             v
+Device Context   Local SQLite Buffer
+ Integration
+      \             /
+       \           /
+            v
+Measurement Event Publisher
+            |
+            v
+ResQ Cloud
+```
+
+**DIAGRAM — Monitoring Edge Component Level Diagram**
+
+![MonitoringEdgeComponentLevelDiagram](assets/images/chapter-04-solution-software-design/monitoring/MonitoringEdgeComponentLevelDiagram.png)
+
+##### Monitoring — ResQ Cloud RESTful API Component Diagram
+
+Los principales componentes del entorno Cloud son:
+
+- **Monitoring Query API**
+- **Measurement Event Consumer**
+- **Risk State Event Consumer**
+- **Monitoring Application**
+- **Monitoring Domain**
+- **Time-Series Persistence**
+- **Operational State Persistence**
+- **Device Management Integration**
+- **Building Management Integration**
+
+El flujo principal puede representarse como:
+
+```text
+                   Web / Mobile Applications
+                             |
+                             v
+                    Monitoring Query API
+                             |
+                             v
+                   Monitoring Application
+                             |
+                             v
+                     Monitoring Domain
+                      /             \
+                     v               v
+         Operational State       Time-Series
+           Persistence           Persistence
+           PostgreSQL             InfluxDB
 
 
+Edge Measurement Flow
+        |
+        v
+Measurement Event Consumer
+        |
+        v
+Monitoring Application
+```
+
+Los eventos relevantes provenientes de Risk Detection ingresan mediante `Risk State Event Consumer` para actualizar las representaciones operacionales utilizadas por Monitoring.
+
+**DIAGRAM — Monitoring Cloud Component Level Diagram**
+
+![MonitoringCloudComponentLevelDiagram](assets/images/chapter-04-solution-software-design/monitoring/MonitoringCloudComponentLevelDiagrampng.png)
+
+---
+
+#### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
+
+Los **Code Level Diagrams** representan la estructura interna del Bounded Context Monitoring con un mayor nivel de detalle.
+
+Para Monitoring se elaboran dos diagramas principales:
+
+- **Domain Layer Class Diagram**, que representa las clases, Value Objects, enumeraciones, repositorios y servicios del dominio.
+- **Database Design Diagram**, que representa las estructuras de persistencia utilizadas en Cloud y Edge.
+
+---
+
+##### 4.2.6.6.1. Bounded Context Domain Layer Class Diagrams
+
+El Domain Layer Class Diagram debe representar los siguientes elementos.
+
+**Aggregate Roots / Entities**
+
+- `Measurement`
+- `DeviceMonitoringState`
+- `ZoneMonitoringState`
+
+**Value Objects**
+
+- `MeasurementValue`
+- `FreshnessPolicy`
+
+**Enumeration**
+
+- `DeviceAvailability`
+
+**Repository Interfaces**
+
+- `MeasurementRepository`
+- `DeviceMonitoringStateRepository`
+- `ZoneMonitoringStateRepository`
+
+**Domain Service**
+
+- `MonitoringStateService`
+
+Las principales relaciones son:
+
+```text
+Measurement "1" *-- "1" MeasurementValue
+
+DeviceMonitoringState "1" --> "1" DeviceAvailability
+
+ZoneMonitoringState "1" ..> Measurement : updated from
+
+MeasurementRepository ..> Measurement : persists
+
+DeviceMonitoringStateRepository ..> DeviceMonitoringState : persists
+
+ZoneMonitoringStateRepository ..> ZoneMonitoringState : persists
+
+MonitoringStateService ..> Measurement
+MonitoringStateService ..> DeviceMonitoringState
+MonitoringStateService ..> ZoneMonitoringState
+
+FreshnessPolicy ..> Measurement : evaluates freshness
+```
+
+`Measurement` conserva como referencias externas:
+
+```text
+deviceId
+buildingId
+zoneId
+```
+
+Por esta razón, los siguientes conceptos no deben modelarse como Aggregates pertenecientes a Monitoring:
+
+- `IoT Device`
+- `Building`
+- `Zone`
+- `Risk`
+- `Incident`
+- `Alert`
+
+Estos conceptos pertenecen a otros Bounded Contexts.
+
+El diagrama debe mostrar:
+
+- Atributos.
+- Métodos.
+- Visibilidad UML.
+- Relaciones.
+- Multiplicidades.
+- Composiciones.
+- Dependencias.
+
+**DIAGRAM — Monitoring Domain Layer Class Diagram**
+
+![MonitoringDomainLayerClassDiagram](assets/images/chapter-04-solution-software-design/monitoring/MonitoringDomainLayerClassDiagram.png)
+
+---
+
+##### 4.2.6.6.2. Bounded Context Database Design Diagram
+
+El diseño de persistencia de Monitoring se divide en tres componentes:
+
+1. **InfluxDB**, para almacenar las mediciones longitudinales.
+2. **PostgreSQL**, para almacenar los estados operacionales actuales.
+3. **SQLite**, para mantener el buffer temporal utilizado en Edge.
+
+###### Cloud — InfluxDB
+
+Las mediciones se almacenan conceptualmente en:
+
+`monitoring_measurements`
+
+| Elemento | Tipo | Descripción |
+|---|---|---|
+| `time` | Timestamp | Momento original de la medición. |
+| `measurement_id` | UUID | Identificador único de la medición. |
+| `device_id` | UUID | Referencia al dispositivo de origen. |
+| `building_id` | UUID | Referencia externa a la edificación. |
+| `zone_id` | UUID | Referencia externa a la zona. |
+| `variable_type` | String | Variable observada. |
+| `value` | Decimal | Valor medido. |
+| `unit` | String | Unidad de medida. |
+
+Los identificadores de dispositivo, edificación y zona se utilizan como referencias y no implican que Monitoring sea propietario de estos conceptos.
+
+###### Cloud — PostgreSQL
+
+###### `monitoring_device_states`
+
+Almacena el estado operacional actual de cada dispositivo.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `device_id` | UUID | PRIMARY KEY | Referencia externa al dispositivo. |
+| `zone_id` | UUID | NOT NULL | Zona asociada. |
+| `availability_status` | VARCHAR(20) | NOT NULL | Disponibilidad observada. |
+| `last_measurement_at` | TIMESTAMP | NULL | Última medición recibida. |
+| `updated_at` | TIMESTAMP | NOT NULL | Última actualización del estado. |
+
+###### `monitoring_zone_states`
+
+Almacena el estado operacional actual de cada zona.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `zone_id` | UUID | PRIMARY KEY | Referencia externa a la zona. |
+| `building_id` | UUID | NOT NULL | Referencia externa a la edificación. |
+| `active_risk_id` | UUID | NULL | Referencia externa al riesgo activo. |
+| `condition_code` | VARCHAR(50) | NOT NULL | Condición operacional actual. |
+| `last_updated_at` | TIMESTAMP | NOT NULL | Última actualización disponible. |
+
+`active_risk_id` no constituye una clave foránea hacia la persistencia interna de Risk Detection, evitando acoplamiento directo entre bases de datos pertenecientes a distintos Bounded Contexts.
+
+###### Edge — SQLite
+
+###### `edge_measurement_buffer`
+
+Mantiene temporalmente las mediciones pendientes de envío hacia Cloud.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `measurement_id` | UUID | PRIMARY KEY | Identificador de la medición. |
+| `device_id` | UUID | NOT NULL | Dispositivo de origen. |
+| `building_id` | UUID | NULL | Edificación asociada. |
+| `zone_id` | UUID | NULL | Zona asociada. |
+| `variable_type` | VARCHAR(100) | NOT NULL | Variable observada. |
+| `measured_value` | DECIMAL | NOT NULL | Valor registrado. |
+| `unit` | VARCHAR(50) | NOT NULL | Unidad de medida. |
+| `measured_at` | DATETIME | NOT NULL | Fecha y hora original. |
+| `sync_status` | VARCHAR(20) | NOT NULL | Estado de sincronización. |
+| `retry_count` | INTEGER | NOT NULL | Número de intentos realizados. |
+
+Esta tabla permite soportar el patrón **store-and-forward**, conservando la información cuando la comunicación con Cloud se encuentra temporalmente interrumpida.
+
+Conceptualmente, la persistencia queda organizada de la siguiente manera:
+
+```text
+                    MONITORING
+
+          ┌──────────── CLOUD ────────────┐
+          │                               │
+          │          InfluxDB             │
+          │  monitoring_measurements      │
+          │                               │
+          │         PostgreSQL            │
+          │ ┌───────────────────────────┐ │
+          │ │ monitoring_device_states │ │
+          │ │ monitoring_zone_states   │ │
+          │ └───────────────────────────┘ │
+          └───────────────────────────────┘
+                          ▲
+                          │
+                    sincronización
+                          │
+          ┌──────────── EDGE ─────────────┐
+          │                               │
+          │       SQLite + Peewee         │
+          │ edge_measurement_buffer       │
+          │                               │
+          └───────────────────────────────┘
+```
+
+Monitoring no debe crear tablas propias para:
+
+- Devices.
+- Buildings.
+- Zones.
+- Risks.
+- Alerts.
+- Incidents.
+
+Estos conceptos continúan perteneciendo a sus respectivos Bounded Contexts.
+
+**DIAGRAM — Monitoring Database Design Diagram**
+
+![MonitoringDatabaseLayerClassDiagram](assets/images/chapter-04-solution-software-design/monitoring/MonitoringDatabaseDesignDiagram.png)
 
 
 
@@ -7154,29 +7985,13 @@ Incluir:
 
 # Conclusiones
 
-> Imágenes relacionadas:
-> `assets/images/conclusions/`
-
 ## Conclusiones y recomendaciones
 
-Incluir conclusiones relacionadas con:
-- Problem Statements;
-- assumptions frente al comportamiento real de los segmentos;
-- Hypothesis Statements;
-- criterios de éxito de Lean UX;
-- resultados de validaciones;
-- recomendaciones y siguientes pasos del roadmap.
+[AVANCE DE CONCLUSIONES Y RECOMENDACIONES DE AV1 PENDIENTE]
 
-## Video About-the-Team
+<!-- PENDIENTE: Redactar el avance a partir de los artefactos existentes de los Capítulos I–IV, relacionando Problem Statements, Lean UX Assumptions, Hypothesis Statements, hallazgos de entrevistas, requisitos y decisiones de diseño. Sustentar las recomendaciones sin anticipar resultados de implementación o validación posteriores a AV1. -->
 
-Incluir:
-- resumen de los aspectos más relevantes;
-- pauta/secuencia con timing `hh:mm:ss`;
-- imagen representativa;
-- URL de Microsoft Stream/Clipchamp;
-- URL de YouTube;
-- evidencia del proceso real de trabajo del equipo;
-- testimonio ante cámara de cada integrante sobre actividades, outcomes y competencias.
+<div style="page-break-before: always; break-before: page;"></div>
 
 # Bibliografía
 
@@ -7186,25 +8001,18 @@ Ejemplo:
 
 - Autor, A. A. (Año). *Título de la obra*. Editorial / Sitio. URL
 
+<div style="page-break-before: always; break-before: page;"></div>
+
 # Anexos
 
-> Imágenes / material gráfico:
-> `assets/images/annexes/`
+## Anexo A. Videos de Exposiciones
 
-## Videos de Exposiciones
+### AV1 — Sprint Review
 
-### AV1
-- URL Microsoft Stream/Clipchamp: [COMPLETAR]
-- Archivo: `upc-pre-202620-1asi0572-<NRC>-<startup>-expo-av1.mp4`
+<!-- PENDIENTE: INSERTAR SCREENSHOT DEL VIDEO DE EXPOSICIÓN AV1 -->
 
-### TB1
-- URL Microsoft Stream/Clipchamp: [COMPLETAR]
+**Figura X. Video de exposición correspondiente a la entrega AV1.**
 
-### AV2
-- URL Microsoft Stream/Clipchamp: [COMPLETAR]
+**Microsoft Stream / Clipchamp:** [URL PENDIENTE]
 
-### TB2
-- URL Microsoft Stream/Clipchamp: [COMPLETAR]
-
-## Otros anexos
-Agregar tablas, documentos, gráficos u otros elementos cuya extensión o importancia justifique colocarlos aquí.
+**Duración:** [HH:MM:SS PENDIENTE]
