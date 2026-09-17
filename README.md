@@ -2885,9 +2885,9 @@ Protected operations pass through the Authorization Interface Component. The App
 
 Role-assignment requests are also processed through the Application Layer and must satisfy both the authorization rules and the membership constraint before the Identity Aggregate is modified.
 
-**DIAGRAM PENDING — IAM Component Level Diagram**
+**DIAGRAM — IAM Component Level Diagram**
 
-<!-- ![Identity and Access Management Component Level Diagram](assets/images/chapter-04-solution-software-design/iam/iam-component-level-diagram.png) --> <!-- When creating the final C4 Component Diagram, include the concrete backend framework, ORM/persistence technology and communication protocols selected by the team. -->
+![Identity and Access Management Component Level Diagram](assets/images/chapter-04-solution-software-design/iam/iam-component-level-diagram.png) <!-- When creating the final C4 Component Diagram, include the concrete backend framework, ORM/persistence technology and communication protocols selected by the team. -->
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
@@ -2967,9 +2967,9 @@ RoleAssignment "0..*" --> "1" Role : roleId
 
 organizationId and userId are represented as external identifiers rather than object relationships to aggregates belonging to other Bounded Contexts.
 
-**DIAGRAM PENDING — IAM Domain Layer Class Diagram**
+**DIAGRAM — IAM Domain Layer Class Diagram**
 
-<!-- ![Identity and Access Management Domain Layer Class Diagram](assets/images/chapter-04-solution-software-design/iam/iam-domain-layer-class-diagram.png) -->
+![Identity and Access Management Domain Layer Class Diagram](assets/images/chapter-04-solution-software-design/iam/iam-domain-layer-class-diagram.png)
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
 
@@ -3075,9 +3075,9 @@ The final Database Design Diagram must identify:
 - cardinalities;
 - relationships among IAM tables.
 
-**DIAGRAM PENDING — IAM Database Design Diagram**
+**DIAGRAM — IAM Database Design Diagram**
 
-<!-- ![Identity and Access Management Database Design Diagram](assets/images/chapter-04-solution-software-design/iam/iam-database-design-diagram.png) -->
+![Identity and Access Management Database Design Diagram](assets/images/chapter-04-solution-software-design/iam/iam-database-design-diagram.png)
 
 # Capítulo V: Solution UI/UX Design
 
