@@ -3083,6 +3083,1159 @@ The final Database Design Diagram must identify:
 
 ![Identity and Access Management Database Design Diagram](assets/images/chapter-04-solution-software-design/iam/iam-database-design-diagram.png)
 
+### 4.2.2. Bounded Context: Risk Detection
+
+The **Risk Detection** Bounded Context is responsible for evaluating monitored information against configured detection rules in order to identify situations of risk, determine their type and severity, preserve the evidence that originated each detection, and maintain the location context required to understand where the detected condition occurred.
+
+This Bounded Context represents the domain knowledge involved in transforming valid monitored measurements into meaningful risk detections. It does not own the physical sensors that produce the measurements, the devices associated with those sensors, the buildings and zones where the devices are installed, or the alerts and responses executed after a risk is detected.
+
+The Risk Detection Bounded Context primarily supports **US06 — Know the detected risk type**, **US07 — Know the risk level**, **US08 — Know the risk location**, **US09 — Consult the detection context**, **US24 — Configure a detection condition**, **US28 — Maintain critical functions without Internet**, and **TS03 — Process detection rules locally**.
+
+Risk Detection consumes valid measurements produced by the monitoring flow and evaluates them using active detection rules. When a condition is satisfied, the Bounded Context creates or updates a risk detection and generates the information required for the rest of the ResQ platform to continue the emergency-management flow.
+
+A central architectural requirement of this Bounded Context is that critical detection must remain available even when Internet connectivity with Cloud services is interrupted. For that reason, active detection rules required for critical operation must also be available in the Edge environment, where measurements can be evaluated locally.
+
+The Bounded Context therefore participates in two main execution environments:
+
+- **ResQ Cloud RESTful API**, where authorized users configure detection rules and consult persisted risk detections and their evidence.
+- **ResQ Edge Service**, where active detection rules are available locally and incoming measurements can be evaluated without permanently depending on Cloud connectivity.
+
+Risk Detection does not generate user notifications, execute actuator commands, manage incident lifecycle, or own connectivity-recovery queues. Those responsibilities belong to other Bounded Contexts such as Alert & Response Management, Incident, and Connectivity.
+
+Similarly, Risk Detection does not reproduce the complete models of Measurement, Device, Building, or Zone. It only maintains the external references and evidence necessary to justify a risk-detection decision.
+
+The principal concepts identified for the Risk Detection Bounded Context are **Detection Rule**, **Detection Condition**, **Risk Detection**, **Detection Evidence**, **Risk Location**, **Risk Type**, **Severity Level**, and **Severity Change**.
+
+#### Class Dictionary
+
+The following table summarizes the principal classes and interfaces identified for the Risk Detection Bounded Context.
+
+| Class / Interface | Layer | Runtime | Purpose | Main attributes | Main operations | Main relationships |
+|---|---|---|---|---|---|---|
+| `DetectionRule` | Domain | Cloud / Edge | Aggregate Root that represents an active or inactive rule used to determine whether a monitored value represents a risk condition. | `ruleId: UUID`, `riskType: RiskType`, `severityLevel: SeverityLevel`, `condition: DetectionCondition`, `status: DetectionRuleStatus` | `updateCondition(condition)`, `activate()`, `deactivate()`, `isActive()`, `supports(variableType)` | Composes one `DetectionCondition`, one `RiskType`, one `SeverityLevel`, and one `DetectionRuleStatus`. |
+| `DetectionCondition` | Domain | Cloud / Edge | Value Object that defines the comparison that must be performed against a monitored variable. | `variableType: String`, `operator: ComparisonOperator`, `threshold: Decimal` | `isValid()`, `matches(variableType, value)` | Owned by `DetectionRule`; uses `ComparisonOperator`. |
+| `RiskDetection` | Domain | Cloud / Edge | Aggregate Root that represents a detected risk together with its current severity, location, evidence, and severity-change traceability. | `riskDetectionId: UUID`, `ruleId: UUID`, `riskType: RiskType`, `currentSeverity: SeverityLevel`, `location: RiskLocation`, `detectedAt: Instant`, `evidence: List<DetectionEvidence>`, `severityChanges: List<SeverityChange>` | `addEvidence(evidence)`, `updateSeverity(newSeverity, changedAt)`, `hasSeverity(severity)` | Composes `RiskLocation`, `DetectionEvidence`, `SeverityChange`, `RiskType`, and `SeverityLevel`; references a `DetectionRule` by `ruleId`. |
+| `DetectionEvidence` | Domain | Cloud / Edge | Value Object containing the monitored information used as evidence for a risk-detection decision. | `measurementId: UUID`, `deviceId: UUID`, `variableType: String`, `value: Decimal`, `measuredAt: Instant` | `matchesVariable(variableType)` | Owned by `RiskDetection`; references Measurement and Device through external identifiers. |
+| `RiskLocation` | Domain | Cloud / Edge | Value Object that represents the known location context of a detection without reproducing the Building domain model. | `buildingId: UUID?`, `zoneId: UUID?`, `resolutionStatus: LocationResolutionStatus` | `isResolved()` | Owned by `RiskDetection`; uses external Building/Zone identifiers. |
+| `SeverityChange` | Domain | Cloud | Entity owned by `RiskDetection` that preserves a transition between severity levels. | `severityChangeId: UUID`, `previousSeverity: SeverityLevel`, `newSeverity: SeverityLevel`, `changedAt: Instant` | — | Owned by `RiskDetection`; uses `SeverityLevel` values. |
+| `RiskType` | Domain | Cloud / Edge | Value Object representing the type of risk identified by a detection rule. | `code: String` | `code()`, `equals(other)` | Used by `DetectionRule` and `RiskDetection`. |
+| `SeverityLevel` | Domain | Cloud / Edge | Value Object representing the severity assigned to a risk without imposing a fixed severity catalog that is not defined by the current requirements. | `code: String` | `code()`, `equals(other)` | Used by `DetectionRule`, `RiskDetection`, and `SeverityChange`. |
+| `DetectionRuleStatus` | Domain | Cloud / Edge | Enumeration representing whether a detection rule can participate in evaluation. | `ACTIVE`, `INACTIVE` | — | Used by `DetectionRule`. |
+| `ComparisonOperator` | Domain | Cloud / Edge | Enumeration representing the comparison operation performed by a detection condition. | `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `LESS_THAN`, `LESS_THAN_OR_EQUAL`, `EQUAL` | — | Used by `DetectionCondition`. |
+| `LocationResolutionStatus` | Domain | Cloud / Edge | Enumeration indicating whether the location of a detected risk could be resolved from the available device context. | `RESOLVED`, `UNRESOLVED` | — | Used by `RiskLocation`. |
+| `DetectionRuleRepository` | Domain | Cloud / Edge | Repository abstraction for retrieving and persisting detection rules. | — | `findById(ruleId)`, `findActiveByVariableType(variableType)`, `save(rule)` | Persists and retrieves `DetectionRule` aggregates. |
+| `RiskDetectionRepository` | Domain | Cloud | Repository abstraction for persisted risk detections. | — | `findById(riskDetectionId)`, `save(riskDetection)` | Persists and retrieves `RiskDetection` aggregates. |
+| `RiskEvaluationService` | Domain | Edge | Domain Service responsible for determining whether an active detection rule is satisfied by valid detection evidence. | — | `matches(rule, evidence)` | Evaluates `DetectionRule` against `DetectionEvidence`. |
+| `RiskDetectedEvent` | Domain | Edge | Domain Event produced when a detection rule is satisfied and a risk detection must continue through the distributed ResQ flow. | `riskDetectionId: UUID`, `ruleId: UUID`, `riskType: String`, `severity: String`, `buildingId: UUID?`, `zoneId: UUID?`, `occurredAt: Instant` | — | Generated from `RiskDetection` and published through an application abstraction. |
+| `ConfigureDetectionRuleCommand` | Application | Cloud | Represents the request to configure a detection rule. | `riskTypeCode: String`, `severityCode: String`, `variableType: String`, `operator: String`, `threshold: Decimal` | — | Handled by `ConfigureDetectionRuleCommandHandler`. |
+| `ConfigureDetectionRuleCommandHandler` | Application | Cloud | Coordinates detection-rule creation or configuration. | Dependencies on `DetectionRuleRepository` and `DetectionRuleDistributor` | `handle(command)` | Creates/updates `DetectionRule` and requests distribution to Edge. |
+| `ChangeDetectionRuleStatusCommand` | Application | Cloud | Represents a request to activate or deactivate an existing detection rule. | `ruleId: UUID`, `active: boolean` | — | Handled by `ChangeDetectionRuleStatusCommandHandler`. |
+| `ChangeDetectionRuleStatusCommandHandler` | Application | Cloud | Coordinates rule activation/deactivation while preserving rule validity. | Dependencies on `DetectionRuleRepository` and `DetectionRuleDistributor` | `handle(command)` | Modifies `DetectionRule` and distributes the resulting state. |
+| `MeasurementReceivedEventHandler` | Application | Edge | Handles a valid monitored measurement delivered to Risk Detection and coordinates its local evaluation. | Dependencies on `DetectionRuleRepository`, `RiskLocationResolver`, `RiskEvaluationService`, `RiskDetectionEventPublisher` | `handle(event)` | Evaluates measurement evidence using active local `DetectionRule` aggregates. |
+| `UpdateLocalDetectionRuleEventHandler` | Application | Edge | Applies a detection-rule update received from Cloud to the Edge rule replica. | Dependency on `DetectionRuleRepository` | `handle(event)` | Persists the Edge representation of `DetectionRule`. |
+| `RiskDetectionReceivedEventHandler` | Application | Cloud | Processes synchronized risk-detection information received from the Edge flow and persists the corresponding detection state. | Dependency on `RiskDetectionRepository` | `handle(event)` | Reconstructs or updates `RiskDetection`. |
+| `GetRiskDetectionQuery` | Application | Cloud | Represents a request for the current information of a persisted risk detection. | `riskDetectionId: UUID` | — | Handled by `GetRiskDetectionQueryHandler`. |
+| `GetRiskDetectionQueryHandler` | Application | Cloud | Retrieves a persisted risk detection for application clients. | Dependency on `RiskDetectionRepository` | `handle(query)` | Reads `RiskDetection`. |
+| `GetRiskDetectionEvidenceQuery` | Application | Cloud | Represents a request for the evidence associated with a detection. | `riskDetectionId: UUID` | — | Handled by `GetRiskDetectionEvidenceQueryHandler`. |
+| `GetRiskDetectionEvidenceQueryHandler` | Application | Cloud | Retrieves the evidence and severity traceability associated with a detection. | Dependency on `RiskDetectionRepository` | `handle(query)` | Reads `RiskDetection`, `DetectionEvidence`, and `SeverityChange`. |
+| `DetectionRuleDistributor` | Application | Cloud | Abstraction used to distribute the rule state required by the Edge execution environment. | — | `distribute(rule)` | Implemented by `DetectionRuleDistributionAdapter`. |
+| `RiskLocationResolver` | Application | Edge | Abstraction used to resolve Building and Zone identifiers from the device associated with a measurement. | — | `resolve(deviceId)` | Implemented by `RiskLocationIntegrationAdapter`. |
+| `RiskDetectionEventPublisher` | Application | Edge | Abstraction used to publish a locally generated risk-detection event without coupling the Application Layer to a message broker or connectivity mechanism. | — | `publish(event)` | Implemented by `RiskDetectionEventPublisherAdapter`. |
+| `DetectionRuleController` | Interface | Cloud | Receives authorized REST requests for configuring and activating/deactivating detection rules. | Dependencies on detection-rule command handlers | `configure(request)`, `changeStatus(ruleId, request)` | Delegates to Application Layer command handlers. |
+| `RiskDetectionController` | Interface | Cloud | Exposes persisted risk-detection information and its evidence to authorized clients. | Dependencies on risk-detection query handlers | `getById(id)`, `getEvidence(id)` | Delegates to Application Layer query handlers. |
+| `RiskDetectionEventConsumer` | Interface | Cloud | Receives synchronized risk-detection events produced by the distributed Edge flow. | Dependency on `RiskDetectionReceivedEventHandler` | `consume(event)` | Delegates incoming detection events to the Application Layer. |
+| `MeasurementConsumer` | Interface | Edge | Receives valid measurements from the local monitoring flow and forwards them for rule evaluation. | Dependency on `MeasurementReceivedEventHandler` | `consume(measurement)` | Delegates incoming measurement events to the Edge Application Layer. |
+| `DetectionRuleReplicaConsumer` | Interface | Edge | Receives rule updates distributed from Cloud. | Dependency on `UpdateLocalDetectionRuleEventHandler` | `consume(ruleUpdate)` | Delegates rule updates to the Edge Application Layer. |
+| `DetectionRuleRepositoryAdapter` | Infrastructure | Cloud | Implements `DetectionRuleRepository` using the Cloud persistence technology selected by the team. | Persistence dependency | `findById()`, `findActiveByVariableType()`, `save()` | Implements `DetectionRuleRepository`. |
+| `RiskDetectionRepositoryAdapter` | Infrastructure | Cloud | Implements `RiskDetectionRepository` for risk detections, evidence, and severity changes. | Persistence dependency | `findById()`, `save()` | Implements `RiskDetectionRepository`. |
+| `DetectionRuleDistributionAdapter` | Infrastructure | Cloud | Implements detection-rule distribution toward the Edge execution environment. | Messaging/integration dependency | `distribute(rule)` | Implements `DetectionRuleDistributor`. |
+| `EdgeDetectionRuleRepositoryAdapter` | Infrastructure | Edge | Implements local detection-rule persistence using the Edge persistence stack. | Peewee / SQLite dependency | `findById()`, `findActiveByVariableType()`, `save()` | Edge implementation of `DetectionRuleRepository`. |
+| `RiskLocationIntegrationAdapter` | Infrastructure | Edge | Obtains Building and Zone references associated with the device without making Risk Detection owner of those domains. | Integration dependency | `resolve(deviceId)` | Implements `RiskLocationResolver`. |
+| `RiskDetectionEventPublisherAdapter` | Infrastructure | Edge | Publishes locally detected risk events to the downstream distributed flow. | Messaging/connectivity dependency | `publish(event)` | Implements `RiskDetectionEventPublisher`. |
+
+The design deliberately separates the ownership of risk-detection concepts from information owned by other Bounded Contexts.
+
+`DetectionEvidence` contains `measurementId` and `deviceId` as external references and as evidence snapshots, but Risk Detection does not manage the complete Measurement or Device aggregates.
+
+`RiskLocation` maintains `buildingId` and `zoneId` only as external location references. The lifecycle of buildings and zones remains outside Risk Detection.
+
+Likewise, `RiskDetectedEvent` communicates that a risk has been detected, but Risk Detection does not create alerts, send notifications, execute actuators, or manage the lifecycle of an incident.
+
+---
+
+#### 4.2.2.1. Domain Layer
+
+The **Domain Layer** represents the rules and concepts required to transform monitored quantitative information into a meaningful risk detection.
+
+The Domain Layer remains independent from HTTP, Flask, Cloud frameworks, SQLite, messaging technologies, and external services.
+
+The principal Aggregate Roots are `DetectionRule` and `RiskDetection`.
+
+##### DetectionRule
+
+**Category:** Aggregate Root.
+
+**Purpose:** Represent a configurable rule that determines whether a monitored variable satisfies a condition associated with a specific type and severity of risk.
+
+**Attributes:**
+
+- `ruleId: UUID` — Unique identifier of the detection rule.
+- `riskType: RiskType` — Type of risk represented by the rule.
+- `severityLevel: SeverityLevel` — Severity produced when the rule is satisfied.
+- `condition: DetectionCondition` — Quantitative condition evaluated against monitored information.
+- `status: DetectionRuleStatus` — Indicates whether the rule participates in evaluation.
+
+**Operations:**
+
+- `updateCondition(condition)` — Replaces the current detection condition with a valid condition.
+- `activate()` — Activates the rule only when its configuration is valid.
+- `deactivate()` — Prevents the rule from participating in future evaluations.
+- `isActive()` — Indicates whether the rule can currently be evaluated.
+- `supports(variableType)` — Indicates whether the rule applies to the specified monitored variable.
+
+A rule that contains an invalid condition must not be activated.
+
+##### DetectionCondition
+
+**Category:** Value Object.
+
+**Purpose:** Represent the comparison performed against a monitored value.
+
+**Attributes:**
+
+- `variableType: String`
+- `operator: ComparisonOperator`
+- `threshold: Decimal`
+
+**Operations:**
+
+- `isValid()` — Validates that the condition contains the information required for evaluation.
+- `matches(variableType, value)` — Determines whether the provided monitored value satisfies the condition.
+
+The condition does not contain information about a physical sensor model. It operates using the monitored variable and value so that the detection domain remains independent from specific hardware.
+
+##### RiskDetection
+
+**Category:** Aggregate Root.
+
+**Purpose:** Represent a risk that has been detected and preserve the contextual information required to explain the detection.
+
+**Attributes:**
+
+- `riskDetectionId: UUID`
+- `ruleId: UUID`
+- `riskType: RiskType`
+- `currentSeverity: SeverityLevel`
+- `location: RiskLocation`
+- `detectedAt: Instant`
+- `evidence: List<DetectionEvidence>`
+- `severityChanges: List<SeverityChange>`
+
+**Operations:**
+
+- `addEvidence(evidence)` — Adds monitored evidence associated with the same detection.
+- `updateSeverity(newSeverity, changedAt)` — Updates the current severity and preserves the previous value as part of the severity-change history.
+- `hasSeverity(severity)` — Indicates whether the detection currently has the specified severity.
+
+A Risk Detection does not become an Incident. Incident lifecycle and operational follow-up belong to the Incident Bounded Context.
+
+##### DetectionEvidence
+
+**Category:** Value Object.
+
+**Purpose:** Preserve the relevant monitored information used to justify the result of the detection process.
+
+**Attributes:**
+
+- `measurementId: UUID`
+- `deviceId: UUID`
+- `variableType: String`
+- `value: Decimal`
+- `measuredAt: Instant`
+
+**Operation:**
+
+- `matchesVariable(variableType)`
+
+The object maintains the measurement and device identifiers as external references. Risk Detection does not modify the source Measurement or Device.
+
+##### RiskLocation
+
+**Category:** Value Object.
+
+**Purpose:** Represent the location associated with a risk detection.
+
+**Attributes:**
+
+- `buildingId: UUID?`
+- `zoneId: UUID?`
+- `resolutionStatus: LocationResolutionStatus`
+
+**Operation:**
+
+- `isResolved()`
+
+When the available device context allows the location to be determined, the status is `RESOLVED`.
+
+When a valid location cannot be determined, Risk Detection must represent that fact explicitly through `UNRESOLVED` instead of inventing a location.
+
+##### SeverityChange
+
+**Category:** Entity owned by `RiskDetection`.
+
+**Purpose:** Preserve traceability when the severity associated with an existing detection changes.
+
+**Attributes:**
+
+- `severityChangeId: UUID`
+- `previousSeverity: SeverityLevel`
+- `newSeverity: SeverityLevel`
+- `changedAt: Instant`
+
+This entity directly supports the requirement that a severity update must preserve traceability of the previous state.
+
+##### RiskType
+
+**Category:** Value Object.
+
+**Purpose:** Identify the type of risk represented by a rule and a detection.
+
+**Attribute:**
+
+- `code: String`
+
+A closed enumeration of fire, gas, seismic, or other risks is intentionally not imposed because the current requirements do not define an exhaustive fixed catalog.
+
+##### SeverityLevel
+
+**Category:** Value Object.
+
+**Purpose:** Represent the severity associated with a risk.
+
+**Attribute:**
+
+- `code: String`
+
+The domain does not impose a fixed `LOW/MEDIUM/HIGH` enumeration because the current requirements establish the existence of a risk level but do not define a mandatory severity scale.
+
+##### DetectionRuleStatus
+
+**Category:** Enumeration.
+
+**Values:**
+
+- `ACTIVE`
+- `INACTIVE`
+
+Only active rules participate in measurement evaluation.
+
+##### ComparisonOperator
+
+**Category:** Enumeration.
+
+**Values:**
+
+- `GREATER_THAN`
+- `GREATER_THAN_OR_EQUAL`
+- `LESS_THAN`
+- `LESS_THAN_OR_EQUAL`
+- `EQUAL`
+
+These operators allow a quantitative monitored value to be compared with a configured threshold without coupling the domain to a particular sensor.
+
+##### LocationResolutionStatus
+
+**Category:** Enumeration.
+
+**Values:**
+
+- `RESOLVED`
+- `UNRESOLVED`
+
+##### DetectionRuleRepository
+
+**Category:** Repository Interface.
+
+**Purpose:** Provide persistence operations for `DetectionRule` while keeping the Domain Layer independent from Cloud or Edge persistence technologies.
+
+**Operations:**
+
+- `findById(ruleId)`
+- `findActiveByVariableType(variableType)`
+- `save(rule)`
+
+The same abstraction can have different Infrastructure implementations for Cloud persistence and Edge SQLite persistence.
+
+##### RiskDetectionRepository
+
+**Category:** Repository Interface.
+
+**Purpose:** Persist and retrieve `RiskDetection` aggregates in the Cloud persistence environment.
+
+**Operations:**
+
+- `findById(riskDetectionId)`
+- `save(riskDetection)`
+
+##### RiskEvaluationService
+
+**Category:** Domain Service.
+
+**Purpose:** Evaluate whether a valid monitored evidence item satisfies an active detection rule.
+
+**Operation:**
+
+- `matches(rule, evidence)`
+
+The service coordinates the domain comparison when the evaluation requires both a `DetectionRule` and `DetectionEvidence`.
+
+##### RiskDetectedEvent
+
+**Category:** Domain Event.
+
+**Purpose:** Represent the fact that a configured risk condition was detected locally and must continue through the distributed ResQ flow.
+
+**Attributes:**
+
+- `riskDetectionId: UUID`
+- `ruleId: UUID`
+- `riskType: String`
+- `severity: String`
+- `buildingId: UUID?`
+- `zoneId: UUID?`
+- `occurredAt: Instant`
+
+The event communicates the detection result but does not define the alert, notification, actuator command, or incident that may subsequently be created by other Bounded Contexts.
+
+##### Business Rules
+
+The Risk Detection domain applies the following business rules:
+
+1. A detection rule must contain a valid detection condition before it can be activated.
+
+2. An inactive detection rule must not participate in measurement evaluation.
+
+3. A detection rule can only evaluate monitored information corresponding to the variable type defined in its condition.
+
+4. Only valid monitored information delivered to Risk Detection may participate in evaluation.
+
+5. When a monitored value does not satisfy the configured condition, Risk Detection must not create a positive risk detection from that rule.
+
+6. When an active detection rule is satisfied, the resulting detection uses the `RiskType` and `SeverityLevel` defined by that rule.
+
+7. Every positive risk detection must preserve the relevant monitored evidence that originated the decision.
+
+8. Evidence must retain the measurement identifier, device identifier, monitored variable, value, and original measurement time.
+
+9. When multiple relevant measurements participate in the evolution of the same detection, the corresponding evidence must remain associated with that detection.
+
+10. Risk Detection must attempt to resolve the Building and Zone associated with the originating device.
+
+11. When the location cannot be resolved using valid information, the detection must be marked with an unresolved location instead of being assigned an unverified location.
+
+12. When the severity of an existing detection changes, the previous severity, new severity, and change time must remain traceable.
+
+13. Critical detection rules required for local operation must remain available in the Edge environment so that measurement evaluation does not permanently depend on Cloud connectivity.
+
+14. A successful local risk evaluation generates the domain information required to continue the distributed emergency-processing flow.
+
+15. Risk Detection does not create Alerts, Notifications, Actuator Commands, or Incidents directly.
+
+16. Temporary storage and later synchronization of remote events during an Internet interruption are not owned by Risk Detection; those responsibilities belong to the Connectivity flow.
+
+---
+
+#### 4.2.2.2. Interface Layer
+
+The **Interface Layer** exposes the Risk Detection capabilities to external clients and receives information from other parts of the distributed ResQ architecture.
+
+Because Risk Detection participates in both Cloud and Edge execution, the Interface Layer contains different entry points according to the runtime.
+
+The Cloud Interface Layer exposes authorized configuration and query operations.
+
+The Edge Interface Layer receives monitored measurements and replicas of active detection rules required for local evaluation.
+
+Business rules are not implemented in the Interface Layer.
+
+##### DetectionRuleController
+
+**Runtime:** Cloud.
+
+`DetectionRuleController` receives authorized REST requests related to detection-rule configuration.
+
+Its responsibilities include:
+
+- receiving the information required to configure a detection rule;
+- validating the basic request representation;
+- creating a `ConfigureDetectionRuleCommand`;
+- creating a `ChangeDetectionRuleStatusCommand`;
+- delegating operations to the corresponding Application Layer handlers.
+
+Example conceptual resources:
+
+```text
+POST /api/v1/risk-detection/rules
+PATCH /api/v1/risk-detection/rules/{ruleId}/status
+```
+
+The controller does not directly determine whether a condition is valid and does not persist rules directly.
+
+##### RiskDetectionController
+
+**Runtime:** Cloud.
+
+`RiskDetectionController` provides authorized access to persisted risk detections and their evidence.
+
+Example conceptual resources:
+
+```text
+GET /api/v1/risk-detections/{riskDetectionId}
+GET /api/v1/risk-detections/{riskDetectionId}/evidence
+```
+
+The controller delegates query execution to `GetRiskDetectionQueryHandler` and `GetRiskDetectionEvidenceQueryHandler`.
+
+It does not access the database directly.
+
+##### RiskDetectionEventConsumer
+
+**Runtime:** Cloud.
+
+`RiskDetectionEventConsumer` receives synchronized risk-detection information produced by the distributed Edge flow.
+
+Its responsibility is to translate an incoming integration representation into the application representation expected by `RiskDetectionReceivedEventHandler`.
+
+The consumer does not implement synchronization-retry logic because temporary event preservation and reconnection behavior belong to the Connectivity responsibility.
+
+##### MeasurementConsumer
+
+**Runtime:** Edge.
+
+`MeasurementConsumer` receives valid monitored information from the local measurement-processing flow.
+
+It transforms the incoming representation into the information expected by `MeasurementReceivedEventHandler`.
+
+The consumer does not evaluate detection rules directly.
+
+##### DetectionRuleReplicaConsumer
+
+**Runtime:** Edge.
+
+`DetectionRuleReplicaConsumer` receives detection-rule updates distributed from Cloud.
+
+It delegates the update to `UpdateLocalDetectionRuleEventHandler`, allowing the Edge runtime to maintain the local rule information required for autonomous detection.
+
+The Interface Layer remains independent from the internal persistence implementation used for those rules.
+
+#### 4.2.2.3. Application Layer
+
+The Application Layer coordinates the Risk Detection use cases across the Cloud and Edge runtimes.
+
+It uses Domain Layer objects and repository abstractions while remaining independent from database engines, message brokers, Cloud frameworks, and Edge persistence implementation details.
+
+The main application capabilities are:
+
+- detection-rule configuration;
+- detection-rule activation and deactivation;
+- distribution of detection rules to Edge;
+- local measurement evaluation;
+- location resolution;
+- publication of locally detected risks;
+- Cloud persistence of synchronized detections;
+- consultation of detections and their evidence.
+
+##### ConfigureDetectionRuleCommand
+
+**Runtime:** Cloud.
+
+Represents a request to configure a detection rule.
+
+**Attributes:**
+
+- `riskTypeCode: String`
+- `severityCode: String`
+- `variableType: String`
+- `operator: String`
+- `threshold: Decimal`
+
+##### ConfigureDetectionRuleCommandHandler
+
+**Runtime:** Cloud.
+
+Coordinates detection-rule configuration.
+
+Its execution flow is:
+
+1. Receive a `ConfigureDetectionRuleCommand`.
+2. Build the corresponding `RiskType`.
+3. Build the corresponding `SeverityLevel`.
+4. Build a `DetectionCondition`.
+5. Validate the detection condition.
+6. Create or update the `DetectionRule`.
+7. Persist the aggregate through `DetectionRuleRepository`.
+8. Request rule distribution through `DetectionRuleDistributor`.
+
+Invalid conditions must not produce an active detection rule.
+
+##### ChangeDetectionRuleStatusCommand
+
+**Runtime:** Cloud.
+
+Represents a request to activate or deactivate a detection rule.
+
+**Attributes:**
+
+- `ruleId: UUID`
+- `active: boolean`
+
+##### ChangeDetectionRuleStatusCommandHandler
+
+**Runtime:** Cloud.
+
+Coordinates changes in the operational state of a detection rule.
+
+The handler:
+
+1. Retrieves the `DetectionRule`.
+2. When activation is requested, delegates validity enforcement to the aggregate.
+3. Activates or deactivates the rule.
+4. Persists the resulting rule state.
+5. Requests distribution of the new state toward the Edge runtime.
+
+The handler does not duplicate the rule-validity invariant outside the Domain Layer.
+
+##### MeasurementReceivedEventHandler
+
+**Runtime:** Edge.
+
+Coordinates the local evaluation of an incoming monitored measurement.
+
+Its execution flow is:
+
+1. Receive the valid measurement representation from `MeasurementConsumer`.
+2. Construct the corresponding `DetectionEvidence`.
+3. Retrieve active detection rules compatible with the measurement variable using `DetectionRuleRepository`.
+4. Request the location associated with the originating `deviceId` through `RiskLocationResolver`.
+5. Evaluate every applicable rule through `RiskEvaluationService`.
+6. Ignore rules whose conditions are not satisfied.
+7. When a rule is satisfied, create or update the corresponding `RiskDetection` domain information.
+8. Associate the measurement evidence with the detection.
+9. Preserve severity changes when the current severity differs from the new severity.
+10. Create a `RiskDetectedEvent`.
+11. Publish the event through `RiskDetectionEventPublisher`.
+
+This flow is designed to run locally and therefore does not require a Cloud request to perform the critical rule evaluation.
+
+##### UpdateLocalDetectionRuleEventHandler
+
+**Runtime:** Edge.
+
+Coordinates the local application of a detection-rule update distributed from Cloud.
+
+Its execution flow is:
+
+1. Receive the distributed detection-rule representation.
+2. Reconstruct the corresponding `DetectionRule`.
+3. Persist the current rule state through the Edge implementation of `DetectionRuleRepository`.
+
+This allows the Edge runtime to continue evaluating critical rules even during temporary loss of Cloud connectivity.
+
+##### RiskDetectionReceivedEventHandler
+
+**Runtime:** Cloud.
+
+Coordinates persistence of a risk-detection event received from the Edge flow.
+
+Its responsibilities are:
+
+- Receive the synchronized detection information.
+- Reconstruct or update the corresponding `RiskDetection`.
+- Preserve the detection evidence included in the event flow.
+- Preserve severity-change information when applicable.
+- Persist the resulting aggregate through `RiskDetectionRepository`.
+
+The handler does not implement offline event queues or retransmission policies.
+
+##### GetRiskDetectionQuery
+
+**Runtime:** Cloud.
+
+**Attribute:**
+
+- `riskDetectionId: UUID`
+
+Represents a request to obtain the current persisted information associated with a risk detection.
+
+##### GetRiskDetectionQueryHandler
+
+**Runtime:** Cloud.
+
+Retrieves the corresponding `RiskDetection` through `RiskDetectionRepository` and provides its current domain representation to the Interface Layer.
+
+##### GetRiskDetectionEvidenceQuery
+
+**Runtime:** Cloud.
+
+**Attribute:**
+
+- `riskDetectionId: UUID`
+
+Represents a request to obtain the evidence and traceability associated with a detection.
+
+##### GetRiskDetectionEvidenceQueryHandler
+
+**Runtime:** Cloud.
+
+Retrieves the corresponding `RiskDetection` and exposes:
+
+- measurement evidence;
+- originating device references;
+- current risk type;
+- current severity;
+- resolved or unresolved location;
+- severity changes.
+
+##### DetectionRuleDistributor
+
+**Runtime:** Cloud.
+
+Application abstraction responsible for requesting distribution of the rule information required by Edge.
+
+**Operation:**
+
+- `distribute(rule)`
+
+The Application Layer does not depend on the transport mechanism used for distribution.
+
+##### RiskLocationResolver
+
+**Runtime:** Edge.
+
+Application abstraction used to resolve the location associated with the originating device.
+
+**Operation:**
+
+- `resolve(deviceId)`
+
+It returns a `RiskLocation` without transferring ownership of Device, Building, or Zone to the Risk Detection Bounded Context.
+
+##### RiskDetectionEventPublisher
+
+**Runtime:** Edge.
+
+Application abstraction responsible for publishing a `RiskDetectedEvent`.
+
+**Operation:**
+
+- `publish(event)`
+
+The interface isolates the Application Layer from messaging and connectivity technologies.
+
+#### 4.2.2.4. Infrastructure Layer
+
+The Infrastructure Layer contains the technical implementations required for persistence, distributed rule propagation, location integration, and publication of risk-detection events.
+
+Cloud and Edge use different infrastructure implementations while maintaining the same domain concepts.
+
+##### DetectionRuleRepositoryAdapter
+
+**Runtime:** Cloud.
+
+`DetectionRuleRepositoryAdapter` implements `DetectionRuleRepository` using the persistence technology selected for the ResQ Cloud RESTful API.
+
+Its responsibilities are:
+
+- retrieve detection rules by identifier;
+- retrieve active rules according to their monitored variable;
+- reconstruct `DetectionRule` aggregates;
+- persist detection-rule configuration and status.
+
+The Cloud persistence framework must remain consistent with the Web Services technology selected by the team.
+
+##### RiskDetectionRepositoryAdapter
+
+**Runtime:** Cloud.
+
+`RiskDetectionRepositoryAdapter` implements `RiskDetectionRepository`.
+
+Its responsibilities include persistence and reconstruction of:
+
+- `RiskDetection`;
+- `DetectionEvidence`;
+- `SeverityChange`;
+- current severity;
+- resolved or unresolved location references.
+
+##### DetectionRuleDistributionAdapter
+
+**Runtime:** Cloud.
+
+`DetectionRuleDistributionAdapter` implements `DetectionRuleDistributor`.
+
+It communicates detection-rule changes toward the Edge runtime using the integration mechanism selected by the overall ResQ architecture.
+
+Its responsibility is limited to delivering the rule representation required by Edge.
+
+The exact transport must remain aligned with the final Context Mapping and Container architecture.
+
+##### EdgeDetectionRuleRepositoryAdapter
+
+**Runtime:** Edge.
+
+`EdgeDetectionRuleRepositoryAdapter` implements `DetectionRuleRepository` using the Edge persistence stack required for the project.
+
+For the Edge Services implementation, the Project Statement establishes:
+
+- Python as programming language;
+- Flask for Edge Services;
+- Peewee ORM;
+- SQLite.
+
+The adapter therefore provides local persistence of detection rules required for autonomous operation.
+
+Its responsibilities include:
+
+- storing the latest distributed rule state;
+- retrieving active local rules by monitored variable;
+- preserving rule availability during temporary loss of Cloud connectivity.
+
+##### RiskLocationIntegrationAdapter
+
+**Runtime:** Edge.
+
+`RiskLocationIntegrationAdapter` implements `RiskLocationResolver`.
+
+It obtains the minimum device-location context required to identify:
+
+- `buildingId`;
+- `zoneId`;
+- whether the location could be resolved.
+
+The adapter does not reproduce or modify Building, Zone, or Device aggregates.
+
+Its final integration mechanism must be consistent with the Context Mapping defined by the team.
+
+##### RiskDetectionEventPublisherAdapter
+
+**Runtime:** Edge.
+
+`RiskDetectionEventPublisherAdapter` implements `RiskDetectionEventPublisher`.
+
+It publishes locally generated `RiskDetectedEvent` objects to the distributed ResQ flow.
+
+The adapter does not own:
+
+- event retry policies;
+- pending-event queues during network interruption;
+- synchronization lifecycle.
+
+Those responsibilities belong to the connectivity mechanism used by ResQ.
+
+##### Persistence considerations
+
+Risk Detection requires different persistence responsibilities in Cloud and Edge.
+
+Cloud persistence stores the authoritative detection-rule configuration and the risk-detection history required by the user-facing applications.
+
+It persists:
+
+- detection rules;
+- current detection state;
+- evidence associated with detections;
+- severity-change traceability.
+
+Edge persistence stores the local rule representation required to evaluate critical conditions without permanent Cloud connectivity.
+
+It does not need to duplicate the complete Cloud risk-detection history.
+
+This separation allows the Bounded Context to support local critical evaluation without assigning connectivity synchronization responsibilities to Risk Detection.
+
+#### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+The Risk Detection Bounded Context participates in more than one deployable Container. For that reason, its Component Level architecture is represented through separate C4 Component Diagrams for the Cloud and Edge environments.
+
+The diagrams must preserve the same domain boundary while representing the responsibilities deployed in each Container.
+
+##### Risk Detection — ResQ Cloud RESTful API Component Diagram
+
+The Cloud Component Diagram represents the components inside the ResQ Cloud RESTful API that participate in Risk Detection.
+
+The principal components are:
+
+- Detection Rule API, responsible for receiving authorized detection-rule configuration operations.
+- Risk Detection Query API, responsible for exposing persisted detection information and evidence.
+- Risk Detection Event Consumer, responsible for receiving synchronized detection events produced by Edge.
+- Risk Detection Application, responsible for coordinating Cloud use cases.
+- Risk Detection Domain, containing the domain model used by the Cloud capabilities.
+- Cloud Risk Detection Persistence, implementing persistence of rules and detections.
+- Detection Rule Distribution, responsible for propagating rule changes toward Edge.
+
+The main Cloud flow is conceptually:
+
+```text
+Web / Mobile Application
+          |
+          v
+Detection Rule API / Risk Detection Query API
+          |
+          v
+Risk Detection Application
+          |
+          v
+Risk Detection Domain
+          |
+          +------------------------+
+          |                        |
+          v                        v
+Cloud Persistence       Detection Rule Distribution
+          |                        |
+          v                        v
+ResQ Cloud Database          Edge Runtime
+```
+
+Risk-detection events synchronized from Edge enter through the Risk Detection Event Consumer, are processed by the Application Layer, and are persisted using the Domain and Infrastructure Layers.
+
+The final C4 diagram must show the concrete Cloud technology once the Web Services stack is officially selected by the team.
+
+**DIAGRAM — Risk Detection Cloud Component Level Diagram**
+
+![Risk Detection Cloud Component Level Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-cloud-component-level-diagram.png)
+
+##### Risk Detection — ResQ Edge Service Component Diagram
+
+The Edge Component Diagram represents the components responsible for local risk evaluation inside the ResQ Edge Service.
+
+The principal components are:
+
+- Measurement Consumer, responsible for receiving valid locally available measurements.
+- Detection Rule Replica Consumer, responsible for receiving current detection-rule states from Cloud.
+- Edge Risk Detection Application, responsible for coordinating local evaluation.
+- Risk Evaluation Domain, containing the detection-rule and risk-evaluation domain logic.
+- Local Detection Rule Persistence, responsible for storing local rule replicas using Peewee and SQLite.
+- Risk Location Integration, responsible for obtaining the location references associated with an originating device.
+- Risk Detection Event Publisher, responsible for publishing the result of a successful local detection.
+
+The principal local execution flow is:
+
+```text
+Local Measurement Flow
+          |
+          v
+Measurement Consumer
+          |
+          v
+Edge Risk Detection Application
+          |
+          v
+Risk Evaluation Domain
+      /            \
+     v              v
+Local Rule      Risk Location
+Persistence     Integration
+     |
+     v
+Risk Detection Event
+     |
+     v
+Risk Detection Event Publisher
+     |
+     v
+Distributed ResQ Flow
+```
+
+The Edge rule-update flow is:
+
+```text
+Cloud Rule Distribution
+          |
+          v
+Detection Rule Replica Consumer
+          |
+          v
+Edge Risk Detection Application
+          |
+          v
+Local Detection Rule Persistence
+```
+
+The Edge implementation must use the technology established by the Project Statement for Edge Services: Python, Flask, Peewee ORM, and SQLite.
+
+**DIAGRAM Risk Detection Edge Component Level Diagram**
+
+![Risk Detection Edge Component Level Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-edge-component-level-diagram.png)
+
+#### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
+
+The Code Level Diagrams provide a more detailed representation of the implementation-oriented structure of the Risk Detection Bounded Context.
+
+For Risk Detection, the Code Level is represented by:
+
+- Domain Layer Class Diagram, describing the object-oriented domain model, including Aggregate Roots, Entities, Value Objects, enumerations, Domain Services, Repository interfaces, attributes, methods, visibility, relationships, and multiplicities.
+- Database Design Diagram, describing the relational persistence structures required by the Cloud and Edge portions of the Bounded Context.
+
+The diagrams must remain consistent with the four-layer design described above.
+
+##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+The Domain Layer Class Diagram represents the implementation-oriented structure of the Risk Detection domain model.
+
+The diagram must include the following elements.
+
+**Aggregate Roots**
+
+- `DetectionRule`
+- `RiskDetection`
+
+**Entity**
+
+- `SeverityChange`
+
+**Value Objects**
+
+- `DetectionCondition`
+- `DetectionEvidence`
+- `RiskLocation`
+- `RiskType`
+- `SeverityLevel`
+
+**Enumerations**
+
+- `DetectionRuleStatus`
+- `ComparisonOperator`
+- `LocationResolutionStatus`
+
+**Repository Interfaces**
+
+- `DetectionRuleRepository`
+- `RiskDetectionRepository`
+
+**Domain Service**
+
+- `RiskEvaluationService`
+
+**Domain Event**
+
+- `RiskDetectedEvent`
+
+The principal relationships to represent are:
+
+- `DetectionRule` composes exactly one `DetectionCondition`.
+- `DetectionRule` composes exactly one `RiskType`.
+- `DetectionRule` composes exactly one `SeverityLevel`.
+- `DetectionRule` uses exactly one `DetectionRuleStatus`.
+- `DetectionCondition` uses exactly one `ComparisonOperator`.
+- `RiskDetection` composes exactly one `RiskType`.
+- `RiskDetection` composes exactly one current `SeverityLevel`.
+- `RiskDetection` composes exactly one `RiskLocation`.
+- `RiskDetection` owns one or more `DetectionEvidence` values.
+- `RiskDetection` owns zero or more `SeverityChange` entities.
+- `RiskLocation` uses exactly one `LocationResolutionStatus`.
+- `SeverityChange` references a previous and a new `SeverityLevel`.
+- `RiskDetection` references its originating `DetectionRule` through `ruleId`.
+- `DetectionRuleRepository` persists and retrieves `DetectionRule`.
+- `RiskDetectionRepository` persists and retrieves `RiskDetection`.
+- `RiskEvaluationService` evaluates `DetectionRule` and `DetectionEvidence`.
+- `RiskDetectedEvent` is produced from a successful Risk Detection evaluation.
+
+The diagram must show UML visibility conventions:
+
+- `+` for public members;
+- `-` for private members;
+- `#` for protected members when applicable.
+
+A conceptual multiplicity reference is:
+
+```text
+DetectionRule "1" *-- "1" DetectionCondition
+DetectionRule "1" *-- "1" RiskType
+DetectionRule "1" *-- "1" SeverityLevel
+DetectionRule "1" --> "1" DetectionRuleStatus
+
+DetectionCondition "1" --> "1" ComparisonOperator
+
+RiskDetection "1" *-- "1" RiskType
+RiskDetection "1" *-- "1" SeverityLevel
+RiskDetection "1" *-- "1" RiskLocation
+RiskDetection "1" *-- "1..*" DetectionEvidence
+RiskDetection "1" *-- "0..*" SeverityChange
+
+RiskLocation "1" --> "1" LocationResolutionStatus
+
+SeverityChange --> SeverityLevel : previous/new
+
+RiskDetection ..> DetectionRule : references by ruleId
+
+DetectionRuleRepository ..> DetectionRule : persists
+RiskDetectionRepository ..> RiskDetection : persists
+
+RiskEvaluationService ..> DetectionRule : evaluates
+RiskEvaluationService ..> DetectionEvidence : evaluates
+```
+
+The following concepts must not appear as owned domain classes inside Risk Detection:
+
+- Measurement
+- Device
+- Building
+- Zone
+- Alert
+- Incident
+- Actuator
+
+Their identifiers may appear as external references when required by the detection process.
+
+**DIAGRAM — Risk Detection Domain Layer Class Diagram**
+
+ ![Risk Detection Domain Layer Class Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-domain-layer-class-diagram.png)
+
+##### 4.2.2.6.2. Bounded Context Database Design Diagram
+
+The Risk Detection Database Design represents the persistence required by the Bounded Context across the Cloud and Edge execution environments.
+
+Cloud persistence stores the authoritative detection-rule definitions and the persisted detection history.
+
+Edge persistence stores the local detection-rule replicas required for autonomous evaluation.
+
+The persistence model deliberately avoids creating foreign-key dependencies to tables owned by other Bounded Contexts.
+
+###### Cloud Persistence
+
+###### `risk_detection_rules`
+
+Stores the authoritative detection-rule configuration.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `rule_id` | UUID | PRIMARY KEY | Unique identifier of the detection rule. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Risk type produced when the condition is satisfied. |
+| `severity_code` | VARCHAR(50) | NOT NULL | Severity associated with the rule. |
+| `variable_type` | VARCHAR(100) | NOT NULL | Monitored variable evaluated by the rule. |
+| `comparison_operator` | VARCHAR(40) | NOT NULL | Comparison operator applied to the monitored value. |
+| `threshold` | DECIMAL(12,4) | NOT NULL | Quantitative threshold used by the condition. |
+| `status` | VARCHAR(20) | NOT NULL | Current rule status (ACTIVE or INACTIVE). |
+
+DetectionCondition, RiskType, and SeverityLevel are Value Objects and therefore their persistent values are embedded within the detection-rule record instead of being modeled as independent aggregate tables.
+
+###### `risk_detections`
+
+Stores persisted risk detections received from the distributed Edge flow.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `risk_detection_id` | UUID | PRIMARY KEY | Unique identifier of the detected risk. |
+| `rule_id` | UUID | NOT NULL, FOREIGN KEY | References `risk_detection_rules.rule_id`. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Risk type identified at detection time. |
+| `current_severity_code` | VARCHAR(50) | NOT NULL | Current severity of the detection. |
+| `building_id` | UUID | NULL | External Building reference when location can be resolved. |
+| `zone_id` | UUID | NULL | External Zone reference when location can be resolved. |
+| `location_status` | VARCHAR(20) | NOT NULL | Indicates whether the detection location was resolved. |
+| `detected_at` | TIMESTAMP | NOT NULL | Original detection time. |
+
+building_id and zone_id are intentionally not foreign keys to tables owned by other Bounded Contexts.
+
+###### `risk_detection_evidence`
+
+Stores the monitored evidence associated with each persisted risk detection.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `risk_detection_id` | UUID | PRIMARY KEY, FOREIGN KEY | References `risk_detections.risk_detection_id`. |
+| `measurement_id` | UUID | PRIMARY KEY | External identifier of the monitored measurement. |
+| `device_id` | UUID | NOT NULL | External identifier of the originating device. |
+| `variable_type` | VARCHAR(100) | NOT NULL | Monitored variable represented by the evidence. |
+| `measured_value` | DECIMAL(12,4) | NOT NULL | Value used during evaluation. |
+| `measured_at` | TIMESTAMP | NOT NULL | Original measurement time. |
+
+The composite primary key:
+
+`(risk_detection_id, measurement_id)`
+
+prevents the same monitored evidence from being associated more than once with the same risk detection.
+
+measurement_id and device_id are external references and therefore do not create direct database ownership relationships with Monitoring or Device persistence.
+
+###### `risk_severity_changes`
+
+Stores severity transitions associated with persisted risk detections.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `severity_change_id` | UUID | PRIMARY KEY | Unique identifier of the severity-change entity. |
+| `risk_detection_id` | UUID | NOT NULL, FOREIGN KEY | References `risk_detections.risk_detection_id`. |
+| `previous_severity_code` | VARCHAR(50) | NOT NULL | Severity before the change. |
+| `new_severity_code` | VARCHAR(50) | NOT NULL | Severity after the change. |
+| `changed_at` | TIMESTAMP | NOT NULL | Moment when the severity change occurred. |
+
+This table preserves the traceability required when a risk changes severity.
+
+###### Edge Persistence
+
+###### `edge_detection_rules`
+
+Stores the detection-rule representation required for local evaluation in the Edge SQLite database.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `rule_id` | UUID | PRIMARY KEY | Identifier of the Cloud detection rule represented locally. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Risk type produced by the rule. |
+| `severity_code` | VARCHAR(50) | NOT NULL | Severity associated with the rule. |
+| `variable_type` | VARCHAR(100) | NOT NULL | Monitored variable evaluated locally. |
+| `comparison_operator` | VARCHAR(40) | NOT NULL | Comparison operator used by the local condition. |
+| `threshold` | DECIMAL(12,4) | NOT NULL | Quantitative threshold used for evaluation. |
+| `status` | VARCHAR(20) | NOT NULL | Current local rule status. |
+
+This table is not an independent source of rule ownership. It is the local Edge representation required so critical rules can continue to be evaluated without permanent Cloud connectivity.
+
+The Edge persistence implementation must use SQLite with Peewee ORM, according to the Edge Services technology required by the Project Statement.
+
+The internal Cloud relationships are conceptually:
+
+```text
+risk_detection_rules
+        |
+        | 1
+        |
+        | 0..*
+        v
+risk_detections
+        |
+        +------------------------+
+        |                        |
+        | 1                      | 1
+        |                        |
+        | 1..*                   | 0..*
+        v                        v
+risk_detection_evidence    risk_severity_changes
+```
+
+The final Database Design Diagram must clearly distinguish:
+
+- Cloud Persistence
+  - `risk_detection_rules`
+  - `risk_detections`
+  - `risk_detection_evidence`
+  - `risk_severity_changes`
+
+- Edge SQLite
+  - `edge_detection_rules`
+
+The diagram must identify:
+
+- all tables;
+- all columns;
+- primary keys;
+- foreign keys;
+- composite keys;
+- nullable external references;
+- cardinalities;
+- Cloud versus Edge persistence boundaries.
+
+No database table for Alert, Incident, Device, Measurement, Building, Zone, Actuator, or Connectivity pending events must be introduced inside the Risk Detection persistence boundary.
+
+**DIAGRAM — Risk Detection Database Design Diagram**
+
+![Risk Detection Database Design Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-database-design-diagram.png)
+
 # Capítulo V: Solution UI/UX Design
 
 > Imágenes del capítulo:
