@@ -33,10 +33,10 @@ INGENIERÍA DE SOFTWARE
     <tr><th>Código UPC</th><th>Apellidos y Nombres</th></tr>
   </thead>
   <tbody>
-    <tr><td>[CÓDIGO UPC PENDIENTE]</td><td>Aliaga Urbina, Wilder Gonzalo</td></tr>
+    <tr><td>U202222001</td><td>Aliaga Urbina, Wilder Gonzalo</td></tr>
     <tr><td>U202324129</td><td>Chacaliaza Minaya, Eduardo Fabian</td></tr>
     <tr><td>U202116246</td><td>Guerrero Vasquez, Jhon Danny</td></tr>
-    <tr><td>[CÓDIGO UPC PENDIENTE]</td><td>Nanfuñay Liza, Pedro Jesus</td></tr>
+    <tr><td>U202215462</td><td>Nanfuñay Liza, Pedro Jesús</td></tr>
     <tr><td>U202320442</td><td>Quispe Barzola, Fabricio Fabian</td></tr>
     <tr><td>[CÓDIGO UPC PENDIENTE]</td><td>Sánchez Guevara, Iván Fernando</td></tr>
   </tbody>
@@ -320,6 +320,7 @@ Con nuestro sistema inteligente e integrado, centralizamos la detección de múl
 | Ivan Fernando Sanchez Guevara | U202218181 | Mi nombre es Fernando Sanchez Guevara, tengo 22 años y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona disciplinada, responsable y puntual al momento de desarrollar las asignaciones de trabajo. Además, me preocupo por mantener una buena coordinación con mi equipo, procurando apoyar a mis compañeros cuando presentan alguna dificultad. Gracias a mi compromiso y disposición para colaborar, he contribuido al desarrollo adecuado de diferentes proyectos grupales, buscando cumplir los objetivos establecidos y resolver los inconvenientes que puedan surgir durante el proceso. | ![foto1](assets/images/chapter-01-introduction/Fernando.png) |
 | Eduardo Fabian Chacaliza Minaya | U202324129 | Mi nombre es Eduardo Fabian Chacaliza Minaya y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y comprometida con el cumplimiento de los objetivos del equipo. Tengo interés en el desarrollo de soluciones tecnológicas y en la integración de los diferentes componentes de un proyecto. Durante los trabajos grupales procuro mantener una comunicación constante con mis compañeros, colaborar en la resolución de problemas y apoyar en la integración y validación de las distintas partes del proyecto para obtener un resultado consistente y funcional. | ![foto2](assets/images/chapter-01-introduction/Eduardo.png) |
 | Fabricio Fabian Quispe Barzola | U202320442 | Mi nombre es Fabricio Fabian Quispe Barzola y actualmente estudio la carrera de Ingeniería de Software. A lo largo del desarrollo de ResQ he participado de manera activa en la organización, investigación y construcción de los distintos artefactos del proyecto, manteniendo una coordinación constante con mis compañeros para que las diferentes partes de la solución mantengan coherencia entre sí. He trabajado en actividades relacionadas con el diseño, registro y análisis de entrevistas, la elaboración de User Stories e Impact Mapping, así como en el diseño de los Bounded Contexts Identity and Access Management (IAM) y Risk Detection. Durante el proceso procuro revisar cómo mis avances se relacionan con el trabajo de los demás integrantes, compartir observaciones, apoyar en la integración de los artefactos y contribuir a resolver inconsistencias cuando aparecen. Me considero una persona responsable, organizada y comprometida con el trabajo colaborativo, buscando que el equipo mantenga una visión común del proyecto y pueda cumplir de manera coordinada los objetivos establecidos para cada entrega. | ![foto3](assets/images/chapter-01-introduction/Fabricio.png) |
+| Pedro Jesús Nanfuñay Liza | U202215462 | Mi nombre es Pedro Jesús Nanfuñay Liza, tengo 21 años y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona creativa, responsable, perseverante y siempre dispuesto a trabajar en equipo. Espero aportar de manera positiva al equipo y cumplir con los objetivos establecidos en el proyecto. | ![foto3](assets/images/chapter-01-introduction/Pedro.jpeg) |
 
 ## 1.2. Solution Profile
 
