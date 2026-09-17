@@ -2062,7 +2062,13 @@ La siguiente imagen muestra el Product Backlog de ResQ registrado en Trello:
 
 # Capítulo IV: Solution Software Design
 
-## 4.1. Strategic-Level Domain-Driven Design
+#### 4.1. Strategic-Level Domain-Driven Design
+
+El proceso de **Strategic-Level Domain-Driven Design** se utilizó para definir los principales límites del dominio de ResQ y organizar la solución de acuerdo con las capacidades identificadas durante las actividades de Needfinding y Requirements.
+
+A partir del análisis del problema, los principales escenarios operativos, las User Stories y las Technical Stories, el equipo identificó grupos de conceptos, reglas y responsabilidades relacionadas entre sí. Estas responsabilidades fueron separadas considerando su significado dentro del dominio, la propiedad de la información y de las reglas de negocio, y la necesidad de reducir el acoplamiento entre diferentes partes de la solución.
+
+Como resultado de este proceso, el dominio de ResQ fue organizado en distintos Bounded Contexts, cada uno con responsabilidades claramente delimitadas sobre su modelo de dominio y sus reglas de negocio.
 
 ### 4.1.1. Design-Level EventStorming
 
@@ -2206,10 +2212,23 @@ A continuación, se presentan los Bounded Context Canvases definidos:
 ### 4.1.2. Context Mapping
 [COMPLETAR]
 
-### 4.1.3. Software Architecture
+#### 4.1.3. Software Architecture
+
+La arquitectura de software de ResQ se representa mediante el modelo C4, con el propósito de describir la solución desde distintos niveles de abstracción y mostrar cómo se distribuyen sus principales responsabilidades.
+
+Estas vistas permiten representar la relación de ResQ con sus usuarios y sistemas externos, así como los principales componentes desplegables que conforman la solución y la forma en que se comunican entre sí.
+
+La arquitectura considera la naturaleza distribuida de ResQ, integrando aplicaciones cliente, servicios Cloud, servicios Edge y componentes IoT que colaboran para soportar las capacidades definidas para la solución.
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
-[INSERTAR DIAGRAMA + EXPLICACIÓN]
+
+El System Landscape Diagram presenta una vista general del ecosistema de software en el que participa ResQ, mostrando las principales personas, sistemas involucrados y las relaciones existentes entre ellos.
+
+Este diagrama permite identificar el alcance de la solución y comprender cómo los diferentes elementos del ecosistema de ResQ interactúan entre sí.
+
+**DIAGRAM — ResQ Software Architecture System Landscape Diagram**
+
+![ResQ Software Architecture System Landscape Diagram](assets/images/chapter-04-solution-software-design/resq-software-architecture-system-landscape-diagram.png)
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 [INSERTAR DIAGRAMAS + EXPLICACIÓN]
@@ -2220,11 +2239,15 @@ A continuación, se presentan los Bounded Context Canvases definidos:
 #### 4.1.3.3. Software Architecture Deployment Diagrams
 [INSERTAR DIAGRAMA + EXPLICACIÓN]
 
-> Nota: se conserva la numeración del Project Statement, que repite 4.1.3.2.
+#### 4.2. Tactical-Level Domain-Driven Design
 
-a## 4.2. Tactical-Level Domain-Driven Design
+El Tactical-Level Domain-Driven Design se utilizó para definir con mayor detalle la estructura interna de los Bounded Contexts identificados durante el diseño estratégico.
 
-> Repetir la siguiente sección por cada Bounded Context real identificado.
+Para cada Bounded Context se modelaron los principales elementos del dominio, sus reglas de negocio, las responsabilidades de las capas de aplicación, interfaz e infraestructura, así como las abstracciones necesarias para persistencia e integración.
+
+Este nivel de diseño permite representar de manera más precisa cómo se implementan las responsabilidades de cada contexto, manteniendo sus límites y evitando que conceptos pertenecientes a otros Bounded Contexts sean incorporados como parte de su propio modelo.
+
+La estructura de cada Bounded Context se documenta mediante sus capas de Domain, Interface, Application e Infrastructure, complementadas con diagramas de componentes, diagramas de clases del dominio y diagramas de diseño de base de datos.
 
 ### 4.2.1. Bounded Context: Identity and Access Management
 
