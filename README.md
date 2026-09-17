@@ -2270,21 +2270,62 @@ El Product Backlog se mantiene también en Jira, donde las historias se encuentr
 ![Entrevista 2 - Camila Torres Vega](assets/images/chapter-04-solution-software-design/ConnectivityCanvase.png)
 
 ### 4.1.2. Context Mapping
-[COMPLETAR]
+En esta sección desarrollamos un conjunto de context maps para visualizar las relaciones entre los bounded contexts del sistema de sensores de emergencia. A partir de la información recolectada, exploramos distintas alternativas de diseño, cuestionando cómo cambiaría la estructura si reubicamos, dividimos o agrupamos capabilities. Finalmente, evaluamos cada propuesta considerando patrones como Anti-corruption Layer, Conformist, Customer/Supplier y Shared Kernel, con el fin de definir la mejor aproximación para la arquitectura del dominio. A continuación presentaremos las opciones que contemplamos y la estructura final.
+
+**opcion 1**
+
+En esta estructura mantenemos los cinco bounded contexts separados con relaciones claramente definidas. Las ventajas de este tipo de contexto son por un lado la clara separación de responsabilidades y por otro lado, se especifica que cada contexto se enfoca en una funcionalidad específica. Una de las principales desventajas es que hay una mayor complejidad en la sincronización entre contextos, especialmente con el alto volumen de datos de conectividad.
+
+![Mapping1 - ResQ](assets/images/chapter-04-solution-software-design/mapping1.png)
+
+
+**opcion 2**
+
+Esta alternativa propone unir los contextos de Connectivity Management y Device Management en un solo bounded context. Al hacerlo, se elimina la necesidad de sincronización externa entre el inventario físico de sensores y su estado de red, manteniendo relaciones similares con los demás contextos del sistema.
+
+Esta combinación presenta ventajas como la simplificación de la arquitectura al disminuir la cantidad de bounded contexts, permitiendo una comunicación más directa entre el alta de un dispositivo y su monitoreo de latidos.
+
+No obstante, una desventaja es la combinación de responsabilidades distintas, ya que una parte se enfoca en transacciones de alto rendimiento (recibir miles de heartbeats por segundo) y la otra en procesos administrativos (registrar MAC addresses y zonas). Esto podría generar cuellos de botella en el servidor y el riesgo de que un solo contexto asuma demasiadas funciones.
+
+![Mapping2 - ResQ](assets/images/chapter-04-solution-software-design/mapping1.png)
+
+**opcion 3**
+
+Esta alternativa propone una arquitectura compuesta por cinco bounded contexts bien definidos, con relaciones claras entre ellos. La estructura busca equilibrar la separación de responsabilidades, para permitir que el sistema escale (vital para el procesamiento de redes IoT) y se mantenga con facilidad. Además, asegura tiempos de respuesta críticos ante emergencias.
+
+* Building Management se comunica con Risk Detection y Device Management, proporcionando la información de la ubicación y zonas físicas (edificios, pisos). En ambos casos, la relación es del tipo Customer/Supplier, donde Building es el proveedor.  
+
+* Device Management y Alert & Response Management comparten el modelo del "Sensor" y su criticidad. Por eso, tienen una relación de tipo Shared Kernel, lo que asegura que ambos usen los mismos conceptos al reportar qué aparato falló.  
+
+* Alert & Response Management también se relaciona con Risk Detection, pero en este caso la relación es Conformist. El sistema de alertas utiliza la información del riesgo (sismo, gas), adaptándose a su estructura sin modificarla.
+
+* Connectivity Management se conecta con Device Management mediante una Anti-corruption Layer (ACL). Esta capa traduce los miles de datos técnicos de red y latidos a un formato simple de estados operativos que Device Management pueda entender. Así, se protege el sistema central de la inmensa carga de datos técnicos de IoT.
+
+![Mapping3 - ResQ](assets/images/chapter-04-solution-software-design/mapping1.png)
+
+**Elección**
+Elegimos la opción 3, ya que proporciona el mejor equilibrio entre la separación de responsabilidades, la capacidad de procesamiento de alto rendimiento y el cumplimiento de los requisitos críticos de un sistema de emergencias.
+
+Al definir cinco bounded contexts con relaciones claras, se facilita la evolución independiente de cada parte del sistema. Al separar la gestión de tráfico de red (Connectivity Management) mediante una Anti-corruption Layer, se aísla la carga técnica de los heartbeats constantes, evitando saturar la base de datos de los dispositivos. Asimismo, esta estructura garantiza tiempos de respuesta rápidos al procesar alertas reales de sismos o gas, brindando una plataforma robusta y confiable para la seguridad de los usuarios.
+
 
 ### 4.1.3. Software Architecture
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
-[INSERTAR DIAGRAMA + EXPLICACIÓN]
 
-#### 4.1.3.2. Software Architecture Context Level Diagrams
-[INSERTAR DIAGRAMAS + EXPLICACIÓN]
+![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_1.png)
 
-#### 4.1.3.2. Software Architecture Container Level Diagrams
-[INSERTAR DIAGRAMAS + EXPLICACIÓN]
+### 4.1.3.2. Software Architecture Container Level Diagrams.
 
-#### 4.1.3.3. Software Architecture Deployment Diagrams
-[INSERTAR DIAGRAMA + EXPLICACIÓN]
+Este diagrama muestra que la Plataforma IoT de Emergencias está compuesta por cinco contenedores principales: una **Aplicación Web (SPA)** accesible desde navegadores para la gestión administrativa; una **Aplicación Móvil** para que clientes y técnicos reciban alertas y configuren equipos; una **Cloud API** que gestiona toda la lógica de negocio (usuarios, zonas, reportes); y una **Edge/IoT API** respaldada por un **Broker MQTT** encargado exclusivamente de procesar el alto volumen de datos (telemetría y *heartbeats*) provenientes de los sensores. Finalmente, el sistema utiliza bases de datos separadas: una base de datos relacional en la nube para almacenar la información estructural del sistema y una base de datos optimizada (ej. Time-Series) para el registro histórico de latidos y conectividad.
+
+![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_2.png)
+
+### 4.1.3.3. Software Architecture Deployment Diagrams.
+
+Este diagrama muestra que el sistema se despliega en tres entornos principales: **Microsoft Azure Cloud**, **Dispositivos Cliente** y **Edificios/Zonas Físicas**. En Azure, el sistema utiliza *App Service* para alojar las aplicaciones web y la Cloud API (Spring Boot/Java o Node.js), *Azure Database for PostgreSQL* para los datos relacionales, y *Azure IoT Hub* para gestionar las comunicaciones MQTT de alto rendimiento con los dispositivos físicos. Los usuarios acceden al sistema a través de navegadores web o dispositivos Android/iOS. En cada edificio del cliente, se instalan **Sensores de Emergencia** (ej. detectores de gas/sismo basados en ESP32/Arduino) que envían datos de estado a un **Gateway IoT** local vía WiFi o Serial, el cual transmite esta información al IoT Hub en Azure. Todas las comunicaciones entre componentes utilizan protocolos seguros como HTTPS, MQTT sobre TLS y conexiones cifradas a la base de datos.
+
+![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_3.png)
 
 > Nota: se conserva la numeración del Project Statement, que repite 4.1.3.2.
 
