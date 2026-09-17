@@ -2265,7 +2265,9 @@ El Product Backlog se mantiene también en Jira, donde las historias se encuentr
 [COMPLETAR]
 
 #### 4.1.1.3. Bounded Context Canvases
-[COMPLETAR]
+#### *Connectivity Management.*
+
+![Entrevista 2 - Camila Torres Vega](assets/images/chapter-04-solution-software-design/ConnectivityCanvase.png)
 
 ### 4.1.2. Context Mapping
 [COMPLETAR]
@@ -3082,6 +3084,243 @@ The final Database Design Diagram must identify:
 **DIAGRAM — IAM Database Design Diagram**
 
 ![Identity and Access Management Database Design Diagram](assets/images/chapter-04-solution-software-design/iam/iam-database-design-diagram.png)
+
+### 4.2.2. Bounded Context: Connectivity Management.
+
+El Connectivity Management Bounded Context es responsable de gestionar y supervisar el estado de conexión de red de todos los sensores físicos de emergencia (sismos, fugas de gas, temperatura, etc.) en el sistema. Este contexto asegura que los dispositivos mantengan una comunicación constante mediante señales de vida (heartbeats), detectando caídas de red, gestionando reconexiones y garantizando que el sistema central sepa en tiempo real si un área está desprotegida por falta de conectividad.
+
+#### 4.2.2.1. Domain Layer
+
+La **Domain Layer** del Connectivity Management Bounded Context encapsula la lógica de negocio relacionada con la supervisión de red. En esta capa, se definen los elementos principales del dominio, como agregados, entidades, objetos de valor, comandos, consultas y eventos, que representan los conceptos clave del sistema.
+
+**Aggregates**
+
+1. `SensorConnection`
+   * **Propósito:** Representa el estado de red y la sesión de conectividad actual de un sensor físico específico.
+   * **Atributos:**
+      * `sensorId`: Identificador del dispositivo IoT, representado como un objeto de valor `SensorId`.
+      * `macAddress`: Dirección física del sensor en la red, representado como un objeto de valor `MacAddress`.
+      * `status`: Estado operativo actual de la conexión (`ONLINE`, `OFFLINE`, `TIMEOUT`), representado como un objeto de valor `ConnectionStatus`.
+      * `lastHeartbeat`: Fecha y hora del último latido recibido exitosamente.
+   * **Características:**
+      * Extiende `AuditableAbstractAggregateRoot`, lo que permite auditar el historial de caídas de red.
+      * Gestiona la lógica para determinar si el tiempo transcurrido desde el `lastHeartbeat` excede el límite permitido, cambiando el estado a `TIMEOUT`.
+
+**Entities**
+
+1. `HeartbeatRecord`
+   * **Propósito:** Representa un latido individual enviado por el sensor para notificar que sigue vivo.
+   * **Atributos:**
+      * `timestamp`: Fecha y hora exacta en la que se recibió la señal.
+      * `signalStrength`: Nivel de intensidad de la red, representado como un objeto de valor `SignalStrength`.
+
+**Value Objects**
+
+1. `SensorId`
+   * **Propósito:** Representa el identificador único de un sensor.
+   * **Validaciones:** El identificador no puede ser nulo ni negativo.
+2. `ConnectionStatus`
+   * **Propósito:** Enumera los estados posibles de conectividad (`ONLINE`, `OFFLINE`, `TIMEOUT`).
+3. `SignalStrength`
+   * **Propósito:** Representa la calidad de la conexión inalámbrica.
+   * **Validaciones:** Debe estar dentro de rangos realistas (ej. entre -100 dBm y 0 dBm).
+
+**Commands**
+
+1. `RegisterHeartbeatCommand`
+   * **Propósito:** Representa la solicitud para registrar un nuevo latido.
+   * **Atributos:** `sensorId`, `timestamp`, `signalStrength`.
+2. `MarkSensorOfflineCommand`
+   * **Propósito:** Solicitud interna para forzar el estado de un sensor a desconectado tras superar el tiempo de espera.
+   * **Atributos:** `sensorId`.
+
+**Queries**
+
+1. `GetSensorConnectionStatusQuery`
+   * **Propósito:** Recupera el estado actual de red de un sensor específico.
+2. `GetAllOfflineSensorsQuery`
+   * **Propósito:** Recupera una lista de todos los sensores que actualmente han perdido conexión.
+
+**Events**
+
+1. `ConnectionLostEvent`
+   * **Propósito:** Evento crítico que se dispara cuando un sensor pasa a estado `OFFLINE` o `TIMEOUT`.
+   * **Atributos:** `sensorId`, `lastHeartbeat`.
+2. `HeartbeatReceivedEvent`
+   * **Propósito:** Evento que se dispara cada vez que se registra un latido exitoso.
+
+---
+
+#### 4.2.2.2. Interface Layer
+
+La **Interface Layer** del Connectivity Management Bounded Context expone los puntos de entrada al sistema a través de controladores REST. Esta capa permite la interacción con los dispositivos IoT y facilita la comunicación entre los clientes y el sistema.
+
+**Controllers**
+
+1. `ConnectivityController`
+   * **Propósito:** Gestiona las operaciones de red de los sensores.
+   * **Endpoints:**
+      * `POST /api/v1/connectivity/heartbeats`: Registra un nuevo latido proveniente del dispositivo IoT.
+      * `GET /api/v1/connectivity/sensors/{sensorId}/status`: Obtiene el estado actual de red de un sensor.
+      * `GET /api/v1/connectivity/sensors/offline`: Lista todos los sensores sin conexión.
+   * **Dependencias:**
+      * `ConnectivityCommandService`: Servicio encargado de manejar los comandos relacionados con la conectividad.
+      * `ConnectivityQueryService`: Servicio encargado de manejar las consultas de conectividad.
+
+**Resources**
+
+1. `SensorConnectionResource`
+   * **Propósito:** Representa el estado de conexión expuesto a través de la API REST.
+   * **Atributos:** `sensorId`, `status`, `lastHeartbeatTime`.
+2. `RegisterHeartbeatResource`
+   * **Propósito:** Representa los datos necesarios enviados por el dispositivo IoT para reportar su estado.
+   * **Atributos:** `sensorId`, `signalStrength`.
+
+**Transformers**
+
+1. `SensorConnectionResourceFromEntityAssembler`
+   * **Propósito:** Convierte una entidad `SensorConnection` en un recurso `SensorConnectionResource`.
+   * **Método principal:** `toResourceFromEntity(SensorConnection entity)`.
+
+---
+
+#### 4.2.2.3. Application Layer
+
+La **Application Layer** coordina las operaciones de negocio, manejando comandos y consultas, orquestando la lógica de la aplicación y garantizando que las reglas del dominio se cumplan.
+
+**Command Services**
+
+1. `ConnectivityCommandServiceImpl`
+   * **Propósito:** Gestiona las operaciones relacionadas con el procesamiento de señales de vida y actualización de estados.
+   * **Métodos principales:**
+      * `handle(RegisterHeartbeatCommand command)`: Actualiza el `lastHeartbeat` del sensor. Si estaba `OFFLINE`, lo devuelve a `ONLINE`.
+      * `handle(MarkSensorOfflineCommand command)`: Cambia el estado a `TIMEOUT` tras validar los tiempos de espera.
+   * **Dependencias:**
+      * `SensorConnectionRepository`: Persistencia de las conexiones.
+      * `ExternalDeviceService`: Verifica la existencia del sensor.
+
+**Query Services**
+
+1. `ConnectivityQueryServiceImpl`
+   * **Propósito:** Gestiona las consultas relacionadas con los estados de red.
+   * **Métodos principales:**
+      * `handle(GetSensorConnectionStatusQuery query)`: Recupera el estado de un sensor por su ID.
+
+**Event Handlers**
+
+1. `SensorTimeoutEventHandler`
+   * **Propósito:** Maneja el evento de evaluación de tiempos de espera para sensores que no han reportado actividad.
+   * **Método principal:** `on(EvaluateSensorTimeoutsEvent event)`: Identifica sensores desconectados y dispara el `MarkSensorOfflineCommand`.
+
+**Outbound Services (ACL)**
+
+1. `ExternalAlertService`
+   * **Propósito:** Interactúa con el Alert & Response Management Bounded Context para disparar alarmas de desconexión.
+   * **Método principal:** `triggerDisconnectionAlert(Long sensorId)`.
+
+---
+
+#### 4.2.2.4. Infrastructure Layer
+
+La **Infrastructure Layer** proporciona las implementaciones técnicas necesarias para soportar las operaciones del sistema, incluyendo los repositorios para la persistencia de datos en la base de datos.
+
+**Persistencia (JPA Repositories)**
+
+1. `SensorConnectionRepository`
+   * **Propósito:** Proporciona métodos para interactuar con la base de datos de conectividad.
+   * **Métodos principales:**
+      * `findSensorsWithLastHeartbeatBefore(LocalDateTime time)`: Recupera todos los sensores cuyo último latido fue anterior a una fecha límite, útil para detectar caídas de red.
+   * **Características:**
+      * Extiende `JpaRepository`, permitiendo realizar operaciones CRUD sobre la entidad `SensorConnection`.
+
+**Relaciones entre componentes**
+
+*   **Persistencia:** El repositorio `SensorConnectionRepository` proporciona acceso a los datos almacenados, permitiendo a las capas superiores interactuar con las entidades del dominio.
+*   **Validación:** Los servicios externos (ACL) son utilizados para validar la existencia de los sensores comunicándose con el contexto correspondiente.
+
+---
+
+### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+En esta sección se presenta el diagrama de componentes del **Connectivity Management Bounded Context**, el cual detalla los principales módulos y sus interacciones dentro del contexto delimitado. Este diagrama sigue el enfoque del C4 Model para representar los componentes clave, como servicios de aplicación, controladores, repositorios y servicios externos, junto con sus relaciones.
+
+El propósito de este diagrama es proporcionar una visión clara y estructurada de cómo se organizan los componentes dentro del contexto, facilitando la comprensión de su arquitectura y permitiendo identificar puntos de integración y responsabilidades.
+
+![Connectivity Management Diagram1](assets/diagram-sources/chapter-04-solution-software-design/Connectivity/Connectivity1.png)
+El **Connectivity Management Bounded Context** está compuesto por los siguientes módulos principales:
+
+1. **Application Layer:**
+   * Coordina las operaciones de negocio relacionadas con el monitoreo de conectividad y latidos (*heartbeats*).
+   * Incluye servicios de comandos y consultas que interactúan con la **Domain Layer** y la **Infrastructure Layer**.
+   * Maneja eventos críticos relacionados con la desconexión de sensores y evaluaciones de *timeout*.
+
+2. **Interface Layer:**
+   * Expone los puntos de entrada al sistema a través de controladores REST (ej. webhooks para los dispositivos IoT).
+   * Incluye recursos y transformadores que aseguran una representación adecuada de los datos de red y su conversión entre las capas de la aplicación.
+
+3. **Domain Layer:**
+   * Encapsula la lógica de negocio relacionada con la supervisión de red.
+   * Define los agregados, entidades y objetos de valor que representan los conceptos clave del dominio (como el estado de conexión y la intensidad de la señal).
+
+4. **Infrastructure Layer:**
+   * Proporciona las implementaciones técnicas necesarias para soportar las operaciones del sistema.
+   * Incluye repositorios para la persistencia del estado de los sensores y componentes (ACL) que conectan la lógica de negocio con otros servicios externos de alertas.
+
+### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
+
+En este apartado se presentan los diagramas que ofrecen un mayor nivel de detalle sobre la implementación de los componentes del **Connectivity Management Bounded Context**. Estos diagramas están diseñados para ilustrar cómo se estructuran las clases, interfaces y relaciones dentro de las capas del contexto, proporcionando una visión técnica que facilita el desarrollo, mantenimiento y evolución del sistema.
+
+#### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama de clases correspondiente a la **Domain Layer** del **Connectivity Management Bounded Context** incluye las clases principales, como agregados, entidades y objetos de valor, así como las interfaces y enumeraciones que definen el comportamiento del dominio. También se destacan las relaciones entre estos elementos, como asociaciones, composiciones y dependencias.
+
+![Connectivity Management Diagram2](assets/diagram-sources/chapter-04-solution-software-design/Connectivity/Connectivity2.png)
+
+**Elementos principales del diagrama:**
+
+1. **Aggregates:**
+   * `SensorConnection`: Agregado principal que encapsula la lógica de negocio relacionada con la sesión de red del dispositivo.
+     * **Atributos:** `sensorId`, `macAddress`, `status`, `lastHeartbeat`.
+     * **Métodos:** `registerHeartbeat()`, `markAsOffline()`, `isTimeoutExceeded()`.
+
+2. **Entities:**
+   * `HeartbeatRecord`: Entidad que representa cada señal de vida individual enviada por el sensor.
+     * **Atributos:** `timestamp`, `signalStrength`.
+
+3. **Value Objects:**
+   * `SensorId`: Representa el identificador único del hardware.
+   * `MacAddress`: Representa la dirección de red física del sensor.
+   * `ConnectionStatus`: Enumera los estados posibles de conectividad (`ONLINE`, `OFFLINE`, `TIMEOUT`).
+   * `SignalStrength`: Representa la intensidad de la red (en dBm).
+
+**Relaciones destacadas:**
+* El agregado `SensorConnection` gestiona las relaciones y el registro transaccional con la entidad `HeartbeatRecord` (relación 1 a muchos).
+* Los objetos de valor encapsulan datos inmutables y validaciones específicas de red, asegurando la consistencia en el dominio.
+
+#### 4.2.2.6.2. Bounded Context Database Design Diagram
+
+El diseño de la base de datos para el **Connectivity Management Bounded Context** refleja la estructura del dominio, asegurando que las entidades y relaciones definidas en la **Domain Layer** se representen de manera eficiente en el modelo relacional.
+
+![Connectivity Management Diagram3](assets/diagram-sources/chapter-04-solution-software-design/Connectivity/Connectivity3.png)
+
+**Este diseño incluye las siguientes tablas principales:**
+
+1. **SENSOR_CONNECTIONS:**
+   * Representa la sesión operativa y el estado actual de conexión en el sistema.
+   * **Atributos principales:**
+     * `id`: Identificador único de la conexión (PK).
+     * `sensor_id`: Identificador físico del dispositivo asociado (FK).
+     * `mac_address`: Dirección de red del dispositivo.
+     * `status`: Estado actual (`ONLINE`, `OFFLINE`, `TIMEOUT`).
+     * `last_heartbeat`: Fecha y hora del último latido recibido.
+
+2. **HEARTBEAT_LOGS:**
+   * Representa el historial de latidos enviados por los dispositivos.
+   * **Atributos principales:**
+     * `id`: Identificador único del registro (PK).
+     * `sensor_connection_id`: Identificador de la conexión asociada (FK).
+     * `timestamp`: Fecha y hora exacta en la que se recibió la señal.
+     * `signal_strength`: Intensidad de la señal de red reportada.
 
 # Capítulo V: Solution UI/UX Design
 
