@@ -184,9 +184,7 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
       - [4.1.3.2. Software Architecture Context Level Diagrams](#4132-software-architecture-context-level-diagrams)
       - [4.1.3.3. Software Architecture Container Level Diagrams](#4133-software-architecture-container-level-diagrams)
       - [4.1.3.4. Software Architecture Deployment Diagrams](#4134-software-architecture-deployment-diagrams)
-
   - [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
-
     - [4.2.1. Bounded Context: Identity and Access Management (IAM)](#421-bounded-context-identity-and-access-management-iam)
       - [4.2.1.1. Domain Layer](#4211-domain-layer)
       - [4.2.1.2. Interface Layer](#4212-interface-layer)
@@ -196,7 +194,6 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
       - [4.2.1.6. Bounded Context Software Architecture Code Level Diagrams](#4216-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.1.6.1. Bounded Context Domain Layer Class Diagrams](#42161-bounded-context-domain-layer-class-diagrams)
         - [4.2.1.6.2. Bounded Context Database Design Diagram](#42162-bounded-context-database-design-diagram)
-
     - [4.2.2. Bounded Context: Risk Detection](#422-bounded-context-risk-detection)
       - [4.2.2.1. Domain Layer](#4221-domain-layer)
       - [4.2.2.2. Interface Layer](#4222-interface-layer)
@@ -206,7 +203,6 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
       - [4.2.2.6. Bounded Context Software Architecture Code Level Diagrams](#4226-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.2.6.1. Bounded Context Domain Layer Class Diagrams](#42261-bounded-context-domain-layer-class-diagrams)
         - [4.2.2.6.2. Bounded Context Database Design Diagram](#42262-bounded-context-database-design-diagram)
-
     - [4.2.3. Bounded Context: Alert & Response Management](#423-bounded-context-alert--response-management)
       - [4.2.3.1. Domain Layer](#4231-domain-layer)
       - [4.2.3.2. Interface Layer](#4232-interface-layer)
@@ -216,8 +212,7 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
       - [4.2.3.6. Bounded Context Software Architecture Code Level Diagrams](#4236-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.3.6.1. Bounded Context Domain Layer Class Diagrams](#42361-bounded-context-domain-layer-class-diagrams)
         - [4.2.3.6.2. Bounded Context Database Design Diagram](#42362-bounded-context-database-design-diagram)
-
-    - [4.2.4. Bounded Context: Building](#424-bounded-context-building)
+    - [4.2.4. Bounded Context: Building Management](#424-bounded-context-building-management)
       - [4.2.4.1. Domain Layer](#4241-domain-layer)
       - [4.2.4.2. Interface Layer](#4242-interface-layer)
       - [4.2.4.3. Application Layer](#4243-application-layer)
@@ -226,8 +221,7 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
       - [4.2.4.6. Bounded Context Software Architecture Code Level Diagrams](#4246-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.4.6.1. Bounded Context Domain Layer Class Diagrams](#42461-bounded-context-domain-layer-class-diagrams)
         - [4.2.4.6.2. Bounded Context Database Design Diagram](#42462-bounded-context-database-design-diagram)
-
-    - [4.2.5. Bounded Context: Device](#425-bounded-context-device)
+    - [4.2.5. Bounded Context: Device Management](#425-bounded-context-device-management)
       - [4.2.5.1. Domain Layer](#4251-domain-layer)
       - [4.2.5.2. Interface Layer](#4252-interface-layer)
       - [4.2.5.3. Application Layer](#4253-application-layer)
@@ -236,7 +230,6 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
       - [4.2.5.6. Bounded Context Software Architecture Code Level Diagrams](#4256-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.5.6.1. Bounded Context Domain Layer Class Diagrams](#42561-bounded-context-domain-layer-class-diagrams)
         - [4.2.5.6.2. Bounded Context Database Design Diagram](#42562-bounded-context-database-design-diagram)
-
     - [4.2.6. Bounded Context: Monitoring](#426-bounded-context-monitoring)
       - [4.2.6.1. Domain Layer](#4261-domain-layer)
       - [4.2.6.2. Interface Layer](#4262-interface-layer)
@@ -246,7 +239,6 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
       - [4.2.6.6. Bounded Context Software Architecture Code Level Diagrams](#4266-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.6.6.1. Bounded Context Domain Layer Class Diagrams](#42661-bounded-context-domain-layer-class-diagrams)
         - [4.2.6.6.2. Bounded Context Database Design Diagram](#42662-bounded-context-database-design-diagram)
-
     - [4.2.7. Bounded Context: User](#427-bounded-context-user)
       - [4.2.7.1. Domain Layer](#4271-domain-layer)
       - [4.2.7.2. Interface Layer](#4272-interface-layer)
@@ -256,7 +248,6 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
       - [4.2.7.6. Bounded Context Software Architecture Code Level Diagrams](#4276-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.7.6.1. Bounded Context Domain Layer Class Diagrams](#42761-bounded-context-domain-layer-class-diagrams)
         - [4.2.7.6.2. Bounded Context Database Design Diagram](#42762-bounded-context-database-design-diagram)
-
     - [4.2.8. Bounded Context: Incident](#428-bounded-context-incident)
       - [4.2.8.1. Domain Layer](#4281-domain-layer)
       - [4.2.8.2. Interface Layer](#4282-interface-layer)
@@ -266,8 +257,7 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
       - [4.2.8.6. Bounded Context Software Architecture Code Level Diagrams](#4286-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.8.6.1. Bounded Context Domain Layer Class Diagrams](#42861-bounded-context-domain-layer-class-diagrams)
         - [4.2.8.6.2. Bounded Context Database Design Diagram](#42862-bounded-context-database-design-diagram)
-
-    - [4.2.9. Bounded Context: Connectivity](#429-bounded-context-connectivity)
+    - [4.2.9. Bounded Context: Connectivity Management](#429-bounded-context-connectivity-management)
       - [4.2.9.1. Domain Layer](#4291-domain-layer)
       - [4.2.9.2. Interface Layer](#4292-interface-layer)
       - [4.2.9.3. Application Layer](#4293-application-layer)
@@ -277,6 +267,31 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
         - [4.2.9.6.1. Bounded Context Domain Layer Class Diagrams](#42961-bounded-context-domain-layer-class-diagrams)
         - [4.2.9.6.2. Bounded Context Database Design Diagram](#42962-bounded-context-database-design-diagram)
 
+- [Capítulo V: Solution UI/UX Design](#capítulo-v-solution-uiux-design)
+  - [5.1. Style Guidelines](#51-style-guidelines)
+    - [5.1.1. General Style Guidelines](#511-general-style-guidelines)
+    - [5.1.2. Web, Mobile and IoT Style Guidelines](#512-web-mobile-and-iot-style-guidelines)
+  - [5.2. Information Architecture](#52-information-architecture)
+    - [5.2.1. Organization Systems](#521-organization-systems)
+    - [5.2.2. Labeling Systems](#522-labeling-systems)
+    - [5.2.3. SEO Tags and Meta Tags](#523-seo-tags-and-meta-tags)
+    - [5.2.4. Searching Systems](#524-searching-systems)
+    - [5.2.5. Navigation Systems](#525-navigation-systems)
+  - [5.3. Landing Page UI Design](#53-landing-page-ui-design)
+    - [5.3.1. Landing Page Wireframe](#531-landing-page-wireframe)
+    - [5.3.2. Landing Page Mock-up](#532-landing-page-mock-up)
+  - [5.4. Applications UX/UI Design](#54-applications-uxui-design)
+    - [5.4.1. Applications Wireframes](#541-applications-wireframes)
+    - [5.4.2. Applications Wireflow Diagrams](#542-applications-wireflow-diagrams)
+    - [5.4.3. Applications Mock-ups](#543-applications-mock-ups)
+    - [5.4.4. Applications User Flow Diagrams](#544-applications-user-flow-diagrams)
+  - [5.5. Applications Prototyping](#55-applications-prototyping)
+  - [5.6. IoT Device Design](#56-iot-device-design)
+
+- [Capítulo VI: Product Implementation, Validation & Deployment](#capítulo-vi-product-implementation-validation--deployment)
+  - [6.1. Software Configuration Management](#61-software-configuration-management)
+    - [6.1.1. Software Development Environment Configuration](#611-software-development-environment-configuration)
+
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
 
@@ -284,7 +299,7 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
 
 - [Anexos](#anexos)
   - [Anexo A. Videos de Exposiciones](#anexo-a-videos-de-exposiciones)
-    - [AV1 — Sprint Review](#av1--sprint-review)
+    - [Anexo A — AV1 — Sprint Review](#anexo-a--av1--sprint-review)
 
 <div style="page-break-before: always; break-before: page;"></div>
 
@@ -326,19 +341,19 @@ Con nuestro sistema inteligente e integrado, centralizamos la detección de múl
 ## 1.2. Solution Profile
 
 ### 1.2.1. Antecedentes y problemática
-### What (¿Qué?)
+#### What (¿Qué?)
 - **¿Cuál es el problema?** <br>
 La dificultad de gestionar múltiples alarmas durante emergencias, lo que ocasiona que las personas no cuenten con información clara ni oportuna sobre los protocolos y rutas de evacuación a seguir. Esto resulta en desorientación y pánico, aumentando el riesgo de que los usuarios sufran lesiones o queden atrapados al no saber cómo actuar ni adónde dirigirse durante un desastre.
 - **¿Cuál es la relación con la persona en cuestión?** <br>
 La relación con los usuarios se basa en ofrecerles una herramienta centralizada que simplifica la gestión de sensores y alertas en un solo ecosistema. Esto reduce la complejidad y proporciona información detallada, automatizada y fácil de comprender para actuar correctamente en casos de emergencia.
 
-### When (¿Cuándo?)
+#### When (¿Cuándo?)
 - **¿Cuándo sucede el problema?** <br>
 El problema ocurre de imprevisto antes y durante la emergencia. Principalmente al momento de intentar identificar la amenaza y seguir un protocolo de evacuación, donde la confusión y falta de indicaciones claras pueden ocasionar accidentes, obstrucción de vías de escape o el riesgo de quedar atrapado bajo los escombros.
 - **¿Cuándo utiliza el cliente el producto?** <br>
 El usuario utilizaría el sistema (SecurityBear / ResQ) en dos momentos clave: 1) En el instante crítico, para recibir una alerta temprana que identifique qué tipo de emergencia está ocurriendo (sismo, fuga de gas, incendio), y 2) Durante la evacuación, para recibir instrucciones y protocolos específicos que debe aplicar para ese caso en particular.
 
-### Where (¿Dónde?)
+#### Where (¿Dónde?)
 - **¿Dónde está el cliente cuando utiliza el producto?** <br>
 Desde cualquier lugar dentro de una infraestructura monitoreada, ya sea su hogar, su centro de trabajo, un centro comercial o un local.
 - **¿A dónde se dirige?** <br>
@@ -346,7 +361,7 @@ El usuario se dirige hacia las zonas de seguridad establecidas, ya sean áreas d
 - **¿Dónde surge el problema?** <br>
 El problema se origina en el entorno físico afectado justo en el momento de la emergencia, agravado por la falta de un sistema unificado que guíe las decisiones en tiempo real. Surge en la brecha entre la activación de una alarma tradicional (que a lo mucho solo emite ruido) y la necesidad vital de conocer las acciones y rutas exactas que se deben tomar.
 
-### Who (¿Quiénes?)
+#### Who (¿Quiénes?)
 - **¿Quiénes están involucrados?** <br>
 Los principales involucrados son todas las personas que se encuentren dentro de una estructura o edificio (residentes, trabajadores, visitantes), los administradores del recinto y los equipos de seguridad o brigadistas encargados de gestionar la emergencia.
 - **¿A quiénes les sucede el problema?** <br>
@@ -354,11 +369,11 @@ El problema afecta principalmente a las personas que ocupan la edificación en e
 - **¿Quién lo utiliza?** <br>
 El sistema será utilizado por familias en edificios residenciales, trabajadores en oficinas y corporativos, así como administradores de instalaciones. Principalmente, está dirigido a personas e instituciones que valoran la prevención de riesgos y buscan una respuesta rápida, segura y guiada ante desastres.
 
-### Why (¿Por qué?)
+#### Why (¿Por qué?)
 - **¿Cuál es la causa del problema?** <br>
 La falta de un sistema centralizado, automatizado e inteligente para la gestión de riesgos. Actualmente, los edificios dependen de alarmas independientes y no interconectadas que solo generan ruido, dejando a los usuarios sin instrucciones claras, dependientes de la memoria humana y propensos a cometer errores fatales debido al estrés y el pánico del momento.
 
-### How (¿Cómo?)
+#### How (¿Cómo?)
 - **¿En qué condiciones nuestros clientes usan el producto?** <br>
 Los clientes utilizan el sistema en condiciones de alto estrés, urgencia y posible pánico, con un tiempo de reacción muy limitado. Por ello, el producto funciona de manera automática, emitiendo alertas claras, directas y visuales/auditivas que no requieren interpretación compleja por parte del usuario.
 - **¿Cómo nos conocieron nuestros compradores?** <br>
@@ -368,7 +383,7 @@ Mediante un sistema de hardware instalado en puntos clave del edificio (sensores
 - **¿Qué llevó a la persona a esa situación?** <br>
 La vulnerabilidad inherente de vivir o trabajar en una ciudad con alto riesgo sísmico y fallas en infraestructuras (como fugas de gas o incendios). El profundo deseo de proteger su vida, la de su familia o la de sus empleados, sumado a la frustración de saber que los sistemas tradicionales son insuficientes para guiar a las personas cuando realmente importa.
 
-### How much (¿Cuánto?)
+#### How much (¿Cuánto?)
 El Perú se encuentra en el Cinturón de Fuego del Pacífico, lo que hace que ciudades como Lima sean altamente vulnerables a sismos de gran magnitud. Según proyecciones de Defensa Civil (INDECI), un terremoto severo en la capital podría dejar cientos de miles de damnificados debido a la alta densidad poblacional y la falta de preparación. Sumado a esto, el Cuerpo General de Bomberos atiende anualmente miles de emergencias por fugas de gas e incendios urbanos, donde una detección tardía suele escalar a tragedias irreparables. La desorientación durante los primeros minutos de un siniestro incrementa exponencialmente el riesgo de mortalidad y lesiones. SecurityBear busca reducir este impacto crítico al centralizar la detección de amenazas y eliminar la dependencia exclusiva del factor humano para dar aviso. Al optimizar los tiempos de respuesta y brindar directrices claras de evacuación a través de la tecnología, nuestra plataforma contribuye directamente a salvar vidas, mitigar daños personales y reducir las pérdidas materiales ocasionadas por la falta de una alerta temprana y coordinada.
 
 ### 1.2.2. Lean UX Process
@@ -2080,7 +2095,7 @@ La siguiente imagen muestra el Product Backlog de ResQ registrado en Trello:
 
 # Capítulo IV: Solution Software Design
 
-#### 4.1. Strategic-Level Domain-Driven Design
+## 4.1. Strategic-Level Domain-Driven Design
 
 El proceso de **Strategic-Level Domain-Driven Design** se utilizó para definir los principales límites del dominio de ResQ y organizar la solución de acuerdo con las capacidades identificadas durante las actividades de Needfinding y Requirements.
 
@@ -2210,7 +2225,7 @@ De esta manera, Incident Management conserva la trazabilidad de los responsables
 ![DomainMessageFlowsModeling_Scenario4](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario4.png)
 
 #### 4.1.1.3. Bounded Context Canvases
-#### *Connectivity Management.*
+##### *Connectivity Management.*
 
 ![Entrevista 2 - Camila Torres Vega](assets/images/chapter-04-solution-software-design/ConnectivityCanvase.png)
 Luego de identificar los Candidate Bounded Contexts de ResQ, se elaboraron sus respectivos **Bounded Context Canvases** para detallar responsabilidades, lenguaje ubicuo, reglas de negocio, capacidades y relaciones con otros contextos.
@@ -2270,23 +2285,7 @@ Elegimos la opción 3, ya que proporciona el mejor equilibrio entre la separaci�
 Al definir cinco bounded contexts con relaciones claras, se facilita la evolución independiente de cada parte del sistema. Al separar la gestión de tráfico de red (Connectivity Management) mediante una Anti-corruption Layer, se aísla la carga técnica de los heartbeats constantes, evitando saturar la base de datos de los dispositivos. Asimismo, esta estructura garantiza tiempos de respuesta rápidos al procesar alertas reales de sismos o gas, brindando una plataforma robusta y confiable para la seguridad de los usuarios.
 
 
-#### 4.1.3. Software Architecture
-
-#### 4.1.3.1. Software Architecture System Landscape Diagram
-
-![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_1.png)
-
-### 4.1.3.2. Software Architecture Container Level Diagrams.
-
-Este diagrama muestra que la Plataforma IoT de Emergencias está compuesta por cinco contenedores principales: una **Aplicación Web (SPA)** accesible desde navegadores para la gestión administrativa; una **Aplicación Móvil** para que clientes y técnicos reciban alertas y configuren equipos; una **Cloud API** que gestiona toda la lógica de negocio (usuarios, zonas, reportes); y una **Edge/IoT API** respaldada por un **Broker MQTT** encargado exclusivamente de procesar el alto volumen de datos (telemetría y *heartbeats*) provenientes de los sensores. Finalmente, el sistema utiliza bases de datos separadas: una base de datos relacional en la nube para almacenar la información estructural del sistema y una base de datos optimizada (ej. Time-Series) para el registro histórico de latidos y conectividad.
-
-![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_2.png)
-
-### 4.1.3.3. Software Architecture Deployment Diagrams.
-
-Este diagrama muestra que el sistema se despliega en tres entornos principales: **Microsoft Azure Cloud**, **Dispositivos Cliente** y **Edificios/Zonas Físicas**. En Azure, el sistema utiliza *App Service* para alojar las aplicaciones web y la Cloud API (Spring Boot/Java o Node.js), *Azure Database for PostgreSQL* para los datos relacionales, y *Azure IoT Hub* para gestionar las comunicaciones MQTT de alto rendimiento con los dispositivos físicos. Los usuarios acceden al sistema a través de navegadores web o dispositivos Android/iOS. En cada edificio del cliente, se instalan **Sensores de Emergencia** (ej. detectores de gas/sismo basados en ESP32/Arduino) que envían datos de estado a un **Gateway IoT** local vía WiFi o Serial, el cual transmite esta información al IoT Hub en Azure. Todas las comunicaciones entre componentes utilizan protocolos seguros como HTTPS, MQTT sobre TLS y conexiones cifradas a la base de datos.
-
-![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_3.png)
+### 4.1.3. Software Architecture
 La arquitectura de software de ResQ se representa mediante el modelo C4, con el propósito de describir la solución desde distintos niveles de abstracción y mostrar cómo se distribuyen sus principales responsabilidades.
 
 Estas vistas permiten representar la relación de ResQ con sus usuarios y sistemas externos, así como los principales componentes desplegables que conforman la solución y la forma en que se comunican entre sí.
@@ -2295,10 +2294,12 @@ La arquitectura considera la naturaleza distribuida de ResQ, integrando aplicaci
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
+![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_1.png)
+
+
 El System Landscape Diagram presenta una vista general del ecosistema de software en el que participa ResQ, mostrando las principales personas, sistemas involucrados y las relaciones existentes entre ellos.
 
 
-## 4.2. Tactical-Level Domain-Driven Design
 Este diagrama permite identificar el alcance de la solución y comprender cómo los diferentes elementos del ecosistema de ResQ interactúan entre sí.
 
 **DIAGRAM — ResQ Software Architecture System Landscape Diagram**
@@ -2308,13 +2309,22 @@ Este diagrama permite identificar el alcance de la solución y comprender cómo 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 [INSERTAR DIAGRAMAS + EXPLICACIÓN]
 
-#### 4.1.3.2. Software Architecture Container Level Diagrams
+#### 4.1.3.3. Software Architecture Container Level Diagrams
+
+Este diagrama muestra que la Plataforma IoT de Emergencias está compuesta por cinco contenedores principales: una **Aplicación Web (SPA)** accesible desde navegadores para la gestión administrativa; una **Aplicación Móvil** para que clientes y técnicos reciban alertas y configuren equipos; una **Cloud API** que gestiona toda la lógica de negocio (usuarios, zonas, reportes); y una **Edge/IoT API** respaldada por un **Broker MQTT** encargado exclusivamente de procesar el alto volumen de datos (telemetría y *heartbeats*) provenientes de los sensores. Finalmente, el sistema utiliza bases de datos separadas: una base de datos relacional en la nube para almacenar la información estructural del sistema y una base de datos optimizada (ej. Time-Series) para el registro histórico de latidos y conectividad.
+
+![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_2.png)
+
 [INSERTAR DIAGRAMAS + EXPLICACIÓN]
 
-#### 4.1.3.3. Software Architecture Deployment Diagrams
+#### 4.1.3.4. Software Architecture Deployment Diagrams
+
+Este diagrama muestra que el sistema se despliega en tres entornos principales: **Microsoft Azure Cloud**, **Dispositivos Cliente** y **Edificios/Zonas Físicas**. En Azure, el sistema utiliza *App Service* para alojar las aplicaciones web y la Cloud API (Spring Boot/Java o Node.js), *Azure Database for PostgreSQL* para los datos relacionales, y *Azure IoT Hub* para gestionar las comunicaciones MQTT de alto rendimiento con los dispositivos físicos. Los usuarios acceden al sistema a través de navegadores web o dispositivos Android/iOS. En cada edificio del cliente, se instalan **Sensores de Emergencia** (ej. detectores de gas/sismo basados en ESP32/Arduino) que envían datos de estado a un **Gateway IoT** local vía WiFi o Serial, el cual transmite esta información al IoT Hub en Azure. Todas las comunicaciones entre componentes utilizan protocolos seguros como HTTPS, MQTT sobre TLS y conexiones cifradas a la base de datos.
+
+![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_3.png)
 [INSERTAR DIAGRAMA + EXPLICACIÓN]
 
-#### 4.2. Tactical-Level Domain-Driven Design
+## 4.2. Tactical-Level Domain-Driven Design
 
 El Tactical-Level Domain-Driven Design se utilizó para definir con mayor detalle la estructura interna de los Bounded Contexts identificados durante el diseño estratégico.
 
@@ -2324,7 +2334,7 @@ Este nivel de diseño permite representar de manera más precisa cómo se implem
 
 La estructura de cada Bounded Context se documenta mediante sus capas de Domain, Interface, Application e Infrastructure, complementadas con diagramas de componentes, diagramas de clases del dominio y diagramas de diseño de base de datos.
 
-### 4.2.1. Bounded Context: Identity and Access Management
+### 4.2.1. Bounded Context: Identity and Access Management (IAM)
 
 El Bounded Context **Identity and Access Management (IAM)** es responsable de gestionar la identidad, la autenticación, la asignación de roles, los permisos y los mecanismos de autorización necesarios para proteger la información y las operaciones disponibles en ResQ.
 
@@ -3091,104 +3101,6 @@ El Database Design Diagram final debe identificar:
 
 ![Identity and Access Management Database Design Diagram](assets/images/chapter-04-solution-software-design/iam/iam-database-design-diagram.png)
 
-### 4.2.9. Bounded Context: Connectivity Management.
-
-El Connectivity Management Bounded Context es responsable de gestionar y supervisar el estado de conexión de red de todos los sensores físicos de emergencia (sismos, fugas de gas, temperatura, etc.) en el sistema. Este contexto asegura que los dispositivos mantengan una comunicación constante mediante señales de vida (heartbeats), detectando caídas de red, gestionando reconexiones y garantizando que el sistema central sepa en tiempo real si un área está desprotegida por falta de conectividad.
-
-#### 4.2.9.1. Domain Layer
-
-La **Domain Layer** del Connectivity Management Bounded Context encapsula la lógica de negocio relacionada con la supervisión de red. En esta capa, se definen los elementos principales del dominio, como agregados, entidades, objetos de valor, comandos, consultas y eventos, que representan los conceptos clave del sistema.
-
-**Aggregates**
-
-1. `SensorConnection`
-   * **Propósito:** Representa el estado de red y la sesión de conectividad actual de un sensor físico específico.
-   * **Atributos:**
-      * `sensorId`: Identificador del dispositivo IoT, representado como un objeto de valor `SensorId`.
-      * `macAddress`: Dirección física del sensor en la red, representado como un objeto de valor `MacAddress`.
-      * `status`: Estado operativo actual de la conexión (`ONLINE`, `OFFLINE`, `TIMEOUT`), representado como un objeto de valor `ConnectionStatus`.
-      * `lastHeartbeat`: Fecha y hora del último latido recibido exitosamente.
-   * **Características:**
-      * Extiende `AuditableAbstractAggregateRoot`, lo que permite auditar el historial de caídas de red.
-      * Gestiona la lógica para determinar si el tiempo transcurrido desde el `lastHeartbeat` excede el límite permitido, cambiando el estado a `TIMEOUT`.
-
-**Entities**
-
-1. `HeartbeatRecord`
-   * **Propósito:** Representa un latido individual enviado por el sensor para notificar que sigue vivo.
-   * **Atributos:**
-      * `timestamp`: Fecha y hora exacta en la que se recibió la señal.
-      * `signalStrength`: Nivel de intensidad de la red, representado como un objeto de valor `SignalStrength`.
-
-**Value Objects**
-
-1. `SensorId`
-   * **Propósito:** Representa el identificador único de un sensor.
-   * **Validaciones:** El identificador no puede ser nulo ni negativo.
-2. `ConnectionStatus`
-   * **Propósito:** Enumera los estados posibles de conectividad (`ONLINE`, `OFFLINE`, `TIMEOUT`).
-3. `SignalStrength`
-   * **Propósito:** Representa la calidad de la conexión inalámbrica.
-   * **Validaciones:** Debe estar dentro de rangos realistas (ej. entre -100 dBm y 0 dBm).
-
-**Commands**
-
-1. `RegisterHeartbeatCommand`
-   * **Propósito:** Representa la solicitud para registrar un nuevo latido.
-   * **Atributos:** `sensorId`, `timestamp`, `signalStrength`.
-2. `MarkSensorOfflineCommand`
-   * **Propósito:** Solicitud interna para forzar el estado de un sensor a desconectado tras superar el tiempo de espera.
-   * **Atributos:** `sensorId`.
-
-**Queries**
-
-1. `GetSensorConnectionStatusQuery`
-   * **Propósito:** Recupera el estado actual de red de un sensor específico.
-2. `GetAllOfflineSensorsQuery`
-   * **Propósito:** Recupera una lista de todos los sensores que actualmente han perdido conexión.
-
-**Events**
-
-1. `ConnectionLostEvent`
-   * **Propósito:** Evento crítico que se dispara cuando un sensor pasa a estado `OFFLINE` o `TIMEOUT`.
-   * **Atributos:** `sensorId`, `lastHeartbeat`.
-2. `HeartbeatReceivedEvent`
-   * **Propósito:** Evento que se dispara cada vez que se registra un latido exitoso.
-
----
-
-#### 4.2.9.2. Interface Layer
-
-La **Interface Layer** del Connectivity Management Bounded Context expone los puntos de entrada al sistema a través de controladores REST. Esta capa permite la interacción con los dispositivos IoT y facilita la comunicación entre los clientes y el sistema.
-
-**Controllers**
-
-1. `ConnectivityController`
-   * **Propósito:** Gestiona las operaciones de red de los sensores.
-   * **Endpoints:**
-      * `POST /api/v1/connectivity/heartbeats`: Registra un nuevo latido proveniente del dispositivo IoT.
-      * `GET /api/v1/connectivity/sensors/{sensorId}/status`: Obtiene el estado actual de red de un sensor.
-      * `GET /api/v1/connectivity/sensors/offline`: Lista todos los sensores sin conexión.
-   * **Dependencias:**
-      * `ConnectivityCommandService`: Servicio encargado de manejar los comandos relacionados con la conectividad.
-      * `ConnectivityQueryService`: Servicio encargado de manejar las consultas de conectividad.
-
-**Resources**
-
-1. `SensorConnectionResource`
-   * **Propósito:** Representa el estado de conexión expuesto a través de la API REST.
-   * **Atributos:** `sensorId`, `status`, `lastHeartbeatTime`.
-2. `RegisterHeartbeatResource`
-   * **Propósito:** Representa los datos necesarios enviados por el dispositivo IoT para reportar su estado.
-   * **Atributos:** `sensorId`, `signalStrength`.
-
-**Transformers**
-
-1. `SensorConnectionResourceFromEntityAssembler`
-   * **Propósito:** Convierte una entidad `SensorConnection` en un recurso `SensorConnectionResource`.
-   * **Método principal:** `toResourceFromEntity(SensorConnection entity)`.
-
----
 ### 4.2.2. Bounded Context: Risk Detection
 
 El Bounded Context **Risk Detection** es responsable de evaluar la información monitoreada mediante las reglas de detección configuradas para identificar situaciones de riesgo, determinar su tipo y severidad, preservar la evidencia que originó cada detección y mantener el contexto de ubicación necesario para comprender dónde ocurrió la condición detectada.
@@ -7947,82 +7859,140 @@ Estos conceptos continúan perteneciendo a sus respectivos Bounded Contexts.
 
 
 
-# Capítulo V: Solution UI/UX Design
+### 4.2.7. Bounded Context: User
 
-> Imágenes del capítulo:
-> `assets/images/chapter-05-solution-ui-ux-design/`
->
-> Fuentes editables de diagramas/diseño:
-> `assets/diagram-sources/chapter-05-solution-ui-ux-design/`
+#### 4.2.7.1. Domain Layer
 
-## 5.1. Style Guidelines
+#### 4.2.7.2. Interface Layer
 
-### 5.1.1. General Style Guidelines
-[COMPLETAR]
+#### 4.2.7.3. Application Layer
 
-### 5.1.2. Web, Mobile and IoT Style Guidelines
-[COMPLETAR]
+#### 4.2.7.4. Infrastructure Layer
 
-## 5.2. Information Architecture
+#### 4.2.7.5. Bounded Context Software Architecture Component Level Diagrams
 
-### 5.2.1. Organization Systems
-[COMPLETAR]
+#### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams
 
-### 5.2.2. Labeling Systems
-[COMPLETAR]
+##### 4.2.7.6.1. Bounded Context Domain Layer Class Diagrams
 
-### 5.2.3. SEO Tags and Meta Tags
-[COMPLETAR]
+##### 4.2.7.6.2. Bounded Context Database Design Diagram
 
-### 5.2.4. Searching Systems
-[COMPLETAR]
+### 4.2.8. Bounded Context: Incident
 
-### 5.2.5. Navigation Systems
-[COMPLETAR]
+#### 4.2.8.1. Domain Layer
 
-## 5.3. Landing Page UI Design
+#### 4.2.8.2. Interface Layer
 
-### 5.3.1. Landing Page Wireframe
-[INSERTAR WIREFRAMES + EXPLICACIÓN]
+#### 4.2.8.3. Application Layer
 
-### 5.3.2. Landing Page Mock-up
-[INSERTAR MOCK-UPS + EXPLICACIÓN]
+#### 4.2.8.4. Infrastructure Layer
 
-## 5.4. Applications UX/UI Design
+#### 4.2.8.5. Bounded Context Software Architecture Component Level Diagrams
 
-### 5.4.1. Applications Wireframes
-[INSERTAR WIREFRAMES + EXPLICACIÓN]
+#### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
 
-### 5.4.2. Applications Wireflow Diagrams
-[INSERTAR WIREFLOWS + EXPLICACIÓN]
+##### 4.2.8.6.1. Bounded Context Domain Layer Class Diagrams
 
-### 5.4.2. Applications Mock-ups
-[INSERTAR MOCK-UPS + EXPLICACIÓN]
+##### 4.2.8.6.2. Bounded Context Database Design Diagram
 
-### 5.4.3. Applications User Flow Diagrams
-[INSERTAR USER FLOWS + EXPLICACIÓN]
+### 4.2.9. Bounded Context: Connectivity Management
 
-> Nota: se conserva la numeración del Project Statement, que repite 5.4.2.
+El Connectivity Management Bounded Context es responsable de gestionar y supervisar el estado de conexión de red de todos los sensores físicos de emergencia (sismos, fugas de gas, temperatura, etc.) en el sistema. Este contexto asegura que los dispositivos mantengan una comunicación constante mediante señales de vida (heartbeats), detectando caídas de red, gestionando reconexiones y garantizando que el sistema central sepa en tiempo real si un área está desprotegida por falta de conectividad.
 
-## 5.5. Applications Prototyping
-[INSERTAR EVIDENCIAS / URL + EXPLICACIÓN]
+#### 4.2.9.1. Domain Layer
 
-## 5.6. IoT Device Design
-[INSERTAR DISEÑO DEL DISPOSITIVO + EXPLICACIÓN]
+La **Domain Layer** del Connectivity Management Bounded Context encapsula la lógica de negocio relacionada con la supervisión de red. En esta capa, se definen los elementos principales del dominio, como agregados, entidades, objetos de valor, comandos, consultas y eventos, que representan los conceptos clave del sistema.
 
-# Capítulo VI: Product Implementation, Validation & Deployment
+**Aggregates**
 
-> Imágenes del capítulo:
-> `assets/images/chapter-06-product-implementation-validation-deployment/`
->
-> Fuentes editables:
-> `assets/diagram-sources/chapter-06-product-implementation-validation-deployment/`
+1. `SensorConnection`
+   * **Propósito:** Representa el estado de red y la sesión de conectividad actual de un sensor físico específico.
+   * **Atributos:**
+      * `sensorId`: Identificador del dispositivo IoT, representado como un objeto de valor `SensorId`.
+      * `macAddress`: Dirección física del sensor en la red, representado como un objeto de valor `MacAddress`.
+      * `status`: Estado operativo actual de la conexión (`ONLINE`, `OFFLINE`, `TIMEOUT`), representado como un objeto de valor `ConnectionStatus`.
+      * `lastHeartbeat`: Fecha y hora del último latido recibido exitosamente.
+   * **Características:**
+      * Extiende `AuditableAbstractAggregateRoot`, lo que permite auditar el historial de caídas de red.
+      * Gestiona la lógica para determinar si el tiempo transcurrido desde el `lastHeartbeat` excede el límite permitido, cambiando el estado a `TIMEOUT`.
 
-## 6.1. Software Configuration Management
+**Entities**
 
-### 6.1.1. Software Development Environment Configuration
-Documentar herramientas, plataformas, lenguajes, frameworks y configuraciones utilizadas.
+1. `HeartbeatRecord`
+   * **Propósito:** Representa un latido individual enviado por el sensor para notificar que sigue vivo.
+   * **Atributos:**
+      * `timestamp`: Fecha y hora exacta en la que se recibió la señal.
+      * `signalStrength`: Nivel de intensidad de la red, representado como un objeto de valor `SignalStrength`.
 
+**Value Objects**
+
+1. `SensorId`
+   * **Propósito:** Representa el identificador único de un sensor.
+   * **Validaciones:** El identificador no puede ser nulo ni negativo.
+2. `ConnectionStatus`
+   * **Propósito:** Enumera los estados posibles de conectividad (`ONLINE`, `OFFLINE`, `TIMEOUT`).
+3. `SignalStrength`
+   * **Propósito:** Representa la calidad de la conexión inalámbrica.
+   * **Validaciones:** Debe estar dentro de rangos realistas (ej. entre -100 dBm y 0 dBm).
+
+**Commands**
+
+1. `RegisterHeartbeatCommand`
+   * **Propósito:** Representa la solicitud para registrar un nuevo latido.
+   * **Atributos:** `sensorId`, `timestamp`, `signalStrength`.
+2. `MarkSensorOfflineCommand`
+   * **Propósito:** Solicitud interna para forzar el estado de un sensor a desconectado tras superar el tiempo de espera.
+   * **Atributos:** `sensorId`.
+
+**Queries**
+
+1. `GetSensorConnectionStatusQuery`
+   * **Propósito:** Recupera el estado actual de red de un sensor específico.
+2. `GetAllOfflineSensorsQuery`
+   * **Propósito:** Recupera una lista de todos los sensores que actualmente han perdido conexión.
+
+**Events**
+
+1. `ConnectionLostEvent`
+   * **Propósito:** Evento crítico que se dispara cuando un sensor pasa a estado `OFFLINE` o `TIMEOUT`.
+   * **Atributos:** `sensorId`, `lastHeartbeat`.
+2. `HeartbeatReceivedEvent`
+   * **Propósito:** Evento que se dispara cada vez que se registra un latido exitoso.
+
+---
+
+#### 4.2.9.2. Interface Layer
+
+La **Interface Layer** del Connectivity Management Bounded Context expone los puntos de entrada al sistema a través de controladores REST. Esta capa permite la interacción con los dispositivos IoT y facilita la comunicación entre los clientes y el sistema.
+
+**Controllers**
+
+1. `ConnectivityController`
+   * **Propósito:** Gestiona las operaciones de red de los sensores.
+   * **Endpoints:**
+      * `POST /api/v1/connectivity/heartbeats`: Registra un nuevo latido proveniente del dispositivo IoT.
+      * `GET /api/v1/connectivity/sensors/{sensorId}/status`: Obtiene el estado actual de red de un sensor.
+      * `GET /api/v1/connectivity/sensors/offline`: Lista todos los sensores sin conexión.
+   * **Dependencias:**
+      * `ConnectivityCommandService`: Servicio encargado de manejar los comandos relacionados con la conectividad.
+      * `ConnectivityQueryService`: Servicio encargado de manejar las consultas de conectividad.
+
+**Resources**
+
+1. `SensorConnectionResource`
+   * **Propósito:** Representa el estado de conexión expuesto a través de la API REST.
+   * **Atributos:** `sensorId`, `status`, `lastHeartbeatTime`.
+2. `RegisterHeartbeatResource`
+   * **Propósito:** Representa los datos necesarios enviados por el dispositivo IoT para reportar su estado.
+   * **Atributos:** `sensorId`, `signalStrength`.
+
+**Transformers**
+
+1. `SensorConnectionResourceFromEntityAssembler`
+   * **Propósito:** Convierte una entidad `SensorConnection` en un recurso `SensorConnectionResource`.
+   * **Método principal:** `toResourceFromEntity(SensorConnection entity)`.
+
+---
 #### 4.2.9.3. Application Layer
 
 La **Application Layer** coordina las operaciones de negocio, manejando comandos y consultas, orquestando la lógica de la aplicación y garantizando que las reglas del dominio se cumplan.
@@ -8079,7 +8049,7 @@ La **Infrastructure Layer** proporciona las implementaciones técnicas necesaria
 
 ---
 
-### 4.2.9.5. Bounded Context Software Architecture Component Level Diagrams
+#### 4.2.9.5. Bounded Context Software Architecture Component Level Diagrams
 
 En esta sección se presenta el diagrama de componentes del **Connectivity Management Bounded Context**, el cual detalla los principales módulos y sus interacciones dentro del contexto delimitado. Este diagrama sigue el enfoque del C4 Model para representar los componentes clave, como servicios de aplicación, controladores, repositorios y servicios externos, junto con sus relaciones.
 
@@ -8105,11 +8075,11 @@ El **Connectivity Management Bounded Context** está compuesto por los siguiente
    * Proporciona las implementaciones técnicas necesarias para soportar las operaciones del sistema.
    * Incluye repositorios para la persistencia del estado de los sensores y componentes (ACL) que conectan la lógica de negocio con otros servicios externos de alertas.
 
-### 4.2.9.6. Bounded Context Software Architecture Code Level Diagrams
+#### 4.2.9.6. Bounded Context Software Architecture Code Level Diagrams
 
 En este apartado se presentan los diagramas que ofrecen un mayor nivel de detalle sobre la implementación de los componentes del **Connectivity Management Bounded Context**. Estos diagramas están diseñados para ilustrar cómo se estructuran las clases, interfaces y relaciones dentro de las capas del contexto, proporcionando una visión técnica que facilita el desarrollo, mantenimiento y evolución del sistema.
 
-#### 4.2.9.6.1. Bounded Context Domain Layer Class Diagrams
+##### 4.2.9.6.1. Bounded Context Domain Layer Class Diagrams
 
 El diagrama de clases correspondiente a la **Domain Layer** del **Connectivity Management Bounded Context** incluye las clases principales, como agregados, entidades y objetos de valor, así como las interfaces y enumeraciones que definen el comportamiento del dominio. También se destacan las relaciones entre estos elementos, como asociaciones, composiciones y dependencias.
 
@@ -8136,7 +8106,7 @@ El diagrama de clases correspondiente a la **Domain Layer** del **Connectivity M
 * El agregado `SensorConnection` gestiona las relaciones y el registro transaccional con la entidad `HeartbeatRecord` (relación 1 a muchos).
 * Los objetos de valor encapsulan datos inmutables y validaciones específicas de red, asegurando la consistencia en el dominio.
 
-#### 4.2.9.6.2. Bounded Context Database Design Diagram
+##### 4.2.9.6.2. Bounded Context Database Design Diagram
 
 El diseño de la base de datos para el **Connectivity Management Bounded Context** refleja la estructura del dominio, asegurando que las entidades y relaciones definidas en la **Domain Layer** se representen de manera eficiente en el modelo relacional.
 
@@ -8165,6 +8135,82 @@ El diseño de la base de datos para el **Connectivity Management Bounded Context
 
 
 
+# Capítulo V: Solution UI/UX Design
+
+> Imágenes del capítulo:
+> `assets/images/chapter-05-solution-ui-ux-design/`
+>
+> Fuentes editables de diagramas/diseño:
+> `assets/diagram-sources/chapter-05-solution-ui-ux-design/`
+
+## 5.1. Style Guidelines
+
+### 5.1.1. General Style Guidelines
+[COMPLETAR]
+
+### 5.1.2. Web, Mobile and IoT Style Guidelines
+[COMPLETAR]
+
+## 5.2. Information Architecture
+
+### 5.2.1. Organization Systems
+[COMPLETAR]
+
+### 5.2.2. Labeling Systems
+[COMPLETAR]
+
+### 5.2.3. SEO Tags and Meta Tags
+[COMPLETAR]
+
+### 5.2.4. Searching Systems
+[COMPLETAR]
+
+### 5.2.5. Navigation Systems
+[COMPLETAR]
+
+## 5.3. Landing Page UI Design
+
+### 5.3.1. Landing Page Wireframe
+[INSERTAR WIREFRAMES + EXPLICACIÓN]
+
+### 5.3.2. Landing Page Mock-up
+[INSERTAR MOCK-UPS + EXPLICACIÓN]
+
+## 5.4. Applications UX/UI Design
+
+### 5.4.1. Applications Wireframes
+[INSERTAR WIREFRAMES + EXPLICACIÓN]
+
+### 5.4.2. Applications Wireflow Diagrams
+[INSERTAR WIREFLOWS + EXPLICACIÓN]
+
+### 5.4.3. Applications Mock-ups
+[INSERTAR MOCK-UPS + EXPLICACIÓN]
+
+### 5.4.4. Applications User Flow Diagrams
+[INSERTAR USER FLOWS + EXPLICACIÓN]
+
+> Nota: la numeración interna fue normalizada para evitar la repetición de 5.4.2 conservada en el Project Statement.
+
+## 5.5. Applications Prototyping
+[INSERTAR EVIDENCIAS / URL + EXPLICACIÓN]
+
+## 5.6. IoT Device Design
+[INSERTAR DISEÑO DEL DISPOSITIVO + EXPLICACIÓN]
+
+# Capítulo VI: Product Implementation, Validation & Deployment
+
+> Imágenes del capítulo:
+> `assets/images/chapter-06-product-implementation-validation-deployment/`
+>
+> Fuentes editables:
+> `assets/diagram-sources/chapter-06-product-implementation-validation-deployment/`
+
+## 6.1. Software Configuration Management
+
+### 6.1.1. Software Development Environment Configuration
+Documentar herramientas, plataformas, lenguajes, frameworks y configuraciones utilizadas.
+
 # Conclusiones
 
 ## Conclusiones y recomendaciones
@@ -8189,7 +8235,7 @@ Ejemplo:
 
 ## Anexo A. Videos de Exposiciones
 
-### AV1 — Sprint Review
+### Anexo A — AV1 — Sprint Review
 
 <!-- PENDIENTE: INSERTAR SCREENSHOT DEL VIDEO DE EXPOSICIÓN AV1 -->
 
