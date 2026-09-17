@@ -3127,11 +3127,11 @@ The final Database Design Diagram must identify:
 
 ![Identity and Access Management Database Design Diagram](assets/images/chapter-04-solution-software-design/iam/iam-database-design-diagram.png)
 
-### 4.2.2. Bounded Context: Connectivity Management.
+### 4.2.9. Bounded Context: Connectivity Management.
 
 El Connectivity Management Bounded Context es responsable de gestionar y supervisar el estado de conexión de red de todos los sensores físicos de emergencia (sismos, fugas de gas, temperatura, etc.) en el sistema. Este contexto asegura que los dispositivos mantengan una comunicación constante mediante señales de vida (heartbeats), detectando caídas de red, gestionando reconexiones y garantizando que el sistema central sepa en tiempo real si un área está desprotegida por falta de conectividad.
 
-#### 4.2.2.1. Domain Layer
+#### 4.2.9.1. Domain Layer
 
 La **Domain Layer** del Connectivity Management Bounded Context encapsula la lógica de negocio relacionada con la supervisión de red. En esta capa, se definen los elementos principales del dominio, como agregados, entidades, objetos de valor, comandos, consultas y eventos, que representan los conceptos clave del sistema.
 
@@ -3193,7 +3193,7 @@ La **Domain Layer** del Connectivity Management Bounded Context encapsula la ló
 
 ---
 
-#### 4.2.2.2. Interface Layer
+#### 4.2.9.2. Interface Layer
 
 La **Interface Layer** del Connectivity Management Bounded Context expone los puntos de entrada al sistema a través de controladores REST. Esta capa permite la interacción con los dispositivos IoT y facilita la comunicación entre los clientes y el sistema.
 
@@ -3226,7 +3226,7 @@ La **Interface Layer** del Connectivity Management Bounded Context expone los pu
 
 ---
 
-#### 4.2.2.3. Application Layer
+#### 4.2.9.3. Application Layer
 
 La **Application Layer** coordina las operaciones de negocio, manejando comandos y consultas, orquestando la lógica de la aplicación y garantizando que las reglas del dominio se cumplan.
 
@@ -3262,7 +3262,7 @@ La **Application Layer** coordina las operaciones de negocio, manejando comandos
 
 ---
 
-#### 4.2.2.4. Infrastructure Layer
+#### 4.2.9.4. Infrastructure Layer
 
 La **Infrastructure Layer** proporciona las implementaciones técnicas necesarias para soportar las operaciones del sistema, incluyendo los repositorios para la persistencia de datos en la base de datos.
 
@@ -3282,7 +3282,7 @@ La **Infrastructure Layer** proporciona las implementaciones técnicas necesaria
 
 ---
 
-### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
+### 4.2.9.5. Bounded Context Software Architecture Component Level Diagrams
 
 En esta sección se presenta el diagrama de componentes del **Connectivity Management Bounded Context**, el cual detalla los principales módulos y sus interacciones dentro del contexto delimitado. Este diagrama sigue el enfoque del C4 Model para representar los componentes clave, como servicios de aplicación, controladores, repositorios y servicios externos, junto con sus relaciones.
 
@@ -3308,11 +3308,11 @@ El **Connectivity Management Bounded Context** está compuesto por los siguiente
    * Proporciona las implementaciones técnicas necesarias para soportar las operaciones del sistema.
    * Incluye repositorios para la persistencia del estado de los sensores y componentes (ACL) que conectan la lógica de negocio con otros servicios externos de alertas.
 
-### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
+### 4.2.9.6. Bounded Context Software Architecture Code Level Diagrams
 
 En este apartado se presentan los diagramas que ofrecen un mayor nivel de detalle sobre la implementación de los componentes del **Connectivity Management Bounded Context**. Estos diagramas están diseñados para ilustrar cómo se estructuran las clases, interfaces y relaciones dentro de las capas del contexto, proporcionando una visión técnica que facilita el desarrollo, mantenimiento y evolución del sistema.
 
-#### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
+#### 4.2.9.6.1. Bounded Context Domain Layer Class Diagrams
 
 El diagrama de clases correspondiente a la **Domain Layer** del **Connectivity Management Bounded Context** incluye las clases principales, como agregados, entidades y objetos de valor, así como las interfaces y enumeraciones que definen el comportamiento del dominio. También se destacan las relaciones entre estos elementos, como asociaciones, composiciones y dependencias.
 
@@ -3339,7 +3339,7 @@ El diagrama de clases correspondiente a la **Domain Layer** del **Connectivity M
 * El agregado `SensorConnection` gestiona las relaciones y el registro transaccional con la entidad `HeartbeatRecord` (relación 1 a muchos).
 * Los objetos de valor encapsulan datos inmutables y validaciones específicas de red, asegurando la consistencia en el dominio.
 
-#### 4.2.2.6.2. Bounded Context Database Design Diagram
+#### 4.2.9.6.2. Bounded Context Database Design Diagram
 
 El diseño de la base de datos para el **Connectivity Management Bounded Context** refleja la estructura del dominio, asegurando que las entidades y relaciones definidas en la **Domain Layer** se representen de manera eficiente en el modelo relacional.
 
@@ -3364,210 +3364,9 @@ El diseño de la base de datos para el **Connectivity Management Bounded Context
      * `timestamp`: Fecha y hora exacta en la que se recibió la señal.
      * `signal_strength`: Intensidad de la señal de red reportada.
 
-# Capítulo V: Solution UI/UX Design
 
-> Imágenes del capítulo:
-> `assets/images/chapter-05-solution-ui-ux-design/`
->
-> Fuentes editables de diagramas/diseño:
-> `assets/diagram-sources/chapter-05-solution-ui-ux-design/`
 
-## 5.1. Style Guidelines
 
-### 5.1.1. General Style Guidelines
-[COMPLETAR]
-
-### 5.1.2. Web, Mobile and IoT Style Guidelines
-[COMPLETAR]
-
-## 5.2. Information Architecture
-
-### 5.2.1. Organization Systems
-[COMPLETAR]
-
-### 5.2.2. Labeling Systems
-[COMPLETAR]
-
-### 5.2.3. SEO Tags and Meta Tags
-[COMPLETAR]
-
-### 5.2.4. Searching Systems
-[COMPLETAR]
-
-### 5.2.5. Navigation Systems
-[COMPLETAR]
-
-## 5.3. Landing Page UI Design
-
-### 5.3.1. Landing Page Wireframe
-[INSERTAR WIREFRAMES + EXPLICACIÓN]
-
-### 5.3.2. Landing Page Mock-up
-[INSERTAR MOCK-UPS + EXPLICACIÓN]
-
-## 5.4. Applications UX/UI Design
-
-### 5.4.1. Applications Wireframes
-[INSERTAR WIREFRAMES + EXPLICACIÓN]
-
-### 5.4.2. Applications Wireflow Diagrams
-[INSERTAR WIREFLOWS + EXPLICACIÓN]
-
-### 5.4.2. Applications Mock-ups
-[INSERTAR MOCK-UPS + EXPLICACIÓN]
-
-### 5.4.3. Applications User Flow Diagrams
-[INSERTAR USER FLOWS + EXPLICACIÓN]
-
-> Nota: se conserva la numeración del Project Statement, que repite 5.4.2.
-
-## 5.5. Applications Prototyping
-[INSERTAR EVIDENCIAS / URL + EXPLICACIÓN]
-
-## 5.6. IoT Device Design
-[INSERTAR DISEÑO DEL DISPOSITIVO + EXPLICACIÓN]
-
-# Capítulo VI: Product Implementation, Validation & Deployment
-
-> Imágenes del capítulo:
-> `assets/images/chapter-06-product-implementation-validation-deployment/`
->
-> Fuentes editables:
-> `assets/diagram-sources/chapter-06-product-implementation-validation-deployment/`
-
-## 6.1. Software Configuration Management
-
-### 6.1.1. Software Development Environment Configuration
-Documentar herramientas, plataformas, lenguajes, frameworks y configuraciones utilizadas.
-
-### 6.1.2. Source Code Management
-Incluir:
-- URL del repositorio GitHub de cada producto;
-- estrategia GitFlow;
-- convenciones para `feature/*`, `release/*` y `hotfix/*`;
-- Semantic Versioning;
-- Conventional Commits.
-
-### 6.1.3. Source Code Style Guide & Conventions
-Documentar convenciones de código y nomenclatura en inglés para los lenguajes utilizados.
-
-### 6.1.4. Software Deployment Configuration
-Documentar configuración y pasos de despliegue de los productos digitales.
-Incluir también el Deployment Diagram solicitado.
-
-## 6.2. Landing Page, Services & Applications Implementation
-
-> Repetir el bloque `6.2.X` por Sprint.
-> Según las entregas del curso: Sprint 1 (TB1), Sprint 2 (AV2), Sprint 3 (TB2).
-
-### 6.2.1. Sprint 1
-
-#### 6.2.1.1. Sprint Planning 1
-[COMPLETAR]
-
-#### 6.2.1.2. Aspect Leaders and Collaborators
-[COMPLETAR]
-
-#### 6.2.1.3. Sprint Backlog 1
-[REDACTAR EN EL INFORME; NO SÓLO CAPTURA]
-
-#### 6.2.1.4. Development Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.1.5. Testing Suite Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.1.6. Execution Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.1.7. Services Documentation Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.1.8. Software Deployment Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.1.9. Team Collaboration Insights during Sprint
-[COMPLETAR]
-
-### 6.2.2. Sprint 2
-
-#### 6.2.2.1. Sprint Planning 2
-[COMPLETAR]
-
-#### 6.2.2.2. Aspect Leaders and Collaborators
-[COMPLETAR]
-
-#### 6.2.2.3. Sprint Backlog 2
-[COMPLETAR]
-
-#### 6.2.2.4. Development Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.2.5. Testing Suite Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.2.6. Execution Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.2.7. Services Documentation Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.2.8. Software Deployment Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.2.9. Team Collaboration Insights during Sprint
-[COMPLETAR]
-
-### 6.2.3. Sprint 3
-
-#### 6.2.3.1. Sprint Planning 3
-[COMPLETAR]
-
-#### 6.2.3.2. Aspect Leaders and Collaborators
-[COMPLETAR]
-
-#### 6.2.3.3. Sprint Backlog 3
-[COMPLETAR]
-
-#### 6.2.3.4. Development Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.3.5. Testing Suite Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.3.6. Execution Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.3.7. Services Documentation Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.3.8. Software Deployment Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.3.9. Team Collaboration Insights during Sprint
-[COMPLETAR]
-
-## 6.3. Validation Interviews
-
-### 6.3.1. Diseño de Entrevistas
-[COMPLETAR]
-
-### 6.3.2. Registro de Entrevistas
-[COMPLETAR]
-
-### 6.3.3. Evaluaciones según heurísticas
-[COMPLETAR]
-
-## 6.4. Video About-the-Product
-
-Incluir:
-- introducción y resumen del video;
-- tono consistente con el producto;
-- al menos un testimonio positivo de un usuario que participó en validación;
-- screenshot representativo;
-- URL de Microsoft Stream/Clipchamp;
-- URL de YouTube para incrustar en Landing Page;
-- duración/timing.
 
 # Conclusiones
 
