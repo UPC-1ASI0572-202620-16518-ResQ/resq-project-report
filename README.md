@@ -2284,14 +2284,142 @@ La siguiente imagen muestra el Product Backlog de ResQ registrado en Trello:
 
 ### 4.1.1. Design-Level EventStorming
 
+Con el objetivo de profundizar el modelado del dominio de ResQ, el equipo realizó una sesión de **Design-Level EventStorming** tomando como referencia el Big Picture EventStorming elaborado previamente. La finalidad fue identificar con mayor detalle los actores, acciones, eventos, reglas y responsabilidades que intervienen en el funcionamiento de la solución.
+
+Durante la sesión se utilizaron los principales elementos de EventStorming: **Actors, Commands, Domain Events, Aggregates, Policies, Read Models y External Systems**. Para mantener coherencia con el Ubiquitous Language previamente definido, se emplearon conceptos como `Building`, `Zone`, `IoT Device`, `Risk`, `Automatic Response`, `High-Impact Action`, `Incident` y `Authorized Manager`.
+
+Durante la reunión se siguieron las siguientes actividades:
+
+- **Exploración del dominio general:** Se revisó el Big Picture EventStorming y se discutieron los principales procesos que intervienen desde la preparación de la plataforma hasta la atención y cierre de una emergencia.
+- **Identificación de actores y usuarios:** Se reconocieron los participantes que interactúan con el sistema, como administradores, responsables autorizados, usuarios de la plataforma y dispositivos IoT.
+- **Identificación de Domain Events:** Se registraron los hechos relevantes que ocurren dentro del dominio, como `Usuario autenticado`, `Medición del sensor registrada`, `Condición anómala detectada`, `Riesgo clasificado y localizado`, `Alerta generada`, `Respuesta automática ejecutada` e `Incidente cerrado`.
+- **Identificación de Commands:** Para cada evento se analizaron las acciones que lo originan, como autenticar usuarios, registrar mediciones, clasificar riesgos, generar alertas, ejecutar respuestas y gestionar incidentes.
+- **Identificación de Policies y reglas del dominio:** Se incorporaron las reglas que reaccionan ante determinados eventos, especialmente las relacionadas con detección de riesgos, respuestas automáticas y acciones de alto impacto.
+- **Identificación de Aggregates, Read Models y External Systems:** Se organizaron los elementos responsables de procesar los comandos, las vistas necesarias para consultar el estado del sistema y los servicios externos que participan en determinados flujos.
+- **Asignación de responsabilidades:** Finalmente, se revisó qué actores y elementos del dominio participan en cada proceso, permitiendo reconocer agrupaciones de responsabilidades que posteriormente servirían para el Candidate Context Discovery.
+
+Como resultado de la sesión se identificaron cuatro procesos principales dentro de ResQ: **Acceso y Configuración**, **Monitoreo y Detección**, **Alerta y Respuesta Automática** y **Gestión y Seguimiento**.
+
+El flujo principal del dominio puede resumirse de la siguiente manera:
+
+**Configuración → Medición registrada → Condición anómala detectada → Riesgo clasificado y localizado → Alerta o respuesta ejecutada → Incidente registrado → Seguimiento → Incidente cerrado**
+
+![Design-Level_EventStorming_ResQ](assets/images/chapter-04-solution-software-design/Design-Level_EventStorming_ResQ.jpg)
+
+El Design-Level EventStorming permitió obtener una visión más detallada del comportamiento del dominio y reconocer con mayor claridad las responsabilidades existentes. Este resultado fue utilizado posteriormente como base para el **Candidate Context Discovery**, donde los elementos del EventStorm fueron agrupados para identificar los Bounded Contexts candidatos de ResQ.
+
 #### 4.1.1.1. Candidate Context Discovery
-[COMPLETAR]
+
+A partir del modelo obtenido en el Design-Level EventStorming, se realizó el **Candidate Context Discovery** con el objetivo de identificar los límites naturales de responsabilidad dentro del dominio de ResQ y proponer los Bounded Contexts que organizarán posteriormente el diseño estratégico de la solución.
+
+Para identificar los contextos candidatos se aplicaron principalmente las técnicas **start-with-value** y **look-for-pivotal-events**. La primera permitió reconocer las capacidades que concentran el principal valor de negocio de ResQ, mientras que la segunda permitió identificar eventos relevantes que representan cambios de responsabilidad dentro del flujo del dominio.
+
+Mediante **start-with-value**, se identificaron **Risk Detection** y **Alert & Response Management** como las capacidades centrales de la solución. `Risk Detection` concentra la lógica encargada de interpretar las mediciones y determinar el tipo, nivel y ubicación de una situación de riesgo, mientras que `Alert & Response Management` determina las alertas y acciones que deben ejecutarse como consecuencia del riesgo identificado.
+
+Posteriormente, mediante **look-for-pivotal-events**, se analizaron eventos relevantes como:
+
+- `Sensor measurement recorded`
+- `Anomalous condition detected`
+- `Risk classified and located`
+- `Alert generated`
+- `Automatic response executed`
+- `Incident registered in history`
+- `Incident closed`
+
+Estos eventos permitieron reconocer transiciones entre las responsabilidades de monitoreo, detección, respuesta y seguimiento. En particular, `Risk classified and located` representa el cambio entre la interpretación de las condiciones monitoreadas y el inicio de las acciones de respuesta, mientras que `Incident registered in history` marca el comienzo del seguimiento formal de la situación.
+
+Como resultado del análisis se identificaron los siguientes Candidate Bounded Contexts:
+
+| Candidate Bounded Context | Descripción |
+|---|---|
+| **IAM** | Gestiona la autenticación y autorización de los usuarios de ResQ, incluyendo validación de identidad, asignación de roles y control de permisos sobre las funcionalidades protegidas. |
+| **User Management** | Gestiona la información, estado y responsabilidades de los usuarios pertenecientes a una organización. |
+| **Building Management** | Gestiona la información de las edificaciones y sus zonas, permitiendo mantener la estructura física que será monitoreada por ResQ. |
+| **Device Management** | Gestiona los dispositivos IoT registrados en la plataforma y su asociación con una edificación o zona determinada. |
+| **Monitoring** | Gestiona las mediciones y estados actuales de las zonas y dispositivos IoT para proporcionar visibilidad sobre las condiciones monitoreadas. |
+| **Risk Detection** | Analiza las mediciones y aplica reglas de detección para identificar condiciones de riesgo y determinar su tipo, nivel y ubicación. |
+| **Alert & Response Management** | Gestiona las alertas y respuestas derivadas de un riesgo, incluyendo señalización, acciones automáticas mediante actuadores y acciones que requieren confirmación humana. |
+| **Incident Management** | Gestiona el ciclo de vida de los incidentes, incluyendo su registro, responsable, estado, evolución y cierre. |
+
+La técnica **start-with-value** permitió reconocer que `Risk Detection` y `Alert & Response Management` concentran el mayor valor de negocio de ResQ, debido a que representan la interpretación de una situación de riesgo y la coordinación de la respuesta correspondiente.
+
+Por otro lado, los demás contextos fueron delimitados al identificar responsabilidades específicas dentro del dominio. `Monitoring` mantiene el estado observado de la infraestructura, `Incident Management` gestiona el seguimiento posterior de una situación, mientras que `IAM`, `User Management`, `Building Management` y `Device Management` proporcionan las capacidades necesarias para preparar y administrar el entorno en el que opera la solución.
+
+Como parte del proceso se realizaron cambios progresivos sobre el EventStorm, comenzando con el modelo sin límites definidos, continuando con la identificación de las capacidades de mayor valor y los eventos pivotales, y finalizando con la delimitación de los ocho Candidate Bounded Contexts.
+
+![CandidateContextDiscovery_Initial](assets/images/chapter-04-solution-software-design/CandidateContextDiscovery_Initial.png)
+
+![CandidateContextDiscovery_Core](assets/images/chapter-04-solution-software-design/CandidateContextDiscovery_Core.png)
+
+![CandidateContextDiscovery_Final](assets/images/chapter-04-solution-software-design/CandidateContextDiscovery_Final.png)
+
+El resultado permitió obtener una primera descomposición del dominio en ocho contextos candidatos. Estos límites serán refinados posteriormente mediante los **Bounded Context Canvases** y el **Context Mapping**, donde se analizarán con mayor detalle sus responsabilidades, reglas de negocio y relaciones.
 
 #### 4.1.1.2. Domain Message Flows Modeling
-[COMPLETAR]
+
+Luego de identificar los Candidate Bounded Contexts de ResQ, se utilizó la técnica de **Domain Storytelling** para representar cómo estos contextos deben colaborar frente a diferentes situaciones del negocio.
+
+Para cada escenario se identificaron los actores involucrados, los Bounded Contexts que participan y los principales mensajes intercambiados entre ellos. Estos mensajes se representan como **Commands, Events y Queries**, permitiendo visualizar qué contexto solicita una acción, cuál procesa la información y qué resultado comunica posteriormente.
+
+Se seleccionaron cuatro escenarios representativos del funcionamiento de ResQ: la configuración inicial de una edificación, la detección y respuesta automática ante un riesgo, la confirmación de una acción de alto impacto y el seguimiento de un incidente. Estos escenarios permiten observar tanto los procesos administrativos como el flujo principal de monitoreo y respuesta ante emergencias.
+
+**Escenario 1: Configuración de una edificación monitoreada**
+
+El primer escenario representa la preparación de la infraestructura antes de iniciar el monitoreo. Un administrador se autentica mediante **IAM** y la información correspondiente al usuario y su organización es gestionada por **User Management**.
+
+Posteriormente, el administrador registra la edificación y define las zonas que serán monitoreadas mediante **Building Management**. Finalmente, los dispositivos IoT son registrados y asociados con las zonas correspondientes a través de **Device Management**.
+
+Como resultado, la infraestructura queda configurada para que las mediciones futuras puedan relacionarse correctamente con un dispositivo, una zona y una edificación.
+
+![DomainMessageFlowsModeling_Scenario1](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario1.png)
+
+**Escenario 2: Detección y respuesta automática ante un riesgo**
+
+Este escenario representa el flujo principal de valor de ResQ. El proceso comienza cuando un dispositivo IoT genera una nueva medición y la envía a **Monitoring**, donde se registra y actualiza el estado observado de la zona.
+
+La información es posteriormente evaluada por **Risk Detection**, que determina si existe una condición de riesgo y establece su tipo, nivel y ubicación. Cuando se confirma un riesgo, esta información es enviada a **Alert & Response Management**, que aplica las políticas correspondientes para generar una alerta y, cuando está permitido, ejecutar una respuesta automática.
+
+Finalmente, los datos del riesgo y de la respuesta realizada son comunicados a **Incident Management**, donde se registra el incidente para permitir su posterior seguimiento.
+
+![DomainMessageFlowsModeling_Scenario2](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario2.png)
+
+**Escenario 3: Confirmación de una acción de alto impacto**
+
+Algunas acciones de seguridad pueden requerir intervención humana debido a su posible impacto. Cuando **Risk Detection** identifica una situación que requiere este tipo de respuesta, **Alert & Response Management** solicita la confirmación de un responsable autorizado.
+
+Antes de permitir la operación, **IAM** valida que el usuario posea los permisos necesarios. Una vez autorizado, el responsable puede confirmar la acción y Alert & Response Management procede con su ejecución.
+
+La decisión tomada y la respuesta realizada son posteriormente comunicadas a **Incident Management**, permitiendo conservar la trazabilidad de la intervención humana. En caso de que el responsable rechace la acción, esta no se ejecuta y la decisión también puede quedar registrada.
+
+![DomainMessageFlowsModeling_Scenario3](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario3.png)
+
+**Escenario 4: Seguimiento y cierre de un incidente**
+
+Una vez registrado un incidente, un responsable de seguridad puede consultar su información mediante **Incident Management**. Desde este contexto se puede conocer el riesgo asociado, las acciones realizadas y el responsable asignado.
+
+Cuando se requiere información actualizada sobre la zona afectada, Incident Management consulta a **Monitoring** para obtener las condiciones actuales. A medida que evoluciona la situación, el responsable puede actualizar el estado del incidente y, cuando la emergencia ha sido controlada, solicitar su cierre.
+
+De esta manera, Incident Management conserva la trazabilidad de los responsables, cambios de estado y acciones realizadas durante todo el ciclo de vida del incidente.
+
+![DomainMessageFlowsModeling_Scenario4](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario4.png)
 
 #### 4.1.1.3. Bounded Context Canvases
-[COMPLETAR]
+Luego de identificar los Candidate Bounded Contexts de ResQ, se elaboraron sus respectivos **Bounded Context Canvases** para detallar responsabilidades, lenguaje ubicuo, reglas de negocio, capacidades y relaciones con otros contextos.
+
+El proceso siguió un enfoque iterativo basado en **Context Overview Definition**, **Business Rules Distillation & Ubiquitous Language Capture**, **Capability Analysis**, **Capability Layering**, **Dependencies Capture** y **Design Critique**.
+
+Los Bounded Contexts fueron trabajados en orden de importancia, priorizando primero aquellos que concentran el mayor valor del negocio y que participan directamente en el flujo principal de ResQ.
+
+A continuación, se presentan los Bounded Context Canvases definidos:
+
+![BoundedContextCanvases_RiskDetection](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_RiskDetection.png)
+![BoundedContextCanvases_Alert&ResponseManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_Alert&ResponseManagement.png)
+![BoundedContextCanvases_IncidentManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_IncidentManagement.png)
+![BoundedContextCanvases_Monitoring](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_Monitoring.png)
+![BoundedContextCanvases_DeviceManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_DeviceManagement.png)
+![BoundedContextCanvases_BuildingManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_BuildingManagement.png)
+![BoundedContextCanvases_UserManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_UserManagement.png)
+![BoundedContextCanvases_IAM](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_IAM.png)
 
 ### 4.1.2. Context Mapping
 [COMPLETAR]
