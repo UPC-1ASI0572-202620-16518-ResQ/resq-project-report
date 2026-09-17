@@ -2312,7 +2312,7 @@ La siguiente imagen muestra el Product Backlog de ResQ registrado en Trello:
 
 > Nota: se conserva la numeración del Project Statement, que repite 4.1.3.2.
 
-## 4.2. Tactical-Level Domain-Driven Design
+a## 4.2. Tactical-Level Domain-Driven Design
 
 > Repetir la siguiente sección por cada Bounded Context real identificado.
 
@@ -4262,11 +4262,2122 @@ No database table for Alert, Incident, Device, Measurement, Building, Zone, Actu
 
 ![Risk Detection Database Design Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-database-design-diagram.png)
 
+### 4.2.3. Bounded Context: Alert & Response Management
 
-### 4.2.3. Bounded Context: Building Management
+El Bounded Context **Alert & Response Management** es responsable de gestionar la generación y comunicación de alertas, la configuración de políticas de respuesta, la autorización de acciones sensibles y la coordinación de las acciones que deben ejecutarse cuando ResQ recibe información sobre un riesgo detectado.
 
+Este Bounded Context atiende las necesidades de comunicación y respuesta de la plataforma, asegurando que una situación de riesgo pueda ser informada a los responsables correspondientes y que las acciones asociadas se ejecuten de acuerdo con las políticas previamente configuradas. Algunas respuestas pueden estar autorizadas para ejecutarse automáticamente, mientras que otras requieren una decisión explícita de un usuario autorizado antes de continuar.
+
+Sus responsabilidades se derivan principalmente de los requisitos relacionados con la generación de alertas, la ejecución de respuestas automáticas, la autorización humana de acciones de alto impacto, la trazabilidad de las respuestas realizadas y la continuidad de determinadas funciones críticas cuando no existe conexión con los servicios Cloud.
+
+El Bounded Context Alert & Response Management soporta principalmente **US10 — Recibir una alerta de riesgo**, **US11 — Ejecutar una respuesta automática autorizada**, **US12 — Confirmar una acción de alto impacto**, **US13 — Conocer las respuestas ejecutadas**, **US25 — Configurar una política de respuesta**, **US28 — Mantener funciones críticas sin Internet**, **TS04 — Ejecutar comandos de actuadores localmente** y **TS05 — Integrar un servicio externo de notificaciones**.
+
+Alert & Response Management no determina si existe un riesgo ni realiza su clasificación. Esa responsabilidad pertenece al Bounded Context **Risk Detection**, que proporciona la información necesaria para iniciar el flujo de alerta y respuesta.
+
+Asimismo, este Bounded Context no administra el catálogo ni el ciclo de vida de los dispositivos y sus capacidades, no gestiona edificios o zonas, no mantiene las identidades y permisos de los usuarios, no controla el ciclo de vida completo de los incidentes y no administra las colas, reintentos o mecanismos de sincronización utilizados durante una pérdida de conectividad. Estas responsabilidades pertenecen respectivamente a otros Bounded Contexts como **Device Management**, **Building Management**, **IAM**, **User**, **Incident** y **Connectivity**.
+
+Alert & Response Management utiliza únicamente las referencias externas necesarias para realizar sus funciones. Por ejemplo, puede conservar identificadores como `riskDetectionId`, `targetDeviceId`, `buildingId`, `zoneId`, `recipientUserId` o `decidedByUserId`, pero no reproduce dentro de su modelo los agregados completos pertenecientes a otros Bounded Contexts.
+
+Las principales responsabilidades de este Bounded Context son:
+
+- Generar una alerta a partir de una situación de riesgo previamente detectada.
+- Conservar el contexto necesario para comunicar el tipo, severidad y ubicación del riesgo.
+- Identificar a los responsables que deben recibir una alerta.
+- Solicitar la entrega de notificaciones mediante los canales externos disponibles.
+- Registrar el resultado de los intentos de entrega de una notificación.
+- Configurar políticas que definan las respuestas asociadas con determinados riesgos.
+- Determinar qué acciones configuradas son aplicables ante un riesgo detectado.
+- Distinguir entre acciones autorizadas para ejecución automática y acciones que requieren autorización humana.
+- Mantener pendiente una acción sensible hasta que un usuario autorizado tome una decisión.
+- Impedir la ejecución de una acción cuando esta ha sido rechazada.
+- Coordinar la ejecución local de acciones sobre capacidades de actuación de los dispositivos.
+- Registrar si una respuesta fue ejecutada correctamente o si terminó con un error.
+- Mantener la trazabilidad entre el riesgo detectado, la política aplicada, la autorización realizada y el resultado de la respuesta.
+- Mantener disponibles en el entorno Edge las políticas necesarias para ejecutar respuestas críticas automáticas durante una interrupción temporal de Internet.
+- Mantener el modelo de alertas y respuestas independiente de los modelos administrados por Risk Detection, Device Management, IAM, User, Building Management, Incident y Connectivity.
+
+Los principales conceptos identificados para el Bounded Context Alert & Response Management son `Alert`, `AlertContext`, `ResponsePolicy`, `ResponseAction`, `ResponseExecution`, `ResponseAuthorization`, `NotificationDelivery` y `ExecutionResult`.
+
+#### Class Dictionary
+
+La siguiente tabla resume las principales clases e interfaces que conforman el Bounded Context Alert & Response Management.
+
+| Class / Interface | Layer | Purpose | Main attributes | Main operations | Main relationships |
+|---|---|---|---|---|---|
+| `Alert` | Domain | Representa una alerta generada a partir de un riesgo detectado. Es el Aggregate Root responsable de conservar el contexto comunicado y los intentos de notificación asociados. | `alertId: UUID`, `organizationId: UUID`, `context: AlertContext`, `generatedAt: Instant`, `deliveries: List<NotificationDelivery>` | `addDelivery(delivery)`, `registerDeliveryResult(deliveryId, result)` | Compone `AlertContext`; posee `NotificationDelivery`. |
+| `AlertContext` | Domain | Value Object que conserva la información mínima del riesgo necesaria para comunicar una alerta sin reproducir el modelo de Risk Detection. | `riskDetectionId: UUID`, `riskTypeCode: String`, `severityCode: String`, `buildingId: UUID?`, `zoneId: UUID?`, `detectedAt: Instant` | — | Compuesto por `Alert`; utiliza referencias externas de Risk Detection y Building Management. |
+| `NotificationDelivery` | Domain | Representa un intento de entregar una alerta a un usuario responsable mediante un canal de notificación. | `deliveryId: UUID`, `recipientUserId: UUID`, `channel: String`, `destination: String`, `status: NotificationDeliveryStatus`, `requestedAt: Instant`, `completedAt: Instant?`, `failureReason: String?` | `markDelivered(at)`, `markFailed(reason, at)` | Pertenece a `Alert`; utiliza `NotificationDeliveryStatus` y referencia externamente a un usuario. |
+| `ResponsePolicy` | Domain | Aggregate Root que representa una política configurada para determinar qué acciones pueden realizarse ante un tipo de riesgo. | `policyId: UUID`, `organizationId: UUID`, `riskTypeCode: String`, `status: ResponsePolicyStatus`, `actions: List<ResponseAction>`, `version: long` | `addAction(action)`, `replaceActions(actions)`, `activate()`, `deactivate()`, `isActive()` | Posee `0..*` `ResponseAction`; para activarse debe contener al menos una acción válida; utiliza `ResponsePolicyStatus`. La versión permite ordenar las actualizaciones distribuidas hacia Edge y evitar aplicar réplicas antiguas. |
+| `ResponseAction` | Domain | Representa una acción configurada dentro de una política de respuesta y el dispositivo o capacidad sobre la cual debe ejecutarse. | `actionId: UUID`, `actionCode: String`, `targetDeviceId: UUID`, `targetCapabilityCode: String`, `authorizationMode: AuthorizationMode`, `critical: boolean` | `requiresAuthorization()`, `canExecuteAutomatically()` | Pertenece a `ResponsePolicy`; utiliza `AuthorizationMode`; referencia externamente un Device. |
+| `ResponseExecution` | Domain | Aggregate Root que representa un intento concreto de ejecutar una acción de respuesta asociada con un riesgo detectado. | `responseExecutionId: UUID`, `organizationId: UUID`, `riskDetectionId: UUID`, `policyId: UUID`, `action: ResponseActionSnapshot`, `status: ResponseExecutionStatus`, `requestedAt: Instant`, `authorization: ResponseAuthorization?`, `result: ExecutionResult?` | `requestAuthorization()`, `authorize(userId, decidedAt)`, `reject(userId, decidedAt)`, `markExecutionRequested()`, `complete(result)` | Compone `ResponseActionSnapshot` y `ExecutionResult`; puede poseer `ResponseAuthorization`; utiliza `ResponseExecutionStatus`. |
+| `ResponseActionSnapshot` | Domain | Value Object que conserva la definición de la acción utilizada al crear una ejecución para evitar que cambios posteriores en la política modifiquen su historial. | `actionId: UUID`, `actionCode: String`, `targetDeviceId: UUID`, `targetCapabilityCode: String`, `authorizationMode: AuthorizationMode`, `critical: boolean` | `requiresAuthorization()` | Compuesto por `ResponseExecution`; utiliza `AuthorizationMode`. |
+| `ResponseAuthorization` | Domain | Representa la decisión realizada por un usuario autorizado cuando una acción requiere confirmación humana. | `authorizationId: UUID`, `decision: AuthorizationDecision`, `decidedByUserId: UUID`, `decidedAt: Instant` | — | Pertenece a `ResponseExecution`; utiliza `AuthorizationDecision`; referencia externamente un User. |
+| `ExecutionResult` | Domain | Value Object que representa el resultado final de un intento de ejecutar una acción. | `successful: boolean`, `resultCode: String`, `message: String?`, `completedAt: Instant` | `isSuccessful()` | Compuesto por `ResponseExecution`. |
+| `ResponsePolicyStatus` | Domain | Enumeración que indica si una política puede participar en la evaluación de respuestas. | `ACTIVE`, `INACTIVE` | — | Utilizada por `ResponsePolicy`. |
+| `AuthorizationMode` | Domain | Enumeración que determina si una acción puede ejecutarse automáticamente o requiere confirmación humana. | `AUTOMATIC`, `HUMAN_REQUIRED` | — | Utilizada por `ResponseAction` y `ResponseActionSnapshot`. |
+| `AuthorizationDecision` | Domain | Enumeración que representa la decisión realizada sobre una acción pendiente de autorización. | `APPROVED`, `REJECTED` | — | Utilizada por `ResponseAuthorization`. |
+| `ResponseExecutionStatus` | Domain | Enumeración que representa el estado actual de una ejecución de respuesta. | `PENDING`, `PENDING_AUTHORIZATION`, `AUTHORIZED`, `EXECUTION_REQUESTED`, `SUCCEEDED`, `FAILED`, `REJECTED` | — | Utilizada por `ResponseExecution`. |
+| `NotificationDeliveryStatus` | Domain | Enumeración que representa el estado de un intento de entrega de una notificación. | `PENDING`, `DELIVERED`, `FAILED` | — | Utilizada por `NotificationDelivery`. |
+| `AlertRepository` | Domain | Abstracción de repositorio utilizada para recuperar y persistir agregados `Alert` sin depender de una tecnología específica. | — | `findById(alertId)`, `findByRiskDetectionId(riskDetectionId)`, `findByOrganizationId(organizationId, criteria)`, `save(alert)` | Persiste y recupera agregados `Alert`. |
+| `ResponsePolicyRepository` | Domain | Abstracción de repositorio utilizada para recuperar y persistir políticas de respuesta. | — | `findById(policyId)`, `findActiveByOrganizationAndRiskType(organizationId, riskTypeCode)`, `save(policy)` | Persiste y recupera agregados `ResponsePolicy`; dispone de implementaciones diferentes para Cloud y Edge. |
+| `ResponseExecutionRepository` | Domain | Abstracción de repositorio utilizada para conservar la trazabilidad y el estado de las ejecuciones de respuesta. | — | `findById(responseExecutionId)`, `findByRiskDetectionId(riskDetectionId)`, `findByOrganizationId(organizationId, criteria)`, `save(execution)` | Persiste y recupera agregados `ResponseExecution`; dispone de implementaciones Cloud y Edge. |
+| `ResponsePolicySelectionService` | Domain | Domain Service responsable de determinar las políticas y acciones activas aplicables a un riesgo detectado. | — | `selectApplicableActions(policies, riskTypeCode)` | Evalúa `ResponsePolicy` y sus acciones según el tipo de riesgo. |
+| `ResponseActionData` | Application | Representa los datos necesarios para configurar una acción dentro de una política. | `actionCode: String`, `targetDeviceId: UUID`, `targetCapabilityCode: String`, `authorizationMode: AuthorizationMode`, `critical: boolean` | — | Utilizada por `ConfigureResponsePolicyCommand` y `UpdateResponsePolicyCommand`. |
+| `ConfigureResponsePolicyCommand` | Application | Representa una solicitud para crear una nueva política de respuesta. | `organizationId: UUID`, `riskTypeCode: String`, `actions: List<ResponseActionData>` | — | Gestionado por `ConfigureResponsePolicyCommandHandler`. |
+| `ConfigureResponsePolicyCommandHandler` | Application | Coordina la creación de una política y valida las capacidades de actuación utilizadas por sus acciones. | Dependencias de `ResponsePolicyRepository`, `DeviceCapabilityGateway`, `ResponsePolicyDistributor` | `handle(command)` | Crea `ResponsePolicy`, valida sus acciones y solicita su distribución. |
+| `UpdateResponsePolicyCommand` | Application | Representa una solicitud para modificar la configuración de una política existente. | `policyId: UUID`, `organizationId: UUID`, `riskTypeCode: String`, `actions: List<ResponseActionData>` | — | Gestionado por `UpdateResponsePolicyCommandHandler`. |
+| `UpdateResponsePolicyCommandHandler` | Application | Coordina la modificación de una política existente y la distribución de su nueva versión. | Dependencias de `ResponsePolicyRepository`, `DeviceCapabilityGateway`, `ResponsePolicyDistributor` | `handle(command)` | Modifica `ResponsePolicy`, incrementa su versión y solicita su distribución hacia Edge. |
+| `ChangeResponsePolicyStatusCommand` | Application | Representa una solicitud para activar o desactivar una política existente. | `policyId: UUID`, `organizationId: UUID`, `active: boolean` | — | Gestionado por `ChangeResponsePolicyStatusCommandHandler`. |
+| `ChangeResponsePolicyStatusCommandHandler` | Application | Coordina la activación o desactivación de una política y propaga el nuevo estado hacia Edge. | Dependencias de `ResponsePolicyRepository`, `DeviceCapabilityGateway`, `ResponsePolicyDistributor` | `handle(command)` | Modifica `ResponsePolicy` y solicita su distribución. |
+| `GetResponsePolicyQuery` | Application | Representa una solicitud para consultar una política determinada dentro de una organización. | `policyId: UUID`, `organizationId: UUID` | — | Gestionada por `GetResponsePolicyQueryHandler`. |
+| `GetResponsePolicyQueryHandler` | Application | Recupera una política y verifica que corresponda al ámbito organizacional solicitado. | Dependencia de `ResponsePolicyRepository` | `handle(query)` | Consulta `ResponsePolicy`. |
+| `GetAlertQuery` | Application | Representa una solicitud para consultar una alerta determinada dentro de una organización. | `alertId: UUID`, `organizationId: UUID` | — | Gestionada por `GetAlertQueryHandler`. |
+| `GetAlertQueryHandler` | Application | Recupera una alerta junto con la información de sus intentos de notificación. | Dependencia de `AlertRepository` | `handle(query)` | Consulta `Alert`. |
+| `GetAlertsQuery` | Application | Representa una solicitud para consultar alertas pertenecientes a una organización utilizando filtros opcionales. | `organizationId: UUID`, `buildingId: UUID?`, `zoneId: UUID?`, `riskTypeCode: String?`, `from: Instant?`, `to: Instant?` | — | Gestionada por `GetAlertsQueryHandler`. |
+| `GetAlertsQueryHandler` | Application | Coordina la consulta de múltiples alertas dentro del ámbito de una organización. | Dependencia de `AlertRepository` | `handle(query)` | Consulta agregados `Alert` según los criterios solicitados. |
+| `GetResponseExecutionQuery` | Application | Representa una solicitud para consultar una ejecución de respuesta determinada dentro de una organización. | `responseExecutionId: UUID`, `organizationId: UUID` | — | Gestionada por `GetResponseExecutionQueryHandler`. |
+| `GetResponseExecutionQueryHandler` | Application | Recupera una ejecución junto con su autorización y resultado cuando existan. | Dependencia de `ResponseExecutionRepository` | `handle(query)` | Consulta `ResponseExecution`. |
+| `GetResponseExecutionsQuery` | Application | Representa una solicitud para consultar la trazabilidad de múltiples ejecuciones dentro de una organización. | `organizationId: UUID`, `riskDetectionId: UUID?`, `status: ResponseExecutionStatus?`, `from: Instant?`, `to: Instant?` | — | Gestionada por `GetResponseExecutionsQueryHandler`. |
+| `GetResponseExecutionsQueryHandler` | Application | Coordina la consulta de ejecuciones de respuesta utilizando criterios de búsqueda. | Dependencia de `ResponseExecutionRepository` | `handle(query)` | Consulta múltiples `ResponseExecution`. |
+| `RiskDetectedEventHandler` | Application | Procesa la información sincronizada desde Risk Detection y coordina la creación y comunicación de la alerta correspondiente en Cloud. | Dependencias de `AlertRepository`, `AlertRecipientResolver`, `NotificationGateway` | `handle(event)` | Crea `Alert`, identifica destinatarios y solicita notificaciones. |
+| `LocalRiskDetectedEventHandler` | Application | Procesa localmente un riesgo detectado y coordina las respuestas configuradas en Edge. | Dependencias de `ResponsePolicyRepository`, `ResponseExecutionRepository`, `ResponsePolicySelectionService`, `ActuatorCommandGateway`, `AlertResponseEventPublisher` | `handle(event)` | Evalúa políticas locales, crea `ResponseExecution` y ejecuta o solicita autorización para cada acción aplicable. |
+| `UpdateLocalResponsePolicyEventHandler` | Application | Coordina la actualización de una réplica local de `ResponsePolicy` en Edge. | Dependencia de `ResponsePolicyRepository` | `handle(event)` | Aplica una actualización únicamente cuando su versión es posterior a la almacenada localmente. |
+| `ResponseAuthorizationRequestReceivedEventHandler` | Application | Registra en Cloud una `ResponseExecution` originada en Edge que requiere autorización humana. | Dependencia de `ResponseExecutionRepository` | `handle(event)` | Reconstruye y persiste la ejecución con estado `PENDING_AUTHORIZATION`. |
+| `DecideResponseAuthorizationCommand` | Application | Representa la decisión de un usuario autorizado sobre una ejecución pendiente. | `responseExecutionId: UUID`, `organizationId: UUID`, `decision: AuthorizationDecision` | — | Gestionado por `DecideResponseAuthorizationCommandHandler`. |
+| `DecideResponseAuthorizationCommandHandler` | Application | Coordina la aprobación o rechazo de una respuesta que requiere intervención humana. | Dependencias de `ResponseExecutionRepository` y `ResponseAuthorizationDistributor` | `handle(command)` | Registra la decisión y solicita su distribución hacia Edge. |
+| `ResponseAuthorizationDecisionEventHandler` | Application | Procesa en Edge una decisión de autorización recibida desde Cloud. | Dependencias de `ResponseExecutionRepository`, `ActuatorCommandGateway`, `AlertResponseEventPublisher` | `handle(event)` | Ejecuta la acción cuando la decisión es `APPROVED` o finaliza la ejecución sin actuar cuando es `REJECTED`. |
+| `ResponseExecutionResultReceivedEventHandler` | Application | Registra en Cloud el resultado de una ejecución realizada en Edge. | Dependencia de `ResponseExecutionRepository` | `handle(event)` | Registra o actualiza la `ResponseExecution` y conserva su resultado final. |
+| `NotificationTarget` | Application | Representa la información mínima necesaria para intentar entregar una alerta a un destinatario mediante un canal determinado. | `recipientUserId: UUID`, `channel: String`, `destination: String` | — | Devuelto por `AlertRecipientResolver` y utilizado por `NotificationGateway`. |
+| `NotificationSendResult` | Application | Representa el resultado obtenido al intentar entregar una notificación mediante un proveedor externo. | `successful: boolean`, `completedAt: Instant`, `failureReason: String?` | — | Devuelto por `NotificationGateway` y utilizado para actualizar `NotificationDelivery`. |
+| `NotificationGateway` | Application | Abstracción utilizada para solicitar la entrega de notificaciones mediante un proveedor externo. | — | `send(alert, target): NotificationSendResult` | Utilizada por `RiskDetectedEventHandler`; implementada por `NotificationServiceAdapter`. |
+| `AlertRecipientResolver` | Application | Abstracción utilizada para identificar los destinatarios y canales correspondientes para una alerta. | — | `resolve(alertContext): List<NotificationTarget>` | Implementada mediante integración con User/IAM. |
+| `DeviceCapabilityGateway` | Application | Abstracción utilizada para validar que el dispositivo objetivo posee la capacidad de actuación requerida por una política. | — | `validateActuationCapability(deviceId, capabilityCode)` | Implementada mediante integración con Device Management. |
+| `ResponsePolicyDistributor` | Application | Abstracción utilizada para distribuir hacia Edge las políticas necesarias para la operación local. | — | `distribute(policy)` | Implementada por `ResponsePolicyDistributionAdapter`. |
+| `ResponseAuthorizationDistributor` | Application | Abstracción utilizada para distribuir hacia Edge una decisión humana sobre una respuesta pendiente. | — | `distributeDecision(execution)` | Implementada por `ResponseAuthorizationDistributionAdapter`. |
+| `ActuatorCommandGateway` | Application | Abstracción utilizada en Edge para solicitar la ejecución física de una acción. | — | `execute(action): ExecutionResult` | Implementada por `ActuatorCommandAdapter`. |
+| `AlertResponseEventPublisher` | Application | Abstracción utilizada para publicar solicitudes de autorización y resultados de ejecución producidos en Edge. | — | `publish(event)` | Implementada por `AlertResponseEventPublisherAdapter`. |
+| `ResponsePolicyController` | Interface | Recibe solicitudes autorizadas para crear, modificar, consultar y cambiar el estado de políticas de respuesta. | Dependencia de handlers de comandos y consultas | `configure(request)`, `update(policyId, request)`, `changeStatus(policyId, request)`, `getById(policyId)` | Delega las operaciones a la Application Layer. |
+| `AlertController` | Interface | Expone las alertas registradas a los clientes autorizados de ResQ. | Dependencia de handlers de consulta | `getById(alertId)`, `getAlerts(request)` | Delega consultas a `GetAlertQueryHandler` y `GetAlertsQueryHandler`. |
+| `ResponseExecutionController` | Interface | Expone la trazabilidad de respuestas y recibe decisiones de autorización humana. | Dependencias de handlers de consulta y autorización | `getById(responseExecutionId)`, `getExecutions(request)`, `decideAuthorization(responseExecutionId, request)` | Delega las operaciones a la Application Layer. |
+| `RiskDetectedEventConsumer` | Interface | Recibe en Cloud información de riesgos detectados proveniente del flujo distribuido de Risk Detection. | Dependencia de `RiskDetectedEventHandler` | `consume(event)` | Delega el evento a `RiskDetectedEventHandler`. |
+| `LocalRiskDetectedConsumer` | Interface | Recibe en Edge eventos de riesgo generados localmente para iniciar el flujo de respuesta sin depender de Cloud. | Dependencia de `LocalRiskDetectedEventHandler` | `consume(event)` | Delega el evento al Application Layer de Edge. |
+| `ResponsePolicyReplicaConsumer` | Interface | Recibe en Edge actualizaciones de políticas distribuidas desde Cloud. | Dependencia de `UpdateLocalResponsePolicyEventHandler` | `consume(policyUpdate)` | Delega la actualización de la réplica local. |
+| `ResponseAuthorizationRequestConsumer` | Interface | Recibe en Cloud solicitudes de autorización originadas por una ejecución local en Edge. | Dependencia de `ResponseAuthorizationRequestReceivedEventHandler` | `consume(event)` | Permite registrar en Cloud la ejecución pendiente de autorización. |
+| `ResponseAuthorizationDecisionConsumer` | Interface | Recibe en Edge una decisión `APPROVED` o `REJECTED` previamente registrada en Cloud. | Dependencia de `ResponseAuthorizationDecisionEventHandler` | `consume(event)` | Continúa o finaliza la ejecución local según la decisión recibida. |
+| `ResponseExecutionResultConsumer` | Interface | Recibe en Cloud resultados de acciones ejecutadas en Edge. | Dependencia de `ResponseExecutionResultReceivedEventHandler` | `consume(event)` | Delega el registro de la trazabilidad final de la ejecución. |
+| `AlertRepositoryAdapter` | Infrastructure | Implementa `AlertRepository` utilizando la persistencia seleccionada para los servicios Cloud de ResQ. | Dependencia de persistencia | `findById()`, `findByRiskDetectionId()`, `findByOrganizationId()`, `save()` | Implementa `AlertRepository`. |
+| `ResponsePolicyRepositoryAdapter` | Infrastructure | Implementa la persistencia Cloud de las políticas y sus acciones. | Dependencia de persistencia | `findById()`, `findActiveByOrganizationAndRiskType()`, `save()` | Implementa `ResponsePolicyRepository`. |
+| `ResponseExecutionRepositoryAdapter` | Infrastructure | Implementa en Cloud la persistencia de ejecuciones, autorizaciones y resultados. | Dependencia de persistencia | `findById()`, `findByRiskDetectionId()`, `findByOrganizationId()`, `save()` | Implementa `ResponseExecutionRepository`. |
+| `NotificationServiceAdapter` | Infrastructure | Implementa la entrega de notificaciones utilizando el servicio externo seleccionado por ResQ. | Dependencia de servicio externo | `send()` | Implementa `NotificationGateway`. |
+| `AlertRecipientIntegrationAdapter` | Infrastructure | Obtiene la información mínima necesaria para identificar destinatarios y canales sin transferir la propiedad de User o IAM al Bounded Context. | Dependencia de integración | `resolve()` | Implementa `AlertRecipientResolver`. |
+| `DeviceCapabilityIntegrationAdapter` | Infrastructure | Consulta Device Management para validar la capacidad de actuación utilizada por una política. | Dependencia de integración | `validateActuationCapability()` | Implementa `DeviceCapabilityGateway`. |
+| `ResponsePolicyDistributionAdapter` | Infrastructure | Distribuye las políticas de respuesta necesarias hacia el entorno Edge. | Dependencia de mensajería/integración | `distribute()` | Implementa `ResponsePolicyDistributor`. |
+| `ResponseAuthorizationDistributionAdapter` | Infrastructure | Distribuye hacia Edge las decisiones `APPROVED` o `REJECTED` correspondientes a respuestas pendientes. | Dependencia de mensajería/integración | `distributeDecision()` | Implementa `ResponseAuthorizationDistributor`. |
+| `EdgeResponsePolicyRepositoryAdapter` | Infrastructure | Implementa la persistencia local de políticas en Edge para permitir respuestas críticas sin conexión permanente a Cloud. | Peewee / SQLite | `findById()`, `findActiveByOrganizationAndRiskType()`, `save()` | Implementación Edge de `ResponsePolicyRepository`. |
+| `EdgeResponseExecutionRepositoryAdapter` | Infrastructure | Implementa la persistencia local de ejecuciones de respuesta, autorizaciones y resultados necesarios para conservar su estado durante la operación Edge. | Peewee / SQLite | `findById()`, `findByRiskDetectionId()`, `findByOrganizationId()`, `save()` | Implementación Edge de `ResponseExecutionRepository`. |
+| `ActuatorCommandAdapter` | Infrastructure | Traduce una acción de respuesta a la representación requerida por el flujo local encargado de controlar el actuador. | Dependencia de integración local | `execute()` | Implementa `ActuatorCommandGateway`. |
+| `AlertResponseEventPublisherAdapter` | Infrastructure | Publica solicitudes de autorización y resultados de acciones desde Edge hacia el flujo distribuido de ResQ. | Dependencia de mensajería/conectividad | `publish()` | Implementa `AlertResponseEventPublisher`. |
+
+Las relaciones entre estas clases mantienen los límites del Bounded Context. `AlertContext` conserva únicamente la información necesaria de un riesgo detectado, como `riskDetectionId`, tipo, severidad y referencias de ubicación. El agregado completo `RiskDetection` no se reproduce dentro de Alert & Response Management.
+
+Del mismo modo, `ResponseAction` y `ResponseActionSnapshot` utilizan `targetDeviceId` y `targetCapabilityCode` para identificar el equipo y la capacidad sobre los que se debe actuar, pero la administración del dispositivo y sus capacidades continúa perteneciendo a **Device Management**.
+
+`NotificationDelivery` y `ResponseAuthorization` utilizan identificadores de usuario únicamente como referencias externas. Los perfiles de usuario, la autenticación, los roles y los permisos continúan siendo responsabilidad de **User** e **IAM**.
+
+Las políticas configuradas en Cloud pueden disponer de réplicas operativas en Edge mediante `EdgeResponsePolicyRepositoryAdapter`. Asimismo, las `ResponseExecution` originadas localmente pueden conservarse mediante `EdgeResponseExecutionRepositoryAdapter` para mantener su estado mientras esperan una autorización o completan una acción.
+
+Esta persistencia local no convierte al entorno Edge en una segunda fuente de propiedad de las políticas ni le asigna la responsabilidad de sincronización. Las colas de mensajes, reintentos y mecanismos de sincronización utilizados durante una pérdida de conectividad continúan perteneciendo a **Connectivity**.
+
+Finalmente, Alert & Response Management coordina la respuesta ante un riesgo, pero no administra el ciclo de vida completo del incidente. Esa responsabilidad permanece en el Bounded Context **Incident**.
+
+---
 
 #### 4.2.3.1. Domain Layer
+
+La **Domain Layer** contiene los conceptos, reglas y abstracciones de negocio que definen la gestión de alertas y respuestas dentro de ResQ. Esta capa no depende de HTTP, bases de datos, servicios externos de notificación, protocolos de comunicación con dispositivos ni frameworks de aplicación.
+
+Los principales Aggregate Roots son `Alert`, `ResponsePolicy` y `ResponseExecution`.
+
+Un `Alert` representa la comunicación generada a partir de un riesgo previamente detectado. Conserva el contexto necesario para informar qué ocurrió, dónde ocurrió y cuál era la severidad del riesgo en el momento en que se generó la alerta.
+
+Un `ResponsePolicy` representa la configuración que determina qué acciones pueden realizarse ante un determinado tipo de riesgo dentro de una organización. Durante su configuración, una política puede contener cero o más acciones de respuesta. Para encontrarse activa y participar en la evaluación de respuestas debe contener al menos una acción válida. Cada acción establece si puede ejecutarse automáticamente o si requiere autorización humana.
+
+Un `ResponseExecution` representa un intento concreto de ejecutar una de esas acciones. Conserva la acción utilizada, su estado, una posible decisión de autorización y el resultado final obtenido.
+
+Los identificadores `riskDetectionId`, `targetDeviceId`, `buildingId`, `zoneId`, `recipientUserId` y `decidedByUserId` actúan únicamente como referencias externas hacia otros Bounded Contexts. Alert & Response Management no administra los agregados correspondientes a riesgos, dispositivos, ubicaciones o usuarios.
+
+##### Alert
+
+**Categoría:** Aggregate Root.
+
+**Propósito:** Representar una alerta generada como consecuencia de un riesgo detectado y conservar la información necesaria para su comunicación a los responsables correspondientes.
+
+**Atributos:**
+
+- `alertId: UUID` — Identificador único de la alerta.
+- `organizationId: UUID` — Organización dentro de la cual se produjo la alerta.
+- `context: AlertContext` — Información del riesgo que originó la alerta.
+- `generatedAt: Instant` — Momento en el que se generó la alerta.
+- `deliveries: List<NotificationDelivery>` — Intentos de notificación asociados con la alerta.
+
+**Operaciones:**
+
+- `addDelivery(delivery)` — Registra un nuevo intento de entrega de la alerta.
+- `registerDeliveryResult(deliveryId, result)` — Registra el resultado obtenido por un intento de notificación.
+
+Una alerta puede tener varios intentos de entrega debido a que puede ser comunicada a distintos responsables o mediante diferentes canales.
+
+La generación de una alerta no implica que una notificación externa haya sido entregada correctamente. El estado de cada intento se conserva mediante `NotificationDelivery`.
+
+##### AlertContext
+
+**Categoría:** Value Object.
+
+**Propósito:** Conservar una instantánea de la información mínima necesaria para comprender el riesgo que originó una alerta.
+
+**Atributos:**
+
+- `riskDetectionId: UUID` — Referencia externa a la detección que originó la alerta.
+- `riskTypeCode: String` — Tipo de riesgo identificado.
+- `severityCode: String` — Severidad del riesgo al momento de generar la alerta.
+- `buildingId: UUID?` — Referencia a la edificación cuando la ubicación se encuentra disponible.
+- `zoneId: UUID?` — Referencia a la zona cuando la ubicación se encuentra disponible.
+- `detectedAt: Instant` — Momento original en el que el riesgo fue detectado.
+
+`AlertContext` no contiene un objeto `RiskDetection`, `Building` o `Zone`. Mantiene únicamente los valores y referencias necesarios para comunicar el evento y preservar su contexto histórico.
+
+Los cambios posteriores realizados en los modelos de Risk Detection o Building Management no modifican los valores almacenados previamente en un `AlertContext`.
+
+##### NotificationDelivery
+
+**Categoría:** Entity owned by `Alert`.
+
+**Propósito:** Representar un intento de entrega de una alerta a un usuario responsable mediante un canal de notificación.
+
+**Atributos:**
+
+- `deliveryId: UUID` — Identificador del intento de entrega.
+- `recipientUserId: UUID` — Referencia externa al usuario destinatario.
+- `destination: String` — Identificador requerido por el canal seleccionado para intentar la entrega de la notificación.
+- `status: NotificationDeliveryStatus` — Estado actual del intento.
+- `requestedAt: Instant` — Momento en que se solicitó la entrega.
+- `completedAt: Instant?` — Momento en que finalizó el intento.
+- `failureReason: String?` — Información del error cuando la entrega falla.
+
+**Operaciones:**
+
+- `markDelivered(at)` — Registra que la notificación fue entregada correctamente.
+- `markFailed(reason, at)` — Registra que el intento de entrega finalizó con error.
+
+`recipientUserId` es únicamente una referencia externa. La información personal, roles y permisos del destinatario pertenecen a los Bounded Contexts User e IAM.
+
+Mientras el mecanismo externo no haya confirmado el resultado, la entrega puede permanecer en estado `PENDING`. Una notificación que haya fallado no debe registrarse como `DELIVERED`.
+
+##### ResponsePolicy
+
+**Categoría:** Aggregate Root.
+
+**Propósito:** Representar una política que define las acciones permitidas cuando se detecta un determinado tipo de riesgo dentro de una organización.
+
+**Atributos:**
+
+- `policyId: UUID` — Identificador único de la política.
+- `organizationId: UUID` — Organización en la que se aplica la política.
+- `riskTypeCode: String` — Tipo de riesgo al que responde la política.
+- `status: ResponsePolicyStatus` — Estado actual de la política.
+- `actions: List<ResponseAction>` — Acciones configuradas dentro de la política.
+- `version: long` — Versión de la política utilizada para identificar actualizaciones y evitar aplicar en Edge una réplica anterior a la disponible localmente.
+
+**Operaciones:**
+
+- `addAction(action)` — Incorpora una acción válida a la política.
+- `replaceActions(actions)` — Sustituye las acciones configuradas por una nueva colección válida.
+- `activate()` — Activa la política cuando su configuración es válida.
+- `deactivate()` — Evita que la política participe en nuevas evaluaciones.
+- `isActive()` — Indica si la política puede ser utilizada actualmente.
+
+Una política activa debe contener al menos una acción válida.
+
+Las acciones configuradas pueden ser automáticas o requerir autorización humana.
+
+Las políticas necesarias para las funciones críticas pueden disponer de una réplica local en Edge para permitir su evaluación durante una interrupción temporal de Internet.
+
+Una versión de política recibida en Edge no debe reemplazar una versión local más reciente.
+
+##### ResponseAction
+
+**Categoría:** Entity owned by `ResponsePolicy`.
+
+**Propósito:** Representar una acción configurada que puede realizarse cuando la política a la que pertenece resulta aplicable.
+
+**Atributos:**
+
+- `actionId: UUID` — Identificador de la acción dentro de la política.
+- `actionCode: String` — Código que identifica el tipo de acción.
+- `targetDeviceId: UUID` — Referencia externa al dispositivo que debe recibir la acción.
+- `targetCapabilityCode: String` — Capacidad de actuación requerida en el dispositivo.
+- `authorizationMode: AuthorizationMode` — Determina si la acción es automática o requiere autorización humana.
+- `critical: boolean` — Indica si la acción debe permanecer disponible para operación crítica local.
+
+**Operaciones:**
+
+- `requiresAuthorization()` — Indica si la acción necesita una decisión humana antes de ejecutarse.
+- `canExecuteAutomatically()` — Indica si la acción puede ejecutarse automáticamente cuando su política es aplicable.
+
+`targetDeviceId` y `targetCapabilityCode` no convierten al dispositivo en parte de este agregado. La existencia del equipo y sus capacidades pertenece a Device Management.
+
+##### ResponseExecution
+
+**Categoría:** Aggregate Root.
+
+**Propósito:** Representar un intento concreto de ejecutar una acción de respuesta como consecuencia de un riesgo detectado.
+
+**Atributos:**
+
+- `responseExecutionId: UUID` — Identificador único de la ejecución.
+- `organizationId: UUID` — Organización asociada con la ejecución.
+- `riskDetectionId: UUID` — Referencia externa a la detección que originó la respuesta.
+- `policyId: UUID` — Identificador de la política que determinó la respuesta.
+- `action: ResponseActionSnapshot` — Instantánea de la acción que debe ejecutarse.
+- `status: ResponseExecutionStatus` — Estado actual de la ejecución.
+- `requestedAt: Instant` — Momento en que se creó la ejecución.
+- `authorization: ResponseAuthorization?` — Decisión humana cuando la acción la requiere.
+- `result: ExecutionResult?` — Resultado final cuando la acción fue ejecutada.
+
+**Operaciones:**
+
+- `requestAuthorization()` — Coloca la ejecución en espera de una decisión humana.
+- `authorize(userId, decidedAt)` — Registra la autorización de la acción por un usuario autorizado.
+- `reject(userId, decidedAt)` — Registra el rechazo de la acción.
+- `markExecutionRequested()` — Registra que la ejecución física de la acción fue solicitada.
+- `complete(result)` — Registra el resultado final de la acción.
+
+Una nueva `ResponseExecution` comienza en estado `PENDING`.
+
+Cuando la acción utiliza `AuthorizationMode.AUTOMATIC`, puede avanzar desde `PENDING` hacia `EXECUTION_REQUESTED` sin una autorización humana adicional.
+
+Cuando utiliza `AuthorizationMode.HUMAN_REQUIRED`, debe pasar de `PENDING` a `PENDING_AUTHORIZATION` antes de recibir una decisión.
+
+Una acción configurada con autorización humana no puede pasar a ejecución sin una decisión `APPROVED`.
+
+Una acción rechazada no puede ejecutarse posteriormente como parte de la misma `ResponseExecution`.
+
+##### ResponseActionSnapshot
+
+**Categoría:** Value Object.
+
+**Propósito:** Conservar la definición exacta de la acción utilizada al crear una ejecución de respuesta.
+
+**Atributos:**
+
+- `actionId: UUID`
+- `actionCode: String`
+- `targetDeviceId: UUID`
+- `targetCapabilityCode: String`
+- `authorizationMode: AuthorizationMode`
+- `critical: boolean`
+
+**Operación:**
+
+- `requiresAuthorization()` — Indica si la acción almacenada requiere aprobación humana.
+
+La instantánea evita que una modificación posterior de `ResponsePolicy` altere el significado histórico de una respuesta ya solicitada o ejecutada.
+
+##### ResponseAuthorization
+
+**Categoría:** Entity owned by `ResponseExecution`.
+
+**Propósito:** Representar la decisión tomada por un usuario autorizado cuando una acción requiere intervención humana.
+
+**Atributos:**
+
+- `authorizationId: UUID` — Identificador de la decisión.
+- `decision: AuthorizationDecision` — Resultado de la decisión.
+- `decidedByUserId: UUID` — Referencia externa al usuario que tomó la decisión.
+- `decidedAt: Instant` — Momento en el que se registró la decisión.
+
+Una autorización está asociada con una única `ResponseExecution` y no puede reutilizarse para autorizar otra ejecución.
+
+`decidedByUserId` se mantiene únicamente como referencia. La autenticación y validación de permisos del usuario pertenecen a IAM.
+
+##### ExecutionResult
+
+**Categoría:** Value Object.
+
+**Propósito:** Representar el resultado obtenido después de intentar ejecutar físicamente una acción de respuesta.
+
+**Atributos:**
+
+- `successful: boolean` — Indica si la acción terminó correctamente.
+- `resultCode: String` — Código que identifica el resultado obtenido.
+- `message: String?` — Información adicional sobre el resultado.
+- `completedAt: Instant` — Momento en que finalizó el intento.
+
+**Operación:**
+
+- `isSuccessful()` — Indica si la respuesta fue ejecutada satisfactoriamente.
+
+El dominio distingue explícitamente entre una respuesta ejecutada correctamente y una respuesta cuyo intento terminó con error.
+
+##### ResponsePolicyStatus
+
+**Categoría:** Enumeration.
+
+**Valores:**
+
+- `ACTIVE`
+- `INACTIVE`
+
+Solo las políticas activas pueden participar en la selección de respuestas.
+
+##### AuthorizationMode
+
+**Categoría:** Enumeration.
+
+**Valores:**
+
+- `AUTOMATIC`
+- `HUMAN_REQUIRED`
+
+`AUTOMATIC` indica que la acción puede ejecutarse sin solicitar una decisión adicional cuando la política correspondiente resulta aplicable.
+
+`HUMAN_REQUIRED` indica que la acción debe permanecer pendiente hasta que un usuario autorizado la apruebe o rechace.
+
+##### AuthorizationDecision
+
+**Categoría:** Enumeration.
+
+**Valores:**
+
+- `APPROVED`
+- `REJECTED`
+
+Una decisión `APPROVED` permite continuar con la ejecución correspondiente.
+
+Una decisión `REJECTED` finaliza la solicitud sin ejecutar la acción.
+
+##### ResponseExecutionStatus
+
+**Categoría:** Enumeration.
+
+**Valores:**
+
+- `PENDING`
+- `PENDING_AUTHORIZATION`
+- `AUTHORIZED`
+- `EXECUTION_REQUESTED`
+- `SUCCEEDED`
+- `FAILED`
+- `REJECTED`
+
+`PENDING` representa una ejecución recién creada cuya siguiente transición todavía no ha sido procesada.
+
+Para una acción automática, el flujo principal es:
+
+`PENDING` → `EXECUTION_REQUESTED` → `SUCCEEDED` o `FAILED`.
+
+Para una acción que requiere intervención humana, el flujo principal es:
+
+`PENDING` → `PENDING_AUTHORIZATION` → `AUTHORIZED` → `EXECUTION_REQUESTED` → `SUCCEEDED` o `FAILED`.
+
+Cuando la decisión humana es negativa, el flujo finaliza en:
+
+`PENDING_AUTHORIZATION` → `REJECTED`.
+
+Estos estados permiten conservar la trazabilidad de una respuesta desde su creación hasta su resultado final.
+
+##### NotificationDeliveryStatus
+
+**Categoría:** Enumeration.
+
+**Valores:**
+
+- `PENDING`
+- `DELIVERED`
+- `FAILED`
+
+`PENDING` representa una entrega solicitada cuyo resultado todavía no ha sido confirmado.
+
+`DELIVERED` representa una entrega confirmada satisfactoriamente.
+
+`FAILED` representa un intento cuyo mecanismo de entrega confirmó que no pudo completarse correctamente.
+
+##### AlertRepository
+
+**Categoría:** Repository Interface.
+
+**Propósito:** Definir las operaciones necesarias para persistir y recuperar agregados `Alert` sin depender de una tecnología específica de almacenamiento.
+
+**Operaciones:**
+
+- `findById(alertId)`
+- `findByRiskDetectionId(riskDetectionId)`
+- `findByOrganizationId(organizationId, criteria)`
+- `save(alert)`
+
+Las consultas de múltiples alertas deben respetar el ámbito de la organización correspondiente.
+
+##### ResponsePolicyRepository
+
+**Categoría:** Repository Interface.
+
+**Propósito:** Definir las operaciones de persistencia necesarias para administrar políticas de respuesta tanto en Cloud como en su representación local en Edge.
+
+**Operaciones:**
+
+- `findById(policyId)`
+- `findActiveByOrganizationAndRiskType(organizationId, riskTypeCode)`
+- `save(policy)`
+
+El uso de `organizationId` evita que una política perteneciente a una organización sea aplicada a un riesgo correspondiente a otra.
+
+La misma abstracción puede disponer de diferentes implementaciones de Infrastructure para Cloud y Edge.
+
+##### ResponseExecutionRepository
+
+**Categoría:** Repository Interface.
+
+**Propósito:** Conservar y recuperar el estado y la trazabilidad de las ejecuciones de respuesta.
+
+**Operaciones:**
+
+- `findById(responseExecutionId)`
+- `findByRiskDetectionId(riskDetectionId)`
+- `findByOrganizationId(organizationId, criteria)`
+- `save(execution)`
+
+La persistencia incluye la acción utilizada, el estado de la ejecución, la autorización cuando corresponda y su resultado final.
+
+Esta abstracción puede disponer de implementaciones diferentes en Cloud y Edge. La implementación Edge permite conservar el estado de las ejecuciones locales, especialmente cuando una respuesta debe esperar una decisión humana.
+
+##### ResponsePolicySelectionService
+
+**Categoría:** Domain Service.
+
+**Propósito:** Determinar qué acciones de las políticas activas son aplicables al tipo de riesgo recibido.
+
+**Operación:**
+
+- `selectApplicableActions(policies, riskTypeCode)`
+
+El servicio únicamente considera las políticas activas previamente recuperadas para la organización y el tipo de riesgo correspondientes.
+
+La ejecución física de la acción no pertenece a este Domain Service. Esa coordinación se realiza desde la Application Layer mediante las abstracciones correspondientes.
+
+##### Business Rules
+
+El dominio Alert & Response Management aplica las siguientes reglas de negocio:
+
+1. Una alerta solo puede generarse a partir de información válida correspondiente a un riesgo previamente detectado.
+
+2. Toda alerta debe conservar el identificador de la detección, el tipo de riesgo, la severidad, el momento original de detección y, cuando se encuentre disponible, la ubicación asociada. El sistema no debe inventar una ubicación cuando esta no pueda determinarse.
+
+3. Cada intento de notificación debe estar asociado con una alerta y con un destinatario identificado.
+
+4. Una notificación solo puede registrarse como `DELIVERED` cuando el mecanismo de entrega confirma un resultado satisfactorio. Mientras no exista un resultado confirmado puede permanecer en `PENDING`, y cuando el mecanismo de entrega confirme un fallo debe registrarse como `FAILED`.
+
+5. Una política de respuesta debe contener al menos una acción válida antes de poder activarse.
+
+6. Una política con estado `INACTIVE` no debe participar en la selección de respuestas.
+
+7. Una política de respuesta solo puede aplicarse al tipo de riesgo y a la organización para los cuales fue configurada.
+
+8. Toda acción configurada debe referenciar una capacidad de actuación válida del dispositivo objetivo antes de que la política pueda utilizarse operativamente.
+
+9. Una acción configurada con `AUTOMATIC` puede ejecutarse sin una autorización humana adicional cuando la política correspondiente resulta aplicable.
+
+10. Una acción configurada con `HUMAN_REQUIRED` debe permanecer en estado `PENDING_AUTHORIZATION` hasta que un usuario autorizado tome una decisión.
+
+11. Una respuesta pendiente de autorización solo puede continuar hacia su ejecución cuando recibe una decisión `APPROVED`. Una decisión `REJECTED` impide la ejecución de la acción.
+
+12. Una autorización solo es válida para la `ResponseExecution` específica para la cual fue registrada.
+
+13. Toda ejecución debe conservar la acción utilizada, el dispositivo objetivo, el momento de solicitud, su estado y, cuando finalice, el resultado obtenido.
+
+14. Una modificación posterior de `ResponsePolicy` no debe alterar la información histórica almacenada en un `ResponseActionSnapshot`.
+
+15. Una actualización de `ResponsePolicy` recibida en Edge solo debe reemplazar la réplica almacenada cuando corresponda a una versión posterior.
+
+16. Las políticas necesarias para respuestas críticas automáticas deben mantenerse disponibles en el entorno Edge para permitir su ejecución durante una interrupción temporal de Internet. La pérdida de conectividad no debe convertir una acción `HUMAN_REQUIRED` en una acción `AUTOMATIC`.
+
+Estas reglas permiten que Alert & Response Management mantenga la consistencia de las alertas, notificaciones, políticas, autorizaciones y ejecuciones de respuesta dentro de ResQ.
+
+---
+
+#### 4.2.3.2. Interface Layer
+
+La **Interface Layer** expone las capacidades del Bounded Context **Alert & Response Management** a las aplicaciones cliente y recibe información proveniente de otros componentes de la plataforma ResQ.
+
+Su responsabilidad es recibir solicitudes o eventos, validar su representación básica, transformarlos en Commands, Queries o mensajes de aplicación según corresponda, delegar su procesamiento a la Application Layer y convertir los resultados obtenidos en la representación esperada por el cliente o por el flujo distribuido.
+
+Las reglas de negocio no se implementan en esta capa.
+
+Debido a que Alert & Response Management participa tanto en Cloud como en Edge, la Interface Layer contiene diferentes componentes de entrada según el flujo que se esté procesando.
+
+Los principales componentes son `ResponsePolicyController`, `AlertController`, `ResponseExecutionController`, `RiskDetectedEventConsumer`, `LocalRiskDetectedConsumer`, `ResponsePolicyReplicaConsumer`, `ResponseAuthorizationRequestConsumer`, `ResponseAuthorizationDecisionConsumer` y `ResponseExecutionResultConsumer`.
+
+##### ResponsePolicyController
+
+`ResponsePolicyController` recibe en los servicios Cloud solicitudes autorizadas relacionadas con la configuración y administración de políticas de respuesta.
+
+Su principal responsabilidad es construir los Commands o Queries correspondientes a partir de la información recibida y delegar su ejecución a la Application Layer.
+
+Ejemplos conceptuales de recursos REST:
+
+- `POST /api/v1/response-policies`
+- `GET /api/v1/response-policies/{policyId}`
+- `PUT /api/v1/response-policies/{policyId}`
+- `PATCH /api/v1/response-policies/{policyId}/status`
+
+La información necesaria para crear o modificar una política puede incluir:
+
+- el tipo de riesgo asociado;
+- las acciones de respuesta;
+- el dispositivo objetivo de cada acción;
+- la capacidad de actuación requerida;
+- el modo de autorización de cada acción;
+- la indicación de si la acción es crítica.
+
+La creación de una política se delega a `ConfigureResponsePolicyCommandHandler`, mientras que su modificación se delega a `UpdateResponsePolicyCommandHandler`.
+
+El cambio de estado se delega a `ChangeResponsePolicyStatusCommandHandler` y la consulta de una política se procesa mediante `GetResponsePolicyQueryHandler`.
+
+El ámbito organizacional utilizado por estas operaciones debe obtenerse del contexto autorizado de la solicitud y no debe permitir que el cliente opere libremente sobre políticas pertenecientes a otra organización.
+
+El controller no valida directamente las capacidades de los dispositivos, no aplica reglas de activación y no persiste políticas por cuenta propia.
+
+##### AlertController
+
+`AlertController` proporciona en Cloud acceso autorizado a las alertas generadas por ResQ.
+
+Ejemplos conceptuales de recursos REST:
+
+- `GET /api/v1/alerts`
+- `GET /api/v1/alerts/{alertId}`
+
+La consulta de múltiples alertas puede considerar criterios como:
+
+- edificación;
+- zona;
+- tipo de riesgo;
+- periodo de generación.
+
+La consulta de una alerta individual se delega a `GetAlertQueryHandler`, mientras que la consulta de múltiples alertas se delega a `GetAlertsQueryHandler`.
+
+El ámbito organizacional se obtiene del contexto autorizado de la solicitud para evitar que una consulta permita acceder a alertas pertenecientes a otra organización.
+
+El controller no accede directamente a la base de datos ni modifica el estado de las alertas.
+
+##### ResponseExecutionController
+
+`ResponseExecutionController` permite consultar en Cloud la trazabilidad de las respuestas generadas por el sistema y registrar decisiones humanas sobre aquellas acciones que requieren autorización.
+
+Ejemplos conceptuales de recursos REST:
+
+- `GET /api/v1/response-executions`
+- `GET /api/v1/response-executions/{responseExecutionId}`
+- `PATCH /api/v1/response-executions/{responseExecutionId}/authorization`
+
+La consulta de múltiples ejecuciones puede considerar criterios como:
+
+- riesgo detectado;
+- estado de la ejecución;
+- periodo de ejecución.
+
+La consulta individual se delega a `GetResponseExecutionQueryHandler`, mientras que la consulta de múltiples ejecuciones se delega a `GetResponseExecutionsQueryHandler`.
+
+La operación de autorización permite registrar una decisión:
+
+- `APPROVED`;
+- `REJECTED`.
+
+La identidad del usuario que toma la decisión se obtiene del contexto autenticado de la solicitud y no debe ser proporcionada libremente por el cliente.
+
+Del mismo modo, el ámbito organizacional utilizado para la operación debe corresponder al contexto autorizado del usuario.
+
+El controller construye un `DecideResponseAuthorizationCommand` y delega su procesamiento a `DecideResponseAuthorizationCommandHandler`.
+
+La operación debe encontrarse protegida mediante los mecanismos de autenticación y autorización proporcionados por IAM.
+
+##### RiskDetectedEventConsumer
+
+`RiskDetectedEventConsumer` recibe en Cloud información de riesgos detectados que ha sido sincronizada desde el flujo distribuido de Risk Detection.
+
+Su responsabilidad es validar la representación básica del mensaje recibido y delegarlo a `RiskDetectedEventHandler`.
+
+La información recibida debe permitir identificar, como mínimo, la organización, la detección de riesgo, el tipo de riesgo, la severidad, el momento de detección y las referencias de ubicación disponibles.
+
+Este componente permite iniciar el flujo de generación de alertas y notificaciones.
+
+El consumer no vuelve a determinar si existe un riesgo, no modifica su severidad y no ejecuta reglas propias de Risk Detection.
+
+##### LocalRiskDetectedConsumer
+
+`LocalRiskDetectedConsumer` recibe en Edge los eventos de riesgo producidos localmente por Risk Detection.
+
+Su responsabilidad es validar la representación básica del evento y delegarlo a `LocalRiskDetectedEventHandler`.
+
+La información recibida debe permitir identificar la organización, la detección correspondiente y el tipo de riesgo necesario para seleccionar las políticas locales aplicables.
+
+Este flujo permite iniciar localmente la evaluación de respuestas sin realizar primero una solicitud a Cloud.
+
+El consumer no decide qué política debe aplicarse ni ejecuta directamente los actuadores.
+
+##### ResponsePolicyReplicaConsumer
+
+`ResponsePolicyReplicaConsumer` recibe en Edge las actualizaciones de políticas de respuesta distribuidas desde Cloud.
+
+Cada actualización es delegada a `UpdateLocalResponsePolicyEventHandler`.
+
+La información recibida contiene la representación necesaria para reconstruir la política y sus acciones, incluyendo su identificador, organización, tipo de riesgo, estado y versión.
+
+El consumer no decide si una versión debe reemplazar la información almacenada localmente. Esa decisión corresponde al flujo de aplicación y a las reglas definidas para las versiones de `ResponsePolicy`.
+
+El consumer tampoco implementa directamente la persistencia local.
+
+##### ResponseAuthorizationRequestConsumer
+
+`ResponseAuthorizationRequestConsumer` recibe en Cloud las solicitudes de autorización originadas por una `ResponseExecution` creada localmente en Edge.
+
+Su responsabilidad es transformar el mensaje recibido y delegarlo a `ResponseAuthorizationRequestReceivedEventHandler`.
+
+El mensaje debe contener la información necesaria para reconstruir la ejecución pendiente, incluyendo:
+
+- `responseExecutionId`;
+- `organizationId`;
+- `riskDetectionId`;
+- `policyId`;
+- la instantánea de la acción;
+- el momento en que la ejecución fue solicitada.
+
+Este flujo permite que una ejecución originada en Edge quede disponible en Cloud para que un usuario autorizado pueda aprobarla o rechazarla.
+
+El consumer no toma la decisión de autorización ni modifica por sí mismo el estado del agregado.
+
+##### ResponseAuthorizationDecisionConsumer
+
+`ResponseAuthorizationDecisionConsumer` recibe en Edge una decisión humana registrada previamente en Cloud para una `ResponseExecution` pendiente de autorización.
+
+La decisión recibida puede ser:
+
+- `APPROVED`;
+- `REJECTED`.
+
+El consumer delega la información a `ResponseAuthorizationDecisionEventHandler`.
+
+Cuando la decisión es `APPROVED`, el flujo de aplicación puede continuar hacia la ejecución de la acción correspondiente.
+
+Cuando la decisión es `REJECTED`, la ejecución local debe finalizar sin solicitar la acción física al dispositivo.
+
+El consumer no determina si el usuario tenía permiso para tomar la decisión y no ejecuta directamente el actuador.
+
+##### ResponseExecutionResultConsumer
+
+`ResponseExecutionResultConsumer` recibe en Cloud los resultados correspondientes a acciones ejecutadas en Edge.
+
+Su responsabilidad es validar la representación básica del resultado recibido y delegarlo a `ResponseExecutionResultReceivedEventHandler`.
+
+La información recibida debe permitir identificar la `ResponseExecution` correspondiente y conocer el resultado final de la acción.
+
+El consumer no vuelve a ejecutar una acción cuando recibe un resultado fallido y no altera el significado del resultado comunicado por Edge.
+
+Su función es permitir que Cloud conserve la trazabilidad final de las respuestas realizadas localmente.
+
+#### 4.2.3.3. Application Layer
+
+La **Application Layer** coordina los casos de uso soportados por Alert & Response Management.
+
+Esta capa orquesta objetos del Domain Layer, repositorios y abstracciones externas, pero no contiene detalles específicos de persistencia, proveedores de notificaciones, protocolos de comunicación con dispositivos ni mecanismos concretos de mensajería.
+
+Los principales flujos de aplicación considerados son:
+
+- Creación y modificación de políticas de respuesta.
+- Activación y desactivación de políticas.
+- Consulta de políticas de respuesta.
+- Generación y comunicación de alertas.
+- Evaluación local de respuestas.
+- Solicitud y registro de autorizaciones humanas.
+- Procesamiento de decisiones de autorización.
+- Ejecución local de acciones.
+- Registro de resultados de ejecución.
+- Consulta de alertas y respuestas.
+
+##### ResponseActionData
+
+`ResponseActionData` representa los datos necesarios para configurar una acción dentro de una política de respuesta.
+
+**Atributos:**
+
+- `actionCode: String`
+- `targetDeviceId: UUID`
+- `targetCapabilityCode: String`
+- `authorizationMode: AuthorizationMode`
+- `critical: boolean`
+
+Este objeto se utiliza como representación de entrada para crear o modificar las acciones pertenecientes a una `ResponsePolicy`.
+
+##### ConfigureResponsePolicyCommand
+
+`ConfigureResponsePolicyCommand` representa una solicitud para crear una nueva política de respuesta asociada con un determinado tipo de riesgo.
+
+**Atributos:**
+
+- `organizationId: UUID`
+- `riskTypeCode: String`
+- `actions: List<ResponseActionData>`
+
+##### ConfigureResponsePolicyCommandHandler
+
+`ConfigureResponsePolicyCommandHandler` coordina la creación de una política de respuesta.
+
+El handler realiza la siguiente secuencia:
+
+1. Recibe un `ConfigureResponsePolicyCommand`.
+2. Valida la estructura de las acciones proporcionadas, cuando existan.
+3. Valida mediante `DeviceCapabilityGateway` que los dispositivos posean las capacidades de actuación requeridas por las acciones proporcionadas.
+4. Construye las entidades `ResponseAction`.
+5. Crea el agregado `ResponsePolicy` en estado `INACTIVE`.
+6. Persiste la política mediante `ResponsePolicyRepository`.
+7. Solicita su distribución hacia Edge mediante `ResponsePolicyDistributor`.
+
+El handler no consulta directamente las tablas pertenecientes a Device Management ni conoce el mecanismo utilizado para distribuir las políticas.
+
+##### UpdateResponsePolicyCommand
+
+`UpdateResponsePolicyCommand` representa una solicitud para modificar la configuración de una política existente.
+
+**Atributos:**
+
+- `policyId: UUID`
+- `organizationId: UUID`
+- `riskTypeCode: String`
+- `actions: List<ResponseActionData>`
+
+##### UpdateResponsePolicyCommandHandler
+
+`UpdateResponsePolicyCommandHandler` coordina la modificación de una política existente.
+
+Su flujo de ejecución es:
+
+1. Recibe un `UpdateResponsePolicyCommand`.
+2. Recupera la `ResponsePolicy` mediante `ResponsePolicyRepository`.
+3. Verifica que la política pertenezca a la organización indicada.
+4. Valida las capacidades de actuación requeridas mediante `DeviceCapabilityGateway`.
+5. Construye la nueva colección de `ResponseAction`.
+6. Invoca `replaceActions(actions)` sobre la política.
+7. Si la política permanece activa, verifica que conserve al menos una acción válida.
+8. Actualiza el tipo de riesgo cuando la operación lo permite.
+9. Incrementa la versión de la política.
+10. Persiste la política modificada.
+11. Solicita la distribución de la nueva versión mediante `ResponsePolicyDistributor`.
+
+La modificación de una política no altera las `ResponseExecution` creadas previamente, ya que estas conservan su propia `ResponseActionSnapshot`.
+
+##### ChangeResponsePolicyStatusCommand
+
+`ChangeResponsePolicyStatusCommand` representa la solicitud de activar o desactivar una política de respuesta existente.
+
+**Atributos:**
+
+- `policyId: UUID`
+- `organizationId: UUID`
+- `active: boolean`
+
+##### ChangeResponsePolicyStatusCommandHandler
+
+`ChangeResponsePolicyStatusCommandHandler` coordina el cambio de estado de una política de respuesta.
+
+Su flujo de ejecución es:
+
+1. Recupera la `ResponsePolicy` mediante `ResponsePolicyRepository`.
+2. Verifica que la política exista y pertenezca a la organización indicada.
+3. Cuando se solicita activación, comprueba que la política posea acciones válidas.
+4. Valida las capacidades de actuación requeridas cuando corresponda.
+5. Invoca `activate()` o `deactivate()` sobre el agregado.
+6. Actualiza la versión de la política.
+7. Persiste el nuevo estado.
+8. Solicita la distribución de la nueva versión mediante `ResponsePolicyDistributor`.
+
+Las reglas que determinan si una política puede activarse permanecen en el Domain Layer.
+
+##### GetResponsePolicyQuery
+
+`GetResponsePolicyQuery` representa una solicitud para consultar una política de respuesta determinada.
+
+**Atributos:**
+
+- `policyId: UUID`
+- `organizationId: UUID`
+
+##### GetResponsePolicyQueryHandler
+
+`GetResponsePolicyQueryHandler` coordina la consulta de una política.
+
+Su flujo de ejecución es:
+
+1. Recibe `GetResponsePolicyQuery`.
+2. Recupera la `ResponsePolicy` mediante `ResponsePolicyRepository`.
+3. Verifica que la política exista.
+4. Verifica que pertenezca a la organización indicada.
+5. Retorna la información requerida por la Interface Layer.
+
+##### RiskDetectedEventHandler
+
+`RiskDetectedEventHandler` coordina en Cloud la generación y comunicación de una alerta cuando el flujo distribuido proporciona información correspondiente a un riesgo detectado.
+
+El handler realiza la siguiente secuencia:
+
+1. Recibe la información del riesgo detectado.
+2. Construye el `AlertContext`.
+3. Crea un nuevo `Alert`.
+4. Identifica los destinatarios y canales correspondientes mediante `AlertRecipientResolver`.
+5. Crea los `NotificationDelivery` necesarios a partir de los `NotificationTarget`, conservando el destinatario, canal y destino de cada intento.
+6. Persiste inicialmente el `Alert` mediante `AlertRepository`.
+7. Solicita cada entrega mediante `NotificationGateway`.
+8. Obtiene un `NotificationSendResult` por cada intento.
+9. Actualiza el `NotificationDelivery` correspondiente como `DELIVERED` o `FAILED` cuando existe un resultado confirmado.
+10. Persiste el estado actualizado del `Alert`.
+
+El handler no vuelve a determinar si el riesgo existe ni modifica su tipo o severidad. Esa información proviene de Risk Detection.
+
+##### LocalRiskDetectedEventHandler
+
+`LocalRiskDetectedEventHandler` coordina la evaluación de respuestas cuando un riesgo es detectado localmente en Edge.
+
+Su flujo de ejecución es:
+
+1. Recibe la información del riesgo detectado.
+2. Recupera mediante `ResponsePolicyRepository` las políticas activas correspondientes al `organizationId` y `riskTypeCode` recibidos.
+3. Solicita a `ResponsePolicySelectionService` las acciones aplicables.
+4. Crea una `ResponseExecution` en estado `PENDING` para cada acción seleccionada.
+5. Persiste inicialmente cada ejecución mediante `ResponseExecutionRepository`.
+6. Cuando una acción utiliza `AuthorizationMode.AUTOMATIC`, invoca `markExecutionRequested()`.
+7. Solicita la acción mediante `ActuatorCommandGateway`.
+8. Obtiene el `ExecutionResult`.
+9. Invoca `complete(result)` y persiste la ejecución actualizada.
+10. Publica el resultado mediante `AlertResponseEventPublisher`.
+11. Cuando una acción utiliza `AuthorizationMode.HUMAN_REQUIRED`, invoca `requestAuthorization()`.
+12. Persiste la ejecución con estado `PENDING_AUTHORIZATION`.
+13. Publica una solicitud de autorización mediante `AlertResponseEventPublisher`.
+14. Mantiene la acción sin ejecutar hasta recibir una decisión válida.
+
+Este flujo permite que las acciones automáticas configuradas puedan ejecutarse localmente sin depender permanentemente de los servicios Cloud.
+
+##### UpdateLocalResponsePolicyEventHandler
+
+`UpdateLocalResponsePolicyEventHandler` coordina la actualización de las políticas de respuesta disponibles localmente en Edge.
+
+Su flujo de ejecución es:
+
+1. Recibe la representación distribuida de una `ResponsePolicy`.
+2. Recupera la versión almacenada localmente cuando existe.
+3. Compara la versión recibida con la versión local.
+4. Descarta la actualización cuando la versión recibida es igual o anterior a la almacenada.
+5. Reconstruye la política y sus acciones cuando la versión recibida es posterior.
+6. Persiste la nueva representación mediante la implementación Edge de `ResponsePolicyRepository`.
+
+Esta operación evita que una réplica antigua reemplace una versión más reciente almacenada en Edge.
+
+##### ResponseAuthorizationRequestReceivedEventHandler
+
+`ResponseAuthorizationRequestReceivedEventHandler` coordina en Cloud el registro de una ejecución originada en Edge que requiere autorización humana.
+
+Su flujo de ejecución es:
+
+1. Recibe la solicitud de autorización proveniente de Edge.
+2. Obtiene la información necesaria para reconstruir la `ResponseExecution`.
+3. Verifica si la ejecución ya se encuentra registrada.
+4. Cuando no existe, reconstruye la ejecución con estado `PENDING_AUTHORIZATION`.
+5. Persiste la ejecución mediante `ResponseExecutionRepository`.
+6. Cuando la ejecución ya existe, evita crear un registro duplicado.
+
+Este flujo permite que las acciones pendientes originadas localmente estén disponibles en Cloud para que un usuario autorizado pueda tomar una decisión.
+
+##### DecideResponseAuthorizationCommand
+
+`DecideResponseAuthorizationCommand` representa una decisión humana sobre una respuesta pendiente de autorización.
+
+**Atributos:**
+
+- `responseExecutionId: UUID`
+- `organizationId: UUID`
+- `decision: AuthorizationDecision`
+
+La identidad del usuario que toma la decisión se obtiene del contexto autenticado y no se recibe como un identificador arbitrario proporcionado por el cliente.
+
+##### DecideResponseAuthorizationCommandHandler
+
+`DecideResponseAuthorizationCommandHandler` coordina el registro de una decisión sobre una respuesta pendiente.
+
+Su flujo de ejecución es:
+
+1. Recibe `DecideResponseAuthorizationCommand`.
+2. Recupera la `ResponseExecution` mediante `ResponseExecutionRepository`.
+3. Verifica que la ejecución pertenezca a la organización correspondiente.
+4. Verifica que se encuentre en `PENDING_AUTHORIZATION`.
+5. Obtiene la identidad del usuario autenticado.
+6. Cuando la decisión es `APPROVED`, invoca `authorize(userId, decidedAt)`.
+7. Cuando la decisión es `REJECTED`, invoca `reject(userId, decidedAt)`.
+8. Persiste la ejecución actualizada.
+9. Solicita mediante `ResponseAuthorizationDistributor` la distribución de la decisión hacia Edge.
+
+La autorización del usuario para realizar esta operación debe haberse validado mediante los mecanismos de IAM antes de ejecutar el caso de uso.
+
+Una decisión ya registrada no debe ser reemplazada silenciosamente por una nueva decisión.
+
+##### ResponseAuthorizationDecisionEventHandler
+
+`ResponseAuthorizationDecisionEventHandler` coordina en Edge el procesamiento de una decisión humana recibida desde Cloud.
+
+Su flujo de ejecución es:
+
+1. Recibe la decisión correspondiente a una `ResponseExecution`.
+2. Recupera la ejecución mediante la implementación Edge de `ResponseExecutionRepository`.
+3. Verifica que la ejecución se encuentre en `PENDING_AUTHORIZATION`.
+4. Verifica que la decisión corresponda a la ejecución esperada.
+5. Cuando la decisión es `REJECTED`, registra el rechazo y persiste el estado `REJECTED`.
+6. Cuando la decisión es `APPROVED`, registra la autorización.
+7. Persiste el estado `AUTHORIZED`.
+8. Invoca `markExecutionRequested()`.
+9. Solicita la ejecución mediante `ActuatorCommandGateway`.
+10. Obtiene el `ExecutionResult`.
+11. Invoca `complete(result)`.
+12. Persiste el resultado de la ejecución.
+13. Publica el resultado mediante `AlertResponseEventPublisher`.
+
+Una decisión `REJECTED` finaliza la ejecución sin enviar ningún comando físico al dispositivo.
+
+##### ResponseExecutionResultReceivedEventHandler
+
+`ResponseExecutionResultReceivedEventHandler` coordina en Cloud el registro de los resultados producidos por acciones ejecutadas en Edge.
+
+Su flujo de ejecución es:
+
+1. Recibe la información correspondiente a la ejecución y su resultado.
+2. Busca la `ResponseExecution` mediante `ResponseExecutionRepository`.
+3. Cuando la ejecución ya existe, actualiza su resultado y estado final.
+4. Cuando la ejecución automática todavía no existe en Cloud, reconstruye la información necesaria a partir del evento recibido.
+5. Conserva la `ResponseActionSnapshot` utilizada durante la ejecución.
+6. Registra el `ExecutionResult`.
+7. Persiste la ejecución con estado `SUCCEEDED` o `FAILED`.
+
+Este handler no vuelve a ejecutar una acción cuando recibe un resultado fallido.
+
+##### GetAlertQuery
+
+`GetAlertQuery` representa una solicitud para consultar una alerta registrada.
+
+**Atributos:**
+
+- `alertId: UUID`
+- `organizationId: UUID`
+
+##### GetAlertQueryHandler
+
+`GetAlertQueryHandler` coordina la consulta de una alerta.
+
+Su flujo de ejecución es:
+
+1. Recibe `GetAlertQuery`.
+2. Recupera el `Alert` mediante `AlertRepository`.
+3. Verifica que la alerta exista.
+4. Verifica que pertenezca a la organización solicitada.
+5. Retorna la información requerida por la Interface Layer.
+
+La información obtenida puede incluir:
+
+- contexto del riesgo;
+- momento de generación;
+- destinatarios;
+- canales de notificación;
+- estado de los intentos de entrega.
+
+##### GetAlertsQuery
+
+`GetAlertsQuery` representa una solicitud para consultar múltiples alertas dentro de una organización.
+
+**Atributos:**
+
+- `organizationId: UUID`
+- `buildingId: UUID?`
+- `zoneId: UUID?`
+- `riskTypeCode: String?`
+- `from: Instant?`
+- `to: Instant?`
+
+##### GetAlertsQueryHandler
+
+`GetAlertsQueryHandler` coordina la consulta de múltiples alertas.
+
+Su flujo de ejecución es:
+
+1. Recibe `GetAlertsQuery`.
+2. Construye los criterios de consulta recibidos.
+3. Recupera mediante `AlertRepository` únicamente las alertas pertenecientes a la organización indicada.
+4. Aplica los filtros solicitados.
+5. Retorna la información requerida por la Interface Layer.
+
+##### GetResponseExecutionQuery
+
+`GetResponseExecutionQuery` representa una solicitud para consultar una ejecución de respuesta.
+
+**Atributos:**
+
+- `responseExecutionId: UUID`
+- `organizationId: UUID`
+
+##### GetResponseExecutionQueryHandler
+
+`GetResponseExecutionQueryHandler` coordina la consulta de una respuesta ejecutada o pendiente.
+
+Su flujo de ejecución es:
+
+1. Recibe `GetResponseExecutionQuery`.
+2. Recupera la `ResponseExecution` mediante `ResponseExecutionRepository`.
+3. Verifica que la ejecución exista.
+4. Verifica que pertenezca a la organización indicada.
+5. Retorna la información requerida por la Interface Layer.
+
+La consulta puede proporcionar:
+
+- referencia al riesgo detectado;
+- política utilizada;
+- acción aplicada;
+- dispositivo objetivo;
+- modo de autorización;
+- estado actual;
+- decisión de autorización, cuando corresponda;
+- resultado de ejecución, cuando esté disponible.
+
+##### GetResponseExecutionsQuery
+
+`GetResponseExecutionsQuery` representa una solicitud para consultar múltiples ejecuciones de respuesta dentro de una organización.
+
+**Atributos:**
+
+- `organizationId: UUID`
+- `riskDetectionId: UUID?`
+- `status: ResponseExecutionStatus?`
+- `from: Instant?`
+- `to: Instant?`
+
+##### GetResponseExecutionsQueryHandler
+
+`GetResponseExecutionsQueryHandler` coordina la consulta de múltiples ejecuciones de respuesta.
+
+Su flujo de ejecución es:
+
+1. Recibe `GetResponseExecutionsQuery`.
+2. Construye los criterios correspondientes.
+3. Recupera mediante `ResponseExecutionRepository` las ejecuciones pertenecientes a la organización indicada.
+4. Aplica los filtros solicitados.
+5. Retorna la información requerida por la Interface Layer.
+
+##### NotificationTarget
+
+`NotificationTarget` representa la información mínima necesaria para intentar entregar una alerta a un destinatario mediante un determinado canal.
+
+**Atributos:**
+
+- `recipientUserId: UUID`
+- `channel: String`
+- `destination: String`
+
+`destination` representa el identificador requerido por el canal seleccionado, como una dirección o identificador externo de entrega.
+
+##### NotificationSendResult
+
+`NotificationSendResult` representa el resultado obtenido después de solicitar una entrega a un proveedor externo.
+
+**Atributos:**
+
+- `successful: boolean`
+- `completedAt: Instant`
+- `failureReason: String?`
+
+Este resultado permite actualizar el `NotificationDelivery` correspondiente sin exponer detalles específicos del proveedor al Domain Layer.
+
+##### NotificationGateway
+
+`NotificationGateway` es una abstracción de Application Layer utilizada para solicitar la entrega de una alerta mediante un servicio externo.
+
+**Operación:**
+
+- `send(alert, target): NotificationSendResult`
+
+La Application Layer no conoce el proveedor concreto utilizado para realizar la entrega.
+
+##### AlertRecipientResolver
+
+`AlertRecipientResolver` representa la dependencia utilizada para determinar qué responsables y canales deben utilizarse para comunicar una alerta.
+
+**Operación:**
+
+- `resolve(alertContext): List<NotificationTarget>`
+
+La implementación puede utilizar información proveniente de User, IAM y otros contextos necesarios, sin transferir la propiedad de esos modelos a Alert & Response Management.
+
+##### DeviceCapabilityGateway
+
+`DeviceCapabilityGateway` representa la dependencia utilizada para comprobar que un dispositivo posee la capacidad de actuación necesaria para una acción configurada.
+
+**Operación:**
+
+- `validateActuationCapability(deviceId, capabilityCode)`
+
+Alert & Response Management utiliza únicamente el resultado de esta validación y no administra el catálogo de dispositivos.
+
+##### ResponsePolicyDistributor
+
+`ResponsePolicyDistributor` abstrae la distribución de las políticas de respuesta necesarias desde Cloud hacia Edge.
+
+**Operación:**
+
+- `distribute(policy)`
+
+La Application Layer no depende del mecanismo de transporte utilizado para realizar esta distribución.
+
+##### ResponseAuthorizationDistributor
+
+`ResponseAuthorizationDistributor` abstrae la distribución hacia Edge de una decisión humana registrada sobre una `ResponseExecution`.
+
+**Operación:**
+
+- `distributeDecision(execution)`
+
+La decisión distribuida puede ser `APPROVED` o `REJECTED`.
+
+La implementación concreta del mecanismo de entrega corresponde a Infrastructure Layer.
+
+##### ActuatorCommandGateway
+
+`ActuatorCommandGateway` abstrae la solicitud de ejecución de una acción física sobre un dispositivo.
+
+**Operación:**
+
+- `execute(action): ExecutionResult`
+
+La Application Layer no conoce el hardware, protocolo o mecanismo específico utilizado para controlar el actuador.
+
+##### AlertResponseEventPublisher
+
+`AlertResponseEventPublisher` abstrae la publicación de información producida por el flujo local de respuesta.
+
+**Operación:**
+
+- `publish(event)`
+
+Esta abstracción permite comunicar principalmente:
+
+- solicitudes de autorización;
+- resultados de ejecución.
+
+La conservación temporal, los reintentos y la sincronización posterior de estos eventos durante una interrupción de conectividad pertenecen al Bounded Context Connectivity.
+
+---
+
+#### 4.2.3.4. Infrastructure Layer
+
+La **Infrastructure Layer** contiene las implementaciones técnicas requeridas por el Bounded Context Alert & Response Management.
+
+Esta capa implementa las abstracciones definidas por las capas Domain y Application y encapsula los detalles relacionados con persistencia, servicios externos de notificación, integración con Device Management, distribución de políticas hacia Edge, comunicación de decisiones de autorización y ejecución local de acciones.
+
+Los principales componentes de infraestructura son `AlertRepositoryAdapter`, `ResponsePolicyRepositoryAdapter`, `ResponseExecutionRepositoryAdapter`, `NotificationServiceAdapter`, `AlertRecipientIntegrationAdapter`, `DeviceCapabilityIntegrationAdapter`, `ResponsePolicyDistributionAdapter`, `ResponseAuthorizationDistributionAdapter`, `EdgeResponsePolicyRepositoryAdapter`, `EdgeResponseExecutionRepositoryAdapter`, `ActuatorCommandAdapter` y `AlertResponseEventPublisherAdapter`.
+
+##### AlertRepositoryAdapter
+
+`AlertRepositoryAdapter` implementa la interfaz `AlertRepository`.
+
+Sus responsabilidades son:
+
+- recuperar un `Alert` mediante su identificador;
+- recuperar alertas asociadas con una determinada detección de riesgo;
+- recuperar alertas pertenecientes a una organización aplicando los criterios solicitados;
+- reconstruir el agregado `Alert` a partir de la información persistida;
+- persistir el `Alert` junto con su `AlertContext`;
+- persistir y actualizar los `NotificationDelivery` asociados.
+
+Las referencias como `riskDetectionId`, `buildingId`, `zoneId` y `recipientUserId` se almacenan como identificadores externos y no convierten los modelos de otros Bounded Contexts en parte del agregado `Alert`.
+
+##### ResponsePolicyRepositoryAdapter
+
+`ResponsePolicyRepositoryAdapter` implementa `ResponsePolicyRepository` para la persistencia Cloud de las políticas de respuesta.
+
+Sus responsabilidades son:
+
+- recuperar una `ResponsePolicy` mediante su identificador;
+- recuperar políticas activas correspondientes a una organización y un tipo de riesgo;
+- reconstruir la política junto con sus `ResponseAction`;
+- persistir la configuración y estado de la política;
+- conservar la versión de la política.
+
+Las acciones forman parte de `ResponsePolicy` y no disponen de un repositorio independiente.
+
+La información de `targetDeviceId` y `targetCapabilityCode` se almacena como referencia hacia Device Management y no genera propiedad sobre el dispositivo.
+
+##### ResponseExecutionRepositoryAdapter
+
+`ResponseExecutionRepositoryAdapter` implementa `ResponseExecutionRepository` en Cloud.
+
+Sus responsabilidades son:
+
+- recuperar una `ResponseExecution` mediante su identificador;
+- consultar ejecuciones asociadas con una detección de riesgo;
+- recuperar ejecuciones pertenecientes a una organización utilizando criterios de búsqueda;
+- reconstruir la acción utilizada mediante `ResponseActionSnapshot`;
+- persistir el estado actual de la ejecución;
+- persistir una `ResponseAuthorization` cuando corresponda;
+- persistir el `ExecutionResult` cuando la ejecución finaliza.
+
+La persistencia debe conservar la información histórica de la acción utilizada aunque posteriormente se modifique la `ResponsePolicy` que originó la respuesta.
+
+##### NotificationServiceAdapter
+
+`NotificationServiceAdapter` implementa `NotificationGateway`.
+
+Su responsabilidad es comunicarse con el servicio externo de notificaciones seleccionado por ResQ para intentar entregar una alerta a un `NotificationTarget`.
+
+El adapter:
+
+- recibe la información de la alerta y del destinatario;
+- construye la solicitud requerida por el proveedor externo;
+- solicita la entrega de la notificación;
+- interpreta la respuesta del proveedor;
+- construye un `NotificationSendResult`.
+
+Los detalles específicos del proveedor, credenciales, SDK, protocolo o formato de comunicación permanecen encapsulados en Infrastructure Layer.
+
+Un fallo confirmado por el proveedor externo no debe interpretarse como una notificación entregada correctamente.
+
+##### AlertRecipientIntegrationAdapter
+
+`AlertRecipientIntegrationAdapter` implementa `AlertRecipientResolver`.
+
+Su responsabilidad es obtener la información mínima necesaria para determinar los destinatarios y canales mediante los cuales debe comunicarse una alerta.
+
+Para ello puede utilizar información proporcionada por User, IAM y los contextos relacionados con la organización y ubicación del riesgo.
+
+El adapter devuelve una colección de `NotificationTarget` y no persiste perfiles de usuario ni reproduce sus roles o permisos dentro de Alert & Response Management.
+
+##### DeviceCapabilityIntegrationAdapter
+
+`DeviceCapabilityIntegrationAdapter` implementa `DeviceCapabilityGateway`.
+
+Su responsabilidad es comprobar que el dispositivo referenciado por una `ResponseAction` posee la capacidad de actuación indicada.
+
+La validación considera como mínimo:
+
+- la existencia del dispositivo;
+- la existencia de la capacidad indicada;
+- que la capacidad corresponda a una operación de actuación válida.
+
+La información obtenida desde Device Management se utiliza únicamente para validar la configuración de la política.
+
+Alert & Response Management no modifica el dispositivo ni mantiene una copia completa de su agregado.
+
+##### ResponsePolicyDistributionAdapter
+
+`ResponsePolicyDistributionAdapter` implementa `ResponsePolicyDistributor`.
+
+Su responsabilidad es distribuir hacia Edge la representación de las políticas necesarias para ejecutar respuestas locales.
+
+La información principal de una política distribuida incluye:
+
+- `policyId`;
+- `organizationId`;
+- `riskTypeCode`;
+- `status`;
+- `version`;
+- `actions`.
+
+Cada elemento de `actions` contiene:
+
+- `actionId`;
+- `actionCode`;
+- `targetDeviceId`;
+- `targetCapabilityCode`;
+- `authorizationMode`;
+- `critical`.
+
+El mecanismo concreto utilizado para transportar esta información permanece encapsulado en Infrastructure Layer.
+
+##### ResponseAuthorizationDistributionAdapter
+
+`ResponseAuthorizationDistributionAdapter` implementa `ResponseAuthorizationDistributor`.
+
+Su responsabilidad es comunicar hacia Edge una decisión registrada sobre una `ResponseExecution` pendiente.
+
+La decisión distribuida puede ser:
+
+- `APPROVED`;
+- `REJECTED`.
+
+La información distribuida debe permitir identificar de forma inequívoca:
+
+- la ejecución correspondiente;
+- la acción asociada;
+- la decisión registrada;
+- el usuario que tomó la decisión;
+- el momento de la decisión.
+
+Este adapter no determina si la decisión es válida. La decisión debe haber sido procesada previamente por la Application Layer.
+
+##### EdgeResponsePolicyRepositoryAdapter
+
+`EdgeResponsePolicyRepositoryAdapter` implementa `ResponsePolicyRepository` en Edge.
+
+Su responsabilidad es mantener localmente las políticas necesarias para la operación local de Alert & Response Management, incluyendo acciones automáticas y acciones que requieren autorización humana.
+
+Sus operaciones incluyen:
+
+- recuperar una política mediante su identificador;
+- recuperar políticas activas mediante `organizationId` y `riskTypeCode`;
+- almacenar una política recibida desde Cloud;
+- reemplazar una réplica cuando la versión recibida es posterior;
+- reconstruir sus `ResponseAction`.
+
+La persistencia local permite que las políticas necesarias continúen disponibles durante una interrupción temporal de conectividad con Cloud.
+
+La representación almacenada en Edge es una réplica operativa de la configuración administrada desde Cloud.
+
+##### EdgeResponseExecutionRepositoryAdapter
+
+`EdgeResponseExecutionRepositoryAdapter` implementa `ResponseExecutionRepository` en Edge.
+
+Su responsabilidad es conservar localmente el estado de las ejecuciones originadas en el entorno Edge.
+
+Sus operaciones incluyen:
+
+- almacenar una nueva `ResponseExecution`;
+- recuperar una ejecución mediante su identificador;
+- recuperar ejecuciones relacionadas con una detección de riesgo;
+- conservar ejecuciones en `PENDING_AUTHORIZATION` mientras esperan una decisión proveniente de Cloud;
+- persistir la `ResponseAuthorization` asociada cuando se recibe una decisión humana válida desde Cloud;
+- actualizar el estado de la ejecución de acuerdo con la decisión recibida;
+- persistir el `ExecutionResult` cuando la acción finaliza.
+
+Esta persistencia permite conservar el estado propio del Bounded Context mientras Connectivity administra de forma independiente las colas, reintentos y sincronización de mensajes.
+
+##### ActuatorCommandAdapter
+
+`ActuatorCommandAdapter` implementa `ActuatorCommandGateway`.
+
+Su responsabilidad es traducir una `ResponseActionSnapshot` a la representación requerida por el mecanismo local encargado de ejecutar una acción sobre un dispositivo.
+
+El adapter:
+
+- identifica el dispositivo objetivo;
+- identifica la capacidad de actuación solicitada;
+- construye el comando requerido por el flujo local;
+- solicita la ejecución de la acción;
+- interpreta la respuesta obtenida;
+- construye el `ExecutionResult` correspondiente.
+
+El Domain Layer no depende de protocolos específicos, librerías de hardware, GPIO, MQTT u otros mecanismos concretos utilizados para controlar actuadores.
+
+##### AlertResponseEventPublisherAdapter
+
+`AlertResponseEventPublisherAdapter` implementa `AlertResponseEventPublisher`.
+
+Su responsabilidad es publicar hacia el flujo distribuido de ResQ la información producida por las respuestas procesadas en Edge.
+
+Entre los eventos que puede comunicar se encuentran:
+
+- solicitudes de autorización para acciones `HUMAN_REQUIRED`;
+- resultados de acciones ejecutadas;
+- información necesaria para registrar en Cloud la trazabilidad de una `ResponseExecution`.
+
+El adapter no administra directamente las colas utilizadas para conservar eventos durante una pérdida de conectividad.
+
+La retención temporal, los reintentos y la posterior sincronización de esos mensajes pertenecen al mecanismo proporcionado por Connectivity.
+
+##### Persistence considerations
+
+El modelo de persistencia de Alert & Response Management debe mantener la integridad de los objetos que pertenecen al Bounded Context y evitar dependencias directas con las tablas internas de otros contextos.
+
+La persistencia Cloud conserva la información principal relacionada con:
+
+- políticas de respuesta;
+- acciones pertenecientes a cada política;
+- alertas generadas;
+- intentos de notificación;
+- ejecuciones de respuesta;
+- decisiones de autorización;
+- resultados de ejecución.
+
+En la persistencia Cloud:
+
+- `riskDetectionId` se almacena como referencia externa y no genera una relación directa con las tablas internas de Risk Detection;
+- `targetDeviceId` se almacena como referencia externa hacia Device Management;
+- `buildingId` y `zoneId` se conservan como referencias externas de ubicación;
+- `recipientUserId` y `decidedByUserId` se almacenan como referencias externas hacia User e IAM;
+- las relaciones entre `Alert` y `NotificationDelivery` son administradas internamente por este Bounded Context;
+- las relaciones entre `ResponsePolicy` y sus `ResponseAction` son administradas internamente por este Bounded Context;
+- las relaciones entre `ResponseExecution`, `ResponseAuthorization` y `ExecutionResult` son administradas internamente por este Bounded Context;
+- el `ResponseActionSnapshot` se conserva independientemente de modificaciones posteriores realizadas sobre la política.
+
+La persistencia Edge conserva la información necesaria para soportar la operación local de Alert & Response Management.
+
+En la persistencia Edge:
+
+- se conservan réplicas de las `ResponsePolicy` necesarias para la operación local;
+- se conservan las `ResponseAction` pertenecientes a dichas políticas;
+- se conserva el `version` de cada política para evitar reemplazar una réplica local por una versión anterior;
+- se conservan las `ResponseExecution` originadas localmente mientras se encuentran pendientes o hasta que su resultado pueda ser registrado;
+- las ejecuciones que requieren intervención humana pueden permanecer en `PENDING_AUTHORIZATION` hasta recibir una decisión válida desde Cloud;
+- se conserva la `ResponseAuthorization` asociada cuando una ejecución recibe una decisión humana válida;
+- se conserva el `ExecutionResult` cuando una acción alcanza un resultado final;
+- las políticas almacenadas localmente son réplicas operativas y no una fuente de verdad independiente de la configuración administrada desde Cloud.
+
+Esta persistencia local no asigna a Alert & Response Management la responsabilidad de gestionar la sincronización de mensajes. Las colas de eventos pendientes, los reintentos y los mecanismos de sincronización utilizados durante una pérdida de conectividad continúan siendo responsabilidad de Connectivity.
+
+#### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+The Alert & Response Management Bounded Context participates in more than one deployable Container. For that reason, its Component Level architecture is represented through separate C4 Component Diagrams for the Cloud and Edge environments.
+
+The diagrams preserve the same domain boundary while representing the responsibilities deployed in each Container.
+
+##### Alert & Response Management — ResQ Cloud RESTful API Component Diagram
+
+The Cloud Component Diagram represents the components inside the ResQ Cloud RESTful API that participate in Alert & Response Management.
+
+The principal components are:
+
+- Response Policy API, responsible for receiving authorized response-policy configuration and status-management operations.
+
+- Alert API, responsible for exposing generated alerts and notification-delivery information to authorized clients.
+
+- Response Execution API, responsible for exposing response executions and receiving human authorization decisions.
+
+- Risk Detected Event Consumer, responsible for receiving synchronized risk-detection events produced by the distributed Edge flow.
+
+- Response Authorization Request Consumer, responsible for receiving authorization requests generated by response executions in Edge.
+
+- Response Execution Result Consumer, responsible for receiving results of response actions executed locally in Edge.
+
+- Alert & Response Application, responsible for coordinating Cloud use cases related to policies, alerts, notifications, authorization decisions and execution traceability.
+
+- Alert & Response Domain, containing the domain model and business rules used by the Cloud capabilities.
+
+- Cloud Alert & Response Persistence, implementing persistence operations for alerts, response policies and response executions.
+
+- Notification Integration, responsible for communicating with the external notification provider.
+
+- Alert Recipient Integration, responsible for resolving alert recipients and notification channels.
+
+- Device Capability Integration, responsible for validating the actuation capabilities required by configured response actions.
+
+- Response Policy Distribution, responsible for propagating response-policy replicas toward Edge.
+
+- Response Authorization Distribution, responsible for propagating authorization decisions toward Edge.
+
+The main Cloud flow is conceptually:
+
+```text
+Web / Mobile Application
+          |
+          v
+Cloud Interface Components
+          |
+          v
+Alert & Response Application
+          |
+          v
+Alert & Response Domain
+          |
+          +-----------------------------+
+          |              |              |
+          v              v              v
+Cloud Persistence   External        Distribution
+                    Integrations     Components
+          |              |              |
+          v              v              v
+ResQ Cloud DB       External Service     Edge
+```
+
+Risk-detection events synchronized from Edge enter through the Risk Detected Event Consumer and are processed by the Application Layer.
+
+When a risk-detection event is received, the Application Layer creates the corresponding `Alert`, resolves its recipients and requests notification delivery through the configured external integration.
+
+Response policies are configured in Cloud and distributed toward Edge as operational replicas.
+
+Authorization requests generated by `HUMAN_REQUIRED` actions are received from Edge and registered in Cloud so that an authorized user can approve or reject the corresponding execution.
+
+The resulting authorization decision is then distributed toward Edge.
+
+Execution results produced locally are received through the Response Execution Result Consumer and persisted to maintain response traceability.
+
+**DIAGRAM — Alert & Response Management Cloud Component Level Diagram**
+
+![Alert & Response Management Cloud Component Level Diagram](assets/images/chapter-04-solution-software-design/alert-response-management/alert-response-management-cloud-component-level-diagram.png)
+
+##### Alert & Response Management — ResQ Edge API Component Diagram
+
+The Edge Component Diagram represents the components responsible for local response evaluation and execution inside the ResQ Edge API.
+
+The principal components are:
+
+- Local Risk Detected Consumer, responsible for receiving risk detections generated by the local Risk Detection flow.
+
+- Response Policy Replica Consumer, responsible for receiving current response-policy replicas distributed from Cloud.
+
+- Response Authorization Decision Consumer, responsible for receiving human authorization decisions distributed from Cloud.
+
+- Edge Alert & Response Application, responsible for coordinating local response evaluation, authorization and execution.
+
+- Alert & Response Domain, containing the response-policy and response-execution business rules required locally.
+
+- Edge Response Policy Persistence, responsible for storing local response-policy replicas using Peewee and SQLite.
+
+- Edge Response Execution Persistence, responsible for storing locally originated response executions and their state.
+
+- Actuator Integration, responsible for requesting authorized local actuator operations.
+
+- Alert & Response Event Publisher, responsible for publishing authorization requests and execution results toward the distributed ResQ flow.
+
+The principal local execution flow is:
+
+```text
+Local Risk Detection
+          |
+          v
+Local Risk Detected Consumer
+          |
+          v
+Edge Alert & Response Application
+          |
+          v
+Alert & Response Domain
+      /             \
+     v               v
+Edge Persistence   Actuator Integration
+     |
+     v
+Alert & Response Event Publisher
+     |
+     v
+Distributed ResQ Flow
+```
+
+The Edge policy-update flow is:
+
+```text
+Cloud Policy Distribution
+          |
+          v
+Response Policy Replica Consumer
+          |
+          v
+Edge Alert & Response Application
+          |
+          v
+Edge Response Policy Persistence
+```
+
+The authorization-decision flow is:
+
+```text
+Cloud Authorization Decision
+          |
+          v
+Response Authorization Decision Consumer
+          |
+          v
+Edge Alert & Response Application
+          |
+          v
+Response Execution
+      /           \
+     v             v
+ APPROVED       REJECTED
+     |             |
+     v             v
+Actuator        Final State
+Execution
+```
+
+When the Local Risk Detected Consumer receives a locally detected risk, the Application Layer retrieves the active response policies corresponding to the organization and risk type.
+
+For actions configured with `AUTOMATIC`, Edge can continue toward local actuator execution without an additional human authorization.
+
+For actions configured with `HUMAN_REQUIRED`, the corresponding `ResponseExecution` remains in `PENDING_AUTHORIZATION` and an authorization request is published toward Cloud.
+
+When an `APPROVED` decision is received, the execution continues locally. A `REJECTED` decision finalizes the execution without issuing a command to the actuator.
+
+Response-policy replicas and local execution state are persisted using Peewee and SQLite so that the state required for local operation can be maintained.
+
+The transport, retry and synchronization mechanisms used between Cloud and Edge remain the responsibility of the Connectivity Bounded Context.
+
+**DIAGRAM — Alert & Response Management Edge Component Level Diagram**
+
+![Alert & Response Management Edge Component Level Diagram](assets/images/chapter-04-solution-software-design/alert-response-management/alert-response-management-edge-component-level-diagram.png)
+
+#### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
+
+The Code Level Diagrams provide a more detailed representation of the implementation-oriented structure of the Alert & Response Management Bounded Context.
+
+For Alert & Response Management, the Code Level is represented by:
+
+- Domain Layer Class Diagram, describing the object-oriented domain model, including Aggregate Roots, Entities, Value Objects, enumerations, Domain Services, Repository interfaces, attributes, methods, visibility, relationships, and multiplicities.
+
+- Database Design Diagram, describing the relational persistence structures required by the Cloud and Edge portions of the Bounded Context.
+
+The diagrams must remain consistent with the four-layer design described above.
+
+##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
+
+The Domain Layer Class Diagram represents the implementation-oriented structure of the Alert & Response Management domain model.
+
+The diagram must include the following elements.
+
+**Aggregate Roots**
+
+- `Alert`
+- `ResponsePolicy`
+- `ResponseExecution`
+
+**Entities**
+
+- `NotificationDelivery`
+- `ResponseAction`
+- `ResponseAuthorization`
+
+**Value Objects**
+
+- `AlertContext`
+- `ResponseActionSnapshot`
+- `ExecutionResult`
+
+**Enumerations**
+
+- `ResponsePolicyStatus`
+- `AuthorizationMode`
+- `AuthorizationDecision`
+- `ResponseExecutionStatus`
+- `NotificationDeliveryStatus`
+
+**Repository Interfaces**
+
+- `AlertRepository`
+- `ResponsePolicyRepository`
+- `ResponseExecutionRepository`
+
+**Domain Service**
+
+- `ResponsePolicySelectionService`
+
+The principal relationships to represent are:
+
+- `Alert` composes exactly one `AlertContext`.
+
+- `Alert` owns zero or more `NotificationDelivery` entities.
+
+- `NotificationDelivery` uses exactly one `NotificationDeliveryStatus`.
+
+- `ResponsePolicy` owns zero or more `ResponseAction` entities while being configured.
+
+- `ResponsePolicy` uses exactly one `ResponsePolicyStatus`.
+
+- `ResponseAction` uses exactly one `AuthorizationMode`.
+
+- `ResponseExecution` composes exactly one `ResponseActionSnapshot`.
+
+- `ResponseExecution` may own zero or one `ResponseAuthorization`.
+
+- `ResponseExecution` may compose zero or one `ExecutionResult`.
+
+- `ResponseExecution` uses exactly one `ResponseExecutionStatus`.
+
+- `ResponseActionSnapshot` uses exactly one `AuthorizationMode`.
+
+- `ResponseAuthorization` uses exactly one `AuthorizationDecision`.
+
+- `AlertRepository` persists and retrieves `Alert`.
+
+- `ResponsePolicyRepository` persists and retrieves `ResponsePolicy`.
+
+- `ResponseExecutionRepository` persists and retrieves `ResponseExecution`.
+
+- `ResponsePolicySelectionService` evaluates `ResponsePolicy` and its `ResponseAction` elements.
+
+The diagram must show UML visibility conventions:
+
+- `+` for public members;
+
+- `-` for private members;
+
+- `#` for protected members when applicable.
+
+A conceptual multiplicity reference is:
+
+```text
+Alert "1" *-- "1" AlertContext
+
+Alert "1" *-- "0..*" NotificationDelivery
+
+NotificationDelivery --> NotificationDeliveryStatus
+
+
+ResponsePolicy "1" *-- "0..*" ResponseAction
+
+ResponsePolicy --> ResponsePolicyStatus
+
+ResponseAction --> AuthorizationMode
+
+
+ResponseExecution "1" *-- "1" ResponseActionSnapshot
+
+ResponseExecution "1" *-- "0..1" ResponseAuthorization
+
+ResponseExecution "1" *-- "0..1" ExecutionResult
+
+ResponseExecution --> ResponseExecutionStatus
+
+ResponseActionSnapshot --> AuthorizationMode
+
+ResponseAuthorization --> AuthorizationDecision
+
+
+AlertRepository ..> Alert : persists
+
+ResponsePolicyRepository ..> ResponsePolicy : persists
+
+ResponseExecutionRepository ..> ResponseExecution : persists
+
+
+ResponsePolicySelectionService ..> ResponsePolicy : evaluates
+
+ResponsePolicySelectionService ..> ResponseAction : selects
+```
+
+A `ResponsePolicy` may contain zero or more `ResponseAction` entities while it is being configured. However, it must contain at least one valid action before it can be activated.
+
+`ResponseActionSnapshot` preserves the exact action used when a `ResponseExecution` is created so that later modifications to the corresponding `ResponsePolicy` do not alter historical execution information.
+
+The following concepts must not appear as owned domain classes inside Alert & Response Management:
+
+- `RiskDetection`
+- `Device`
+- `Building`
+- `Zone`
+- `User`
+- `Incident`
+- `Actuator`
+- Connectivity queues or synchronization structures
+
+Their identifiers may appear as external references when required by the alert and response process.
+
+The principal external references include:
+
+- `riskDetectionId`
+- `targetDeviceId`
+- `buildingId`
+- `zoneId`
+- `recipientUserId`
+- `decidedByUserId`
+
+These identifiers do not transfer ownership of the referenced aggregates to Alert & Response Management.
+
+**DIAGRAM — Alert & Response Management Domain Layer Class Diagram**
+
+![Alert & Response Management Domain Layer Class Diagram](assets/images/chapter-04-solution-software-design/alert-response-management/alert-response-management-domain-layer-class-diagram.png)
+
+##### 4.2.3.6.2. Bounded Context Database Design Diagram
+
+The Alert & Response Management Database Design represents the persistence required by the Bounded Context across the Cloud and Edge execution environments.
+
+Cloud persistence stores the authoritative response-policy definitions, generated alerts, notification-delivery history, response executions, human authorization decisions, and execution results.
+
+Edge persistence stores the local response-policy replicas and response-execution state required for local operation.
+
+The persistence model deliberately avoids creating foreign-key dependencies to tables owned by other Bounded Contexts.
+
+###### Cloud Persistence
+
+###### `response_policies`
+
+Stores the authoritative response-policy configuration.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `policy_id` | UUID | PRIMARY KEY | Unique identifier of the response policy. |
+| `organization_id` | UUID | NOT NULL | Organization to which the policy belongs. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Risk type to which the policy applies. |
+| `status` | VARCHAR(20) | NOT NULL | Current policy status (`ACTIVE` or `INACTIVE`). |
+| `version` | BIGINT | NOT NULL | Version used to order distributed updates toward Edge. |
+| `created_at` | TIMESTAMP | NOT NULL | Moment when the policy was created. |
+| `updated_at` | TIMESTAMP | NOT NULL | Moment when the policy was last modified. |
+
+A response policy may contain zero or more actions while it is being configured, but it must contain at least one valid action before activation.
+
+###### `response_actions`
+
+Stores the response actions owned by each policy.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `action_id` | UUID | PRIMARY KEY | Unique identifier of the response action. |
+| `policy_id` | UUID | NOT NULL, FOREIGN KEY | References `response_policies.policy_id`. |
+| `action_code` | VARCHAR(100) | NOT NULL | Code identifying the action. |
+| `target_device_id` | UUID | NOT NULL | External identifier of the target device. |
+| `target_capability_code` | VARCHAR(100) | NOT NULL | Device actuation capability required by the action. |
+| `authorization_mode` | VARCHAR(30) | NOT NULL | Indicates whether the action is `AUTOMATIC` or `HUMAN_REQUIRED`. |
+| `critical` | BOOLEAN | NOT NULL | Indicates whether the action participates in critical local operation. |
+
+`target_device_id` is an external reference and therefore does not create a direct database relationship with Device Management persistence.
+
+###### `alerts`
+
+Stores alerts generated from risk-detection information received by Alert & Response Management.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `alert_id` | UUID | PRIMARY KEY | Unique identifier of the alert. |
+| `organization_id` | UUID | NOT NULL | Organization associated with the alert. |
+| `risk_detection_id` | UUID | NOT NULL | External identifier of the risk detection that originated the alert. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Risk type captured when the alert was generated. |
+| `severity_code` | VARCHAR(50) | NOT NULL | Severity captured when the alert was generated. |
+| `detected_at` | TIMESTAMP | NOT NULL | Original risk-detection time. |
+| `building_id` | UUID | NULL | External Building reference when available. |
+| `zone_id` | UUID | NULL | External Zone reference when available. |
+| `generated_at` | TIMESTAMP | NOT NULL | Moment when the alert was generated. |
+
+`AlertContext` is a Value Object and therefore its values are embedded within the `alerts` record instead of being stored in a separate table.
+
+`risk_detection_id`, `building_id`, and `zone_id` are external references and intentionally do not create foreign keys to Risk Detection or Building Management persistence.
+
+###### `notification_deliveries`
+
+Stores notification-delivery attempts associated with generated alerts.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `delivery_id` | UUID | PRIMARY KEY | Unique identifier of the delivery attempt. |
+| `alert_id` | UUID | NOT NULL, FOREIGN KEY | References `alerts.alert_id`. |
+| `recipient_user_id` | UUID | NOT NULL | External identifier of the destination user. |
+| `channel` | VARCHAR(50) | NOT NULL | Notification channel used for the attempt. |
+| `destination` | VARCHAR(255) | NOT NULL | Destination identifier required by the selected channel. |
+| `status` | VARCHAR(20) | NOT NULL | Delivery status (`PENDING`, `DELIVERED`, or `FAILED`). |
+| `requested_at` | TIMESTAMP | NOT NULL | Moment when delivery was requested. |
+| `completed_at` | TIMESTAMP | NULL | Moment when the delivery attempt completed. |
+| `failure_reason` | VARCHAR(255) | NULL | Failure information when the delivery could not be completed. |
+
+`recipient_user_id` is an external reference and therefore does not create a direct relationship with User or IAM persistence.
+
+###### `response_executions`
+
+Stores the response executions produced by the system and preserves the action snapshot used for each execution.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `response_execution_id` | UUID | PRIMARY KEY | Unique identifier of the response execution. |
+| `organization_id` | UUID | NOT NULL | Organization associated with the execution. |
+| `risk_detection_id` | UUID | NOT NULL | External identifier of the originating risk detection. |
+| `policy_id` | UUID | NOT NULL | Identifier of the response policy used when the execution was created. |
+| `action_id` | UUID | NOT NULL | Identifier of the action represented by the snapshot. |
+| `action_code` | VARCHAR(100) | NOT NULL | Action code preserved in the execution snapshot. |
+| `target_device_id` | UUID | NOT NULL | External identifier of the target device. |
+| `target_capability_code` | VARCHAR(100) | NOT NULL | Capability used during the execution. |
+| `authorization_mode` | VARCHAR(30) | NOT NULL | Authorization mode captured when the execution was created. |
+| `critical` | BOOLEAN | NOT NULL | Critical-operation indicator captured in the action snapshot. |
+| `status` | VARCHAR(40) | NOT NULL | Current response-execution status. |
+| `requested_at` | TIMESTAMP | NOT NULL | Moment when the execution was created. |
+| `successful` | BOOLEAN | NULL | Indicates whether the execution completed successfully. |
+| `result_code` | VARCHAR(100) | NULL | Code identifying the final execution result. |
+| `result_message` | VARCHAR(255) | NULL | Additional information about the result. |
+| `completed_at` | TIMESTAMP | NULL | Moment when execution reached a final result. |
+
+The action-related fields stored in this table represent the `ResponseActionSnapshot`.
+
+`ExecutionResult` is a Value Object and therefore its values are embedded within the `response_executions` record instead of being stored in an independent table.
+
+The fields `successful`, `result_code`, `result_message`, and `completed_at` remain nullable while the execution has not reached a final result.
+
+`risk_detection_id` and `target_device_id` are external references.
+
+###### `response_authorizations`
+
+Stores human authorization decisions associated with response executions.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `authorization_id` | UUID | PRIMARY KEY | Unique identifier of the authorization decision. |
+| `response_execution_id` | UUID | NOT NULL, FOREIGN KEY | References `response_executions.response_execution_id`. |
+| `decision` | VARCHAR(20) | NOT NULL | Authorization decision (`APPROVED` or `REJECTED`). |
+| `decided_by_user_id` | UUID | NOT NULL | External identifier of the user who made the decision. |
+| `decided_at` | TIMESTAMP | NOT NULL | Moment when the decision was registered. |
+
+A `ResponseExecution` may have zero or one associated `ResponseAuthorization`.
+
+`decided_by_user_id` is an external reference and therefore does not create a direct database relationship with User or IAM persistence.
+
+###### Edge Persistence
+
+###### `edge_response_policies`
+
+Stores response-policy replicas required for local evaluation in the Edge SQLite database.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `policy_id` | UUID | PRIMARY KEY | Identifier of the Cloud response policy represented locally. |
+| `organization_id` | UUID | NOT NULL | Organization to which the policy belongs. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Risk type to which the policy applies. |
+| `status` | VARCHAR(20) | NOT NULL | Current replicated policy status. |
+| `version` | BIGINT | NOT NULL | Version used to prevent older replicas from replacing newer ones. |
+| `updated_at` | TIMESTAMP | NOT NULL | Moment when the local replica was last updated. |
+
+This table is not an independent source of policy ownership. It is the local Edge representation of policy configuration administered in Cloud.
+
+###### `edge_response_actions`
+
+Stores the actions belonging to locally replicated response policies.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `action_id` | UUID | PRIMARY KEY | Identifier of the replicated response action. |
+| `policy_id` | UUID | NOT NULL, FOREIGN KEY | References `edge_response_policies.policy_id`. |
+| `action_code` | VARCHAR(100) | NOT NULL | Code identifying the action. |
+| `target_device_id` | UUID | NOT NULL | External identifier of the target device. |
+| `target_capability_code` | VARCHAR(100) | NOT NULL | Actuation capability required by the action. |
+| `authorization_mode` | VARCHAR(30) | NOT NULL | Indicates whether the action is `AUTOMATIC` or `HUMAN_REQUIRED`. |
+| `critical` | BOOLEAN | NOT NULL | Indicates whether the action participates in critical local operation. |
+
+###### `edge_response_executions`
+
+Stores response executions created and processed locally in Edge.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `response_execution_id` | UUID | PRIMARY KEY | Unique identifier of the local response execution. |
+| `organization_id` | UUID | NOT NULL | Organization associated with the execution. |
+| `risk_detection_id` | UUID | NOT NULL | External identifier of the originating risk detection. |
+| `policy_id` | UUID | NOT NULL | Identifier of the response policy used for the execution. |
+| `action_id` | UUID | NOT NULL | Identifier of the action represented by the snapshot. |
+| `action_code` | VARCHAR(100) | NOT NULL | Action code preserved in the snapshot. |
+| `target_device_id` | UUID | NOT NULL | External identifier of the target device. |
+| `target_capability_code` | VARCHAR(100) | NOT NULL | Capability used by the response. |
+| `authorization_mode` | VARCHAR(30) | NOT NULL | Authorization mode captured for the execution. |
+| `critical` | BOOLEAN | NOT NULL | Critical-operation indicator. |
+| `status` | VARCHAR(40) | NOT NULL | Current local response-execution status. |
+| `requested_at` | TIMESTAMP | NOT NULL | Moment when the execution was created. |
+| `successful` | BOOLEAN | NULL | Indicates whether execution completed successfully. |
+| `result_code` | VARCHAR(100) | NULL | Final result code when available. |
+| `result_message` | VARCHAR(255) | NULL | Additional result information. |
+| `completed_at` | TIMESTAMP | NULL | Moment when execution reached a final result. |
+
+A locally created execution can remain in `PENDING_AUTHORIZATION` while waiting for an authorization decision from Cloud.
+
+###### `edge_response_authorizations`
+
+Stores authorization decisions received from Cloud for locally originated response executions.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `authorization_id` | UUID | PRIMARY KEY | Identifier of the authorization decision. |
+| `response_execution_id` | UUID | NOT NULL, FOREIGN KEY | References `edge_response_executions.response_execution_id`. |
+| `decision` | VARCHAR(20) | NOT NULL | Authorization decision (`APPROVED` or `REJECTED`). |
+| `decided_by_user_id` | UUID | NOT NULL | External identifier of the user who made the decision. |
+| `decided_at` | TIMESTAMP | NOT NULL | Moment when the decision was registered. |
+
+The Edge persistence implementation must use SQLite with Peewee ORM, according to the Edge Services technology required by the Project Statement.
+
+The principal persistence relationships are conceptually:
+
+```text
+Cloud Persistence
+
+response_policies
+        |
+        | 1
+        |
+        | 0..*
+        v
+response_actions
+
+
+alerts
+        |
+        | 1
+        |
+        | 0..*
+        v
+notification_deliveries
+
+
+response_executions
+        |
+        | 1
+        |
+        | 0..1
+        v
+response_authorizations
+
+
+Edge SQLite
+
+edge_response_policies
+        |
+        | 1
+        |
+        | 0..*
+        v
+edge_response_actions
+
+
+edge_response_executions
+        |
+        | 1
+        |
+        | 0..1
+        v
+edge_response_authorizations
+```
+
+The final Database Design Diagram must clearly distinguish:
+
+- Cloud Persistence
+  - `response_policies`
+  - `response_actions`
+  - `alerts`
+  - `notification_deliveries`
+  - `response_executions`
+  - `response_authorizations`
+
+- Edge SQLite
+  - `edge_response_policies`
+  - `edge_response_actions`
+  - `edge_response_executions`
+  - `edge_response_authorizations`
+
+The diagram must identify:
+
+- all tables;
+
+- all columns;
+
+- primary keys;
+
+- foreign keys internal to the Bounded Context;
+
+- nullable fields;
+
+- cardinalities;
+
+- Cloud versus Edge persistence boundaries;
+
+- external references that intentionally do not create foreign keys to other Bounded Contexts.
+
+No database table for `RiskDetection`, `Device`, `Building`, `Zone`, `User`, `Incident`, `Actuator`, or Connectivity pending events must be introduced inside the Alert & Response Management persistence boundary.
+
+Message queues, retries, pending-event storage, and synchronization mechanisms remain outside this persistence model because they belong to the Connectivity Bounded Context.
+
+**DIAGRAM — Alert & Response Management Database Design Diagram**
+
+![Alert & Response Management Database Design Diagram](assets/images/chapter-04-solution-software-design/alert-response-management/alert-response-management-database-design-diagram.png)
+
+### 4.2.4. Bounded Context: Building Management
+
+#### 4.2.4.1. Domain Layer
 
 **Aggregates**
 
@@ -4387,7 +6498,7 @@ Desactivar una edificación impide nuevas asignaciones tanto a ella como a sus z
 
 Cada cambio efectivo incrementa una vez la versión de Building y genera un evento. Repetir valores existentes no produce un cambio adicional. El mensaje de integración contiene eventId, eventType, schemaVersion, organizationId, buildingId, aggregateVersion, occurredAt y una instantánea de la edificación con sus zonas. Los cambios de zona incluyen además affectedZoneId. La aplicación conserva el mensaje mediante una outbox para informar a los consumidores sin compartir tablas.
 
-#### 4.2.3.2. Interface Layer
+#### 4.2.4.2. Interface Layer
 
 **REST Controllers**
 
@@ -4463,7 +6574,7 @@ Los PUT y el POST de creación de una zona requieren `If-Match` con el ETag de B
 
 `BuildingsContextFacade` expone `ValidateAssignment(organizationId, buildingId, zoneId?)` a contextos autorizados. Utiliza `IBuildingQueryService` para comprobar organización, existencia, pertenencia de la zona y disponibilidad administrativa. Devuelve `BuildingAssignmentValidation` con organizationId, buildingId, zoneId, buildingVersion y availableForAssignment; no entrega entidades persistentes. Una ubicación inexistente o no visible responde como no encontrada y una ubicación inactiva no se considera disponible. Device traduce la respuesta a su contrato local `ValidatedAssignment`. Esta fachada completa el componente ya representado en el diagrama.
 
-#### 4.2.3.3. Application Layer
+#### 4.2.4.3. Application Layer
 
 `BuildingCommandServiceImpl`
 
@@ -4507,7 +6618,7 @@ Buildings conserva los identificadores de edificaciones y zonas, incluso cuando 
 
 La validación describe la disponibilidad en el momento de la consulta. Si una asignación y una desactivación se ejecutan simultáneamente en servicios separados, la consulta por sí sola no garantiza atomicidad entre contextos. La integración deberá revalidar o reconciliar esa asignación ante cambios concurrentes; no se interpreta una respuesta válida como una reserva permanente. Las instantáneas históricas conservadas por Monitoring e Incident Management no se reescriben al renombrar una ubicación.
 
-#### 4.2.3.4. Infrastructure Layer
+#### 4.2.4.4. Infrastructure Layer
 
 **Persistencia del agregado**
 
@@ -4536,30 +6647,30 @@ La unicidad del código de zona se verifica dentro del agregado y mediante UNIQU
 | BuildingPersistenceMapper | No aplica | Convierte Building, Zone y sus value objects hacia y desde registros relacionales. |
 
 
-#### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
+#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
 
 ![Diagrama de componentes de Building Management](assets/images/chapter-04-solution-software-design/buildings-components.png)
 
 Web y Mobile son contenedores separados y consumen BuildingsController. Los servicios de aplicación coordinan reglas de Building y Zone y persistencia en MySQL. Device valida ubicaciones mediante BuildingsContextFacade. La vista muestra el flujo principal; los adaptadores de IAM y publicación outbox se detallan en las capas anteriores para mantener el diagrama simple.
 
-#### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
+#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
 
-##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
+##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
 
 ![Diagrama UML del agregado Building](assets/images/chapter-04-solution-software-design/buildings-domain-model.png)
 ![Diagrama UML de contratos de Building Management](assets/images/chapter-04-solution-software-design/buildings-domain-contracts.png)
 
 Building es la raíz y contiene cero o más zonas, cada una perteneciente a una única edificación. Los value objects encapsulan códigos y dirección; los contratos de comandos, consultas y repositorio operan sobre esa estructura. Renombrar una zona mantiene su identidad y referencias, en correspondencia con US22, AC2.
 
-##### 4.2.3.6.2. Bounded Context Database Design Diagram
+##### 4.2.4.6.2. Bounded Context Database Design Diagram
 
 ![Diagrama relacional de Building Management](assets/images/chapter-04-solution-software-design/buildings-database.png)
 
 `zones.building_id` referencia a `buildings.id`. Los códigos son únicos por organización o edificación, respectivamente. `building_outbox` conserva los mensajes de integración en la misma transacción que el agregado; es una tabla técnica. `organization_id` es una referencia externa, sin FK hacia otro bounded context. La versión de Building también controla los cambios en sus zonas.
 
-### 4.2.4. Bounded Context: Device Management
+### 4.2.5. Bounded Context: Device Management
 
-#### 4.2.4.1. Domain Layer
+#### 4.2.5.1. Domain Layer
 
 **Aggregates**
 
@@ -4676,7 +6787,7 @@ Los contratos auxiliares `DeviceReadScope` y `DeviceFilters` contienen identific
 
 Los eventos se producen únicamente ante cambios efectivos. La aplicación los convierte en mensajes de integración con `eventId`, `eventType`, `schemaVersion`, `organizationId`, `deviceId`, `aggregateVersion`, `occurredAt` y una instantánea del catálogo del dispositivo. El evento de asignación incluye también la asignación anterior. La instantánea contiene metadatos, capacidades, estado y asignación; no contiene mediciones ni credenciales. Permite que Monitoring y Alert & Response Management actualicen su referencia del equipo sin acceder a las tablas de Devices.
 
-#### 4.2.4.2. Interface Layer
+#### 4.2.5.2. Interface Layer
 
 **REST Controllers**
 
@@ -4749,7 +6860,7 @@ Las lecturas de IDs ajenos al ámbito visible responden 404 sin revelar metadato
 
 `DevicesContextFacade` expone `GetDeviceCatalogEntry(organizationId, deviceId)` para consultas entre contextos autorizados. Devuelve `DeviceCatalogEntry` con identidad, ubicación, capacidades, estado y versión, sin entidades persistentes ni tablas compartidas. Utiliza `IDeviceQueryService`; las identidades de servicio también tienen permisos limitados. Esta fachada permite consultar el catálogo inicial o recuperar información, mientras los eventos comunican cambios posteriores.
 
-#### 4.2.4.3. Application Layer
+#### 4.2.5.3. Application Layer
 
 `DeviceCommandServiceImpl`
 
@@ -4784,7 +6895,7 @@ La comprobación previa de duplicados mejora el mensaje al usuario, pero las res
 | IOutboxRepository | Append(message); FindPending(batchSize); MarkPublished(eventId); RecordFailure(eventId, nextAttemptAt) | Almacena y gestiona mensajes de integración pendientes. |
 | IIntegrationEventPublisher | Publish(message) | Entrega un mensaje al transporte de integración elegido. |
 
-#### 4.2.4.4. Infrastructure Layer
+#### 4.2.5.4. Infrastructure Layer
 
 **Persistencia del agregado**
 
@@ -4814,20 +6925,20 @@ El repositorio no publica un método de eliminación física del agregado. Las c
 | DevicePersistenceMapper | No aplica | Convierte Device, DeviceCapability y sus value objects hacia y desde los registros relacionales. |
 
 
-#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
+#### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
 
 ![Diagrama de componentes de Devices](assets/images/chapter-04-solution-software-design/DevicesComponents.png)
 
-#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
+#### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
 
-##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
+##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams
 
 ![Diagrama UML del agregado Device](assets/images/chapter-04-solution-software-design/devices-domain-model.png)
 
 
 ![Diagrama UML de contratos de Devices](assets/images/chapter-04-solution-software-design/devices-domain-contracts.png)
 
-##### 4.2.4.6.2. Bounded Context Database Design Diagram
+##### 4.2.5.6.2. Bounded Context Database Design Diagram
 
 ![Diagrama relacional de Devices](assets/images/chapter-04-solution-software-design/devices-database.png)
 
