@@ -1,0 +1,67 @@
+@startuml
+title Identity and Access Management\nDatabase Design Diagram
+
+skinparam linetype ortho
+skinparam shadowing false
+
+entity "iam_identities" as identities {
+  * identity_id : UUID <<PK>>
+  --
+  * user_id : UUID <<UQ, NOT NULL>>
+  * login_identifier : VARCHAR(255) <<UQ, NOT NULL>>
+  * credential_hash : VARCHAR(255) <<NOT NULL>>
+  * status : VARCHAR(20) <<NOT NULL>>
+}
+
+entity "iam_roles" as roles {
+  * role_id : UUID <<PK>>
+  --
+  * name : VARCHAR(100) <<UQ, NOT NULL>>
+}
+
+entity "iam_permissions" as permissions {
+  * code : VARCHAR(150) <<PK>>
+}
+
+entity "iam_role_assignments" as assignments {
+  * assignment_id : UUID <<PK>>
+  --
+  * identity_id : UUID <<FK, NOT NULL>>
+  * role_id : UUID <<FK, NOT NULL>>
+  * organization_id : UUID <<NOT NULL>>
+}
+
+entity "iam_role_permissions" as role_permissions {
+  * role_id : UUID <<PK, FK, NOT NULL>>
+  * permission_code : VARCHAR(150) <<PK, FK, NOT NULL>>
+}
+
+identities ||--o{ assignments : has
+roles ||--o{ assignments : "is assigned through"
+roles ||--o{ role_permissions : "grants through"
+permissions ||--o{ role_permissions : "belongs to"
+
+note right of identities
+  Constraints:
+  UNIQUE (user_id)
+  UNIQUE (login_identifier)
+  status must contain ACTIVE or DISABLED.
+
+  user_id is an external reference to the User Bounded Context.
+  It is not modeled as a foreign key inside IAM.
+end note
+
+note right of assignments
+  UNIQUE (identity_id, role_id, organization_id)
+
+  organization_id represents the authorization scope.
+  It is not modeled as a foreign key inside IAM.
+end note
+
+note bottom of role_permissions
+  Composite Primary Key: (role_id, permission_code)
+  Foreign Keys:
+  role_id -> iam_roles.role_id
+  permission_code -> iam_permissions.code
+end note
+@enduml
