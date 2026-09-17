@@ -4514,7 +4514,7 @@ La unicidad del código de zona se verifica dentro del agregado y mediante UNIQU
 
 #### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
 
-![Diagrama de componentes de Building Management](../assets/images/chapter-04-solution-software-design/buildings-components.png)
+![Diagrama de componentes de Building Management](assets/images/chapter-04-solution-software-design/buildings-components.png)
 
 Web y Mobile son contenedores separados y consumen BuildingsController. Los servicios de aplicación coordinan reglas de Building y Zone y persistencia en MySQL. Device valida ubicaciones mediante BuildingsContextFacade. La vista muestra el flujo principal; los adaptadores de IAM y publicación outbox se detallan en las capas anteriores para mantener el diagrama simple.
 
@@ -4522,14 +4522,14 @@ Web y Mobile son contenedores separados y consumen BuildingsController. Los serv
 
 ##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
 
-![Diagrama UML del agregado Building](../assets/images/chapter-04-solution-software-design/buildings-domain-model.png)
-![Diagrama UML de contratos de Building Management](../assets/images/chapter-04-solution-software-design/buildings-domain-contracts.png)
+![Diagrama UML del agregado Building](assets/images/chapter-04-solution-software-design/buildings-domain-model.png)
+![Diagrama UML de contratos de Building Management](assets/images/chapter-04-solution-software-design/buildings-domain-contracts.png)
 
 Building es la raíz y contiene cero o más zonas, cada una perteneciente a una única edificación. Los value objects encapsulan códigos y dirección; los contratos de comandos, consultas y repositorio operan sobre esa estructura. Renombrar una zona mantiene su identidad y referencias, en correspondencia con US22, AC2.
 
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram
 
-![Diagrama relacional de Building Management](../assets/images/chapter-04-solution-software-design/buildings-database.png)
+![Diagrama relacional de Building Management](assets/images/chapter-04-solution-software-design/buildings-database.png)
 
 `zones.building_id` referencia a `buildings.id`. Los códigos son únicos por organización o edificación, respectivamente. `building_outbox` conserva los mensajes de integración en la misma transacción que el agregado; es una tabla técnica. `organization_id` es una referencia externa, sin FK hacia otro bounded context. La versión de Building también controla los cambios en sus zonas.
 
@@ -4792,20 +4792,20 @@ El repositorio no publica un método de eliminación física del agregado. Las c
 
 #### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
 
-![Diagrama de componentes de Devices](../assets/images/chapter-04-solution-software-design/DevicesComponents.png)
+![Diagrama de componentes de Devices](assets/images/chapter-04-solution-software-design/DevicesComponents.png)
 
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
 
-![Diagrama UML del agregado Device](../assets/images/chapter-04-solution-software-design/devices-domain-model.png)
+![Diagrama UML del agregado Device](assets/images/chapter-04-solution-software-design/devices-domain-model.png)
 
 
-![Diagrama UML de contratos de Devices](../assets/images/chapter-04-solution-software-design/devices-domain-contracts.png)
+![Diagrama UML de contratos de Devices](assets/images/chapter-04-solution-software-design/devices-domain-contracts.png)
 
 ##### 4.2.4.6.2. Bounded Context Database Design Diagram
 
-![Diagrama relacional de Devices](../assets/images/chapter-04-solution-software-design/devices-database.png)
+![Diagrama relacional de Devices](assets/images/chapter-04-solution-software-design/devices-database.png)
 
 
 
