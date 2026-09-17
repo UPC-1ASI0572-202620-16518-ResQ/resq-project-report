@@ -1,53 +1,51 @@
-<style>
-p:not([align]):not([style*="text-align"]):not([align] p):not([style*="text-align"] p):not(table p):not(ul p):not(ol p):not(pre p):not(figure p):not(:has(img, svg, canvas, video, iframe)) {
-  text-align: justify;
-}
-</style>
-
 <!-- Carátula UPC -->
 
-<p align="center">
+<p align="center" class="cover-logo">
   <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png" alt="Logo UPC" width="200">
 </p>
 
-<h2 align="center">UNIVERSIDAD PERUANA DE CIENCIAS APLICADAS</h2>
+<h2 align="center" class="cover-university">UNIVERSIDAD PERUANA DE CIENCIAS APLICADAS</h2>
 
-<h3 align="center">
+<h3 align="center" class="cover-degree">
 INGENIERÍA DE SOFTWARE
 </h3>
 
-<p align="center"><strong>Ciclo académico:</strong> 2026-20 </p>
+<p align="center" class="cover-cycle"><strong>Ciclo académico:</strong> 2026-20 </p>
 
-<p align="center">
+<p align="center" class="cover-course">
   1ASI0572 – Desarrollo de Soluciones IoT<br>
   <strong>NRC:</strong> 16518<br>
   <strong>Docente:</strong> Jimmy Enrique Sánchez Portugal
 </p>
 
-<hr style="width:60%; border:1px solid #ccc;">
 
-<h1 align="center">Informe de Trabajo Final</h1>
+<h1 align="center" class="cover-title">Informe de Trabajo Final</h1>
 
-<p align="center">
+<p align="center" class="cover-product">
   <strong>Startup:</strong> ResQ<br>
   <strong>Producto:</strong> ResQ
 </p>
 
-<h3 align="center">Integrantes</h3>
+<h3 align="center" class="cover-members-heading">Integrantes</h3>
 
-| Código UPC | Apellidos y Nombres |
-|---|---|
-| [CÓDIGO UPC PENDIENTE] | Aliaga Urbina, Wilder Gonzalo |
-| U202324129 | Chacaliaza Minaya, Eduardo Fabian |
-| U202116246 | Guerrero Vasquez, Jhon Danny |
-| [CÓDIGO UPC PENDIENTE] | Nanfuñay Liza, Pedro Jesus |
-| U202320442 | Quispe Barzola, Fabricio Fabian |
-| [CÓDIGO UPC PENDIENTE] | Sánchez Guevara, Iván Fernando |
+<table class="cover-members-table">
+  <thead>
+    <tr><th>Código UPC</th><th>Apellidos y Nombres</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>[CÓDIGO UPC PENDIENTE]</td><td>Aliaga Urbina, Wilder Gonzalo</td></tr>
+    <tr><td>U202324129</td><td>Chacaliaza Minaya, Eduardo Fabian</td></tr>
+    <tr><td>U202116246</td><td>Guerrero Vasquez, Jhon Danny</td></tr>
+    <tr><td>[CÓDIGO UPC PENDIENTE]</td><td>Nanfuñay Liza, Pedro Jesus</td></tr>
+    <tr><td>U202320442</td><td>Quispe Barzola, Fabricio Fabian</td></tr>
+    <tr><td>[CÓDIGO UPC PENDIENTE]</td><td>Sánchez Guevara, Iván Fernando</td></tr>
+  </tbody>
+</table>
 
 
 <br>
 
-<p align="center" style="font-weight: bold;">Septiembre 2026</p>
+<p align="center" class="cover-date" style="font-weight: bold;">Septiembre 2026</p>
 
 
 <div style="page-break-after: always; break-after: page;"></div>
@@ -57,7 +55,16 @@ INGENIERÍA DE SOFTWARE
 
 | Versión | Fecha | Autor | Descripción de modificación |
 |---|---|---|---|
-| 0.1 | [FECHA PENDIENTE] | [AUTOR PENDIENTE] | Creación inicial de la estructura del Project Report. |
+| 1.1 | 04/09/2026 | Quispe Barzola, Fabricio Fabian | Creación del repositorio y de la estructura inicial del Project Report, incluyendo README principal, organización de capítulos, recursos y plantillas base del informe. |
+| 1.2 | 08/09/2026 | Sánchez Guevara, Iván Fernando | Incorporación y actualización del Startup Profile y Solution Profile correspondiente al Capítulo I. |
+| 1.3 | 10/09/2026 | Chacaliaza Minaya, Eduardo Fabian | Incorporación de segmentos objetivo, análisis competitivo y Product Backlog dentro de los Capítulos I, II y III. |
+| 1.4 | 11/09/2026 | Aliaga Urbina, Wilder Gonzalo | Incorporación de los principales artefactos de Needfinding: User Personas, User Task Matrix, User Journey Mapping y Empathy Mapping. |
+| 1.5 | 12/09/2026 | Quispe Barzola, Fabricio Fabian | Incorporación y actualización de entrevistas, User Stories e Impact Mapping para los Capítulos II y III. |
+| 1.6 | 14/09/2026 | Nanfuñay Liza, Pedro Jesus | Incorporación de Lean UX, Design-Level EventStorming, Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases. |
+| 1.7 | 15/09/2026 | Guerrero Vasquez, Jhon Danny | Incorporación de Big Picture EventStorming, Ubiquitous Language y elementos del diseño táctico correspondientes a User e Incident. |
+| 1.8 | 16/09/2026 | Quispe Barzola, Fabricio Fabian | Incorporación y actualización del Tactical-Level Domain-Driven Design, incluyendo Identity and Access Management y Risk Detection, junto con sus diagramas técnicos. |
+| 1.9 | 17/09/2026 | Sánchez Guevara, Iván Fernando | Consolidación del Context Mapping, Software Architecture y Bounded Context Connectivity dentro del Capítulo IV. |
+| 1.10 | 17/09/2026 | Quispe Barzola, Fabricio Fabian | Consolidación de la versión correspondiente a AV1, incluyendo integración de los Capítulos I–IV, Student Outcome, Collaboration Insights, Registro de Versiones, evidencias de colaboración, revisión de estructura y ajustes finales de presentación del Project Report. |
 
 <!-- PENDIENTE: Validar la fecha y el autor de la versión inicial y completar las siguientes versiones con base en el historial real de GitHub. Cada fila debe tener un solo autor y representar una modificación real del documento. -->
 
@@ -124,6 +131,9 @@ Los analíticos del repositorio permiten observar la participación de los integ
 </p>
 
 El historial de commits permite relacionar las modificaciones realizadas sobre el Project Report con sus respectivos autores y fechas. Estas contribuciones deben mantener coherencia con las modificaciones relevantes registradas en la sección **Registro de Versiones del Informe**.
+
+<div style="page-break-before: always; break-before: page;"></div>
+
 # Contenido
 
 - [Student Outcome](#student-outcome)
@@ -276,7 +286,7 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
   - [Anexo A. Videos de Exposiciones](#anexo-a-videos-de-exposiciones)
     - [AV1 — Sprint Review](#av1--sprint-review)
 
-
+<div style="page-break-before: always; break-before: page;"></div>
 
 # Student Outcome
 
@@ -292,6 +302,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 | Trabaja en equipo para proporcionar liderazgo en forma conjunta | **Sánchez Guevara, Iván Fernando**<br><br>**AV1**<br>• Tuvo a su cargo el Startup Profile y parte del Solution Profile, desarrollando la descripción de la startup, los perfiles de los integrantes, así como los antecedentes y la problemática de ResQ.<br>• Asumió el desarrollo del Context Mapping y de los diagramas de arquitectura a nivel Context, Container y Deployment, integrando en una representación arquitectónica las responsabilidades e interacciones definidas para los distintos Bounded Contexts.<br>• Desarrolló el Bounded Context Connectivity, incluyendo Domain Layer, Interface Layer, Application Layer, Infrastructure Layer y sus diagramas de diseño correspondientes.<br><br>**Nanfuñay Liza, Pedro Jesus**<br><br>**AV1**<br>• Tuvo a su cargo el proceso de Lean UX, desarrollando Lean UX Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas como base para orientar las decisiones iniciales del equipo.<br>• Asumió el Design-Level EventStorming, incluyendo Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases, contribuyendo a identificar y delimitar las responsabilidades posteriormente distribuidas entre los Bounded Contexts del sistema.<br>• Desarrolló el Bounded Context Monitoring, incluyendo sus capas y diagramas de diseño táctico.<br><br>**Chacaliaza Minaya, Eduardo Fabian**<br><br>**AV1**<br>• Tuvo a su cargo la definición de los segmentos objetivo, el análisis de competidores y las estrategias y tácticas de ResQ frente a la competencia.<br>• Desarrolló el Product Backlog, organizando y priorizando los requisitos funcionales identificados para la solución.<br>• Participó en el Strategic-Level Domain-Driven Design y asumió el desarrollo del System Landscape de la arquitectura.<br>• Desarrolló el Bounded Context Alert & Response Management, especificando sus capas y diagramas técnicos correspondientes.<br><br>**Quispe Barzola, Fabricio Fabian**<br><br>**AV1**<br>• Tuvo a su cargo el proceso de entrevistas, incluyendo su diseño, registro y análisis, proporcionando al equipo información proveniente de representantes de los segmentos objetivo.<br>• Desarrolló las User Stories y el Impact Mapping, trasladando los resultados obtenidos durante la investigación hacia la especificación de requisitos de ResQ.<br>• Desarrolló los Bounded Contexts Identity and Access Management (IAM) y Risk Detection, incluyendo Domain, Interface, Application e Infrastructure Layers, así como los diagramas de componentes, clases y base de datos correspondientes.<br><br>**Aliaga Urbina, Wilder Gonzalo**<br><br>**AV1**<br>• Tuvo a su cargo la elaboración de User Personas, User Task Matrix, User Journey Mapping y Empathy Mapping, estructurando los hallazgos obtenidos durante la investigación de usuarios.<br>• Utilizó estos artefactos para representar necesidades, tareas, frustraciones y recorridos de los segmentos objetivo, aportando información utilizada posteriormente por el equipo en la definición de la solución.<br>• Desarrolló los Bounded Contexts Building y Device, incluyendo sus capas y diagramas de diseño táctico correspondientes.<br><br>**Guerrero Vasquez, Jhon Danny**<br><br>**AV1**<br>• Participó en el proceso de Needfinding y tuvo a su cargo el Big Picture EventStorming y el Ubiquitous Language, contribuyendo a establecer una comprensión común del dominio de ResQ y de sus principales conceptos.<br>• El Big Picture EventStorming desarrollado permitió representar los eventos relevantes del dominio y apoyar posteriormente su descomposición en Bounded Contexts.<br>• Desarrolló los Bounded Contexts User e Incident, incluyendo sus capas, componentes, clases y diseño de persistencia. | Durante AV1, el equipo distribuyó responsabilidades entre sus integrantes en distintas etapas del proceso de ingeniería, abarcando Lean UX, UX Research, Requirements Specification, Strategic-Level Domain-Driven Design, Tactical-Level Domain-Driven Design y Software Architecture. Cada integrante asumió la responsabilidad de artefactos concretos cuyos resultados se relacionan con el trabajo realizado por los demás miembros. Esta organización permitió desarrollar en paralelo los Capítulos I, II, III y IV y posteriormente integrar sus resultados en una propuesta común para ResQ. |
 | **Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos** | **Sánchez Guevara, Iván Fernando**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió responsabilidades relacionadas con la definición inicial de la solución, Context Mapping, Software Architecture y el Bounded Context Connectivity.<br>• Su trabajo en Context Mapping y arquitectura permitió integrar visualmente las relaciones y dependencias existentes entre elementos desarrollados por diferentes miembros del equipo.<br><br>**Nanfuñay Liza, Pedro Jesus**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió la elaboración de los artefactos de Lean UX y Design-Level EventStorming.<br>• Los artefactos de Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases proporcionaron una base común para organizar y distribuir posteriormente el diseño táctico entre los integrantes del equipo.<br>• Complementó este trabajo desarrollando el Bounded Context Monitoring dentro de la distribución acordada para el Capítulo IV.<br><br>**Chacaliaza Minaya, Eduardo Fabian**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió responsabilidades relacionadas con segmentos objetivo, análisis competitivo, Product Backlog, Strategic-Level Domain-Driven Design y Software Architecture.<br>• La organización del Product Backlog contribuyó a estructurar y priorizar el alcance funcional identificado por el equipo.<br>• Complementó el diseño estratégico con el desarrollo del Bounded Context Alert & Response Management, manteniendo relación entre el alcance funcional y el diseño de la solución.<br><br>**Quispe Barzola, Fabricio Fabian**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió las actividades relacionadas con entrevistas, User Stories, Impact Mapping, IAM y Risk Detection.<br>• Los resultados obtenidos en entrevistas fueron utilizados como insumo para la especificación de requisitos, permitiendo mantener trazabilidad entre investigación, necesidades identificadas y funcionalidades propuestas.<br>• El desarrollo de IAM y Risk Detection permitió continuar dicha trazabilidad desde los requisitos hasta el diseño táctico de la solución.<br><br>**Aliaga Urbina, Wilder Gonzalo**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió los principales artefactos de Needfinding y el diseño táctico de Building y Device.<br>• Organizó los resultados de investigación en User Personas, User Task Matrix, User Journey Maps y Empathy Maps, facilitando que el equipo dispusiera de una representación compartida de los usuarios y sus necesidades.<br>• Relacionó posteriormente estos hallazgos con elementos del dominio físico e IoT mediante el desarrollo de Building y Device.<br><br>**Guerrero Vasquez, Jhon Danny**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió actividades relacionadas con Needfinding, Big Picture EventStorming, Ubiquitous Language y los Bounded Contexts User e Incident.<br>• La elaboración del Ubiquitous Language contribuyó a establecer términos y definiciones compartidas para reducir ambigüedades durante el trabajo de los distintos integrantes.<br>• Complementó el modelado general del dominio desarrollando User e Incident dentro de la distribución establecida para el Tactical-Level Domain-Driven Design. | La planificación de AV1 permitió distribuir el alcance del entregable entre los seis integrantes, estableciendo responsabilidades relacionadas entre sí y cubriendo progresivamente la comprensión del problema, investigación de usuarios, especificación de requisitos y diseño de la solución. Los artefactos desarrollados mantienen dependencias entre distintas responsabilidades: las entrevistas alimentan el Needfinding, estos resultados contribuyen a los requisitos, y los requisitos y eventos del dominio orientan la identificación y diseño de los Bounded Contexts y la arquitectura. Esta organización permitió integrar los aportes individuales dentro de una estructura común del Project Report y avanzar hacia los objetivos establecidos para AV1. |
 
+<div style="page-break-before: always; break-before: page;"></div>
+
 # Capítulo I: Introducción
 
 ## 1.1. Startup Profile
@@ -305,9 +317,9 @@ Con nuestro sistema inteligente e integrado, centralizamos la detección de múl
 
 | Nombres y Apellidos | Código | Descripción | Foto |
 |---|---|---|---|
-| Ivan Fernando Sanchez Guevara | U202218181 | Mi nombre es Fernando Sanchez Guevara, tengo 22 años y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona disciplinada, responsable y puntual al momento de desarrollar las asignaciones de trabajo. Además, me preocupo por mantener una buena coordinación con mi equipo, procurando apoyar a mis compañeros cuando presentan alguna dificultad. Gracias a mi compromiso y disposición para colaborar, he contribuido al desarrollo adecuado de diferentes proyectos grupales, buscando cumplir los objetivos establecidos y resolver los inconvenientes que puedan surgir durante el proceso. | ![foto1](/assets/images/chapter-01-introduction/Fernando.png) |
-| Eduardo Fabian Chacaliza Minaya | U202324129 | Mi nombre es Eduardo Fabian Chacaliza Minaya y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y comprometida con el cumplimiento de los objetivos del equipo. Tengo interés en el desarrollo de soluciones tecnológicas y en la integración de los diferentes componentes de un proyecto. Durante los trabajos grupales procuro mantener una comunicación constante con mis compañeros, colaborar en la resolución de problemas y apoyar en la integración y validación de las distintas partes del proyecto para obtener un resultado consistente y funcional. | ![foto2](/assets/images/chapter-01-introduction/Eduardo.png) |
-| Fabricio Fabian Quispe Barzola | U202320442 | Mi nombre es Fabricio Fabian Quispe Barzola y actualmente estudio la carrera de Ingeniería de Software. A lo largo del desarrollo de ResQ he participado de manera activa en la organización, investigación y construcción de los distintos artefactos del proyecto, manteniendo una coordinación constante con mis compañeros para que las diferentes partes de la solución mantengan coherencia entre sí. He trabajado en actividades relacionadas con el diseño, registro y análisis de entrevistas, la elaboración de User Stories e Impact Mapping, así como en el diseño de los Bounded Contexts Identity and Access Management (IAM) y Risk Detection. Durante el proceso procuro revisar cómo mis avances se relacionan con el trabajo de los demás integrantes, compartir observaciones, apoyar en la integración de los artefactos y contribuir a resolver inconsistencias cuando aparecen. Me considero una persona responsable, organizada y comprometida con el trabajo colaborativo, buscando que el equipo mantenga una visión común del proyecto y pueda cumplir de manera coordinada los objetivos establecidos para cada entrega. | ![foto3](/assets/images/chapter-01-introduction/Fabricio.png) |
+| Ivan Fernando Sanchez Guevara | U202218181 | Mi nombre es Fernando Sanchez Guevara, tengo 22 años y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona disciplinada, responsable y puntual al momento de desarrollar las asignaciones de trabajo. Además, me preocupo por mantener una buena coordinación con mi equipo, procurando apoyar a mis compañeros cuando presentan alguna dificultad. Gracias a mi compromiso y disposición para colaborar, he contribuido al desarrollo adecuado de diferentes proyectos grupales, buscando cumplir los objetivos establecidos y resolver los inconvenientes que puedan surgir durante el proceso. | ![foto1](assets/images/chapter-01-introduction/Fernando.png) |
+| Eduardo Fabian Chacaliza Minaya | U202324129 | Mi nombre es Eduardo Fabian Chacaliza Minaya y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y comprometida con el cumplimiento de los objetivos del equipo. Tengo interés en el desarrollo de soluciones tecnológicas y en la integración de los diferentes componentes de un proyecto. Durante los trabajos grupales procuro mantener una comunicación constante con mis compañeros, colaborar en la resolución de problemas y apoyar en la integración y validación de las distintas partes del proyecto para obtener un resultado consistente y funcional. | ![foto2](assets/images/chapter-01-introduction/Eduardo.png) |
+| Fabricio Fabian Quispe Barzola | U202320442 | Mi nombre es Fabricio Fabian Quispe Barzola y actualmente estudio la carrera de Ingeniería de Software. A lo largo del desarrollo de ResQ he participado de manera activa en la organización, investigación y construcción de los distintos artefactos del proyecto, manteniendo una coordinación constante con mis compañeros para que las diferentes partes de la solución mantengan coherencia entre sí. He trabajado en actividades relacionadas con el diseño, registro y análisis de entrevistas, la elaboración de User Stories e Impact Mapping, así como en el diseño de los Bounded Contexts Identity and Access Management (IAM) y Risk Detection. Durante el proceso procuro revisar cómo mis avances se relacionan con el trabajo de los demás integrantes, compartir observaciones, apoyar en la integración de los artefactos y contribuir a resolver inconsistencias cuando aparecen. Me considero una persona responsable, organizada y comprometida con el trabajo colaborativo, buscando que el equipo mantenga una visión común del proyecto y pueda cumplir de manera coordinada los objetivos establecidos para cada entrega. | ![foto3](assets/images/chapter-01-introduction/Fabricio.png) |
 
 ## 1.2. Solution Profile
 
@@ -504,43 +516,42 @@ Este segmento incluye empresas especializadas en automatización de edificios, i
 
 - **Necesidades clave:** Una solución fácil de integrar con diferentes sensores y sistemas de automatización, que pueda configurarse según cada edificio, adaptarse a distintos proyectos y escalar conforme aumenten las zonas o dispositivos conectados.
 
+<div style="page-break-before: always; break-before: page;"></div>
+
 # Capítulo II: Requirements Elicitation & Analysis
 
-> Imágenes del capítulo:
-> `assets/images/chapter-02-requirements-elicitation-analysis/`
->
-> Fuentes editables de diagramas:
-> `assets/diagram-sources/chapter-02-requirements-elicitation-analysis/`
 
 ## 2.1. Competidores
 
 ### 2.1.1. Análisis competitivo
 Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos el siguiente Landscape:
 
-<table style="background-color:transparent; border-collapse:collapse; width:548px; table-layout:fixed; font-family:Arial,sans-serif; font-size:12px; line-height:16px; color:inherit; border:1px solid currentColor;">
+<div style="page-break-before: always; break-before: page;"></div>
+
+<table style="background-color:transparent; border-collapse:collapse; width:100%; max-width:100%; margin:0 auto; table-layout:fixed; font-family:Arial,sans-serif; font-size:12px; line-height:16px; color:inherit; border:1px solid currentColor;">
   <colgroup>
-    <col style="width:66px;">
-    <col style="width:54px;">
-    <col style="width:57px;">
-    <col style="width:98px;">
-    <col style="width:91px;">
-    <col style="width:90px;">
-    <col style="width:92px;">
+    <col style="width:12%;">
+    <col style="width:10%;">
+    <col style="width:10%;">
+    <col style="width:18%;">
+    <col style="width:17%;">
+    <col style="width:16%;">
+    <col style="width:17%;">
   </colgroup>
 
-  <tr style="background-color:transparent; ">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; ">
     <th colspan="7" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; text-align:left; height:17px;">
       Competitive Analysis Landscape
     </th>
   </tr>
-  <tr style="background-color:transparent; height:49px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:49px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
       ¿Por qué llevar a cabo este análisis?
     </td>
     <td colspan="5" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Analizar las características y propuestas de valor de competidores indirectos relacionados con el monitoreo, automatización y gestión de edificios, con el fin de identificar oportunidades de diferenciación para ResQ mediante tecnologías IoT, procesamiento Edge y automatización de respuestas ante situaciones de riesgo.  </td>
   </tr>
 
-  <tr style="background-color:transparent; height:50px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:50px;">
     <td colspan="3" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
       &nbsp;
     </td>
@@ -550,7 +561,7 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Honeywell EBI<br><img src="assets/images/chapter-02-requirements-elicitation-analysis/competidor-3.png" alt="Logo de Honeywell EBI" width="70" style="display:block; width:70px; max-width:100%; height:auto; margin:6px auto;"></td>
   </tr>
 
-  <tr style="background-color:transparent; height:65px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:65px;">
     <td rowspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; text-align:center; vertical-align:middle;">
       <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Perfil</span>
     </td>
@@ -560,7 +571,7 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma digital para la gestión inteligente de edificios. Centraliza operaciones, mantenimiento, energía, seguridad y protección.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma empresarial que integra gestión del edificio, seguridad, control de accesos, videovigilancia y protección contra incendios.</td>
   </tr>
-  <tr style="background-color:transparent; height:82px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:82px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
       Ventaja competitiva<br>¿Qué valor ofrece a los clientes?
     </td>
@@ -570,7 +581,7 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Integra sistemas críticos del edificio y permite automatizar procedimientos y flujos de trabajo ante eventos.</td>
   </tr>
 
-  <tr style="background-color:transparent; height:66px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:66px;">
     <td rowspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; text-align:center; vertical-align:middle;">
       <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Perfil de Marketing</span>
     </td>
@@ -580,7 +591,7 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Propietarios, operadores y administradores de edificios, campus y organizaciones de diversos sectores.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Medianas y grandes organizaciones con edificios, campus e infraestructuras complejas.</td>
   </tr>
-  <tr style="background-color:transparent; height:66px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:66px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Estrategias de marketing</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Estrategia B2B basada en demostraciones de la solución, contacto directo con administradores y organizaciones y alianzas con empresas vinculadas a automatización de edificios.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Estrategia B2B enfocada en reducción de daños, demostraciones, evaluaciones y casos de uso.</td>
@@ -588,7 +599,7 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Venta empresarial mediante especialistas e integradores, demostraciones y soluciones personalizadas.</td>
   </tr>
 
-  <tr style="background-color:transparent; height:66px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:66px;">
     <td rowspan="3" style="background-color:transparent; color:inherit; border:1px solid currentColor; text-align:center; vertical-align:middle;">
       <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Perfil de Producto</span>
     </td>
@@ -598,14 +609,14 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Building X incluye aplicaciones para operaciones, seguridad, incendios, energía, análisis e integración de equipos.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">EBI integra gestión del edificio, seguridad, videovigilancia, control de accesos, incendios y sistemas de terceros.</td>
   </tr>
-  <tr style="background-color:transparent; height:49px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:49px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Precios &amp; Costos</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modelo basado en una implementación inicial de sensores y dispositivos IoT, complementada con una suscripción recurrente para el acceso a la plataforma de monitoreo, alertas, historial e integraciones. El costo dependerá de la cantidad de dispositivos, tamaño de la propiedad y funcionalidades contratadas.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Sensores con un costo aproximado de US$60 a US$80 por unidad y una tarifa mensual generalmente entre US$4 y US$9 por inquilino, que incluye monitoreo, dashboard, alertas y soporte.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modelo basado en suscripciones anuales a aplicaciones y APIs, con costos adicionales asociados a conectividad, dispositivos e implementación según las necesidades del proyecto.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modelo empresarial basado en licencias y suscripciones según la solución contratada. Los costos dependen de la infraestructura, integraciones, implementación y servicios requeridos.</td>
   </tr>
-  <tr style="background-color:transparent; height:66px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:66px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
       Canales de distribución<br>(Web y/o Móvil)
     </td>
@@ -615,7 +626,7 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Interfaces web y acceso remoto, además de opciones de uso desde móviles y tablets.</td>
   </tr>
 
-  <tr style="background-color:transparent; height:66px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:66px;">
     <td rowspan="4" style="background-color:transparent; color:inherit; border:1px solid currentColor; text-align:center; vertical-align:middle;">
       <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Análisis SWOT</span>
     </td>
@@ -625,21 +636,21 @@ Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Marca consolidada; amplia experiencia; alta escalabilidad; gran capacidad de integración.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Experiencia en automatización; integración de sistemas críticos; arquitectura escalable.</td>
   </tr>
-  <tr style="background-color:transparent; height:50px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:50px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Debilidades</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Necesidad de fortalecer la validación en entornos reales, demostrar escalabilidad y consolidar su posicionamiento frente a soluciones ya establecidas en el mercado.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Enfoque principal en mitigación de daños a la propiedad, con menor énfasis en coordinación integral de emergencias.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Puede implicar mayor complejidad y costo para organizaciones con necesidades específicas.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Requiere integración especializada e infraestructura, lo que aumenta la complejidad.</td>
   </tr>
-  <tr style="background-color:transparent; height:49px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:49px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Oportunidades</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Creciente adopción de IoT y automatización en edificios; modernización de infraestructura; mayor demanda de monitoreo y respuesta ante riesgos; oportunidades de alianza con empresas integradoras.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Creciente demanda de monitoreo preventivo en edificaciones, adopción de sensores IoT y expansión del mercado de automatización de propiedades.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Mayor digitalización de edificios, IA, automatización y gestión centralizada.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modernización de edificios existentes y crecimiento de IoT e integración tecnológica.</td>
   </tr>
-  <tr style="background-color:transparent; height:49px;">
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:49px;">
     <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Amenazas</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Presencia de soluciones consolidadas; exigencias normativas; riesgos de ciberseguridad y rápida evolución tecnológica.</td>
     <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Aparición de soluciones IoT de menor costo y expansión de grandes plataformas.</td>
@@ -1816,10 +1827,10 @@ Ambos mapas muestran que la interoperabilidad importa por motivos diferentes. Ca
 |---|---|
 | [Term in English] | [Definición] |
 
+<div style="page-break-before: always; break-before: page;"></div>
+
 # Capítulo III: Requirements Specification
 
-> Imágenes del capítulo:
-> `assets/images/chapter-03-requirements-specification/`
 
 ## 3.1. User Stories
 
@@ -1958,7 +1969,7 @@ Lograr que al menos el **60 % de las administraciones u organizaciones participa
 
 El siguiente artefacto representa visualmente la relación entre los Business Goals, los User Personas, los cambios de comportamiento esperados, los Deliverables y las User Stories identificadas para ResQ.
 
-![Impact Mapping - ResQ](/assets/images/chapter-03-requirements-specification/Impact-Mapping-ResQ.png)
+![Impact Mapping - ResQ](assets/images/chapter-03-requirements-specification/Impact-Mapping-ResQ.png)
 
 ### Análisis del Impact Mapping
 
@@ -2047,13 +2058,10 @@ La siguiente imagen muestra el Product Backlog de ResQ registrado en Trello:
 
 **Link del Product Backlog:** [ResQ - Product Backlog](https://trello.com/invite/b/6aab49b781accd44e61a7276/ATTI008620e96295fff92c9f73aa53404faf8E74AD19/resq-product-backlog)
 
+<div style="page-break-before: always; break-before: page;"></div>
+
 # Capítulo IV: Solution Software Design
 
-> Imágenes del capítulo:
-> `assets/images/chapter-04-solution-software-design/`
->
-> Fuentes editables de diagramas:
-> `assets/diagram-sources/chapter-04-solution-software-design/`
 
 ## 4.1. Strategic-Level Domain-Driven Design
 
@@ -4606,10 +4614,7 @@ El repositorio no publica un método de eliminación física del agregado. Las c
 
 ![Diagrama relacional de Devices](assets/images/chapter-04-solution-software-design/devices-database.png)
 
-
-
-
-
+<div style="page-break-before: always; break-before: page;"></div>
 
 # Conclusiones
 
@@ -4619,6 +4624,8 @@ El repositorio no publica un método de eliminación física del agregado. Las c
 
 <!-- PENDIENTE: Redactar el avance a partir de los artefactos existentes de los Capítulos I–IV, relacionando Problem Statements, Lean UX Assumptions, Hypothesis Statements, hallazgos de entrevistas, requisitos y decisiones de diseño. Sustentar las recomendaciones sin anticipar resultados de implementación o validación posteriores a AV1. -->
 
+<div style="page-break-before: always; break-before: page;"></div>
+
 # Bibliografía
 
 Registrar **todas** las referencias utilizadas en formato **APA 7.ª edición**.
@@ -4626,6 +4633,8 @@ Registrar **todas** las referencias utilizadas en formato **APA 7.ª edición**.
 Ejemplo:
 
 - Autor, A. A. (Año). *Título de la obra*. Editorial / Sitio. URL
+
+<div style="page-break-before: always; break-before: page;"></div>
 
 # Anexos
 
