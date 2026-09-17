@@ -2283,7 +2283,51 @@ El flujo principal del dominio puede resumirse de la siguiente manera:
 El Design-Level EventStorming permitió obtener una visión más detallada del comportamiento del dominio y reconocer con mayor claridad las responsabilidades existentes. Este resultado fue utilizado posteriormente como base para el **Candidate Context Discovery**, donde los elementos del EventStorm fueron agrupados para identificar los Bounded Contexts candidatos de ResQ.
 
 #### 4.1.1.1. Candidate Context Discovery
-[COMPLETAR]
+
+A partir del modelo obtenido en el Design-Level EventStorming, se realizó el **Candidate Context Discovery** con el objetivo de identificar los límites naturales de responsabilidad dentro del dominio de ResQ y proponer los Bounded Contexts que organizarán posteriormente el diseño estratégico de la solución.
+
+Para identificar los contextos candidatos se aplicaron principalmente las técnicas **start-with-value** y **look-for-pivotal-events**. La primera permitió reconocer las capacidades que concentran el principal valor de negocio de ResQ, mientras que la segunda permitió identificar eventos relevantes que representan cambios de responsabilidad dentro del flujo del dominio.
+
+Mediante **start-with-value**, se identificaron **Risk Detection** y **Alert & Response Management** como las capacidades centrales de la solución. `Risk Detection` concentra la lógica encargada de interpretar las mediciones y determinar el tipo, nivel y ubicación de una situación de riesgo, mientras que `Alert & Response Management` determina las alertas y acciones que deben ejecutarse como consecuencia del riesgo identificado.
+
+Posteriormente, mediante **look-for-pivotal-events**, se analizaron eventos relevantes como:
+
+- `Sensor measurement recorded`
+- `Anomalous condition detected`
+- `Risk classified and located`
+- `Alert generated`
+- `Automatic response executed`
+- `Incident registered in history`
+- `Incident closed`
+
+Estos eventos permitieron reconocer transiciones entre las responsabilidades de monitoreo, detección, respuesta y seguimiento. En particular, `Risk classified and located` representa el cambio entre la interpretación de las condiciones monitoreadas y el inicio de las acciones de respuesta, mientras que `Incident registered in history` marca el comienzo del seguimiento formal de la situación.
+
+Como resultado del análisis se identificaron los siguientes Candidate Bounded Contexts:
+
+| Candidate Bounded Context | Descripción |
+|---|---|
+| **IAM** | Gestiona la autenticación y autorización de los usuarios de ResQ, incluyendo validación de identidad, asignación de roles y control de permisos sobre las funcionalidades protegidas. |
+| **User Management** | Gestiona la información, estado y responsabilidades de los usuarios pertenecientes a una organización. |
+| **Building Management** | Gestiona la información de las edificaciones y sus zonas, permitiendo mantener la estructura física que será monitoreada por ResQ. |
+| **Device Management** | Gestiona los dispositivos IoT registrados en la plataforma y su asociación con una edificación o zona determinada. |
+| **Monitoring** | Gestiona las mediciones y estados actuales de las zonas y dispositivos IoT para proporcionar visibilidad sobre las condiciones monitoreadas. |
+| **Risk Detection** | Analiza las mediciones y aplica reglas de detección para identificar condiciones de riesgo y determinar su tipo, nivel y ubicación. |
+| **Alert & Response Management** | Gestiona las alertas y respuestas derivadas de un riesgo, incluyendo señalización, acciones automáticas mediante actuadores y acciones que requieren confirmación humana. |
+| **Incident Management** | Gestiona el ciclo de vida de los incidentes, incluyendo su registro, responsable, estado, evolución y cierre. |
+
+La técnica **start-with-value** permitió reconocer que `Risk Detection` y `Alert & Response Management` concentran el mayor valor de negocio de ResQ, debido a que representan la interpretación de una situación de riesgo y la coordinación de la respuesta correspondiente.
+
+Por otro lado, los demás contextos fueron delimitados al identificar responsabilidades específicas dentro del dominio. `Monitoring` mantiene el estado observado de la infraestructura, `Incident Management` gestiona el seguimiento posterior de una situación, mientras que `IAM`, `User Management`, `Building Management` y `Device Management` proporcionan las capacidades necesarias para preparar y administrar el entorno en el que opera la solución.
+
+Como parte del proceso se realizaron cambios progresivos sobre el EventStorm, comenzando con el modelo sin límites definidos, continuando con la identificación de las capacidades de mayor valor y los eventos pivotales, y finalizando con la delimitación de los ocho Candidate Bounded Contexts.
+
+![CandidateContextDiscovery_Initial](assets/images/chapter-04-solution-software-design/CandidateContextDiscovery_Initial.png)
+
+![CandidateContextDiscovery_Core](assets/images/chapter-04-solution-software-design/CandidateContextDiscovery_Core.png)
+
+![CandidateContextDiscovery_Final](assets/images/chapter-04-solution-software-design/CandidateContextDiscovery_Final.png)
+
+El resultado permitió obtener una primera descomposición del dominio en ocho contextos candidatos. Estos límites serán refinados posteriormente mediante los **Bounded Context Canvases** y el **Context Mapping**, donde se analizarán con mayor detalle sus responsabilidades, reglas de negocio y relaciones.
 
 #### 4.1.1.2. Domain Message Flows Modeling
 [COMPLETAR]
