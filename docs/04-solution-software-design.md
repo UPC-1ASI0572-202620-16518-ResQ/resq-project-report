@@ -2,9 +2,6 @@
 
 > Imágenes del capítulo:
 > `assets/images/chapter-04-solution-software-design/`
->
-> Fuentes editables de diagramas:
-> `assets/diagram-sources/chapter-04-solution-software-design/`
 
 ## 4.1. Strategic-Level Domain-Driven Design
 
@@ -40,7 +37,13 @@
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
+Building Management (Buildings) y Device Management (Devices) corresponden a los contextos **Building** y **Device** del informe de alineamiento; no son contextos adicionales. Las referencias a historias de estas dos secciones utilizan la tabla actualizada de 3.1 del [README del equipo, versión 7fb3499](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-project-report/blob/7fb349974c2f4b1ca8983e35eb93f76d2e1a403a/README.md#31-user-stories). Las épicas agrupan resultados de usuario y pueden requerir la colaboración de varios contextos.
+
+El profesional de una integradora accede al entorno del cliente mediante permisos concedidos por IAM y User. `organizationId` identifica la organización del registro, no necesariamente la empresa empleadora del integrador. Participar en una instalación no concede acceso automático a todos los edificios ni a otros clientes.
+
 ### 4.2.3. Bounded Context: Building Management
+
+Building conserva la estructura de edificaciones y zonas. Atiende **US21 — Registrar una edificación** y **US22 — Definir zonas de una edificación**, de EP05. Colabora con Device en US23 y US33 al validar ubicaciones; proporciona contexto a Monitoring y Risk Detection sin asumir mediciones, detección, integración de protocolos ni soporte comercial.
 
 #### 4.2.3.1. Domain Layer
 
@@ -109,7 +112,7 @@ Los identificadores rechazan `Guid.Empty`. Los códigos, la organización y la p
 |---|---|---|
 | LocationAdministrativeStatus | ACTIVE, INACTIVE | Ubicación habilitada o deshabilitada administrativamente para nuevas asignaciones. |
 
-Desactivar una edificación impide nuevas asignaciones tanto a ella como a sus zonas, pero conserva el estado propio de cada zona. Al reactivarla, solo quedan disponibles las zonas que conservan ACTIVE. No se eliminan asociaciones existentes ni se confirma ninguna acción sobre equipos físicos. Estos estados y las reglas de normalización son decisiones de diseño propuestas para desarrollar US24.
+Desactivar una edificación impide nuevas asignaciones tanto a ella como a sus zonas, pero conserva el estado propio de cada zona. Al reactivarla, solo quedan disponibles las zonas que conservan ACTIVE. No se eliminan asociaciones existentes ni se confirma ninguna acción sobre equipos físicos. Estos estados y las reglas de normalización son decisiones de diseño propuestas para desarrollar US21 y US22; no se presentan como requisitos explícitos de sus criterios de aceptación.
 
 **Commands**
 
@@ -235,6 +238,10 @@ Los PUT y el POST de creación de una zona requieren `If-Match` con el ETag de B
 | 503 | No puede completarse una validación de autorización obligatoria. |
 
 
+**Fachada de integración**
+
+`BuildingsContextFacade` expone `ValidateAssignment(organizationId, buildingId, zoneId?)` a contextos autorizados. Utiliza `IBuildingQueryService` para comprobar organización, existencia, pertenencia de la zona y disponibilidad administrativa. Devuelve `BuildingAssignmentValidation` con organizationId, buildingId, zoneId, buildingVersion y availableForAssignment; no entrega entidades persistentes. Una ubicación inexistente o no visible responde como no encontrada y una ubicación inactiva no se considera disponible. Device traduce la respuesta a su contrato local `ValidatedAssignment`. Esta fachada completa el componente ya representado en el diagrama.
+
 #### 4.2.3.3. Application Layer
 
 `BuildingCommandServiceImpl`
@@ -312,6 +319,8 @@ La unicidad del código de zona se verifica dentro del agregado y mediante UNIQU
 
 ![Diagrama de componentes de Building Management](../assets/images/chapter-04-solution-software-design/buildings-components.png)
 
+Web y Mobile son contenedores separados y consumen BuildingsController. Los servicios de aplicación coordinan reglas de Building y Zone y persistencia en MySQL. Device valida ubicaciones mediante BuildingsContextFacade. La vista muestra el flujo principal; los adaptadores de IAM y publicación outbox se detallan en las capas anteriores para mantener el diagrama simple.
+
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
@@ -319,11 +328,17 @@ La unicidad del código de zona se verifica dentro del agregado y mediante UNIQU
 ![Diagrama UML del agregado Building](../assets/images/chapter-04-solution-software-design/buildings-domain-model.png)
 ![Diagrama UML de contratos de Building Management](../assets/images/chapter-04-solution-software-design/buildings-domain-contracts.png)
 
+Building es la raíz y contiene cero o más zonas, cada una perteneciente a una única edificación. Los value objects encapsulan códigos y dirección; los contratos de comandos, consultas y repositorio operan sobre esa estructura. Renombrar una zona mantiene su identidad y referencias, en correspondencia con US22, AC2.
+
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram
 
 ![Diagrama relacional de Building Management](../assets/images/chapter-04-solution-software-design/buildings-database.png)
 
+`zones.building_id` referencia a `buildings.id`. Los códigos son únicos por organización o edificación, respectivamente. `building_outbox` conserva los mensajes de integración en la misma transacción que el agregado; es una tabla técnica. `organization_id` es una referencia externa, sin FK hacia otro bounded context. La versión de Building también controla los cambios en sus zonas.
+
 ### 4.2.4. Bounded Context: Device Management
+
+Device conserva el catálogo de equipos, capacidades, estado administrativo y asignación. Atiende **US23 — Asociar un dispositivo con una zona** (EP05) y aporta el mapeo de **US33 — Asociar dispositivos externos con su contexto** (EP07). Su registro de equipos es una operación de apoyo necesaria para esas historias. Conectividad (denominado «Connectividad» en el informe) coordina mecanismos de conexión, recepción y pruebas de integración de US30–US32; Monitoring mantiene las mediciones y disponibilidad operativa. Registrar una referencia externa no demuestra por sí solo que una integración funciona.
 
 #### 4.2.4.1. Domain Layer
 
@@ -390,6 +405,8 @@ Las capacidades describen lo que el equipo puede hacer. No contienen valores med
 |---|---|---|
 | DeviceAdministrativeStatus | INACTIVE, ACTIVE, RETIRED | Registrado y deshabilitado administrativamente; habilitado administrativamente; retirado de manera definitiva. |
 | CapabilityKind | MEASUREMENT, ACTUATION | Capacidad para producir una medición o para recibir una acción. |
+
+El ciclo administrativo propuesto admite INACTIVE → ACTIVE, ACTIVE → INACTIVE e INACTIVE → RETIRED. RETIRED es terminal; retirar un equipo activo exige desactivarlo primero. Estos estados no equivalen a conectado/desconectado ni al resultado de una prueba de integración. Las modificaciones de ubicación o capacidades solo se permiten en INACTIVE; un equipo retirado permanece consultable y no editable.
 
 **Commands**
 
@@ -552,11 +569,15 @@ La comprobación previa de duplicados mejora el mensaje al usuario, pero las res
 
 `DeviceIntegrationEventMapper` convierte los eventos del dominio en mensajes con la instantánea del catálogo. `DeviceOutboxDispatcher` obtiene mensajes pendientes, los publica y registra el resultado. La publicación puede repetirse si el proceso falla entre enviar y marcar; los consumidores deduplican por `eventId` y solo aplican instantáneas con `aggregateVersion` mayor que la conocida. La transmisión es al menos una vez; no se presupone entrega exactamente una vez ni orden global.
 
-**Coordinación con Building Management y el Edge**
+**Coordinación con Building Management, Conectividad y el Edge**
 
-Buildings debe conservar identificadores estables y evitar eliminar físicamente edificaciones o zonas referenciadas. Se propone acordar con ese contexto un bloqueo de nuevas asignaciones antes de su retiro y una comprobación coordinada de los dispositivos asociados. La validación previa de una asignación no constituye una transacción distribuida: si los contextos se despliegan separados, deberán acordar un protocolo de retiro y reconciliación que resuelva modificaciones concurrentes. Este contrato requiere coordinación con el diseño posterior de Buildings.
+Buildings conserva identificadores estables y utiliza desactivación reversible, según 4.2.3; esta entrega no implementa retiro definitivo ni eliminación física de ubicaciones. Device valida la disponibilidad al registrar, reasignar o activar. La validación previa no constituye una transacción distribuida: si asignación y desactivación concurren, se requiere revalidación o reconciliación entre contextos. No se presupone que la validación reserve la ubicación.
 
-Un cambio administrativo es un cambio del catálogo; **no confirma que el equipo físico haya ejecutado una orden ni que el Edge haya recibido la actualización**. Las políticas locales de seguridad, confirmaciones y continuidad sin Internet pertenecen a los contextos de monitoreo y respuesta y a su ejecución en Edge. Esa diferencia evita interpretar una respuesta REST exitosa como una actuación física completada.
+Para US23, AC2 y US33, AC1–AC2, Device proporciona una asignación validada y versionada. Monitoring conserva la ubicación correspondiente al momento de cada medición, sin recalcular el historial con la ubicación actual. Si el equipo no tiene zona confirmada, los consumidores lo muestran como no localizado a nivel de zona; no infieren una zona a partir de su nombre o edificio. Una reasignación conserva el origen histórico y se aplica a las nuevas mediciones una vez incorporada la nueva versión del catálogo. El contrato temporal para eventos retrasados o sincronizados debe acordarse con Monitoring y Conectividad antes de implementar el flujo completo.
+
+Conectividad reconoce la fuente y comprueba los datos antes de habilitar su integración operativa (US31–US32). Device conserva `sourceSystem` y `externalDeviceId` para mapear esa identidad a un equipo y ubicación (US33). La habilitación de una integración depende tanto de la prueba satisfactoria como de un contexto válido; `DeviceAdministrativeStatus.ACTIVE` no sustituye la prueba. La definición de ese intercambio pertenece al Domain Message Flow entre los contextos y debe coordinarse con sus responsables.
+
+Un cambio administrativo es un cambio del catálogo; **no confirma que el equipo físico haya ejecutado una orden ni que el Edge haya recibido la actualización**. Risk Detection evalúa condiciones, Alert & Response Management coordina respuestas, Conectividad participa en transporte y recuperación de eventos, y Monitoring conserva mediciones y disponibilidad. La ejecución local en Edge permite atender US28–US29 con esos colaboradores. La outbox del catálogo de Device no sustituye el almacenamiento local de eventos durante una interrupción de Internet.
 
 #### 4.2.4.4. Infrastructure Layer
 
@@ -587,11 +608,11 @@ El repositorio no publica un método de eliminación física del agregado. Las c
 | IntegrationEventPublisherAdapter | IIntegrationEventPublisher | Publica mensajes mediante el transporte configurado. El diseño no presupone un producto de mensajería. |
 | DevicePersistenceMapper | No aplica | Convierte Device, DeviceCapability y sus value objects hacia y desde los registros relacionales. |
 
-El dispatcher procesa lotes con exclusión entre trabajadores o reclamación de filas, reintenta fallos y registra intentos. Un fallo de publicación posterior al commit mantiene el mensaje pendiente y no deshace el registro ya confirmado al usuario. Las migraciones crean índices y restricciones; se propone MySQL con tablas InnoDB, Guid almacenados como CHAR(36), instantes UTC como DATETIME(6) y payloads como JSON. La aplicación convierte DateTimeOffset a UTC al persistir y recupera el offset cero al leer.
 
 #### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
 
 ![Diagrama de componentes de Devices](../assets\images\chapter-04-solution-software-design\DevicesComponents-dark.png)
+
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
 
 ##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
@@ -601,8 +622,8 @@ El dispatcher procesa lotes con exclusión entre trabajadores o reclamación de 
 
 ![Diagrama UML de contratos de Devices](../assets/images/chapter-04-solution-software-design/devices-domain-contracts.png)
 
-
 ##### 4.2.4.6.2. Bounded Context Database Design Diagram
 
 ![Diagrama relacional de Devices](../assets/images/chapter-04-solution-software-design/devices-database.png)
+
 

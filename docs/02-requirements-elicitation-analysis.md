@@ -2,9 +2,6 @@
 
 > Imágenes del capítulo:
 > `assets/images/chapter-02-requirements-elicitation-analysis/`
->
-> Fuentes editables de diagramas:
-> `assets/diagram-sources/chapter-02-requirements-elicitation-analysis/`
 
 ## 2.1. Competidores
 
@@ -1273,19 +1270,22 @@ Carlos Mendoza, de 37 años, representa al administrador de un edificio residenc
 
 ![User Persona de Carlos Mendoza](../assets/images/chapter-02-requirements-elicitation-analysis/CarlosMendozaUserPerson.png)
 
-**Segmento objetivo #2: Empresas integradoras de automatización y gestión de edificios inteligentes — Luis Herrera Campos**
+**Segmento objetivo #2: Empresas integradoras de automatización y gestión de edificios inteligentes — Alex Rivera**
 
-Luis Herrera Campos, de 42 años, representa a quienes evalúan e integran tecnologías de automatización en edificios de clientes. Es gerente técnico de una integradora B2B de sistemas BMS y supervisa arquitecturas, selección de equipos, pruebas y puesta en marcha. 
+Alex Rivera es un profesional que evalúa e integra tecnologías de automatización, IoT y BMS en proyectos de clientes. 
 
-![User Persona de Luis Herrera Campos](../assets\images\chapter-02-requirements-elicitation-analysis\userperson_LuisHerreraCampos.png)
+
+![User Persona de Alex Rivera, arquetipo del integrador](../assets/images/chapter-02-requirements-elicitation-analysis/segmento-2-user-persona.png)
+
+
 
 ### 2.3.2. User Task Matrix
 
-La User Task Matrix organiza las principales tareas de cada User Persona según su frecuencia y severidad. La frecuencia indica qué tan seguido se realiza una actividad, mientras que la severidad representa el impacto que tendría no ejecutarla correctamente. Ambas dimensiones se clasifican como alta, media o baja.
+La User Task Matrix organiza tareas que cada User Persona realiza independientemente de que ResQ exista. La frecuencia indica qué tan seguido se realiza una actividad y la importancia expresa su relevancia para cumplir las responsabilidades del perfil. Ambas dimensiones se clasifican como alta, media o baja. Las valoraciones son una interpretación cualitativa de los relatos; no representan frecuencias medidas ni porcentajes de la población.
 
 **Segmento objetivo #1: Carlos Mendoza — Propietarios y administradores de edificaciones**
 
-| Tarea | Frecuencia | Severidad |
+| Tarea | Frecuencia | Importancia |
 |---|---|---|
 | Revisar novedades y condiciones de seguridad del edificio | Alta | Alta |
 | Identificar el tipo de alerta, su ubicación y gravedad | Media | Alta |
@@ -1297,19 +1297,19 @@ La User Task Matrix organiza las principales tareas de cada User Persona según 
 | Consultar antecedentes de incidentes por fecha, tipo o zona | Media | Media |
 | Evaluar nuevas alternativas de seguridad y presentarlas a la junta | Baja | Media |
 
-**Segmento objetivo #2: Luis Herrera Campos — Empresas integradoras de automatización y gestión de edificios inteligentes**
+**Segmento objetivo #2: Alex Rivera — Empresas integradoras de automatización y gestión de edificios inteligentes**
 
-| Tarea | Frecuencia | Severidad |
+| Tarea | Frecuencia | Importancia |
 |---|---|---|
-| Levantar equipos, planos, comunicaciones, variables y protocolos de cada proyecto | Media | Alta |
-| Revisar diseños y validar la arquitectura de integración | Alta | Alta |
-| Coordinar al equipo técnico y resolver bloqueos de integración | Alta | Alta |
-| Evaluar compatibilidad, documentación y soporte de equipos o soluciones externas | Media | Alta |
-| Seleccionar componentes o proveedores según requisitos técnicos y comerciales | Media | Alta |
-| Configurar dispositivos y verificar señales, datos y comandos en pruebas de oficina | Media | Alta |
-| Validar en campo la integración, conectividad y funcionamiento local | Media | Alta |
-| Documentar la solución, capacitar al cliente y acompañar su aceptación | Media | Alta |
-| Dar seguimiento a fallas, ajustes y mantenimiento después de la entrega | Media | Alta |
+| Comprender las necesidades del cliente y definir el alcance del proyecto | Alta | Alta |
+| Levantar equipos, zonas, planos y condiciones de conectividad | Media | Alta |
+| Revisar documentación, protocolos y compatibilidad de los sistemas | Alta | Alta |
+| Diseñar y revisar la arquitectura de integración | Alta | Alta |
+| Evaluar proveedores y realizar pruebas de concepto o pilotos | Media | Alta |
+| Configurar dispositivos e integrar sistemas de distintos fabricantes | Alta | Alta |
+| Validar en campo mediciones, comandos y funcionamiento sin Internet | Media | Alta |
+| Documentar la solución, capacitar al cliente y coordinar la entrega | Media | Alta |
+| Dar soporte, mantener la compatibilidad y evaluar ampliaciones | Alta | Alta |
 
 
 ### 2.3.3. User Journey Mapping
@@ -1322,11 +1322,12 @@ El recorrido presenta a Carlos fuera del edificio cuando recibe una llamada por 
 
 ![User Journey Map de Carlos Mendoza](../assets/images/chapter-02-requirements-elicitation-analysis/Customerjourneymap1.png)
 
-**Segmento objetivo #2: Luis Herrera Campos — Evaluación e integración de una solución de automatización**
+**Segmento objetivo #2: Alex Rivera — Evaluación e integración de una solución de automatización**
 
-El caso del hotel relatado por Luis muestra un levantamiento de sistemas de distintas generaciones, decisiones sobre compatibilidad y gateways, pruebas en oficina y en campo, aceptación y ajustes posteriores.
+El Journey combina el levantamiento y modernización relatados por Luis, las pruebas de comunicación y problemas de campo descritos por Andrea, y la evaluación de proveedores y soporte explicados por Ricardo. Sus cinco etapas agrupan el recorrido completo: comprender, levantar, proponer un diseño, evaluar y probar, ajustar el diseño, implementar, poner en marcha, entregar y mantener. El diseño inicial es preliminar y se revisa a partir de los resultados del piloto.
 
-![User Journey Map de Luis Herrera Campos](../assets\images\chapter-02-requirements-elicitation-analysis\Customerjourneymap2.png)
+![User Journey Map As-Is de Alex Rivera](../assets/images/chapter-02-requirements-elicitation-analysis/segmento-2-journey-map.png)
+
 
 ### 2.3.4. Empathy Mapping
 
@@ -1338,14 +1339,14 @@ El mapa de Carlos refleja la tensión entre su intención de prevenir incidentes
 
 ![Mapa de empatía de Carlos Mendoza](../assets/images/chapter-02-requirements-elicitation-analysis/CarlosMendozaEmpathy.png)
 
-**Segmento objetivo #2: Luis Herrera Campos — Empresas integradoras de automatización y gestión de edificios inteligentes**
+**Segmento objetivo #2: Alex Rivera — Empresas integradoras de automatización y gestión de edificios inteligentes**
 
-El mapa de Luis refleja la tensión entre la promesa de conectar sistemas de un edificio y la evidencia técnica que necesita para comprometer una implementación. 
+El mapa sintetiza la necesidad de comprobar la interoperabilidad antes de comprometer el proyecto, reducir trabajo adicional y mantener el respaldo del proveedor después de la entrega. Integra las perspectivas técnica, de implementación y comercial presentes en los relatos de los entrevistados.
 
-![Mapa de empatía de Luis Herrera Campos](../assets\images\chapter-02-requirements-elicitation-analysis\empathymapping2.png)
+![Mapa de empatía de Alex Rivera](../assets/images/chapter-02-requirements-elicitation-analysis/segmento-2-empathy-map.png)
 
 
-Ambos mapas muestran que la interoperabilidad importa por motivos diferentes. Carlos necesita comprender el riesgo y la respuesta en su edificio; Luis necesita evaluar si la tecnología puede integrarse y mantenerse en proyectos de clientes. Por ello, la evidencia de pruebas, la operación local de funciones críticas y la claridad sobre los límites de integración son esenciales para que una empresa integradora considere incorporar ResQ.
+Ambos mapas muestran que la interoperabilidad importa por motivos diferentes. Carlos necesita comprender el riesgo y la respuesta en su edificio; Alex necesita evaluar si la tecnología puede integrarse y mantenerse en proyectos de clientes. Por ello, la evidencia de pruebas, la operación local de funciones críticas y la claridad sobre los límites de integración son esenciales para que una empresa integradora considere incorporar ResQ.
 
 ## 2.4. Big Picture EventStorming
 [INSERTAR DIAGRAMA + EXPLICACIÓN]
