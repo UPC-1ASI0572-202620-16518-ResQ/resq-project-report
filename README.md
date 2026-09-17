@@ -2258,6 +2258,30 @@ El Product Backlog se mantiene también en Jira, donde las historias se encuentr
 
 ### 4.1.1. Design-Level EventStorming
 
+Con el objetivo de profundizar el modelado del dominio de ResQ, el equipo realizó una sesión de **Design-Level EventStorming** tomando como referencia el Big Picture EventStorming elaborado previamente. La finalidad fue identificar con mayor detalle los actores, acciones, eventos, reglas y responsabilidades que intervienen en el funcionamiento de la solución.
+
+Durante la sesión se utilizaron los principales elementos de EventStorming: **Actors, Commands, Domain Events, Aggregates, Policies, Read Models y External Systems**. Para mantener coherencia con el Ubiquitous Language previamente definido, se emplearon conceptos como `Building`, `Zone`, `IoT Device`, `Risk`, `Automatic Response`, `High-Impact Action`, `Incident` y `Authorized Manager`.
+
+Durante la reunión se siguieron las siguientes actividades:
+
+- **Exploración del dominio general:** Se revisó el Big Picture EventStorming y se discutieron los principales procesos que intervienen desde la preparación de la plataforma hasta la atención y cierre de una emergencia.
+- **Identificación de actores y usuarios:** Se reconocieron los participantes que interactúan con el sistema, como administradores, responsables autorizados, usuarios de la plataforma y dispositivos IoT.
+- **Identificación de Domain Events:** Se registraron los hechos relevantes que ocurren dentro del dominio, como `Usuario autenticado`, `Medición del sensor registrada`, `Condición anómala detectada`, `Riesgo clasificado y localizado`, `Alerta generada`, `Respuesta automática ejecutada` e `Incidente cerrado`.
+- **Identificación de Commands:** Para cada evento se analizaron las acciones que lo originan, como autenticar usuarios, registrar mediciones, clasificar riesgos, generar alertas, ejecutar respuestas y gestionar incidentes.
+- **Identificación de Policies y reglas del dominio:** Se incorporaron las reglas que reaccionan ante determinados eventos, especialmente las relacionadas con detección de riesgos, respuestas automáticas y acciones de alto impacto.
+- **Identificación de Aggregates, Read Models y External Systems:** Se organizaron los elementos responsables de procesar los comandos, las vistas necesarias para consultar el estado del sistema y los servicios externos que participan en determinados flujos.
+- **Asignación de responsabilidades:** Finalmente, se revisó qué actores y elementos del dominio participan en cada proceso, permitiendo reconocer agrupaciones de responsabilidades que posteriormente servirían para el Candidate Context Discovery.
+
+Como resultado de la sesión se identificaron cuatro procesos principales dentro de ResQ: **Acceso y Configuración**, **Monitoreo y Detección**, **Alerta y Respuesta Automática** y **Gestión y Seguimiento**.
+
+El flujo principal del dominio puede resumirse de la siguiente manera:
+
+**Configuración → Medición registrada → Condición anómala detectada → Riesgo clasificado y localizado → Alerta o respuesta ejecutada → Incidente registrado → Seguimiento → Incidente cerrado**
+
+![Design-Level_EventStorming_ResQ](assets/images/chapter-04-solution-software-design/Design-Level_EventStorming_ResQ.jpg)
+
+El Design-Level EventStorming permitió obtener una visión más detallada del comportamiento del dominio y reconocer con mayor claridad las responsabilidades existentes. Este resultado fue utilizado posteriormente como base para el **Candidate Context Discovery**, donde los elementos del EventStorm fueron agrupados para identificar los Bounded Contexts candidatos de ResQ.
+
 #### 4.1.1.1. Candidate Context Discovery
 [COMPLETAR]
 
