@@ -33,10 +33,10 @@ INGENIERÍA DE SOFTWARE
     <tr><th>Código UPC</th><th>Apellidos y Nombres</th></tr>
   </thead>
   <tbody>
-    <tr><td>[CÓDIGO UPC PENDIENTE]</td><td>Aliaga Urbina, Wilder Gonzalo</td></tr>
+    <tr><td>U202222001</td><td>Aliaga Urbina, Wilder Gonzalo</td></tr>
     <tr><td>U202324129</td><td>Chacaliaza Minaya, Eduardo Fabian</td></tr>
     <tr><td>U202116246</td><td>Guerrero Vasquez, Jhon Danny</td></tr>
-    <tr><td>[CÓDIGO UPC PENDIENTE]</td><td>Nanfuñay Liza, Pedro Jesus</td></tr>
+    <tr><td>U202215462</td><td>Nanfuñay Liza, Pedro Jesús</td></tr>
     <tr><td>U202320442</td><td>Quispe Barzola, Fabricio Fabian</td></tr>
     <tr><td>[CÓDIGO UPC PENDIENTE]</td><td>Sánchez Guevara, Iván Fernando</td></tr>
   </tbody>
@@ -320,6 +320,8 @@ Con nuestro sistema inteligente e integrado, centralizamos la detección de múl
 | Ivan Fernando Sanchez Guevara | U202218181 | Mi nombre es Fernando Sanchez Guevara, tengo 22 años y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona disciplinada, responsable y puntual al momento de desarrollar las asignaciones de trabajo. Además, me preocupo por mantener una buena coordinación con mi equipo, procurando apoyar a mis compañeros cuando presentan alguna dificultad. Gracias a mi compromiso y disposición para colaborar, he contribuido al desarrollo adecuado de diferentes proyectos grupales, buscando cumplir los objetivos establecidos y resolver los inconvenientes que puedan surgir durante el proceso. | ![foto1](assets/images/chapter-01-introduction/Fernando.png) |
 | Eduardo Fabian Chacaliza Minaya | U202324129 | Mi nombre es Eduardo Fabian Chacaliza Minaya y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y comprometida con el cumplimiento de los objetivos del equipo. Tengo interés en el desarrollo de soluciones tecnológicas y en la integración de los diferentes componentes de un proyecto. Durante los trabajos grupales procuro mantener una comunicación constante con mis compañeros, colaborar en la resolución de problemas y apoyar en la integración y validación de las distintas partes del proyecto para obtener un resultado consistente y funcional. | ![foto2](assets/images/chapter-01-introduction/Eduardo.png) |
 | Fabricio Fabian Quispe Barzola | U202320442 | Mi nombre es Fabricio Fabian Quispe Barzola y actualmente estudio la carrera de Ingeniería de Software. A lo largo del desarrollo de ResQ he participado de manera activa en la organización, investigación y construcción de los distintos artefactos del proyecto, manteniendo una coordinación constante con mis compañeros para que las diferentes partes de la solución mantengan coherencia entre sí. He trabajado en actividades relacionadas con el diseño, registro y análisis de entrevistas, la elaboración de User Stories e Impact Mapping, así como en el diseño de los Bounded Contexts Identity and Access Management (IAM) y Risk Detection. Durante el proceso procuro revisar cómo mis avances se relacionan con el trabajo de los demás integrantes, compartir observaciones, apoyar en la integración de los artefactos y contribuir a resolver inconsistencias cuando aparecen. Me considero una persona responsable, organizada y comprometida con el trabajo colaborativo, buscando que el equipo mantenga una visión común del proyecto y pueda cumplir de manera coordinada los objetivos establecidos para cada entrega. | ![foto3](assets/images/chapter-01-introduction/Fabricio.png) |
+| Pedro Jesús Nanfuñay Liza | U202215462 | Mi nombre es Pedro Jesús Nanfuñay Liza, tengo 21 años y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona creativa, responsable, perseverante y siempre dispuesto a trabajar en equipo. Espero aportar de manera positiva al equipo y cumplir con los objetivos establecidos en el proyecto. | ![foto3](assets/images/chapter-01-introduction/Pedro.jpeg) |
+| Wilder Gonzalo Aliaga Urbina | U202222001 | Mi nombre es Gonzalo Aliaga Urbina y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y comprometida con el cumplimiento de los objetivos establecidos en cada proyecto. Tengo especial interés en el desarrollo de soluciones tecnológicas, la programación y la aplicación de nuevas tecnologías para resolver problemas de manera eficiente. Durante los trabajos grupales procuro mantener una comunicación constante con mis compañeros, aportar ideas, apoyar en la resolución de dificultades y colaborar en la integración de las diferentes partes del proyecto. Asimismo, busco cumplir con las tareas asignadas dentro de los plazos establecidos y contribuir de manera activa para que el equipo mantenga una buena organización y logre resultados consistentes y funcionales. | ![foto4](assets/images/chapter-01-introduction/Gonzalo.jpg) |
 
 ## 1.2. Solution Profile
 
@@ -1819,13 +1821,29 @@ El mapa sintetiza la necesidad de comprobar la interoperabilidad antes de compro
 Ambos mapas muestran que la interoperabilidad importa por motivos diferentes. Carlos necesita comprender el riesgo y la respuesta en su edificio; Alex necesita evaluar si la tecnología puede integrarse y mantenerse en proyectos de clientes. Por ello, la evidencia de pruebas, la operación local de funciones críticas y la claridad sobre los límites de integración son esenciales para que una empresa integradora considere incorporar ResQ.
 
 ## 2.4. Big Picture EventStorming
-[INSERTAR DIAGRAMA + EXPLICACIÓN]
+El Big Picture de ResQ ilustra visualmente cómo la plataforma entrega valor en situaciones críticas, mapeando el ciclo de vida completo de una emergencia. A nivel empresarial, muestra cómo un incidente físico desencadena automáticamente acciones de protección inmediatas, alerta a los responsables sin demoras y registra cada paso para su gestión y auditoría posterior. De esta forma, este esquema demuestra cómo la solución elimina los cuellos de botella manuales, reduce drásticamente los tiempos de respuesta y garantiza la seguridad y continuidad operativa del edificio de principio a fin.
 
+
+![Diagra de Picture EventStorming](assets/images/chapter-02-requirements-elicitation-analysis/Picture%20EventStorming.png)
+
+
+En la arquitectura de ResQ, el flujo se construye como una cadena continua de causa y efecto: un Actor (como un sensor o administrador) o una Política automática ejecuta un Comando (la acción en azul) sobre un Agregado (el componente del sistema), el cual procesa la lógica y emite un Evento de Dominio (el hecho consumado en naranja). A su vez, este evento cumple un doble propósito: actualiza una Vista (interfaz en verde) para informar al usuario y dispara nuevas Políticas (reglas en morado) que pueden interactuar con Sistemas Externos (rosa) o lanzar automáticamente el siguiente comando, conectando sin interrupciones la detección local con la gestión en la nube.
 ## 2.5. Ubiquitous Language
+El Lenguaje Ubicuo (Ubiquitous Language) es un pilar fundamental en el Diseño Guiado por el Dominio (DDD). Su objetivo es establecer un glosario estricto y compartido entre los desarrolladores, los administradores y los expertos del negocio, garantizando que no existan ambigüedades técnicas ni operativas.
 
 | Término | Definición |
 |---|---|
-| [Term in English] | [Definición] |
+| Building | Infraestructura física (residencial, comercial o institucional) que se encuentra bajo el monitoreo y gestión de la plataforma ResQ. |
+| Zone | Subdivisión lógica y física dentro de una Edificación (ej. pasillo, sótano, comedor) que permite localizar el origen exacto de las mediciones y los riesgos. |
+| IoT Device | Hardware instalado en las Zonas. Se divide en dos tipos: Sensores (capturan variables ambientales/físicas) y Actuadores (ejecutan respuestas físicas, como alarmas o válvulas). |
+| Anomalous Condition | Lectura o estado reportado por un Sensor que supera los umbrales seguros predefinidos, pero que aún requiere clasificación. |
+| Risk | Amenaza confirmada y clasificada (ej. fuga de gas, sismo, incendio) que desencadena los protocolos de seguridad. Tiene asociado un Nivel (gravedad) y un Tipo. |
+| Automatic Response | Acción de seguridad ejecutada de forma inmediata por los actuadores (ej. luces de evacuación, sirenas) sin necesidad de intervención humana. |
+| High-Impact Action | Respuesta física que, por su potencial de generar un riesgo adicional o interrumpir operaciones, requiere obligatoriamente la Confirmación manual de un usuario humano antes de ejecutarse. |
+| Incident | Registro formal e histórico de un Riesgo detectado. Agrupa toda la información relacionada: fecha, Zona afectada, respuestas ejecutadas y el estado actual de atención. |
+| Authorized Manager | Usuario de la plataforma (administrador, facility manager o jefe de seguridad) con los permisos necesarios para gestionar Zonas, confirmar Acciones de Alto Impacto y cerrar Incidentes. |
+| Edge Computing | Capacidad de la infraestructura local para procesar datos de los sensores y ejecutar Respuestas Automáticas de manera autónoma, garantizando la Continuidad Operativa ante la pérdida de conexión a Internet. |
+| Detection/Response Rule | Configuración lógica que determina qué condiciones disparan una alerta y qué acciones específicas deben ejecutarse según el contexto, horario y tipo de Riesgo. |
 
 <div style="page-break-before: always; break-before: page;"></div>
 
