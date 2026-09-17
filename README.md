@@ -2329,6 +2329,7 @@ Este diagrama muestra que el sistema se despliega en tres entornos principales: 
 
 > Nota: se conserva la numeración del Project Statement, que repite 4.1.3.2.
 
+
 ## 4.2. Tactical-Level Domain-Driven Design
 
 > Repetir la siguiente sección por cada Bounded Context real identificado.
