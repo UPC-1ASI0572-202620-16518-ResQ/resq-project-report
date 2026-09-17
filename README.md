@@ -1,3 +1,9 @@
+<style>
+p:not([align]):not([style*="text-align"]):not([align] p):not([style*="text-align"] p):not(table p):not(ul p):not(ol p):not(pre p):not(figure p):not(:has(img, svg, canvas, video, iframe)) {
+  text-align: justify;
+}
+</style>
+
 <!-- Carátula UPC -->
 
 <p align="center">
@@ -10,12 +16,12 @@
 INGENIERÍA DE SOFTWARE
 </h3>
 
-<p align="center"><strong>PERIODO:</strong> 202620 </p>
+<p align="center"><strong>Ciclo académico:</strong> 2026-20 </p>
 
 <p align="center">
-  1ACC0238 - Desarrollo de Soluciones IOT<br>
+  1ASI0572 – Desarrollo de Soluciones IoT<br>
   <strong>NRC:</strong> 16518<br>
-  <strong>Docente:</strong> Jimmy Enrique Sanchez Portugal
+  <strong>Docente:</strong> Jimmy Enrique Sánchez Portugal
 </p>
 
 <hr style="width:60%; border:1px solid #ccc;">
@@ -29,311 +35,95 @@ INGENIERÍA DE SOFTWARE
 
 <h3 align="center">Integrantes</h3>
 
-<div align="center" style="line-height: 1.8; text-align: center;">
-  <p>U202320442 — Quispe Barzola, Fabricio Fabian</p>
-  <p>U202324129 — Chacaliaza Minaya, Eduardo Fabian</p>
-  <p>U202116246 - Guerrero Vasquez, Jhon Danny</p>
-  <p>Uasdasd</p>
-  <p>Usdasda</p>
-  
-</div>
+| Código UPC | Apellidos y Nombres |
+|---|---|
+| [CÓDIGO UPC PENDIENTE] | Aliaga Urbina, Wilder Gonzalo |
+| U202324129 | Chacaliaza Minaya, Eduardo Fabian |
+| U202116246 | Guerrero Vasquez, Jhon Danny |
+| [CÓDIGO UPC PENDIENTE] | Nanfuñay Liza, Pedro Jesus |
+| U202320442 | Quispe Barzola, Fabricio Fabian |
+| [CÓDIGO UPC PENDIENTE] | Sánchez Guevara, Iván Fernando |
+
 
 <br>
 
-<p align="center" style="font-weight: bold;">202620</p>
+<p align="center" style="font-weight: bold;">Septiembre 2026</p>
 
 
-<div style="page-break-after: always;"></div>
+<div style="page-break-after: always; break-after: page;"></div>
 
 
-<!--Registro de versiones-->
-<h1 align="left">Registro de versiones del Informe</h1>
-</br>
-<table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
-  <tr>
-    <td align="center" style="border: 1px solid #ddd; padding: 8px;">Versión</td>
-    <td align="center" style="border: 1px solid #ddd; padding: 8px;">Fecha</td>
-    <td align="center" style="border: 1px solid #ddd; padding: 8px;">Autores</td>
-    <td align="center" style="border: 1px solid #ddd; padding: 8px;">Descripción</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;">AV1</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">fecha</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">
-      <ul>
-        <li>Nombre de integrante</li>
-      </ul>
-    </td>
-    <td style="border: 1px solid #ddd; padding: 8px;">            
-      <ul>
-        <li>El punto que hizo</li>
-        <li>El punto que hizo</li>
-        <li>El punto que hizo</li>
-        <li>El punto que hizo</li>
-        </ul>
-    </td>
-  </tr>
-  <tr>
-  <td style="border: 1px solid #ddd; padding: 8px;">AV1</td>
-  <td style="border: 1px solid #ddd; padding: 8px;">fecha</td>
-  <td style="border: 1px solid #ddd; padding: 8px;">
-    <ul>
-      <li>Nombre de integrante</li>
-    </ul>
-  </td>
-  <td style="border: 1px solid #ddd; padding: 8px;">            
-    <ul>
-      <li>El punto que hizo</li>
-      <li>El punto que hizo</li>
-      <li>El punto que hizo</li>
-      <li>El punto que hizo</li>
-      <li>El punto que hizo</li>
-    </ul>
-  </td>
-</tr>
-</table><br>
+# Registro de Versiones del Informe
 
+| Versión | Fecha | Autor | Descripción de modificación |
+|---|---|---|---|
+| 0.1 | [FECHA PENDIENTE] | [AUTOR PENDIENTE] | Creación inicial de la estructura del Project Report. |
 
-<h1>Project Report Collaboration Insights</h1>
+<!-- PENDIENTE: Validar la fecha y el autor de la versión inicial y completar las siguientes versiones con base en el historial real de GitHub. Cada fila debe tener un solo autor y representar una modificación real del documento. -->
 
-<h2>AV1</h2>
+# Project Report Collaboration Insights
 
-<p>Para el desarrollo del informe perteneciente a la entrega AV1, se dividió la implementación de secciones del Capítulo I y II en bloques de trabajo, asignando cada conjunto de secciones a un integrante del equipo.</p>
+## AV1 — Sprint Review
+
+Durante AV1, el equipo distribuyó la elaboración de los Capítulos I, II, III y IV entre sus integrantes, cubriendo Lean UX, UX Research / Needfinding, Requirements Specification, Strategic-Level DDD, Tactical-Level DDD y Software Architecture para ResQ, solución IoT orientada al monitoreo y respuesta coordinada ante emergencias en edificios. La asignación individual y los aportes realizados quedan pendientes de sustento mediante evidencias de Jira y GitHub.
+
+**URL del repositorio público de GitHub:** [resq-project-report](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-project-report.git)
+
+### Organización y distribución del trabajo
+
+Para la entrega AV1, el equipo organizó las actividades del Project Report mediante Jira, distribuyendo responsabilidades de acuerdo con los capítulos y artefactos establecidos para esta entrega. La planificación consideró las dependencias existentes entre la investigación, la especificación de requisitos y el diseño de la solución, permitiendo que los aportes individuales pudieran integrarse progresivamente dentro de los Capítulos I, II, III y IV.
+
+La distribución contempló actividades relacionadas con Lean UX, UX Research, Requirements Specification, Strategic-Level Domain-Driven Design, Software Architecture y Tactical-Level Domain-Driven Design.
 
 <p align="center">
-  <img src="assets/images/annexes/tb1.png" alt="Jira" width="500">
+  <img src="assets/images/general/collaboration/av1-jira-distribution.png"
+       alt="Distribución de actividades del equipo en Jira para AV1"
+       width="900">
 </p>
 
 <p align="center">
-  <img src="assets//images/annexes/AV1.png" alt="Commits" width="500">
+  <strong>Figura 1. Distribución de actividades del equipo para la entrega AV1.</strong>
 </p>
 
-<table align="center" border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
-  <tr>
-    <td align="center"><strong>Integrante</strong></td>
-    <td align="center"><strong>Tareas Asignadas</strong></td>
-  </tr>
+<p align="center">
+  <img src="assets/images/general/collaboration/av1-jira-distribution-2.png"
+       alt="Distribución de actividades del equipo en Jira para AV1 v2"
+       width="900">
+</p>
 
-  <!-- BLOQUE 1 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>Capítulo I – Presentación</strong></li>
-        <li>1.1 Startup Profile</li>
-        <li>1.1.1 Descripción de la Startup</li>
-        <li>1.1.2 Perfiles de integrantes del equipo</li>
-        <li>1.2 Solution Profile</li>
-        <li>1.2.1 Antecedentes y problemática</li>
-        <li>1.2.2 Lean UX Process</li>
-        <li>1.2.2.1 Lean UX Problem Statements</li>
-        <li>1.2.2.2 Lean UX Assumptions</li>
-        <li>1.2.2.3 Lean UX Hypothesis Statements</li>
-        <li>1.2.2.4 Lean UX Canvas</li>
-        <li>1.3 Segmentos objetivo</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>Capítulo II</strong></li>
-        <li>2.1 Competidores</li>
-        <li>2.1.1 Análisis competitivo</li>
-        <li>2.1.2 Estrategias y tácticas frente a competidores</li>
-        <li>2.2 Entrevistas</li>
-        <li>2.2.1 Diseño de entrevistas</li>
-        <li>2.2.2 Registro de entrevistas</li>
-        <li>2.2.3 Análisis de entrevistas</li>
-      </ul>
-    </td>
-  </tr>
+<p align="center">
+  <strong>Figura 2. Distribución de actividades del equipo para la entrega AV1.</strong>
+</p>
 
-  <!-- BLOQUE 2 -->
-  <tr>
-    <td>Jhon Guerrero V.</td>
-    <td>
-      <ul>
-        <li>2.3 Needfinding</li>
-        <li>2.3.1 User Personas</li>
-        <li>2.3.2 User Task Matrix</li>
-        <li>2.3.3 User Journey Mapping</li>
-        <li>2.3.4 Empathy Mapping</li>
-        <li>2.3.5 Big Picture EventStorming</li>
-        <li>2.3.6 Ubiquitous Language</li>
-      </ul>
-    </td>
-  </tr>
+La planificación registrada en Jira permitió identificar las responsabilidades asumidas por cada integrante y verificar la cobertura del alcance correspondiente a AV1. Para el Tactical-Level Domain-Driven Design se distribuyeron los Bounded Contexts **Identity and Access Management (IAM), Risk Detection, Alert & Response Management, Building, Device, Monitoring, User, Incident y Connectivity**, junto con sus respectivos elementos de diseño.
 
-  <!-- BLOQUE 3 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li>2.4 Requirements Specification</li>
-        <li>2.4.1 User Stories</li>
-        <li>2.4.2 Impact Mapping</li>
-        <li>2.4.3 Product Backlog</li>
-      </ul>
-    </td>
-  </tr>
+### Colaboración en el Project Report
 
-  <!-- BLOQUE 4 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li>2.5.1 EventStorming</li>
-        <li>2.5.1.1 Candidate Context Discovery</li>
-        <li>2.5.1.2 Domain Message Flows Modeling</li>
-        <li>2.5.1.3 Bounded Context Canvases</li>
-      </ul>
-    </td>
-  </tr>
+Además de la planificación registrada en Jira, la participación efectiva en la elaboración y evolución del Project Report se evidencia mediante los analíticos de colaboración y el historial de commits del repositorio de GitHub.
 
-  <!-- BLOQUE 5 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li>2.5.2 Context Mapping</li>
-      </ul>
-    </td>
-  </tr>
+<p align="center">
+  <img src="assets/images/general/collaboration/av1-github-contributors.png"
+       alt="Analíticos de colaboración de GitHub para AV1"
+       width="900">
+</p>
 
-  <!-- BLOQUE 6 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li>2.5.3 Software Architecture</li>
-        <li>2.5.3.1 Context Level Diagrams</li>
-        <li>2.5.3.2 Container Level Diagrams</li>
-        <li>2.5.3.3 Deployment Diagrams</li>
-      </ul>
-    </td>
-  </tr>
+<p align="center">
+  <strong>Figura 3. Analíticos de colaboración del repositorio del Project Report durante AV1.</strong>
+</p>
 
-  <!-- BLOQUE 7 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.1 Bounded Context: Bookings</strong></li>
-        <li>2.6.1.1 Domain Layer</li>
-        <li>2.6.1.2 Interface Layer</li>
-        <li>2.6.1.3 Application Layer</li>
-        <li>2.6.1.4 Infrastructure Layer</li>
-        <li>2.6.1.5 Component Level Diagrams</li>
-        <li>2.6.1.6 Code Level Diagrams</li>
-        <li>2.6.1.6.1 Class Diagram</li>
-        <li>2.6.1.6.2 Database Diagram</li>
-</ul>
-    </td>
-  </tr>
-<tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.2 Bounded Context: Payments</strong></li>
-        <li>2.6.2.1 Domain Layer</li>
-        <li>2.6.2.2 Interface Layer</li>
-        <li>2.6.2.3 Application Layer</li>
-        <li>2.6.2.4 Infrastructure Layer</li>
-        <li>2.6.2.5 Component Level Diagrams</li>
-        <li>2.6.2.6 Code Level Diagrams</li>
-        <li>2.6.2.6.1 Class Diagram</li>
-        <li>2.6.2.6.2 Database Diagram</li>
-</ul>
-    </td>
-  </tr>
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.3 Bounded Context: Users</strong></li>
-        <li>2.6.3.1 Domain Layer</li>
-        <li>2.6.3.2 Interface Layer</li>
-        <li>2.6.3.3 Application Layer</li>
-        <li>2.6.3.4 Infrastructure Layer</li>
-        <li>2.6.3.5 Component Level Diagrams</li>
-        <li>2.6.3.6 Code Level Diagrams</li>
-        <li>2.6.3.6.1 Class Diagram</li>
-        <li>2.6.3.6.2 Database Diagram</li>
-      </ul>
-    </td>
-  </tr>
+Los analíticos del repositorio permiten observar la participación de los integrantes en la evolución del Project Report durante la entrega AV1. Esta evidencia complementa la planificación realizada en Jira y permite contrastar las responsabilidades asignadas con las contribuciones registradas en el repositorio.
 
-  <!-- BLOQUE 8 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.4 Bounded Context: Coaches</strong></li>
-        <li>2.6.4.1 Domain Layer</li>
-        <li>2.6.4.2 Interface Layer</li>
-        <li>2.6.4.3 Application Layer</li>
-        <li>2.6.4.4 Infrastructure Layer</li>
-        <li>2.6.4.5 Component Level Diagrams</li>
-        <li>2.6.4.6 Code Level Diagrams</li>
-        <li>2.6.4.6.1 Class Diagram</li>
-        <li>2.6.4.6.2 Database Diagram</li>
-        </ul>
-    </td>
-  </tr>
-<tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.5 Bounded Context: Courts</strong></li>
-        <li>2.6.5.1 Domain Layer</li>
-        <li>2.6.5.2 Interface Layer</li>
-        <li>2.6.5.3 Application Layer</li>
-        <li>2.6.5.4 Infrastructure Layer</li>
-        <li>2.6.5.5 Component Level Diagrams</li>
-        <li>2.6.5.6 Code Level Diagrams</li>
-        <li>2.6.5.6.1 Class Diagram</li>
-        <li>2.6.5.6.2 Database Diagram</li>
-        </ul>
-    </td>
-  </tr>
-<tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.6 Bounded Context: Availabilities</strong></li>
-        <li>2.6.6.1 Domain Layer</li>
-        <li>2.6.6.2 Interface Layer</li>
-        <li>2.6.6.3 Application Layer</li>
-        <li>2.6.6.4 Infrastructure Layer</li>
-        <li>2.6.6.5 Component Level Diagrams</li>
-        <li>2.6.6.6 Code Level Diagrams</li>
-        <li>2.6.6.6.1 Class Diagram</li>
-        <li>2.6.6.6.2 Database Diagram</li>
-        </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.7 Bounded Context: Reviews</strong></li>
-        <li>2.6.7.1 Domain Layer</li>
-        <li>2.6.7.2 Interface Layer</li>
-        <li>2.6.7.3 Application Layer</li>
-        <li>2.6.7.4 Infrastructure Layer</li>
-        <li>2.6.7.5 Component Level Diagrams</li>
-        <li>2.6.7.6 Code Level Diagrams</li>
-        <li>2.6.7.6.1 Class Diagram</li>
-        <li>2.6.7.6.2 Database Diagram</li>
-      </ul>
-    </td>
-  </tr>
+<p align="center">
+  <img src="assets/images/general/collaboration/av1-github-commits.png"
+       alt="Historial de commits del Project Report para AV1"
+       width="900">
+</p>
 
+<p align="center">
+  <strong>Figura 4. Historial de commits realizados durante la elaboración de AV1.</strong>
+</p>
 
-</table>
-
+El historial de commits permite relacionar las modificaciones realizadas sobre el Project Report con sus respectivos autores y fechas. Estas contribuciones deben mantener coherencia con las modificaciones relevantes registradas en la sección **Registro de Versiones del Informe**.
 # Contenido
 
 - [Student Outcome](#student-outcome)
@@ -382,143 +172,127 @@ INGENIERÍA DE SOFTWARE
     - [4.1.3. Software Architecture](#413-software-architecture)
       - [4.1.3.1. Software Architecture System Landscape Diagram](#4131-software-architecture-system-landscape-diagram)
       - [4.1.3.2. Software Architecture Context Level Diagrams](#4132-software-architecture-context-level-diagrams)
-      - [4.1.3.2. Software Architecture Container Level Diagrams](#4132-software-architecture-container-level-diagrams)
-      - [4.1.3.3. Software Architecture Deployment Diagrams](#4133-software-architecture-deployment-diagrams)
+      - [4.1.3.3. Software Architecture Container Level Diagrams](#4133-software-architecture-container-level-diagrams)
+      - [4.1.3.4. Software Architecture Deployment Diagrams](#4134-software-architecture-deployment-diagrams)
+
   - [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
-    - [4.2.X. Bounded Context: \<Bounded Context Name\>](#42x-bounded-context-)
-      - [4.2.X.1. Domain Layer](#42x1-domain-layer)
-      - [4.2.X.2. Interface Layer](#42x2-interface-layer)
-      - [4.2.X.3. Application Layer](#42x3-application-layer)
-      - [4.2.X.4. Infrastructure Layer](#42x4-infrastructure-layer)
-      - [4.2.X.5. Bounded Context Software Architecture Component Level Diagrams](#42x5-bounded-context-software-architecture-component-level-diagrams)
-      - [4.2.X.6. Bounded Context Software Architecture Code Level Diagrams](#42x6-bounded-context-software-architecture-code-level-diagrams)
-      - [4.2.X.6.1. Bounded Context Domain Layer Class Diagrams](#42x61-bounded-context-domain-layer-class-diagrams)
-      - [4.2.X.6.2. Bounded Context Database Design Diagram](#42x62-bounded-context-database-design-diagram)
 
-- [Capítulo V: Solution UI/UX Design](#capítulo-v-solution-uiux-design)
-  - [5.1. Style Guidelines](#51-style-guidelines)
-    - [5.1.1. General Style Guidelines](#511-general-style-guidelines)
-    - [5.1.2. Web, Mobile and IoT Style Guidelines](#512-web-mobile-and-iot-style-guidelines)
-  - [5.2. Information Architecture](#52-information-architecture)
-    - [5.2.1. Organization Systems](#521-organization-systems)
-    - [5.2.2. Labeling Systems](#522-labeling-systems)
-    - [5.2.3. SEO Tags and Meta Tags](#523-seo-tags-and-meta-tags)
-    - [5.2.4. Searching Systems](#524-searching-systems)
-    - [5.2.5. Navigation Systems](#525-navigation-systems)
-  - [5.3. Landing Page UI Design](#53-landing-page-ui-design)
-    - [5.3.1. Landing Page Wireframe](#531-landing-page-wireframe)
-    - [5.3.2. Landing Page Mock-up](#532-landing-page-mock-up)
-  - [5.4. Applications UX/UI Design](#54-applications-uxui-design)
-    - [5.4.1. Applications Wireframes](#541-applications-wireframes)
-    - [5.4.2. Applications Wireflow Diagrams](#542-applications-wireflow-diagrams)
-    - [5.4.2. Applications Mock-ups](#542-applications-mock-ups)
-    - [5.4.3. Applications User Flow Diagrams](#543-applications-user-flow-diagrams)
-  - [5.5. Applications Prototyping](#55-applications-prototyping)
-  - [5.6. IoT Device Design](#56-iot-device-design)
+    - [4.2.1. Bounded Context: Identity and Access Management (IAM)](#421-bounded-context-identity-and-access-management-iam)
+      - [4.2.1.1. Domain Layer](#4211-domain-layer)
+      - [4.2.1.2. Interface Layer](#4212-interface-layer)
+      - [4.2.1.3. Application Layer](#4213-application-layer)
+      - [4.2.1.4. Infrastructure Layer](#4214-infrastructure-layer)
+      - [4.2.1.5. Bounded Context Software Architecture Component Level Diagrams](#4215-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.1.6. Bounded Context Software Architecture Code Level Diagrams](#4216-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.1.6.1. Bounded Context Domain Layer Class Diagrams](#42161-bounded-context-domain-layer-class-diagrams)
+        - [4.2.1.6.2. Bounded Context Database Design Diagram](#42162-bounded-context-database-design-diagram)
 
-- [Capítulo VI: Product Implementation, Validation & Deployment](#capítulo-vi-product-implementation-validation--deployment)
-  - [6.1. Software Configuration Management](#61-software-configuration-management)
-    - [6.1.1. Software Development Environment Configuration](#611-software-development-environment-configuration)
-    - [6.1.2. Source Code Management](#612-source-code-management)
-    - [6.1.3. Source Code Style Guide & Conventions](#613-source-code-style-guide--conventions)
-    - [6.1.4. Software Deployment Configuration](#614-software-deployment-configuration)
-  - [6.2. Landing Page, Services & Applications Implementation](#62-landing-page-services--applications-implementation)
-    - [6.2.X. Sprint n](#621-sprint-1)
-      - [6.2.X.1. Sprint Planning n](#6211-sprint-planning-1)
-      - [6.2.X.2. Aspect Leaders and Collaborators](#6212-aspect-leaders-and-collaborators)
-      - [6.2.X.3. Sprint Backlog n](#6213-sprint-backlog-1)
-      - [6.2.X.4. Development Evidence for Sprint Review](#6214-development-evidence-for-sprint-review)
-      - [6.2.X.5. Testing Suite Evidence for Sprint Review](#6215-testing-suite-evidence-for-sprint-review)
-      - [6.2.X.6. Execution Evidence for Sprint Review](#6216-execution-evidence-for-sprint-review)
-      - [6.2.X.7. Services Documentation Evidence for Sprint Review](#6217-services-documentation-evidence-for-sprint-review)
-      - [6.2.X.8. Software Deployment Evidence for Sprint Review](#6218-software-deployment-evidence-for-sprint-review)
-      - [6.2.X.9. Team Collaboration Insights during Sprint](#6219-team-collaboration-insights-during-sprint)
-  - [6.3. Validation Interviews](#63-validation-interviews)
-    - [6.3.1. Diseño de Entrevistas](#631-diseño-de-entrevistas)
-    - [6.3.2. Registro de Entrevistas](#632-registro-de-entrevistas)
-    - [6.3.3. Evaluaciones según heurísticas](#633-evaluaciones-según-heurísticas)
-  - [6.4. Video About-the-Product](#64-video-about-the-product)
+    - [4.2.2. Bounded Context: Risk Detection](#422-bounded-context-risk-detection)
+      - [4.2.2.1. Domain Layer](#4221-domain-layer)
+      - [4.2.2.2. Interface Layer](#4222-interface-layer)
+      - [4.2.2.3. Application Layer](#4223-application-layer)
+      - [4.2.2.4. Infrastructure Layer](#4224-infrastructure-layer)
+      - [4.2.2.5. Bounded Context Software Architecture Component Level Diagrams](#4225-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.2.6. Bounded Context Software Architecture Code Level Diagrams](#4226-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.2.6.1. Bounded Context Domain Layer Class Diagrams](#42261-bounded-context-domain-layer-class-diagrams)
+        - [4.2.2.6.2. Bounded Context Database Design Diagram](#42262-bounded-context-database-design-diagram)
+
+    - [4.2.3. Bounded Context: Alert & Response Management](#423-bounded-context-alert--response-management)
+      - [4.2.3.1. Domain Layer](#4231-domain-layer)
+      - [4.2.3.2. Interface Layer](#4232-interface-layer)
+      - [4.2.3.3. Application Layer](#4233-application-layer)
+      - [4.2.3.4. Infrastructure Layer](#4234-infrastructure-layer)
+      - [4.2.3.5. Bounded Context Software Architecture Component Level Diagrams](#4235-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.3.6. Bounded Context Software Architecture Code Level Diagrams](#4236-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.3.6.1. Bounded Context Domain Layer Class Diagrams](#42361-bounded-context-domain-layer-class-diagrams)
+        - [4.2.3.6.2. Bounded Context Database Design Diagram](#42362-bounded-context-database-design-diagram)
+
+    - [4.2.4. Bounded Context: Building](#424-bounded-context-building)
+      - [4.2.4.1. Domain Layer](#4241-domain-layer)
+      - [4.2.4.2. Interface Layer](#4242-interface-layer)
+      - [4.2.4.3. Application Layer](#4243-application-layer)
+      - [4.2.4.4. Infrastructure Layer](#4244-infrastructure-layer)
+      - [4.2.4.5. Bounded Context Software Architecture Component Level Diagrams](#4245-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.4.6. Bounded Context Software Architecture Code Level Diagrams](#4246-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.4.6.1. Bounded Context Domain Layer Class Diagrams](#42461-bounded-context-domain-layer-class-diagrams)
+        - [4.2.4.6.2. Bounded Context Database Design Diagram](#42462-bounded-context-database-design-diagram)
+
+    - [4.2.5. Bounded Context: Device](#425-bounded-context-device)
+      - [4.2.5.1. Domain Layer](#4251-domain-layer)
+      - [4.2.5.2. Interface Layer](#4252-interface-layer)
+      - [4.2.5.3. Application Layer](#4253-application-layer)
+      - [4.2.5.4. Infrastructure Layer](#4254-infrastructure-layer)
+      - [4.2.5.5. Bounded Context Software Architecture Component Level Diagrams](#4255-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.5.6. Bounded Context Software Architecture Code Level Diagrams](#4256-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.5.6.1. Bounded Context Domain Layer Class Diagrams](#42561-bounded-context-domain-layer-class-diagrams)
+        - [4.2.5.6.2. Bounded Context Database Design Diagram](#42562-bounded-context-database-design-diagram)
+
+    - [4.2.6. Bounded Context: Monitoring](#426-bounded-context-monitoring)
+      - [4.2.6.1. Domain Layer](#4261-domain-layer)
+      - [4.2.6.2. Interface Layer](#4262-interface-layer)
+      - [4.2.6.3. Application Layer](#4263-application-layer)
+      - [4.2.6.4. Infrastructure Layer](#4264-infrastructure-layer)
+      - [4.2.6.5. Bounded Context Software Architecture Component Level Diagrams](#4265-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.6.6. Bounded Context Software Architecture Code Level Diagrams](#4266-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.6.6.1. Bounded Context Domain Layer Class Diagrams](#42661-bounded-context-domain-layer-class-diagrams)
+        - [4.2.6.6.2. Bounded Context Database Design Diagram](#42662-bounded-context-database-design-diagram)
+
+    - [4.2.7. Bounded Context: User](#427-bounded-context-user)
+      - [4.2.7.1. Domain Layer](#4271-domain-layer)
+      - [4.2.7.2. Interface Layer](#4272-interface-layer)
+      - [4.2.7.3. Application Layer](#4273-application-layer)
+      - [4.2.7.4. Infrastructure Layer](#4274-infrastructure-layer)
+      - [4.2.7.5. Bounded Context Software Architecture Component Level Diagrams](#4275-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.7.6. Bounded Context Software Architecture Code Level Diagrams](#4276-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.7.6.1. Bounded Context Domain Layer Class Diagrams](#42761-bounded-context-domain-layer-class-diagrams)
+        - [4.2.7.6.2. Bounded Context Database Design Diagram](#42762-bounded-context-database-design-diagram)
+
+    - [4.2.8. Bounded Context: Incident](#428-bounded-context-incident)
+      - [4.2.8.1. Domain Layer](#4281-domain-layer)
+      - [4.2.8.2. Interface Layer](#4282-interface-layer)
+      - [4.2.8.3. Application Layer](#4283-application-layer)
+      - [4.2.8.4. Infrastructure Layer](#4284-infrastructure-layer)
+      - [4.2.8.5. Bounded Context Software Architecture Component Level Diagrams](#4285-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.8.6. Bounded Context Software Architecture Code Level Diagrams](#4286-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.8.6.1. Bounded Context Domain Layer Class Diagrams](#42861-bounded-context-domain-layer-class-diagrams)
+        - [4.2.8.6.2. Bounded Context Database Design Diagram](#42862-bounded-context-database-design-diagram)
+
+    - [4.2.9. Bounded Context: Connectivity](#429-bounded-context-connectivity)
+      - [4.2.9.1. Domain Layer](#4291-domain-layer)
+      - [4.2.9.2. Interface Layer](#4292-interface-layer)
+      - [4.2.9.3. Application Layer](#4293-application-layer)
+      - [4.2.9.4. Infrastructure Layer](#4294-infrastructure-layer)
+      - [4.2.9.5. Bounded Context Software Architecture Component Level Diagrams](#4295-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.9.6. Bounded Context Software Architecture Code Level Diagrams](#4296-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.9.6.1. Bounded Context Domain Layer Class Diagrams](#42961-bounded-context-domain-layer-class-diagrams)
+        - [4.2.9.6.2. Bounded Context Database Design Diagram](#42962-bounded-context-database-design-diagram)
 
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
-  - [Video About-the-Team](#video-about-the-team)
 
 - [Bibliografía](#bibliografía)
 
 - [Anexos](#anexos)
+  - [Anexo A. Videos de Exposiciones](#anexo-a-videos-de-exposiciones)
+    - [AV1 — Sprint Review](#av1--sprint-review)
 
 
-## Registro de Versiones del Informe 
-
-| Versión | Fecha | Autor | Descripción de modificación |
-|---|---|---|---|
-| 0.1 | [dd/mm/aaaa] | [Integrante] | Creación inicial de la estructura del Project Report. |
-
-**Regla del Project Statement:** cada fila debe tener un solo autor y reflejar adiciones,
-eliminaciones, correcciones o mejoras relevantes del informe.
-
----
-
-## Project Report Collaboration Insights
-
-**URL del repositorio público de GitHub:** [COMPLETAR]
-
-Esta sección debe crecer en cada entrega (AV1, TB1, AV2 y TB2) e incluir:
-
-- explicación de cómo se elaboró colaborativamente el informe;
-- capturas de analíticos de colaboración;
-- capturas/evidencias de commits;
-- interpretación de la participación del equipo;
-- coherencia con el Registro de Versiones del Informe.
-
-Guardar imágenes generales de colaboración en:
-`assets/images/general/collaboration/`
-
-### AV1 — Sprint Review
-[COMPLETAR]
-
-### TB1 — Stage Review
-[COMPLETAR]
-
-### AV2 — Sprint Review
-[COMPLETAR]
-
-### TB2 — Release Review
-[COMPLETAR]
-
----
 
 # Student Outcome
 
-El curso contribuye al **ABET Student Outcome 5**.
+El curso contribuye al cumplimiento del Student Outcome ABET:
 
-## Evidencias por entrega
+**ABET – EAC - Student Outcome 5**
 
-### AV1
+**Criterio:** La capacidad de funcionar efectivamente en un equipo cuyos miembros juntos proporcionan liderazgo, crean un entorno de colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen objetivos.
 
-| Criterio específico | Integrante | Acciones realizadas | Conclusiones |
-|---|---|---|---|
-| Trabaja en equipo para proporcionar liderazgo en forma conjunta | [Nombre] | [COMPLETAR] | [COMPLETAR] |
-| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos | [Nombre] | [COMPLETAR] | [COMPLETAR] |
-
-### TB1
-[Actualizar]
-
-### AV2
-[Actualizar]
-
-### TB2
-[Actualizar]
-
-Guardar capturas/evidencias generales relacionadas en:
-`assets/images/general/student-outcome/`
-
-
+En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 5.
+| Criterio específico | Acciones realizadas | Conclusiones |
+|---|---|---|
+| Trabaja en equipo para proporcionar liderazgo en forma conjunta | **Sánchez Guevara, Iván Fernando**<br><br>**AV1**<br>• Tuvo a su cargo el Startup Profile y parte del Solution Profile, desarrollando la descripción de la startup, los perfiles de los integrantes, así como los antecedentes y la problemática de ResQ.<br>• Asumió el desarrollo del Context Mapping y de los diagramas de arquitectura a nivel Context, Container y Deployment, integrando en una representación arquitectónica las responsabilidades e interacciones definidas para los distintos Bounded Contexts.<br>• Desarrolló el Bounded Context Connectivity, incluyendo Domain Layer, Interface Layer, Application Layer, Infrastructure Layer y sus diagramas de diseño correspondientes.<br><br>**Nanfuñay Liza, Pedro Jesus**<br><br>**AV1**<br>• Tuvo a su cargo el proceso de Lean UX, desarrollando Lean UX Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas como base para orientar las decisiones iniciales del equipo.<br>• Asumió el Design-Level EventStorming, incluyendo Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases, contribuyendo a identificar y delimitar las responsabilidades posteriormente distribuidas entre los Bounded Contexts del sistema.<br>• Desarrolló el Bounded Context Monitoring, incluyendo sus capas y diagramas de diseño táctico.<br><br>**Chacaliaza Minaya, Eduardo Fabian**<br><br>**AV1**<br>• Tuvo a su cargo la definición de los segmentos objetivo, el análisis de competidores y las estrategias y tácticas de ResQ frente a la competencia.<br>• Desarrolló el Product Backlog, organizando y priorizando los requisitos funcionales identificados para la solución.<br>• Participó en el Strategic-Level Domain-Driven Design y asumió el desarrollo del System Landscape de la arquitectura.<br>• Desarrolló el Bounded Context Alert & Response Management, especificando sus capas y diagramas técnicos correspondientes.<br><br>**Quispe Barzola, Fabricio Fabian**<br><br>**AV1**<br>• Tuvo a su cargo el proceso de entrevistas, incluyendo su diseño, registro y análisis, proporcionando al equipo información proveniente de representantes de los segmentos objetivo.<br>• Desarrolló las User Stories y el Impact Mapping, trasladando los resultados obtenidos durante la investigación hacia la especificación de requisitos de ResQ.<br>• Desarrolló los Bounded Contexts Identity and Access Management (IAM) y Risk Detection, incluyendo Domain, Interface, Application e Infrastructure Layers, así como los diagramas de componentes, clases y base de datos correspondientes.<br><br>**Aliaga Urbina, Wilder Gonzalo**<br><br>**AV1**<br>• Tuvo a su cargo la elaboración de User Personas, User Task Matrix, User Journey Mapping y Empathy Mapping, estructurando los hallazgos obtenidos durante la investigación de usuarios.<br>• Utilizó estos artefactos para representar necesidades, tareas, frustraciones y recorridos de los segmentos objetivo, aportando información utilizada posteriormente por el equipo en la definición de la solución.<br>• Desarrolló los Bounded Contexts Building y Device, incluyendo sus capas y diagramas de diseño táctico correspondientes.<br><br>**Guerrero Vasquez, Jhon Danny**<br><br>**AV1**<br>• Participó en el proceso de Needfinding y tuvo a su cargo el Big Picture EventStorming y el Ubiquitous Language, contribuyendo a establecer una comprensión común del dominio de ResQ y de sus principales conceptos.<br>• El Big Picture EventStorming desarrollado permitió representar los eventos relevantes del dominio y apoyar posteriormente su descomposición en Bounded Contexts.<br>• Desarrolló los Bounded Contexts User e Incident, incluyendo sus capas, componentes, clases y diseño de persistencia. | Durante AV1, el equipo distribuyó responsabilidades entre sus integrantes en distintas etapas del proceso de ingeniería, abarcando Lean UX, UX Research, Requirements Specification, Strategic-Level Domain-Driven Design, Tactical-Level Domain-Driven Design y Software Architecture. Cada integrante asumió la responsabilidad de artefactos concretos cuyos resultados se relacionan con el trabajo realizado por los demás miembros. Esta organización permitió desarrollar en paralelo los Capítulos I, II, III y IV y posteriormente integrar sus resultados en una propuesta común para ResQ. |
+| **Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos** | **Sánchez Guevara, Iván Fernando**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió responsabilidades relacionadas con la definición inicial de la solución, Context Mapping, Software Architecture y el Bounded Context Connectivity.<br>• Su trabajo en Context Mapping y arquitectura permitió integrar visualmente las relaciones y dependencias existentes entre elementos desarrollados por diferentes miembros del equipo.<br><br>**Nanfuñay Liza, Pedro Jesus**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió la elaboración de los artefactos de Lean UX y Design-Level EventStorming.<br>• Los artefactos de Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases proporcionaron una base común para organizar y distribuir posteriormente el diseño táctico entre los integrantes del equipo.<br>• Complementó este trabajo desarrollando el Bounded Context Monitoring dentro de la distribución acordada para el Capítulo IV.<br><br>**Chacaliaza Minaya, Eduardo Fabian**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió responsabilidades relacionadas con segmentos objetivo, análisis competitivo, Product Backlog, Strategic-Level Domain-Driven Design y Software Architecture.<br>• La organización del Product Backlog contribuyó a estructurar y priorizar el alcance funcional identificado por el equipo.<br>• Complementó el diseño estratégico con el desarrollo del Bounded Context Alert & Response Management, manteniendo relación entre el alcance funcional y el diseño de la solución.<br><br>**Quispe Barzola, Fabricio Fabian**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió las actividades relacionadas con entrevistas, User Stories, Impact Mapping, IAM y Risk Detection.<br>• Los resultados obtenidos en entrevistas fueron utilizados como insumo para la especificación de requisitos, permitiendo mantener trazabilidad entre investigación, necesidades identificadas y funcionalidades propuestas.<br>• El desarrollo de IAM y Risk Detection permitió continuar dicha trazabilidad desde los requisitos hasta el diseño táctico de la solución.<br><br>**Aliaga Urbina, Wilder Gonzalo**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió los principales artefactos de Needfinding y el diseño táctico de Building y Device.<br>• Organizó los resultados de investigación en User Personas, User Task Matrix, User Journey Maps y Empathy Maps, facilitando que el equipo dispusiera de una representación compartida de los usuarios y sus necesidades.<br>• Relacionó posteriormente estos hallazgos con elementos del dominio físico e IoT mediante el desarrollo de Building y Device.<br><br>**Guerrero Vasquez, Jhon Danny**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió actividades relacionadas con Needfinding, Big Picture EventStorming, Ubiquitous Language y los Bounded Contexts User e Incident.<br>• La elaboración del Ubiquitous Language contribuyó a establecer términos y definiciones compartidas para reducir ambigüedades durante el trabajo de los distintos integrantes.<br>• Complementó el modelado general del dominio desarrollando User e Incident dentro de la distribución establecida para el Tactical-Level Domain-Driven Design. | La planificación de AV1 permitió distribuir el alcance del entregable entre los seis integrantes, estableciendo responsabilidades relacionadas entre sí y cubriendo progresivamente la comprensión del problema, investigación de usuarios, especificación de requisitos y diseño de la solución. Los artefactos desarrollados mantienen dependencias entre distintas responsabilidades: las entrevistas alimentan el Needfinding, estos resultados contribuyen a los requisitos, y los requisitos y eventos del dominio orientan la identificación y diseño de los Bounded Contexts y la arquitectura. Esta organización permitió integrar los aportes individuales dentro de una estructura común del Project Report y avanzar hacia los objetivos establecidos para AV1. |
 
 # Capítulo I: Introducción
-
-> Imágenes del capítulo:
-> `assets/images/chapter-01-introduction/`
 
 ## 1.1. Startup Profile
 
@@ -533,6 +307,7 @@ Con nuestro sistema inteligente e integrado, centralizamos la detección de múl
 |---|---|---|---|
 | Ivan Fernando Sanchez Guevara | U202218181 | Mi nombre es Fernando Sanchez Guevara, tengo 22 años y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona disciplinada, responsable y puntual al momento de desarrollar las asignaciones de trabajo. Además, me preocupo por mantener una buena coordinación con mi equipo, procurando apoyar a mis compañeros cuando presentan alguna dificultad. Gracias a mi compromiso y disposición para colaborar, he contribuido al desarrollo adecuado de diferentes proyectos grupales, buscando cumplir los objetivos establecidos y resolver los inconvenientes que puedan surgir durante el proceso. | ![foto1](/assets/images/chapter-01-introduction/Fernando.png) |
 | Eduardo Fabian Chacaliza Minaya | U202324129 | Mi nombre es Eduardo Fabian Chacaliza Minaya y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y comprometida con el cumplimiento de los objetivos del equipo. Tengo interés en el desarrollo de soluciones tecnológicas y en la integración de los diferentes componentes de un proyecto. Durante los trabajos grupales procuro mantener una comunicación constante con mis compañeros, colaborar en la resolución de problemas y apoyar en la integración y validación de las distintas partes del proyecto para obtener un resultado consistente y funcional. | ![foto2](/assets/images/chapter-01-introduction/Eduardo.png) |
+| Fabricio Fabian Quispe Barzola | U202320442 | Mi nombre es Fabricio Fabian Quispe Barzola y actualmente estudio la carrera de Ingeniería de Software. A lo largo del desarrollo de ResQ he participado de manera activa en la organización, investigación y construcción de los distintos artefactos del proyecto, manteniendo una coordinación constante con mis compañeros para que las diferentes partes de la solución mantengan coherencia entre sí. He trabajado en actividades relacionadas con el diseño, registro y análisis de entrevistas, la elaboración de User Stories e Impact Mapping, así como en el diseño de los Bounded Contexts Identity and Access Management (IAM) y Risk Detection. Durante el proceso procuro revisar cómo mis avances se relacionan con el trabajo de los demás integrantes, compartir observaciones, apoyar en la integración de los artefactos y contribuir a resolver inconsistencias cuando aparecen. Me considero una persona responsable, organizada y comprometida con el trabajo colaborativo, buscando que el equipo mantenga una visión común del proyecto y pueda cumplir de manera coordinada los objetivos establecidos para cada entrega. | ![foto3](/assets/images/chapter-01-introduction/Fabricio.png) |
 
 ## 1.2. Solution Profile
 
@@ -4836,236 +4611,13 @@ El repositorio no publica un método de eliminación física del agregado. Las c
 
 
 
-# Capítulo V: Solution UI/UX Design
-
-> Imágenes del capítulo:
-> `assets/images/chapter-05-solution-ui-ux-design/`
->
-> Fuentes editables de diagramas/diseño:
-> `assets/diagram-sources/chapter-05-solution-ui-ux-design/`
-
-## 5.1. Style Guidelines
-
-### 5.1.1. General Style Guidelines
-[COMPLETAR]
-
-### 5.1.2. Web, Mobile and IoT Style Guidelines
-[COMPLETAR]
-
-## 5.2. Information Architecture
-
-### 5.2.1. Organization Systems
-[COMPLETAR]
-
-### 5.2.2. Labeling Systems
-[COMPLETAR]
-
-### 5.2.3. SEO Tags and Meta Tags
-[COMPLETAR]
-
-### 5.2.4. Searching Systems
-[COMPLETAR]
-
-### 5.2.5. Navigation Systems
-[COMPLETAR]
-
-## 5.3. Landing Page UI Design
-
-### 5.3.1. Landing Page Wireframe
-[INSERTAR WIREFRAMES + EXPLICACIÓN]
-
-### 5.3.2. Landing Page Mock-up
-[INSERTAR MOCK-UPS + EXPLICACIÓN]
-
-## 5.4. Applications UX/UI Design
-
-### 5.4.1. Applications Wireframes
-[INSERTAR WIREFRAMES + EXPLICACIÓN]
-
-### 5.4.2. Applications Wireflow Diagrams
-[INSERTAR WIREFLOWS + EXPLICACIÓN]
-
-### 5.4.2. Applications Mock-ups
-[INSERTAR MOCK-UPS + EXPLICACIÓN]
-
-### 5.4.3. Applications User Flow Diagrams
-[INSERTAR USER FLOWS + EXPLICACIÓN]
-
-> Nota: se conserva la numeración del Project Statement, que repite 5.4.2.
-
-## 5.5. Applications Prototyping
-[INSERTAR EVIDENCIAS / URL + EXPLICACIÓN]
-
-## 5.6. IoT Device Design
-[INSERTAR DISEÑO DEL DISPOSITIVO + EXPLICACIÓN]
-
-# Capítulo VI: Product Implementation, Validation & Deployment
-
-> Imágenes del capítulo:
-> `assets/images/chapter-06-product-implementation-validation-deployment/`
->
-> Fuentes editables:
-> `assets/diagram-sources/chapter-06-product-implementation-validation-deployment/`
-
-## 6.1. Software Configuration Management
-
-### 6.1.1. Software Development Environment Configuration
-Documentar herramientas, plataformas, lenguajes, frameworks y configuraciones utilizadas.
-
-### 6.1.2. Source Code Management
-Incluir:
-- URL del repositorio GitHub de cada producto;
-- estrategia GitFlow;
-- convenciones para `feature/*`, `release/*` y `hotfix/*`;
-- Semantic Versioning;
-- Conventional Commits.
-
-### 6.1.3. Source Code Style Guide & Conventions
-Documentar convenciones de código y nomenclatura en inglés para los lenguajes utilizados.
-
-### 6.1.4. Software Deployment Configuration
-Documentar configuración y pasos de despliegue de los productos digitales.
-Incluir también el Deployment Diagram solicitado.
-
-## 6.2. Landing Page, Services & Applications Implementation
-
-> Repetir el bloque `6.2.X` por Sprint.
-> Según las entregas del curso: Sprint 1 (TB1), Sprint 2 (AV2), Sprint 3 (TB2).
-
-### 6.2.1. Sprint 1
-
-#### 6.2.1.1. Sprint Planning 1
-[COMPLETAR]
-
-#### 6.2.1.2. Aspect Leaders and Collaborators
-[COMPLETAR]
-
-#### 6.2.1.3. Sprint Backlog 1
-[REDACTAR EN EL INFORME; NO SÓLO CAPTURA]
-
-#### 6.2.1.4. Development Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.1.5. Testing Suite Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.1.6. Execution Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.1.7. Services Documentation Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.1.8. Software Deployment Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.1.9. Team Collaboration Insights during Sprint
-[COMPLETAR]
-
-### 6.2.2. Sprint 2
-
-#### 6.2.2.1. Sprint Planning 2
-[COMPLETAR]
-
-#### 6.2.2.2. Aspect Leaders and Collaborators
-[COMPLETAR]
-
-#### 6.2.2.3. Sprint Backlog 2
-[COMPLETAR]
-
-#### 6.2.2.4. Development Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.2.5. Testing Suite Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.2.6. Execution Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.2.7. Services Documentation Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.2.8. Software Deployment Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.2.9. Team Collaboration Insights during Sprint
-[COMPLETAR]
-
-### 6.2.3. Sprint 3
-
-#### 6.2.3.1. Sprint Planning 3
-[COMPLETAR]
-
-#### 6.2.3.2. Aspect Leaders and Collaborators
-[COMPLETAR]
-
-#### 6.2.3.3. Sprint Backlog 3
-[COMPLETAR]
-
-#### 6.2.3.4. Development Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.3.5. Testing Suite Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.3.6. Execution Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.3.7. Services Documentation Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.3.8. Software Deployment Evidence for Sprint Review
-[COMPLETAR]
-
-#### 6.2.3.9. Team Collaboration Insights during Sprint
-[COMPLETAR]
-
-## 6.3. Validation Interviews
-
-### 6.3.1. Diseño de Entrevistas
-[COMPLETAR]
-
-### 6.3.2. Registro de Entrevistas
-[COMPLETAR]
-
-### 6.3.3. Evaluaciones según heurísticas
-[COMPLETAR]
-
-## 6.4. Video About-the-Product
-
-Incluir:
-- introducción y resumen del video;
-- tono consistente con el producto;
-- al menos un testimonio positivo de un usuario que participó en validación;
-- screenshot representativo;
-- URL de Microsoft Stream/Clipchamp;
-- URL de YouTube para incrustar en Landing Page;
-- duración/timing.
-
 # Conclusiones
-
-> Imágenes relacionadas:
-> `assets/images/conclusions/`
 
 ## Conclusiones y recomendaciones
 
-Incluir conclusiones relacionadas con:
-- Problem Statements;
-- assumptions frente al comportamiento real de los segmentos;
-- Hypothesis Statements;
-- criterios de éxito de Lean UX;
-- resultados de validaciones;
-- recomendaciones y siguientes pasos del roadmap.
+[AVANCE DE CONCLUSIONES Y RECOMENDACIONES DE AV1 PENDIENTE]
 
-## Video About-the-Team
-
-Incluir:
-- resumen de los aspectos más relevantes;
-- pauta/secuencia con timing `hh:mm:ss`;
-- imagen representativa;
-- URL de Microsoft Stream/Clipchamp;
-- URL de YouTube;
-- evidencia del proceso real de trabajo del equipo;
-- testimonio ante cámara de cada integrante sobre actividades, outcomes y competencias.
+<!-- PENDIENTE: Redactar el avance a partir de los artefactos existentes de los Capítulos I–IV, relacionando Problem Statements, Lean UX Assumptions, Hypothesis Statements, hallazgos de entrevistas, requisitos y decisiones de diseño. Sustentar las recomendaciones sin anticipar resultados de implementación o validación posteriores a AV1. -->
 
 # Bibliografía
 
@@ -5077,23 +4629,14 @@ Ejemplo:
 
 # Anexos
 
-> Imágenes / material gráfico:
-> `assets/images/annexes/`
+## Anexo A. Videos de Exposiciones
 
-## Videos de Exposiciones
+### AV1 — Sprint Review
 
-### AV1
-- URL Microsoft Stream/Clipchamp: [COMPLETAR]
-- Archivo: `upc-pre-202620-1asi0572-<NRC>-<startup>-expo-av1.mp4`
+<!-- PENDIENTE: INSERTAR SCREENSHOT DEL VIDEO DE EXPOSICIÓN AV1 -->
 
-### TB1
-- URL Microsoft Stream/Clipchamp: [COMPLETAR]
+**Figura X. Video de exposición correspondiente a la entrega AV1.**
 
-### AV2
-- URL Microsoft Stream/Clipchamp: [COMPLETAR]
+**Microsoft Stream / Clipchamp:** [URL PENDIENTE]
 
-### TB2
-- URL Microsoft Stream/Clipchamp: [COMPLETAR]
-
-## Otros anexos
-Agregar tablas, documentos, gráficos u otros elementos cuya extensión o importancia justifique colocarlos aquí.
+**Duración:** [HH:MM:SS PENDIENTE]
