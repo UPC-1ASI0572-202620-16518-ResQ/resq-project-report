@@ -2316,6 +2316,769 @@ El Product Backlog se mantiene también en Jira, donde las historias se encuentr
 ##### 4.2.X.6.2. Bounded Context Database Design Diagram
 [INSERTAR DIAGRAMA + EXPLICACIÓN]
 
+### 4.2.1. Bounded Context: Identity and Access Management
+
+The **Identity and Access Management (IAM)** Bounded Context is responsible for managing the identity, authentication, role assignment, permissions, and authorization mechanisms required to protect the information and operations available in ResQ.
+
+This Bounded Context supports the access-control needs of the platform by ensuring that only authenticated identities can interact with protected resources and that each operation is executed according to the permissions associated with the roles assigned to the user.
+
+Its responsibilities are mainly derived from the requirements related to authenticated access and role-based authorization. In particular, ResQ requires users to authenticate before accessing protected capabilities and requires operations to be restricted according to the roles and permissions assigned to each identity.
+
+The IAM Bounded Context does not manage personal profile information such as names, phone numbers, preferences, or other user-specific information. Those responsibilities belong to the **User Bounded Context**. IAM only maintains the information required to identify, authenticate, and authorize a user.
+
+Similarly, IAM does not manage buildings, zones, devices, measurements, incidents, alerts, or risk-detection rules. It only provides the authentication and authorization mechanisms that other Bounded Contexts can use when their operations require access control.
+
+The main responsibilities of this Bounded Context are:
+
+- Authenticate an identity using valid credentials.
+- Reject authentication attempts when the credentials are invalid.
+- Maintain the authentication-related state of an identity.
+- Associate identities with roles within an organizational scope.
+- Determine the permissions granted by each role.
+- Prevent duplicated role assignments within the same organization.
+- Verify whether an authenticated identity is authorized to perform a protected operation.
+- Reject protected operations when the authenticated identity does not have the required permission.
+- Maintain the IAM domain model independently from the personal information managed by the User Bounded Context.
+
+The principal concepts identified for the Identity and Access Management Bounded Context are **Identity**, **Role**, **Role Assignment**, **Permission**, **Login Identifier**, **Credential Hash**, and **Identity Status**.
+
+#### Class Dictionary
+
+The following table summarizes the main classes and interfaces that form the Identity and Access Management Bounded Context.
+
+| Class / Interface | Layer | Purpose | Main attributes | Main operations |
+|---|---|---|---|---|
+| `Identity` | Domain | Represents the authentication and authorization identity associated with a ResQ user. It is the Aggregate Root responsible for maintaining authentication state and role assignments. | `identityId: UUID`, `userId: UUID`, `loginIdentifier: LoginIdentifier`, `credentialHash: CredentialHash`, `status: IdentityStatus`, `roleAssignments: Set<RoleAssignment>` | `assignRole(roleId, organizationId)`, `hasRole(roleId, organizationId)`, `roleIdsFor(organizationId)`, `isActive()` |
+| `Role` | Domain | Represents a named authorization role and the permissions granted by that role. | `roleId: UUID`, `name: String`, `permissions: Set<Permission>` | `grants(permissionCode)`, `getPermissions()` |
+| `RoleAssignment` | Domain | Represents the assignment of a role to an identity within a specific organization. | `assignmentId: UUID`, `roleId: UUID`, `organizationId: UUID` | `matches(roleId, organizationId)` |
+| `LoginIdentifier` | Domain | Value Object that represents the identifier used by an identity during authentication. The exact format remains independent from the personal profile managed by the User Bounded Context. | `value: String` | `value()` |
+| `CredentialHash` | Domain | Value Object that represents the protected representation of the authentication secret. Plain-text credentials are never stored in the domain model. | `value: String` | `value()` |
+| `Permission` | Domain | Value Object that identifies a capability required to execute a protected operation. | `code: String` | `code()`, `equals()` |
+| `IdentityStatus` | Domain | Enumeration that represents whether an identity can currently be used for authentication. | `ACTIVE`, `DISABLED` | — |
+| `IdentityRepository` | Domain | Repository abstraction used to retrieve and persist Identity aggregates without coupling the Domain Layer to a persistence technology. | — | `findById(identityId)`, `findByLoginIdentifier(loginIdentifier)`, `save(identity)` |
+| `RoleRepository` | Domain | Repository abstraction used to retrieve roles and their associated permissions. | — | `findById(roleId)`, `findAllByIds(roleIds)` |
+| `AuthorizationService` | Domain | Domain Service responsible for evaluating whether the roles assigned to an identity grant a required permission inside an organizational scope. | — | `isAuthorized(identity, roles, permissionCode, organizationId)` |
+| `AuthenticateCommand` | Application | Represents a request to authenticate an identity. | `loginIdentifier: String`, `credentialSecret: String` | — |
+| `AuthenticateCommandHandler` | Application | Coordinates the authentication use case using the domain model and the required infrastructure abstractions. | Dependencies on `IdentityRepository`, `CredentialVerifier`, `AuthenticationSessionProvider` | `handle(command)` |
+| `AssignRoleCommand` | Application | Represents a request to assign a valid role to an identity within an organization. | `identityId: UUID`, `roleId: UUID`, `organizationId: UUID` | — |
+| `AssignRoleCommandHandler` | Application | Coordinates role assignment and validates the conditions required before modifying the Identity aggregate. | Dependencies on `IdentityRepository`, `RoleRepository`, `OrganizationMembershipValidator` | `handle(command)` |
+| `CheckPermissionQuery` | Application | Represents an authorization request for an identity, permission, and organization. | `identityId: UUID`, `permissionCode: String`, `organizationId: UUID` | — |
+| `CheckPermissionQueryHandler` | Application | Retrieves the identity and its roles and delegates the authorization decision to the Domain Layer. | Dependencies on `IdentityRepository`, `RoleRepository`, `AuthorizationService` | `handle(query)` |
+| `AuthenticationResult` | Application | Represents the successful result of an authentication process without exposing credential information. | `identityId: UUID`, `sessionToken: String` | — |
+| `CredentialVerifier` | Application | Abstraction used to compare a credential received during authentication against the stored protected credential representation. | — | `matches(rawCredential, credentialHash)` |
+| `AuthenticationSessionProvider` | Application | Abstraction responsible for generating the representation required to maintain an authenticated session. | — | `createSession(identityId)` |
+| `OrganizationMembershipValidator` | Application | Abstraction used to validate that the target user belongs to the organization in which a role is being assigned. | — | `belongsToOrganization(userId, organizationId)` |
+| `AuthenticationController` | Interface | Receives authentication requests and delegates them to the corresponding Application Layer command handler. | Dependency on `AuthenticateCommandHandler` | `authenticate(request)` |
+| `RoleAssignmentController` | Interface | Receives authorized requests for role assignment and delegates the operation to the Application Layer. | Dependency on `AssignRoleCommandHandler` | `assignRole(identityId, request)` |
+| `AuthorizationFilter` | Interface | Intercepts protected requests and verifies that the authenticated identity has the permission required by the requested operation. | Dependency on `CheckPermissionQueryHandler` | `authorize(requestContext)` |
+| `IdentityRepositoryAdapter` | Infrastructure | Implements `IdentityRepository` using the persistence mechanism selected for the ResQ Cloud RESTful API. | Persistence dependency | `findById()`, `findByLoginIdentifier()`, `save()` |
+| `RoleRepositoryAdapter` | Infrastructure | Implements `RoleRepository` and reconstructs roles together with their permissions from persistent storage. | Persistence dependency | `findById()`, `findAllByIds()` |
+| `CredentialHashVerifier` | Infrastructure | Implements credential verification using the security mechanism adopted by the backend implementation. | Security-library dependency | `matches()` |
+| `AuthenticationSessionProviderAdapter` | Infrastructure | Implements the creation of the authenticated-session representation consumed by the client applications. | Security/session dependency | `createSession()` |
+| `OrganizationMembershipAdapter` | Infrastructure | Provides the mechanism required to verify organizational membership without transferring ownership of user or organization information to IAM. | Dependency on the source responsible for organizational membership information | `belongsToOrganization()` |
+
+The relationships among these classes preserve the limits of the Bounded Context. `Identity` maintains only the `userId` that references the user associated with the authentication identity. The User profile itself is not duplicated inside IAM.
+
+Likewise, `RoleAssignment` uses an `organizationId` to indicate the authorization scope of the assignment, but IAM does not model or administer the organization itself.
+
+---
+
+#### 4.2.1.1. Domain Layer
+
+The **Domain Layer** contains the business concepts, rules, and abstractions that define identity and access management inside ResQ. This layer does not depend on HTTP, database engines, security libraries, or application frameworks.
+
+The principal Aggregate Root is `Identity`.
+
+An `Identity` represents the security identity associated with a ResQ user. It contains the minimum information required to authenticate the user and determine the roles assigned to that identity.
+
+The `userId` attribute acts only as an external reference to the user represented in the User Bounded Context. Personal information is deliberately excluded from the IAM domain model.
+
+`Identity` owns its collection of `RoleAssignment` objects. A role assignment establishes that the identity has a specific role inside an organization.
+
+The `Identity` Aggregate Root is responsible for protecting the consistency of these assignments. In particular, the same role must not be assigned more than once to the same identity within the same organization.
+
+##### Identity
+
+**Category:** Aggregate Root / Entity.
+
+**Purpose:** Represent the security identity used to authenticate a ResQ user and maintain the role assignments associated with that identity.
+
+**Attributes:**
+
+- `identityId: UUID` — Unique identifier of the identity.
+- `userId: UUID` — External reference to the corresponding user.
+- `loginIdentifier: LoginIdentifier` — Identifier used during authentication.
+- `credentialHash: CredentialHash` — Protected representation of the authentication credential.
+- `status: IdentityStatus` — Current authentication status of the identity.
+- `roleAssignments: Set<RoleAssignment>` — Roles assigned to the identity in different organizations.
+
+**Operations:**
+
+- `assignRole(roleId, organizationId)` — Adds a valid role assignment while preventing duplication.
+- `hasRole(roleId, organizationId)` — Indicates whether the identity already has the specified role within the organization.
+- `roleIdsFor(organizationId)` — Obtains the role identifiers that apply to an organizational scope.
+- `isActive()` — Indicates whether the identity is enabled for authentication.
+
+##### Role
+
+**Category:** Aggregate Root / Entity.
+
+**Purpose:** Represent an authorization role containing the permissions that enable specific protected operations.
+
+**Attributes:**
+
+- `roleId: UUID`
+- `name: String`
+- `permissions: Set<Permission>`
+
+**Operations:**
+
+- `grants(permissionCode)` — Indicates whether the role contains the requested permission.
+- `getPermissions()` — Returns the permissions associated with the role.
+
+The current scope requires the assignment and evaluation of valid roles. Creation or administrative modification of roles is not included as a use case because no current User Story requires that capability.
+
+##### RoleAssignment
+
+**Category:** Entity owned by `Identity`.
+
+**Purpose:** Represent the association between an identity, a role, and the organization in which the role applies.
+
+**Attributes:**
+
+- `assignmentId: UUID`
+- `roleId: UUID`
+- `organizationId: UUID`
+
+**Operations:**
+
+- `matches(roleId, organizationId)` — Determines whether the assignment corresponds to a specific role and organization.
+
+The `organizationId` is treated as an external reference. IAM does not own the lifecycle of the organization.
+
+##### LoginIdentifier
+
+**Category:** Value Object.
+
+**Purpose:** Encapsulate the identifier presented during authentication.
+
+**Attribute:**
+
+- `value: String`
+
+The value is kept independent from the User profile because authentication identity and personal-profile information belong to different responsibilities.
+
+##### CredentialHash
+
+**Category:** Value Object.
+
+**Purpose:** Represent the protected form of an authentication credential.
+
+**Attribute:**
+
+- `value: String`
+
+Plain-text credentials must never be persisted as part of the domain state.
+
+##### Permission
+
+**Category:** Value Object.
+
+**Purpose:** Represent an authorization capability required to execute a protected operation.
+
+**Attribute:**
+
+- `code: String`
+
+Permissions are associated with roles. Authorization is therefore determined from the permissions granted by the roles assigned to the identity.
+
+##### IdentityStatus
+
+**Category:** Enumeration.
+
+**Values:**
+
+- `ACTIVE`
+- `DISABLED`
+
+Only an active identity can complete the authentication process successfully.
+
+##### IdentityRepository
+
+**Category:** Repository Interface.
+
+**Purpose:** Define the persistence operations required by the Domain and Application Layers without depending on a specific database technology.
+
+**Operations:**
+
+- `findById(identityId)`
+- `findByLoginIdentifier(loginIdentifier)`
+- `save(identity)`
+
+##### RoleRepository
+
+**Category:** Repository Interface.
+
+**Purpose:** Retrieve roles and permissions required during role assignment and authorization.
+
+**Operations:**
+
+- `findById(roleId)`
+- `findAllByIds(roleIds)`
+
+##### AuthorizationService
+
+**Category:** Domain Service.
+
+**Purpose:** Evaluate authorization when the decision requires information from the identity and one or more roles.
+
+**Operation:**
+
+- `isAuthorized(identity, roles, permissionCode, organizationId)`
+
+The service considers only roles assigned to the identity within the organization associated with the protected operation.
+
+##### Business Rules
+
+The Identity and Access Management domain applies the following business rules:
+
+1. An identity must exist before it can be authenticated.
+
+2. Only an identity with `ACTIVE` status can complete authentication successfully.
+
+3. Authentication succeeds only when the credential provided by the user corresponds to the protected credential representation stored for the identity.
+
+4. Invalid credentials must not establish an authenticated session.
+
+5. A role can only be assigned when both the identity and the role are valid.
+
+6. Before assigning a role in an organization, the associated user must belong to that organization.
+
+7. The same role cannot be assigned more than once to the same identity inside the same organization.
+
+8. A role assignment is valid only for the organizational scope associated with the assignment.
+
+9. A protected operation is authorized only when at least one role assigned to the identity in the corresponding organization grants the required permission.
+
+10. When the required permission is absent, the protected operation must be rejected.
+
+These rules allow the IAM Bounded Context to implement authenticated and role-based access while keeping user-profile, building, device, monitoring, incident, and risk-management information outside its domain boundary.
+
+---
+
+#### 4.2.1.2. Interface Layer
+
+The **Interface Layer** exposes the capabilities of the Identity and Access Management Bounded Context to clients and other parts of the ResQ platform.
+
+Its responsibility is to receive requests, validate their basic representation, translate them into Commands or Queries from the Application Layer, and convert the resulting responses into the representation expected by the client.
+
+Business rules are not implemented in this layer.
+
+The principal components are `AuthenticationController`, `RoleAssignmentController`, and `AuthorizationFilter`.
+
+##### AuthenticationController
+
+`AuthenticationController` receives authentication requests from ResQ client applications.
+
+Its main responsibility is to construct an `AuthenticateCommand` using the authentication data received from the client and delegate its execution to `AuthenticateCommandHandler`.
+
+The controller does not directly compare credentials and does not query the database.
+
+Conceptually, the RESTful interaction represents the creation of an authenticated session.
+
+Example resource:
+
+```text
+POST /api/v1/auth/sessions
+```
+
+The request contains the login identifier and authentication credential.
+
+A successful response represents the authenticated identity and the session information generated by the platform.
+
+Invalid credentials are returned as an authentication failure without exposing whether a specific credential or internal record caused the failure.
+
+##### RoleAssignmentController
+
+`RoleAssignmentController` receives requests to associate a valid role with an identity inside an organization.
+
+Conceptually, the operation is represented as the creation of a role-assignment resource.
+
+Example resource:
+
+```text
+POST /api/v1/iam/identities/{identityId}/role-assignments
+```
+
+The request identifies:
+
+- the role to assign;
+- the organization in which the role must apply.
+
+The controller delegates the operation to `AssignRoleCommandHandler`.
+
+The endpoint itself is a protected operation and therefore can only be executed when the authenticated caller has the permission required to perform role assignments.
+
+##### AuthorizationFilter
+
+`AuthorizationFilter` protects RESTful API operations that require an authenticated and authorized identity.
+
+Before a protected request reaches its corresponding controller, the filter identifies:
+
+- the authenticated identity;
+- the organization associated with the request;
+- the permission required by the protected operation.
+
+It then creates a `CheckPermissionQuery` and delegates the authorization decision to `CheckPermissionQueryHandler`.
+
+If the result indicates that the required permission is absent, the request is rejected before the protected operation is executed.
+
+This behavior supports the requirement that unauthorized requests must not execute protected operations.
+
+#### 4.2.1.3. Application Layer
+
+The Application Layer coordinates the use cases supported by IAM.
+
+This layer orchestrates domain objects, repositories, and external abstractions but does not contain infrastructure-specific persistence or cryptographic implementation details.
+
+Three principal application flows are considered:
+
+- Authentication.
+- Role assignment.
+- Authorization verification.
+
+##### AuthenticateCommand
+
+`AuthenticateCommand` represents an authentication attempt.
+
+**Attributes:**
+
+- `loginIdentifier: String`
+- `credentialSecret: String`
+
+The plain credential exists only during the authentication request and is never stored as part of the domain state.
+
+##### AuthenticateCommandHandler
+
+`AuthenticateCommandHandler` coordinates the authentication process.
+
+The handler performs the following sequence:
+
+1. Receives an `AuthenticateCommand`.
+2. Builds or validates the corresponding `LoginIdentifier`.
+3. Uses `IdentityRepository` to locate the identity associated with the login identifier.
+4. Verifies that the identity exists.
+5. Verifies that the identity is active.
+6. Delegates credential comparison to `CredentialVerifier`.
+7. Rejects the operation if the credential is invalid.
+8. Requests the creation of an authenticated session through `AuthenticationSessionProvider`.
+9. Returns an `AuthenticationResult`.
+
+The handler does not know which hashing algorithm, session format, or backend security library is used.
+
+##### AuthenticationResult
+
+`AuthenticationResult` represents the result of a successful authentication process.
+
+**Attributes:**
+
+- `identityId: UUID`
+- `sessionToken: String`
+
+`sessionToken` represents an opaque session credential from the point of view of the Application Layer. Its concrete implementation depends on the security mechanism selected for the backend.
+
+##### AssignRoleCommand
+
+`AssignRoleCommand` represents the assignment of a role to an identity in a specific organization.
+
+**Attributes:**
+
+- `identityId: UUID`
+- `roleId: UUID`
+- `organizationId: UUID`
+
+##### AssignRoleCommandHandler
+
+`AssignRoleCommandHandler` coordinates the role-assignment use case.
+
+Its execution flow is:
+
+1. Receive the `AssignRoleCommand`.
+2. Retrieve the target `Identity` from `IdentityRepository`.
+3. Retrieve the requested `Role` from `RoleRepository`.
+4. Verify through `OrganizationMembershipValidator` that the user referenced by the identity belongs to the specified organization.
+5. Verify through the `Identity` Aggregate Root that the same role assignment does not already exist.
+6. Invoke `Identity.assignRole(roleId, organizationId)`.
+7. Persist the modified aggregate through `IdentityRepository`.
+
+Authorization of the user requesting this operation is performed before execution of the protected operation through the IAM authorization mechanism.
+
+##### CheckPermissionQuery
+
+`CheckPermissionQuery` represents a request to determine whether an identity can execute a protected operation.
+
+**Attributes:**
+
+- `identityId: UUID`
+- `permissionCode: String`
+- `organizationId: UUID`
+
+##### CheckPermissionQueryHandler
+
+`CheckPermissionQueryHandler` coordinates authorization verification.
+
+Its execution flow is:
+
+1. Retrieve the `Identity`.
+2. Reject the authorization when the identity does not exist or is inactive.
+3. Obtain the role identifiers assigned to the identity within the requested organization.
+4. Retrieve the corresponding `Role` aggregates.
+5. Delegate evaluation to `AuthorizationService`.
+6. Return whether the required permission is granted.
+
+This design centralizes authorization evaluation and prevents each protected Bounded Context from reimplementing IAM rules independently.
+
+##### CredentialVerifier
+
+`CredentialVerifier` is an Application Layer abstraction that prevents authentication use cases from depending directly on a cryptographic or security framework.
+
+**Operation:**
+
+- `matches(rawCredential, credentialHash)`
+
+##### AuthenticationSessionProvider
+
+`AuthenticationSessionProvider` is responsible for abstracting session creation.
+
+**Operation:**
+
+- `createSession(identityId)`
+
+The exact representation of the session is an implementation concern of the Infrastructure Layer.
+
+##### OrganizationMembershipValidator
+
+`OrganizationMembershipValidator` represents the dependency required to verify the acceptance criterion that a role can be assigned only to a user belonging to the corresponding organization.
+
+**Operation:**
+
+- `belongsToOrganization(userId, organizationId)`
+
+The IAM Bounded Context does not become responsible for managing organizations or user profiles because of this validation. It only consumes the minimum information necessary to protect the role-assignment invariant.
+
+#### 4.2.1.4. Infrastructure Layer
+
+The Infrastructure Layer contains the technical implementations required by the Identity and Access Management Bounded Context.
+
+It implements the repository and service abstractions defined by the Domain and Application Layers and encapsulates persistence, credential-security, authenticated-session generation, and integration details.
+
+The principal infrastructure components are IdentityRepositoryAdapter, RoleRepositoryAdapter, CredentialHashVerifier, AuthenticationSessionProviderAdapter, and OrganizationMembershipAdapter.
+
+##### IdentityRepositoryAdapter
+
+`IdentityRepositoryAdapter` implements the `IdentityRepository` interface.
+
+Its responsibilities are:
+
+- retrieve an `Identity` using its identifier;
+- retrieve an `Identity` using its login identifier;
+- reconstruct the `Identity` Aggregate from persisted data;
+- persist modifications to the `Identity` and its Role Assignments.
+
+The Domain Layer is therefore independent from the database technology selected for the ResQ backend.
+
+##### RoleRepositoryAdapter
+
+`RoleRepositoryAdapter` implements `RoleRepository`.
+
+It retrieves:
+
+- role information;
+- the permissions associated with a role;
+- multiple roles required during authorization evaluation.
+
+The adapter reconstructs the Role domain representation before returning it to the Application Layer.
+
+##### CredentialHashVerifier
+
+`CredentialHashVerifier` implements `CredentialVerifier`.
+
+Its responsibility is to compare the credential received during authentication with the protected credential representation associated with the identity.
+
+The comparison must be implemented through the security mechanism selected for the backend.
+
+Plain-text authentication credentials are not persisted.
+
+##### AuthenticationSessionProviderAdapter
+
+`AuthenticationSessionProviderAdapter` implements `AuthenticationSessionProvider`.
+
+Its responsibility is to generate the session representation that will allow subsequent requests to identify an authenticated identity.
+
+The concrete token or session technology remains encapsulated in the Infrastructure Layer and is not exposed as a dependency of the Domain Layer.
+
+##### OrganizationMembershipAdapter
+
+`OrganizationMembershipAdapter` implements `OrganizationMembershipValidator`.
+
+It obtains the minimum information required to determine whether the user associated with an identity belongs to the organization where a role assignment is requested.
+
+IAM does not persist or modify the complete user profile or organization model.
+
+The final communication mechanism used by this adapter must remain consistent with the Context Mapping defined for ResQ.
+
+##### Persistence considerations
+
+The IAM persistence model must maintain referential integrity between IAM-owned objects while avoiding direct ownership of objects that belong to other Bounded Contexts.
+
+For that reason:
+
+- `user_id` is stored as an external identifier and is not used to reproduce the User aggregate inside IAM.
+- `organization_id` is stored as an external authorization-scope identifier.
+- relationships among identities, roles, permissions, and role assignments are managed internally by IAM.
+- credentials are stored only in their protected representation.
+- duplicate role assignments for the same identity, role, and organization must be prevented through a domain invariant and a persistence-level unique constraint.
+
+#### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+The Component Level Diagram for the Identity and Access Management Bounded Context presents the internal components that collaborate inside the ResQ Cloud RESTful API container to provide authentication and authorization capabilities.
+
+The diagram must represent the following main components:
+
+- Authentication Interface Component, responsible for receiving authentication requests.
+- Role Assignment Interface Component, responsible for receiving requests for assigning roles.
+- Authorization Interface Component, responsible for protecting operations that require authorization.
+- IAM Application Component, containing the authentication, role-assignment, and authorization use cases.
+- IAM Domain Component, containing the Identity, Role, Permission, Role Assignment, and authorization business rules.
+- IAM Persistence Component, implementing repositories for identities, roles, permissions, and role assignments.
+- Credential Security Component, responsible for credential verification.
+- Authentication Session Component, responsible for generating the authenticated-session representation.
+- Organization Membership Integration Component, responsible for obtaining the minimum external information required to validate organizational membership.
+
+The main interaction flow represented in the diagram is:
+
+```text
+Client Application
+        |
+        v
+IAM Interface Components
+        |
+        v
+IAM Application Component
+        |
+        v
+IAM Domain Component
+        |
+        +----------------------+
+        |                      |
+        v                      v
+Persistence Component   Infrastructure Security/
+                        Integration Components
+        |
+        v
+IAM Persistence Storage
+```
+
+Authentication requests enter through the Authentication Interface Component and are coordinated by the Application Layer. Credential verification is delegated to the Infrastructure Layer while the Identity Aggregate remains responsible for its authentication state.
+
+Protected operations pass through the Authorization Interface Component. The Application Layer retrieves the identity and roles involved, while the Domain Layer evaluates whether the corresponding permission is granted.
+
+Role-assignment requests are also processed through the Application Layer and must satisfy both the authorization rules and the membership constraint before the Identity Aggregate is modified.
+
+**DIAGRAM PENDING — IAM Component Level Diagram**
+
+<!-- ![Identity and Access Management Component Level Diagram](assets/images/chapter-04-solution-software-design/iam/iam-component-level-diagram.png) --> <!-- When creating the final C4 Component Diagram, include the concrete backend framework, ORM/persistence technology and communication protocols selected by the team. -->
+
+#### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
+
+The Code Level Diagrams provide a detailed representation of the implementation-oriented structure of the Identity and Access Management Bounded Context.
+
+For IAM, this level is represented through two complementary diagrams:
+
+- Domain Layer Class Diagram, which represents the classes, interfaces, enumerations, methods, attributes, relationships, directions, and multiplicities that form the domain model.
+- Database Design Diagram, which represents the persistence structures required to store identities, roles, permissions, and role assignments.
+
+The two diagrams represent different perspectives of the same Bounded Context. The class diagram describes the object-oriented domain model, while the database diagram describes how the persistent state required by that model is stored.
+
+##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+The Domain Layer Class Diagram represents the implementation-oriented structure of the IAM domain model.
+
+The diagram must include the following elements:
+
+**Aggregate Roots and Entities**
+
+- `Identity`
+- `Role`
+- `RoleAssignment`
+
+**Value Objects**
+
+- `LoginIdentifier`
+- `CredentialHash`
+- `Permission`
+
+**Enumeration**
+
+- `IdentityStatus`
+
+**Repository Interfaces**
+
+- `IdentityRepository`
+- `RoleRepository`
+
+**Domain Service**
+
+- `AuthorizationService`
+
+The principal relationships to represent are:
+
+- `Identity` is associated with exactly one `LoginIdentifier`.
+- `Identity` is associated with exactly one `CredentialHash`.
+- `Identity` has exactly one `IdentityStatus`.
+- `Identity` contains zero or more `RoleAssignment` entities.
+- Each `RoleAssignment` references one `Role` through `roleId`.
+- Each `RoleAssignment` applies to one organization through `organizationId`.
+- `Role` contains zero or more `Permission` Value Objects.
+- `IdentityRepository` manages persistence for `Identity`.
+- `RoleRepository` retrieves `Role` aggregates.
+- `AuthorizationService` evaluates `Identity`, `Role`, and `Permission` information to determine authorization.
+
+The class diagram must show visibility for attributes and operations using the UML conventions:
+
+- `+` for public.
+- `-` for private.
+- `#` for protected.
+
+It must also indicate relationship direction and multiplicity whenever applicable.
+
+A conceptual multiplicity reference for the final diagram is:
+
+```text
+Identity "1" *-- "0..*" RoleAssignment
+Identity "1" *-- "1" LoginIdentifier
+Identity "1" *-- "1" CredentialHash
+Identity "1" --> "1" IdentityStatus
+
+Role "1" *-- "0..*" Permission
+
+RoleAssignment "0..*" --> "1" Role : roleId
+```
+
+organizationId and userId are represented as external identifiers rather than object relationships to aggregates belonging to other Bounded Contexts.
+
+**DIAGRAM PENDING — IAM Domain Layer Class Diagram**
+
+<!-- ![Identity and Access Management Domain Layer Class Diagram](assets/images/chapter-04-solution-software-design/iam/iam-domain-layer-class-diagram.png) -->
+
+##### 4.2.1.6.2. Bounded Context Database Design Diagram
+
+The Identity and Access Management Database Design persists only the information owned by IAM.
+
+The proposed logical persistence model contains the following tables:
+
+###### `iam_identities`
+
+Stores the authentication identity associated with a ResQ user.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `identity_id` | UUID | PRIMARY KEY | Unique identifier of the IAM identity. |
+| `user_id` | UUID | NOT NULL, UNIQUE | External reference to the corresponding user. |
+| `login_identifier` | VARCHAR | NOT NULL, UNIQUE | Identifier used during authentication. |
+| `credential_hash` | VARCHAR | NOT NULL | Protected representation of the authentication credential. |
+| `status` | VARCHAR | NOT NULL | Current status of the identity. |
+
+The table does not store names, phone numbers, preferences, or other User-profile information.
+
+###### `iam_roles`
+
+Stores the roles available for IAM authorization.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `role_id` | UUID | PRIMARY KEY | Unique role identifier. |
+| `name` | VARCHAR | NOT NULL, UNIQUE | Role name. |
+
+The current design requires roles to exist and be assignable but does not define a User Story for role creation or role administration.
+
+###### `iam_permissions`
+
+Stores the authorization permissions used to protect ResQ operations.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `permission_id` | UUID | PRIMARY KEY | Unique permission identifier. |
+| `code` | VARCHAR | NOT NULL, UNIQUE | Stable permission code used by authorization rules. |
+
+###### `iam_role_permissions`
+
+Represents the many-to-many relationship between roles and permissions.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `role_id` | UUID | PRIMARY KEY, FOREIGN KEY | References `iam_roles.role_id`. |
+| `permission_id` | UUID | PRIMARY KEY, FOREIGN KEY | References `iam_permissions.permission_id`. |
+
+The composite primary key prevents the same permission from being associated with the same role more than once.
+
+###### `iam_role_assignments`
+
+Stores role assignments made to identities inside an organization.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `assignment_id` | UUID | PRIMARY KEY | Unique assignment identifier. |
+| `identity_id` | UUID | NOT NULL, FOREIGN KEY | References `iam_identities.identity_id`. |
+| `role_id` | UUID | NOT NULL, FOREIGN KEY | References `iam_roles.role_id`. |
+| `organization_id` | UUID | NOT NULL | External identifier of the organization in which the role applies. |
+
+A unique constraint must be defined over:
+
+`(identity_id, role_id, organization_id)`
+
+This constraint complements the domain invariant that prevents duplicated role assignments for the same identity within the same organization.
+
+The internal database relationships are:
+
+```text
+iam_identities
+      |
+      | 1
+      |
+      | 0..*
+      v
+iam_role_assignments
+      |
+      | *               *
+      +-------> iam_roles --------+
+                    |              |
+                    | *            | *
+                    |              |
+                    v              |
+             iam_role_permissions |
+                    |              |
+                    | *            |
+                    v              |
+             iam_permissions <-----+
+```
+
+user_id and organization_id are intentionally treated as external references instead of foreign keys to tables owned by other Bounded Contexts. This avoids coupling the IAM persistence model directly to the internal database representation of other domain contexts.
+
+The final Database Design Diagram must identify:
+
+- tables;
+- columns;
+- primary keys;
+- foreign keys;
+- unique constraints;
+- cardinalities;
+- relationships among IAM tables.
+
+**DIAGRAM PENDING — IAM Database Design Diagram**
+
+<!-- ![Identity and Access Management Database Design Diagram](assets/images/chapter-04-solution-software-design/iam/iam-database-design-diagram.png) -->
+
 # Capítulo V: Solution UI/UX Design
 
 > Imágenes del capítulo:
