@@ -2062,7 +2062,6 @@ La siguiente imagen muestra el Product Backlog de ResQ registrado en Trello:
 
 # Capítulo IV: Solution Software Design
 
-
 ## 4.1. Strategic-Level Domain-Driven Design
 
 ### 4.1.1. Design-Level EventStorming
@@ -2226,32 +2225,6 @@ A continuación, se presentan los Bounded Context Canvases definidos:
 a## 4.2. Tactical-Level Domain-Driven Design
 
 > Repetir la siguiente sección por cada Bounded Context real identificado.
-
-### 4.2.X. Bounded Context: <Bounded Context Name>
-
-#### 4.2.X.1. Domain Layer
-[COMPLETAR]
-
-#### 4.2.X.2. Interface Layer
-[COMPLETAR]
-
-#### 4.2.X.3. Application Layer
-[COMPLETAR]
-
-#### 4.2.X.4. Infrastructure Layer
-[COMPLETAR]
-
-#### 4.2.X.5. Bounded Context Software Architecture Component Level Diagrams
-[INSERTAR DIAGRAMA + EXPLICACIÓN]
-
-#### 4.2.X.6. Bounded Context Software Architecture Code Level Diagrams
-[COMPLETAR]
-
-##### 4.2.X.6.1. Bounded Context Domain Layer Class Diagrams
-[INSERTAR DIAGRAMA + EXPLICACIÓN]
-
-##### 4.2.X.6.2. Bounded Context Database Design Diagram
-[INSERTAR DIAGRAMA + EXPLICACIÓN]
 
 ### 4.2.1. Bounded Context: Identity and Access Management
 
