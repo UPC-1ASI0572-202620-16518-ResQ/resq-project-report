@@ -2269,200 +2269,200 @@ La estructura de cada Bounded Context se documenta mediante sus capas de Domain,
 
 ### 4.2.1. Bounded Context: Identity and Access Management
 
-The **Identity and Access Management (IAM)** Bounded Context is responsible for managing the identity, authentication, role assignment, permissions, and authorization mechanisms required to protect the information and operations available in ResQ.
+El Bounded Context **Identity and Access Management (IAM)** es responsable de gestionar la identidad, la autenticación, la asignación de roles, los permisos y los mecanismos de autorización necesarios para proteger la información y las operaciones disponibles en ResQ.
 
-This Bounded Context supports the access-control needs of the platform by ensuring that only authenticated identities can interact with protected resources and that each operation is executed according to the permissions associated with the roles assigned to the user.
+Este Bounded Context atiende las necesidades de control de acceso de la plataforma, asegurando que solo las identidades autenticadas puedan interactuar con recursos protegidos y que cada operación se ejecute de acuerdo con los permisos asociados a los roles asignados al usuario.
 
-Its responsibilities are mainly derived from the requirements related to authenticated access and role-based authorization. In particular, ResQ requires users to authenticate before accessing protected capabilities and requires operations to be restricted according to the roles and permissions assigned to each identity.
+Sus responsabilidades se derivan principalmente de los requisitos relacionados con el acceso autenticado y la autorización basada en roles. En particular, ResQ exige que los usuarios se autentiquen antes de acceder a capacidades protegidas y que las operaciones se restrinjan según los roles y permisos asignados a cada identidad.
 
-The Identity and Access Management Bounded Context primarily supports **US26 — Assign roles and responsibilities**, **US27 — Authenticated access**, and the authorization constraint defined by **TS06 — Provide services through the RESTful API**.
+El Bounded Context Identity and Access Management soporta principalmente **US26 — Asignar roles y responsabilidades**, **US27 — Acceso autenticado** y la restricción de autorización definida por **TS06 — Proporcionar servicios mediante la API RESTful**.
 
-The IAM Bounded Context does not manage personal profile information such as names, phone numbers, preferences, or other user-specific information. Those responsibilities belong to the **User Bounded Context**. IAM only maintains the information required to identify, authenticate, and authorize a user.
+El Bounded Context IAM no gestiona información del perfil personal, como nombres, números de teléfono, preferencias u otra información específica del usuario. Estas responsabilidades pertenecen al **Bounded Context User**. IAM solo mantiene la información necesaria para identificar, autenticar y autorizar a un usuario.
 
-Similarly, IAM does not manage buildings, zones, devices, measurements, incidents, alerts, or risk-detection rules. It only provides the authentication and authorization mechanisms that other Bounded Contexts can use when their operations require access control.
+Asimismo, IAM no gestiona edificios, zonas, dispositivos, mediciones, incidentes, alertas ni reglas de detección de riesgos. Solo proporciona los mecanismos de autenticación y autorización que otros Bounded Contexts pueden utilizar cuando sus operaciones requieren control de acceso.
 
-The main responsibilities of this Bounded Context are:
+Las principales responsabilidades de este Bounded Context son:
 
-- Authenticate an identity using valid credentials.
-- Reject authentication attempts when the credentials are invalid.
-- Maintain the authentication-related state of an identity.
-- Associate identities with roles within an organizational scope.
-- Determine the permissions granted by each role.
-- Prevent duplicated role assignments within the same organization.
-- Verify whether an authenticated identity is authorized to perform a protected operation.
-- Reject protected operations when the authenticated identity does not have the required permission.
-- Maintain the IAM domain model independently from the personal information managed by the User Bounded Context.
+- Autenticar una identidad utilizando credenciales válidas.
+- Rechazar los intentos de autenticación cuando las credenciales sean inválidas.
+- Mantener el estado de una identidad relacionado con la autenticación.
+- Asociar identidades con roles dentro de un ámbito organizacional.
+- Determinar los permisos otorgados por cada rol.
+- Evitar asignaciones de roles duplicadas dentro de la misma organización.
+- Verificar si una identidad autenticada está autorizada para realizar una operación protegida.
+- Rechazar las operaciones protegidas cuando la identidad autenticada no tenga el permiso requerido.
+- Mantener el modelo de dominio de IAM independiente de la información personal gestionada por el Bounded Context User.
 
-The principal concepts identified for the Identity and Access Management Bounded Context are **Identity**, **Role**, **Role Assignment**, **Permission**, **Login Identifier**, **Credential Hash**, and **Identity Status**.
+Los principales conceptos identificados para el Bounded Context Identity and Access Management son **Identity**, **Role**, **Role Assignment**, **Permission**, **Login Identifier**, **Credential Hash** e **Identity Status**.
 
-#### Class Dictionary
+#### Diccionario de clases
 
-The following table summarizes the main classes and interfaces that form the Identity and Access Management Bounded Context.
+La siguiente tabla resume las principales clases e interfaces que conforman el Bounded Context Identity and Access Management.
 
-| Class / Interface | Layer | Purpose | Main attributes | Main operations | Main relationships |
+| Clase / Interfaz | Capa | Propósito | Atributos principales | Operaciones principales | Relaciones principales |
 |---|---|---|---|---|---|
-| `Identity` | Domain | Represents the authentication and authorization identity associated with a ResQ user. It is the Aggregate Root responsible for maintaining authentication state and role assignments. | `identityId: UUID`, `userId: UUID`, `loginIdentifier: LoginIdentifier`, `credentialHash: CredentialHash`, `status: IdentityStatus`, `roleAssignments: Set<RoleAssignment>` | `assignRole(roleId, organizationId)`, `hasRole(roleId, organizationId)`, `roleIdsFor(organizationId)`, `isActive()` | Owns `RoleAssignment`; composes `LoginIdentifier` and `CredentialHash`; uses `IdentityStatus`. |
-| `Role` | Domain | Represents a named authorization role and the permissions granted by that role. | `roleId: UUID`, `name: String`, `permissions: Set<Permission>` | `grants(permissionCode)`, `getPermissions()` | Composes `Permission` values. |
-| `RoleAssignment` | Domain | Represents the assignment of a role to an identity within a specific organization. | `assignmentId: UUID`, `roleId: UUID`, `organizationId: UUID` | `matches(roleId, organizationId)` | Owned by `Identity`; references `Role` by `roleId`; uses `organizationId` as an external authorization-scope reference. |
-| `LoginIdentifier` | Domain | Value Object that represents the identifier used by an identity during authentication. The exact format remains independent from the personal profile managed by the User Bounded Context. | `value: String` | `value()` | Composed by `Identity`. |
-| `CredentialHash` | Domain | Value Object that represents the protected representation of the authentication secret. Plain-text credentials are never stored in the domain model. | `value: String` | `value()` | Composed by `Identity`. |
-| `Permission` | Domain | Value Object that identifies a capability required to execute a protected operation. | `code: String` | `code()`, `equals()` | Composed by `Role`. |
-| `IdentityStatus` | Domain | Enumeration that represents whether an identity can currently be used for authentication. | `ACTIVE`, `DISABLED` | — | Used by `Identity`. |
-| `IdentityRepository` | Domain | Repository abstraction used to retrieve and persist Identity aggregates without coupling the Domain Layer to a persistence technology. | — | `findById(identityId)`, `findByLoginIdentifier(loginIdentifier)`, `save(identity)` | Persists and retrieves `Identity` aggregates. |
-| `RoleRepository` | Domain | Repository abstraction used to retrieve roles and their associated permissions. | — | `findById(roleId)`, `findAllByIds(roleIds)` | Retrieves `Role` aggregates. |
-| `AuthorizationService` | Domain | Domain Service responsible for evaluating whether the roles assigned to an identity grant a required permission inside an organizational scope. | — | `isAuthorized(identity, roles, permissionCode, organizationId)` | Evaluates `Identity` and `Role` data using `permissionCode` and `organizationId`. |
-| `AuthenticateCommand` | Application | Represents a request to authenticate an identity. | `loginIdentifier: String`, `credentialSecret: String` | — | Handled by `AuthenticateCommandHandler`. |
-| `AuthenticateCommandHandler` | Application | Coordinates the authentication use case using the domain model and the required infrastructure abstractions. | Dependencies on `IdentityRepository`, `CredentialVerifier`, `AuthenticationSessionProvider` | `handle(command)` | Uses `IdentityRepository`, `CredentialVerifier`, and `AuthenticationSessionProvider`. |
-| `AssignRoleCommand` | Application | Represents a request to assign a valid role to an identity within an organization. | `identityId: UUID`, `roleId: UUID`, `organizationId: UUID` | — | Handled by `AssignRoleCommandHandler`. |
-| `AssignRoleCommandHandler` | Application | Coordinates role assignment and validates the conditions required before modifying the Identity aggregate. | Dependencies on `IdentityRepository`, `RoleRepository`, `OrganizationMembershipValidator` | `handle(command)` | Uses `IdentityRepository`, `RoleRepository`, and `OrganizationMembershipValidator`. |
-| `CheckPermissionQuery` | Application | Represents an authorization request for an identity, permission, and organization. | `identityId: UUID`, `permissionCode: String`, `organizationId: UUID` | — | Handled by `CheckPermissionQueryHandler`. |
-| `CheckPermissionQueryHandler` | Application | Retrieves the identity and its roles and delegates the authorization decision to the Domain Layer. | Dependencies on `IdentityRepository`, `RoleRepository`, `AuthorizationService` | `handle(query)` | Uses `IdentityRepository`, `RoleRepository`, and `AuthorizationService`. |
-| `AuthenticationResult` | Application | Represents the successful result of an authentication process without exposing credential information. | `identityId: UUID`, `sessionToken: String` | — | Returned by `AuthenticateCommandHandler`. |
-| `CredentialVerifier` | Application | Abstraction used to compare a credential received during authentication against the stored protected credential representation. | — | `matches(rawCredential, credentialHash)` | Used by `AuthenticateCommandHandler`; implemented by `CredentialHashVerifier`. |
-| `AuthenticationSessionProvider` | Application | Abstraction responsible for generating the representation required to maintain an authenticated session. | — | `createSession(identityId)` | Used by `AuthenticateCommandHandler`; implemented by `AuthenticationSessionProviderAdapter`. |
-| `OrganizationMembershipValidator` | Application | Abstraction used to validate that the target user belongs to the organization in which a role is being assigned. | — | `belongsToOrganization(userId, organizationId)` | Used by `AssignRoleCommandHandler`; implemented by `OrganizationMembershipAdapter`. |
-| `AuthenticationController` | Interface | Receives authentication requests and delegates them to the corresponding Application Layer command handler. | Dependency on `AuthenticateCommandHandler` | `authenticate(request)` | Delegates to `AuthenticateCommandHandler`. |
-| `RoleAssignmentController` | Interface | Receives authorized requests for role assignment and delegates the operation to the Application Layer. | Dependency on `AssignRoleCommandHandler` | `assignRole(identityId, request)` | Delegates to `AssignRoleCommandHandler`. |
-| `AuthorizationFilter` | Interface | Intercepts protected requests and verifies that the authenticated identity has the permission required by the requested operation. | Dependency on `CheckPermissionQueryHandler` | `authorize(requestContext)` | Delegates authorization checks to `CheckPermissionQueryHandler`. |
-| `IdentityRepositoryAdapter` | Infrastructure | Implements `IdentityRepository` using the persistence mechanism selected for the ResQ Cloud RESTful API. | Persistence dependency | `findById()`, `findByLoginIdentifier()`, `save()` | Implements `IdentityRepository`. |
-| `RoleRepositoryAdapter` | Infrastructure | Implements `RoleRepository` and reconstructs roles together with their permissions from persistent storage. | Persistence dependency | `findById()`, `findAllByIds()` | Implements `RoleRepository`. |
-| `CredentialHashVerifier` | Infrastructure | Implements credential verification using the security mechanism adopted by the backend implementation. | Security-library dependency | `matches()` | Implements `CredentialVerifier`. |
-| `AuthenticationSessionProviderAdapter` | Infrastructure | Implements the creation of the authenticated-session representation consumed by the client applications. | Security/session dependency | `createSession()` | Implements `AuthenticationSessionProvider`. |
-| `OrganizationMembershipAdapter` | Infrastructure | Provides the mechanism required to verify organizational membership without transferring ownership of user or organization information to IAM. | Dependency on the source responsible for organizational membership information | `belongsToOrganization()` | Implements `OrganizationMembershipValidator`. |
+| `Identity` | Domain | Representa la identidad de autenticación y autorización asociada con un usuario de ResQ. Es el Aggregate Root responsable de mantener el estado de autenticación y las asignaciones de roles. | `identityId: UUID`, `userId: UUID`, `loginIdentifier: LoginIdentifier`, `credentialHash: CredentialHash`, `status: IdentityStatus`, `roleAssignments: Set<RoleAssignment>` | `assignRole(roleId, organizationId)`, `hasRole(roleId, organizationId)`, `roleIdsFor(organizationId)`, `isActive()` | Posee `RoleAssignment`; compone `LoginIdentifier` y `CredentialHash`; utiliza `IdentityStatus`. |
+| `Role` | Domain | Representa un rol de autorización con nombre y los permisos otorgados por ese rol. | `roleId: UUID`, `name: String`, `permissions: Set<Permission>` | `grants(permissionCode)`, `getPermissions()` | Compone valores `Permission`. |
+| `RoleAssignment` | Domain | Representa la asignación de un rol a una identidad dentro de una organización específica. | `assignmentId: UUID`, `roleId: UUID`, `organizationId: UUID` | `matches(roleId, organizationId)` | Pertenece a `Identity`; referencia `Role` mediante `roleId`; utiliza `organizationId` como referencia externa al ámbito de autorización. |
+| `LoginIdentifier` | Domain | Value Object que representa el identificador utilizado por una identidad durante la autenticación. El formato exacto se mantiene independiente del perfil personal gestionado por el Bounded Context User. | `value: String` | `value()` | Compuesto por `Identity`. |
+| `CredentialHash` | Domain | Value Object que representa la forma protegida del secreto de autenticación. Las credenciales en texto plano nunca se almacenan en el modelo de dominio. | `value: String` | `value()` | Compuesto por `Identity`. |
+| `Permission` | Domain | Value Object que identifica una capacidad requerida para ejecutar una operación protegida. | `code: String` | `code()`, `equals()` | Compuesto por `Role`. |
+| `IdentityStatus` | Domain | Enumeración que representa si una identidad puede utilizarse actualmente para la autenticación. | `ACTIVE`, `DISABLED` | — | Utilizada por `Identity`. |
+| `IdentityRepository` | Domain | Abstracción de Repository utilizada para recuperar y persistir agregados Identity sin acoplar la Domain Layer a una tecnología de persistencia. | — | `findById(identityId)`, `findByLoginIdentifier(loginIdentifier)`, `save(identity)` | Persiste y recupera agregados `Identity`. |
+| `RoleRepository` | Domain | Abstracción de Repository utilizada para recuperar roles y sus permisos asociados. | — | `findById(roleId)`, `findAllByIds(roleIds)` | Recupera agregados `Role`. |
+| `AuthorizationService` | Domain | Domain Service responsable de evaluar si los roles asignados a una identidad otorgan un permiso requerido dentro de un ámbito organizacional. | — | `isAuthorized(identity, roles, permissionCode, organizationId)` | Evalúa los datos de `Identity` y `Role` utilizando `permissionCode` y `organizationId`. |
+| `AuthenticateCommand` | Application | Representa una solicitud para autenticar una identidad. | `loginIdentifier: String`, `credentialSecret: String` | — | Gestionado por `AuthenticateCommandHandler`. |
+| `AuthenticateCommandHandler` | Application | Coordina el caso de uso de autenticación utilizando el modelo de dominio y las abstracciones de infraestructura requeridas. | Dependencias de `IdentityRepository`, `CredentialVerifier`, `AuthenticationSessionProvider` | `handle(command)` | Utiliza `IdentityRepository`, `CredentialVerifier` y `AuthenticationSessionProvider`. |
+| `AssignRoleCommand` | Application | Representa una solicitud para asignar un rol válido a una identidad dentro de una organización. | `identityId: UUID`, `roleId: UUID`, `organizationId: UUID` | — | Gestionado por `AssignRoleCommandHandler`. |
+| `AssignRoleCommandHandler` | Application | Coordina la asignación de roles y valida las condiciones requeridas antes de modificar el agregado Identity. | Dependencias de `IdentityRepository`, `RoleRepository`, `OrganizationMembershipValidator` | `handle(command)` | Utiliza `IdentityRepository`, `RoleRepository` y `OrganizationMembershipValidator`. |
+| `CheckPermissionQuery` | Application | Representa una solicitud de autorización para una identidad, un permiso y una organización. | `identityId: UUID`, `permissionCode: String`, `organizationId: UUID` | — | Gestionada por `CheckPermissionQueryHandler`. |
+| `CheckPermissionQueryHandler` | Application | Recupera la identidad y sus roles y delega la decisión de autorización a la Domain Layer. | Dependencias de `IdentityRepository`, `RoleRepository`, `AuthorizationService` | `handle(query)` | Utiliza `IdentityRepository`, `RoleRepository` y `AuthorizationService`. |
+| `AuthenticationResult` | Application | Representa el resultado satisfactorio de un proceso de autenticación sin exponer información de las credenciales. | `identityId: UUID`, `sessionToken: String` | — | Devuelto por `AuthenticateCommandHandler`. |
+| `CredentialVerifier` | Application | Abstracción utilizada para comparar una credencial recibida durante la autenticación con la representación protegida de la credencial almacenada. | — | `matches(rawCredential, credentialHash)` | Utilizada por `AuthenticateCommandHandler`; implementada por `CredentialHashVerifier`. |
+| `AuthenticationSessionProvider` | Application | Abstracción responsable de generar la representación necesaria para mantener una sesión autenticada. | — | `createSession(identityId)` | Utilizada por `AuthenticateCommandHandler`; implementada por `AuthenticationSessionProviderAdapter`. |
+| `OrganizationMembershipValidator` | Application | Abstracción utilizada para validar que el usuario objetivo pertenece a la organización en la que se asigna un rol. | — | `belongsToOrganization(userId, organizationId)` | Utilizada por `AssignRoleCommandHandler`; implementada por `OrganizationMembershipAdapter`. |
+| `AuthenticationController` | Interface | Recibe solicitudes de autenticación y las delega al Command Handler correspondiente de la Application Layer. | Dependencia de `AuthenticateCommandHandler` | `authenticate(request)` | Delega a `AuthenticateCommandHandler`. |
+| `RoleAssignmentController` | Interface | Recibe solicitudes autorizadas de asignación de roles y delega la operación a la Application Layer. | Dependencia de `AssignRoleCommandHandler` | `assignRole(identityId, request)` | Delega a `AssignRoleCommandHandler`. |
+| `AuthorizationFilter` | Interface | Intercepta solicitudes protegidas y verifica que la identidad autenticada tenga el permiso requerido por la operación solicitada. | Dependencia de `CheckPermissionQueryHandler` | `authorize(requestContext)` | Delega las verificaciones de autorización a `CheckPermissionQueryHandler`. |
+| `IdentityRepositoryAdapter` | Infrastructure | Implementa `IdentityRepository` utilizando el mecanismo de persistencia seleccionado para ResQ Cloud RESTful API. | Dependencia de persistencia | `findById()`, `findByLoginIdentifier()`, `save()` | Implementa `IdentityRepository`. |
+| `RoleRepositoryAdapter` | Infrastructure | Implementa `RoleRepository` y reconstruye los roles junto con sus permisos a partir del almacenamiento persistente. | Dependencia de persistencia | `findById()`, `findAllByIds()` | Implementa `RoleRepository`. |
+| `CredentialHashVerifier` | Infrastructure | Implementa la verificación de credenciales utilizando el mecanismo de seguridad adoptado por la implementación del backend. | Dependencia de biblioteca de seguridad | `matches()` | Implementa `CredentialVerifier`. |
+| `AuthenticationSessionProviderAdapter` | Infrastructure | Implementa la creación de la representación de la sesión autenticada consumida por las aplicaciones cliente. | Dependencia de seguridad/sesión | `createSession()` | Implementa `AuthenticationSessionProvider`. |
+| `OrganizationMembershipAdapter` | Infrastructure | Proporciona el mecanismo necesario para verificar la pertenencia a una organización sin transferir a IAM la propiedad de la información del usuario o de la organización. | Dependencia de la fuente responsable de la información sobre pertenencia a una organización | `belongsToOrganization()` | Implementa `OrganizationMembershipValidator`. |
 
-The relationships among these classes preserve the limits of the Bounded Context. `Identity` maintains only the `userId` that references the user associated with the authentication identity. The User profile itself is not duplicated inside IAM.
+Las relaciones entre estas clases preservan los límites del Bounded Context. `Identity` mantiene únicamente el `userId` que referencia al usuario asociado con la identidad de autenticación. El perfil de User no se duplica dentro de IAM.
 
-Likewise, `RoleAssignment` uses an `organizationId` to indicate the authorization scope of the assignment, but IAM does not model or administer the organization itself.
+Del mismo modo, `RoleAssignment` utiliza un `organizationId` para indicar el ámbito de autorización de la asignación, pero IAM no modela ni administra la organización en sí.
 
 ---
 
 #### 4.2.1.1. Domain Layer
 
-The **Domain Layer** contains the business concepts, rules, and abstractions that define identity and access management inside ResQ. This layer does not depend on HTTP, database engines, security libraries, or application frameworks.
+La **Domain Layer** contiene los conceptos, reglas y abstracciones de negocio que definen la gestión de identidad y acceso dentro de ResQ. Esta capa no depende de HTTP, motores de bases de datos, bibliotecas de seguridad ni frameworks de aplicación.
 
-The principal Aggregate Root is `Identity`.
+El principal Aggregate Root es `Identity`.
 
-An `Identity` represents the security identity associated with a ResQ user. It contains the minimum information required to authenticate the user and determine the roles assigned to that identity.
+Una `Identity` representa la identidad de seguridad asociada con un usuario de ResQ. Contiene la información mínima necesaria para autenticar al usuario y determinar los roles asignados a esa identidad.
 
-The `userId` attribute acts only as an external reference to the user represented in the User Bounded Context. Personal information is deliberately excluded from the IAM domain model.
+El atributo `userId` actúa únicamente como referencia externa al usuario representado en el Bounded Context User. La información personal se excluye deliberadamente del modelo de dominio de IAM.
 
-`Identity` owns its collection of `RoleAssignment` objects. A role assignment establishes that the identity has a specific role inside an organization.
+`Identity` posee su colección de objetos `RoleAssignment`. Una asignación de rol establece que la identidad tiene un rol específico dentro de una organización.
 
-The `Identity` Aggregate Root is responsible for protecting the consistency of these assignments. In particular, the same role must not be assigned more than once to the same identity within the same organization.
+El Aggregate Root `Identity` es responsable de proteger la consistencia de estas asignaciones. En particular, no debe asignarse el mismo rol más de una vez a la misma identidad dentro de la misma organización.
 
 ##### Identity
 
-**Category:** Aggregate Root / Entity.
+**Categoría:** Aggregate Root / Entity.
 
-**Purpose:** Represent the security identity used to authenticate a ResQ user and maintain the role assignments associated with that identity.
+**Propósito:** Representar la identidad de seguridad utilizada para autenticar a un usuario de ResQ y mantener las asignaciones de roles asociadas con esa identidad.
 
-**Attributes:**
+**Atributos:**
 
-- `identityId: UUID` — Unique identifier of the identity.
-- `userId: UUID` — External reference to the corresponding user.
-- `loginIdentifier: LoginIdentifier` — Identifier used during authentication.
-- `credentialHash: CredentialHash` — Protected representation of the authentication credential.
-- `status: IdentityStatus` — Current authentication status of the identity.
-- `roleAssignments: Set<RoleAssignment>` — Roles assigned to the identity in different organizations.
+- `identityId: UUID` — Identificador único de la identidad.
+- `userId: UUID` — Referencia externa al usuario correspondiente.
+- `loginIdentifier: LoginIdentifier` — Identificador utilizado durante la autenticación.
+- `credentialHash: CredentialHash` — Representación protegida de la credencial de autenticación.
+- `status: IdentityStatus` — Estado actual de autenticación de la identidad.
+- `roleAssignments: Set<RoleAssignment>` — Roles asignados a la identidad en diferentes organizaciones.
 
-**Operations:**
+**Operaciones:**
 
-- `assignRole(roleId, organizationId)` — Adds a valid role assignment while preventing duplication.
-- `hasRole(roleId, organizationId)` — Indicates whether the identity already has the specified role within the organization.
-- `roleIdsFor(organizationId)` — Obtains the role identifiers that apply to an organizational scope.
-- `isActive()` — Indicates whether the identity is enabled for authentication.
+- `assignRole(roleId, organizationId)` — Añade una asignación de rol válida evitando duplicaciones.
+- `hasRole(roleId, organizationId)` — Indica si la identidad ya tiene el rol especificado dentro de la organización.
+- `roleIdsFor(organizationId)` — Obtiene los identificadores de los roles que se aplican a un ámbito organizacional.
+- `isActive()` — Indica si la identidad está habilitada para la autenticación.
 
 ##### Role
 
-**Category:** Aggregate Root / Entity.
+**Categoría:** Aggregate Root / Entity.
 
-**Purpose:** Represent an authorization role containing the permissions that enable specific protected operations.
+**Propósito:** Representar un rol de autorización que contiene los permisos que habilitan operaciones protegidas específicas.
 
-**Attributes:**
+**Atributos:**
 
 - `roleId: UUID`
 - `name: String`
 - `permissions: Set<Permission>`
 
-**Operations:**
+**Operaciones:**
 
-- `grants(permissionCode)` — Indicates whether the role contains the requested permission.
-- `getPermissions()` — Returns the permissions associated with the role.
+- `grants(permissionCode)` — Indica si el rol contiene el permiso solicitado.
+- `getPermissions()` — Devuelve los permisos asociados con el rol.
 
-The current scope requires the assignment and evaluation of valid roles. Creation or administrative modification of roles is not included as a use case because no current User Story requires that capability.
+El alcance actual requiere la asignación y evaluación de roles válidos. La creación o modificación administrativa de roles no se incluye como caso de uso porque ninguna User Story actual requiere esa capacidad.
 
 ##### RoleAssignment
 
-**Category:** Entity owned by `Identity`.
+**Categoría:** Entity perteneciente a `Identity`.
 
-**Purpose:** Represent the association between an identity, a role, and the organization in which the role applies.
+**Propósito:** Representar la asociación entre una identidad, un rol y la organización en la que se aplica el rol.
 
-**Attributes:**
+**Atributos:**
 
 - `assignmentId: UUID`
 - `roleId: UUID`
 - `organizationId: UUID`
 
-**Operations:**
+**Operaciones:**
 
-- `matches(roleId, organizationId)` — Determines whether the assignment corresponds to a specific role and organization.
+- `matches(roleId, organizationId)` — Determina si la asignación corresponde a un rol y una organización específicos.
 
-The `organizationId` is treated as an external reference. IAM does not own the lifecycle of the organization.
+`organizationId` se trata como referencia externa. IAM no posee el ciclo de vida de la organización.
 
 ##### LoginIdentifier
 
-**Category:** Value Object.
+**Categoría:** Value Object.
 
-**Purpose:** Encapsulate the identifier presented during authentication.
+**Propósito:** Encapsular el identificador presentado durante la autenticación.
 
-**Attribute:**
+**Atributo:**
 
 - `value: String`
 
-The value is kept independent from the User profile because authentication identity and personal-profile information belong to different responsibilities.
+El valor se mantiene independiente del perfil de User porque la identidad de autenticación y la información del perfil personal corresponden a responsabilidades diferentes.
 
 ##### CredentialHash
 
-**Category:** Value Object.
+**Categoría:** Value Object.
 
-**Purpose:** Represent the protected form of an authentication credential.
+**Propósito:** Representar la forma protegida de una credencial de autenticación.
 
-**Attribute:**
+**Atributo:**
 
 - `value: String`
 
-Plain-text credentials must never be persisted as part of the domain state.
+Las credenciales en texto plano nunca deben persistirse como parte del estado del dominio.
 
 ##### Permission
 
-**Category:** Value Object.
+**Categoría:** Value Object.
 
-**Purpose:** Represent an authorization capability required to execute a protected operation.
+**Propósito:** Representar una capacidad de autorización requerida para ejecutar una operación protegida.
 
-**Attribute:**
+**Atributo:**
 
 - `code: String`
 
-Permissions are associated with roles. Authorization is therefore determined from the permissions granted by the roles assigned to the identity.
+Los permisos se asocian con los roles. Por lo tanto, la autorización se determina a partir de los permisos otorgados por los roles asignados a la identidad.
 
 ##### IdentityStatus
 
-**Category:** Enumeration.
+**Categoría:** Enumeración.
 
-**Values:**
+**Valores:**
 
 - `ACTIVE`
 - `DISABLED`
 
-Only an active identity can complete the authentication process successfully.
+Solo una identidad activa puede completar satisfactoriamente el proceso de autenticación.
 
 ##### IdentityRepository
 
-**Category:** Repository Interface.
+**Categoría:** Repository Interface.
 
-**Purpose:** Define the persistence operations required by the Domain and Application Layers without depending on a specific database technology.
+**Propósito:** Definir las operaciones de persistencia requeridas por la Domain Layer y la Application Layer sin depender de una tecnología específica de base de datos.
 
-**Operations:**
+**Operaciones:**
 
 - `findById(identityId)`
 - `findByLoginIdentifier(loginIdentifier)`
@@ -2470,181 +2470,181 @@ Only an active identity can complete the authentication process successfully.
 
 ##### RoleRepository
 
-**Category:** Repository Interface.
+**Categoría:** Repository Interface.
 
-**Purpose:** Retrieve roles and permissions required during role assignment and authorization.
+**Propósito:** Recuperar los roles y permisos requeridos durante la asignación de roles y la autorización.
 
-**Operations:**
+**Operaciones:**
 
 - `findById(roleId)`
 - `findAllByIds(roleIds)`
 
 ##### AuthorizationService
 
-**Category:** Domain Service.
+**Categoría:** Domain Service.
 
-**Purpose:** Evaluate authorization when the decision requires information from the identity and one or more roles.
+**Propósito:** Evaluar la autorización cuando la decisión requiere información de la identidad y de uno o más roles.
 
-**Operation:**
+**Operación:**
 
 - `isAuthorized(identity, roles, permissionCode, organizationId)`
 
-The service considers only roles assigned to the identity within the organization associated with the protected operation.
+El servicio considera únicamente los roles asignados a la identidad dentro de la organización asociada con la operación protegida.
 
-##### Business Rules
+##### Reglas de negocio
 
-The Identity and Access Management domain applies the following business rules:
+El dominio de Identity and Access Management aplica las siguientes reglas de negocio:
 
-1. An identity must exist before it can be authenticated.
+1. Una identidad debe existir antes de poder autenticarse.
 
-2. Only an identity with `ACTIVE` status can complete authentication successfully.
+2. Solo una identidad con estado `ACTIVE` puede completar satisfactoriamente la autenticación.
 
-3. Authentication succeeds only when the credential provided by the user corresponds to the protected credential representation stored for the identity.
+3. La autenticación tiene éxito únicamente cuando la credencial proporcionada por el usuario corresponde a la representación protegida de la credencial almacenada para la identidad.
 
-4. Invalid credentials must not establish an authenticated session.
+4. Las credenciales inválidas no deben establecer una sesión autenticada.
 
-5. A role can only be assigned when both the identity and the role are valid.
+5. Solo puede asignarse un rol cuando tanto la identidad como el rol son válidos.
 
-6. Before assigning a role in an organization, the associated user must belong to that organization.
+6. Antes de asignar un rol en una organización, el usuario asociado debe pertenecer a esa organización.
 
-7. The same role cannot be assigned more than once to the same identity inside the same organization.
+7. No puede asignarse el mismo rol más de una vez a la misma identidad dentro de la misma organización.
 
-8. A role assignment is valid only for the organizational scope associated with the assignment.
+8. Una asignación de rol es válida únicamente para el ámbito organizacional asociado con la asignación.
 
-9. A protected operation is authorized only when at least one role assigned to the identity in the corresponding organization grants the required permission.
+9. Una operación protegida se autoriza únicamente cuando al menos un rol asignado a la identidad en la organización correspondiente otorga el permiso requerido.
 
-10. When the required permission is absent, the protected operation must be rejected.
+10. Cuando no se dispone del permiso requerido, debe rechazarse la operación protegida.
 
-These rules allow the IAM Bounded Context to implement authenticated and role-based access while keeping user-profile, building, device, monitoring, incident, and risk-management information outside its domain boundary.
+Estas reglas permiten que el Bounded Context IAM implemente el acceso autenticado y basado en roles, manteniendo la información sobre perfiles de usuario, edificios, dispositivos, monitoreo, incidentes y gestión de riesgos fuera de los límites de su dominio.
 
 ---
 
 #### 4.2.1.2. Interface Layer
 
-The **Interface Layer** exposes the capabilities of the Identity and Access Management Bounded Context to clients and other parts of the ResQ platform.
+La **Interface Layer** expone las capacidades del Bounded Context Identity and Access Management a los clientes y a otras partes de la plataforma ResQ.
 
-Its responsibility is to receive requests, validate their basic representation, translate them into Commands or Queries from the Application Layer, and convert the resulting responses into the representation expected by the client.
+Su responsabilidad es recibir solicitudes, validar su representación básica, convertirlas en Commands o Queries de la Application Layer y convertir las respuestas resultantes en la representación esperada por el cliente.
 
-Business rules are not implemented in this layer.
+Las reglas de negocio no se implementan en esta capa.
 
-The principal components are `AuthenticationController`, `RoleAssignmentController`, and `AuthorizationFilter`.
+Los principales componentes son `AuthenticationController`, `RoleAssignmentController` y `AuthorizationFilter`.
 
 ##### AuthenticationController
 
-`AuthenticationController` receives authentication requests from ResQ client applications.
+`AuthenticationController` recibe solicitudes de autenticación de las aplicaciones cliente de ResQ.
 
-Its main responsibility is to construct an `AuthenticateCommand` using the authentication data received from the client and delegate its execution to `AuthenticateCommandHandler`.
+Su principal responsabilidad es construir un `AuthenticateCommand` utilizando los datos de autenticación recibidos del cliente y delegar su ejecución a `AuthenticateCommandHandler`.
 
-The controller does not directly compare credentials and does not query the database.
+El controlador no compara directamente las credenciales ni consulta la base de datos.
 
-Conceptually, the RESTful interaction represents the creation of an authenticated session.
+Conceptualmente, la interacción RESTful representa la creación de una sesión autenticada.
 
-Example resource:
+Recurso de ejemplo:
 
 ```text
 POST /api/v1/auth/sessions
 ```
 
-The request contains the login identifier and authentication credential.
+La solicitud contiene el identificador de inicio de sesión y la credencial de autenticación.
 
-A successful response represents the authenticated identity and the session information generated by the platform.
+Una respuesta satisfactoria representa la identidad autenticada y la información de sesión generada por la plataforma.
 
-Invalid credentials are returned as an authentication failure without exposing whether a specific credential or internal record caused the failure.
+Las credenciales inválidas se devuelven como un fallo de autenticación sin revelar si una credencial específica o un registro interno causó el fallo.
 
 ##### RoleAssignmentController
 
-`RoleAssignmentController` receives requests to associate a valid role with an identity inside an organization.
+`RoleAssignmentController` recibe solicitudes para asociar un rol válido con una identidad dentro de una organización.
 
-Conceptually, the operation is represented as the creation of a role-assignment resource.
+Conceptualmente, la operación se representa como la creación de un recurso de asignación de rol.
 
-Example resource:
+Recurso de ejemplo:
 
 ```text
 POST /api/v1/iam/identities/{identityId}/role-assignments
 ```
 
-The request identifies:
+La solicitud identifica:
 
-- the role to assign;
-- the organization in which the role must apply.
+- el rol que se debe asignar;
+- la organización en la que debe aplicarse el rol.
 
-The controller delegates the operation to `AssignRoleCommandHandler`.
+El controlador delega la operación a `AssignRoleCommandHandler`.
 
-The endpoint itself is a protected operation and therefore can only be executed when the authenticated caller has the permission required to perform role assignments.
+El propio endpoint es una operación protegida y, por lo tanto, solo puede ejecutarse cuando quien realiza la solicitud está autenticado y tiene el permiso requerido para asignar roles.
 
 ##### AuthorizationFilter
 
-`AuthorizationFilter` protects RESTful API operations that require an authenticated and authorized identity.
+`AuthorizationFilter` protege las operaciones de la API RESTful que requieren una identidad autenticada y autorizada.
 
-Before a protected request reaches its corresponding controller, the filter identifies:
+Antes de que una solicitud protegida llegue a su controlador correspondiente, el filtro identifica:
 
-- the authenticated identity;
-- the organization associated with the request;
-- the permission required by the protected operation.
+- la identidad autenticada;
+- la organización asociada con la solicitud;
+- el permiso requerido por la operación protegida.
 
-It then creates a `CheckPermissionQuery` and delegates the authorization decision to `CheckPermissionQueryHandler`.
+Luego crea una `CheckPermissionQuery` y delega la decisión de autorización a `CheckPermissionQueryHandler`.
 
-If the result indicates that the required permission is absent, the request is rejected before the protected operation is executed.
+Si el resultado indica que no se dispone del permiso requerido, la solicitud se rechaza antes de ejecutar la operación protegida.
 
-This behavior supports the requirement that unauthorized requests must not execute protected operations.
+Este comportamiento atiende el requisito de que las solicitudes no autorizadas no deben ejecutar operaciones protegidas.
 
 #### 4.2.1.3. Application Layer
 
-The Application Layer coordinates the use cases supported by IAM.
+La Application Layer coordina los casos de uso soportados por IAM.
 
-This layer orchestrates domain objects, repositories, and external abstractions but does not contain infrastructure-specific persistence or cryptographic implementation details.
+Esta capa orquesta objetos de dominio, repositorios y abstracciones externas, pero no contiene detalles de implementación de persistencia o criptografía específicos de la infraestructura.
 
-Three principal application flows are considered:
+Se consideran tres flujos principales de aplicación:
 
-- Authentication.
-- Role assignment.
-- Authorization verification.
+- Autenticación.
+- Asignación de roles.
+- Verificación de autorización.
 
 ##### AuthenticateCommand
 
-`AuthenticateCommand` represents an authentication attempt.
+`AuthenticateCommand` representa un intento de autenticación.
 
-**Attributes:**
+**Atributos:**
 
 - `loginIdentifier: String`
 - `credentialSecret: String`
 
-The plain credential exists only during the authentication request and is never stored as part of the domain state.
+La credencial en texto plano existe únicamente durante la solicitud de autenticación y nunca se almacena como parte del estado del dominio.
 
 ##### AuthenticateCommandHandler
 
-`AuthenticateCommandHandler` coordinates the authentication process.
+`AuthenticateCommandHandler` coordina el proceso de autenticación.
 
-The handler performs the following sequence:
+El manejador realiza la siguiente secuencia:
 
-1. Receives an `AuthenticateCommand`.
-2. Builds or validates the corresponding `LoginIdentifier`.
-3. Uses `IdentityRepository` to locate the identity associated with the login identifier.
-4. Verifies that the identity exists.
-5. Verifies that the identity is active.
-6. Delegates credential comparison to `CredentialVerifier`.
-7. Rejects the operation if the credential is invalid.
-8. Requests the creation of an authenticated session through `AuthenticationSessionProvider`.
-9. Returns an `AuthenticationResult`.
+1. Recibe un `AuthenticateCommand`.
+2. Construye o valida el `LoginIdentifier` correspondiente.
+3. Utiliza `IdentityRepository` para localizar la identidad asociada con el identificador de inicio de sesión.
+4. Verifica que la identidad exista.
+5. Verifica que la identidad esté activa.
+6. Delega la comparación de credenciales a `CredentialVerifier`.
+7. Rechaza la operación si la credencial es inválida.
+8. Solicita la creación de una sesión autenticada mediante `AuthenticationSessionProvider`.
+9. Devuelve un `AuthenticationResult`.
 
-The handler does not know which hashing algorithm, session format, or backend security library is used.
+El manejador no conoce qué algoritmo de hash, formato de sesión o biblioteca de seguridad del backend se utiliza.
 
 ##### AuthenticationResult
 
-`AuthenticationResult` represents the result of a successful authentication process.
+`AuthenticationResult` representa el resultado de un proceso de autenticación satisfactorio.
 
-**Attributes:**
+**Atributos:**
 
 - `identityId: UUID`
 - `sessionToken: String`
 
-`sessionToken` represents an opaque session credential from the point of view of the Application Layer. Its concrete implementation depends on the security mechanism selected for the backend.
+`sessionToken` representa una credencial de sesión opaca desde el punto de vista de la Application Layer. Su implementación concreta depende del mecanismo de seguridad seleccionado para el backend.
 
 ##### AssignRoleCommand
 
-`AssignRoleCommand` represents the assignment of a role to an identity in a specific organization.
+`AssignRoleCommand` representa la asignación de un rol a una identidad en una organización específica.
 
-**Attributes:**
+**Atributos:**
 
 - `identityId: UUID`
 - `roleId: UUID`
@@ -2652,25 +2652,25 @@ The handler does not know which hashing algorithm, session format, or backend se
 
 ##### AssignRoleCommandHandler
 
-`AssignRoleCommandHandler` coordinates the role-assignment use case.
+`AssignRoleCommandHandler` coordina el caso de uso de asignación de roles.
 
-Its execution flow is:
+Su flujo de ejecución es:
 
-1. Receive the `AssignRoleCommand`.
-2. Retrieve the target `Identity` from `IdentityRepository`.
-3. Retrieve the requested `Role` from `RoleRepository`.
-4. Verify through `OrganizationMembershipValidator` that the user referenced by the identity belongs to the specified organization.
-5. Verify through the `Identity` Aggregate Root that the same role assignment does not already exist.
-6. Invoke `Identity.assignRole(roleId, organizationId)`.
-7. Persist the modified aggregate through `IdentityRepository`.
+1. Recibir el `AssignRoleCommand`.
+2. Recuperar la `Identity` objetivo desde `IdentityRepository`.
+3. Recuperar el `Role` solicitado desde `RoleRepository`.
+4. Verificar mediante `OrganizationMembershipValidator` que el usuario referenciado por la identidad pertenezca a la organización especificada.
+5. Verificar mediante el Aggregate Root `Identity` que la misma asignación de rol no exista previamente.
+6. Invocar `Identity.assignRole(roleId, organizationId)`.
+7. Persistir el agregado modificado mediante `IdentityRepository`.
 
-Authorization of the user requesting this operation is performed before execution of the protected operation through the IAM authorization mechanism.
+La autorización del usuario que solicita esta operación se realiza antes de ejecutar la operación protegida mediante el mecanismo de autorización de IAM.
 
 ##### CheckPermissionQuery
 
-`CheckPermissionQuery` represents a request to determine whether an identity can execute a protected operation.
+`CheckPermissionQuery` representa una solicitud para determinar si una identidad puede ejecutar una operación protegida.
 
-**Attributes:**
+**Atributos:**
 
 - `identityId: UUID`
 - `permissionCode: String`
@@ -2678,137 +2678,137 @@ Authorization of the user requesting this operation is performed before executio
 
 ##### CheckPermissionQueryHandler
 
-`CheckPermissionQueryHandler` coordinates authorization verification.
+`CheckPermissionQueryHandler` coordina la verificación de autorización.
 
-Its execution flow is:
+Su flujo de ejecución es:
 
-1. Retrieve the `Identity`.
-2. Reject the authorization when the identity does not exist or is inactive.
-3. Obtain the role identifiers assigned to the identity within the requested organization.
-4. Retrieve the corresponding `Role` aggregates.
-5. Delegate evaluation to `AuthorizationService`.
-6. Return whether the required permission is granted.
+1. Recuperar la `Identity`.
+2. Rechazar la autorización cuando la identidad no exista o esté inactiva.
+3. Obtener los identificadores de los roles asignados a la identidad dentro de la organización solicitada.
+4. Recuperar los agregados `Role` correspondientes.
+5. Delegar la evaluación a `AuthorizationService`.
+6. Devolver si se otorga el permiso requerido.
 
-This design centralizes authorization evaluation and prevents each protected Bounded Context from reimplementing IAM rules independently.
+Este diseño centraliza la evaluación de autorización e impide que cada Bounded Context protegido vuelva a implementar las reglas de IAM de manera independiente.
 
 ##### CredentialVerifier
 
-`CredentialVerifier` is an Application Layer abstraction that prevents authentication use cases from depending directly on a cryptographic or security framework.
+`CredentialVerifier` es una abstracción de la Application Layer que evita que los casos de uso de autenticación dependan directamente de un framework criptográfico o de seguridad.
 
-**Operation:**
+**Operación:**
 
 - `matches(rawCredential, credentialHash)`
 
 ##### AuthenticationSessionProvider
 
-`AuthenticationSessionProvider` is responsible for abstracting session creation.
+`AuthenticationSessionProvider` es responsable de abstraer la creación de sesiones.
 
-**Operation:**
+**Operación:**
 
 - `createSession(identityId)`
 
-The exact representation of the session is an implementation concern of the Infrastructure Layer.
+La representación exacta de la sesión es un aspecto de implementación de la Infrastructure Layer.
 
 ##### OrganizationMembershipValidator
 
-`OrganizationMembershipValidator` represents the dependency required to verify the acceptance criterion that a role can be assigned only to a user belonging to the corresponding organization.
+`OrganizationMembershipValidator` representa la dependencia requerida para verificar el criterio de aceptación según el cual solo puede asignarse un rol a un usuario que pertenezca a la organización correspondiente.
 
-**Operation:**
+**Operación:**
 
 - `belongsToOrganization(userId, organizationId)`
 
-The IAM Bounded Context does not become responsible for managing organizations or user profiles because of this validation. It only consumes the minimum information necessary to protect the role-assignment invariant.
+Esta validación no convierte al Bounded Context IAM en responsable de gestionar organizaciones o perfiles de usuario. Solo consume la información mínima necesaria para proteger la invariante de asignación de roles.
 
 #### 4.2.1.4. Infrastructure Layer
 
-The Infrastructure Layer contains the technical implementations required by the Identity and Access Management Bounded Context.
+La Infrastructure Layer contiene las implementaciones técnicas requeridas por el Bounded Context Identity and Access Management.
 
-It implements the repository and service abstractions defined by the Domain and Application Layers and encapsulates persistence, credential-security, authenticated-session generation, and integration details.
+Implementa las abstracciones de repositorios y servicios definidas por la Domain Layer y la Application Layer y encapsula los detalles de persistencia, seguridad de credenciales, generación de sesiones autenticadas e integración.
 
-The principal infrastructure components are IdentityRepositoryAdapter, RoleRepositoryAdapter, CredentialHashVerifier, AuthenticationSessionProviderAdapter, and OrganizationMembershipAdapter.
+Los principales componentes de infraestructura son IdentityRepositoryAdapter, RoleRepositoryAdapter, CredentialHashVerifier, AuthenticationSessionProviderAdapter y OrganizationMembershipAdapter.
 
 ##### IdentityRepositoryAdapter
 
-`IdentityRepositoryAdapter` implements the `IdentityRepository` interface.
+`IdentityRepositoryAdapter` implementa la interfaz `IdentityRepository`.
 
-Its responsibilities are:
+Sus responsabilidades son:
 
-- retrieve an `Identity` using its identifier;
-- retrieve an `Identity` using its login identifier;
-- reconstruct the `Identity` Aggregate from persisted data;
-- persist modifications to the `Identity` and its Role Assignments.
+- recuperar una `Identity` utilizando su identificador;
+- recuperar una `Identity` utilizando su identificador de inicio de sesión;
+- reconstruir el Aggregate `Identity` a partir de los datos persistidos;
+- persistir las modificaciones de `Identity` y sus Role Assignments.
 
-The Domain Layer is therefore independent from the database technology selected for the ResQ backend.
+Por lo tanto, la Domain Layer es independiente de la tecnología de base de datos seleccionada para el backend de ResQ.
 
 ##### RoleRepositoryAdapter
 
-`RoleRepositoryAdapter` implements `RoleRepository`.
+`RoleRepositoryAdapter` implementa `RoleRepository`.
 
-It retrieves:
+Recupera:
 
-- role information;
-- the permissions associated with a role;
-- multiple roles required during authorization evaluation.
+- la información de los roles;
+- los permisos asociados con un rol;
+- los múltiples roles requeridos durante la evaluación de autorización.
 
-The adapter reconstructs the Role domain representation before returning it to the Application Layer.
+El adaptador reconstruye la representación de dominio de Role antes de devolverla a la Application Layer.
 
 ##### CredentialHashVerifier
 
-`CredentialHashVerifier` implements `CredentialVerifier`.
+`CredentialHashVerifier` implementa `CredentialVerifier`.
 
-Its responsibility is to compare the credential received during authentication with the protected credential representation associated with the identity.
+Su responsabilidad es comparar la credencial recibida durante la autenticación con la representación protegida de la credencial asociada con la identidad.
 
-The comparison must be implemented through the security mechanism selected for the backend.
+La comparación debe implementarse mediante el mecanismo de seguridad seleccionado para el backend.
 
-Plain-text authentication credentials are not persisted.
+Las credenciales de autenticación en texto plano no se persisten.
 
 ##### AuthenticationSessionProviderAdapter
 
-`AuthenticationSessionProviderAdapter` implements `AuthenticationSessionProvider`.
+`AuthenticationSessionProviderAdapter` implementa `AuthenticationSessionProvider`.
 
-Its responsibility is to generate the session representation that will allow subsequent requests to identify an authenticated identity.
+Su responsabilidad es generar la representación de sesión que permitirá que las solicitudes posteriores identifiquen una identidad autenticada.
 
-The concrete token or session technology remains encapsulated in the Infrastructure Layer and is not exposed as a dependency of the Domain Layer.
+La tecnología concreta de token o sesión permanece encapsulada en la Infrastructure Layer y no se expone como dependencia de la Domain Layer.
 
 ##### OrganizationMembershipAdapter
 
-`OrganizationMembershipAdapter` implements `OrganizationMembershipValidator`.
+`OrganizationMembershipAdapter` implementa `OrganizationMembershipValidator`.
 
-It obtains the minimum information required to determine whether the user associated with an identity belongs to the organization where a role assignment is requested.
+Obtiene la información mínima necesaria para determinar si el usuario asociado con una identidad pertenece a la organización en la que se solicita una asignación de rol.
 
-IAM does not persist or modify the complete user profile or organization model.
+IAM no persiste ni modifica el perfil completo del usuario ni el modelo de la organización.
 
-The final communication mechanism used by this adapter must remain consistent with the Context Mapping defined for ResQ.
+El mecanismo final de comunicación utilizado por este adaptador debe mantener la consistencia con el Context Mapping definido para ResQ.
 
-##### Persistence considerations
+##### Consideraciones de persistencia
 
-The IAM persistence model must maintain referential integrity between IAM-owned objects while avoiding direct ownership of objects that belong to other Bounded Contexts.
+El modelo de persistencia de IAM debe mantener la integridad referencial entre los objetos que pertenecen a IAM, evitando la propiedad directa de objetos pertenecientes a otros Bounded Contexts.
 
-For that reason:
+Por esa razón:
 
-- `user_id` is stored as an external identifier and is not used to reproduce the User aggregate inside IAM.
-- `organization_id` is stored as an external authorization-scope identifier.
-- relationships among identities, roles, permissions, and role assignments are managed internally by IAM.
-- credentials are stored only in their protected representation.
-- duplicate role assignments for the same identity, role, and organization must be prevented through a domain invariant and a persistence-level unique constraint.
+- `user_id` se almacena como identificador externo y no se utiliza para reproducir el agregado User dentro de IAM.
+- `organization_id` se almacena como identificador externo del ámbito de autorización.
+- las relaciones entre identidades, roles, permisos y asignaciones de roles se gestionan internamente en IAM.
+- las credenciales se almacenan únicamente en su representación protegida.
+- las asignaciones de roles duplicadas para la misma identidad, rol y organización deben evitarse mediante una invariante de dominio y una restricción de unicidad en la persistencia.
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
-The Component Level Diagram for the Identity and Access Management Bounded Context presents the internal components that collaborate inside the ResQ Cloud RESTful API container to provide authentication and authorization capabilities.
+El Component Level Diagram del Bounded Context Identity and Access Management presenta los componentes internos que colaboran dentro del contenedor ResQ Cloud RESTful API para proporcionar capacidades de autenticación y autorización.
 
-The diagram must represent the following main components:
+El diagrama debe representar los siguientes componentes principales:
 
-- Authentication Interface Component, responsible for receiving authentication requests.
-- Role Assignment Interface Component, responsible for receiving requests for assigning roles.
-- Authorization Interface Component, responsible for protecting operations that require authorization.
-- IAM Application Component, containing the authentication, role-assignment, and authorization use cases.
-- IAM Domain Component, containing the Identity, Role, Permission, Role Assignment, and authorization business rules.
-- IAM Persistence Component, implementing repositories for identities, roles, permissions, and role assignments.
-- Credential Security Component, responsible for credential verification.
-- Authentication Session Component, responsible for generating the authenticated-session representation.
-- Organization Membership Integration Component, responsible for obtaining the minimum external information required to validate organizational membership.
+- Authentication Interface Component, responsable de recibir solicitudes de autenticación.
+- Role Assignment Interface Component, responsable de recibir solicitudes de asignación de roles.
+- Authorization Interface Component, responsable de proteger las operaciones que requieren autorización.
+- IAM Application Component, que contiene los casos de uso de autenticación, asignación de roles y autorización.
+- IAM Domain Component, que contiene Identity, Role, Permission, Role Assignment y las reglas de negocio de autorización.
+- IAM Persistence Component, que implementa repositorios para identidades, roles, permisos y asignaciones de roles.
+- Credential Security Component, responsable de verificar las credenciales.
+- Authentication Session Component, responsable de generar la representación de la sesión autenticada.
+- Organization Membership Integration Component, responsable de obtener la información externa mínima necesaria para validar la pertenencia a una organización.
 
-The main interaction flow represented in the diagram is:
+El flujo principal de interacción representado en el diagrama es:
 
 ```text
 Client Application
@@ -2832,34 +2832,34 @@ Persistence Component   Infrastructure Security/
 IAM Persistence Storage
 ```
 
-Authentication requests enter through the Authentication Interface Component and are coordinated by the Application Layer. Credential verification is delegated to the Infrastructure Layer while the Identity Aggregate remains responsible for its authentication state.
+Las solicitudes de autenticación ingresan mediante Authentication Interface Component y son coordinadas por la Application Layer. La verificación de credenciales se delega a la Infrastructure Layer, mientras que el Aggregate Identity sigue siendo responsable de su estado de autenticación.
 
-Protected operations pass through the Authorization Interface Component. The Application Layer retrieves the identity and roles involved, while the Domain Layer evaluates whether the corresponding permission is granted.
+Las operaciones protegidas pasan por Authorization Interface Component. La Application Layer recupera la identidad y los roles involucrados, mientras que la Domain Layer evalúa si se otorga el permiso correspondiente.
 
-Role-assignment requests are also processed through the Application Layer and must satisfy both the authorization rules and the membership constraint before the Identity Aggregate is modified.
+Las solicitudes de asignación de roles también se procesan mediante la Application Layer y deben satisfacer tanto las reglas de autorización como la restricción de pertenencia a una organización antes de modificar el Aggregate Identity.
 
-**DIAGRAM — IAM Component Level Diagram**
+**DIAGRAMA — IAM Component Level Diagram**
 
-![Identity and Access Management Component Level Diagram](assets/images/chapter-04-solution-software-design/iam/iam-component-level-diagram.png) <!-- When creating the final C4 Component Diagram, include the concrete backend framework, ORM/persistence technology and communication protocols selected by the team. -->
+![Identity and Access Management Component Level Diagram](assets/images/chapter-04-solution-software-design/iam/iam-component-level-diagram.png)
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
-The Code Level Diagrams provide a detailed representation of the implementation-oriented structure of the Identity and Access Management Bounded Context.
+Los Code Level Diagrams proporcionan una representación detallada de la estructura orientada a la implementación del Bounded Context Identity and Access Management.
 
-For IAM, this level is represented through two complementary diagrams:
+Para IAM, este nivel se representa mediante dos diagramas complementarios:
 
-- Domain Layer Class Diagram, which represents the classes, interfaces, enumerations, methods, attributes, relationships, directions, and multiplicities that form the domain model.
-- Database Design Diagram, which represents the persistence structures required to store identities, roles, permissions, and role assignments.
+- Domain Layer Class Diagram, que representa las clases, interfaces, enumeraciones, métodos, atributos, relaciones, direcciones y multiplicidades que conforman el modelo de dominio.
+- Database Design Diagram, que representa las estructuras de persistencia requeridas para almacenar identidades, roles, permisos y asignaciones de roles.
 
-The two diagrams represent different perspectives of the same Bounded Context. The class diagram describes the object-oriented domain model, while the database diagram describes how the persistent state required by that model is stored.
+Los dos diagramas representan perspectivas diferentes del mismo Bounded Context. El diagrama de clases describe el modelo de dominio orientado a objetos, mientras que el diagrama de base de datos describe cómo se almacena el estado persistente requerido por ese modelo.
 
 ##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-The Domain Layer Class Diagram represents the implementation-oriented structure of the IAM domain model.
+El Domain Layer Class Diagram representa la estructura orientada a la implementación del modelo de dominio de IAM.
 
-The diagram must include the following elements:
+El diagrama debe incluir los siguientes elementos:
 
-**Aggregate Roots and Entities**
+**Aggregate Roots y Entities**
 
 - `Identity`
 - `Role`
@@ -2871,7 +2871,7 @@ The diagram must include the following elements:
 - `CredentialHash`
 - `Permission`
 
-**Enumeration**
+**Enumeración**
 
 - `IdentityStatus`
 
@@ -2884,28 +2884,28 @@ The diagram must include the following elements:
 
 - `AuthorizationService`
 
-The principal relationships to represent are:
+Las principales relaciones que deben representarse son:
 
-- `Identity` is associated with exactly one `LoginIdentifier`.
-- `Identity` is associated with exactly one `CredentialHash`.
-- `Identity` has exactly one `IdentityStatus`.
-- `Identity` contains zero or more `RoleAssignment` entities.
-- Each `RoleAssignment` references one `Role` through `roleId`.
-- Each `RoleAssignment` applies to one organization through `organizationId`.
-- `Role` contains zero or more `Permission` Value Objects.
-- `IdentityRepository` manages persistence for `Identity`.
-- `RoleRepository` retrieves `Role` aggregates.
-- `AuthorizationService` evaluates `Identity` and `Role` data using `permissionCode` and `organizationId`; it does not depend directly on `Permission`.
+- `Identity` se asocia con exactamente un `LoginIdentifier`.
+- `Identity` se asocia con exactamente un `CredentialHash`.
+- `Identity` tiene exactamente un `IdentityStatus`.
+- `Identity` contiene cero o más entidades `RoleAssignment`.
+- Cada `RoleAssignment` referencia un `Role` mediante `roleId`.
+- Cada `RoleAssignment` se aplica a una organización mediante `organizationId`.
+- `Role` contiene cero o más Value Objects `Permission`.
+- `IdentityRepository` gestiona la persistencia de `Identity`.
+- `RoleRepository` recupera agregados `Role`.
+- `AuthorizationService` evalúa los datos de `Identity` y `Role` utilizando `permissionCode` y `organizationId`; no depende directamente de `Permission`.
 
-The class diagram must show visibility for attributes and operations using the UML conventions:
+El diagrama de clases debe mostrar la visibilidad de los atributos y operaciones utilizando las convenciones UML:
 
-- `+` for public.
-- `-` for private.
-- `#` for protected.
+- `+` para público.
+- `-` para privado.
+- `#` para protegido.
 
-It must also indicate relationship direction and multiplicity whenever applicable.
+También debe indicar la dirección y multiplicidad de las relaciones cuando corresponda.
 
-A conceptual multiplicity reference for the final diagram is:
+Una referencia conceptual de multiplicidad para el diagrama final es:
 
 ```text
 Identity "1" *-- "0..*" RoleAssignment
@@ -2918,80 +2918,80 @@ Role "1" *-- "0..*" Permission
 RoleAssignment ..> Role : references by roleId
 ```
 
-organizationId and userId are represented as external identifiers rather than object relationships to aggregates belonging to other Bounded Contexts.
+organizationId y userId se representan como identificadores externos en lugar de relaciones entre objetos con agregados pertenecientes a otros Bounded Contexts.
 
-**DIAGRAM — IAM Domain Layer Class Diagram**
+**DIAGRAMA — IAM Domain Layer Class Diagram**
 
 ![Identity and Access Management Domain Layer Class Diagram](assets/images/chapter-04-solution-software-design/iam/iam-domain-layer-class-diagram.png)
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
 
-The Identity and Access Management Database Design persists only the information owned by IAM.
+El Database Design de Identity and Access Management persiste únicamente la información que pertenece a IAM.
 
-The proposed logical persistence model contains the following tables:
+El modelo lógico de persistencia propuesto contiene las siguientes tablas:
 
 ###### `iam_identities`
 
-Stores the authentication identity associated with a ResQ user.
+Almacena la identidad de autenticación asociada con un usuario de ResQ.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `identity_id` | UUID | PRIMARY KEY | Unique identifier of the IAM identity. |
-| `user_id` | UUID | NOT NULL, UNIQUE | External reference to the corresponding user. |
-| `login_identifier` | VARCHAR | NOT NULL, UNIQUE | Identifier used during authentication. |
-| `credential_hash` | VARCHAR | NOT NULL | Protected representation of the authentication credential. |
-| `status` | VARCHAR | NOT NULL | Current status of the identity. |
+| `identity_id` | UUID | PRIMARY KEY | Identificador único de la identidad de IAM. |
+| `user_id` | UUID | NOT NULL, UNIQUE | Referencia externa al usuario correspondiente. |
+| `login_identifier` | VARCHAR | NOT NULL, UNIQUE | Identificador utilizado durante la autenticación. |
+| `credential_hash` | VARCHAR | NOT NULL | Representación protegida de la credencial de autenticación. |
+| `status` | VARCHAR | NOT NULL | Estado actual de la identidad. |
 
-The table does not store names, phone numbers, preferences, or other User-profile information.
+La tabla no almacena nombres, números de teléfono, preferencias ni otra información del perfil de User.
 
 ###### `iam_roles`
 
-Stores the roles available for IAM authorization.
+Almacena los roles disponibles para la autorización de IAM.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `role_id` | UUID | PRIMARY KEY | Unique role identifier. |
-| `name` | VARCHAR | NOT NULL, UNIQUE | Role name. |
+| `role_id` | UUID | PRIMARY KEY | Identificador único del rol. |
+| `name` | VARCHAR | NOT NULL, UNIQUE | Nombre del rol. |
 
-The current design requires roles to exist and be assignable but does not define a User Story for role creation or role administration.
+El diseño actual requiere que los roles existan y puedan asignarse, pero no define una User Story para la creación o administración de roles.
 
 ###### `iam_permissions`
 
-Stores the authorization permissions used to protect ResQ operations.
+Almacena los permisos de autorización utilizados para proteger las operaciones de ResQ.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `code` | VARCHAR(150) | PRIMARY KEY | Stable permission code used by authorization rules and the identity of the persisted Permission value. |
+| `code` | VARCHAR(150) | PRIMARY KEY | Código estable de permiso utilizado por las reglas de autorización y que constituye la identidad del valor Permission persistido. |
 
 ###### `iam_role_permissions`
 
-Represents the many-to-many relationship between roles and permissions.
+Representa la relación de muchos a muchos entre roles y permisos.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `role_id` | UUID | PRIMARY KEY, FOREIGN KEY | References `iam_roles.role_id`. |
-| `permission_code` | VARCHAR(150) | PRIMARY KEY, FOREIGN KEY | References `iam_permissions.code`. |
+| `role_id` | UUID | PRIMARY KEY, FOREIGN KEY | Referencia `iam_roles.role_id`. |
+| `permission_code` | VARCHAR(150) | PRIMARY KEY, FOREIGN KEY | Referencia `iam_permissions.code`. |
 
-The composite primary key `(role_id, permission_code)` prevents the same permission from being associated with the same role more than once. The foreign keys connect `role_id` to `iam_roles.role_id` and `permission_code` to `iam_permissions.code`.
+La clave primaria compuesta `(role_id, permission_code)` impide que el mismo permiso se asocie con el mismo rol más de una vez. Las claves foráneas conectan `role_id` con `iam_roles.role_id` y `permission_code` con `iam_permissions.code`.
 
 ###### `iam_role_assignments`
 
-Stores role assignments made to identities inside an organization.
+Almacena las asignaciones de roles realizadas a identidades dentro de una organización.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `assignment_id` | UUID | PRIMARY KEY | Unique assignment identifier. |
-| `identity_id` | UUID | NOT NULL, FOREIGN KEY | References `iam_identities.identity_id`. |
-| `role_id` | UUID | NOT NULL, FOREIGN KEY | References `iam_roles.role_id`. |
-| `organization_id` | UUID | NOT NULL | External identifier of the organization in which the role applies. |
+| `assignment_id` | UUID | PRIMARY KEY | Identificador único de la asignación. |
+| `identity_id` | UUID | NOT NULL, FOREIGN KEY | Referencia `iam_identities.identity_id`. |
+| `role_id` | UUID | NOT NULL, FOREIGN KEY | Referencia `iam_roles.role_id`. |
+| `organization_id` | UUID | NOT NULL | Identificador externo de la organización en la que se aplica el rol. |
 
-A unique constraint must be defined over:
+Debe definirse una restricción de unicidad sobre:
 
 `(identity_id, role_id, organization_id)`
 
-This constraint complements the domain invariant that prevents duplicated role assignments for the same identity within the same organization.
+Esta restricción complementa la invariante de dominio que impide asignaciones de roles duplicadas para la misma identidad dentro de la misma organización.
 
-The internal database relationships are:
+Las relaciones internas de la base de datos son:
 
 ```text
 iam_identities
@@ -3018,160 +3018,160 @@ iam_role_assignments
              (code PK)
 ```
 
-user_id and organization_id are intentionally treated as external references instead of foreign keys to tables owned by other Bounded Contexts. This avoids coupling the IAM persistence model directly to the internal database representation of other domain contexts.
+user_id y organization_id se tratan intencionalmente como referencias externas en lugar de claves foráneas a tablas pertenecientes a otros Bounded Contexts. Esto evita acoplar el modelo de persistencia de IAM directamente con la representación interna de la base de datos de otros contextos de dominio.
 
-The final Database Design Diagram must identify:
+El Database Design Diagram final debe identificar:
 
-- tables;
-- columns;
-- primary keys;
-- foreign keys;
-- unique constraints;
-- cardinalities;
-- relationships among IAM tables.
+- las tablas;
+- las columnas;
+- las claves primarias;
+- las claves foráneas;
+- las restricciones de unicidad;
+- las cardinalidades;
+- las relaciones entre las tablas de IAM.
 
-**DIAGRAM — IAM Database Design Diagram**
+**DIAGRAMA — IAM Database Design Diagram**
 
 ![Identity and Access Management Database Design Diagram](assets/images/chapter-04-solution-software-design/iam/iam-database-design-diagram.png)
 
 ### 4.2.2. Bounded Context: Risk Detection
 
-The **Risk Detection** Bounded Context is responsible for evaluating monitored information against configured detection rules in order to identify situations of risk, determine their type and severity, preserve the evidence that originated each detection, and maintain the location context required to understand where the detected condition occurred.
+El Bounded Context **Risk Detection** es responsable de evaluar la información monitoreada mediante las reglas de detección configuradas para identificar situaciones de riesgo, determinar su tipo y severidad, preservar la evidencia que originó cada detección y mantener el contexto de ubicación necesario para comprender dónde ocurrió la condición detectada.
 
-This Bounded Context represents the domain knowledge involved in transforming valid monitored measurements into meaningful risk detections. It does not own the physical sensors that produce the measurements, the devices associated with those sensors, the buildings and zones where the devices are installed, or the alerts and responses executed after a risk is detected.
+Este Bounded Context representa el conocimiento de dominio involucrado en transformar mediciones monitoreadas válidas en detecciones de riesgo significativas. No posee los sensores físicos que producen las mediciones, los dispositivos asociados con esos sensores, los edificios y zonas en los que se instalan los dispositivos ni las alertas y respuestas ejecutadas después de detectar un riesgo.
 
-The Risk Detection Bounded Context primarily supports **US06 — Know the detected risk type**, **US07 — Know the risk level**, **US08 — Know the risk location**, **US09 — Consult the detection context**, **US24 — Configure a detection condition**, **US28 — Maintain critical functions without Internet**, and **TS03 — Process detection rules locally**.
+El Bounded Context Risk Detection soporta principalmente **US06 — Conocer el tipo de riesgo detectado**, **US07 — Conocer el nivel de riesgo**, **US08 — Conocer la ubicación del riesgo**, **US09 — Consultar el contexto de detección**, **US24 — Configurar una condición de detección**, **US28 — Mantener funciones críticas sin Internet** y **TS03 — Procesar reglas de detección localmente**.
 
-Risk Detection consumes valid measurements produced by the monitoring flow and evaluates them using active detection rules. When a condition is satisfied, the Bounded Context creates or updates a risk detection and generates the information required for the rest of the ResQ platform to continue the emergency-management flow.
+Risk Detection consume mediciones válidas producidas por el flujo de monitoreo y las evalúa utilizando reglas de detección activas. Cuando se satisface una condición, el Bounded Context crea o actualiza una detección de riesgo y genera la información necesaria para que el resto de la plataforma ResQ continúe el flujo de gestión de emergencias.
 
-A central architectural requirement of this Bounded Context is that critical detection must remain available even when Internet connectivity with Cloud services is interrupted. For that reason, active detection rules required for critical operation must also be available in the Edge environment, where measurements can be evaluated locally.
+Un requisito arquitectónico central de este Bounded Context es que la detección crítica debe permanecer disponible incluso cuando se interrumpe la conectividad a Internet con los servicios Cloud. Por esa razón, las reglas de detección activas requeridas para la operación crítica también deben estar disponibles en el entorno Edge, donde las mediciones pueden evaluarse localmente.
 
-The Bounded Context therefore participates in two main execution environments:
+Por lo tanto, el Bounded Context participa en dos entornos principales de ejecución:
 
-- **ResQ Cloud RESTful API**, where authorized users configure detection rules and consult persisted risk detections and their evidence.
-- **ResQ Edge Service**, where active detection rules are available locally and incoming measurements can be evaluated without permanently depending on Cloud connectivity.
+- **ResQ Cloud RESTful API**, donde los usuarios autorizados configuran reglas de detección y consultan detecciones de riesgo persistidas y sus evidencias.
+- **ResQ Edge Service**, donde las reglas de detección activas están disponibles localmente y las mediciones entrantes pueden evaluarse sin depender permanentemente de la conectividad con Cloud.
 
-Risk Detection does not generate user notifications, execute actuator commands, manage incident lifecycle, or own connectivity-recovery queues. Those responsibilities belong to other Bounded Contexts such as Alert & Response Management, Incident, and Connectivity.
+Risk Detection no genera notificaciones para los usuarios, no ejecuta comandos de actuadores, no gestiona el ciclo de vida de los incidentes ni posee las colas de recuperación de conectividad. Estas responsabilidades pertenecen a otros Bounded Contexts, como Alert & Response Management, Incident y Connectivity.
 
-Similarly, Risk Detection does not reproduce the complete models of Measurement, Device, Building, or Zone. It only maintains the external references and evidence necessary to justify a risk-detection decision.
+Asimismo, Risk Detection no reproduce los modelos completos de Measurement, Device, Building o Zone. Solo mantiene las referencias externas y la evidencia necesarias para justificar una decisión de detección de riesgo.
 
-The principal concepts identified for the Risk Detection Bounded Context are **Detection Rule**, **Detection Condition**, **Risk Detection**, **Detection Evidence**, **Risk Location**, **Risk Type**, **Severity Level**, and **Severity Change**.
+Los principales conceptos identificados para el Bounded Context Risk Detection son **Detection Rule**, **Detection Condition**, **Risk Detection**, **Detection Evidence**, **Risk Location**, **Risk Type**, **Severity Level** y **Severity Change**.
 
-#### Class Dictionary
+#### Diccionario de clases
 
-The following table summarizes the principal classes and interfaces identified for the Risk Detection Bounded Context.
+La siguiente tabla resume las principales clases e interfaces identificadas para el Bounded Context Risk Detection.
 
-| Class / Interface | Layer | Runtime | Purpose | Main attributes | Main operations | Main relationships |
+| Clase / Interfaz | Capa | Entorno de ejecución | Propósito | Atributos principales | Operaciones principales | Relaciones principales |
 |---|---|---|---|---|---|---|
-| `DetectionRule` | Domain | Cloud / Edge | Aggregate Root that represents an active or inactive rule used to determine whether a monitored value represents a risk condition. | `ruleId: UUID`, `riskType: RiskType`, `severityLevel: SeverityLevel`, `condition: DetectionCondition`, `status: DetectionRuleStatus` | `updateCondition(condition)`, `activate()`, `deactivate()`, `isActive()`, `supports(variableType)` | Composes one `DetectionCondition`, one `RiskType`, one `SeverityLevel`, and one `DetectionRuleStatus`. |
-| `DetectionCondition` | Domain | Cloud / Edge | Value Object that defines the comparison that must be performed against a monitored variable. | `variableType: String`, `operator: ComparisonOperator`, `threshold: Decimal` | `isValid()`, `matches(variableType, value)` | Owned by `DetectionRule`; uses `ComparisonOperator`. |
-| `RiskDetection` | Domain | Cloud / Edge | Aggregate Root that represents a detected risk together with its current severity, location, evidence, and severity-change traceability. | `riskDetectionId: UUID`, `ruleId: UUID`, `riskType: RiskType`, `currentSeverity: SeverityLevel`, `location: RiskLocation`, `detectedAt: Instant`, `evidence: List<DetectionEvidence>`, `severityChanges: List<SeverityChange>` | `addEvidence(evidence)`, `updateSeverity(newSeverity, changedAt)`, `hasSeverity(severity)` | Composes `RiskLocation`, `DetectionEvidence`, `SeverityChange`, `RiskType`, and `SeverityLevel`; references a `DetectionRule` by `ruleId`. |
-| `DetectionEvidence` | Domain | Cloud / Edge | Value Object containing the monitored information used as evidence for a risk-detection decision. | `measurementId: UUID`, `deviceId: UUID`, `variableType: String`, `value: Decimal`, `measuredAt: Instant` | `matchesVariable(variableType)` | Owned by `RiskDetection`; references Measurement and Device through external identifiers. |
-| `RiskLocation` | Domain | Cloud / Edge | Value Object that represents the known location context of a detection without reproducing the Building domain model. | `buildingId: UUID?`, `zoneId: UUID?`, `resolutionStatus: LocationResolutionStatus` | `isResolved()` | Owned by `RiskDetection`; uses external Building/Zone identifiers. |
-| `SeverityChange` | Domain | Cloud | Entity owned by `RiskDetection` that preserves a transition between severity levels. | `severityChangeId: UUID`, `previousSeverity: SeverityLevel`, `newSeverity: SeverityLevel`, `changedAt: Instant` | — | Owned by `RiskDetection`; uses `SeverityLevel` values. |
-| `RiskType` | Domain | Cloud / Edge | Value Object representing the type of risk identified by a detection rule. | `code: String` | `code()`, `equals(other)` | Used by `DetectionRule` and `RiskDetection`. |
-| `SeverityLevel` | Domain | Cloud / Edge | Value Object representing the severity assigned to a risk without imposing a fixed severity catalog that is not defined by the current requirements. | `code: String` | `code()`, `equals(other)` | Used by `DetectionRule`, `RiskDetection`, and `SeverityChange`. |
-| `DetectionRuleStatus` | Domain | Cloud / Edge | Enumeration representing whether a detection rule can participate in evaluation. | `ACTIVE`, `INACTIVE` | — | Used by `DetectionRule`. |
-| `ComparisonOperator` | Domain | Cloud / Edge | Enumeration representing the comparison operation performed by a detection condition. | `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `LESS_THAN`, `LESS_THAN_OR_EQUAL`, `EQUAL` | — | Used by `DetectionCondition`. |
-| `LocationResolutionStatus` | Domain | Cloud / Edge | Enumeration indicating whether the location of a detected risk could be resolved from the available device context. | `RESOLVED`, `UNRESOLVED` | — | Used by `RiskLocation`. |
-| `DetectionRuleRepository` | Domain | Cloud / Edge | Repository abstraction for retrieving and persisting detection rules. | — | `findById(ruleId)`, `findActiveByVariableType(variableType)`, `save(rule)` | Persists and retrieves `DetectionRule` aggregates. |
-| `RiskDetectionRepository` | Domain | Cloud | Repository abstraction for persisted risk detections. | — | `findById(riskDetectionId)`, `save(riskDetection)` | Persists and retrieves `RiskDetection` aggregates. |
-| `RiskEvaluationService` | Domain | Edge | Domain Service responsible for determining whether an active detection rule is satisfied by valid detection evidence. | — | `matches(rule, evidence)` | Evaluates `DetectionRule` against `DetectionEvidence`. |
-| `RiskDetectedEvent` | Domain | Edge | Domain Event produced when a detection rule is satisfied and a risk detection must continue through the distributed ResQ flow. | `riskDetectionId: UUID`, `ruleId: UUID`, `riskType: String`, `severity: String`, `buildingId: UUID?`, `zoneId: UUID?`, `occurredAt: Instant` | — | Generated from `RiskDetection` and published through an application abstraction. |
-| `ConfigureDetectionRuleCommand` | Application | Cloud | Represents the request to configure a detection rule. | `riskTypeCode: String`, `severityCode: String`, `variableType: String`, `operator: String`, `threshold: Decimal` | — | Handled by `ConfigureDetectionRuleCommandHandler`. |
-| `ConfigureDetectionRuleCommandHandler` | Application | Cloud | Coordinates detection-rule creation or configuration. | Dependencies on `DetectionRuleRepository` and `DetectionRuleDistributor` | `handle(command)` | Creates/updates `DetectionRule` and requests distribution to Edge. |
-| `ChangeDetectionRuleStatusCommand` | Application | Cloud | Represents a request to activate or deactivate an existing detection rule. | `ruleId: UUID`, `active: boolean` | — | Handled by `ChangeDetectionRuleStatusCommandHandler`. |
-| `ChangeDetectionRuleStatusCommandHandler` | Application | Cloud | Coordinates rule activation/deactivation while preserving rule validity. | Dependencies on `DetectionRuleRepository` and `DetectionRuleDistributor` | `handle(command)` | Modifies `DetectionRule` and distributes the resulting state. |
-| `MeasurementReceivedEventHandler` | Application | Edge | Handles a valid monitored measurement delivered to Risk Detection and coordinates its local evaluation. | Dependencies on `DetectionRuleRepository`, `RiskLocationResolver`, `RiskEvaluationService`, `RiskDetectionEventPublisher` | `handle(event)` | Evaluates measurement evidence using active local `DetectionRule` aggregates. |
-| `UpdateLocalDetectionRuleEventHandler` | Application | Edge | Applies a detection-rule update received from Cloud to the Edge rule replica. | Dependency on `DetectionRuleRepository` | `handle(event)` | Persists the Edge representation of `DetectionRule`. |
-| `RiskDetectionReceivedEventHandler` | Application | Cloud | Processes synchronized risk-detection information received from the Edge flow and persists the corresponding detection state. | Dependency on `RiskDetectionRepository` | `handle(event)` | Reconstructs or updates `RiskDetection`. |
-| `GetRiskDetectionQuery` | Application | Cloud | Represents a request for the current information of a persisted risk detection. | `riskDetectionId: UUID` | — | Handled by `GetRiskDetectionQueryHandler`. |
-| `GetRiskDetectionQueryHandler` | Application | Cloud | Retrieves a persisted risk detection for application clients. | Dependency on `RiskDetectionRepository` | `handle(query)` | Reads `RiskDetection`. |
-| `GetRiskDetectionEvidenceQuery` | Application | Cloud | Represents a request for the evidence associated with a detection. | `riskDetectionId: UUID` | — | Handled by `GetRiskDetectionEvidenceQueryHandler`. |
-| `GetRiskDetectionEvidenceQueryHandler` | Application | Cloud | Retrieves the evidence and severity traceability associated with a detection. | Dependency on `RiskDetectionRepository` | `handle(query)` | Reads `RiskDetection`, `DetectionEvidence`, and `SeverityChange`. |
-| `DetectionRuleDistributor` | Application | Cloud | Abstraction used to distribute the rule state required by the Edge execution environment. | — | `distribute(rule)` | Implemented by `DetectionRuleDistributionAdapter`. |
-| `RiskLocationResolver` | Application | Edge | Abstraction used to resolve Building and Zone identifiers from the device associated with a measurement. | — | `resolve(deviceId)` | Implemented by `RiskLocationIntegrationAdapter`. |
-| `RiskDetectionEventPublisher` | Application | Edge | Abstraction used to publish a locally generated risk-detection event without coupling the Application Layer to a message broker or connectivity mechanism. | — | `publish(event)` | Implemented by `RiskDetectionEventPublisherAdapter`. |
-| `DetectionRuleController` | Interface | Cloud | Receives authorized REST requests for configuring and activating/deactivating detection rules. | Dependencies on detection-rule command handlers | `configure(request)`, `changeStatus(ruleId, request)` | Delegates to Application Layer command handlers. |
-| `RiskDetectionController` | Interface | Cloud | Exposes persisted risk-detection information and its evidence to authorized clients. | Dependencies on risk-detection query handlers | `getById(id)`, `getEvidence(id)` | Delegates to Application Layer query handlers. |
-| `RiskDetectionEventConsumer` | Interface | Cloud | Receives synchronized risk-detection events produced by the distributed Edge flow. | Dependency on `RiskDetectionReceivedEventHandler` | `consume(event)` | Delegates incoming detection events to the Application Layer. |
-| `MeasurementConsumer` | Interface | Edge | Receives valid measurements from the local monitoring flow and forwards them for rule evaluation. | Dependency on `MeasurementReceivedEventHandler` | `consume(measurement)` | Delegates incoming measurement events to the Edge Application Layer. |
-| `DetectionRuleReplicaConsumer` | Interface | Edge | Receives rule updates distributed from Cloud. | Dependency on `UpdateLocalDetectionRuleEventHandler` | `consume(ruleUpdate)` | Delegates rule updates to the Edge Application Layer. |
-| `DetectionRuleRepositoryAdapter` | Infrastructure | Cloud | Implements `DetectionRuleRepository` using the Cloud persistence technology selected by the team. | Persistence dependency | `findById()`, `findActiveByVariableType()`, `save()` | Implements `DetectionRuleRepository`. |
-| `RiskDetectionRepositoryAdapter` | Infrastructure | Cloud | Implements `RiskDetectionRepository` for risk detections, evidence, and severity changes. | Persistence dependency | `findById()`, `save()` | Implements `RiskDetectionRepository`. |
-| `DetectionRuleDistributionAdapter` | Infrastructure | Cloud | Implements detection-rule distribution toward the Edge execution environment. | Messaging/integration dependency | `distribute(rule)` | Implements `DetectionRuleDistributor`. |
-| `EdgeDetectionRuleRepositoryAdapter` | Infrastructure | Edge | Implements local detection-rule persistence using the Edge persistence stack. | Peewee / SQLite dependency | `findById()`, `findActiveByVariableType()`, `save()` | Edge implementation of `DetectionRuleRepository`. |
-| `RiskLocationIntegrationAdapter` | Infrastructure | Edge | Obtains Building and Zone references associated with the device without making Risk Detection owner of those domains. | Integration dependency | `resolve(deviceId)` | Implements `RiskLocationResolver`. |
-| `RiskDetectionEventPublisherAdapter` | Infrastructure | Edge | Publishes locally detected risk events to the downstream distributed flow. | Messaging/connectivity dependency | `publish(event)` | Implements `RiskDetectionEventPublisher`. |
+| `DetectionRule` | Domain | Cloud / Edge | Aggregate Root que representa una regla activa o inactiva utilizada para determinar si un valor monitoreado representa una condición de riesgo. | `ruleId: UUID`, `riskType: RiskType`, `severityLevel: SeverityLevel`, `condition: DetectionCondition`, `status: DetectionRuleStatus` | `updateCondition(condition)`, `activate()`, `deactivate()`, `isActive()`, `supports(variableType)` | Compone un `DetectionCondition`, un `RiskType`, un `SeverityLevel` y un `DetectionRuleStatus`. |
+| `DetectionCondition` | Domain | Cloud / Edge | Value Object que define la comparación que debe realizarse sobre una variable monitoreada. | `variableType: String`, `operator: ComparisonOperator`, `threshold: Decimal` | `isValid()`, `matches(variableType, value)` | Pertenece a `DetectionRule`; utiliza `ComparisonOperator`. |
+| `RiskDetection` | Domain | Cloud / Edge | Aggregate Root que representa un riesgo detectado junto con su severidad actual, ubicación, evidencia y trazabilidad de los cambios de severidad. | `riskDetectionId: UUID`, `ruleId: UUID`, `riskType: RiskType`, `currentSeverity: SeverityLevel`, `location: RiskLocation`, `detectedAt: Instant`, `evidence: List<DetectionEvidence>`, `severityChanges: List<SeverityChange>` | `addEvidence(evidence)`, `updateSeverity(newSeverity, changedAt)`, `hasSeverity(severity)` | Compone `RiskLocation`, `DetectionEvidence`, `SeverityChange`, `RiskType` y `SeverityLevel`; referencia una `DetectionRule` mediante `ruleId`. |
+| `DetectionEvidence` | Domain | Cloud / Edge | Value Object que contiene la información monitoreada utilizada como evidencia para una decisión de detección de riesgo. | `measurementId: UUID`, `deviceId: UUID`, `variableType: String`, `value: Decimal`, `measuredAt: Instant` | `matchesVariable(variableType)` | Pertenece a `RiskDetection`; referencia Measurement y Device mediante identificadores externos. |
+| `RiskLocation` | Domain | Cloud / Edge | Value Object que representa el contexto de ubicación conocido de una detección sin reproducir el modelo de dominio de Building. | `buildingId: UUID?`, `zoneId: UUID?`, `resolutionStatus: LocationResolutionStatus` | `isResolved()` | Pertenece a `RiskDetection`; utiliza identificadores externos de Building/Zone. |
+| `SeverityChange` | Domain | Cloud | Entity perteneciente a `RiskDetection` que preserva una transición entre niveles de severidad. | `severityChangeId: UUID`, `previousSeverity: SeverityLevel`, `newSeverity: SeverityLevel`, `changedAt: Instant` | — | Pertenece a `RiskDetection`; utiliza valores `SeverityLevel`. |
+| `RiskType` | Domain | Cloud / Edge | Value Object que representa el tipo de riesgo identificado por una regla de detección. | `code: String` | `code()`, `equals(other)` | Utilizado por `DetectionRule` y `RiskDetection`. |
+| `SeverityLevel` | Domain | Cloud / Edge | Value Object que representa la severidad asignada a un riesgo sin imponer un catálogo fijo de severidad que no está definido por los requisitos actuales. | `code: String` | `code()`, `equals(other)` | Utilizado por `DetectionRule`, `RiskDetection` y `SeverityChange`. |
+| `DetectionRuleStatus` | Domain | Cloud / Edge | Enumeración que representa si una regla de detección puede participar en la evaluación. | `ACTIVE`, `INACTIVE` | — | Utilizada por `DetectionRule`. |
+| `ComparisonOperator` | Domain | Cloud / Edge | Enumeración que representa la operación de comparación realizada por una condición de detección. | `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `LESS_THAN`, `LESS_THAN_OR_EQUAL`, `EQUAL` | — | Utilizada por `DetectionCondition`. |
+| `LocationResolutionStatus` | Domain | Cloud / Edge | Enumeración que indica si la ubicación de un riesgo detectado pudo resolverse a partir del contexto disponible del dispositivo. | `RESOLVED`, `UNRESOLVED` | — | Utilizada por `RiskLocation`. |
+| `DetectionRuleRepository` | Domain | Cloud / Edge | Abstracción de Repository para recuperar y persistir reglas de detección. | — | `findById(ruleId)`, `findActiveByVariableType(variableType)`, `save(rule)` | Persiste y recupera agregados `DetectionRule`. |
+| `RiskDetectionRepository` | Domain | Cloud | Abstracción de Repository para detecciones de riesgo persistidas. | — | `findById(riskDetectionId)`, `save(riskDetection)` | Persiste y recupera agregados `RiskDetection`. |
+| `RiskEvaluationService` | Domain | Edge | Domain Service responsable de determinar si una regla de detección activa se satisface mediante evidencia válida de detección. | — | `matches(rule, evidence)` | Evalúa `DetectionRule` utilizando `DetectionEvidence`. |
+| `RiskDetectedEvent` | Domain | Edge | Domain Event producido cuando se satisface una regla de detección y una detección de riesgo debe continuar por el flujo distribuido de ResQ. | `riskDetectionId: UUID`, `ruleId: UUID`, `riskType: String`, `severity: String`, `buildingId: UUID?`, `zoneId: UUID?`, `occurredAt: Instant` | — | Generado a partir de `RiskDetection` y publicado mediante una abstracción de aplicación. |
+| `ConfigureDetectionRuleCommand` | Application | Cloud | Representa la solicitud para configurar una regla de detección. | `riskTypeCode: String`, `severityCode: String`, `variableType: String`, `operator: String`, `threshold: Decimal` | — | Gestionado por `ConfigureDetectionRuleCommandHandler`. |
+| `ConfigureDetectionRuleCommandHandler` | Application | Cloud | Coordina la creación o configuración de reglas de detección. | Dependencias de `DetectionRuleRepository` y `DetectionRuleDistributor` | `handle(command)` | Crea/actualiza `DetectionRule` y solicita su distribución hacia Edge. |
+| `ChangeDetectionRuleStatusCommand` | Application | Cloud | Representa una solicitud para activar o desactivar una regla de detección existente. | `ruleId: UUID`, `active: boolean` | — | Gestionado por `ChangeDetectionRuleStatusCommandHandler`. |
+| `ChangeDetectionRuleStatusCommandHandler` | Application | Cloud | Coordina la activación/desactivación de reglas preservando su validez. | Dependencias de `DetectionRuleRepository` y `DetectionRuleDistributor` | `handle(command)` | Modifica `DetectionRule` y distribuye el estado resultante. |
+| `MeasurementReceivedEventHandler` | Application | Edge | Gestiona una medición monitoreada válida entregada a Risk Detection y coordina su evaluación local. | Dependencias de `DetectionRuleRepository`, `RiskLocationResolver`, `RiskEvaluationService`, `RiskDetectionEventPublisher` | `handle(event)` | Evalúa la evidencia de medición utilizando agregados locales activos `DetectionRule`. |
+| `UpdateLocalDetectionRuleEventHandler` | Application | Edge | Aplica una actualización de regla de detección recibida desde Cloud a la réplica de la regla en Edge. | Dependencia de `DetectionRuleRepository` | `handle(event)` | Persiste la representación de `DetectionRule` en Edge. |
+| `RiskDetectionReceivedEventHandler` | Application | Cloud | Procesa la información sincronizada de detección de riesgos recibida desde el flujo Edge y persiste el estado de detección correspondiente. | Dependencia de `RiskDetectionRepository` | `handle(event)` | Reconstruye o actualiza `RiskDetection`. |
+| `GetRiskDetectionQuery` | Application | Cloud | Representa una solicitud de la información actual de una detección de riesgo persistida. | `riskDetectionId: UUID` | — | Gestionada por `GetRiskDetectionQueryHandler`. |
+| `GetRiskDetectionQueryHandler` | Application | Cloud | Recupera una detección de riesgo persistida para los clientes de la aplicación. | Dependencia de `RiskDetectionRepository` | `handle(query)` | Lee `RiskDetection`. |
+| `GetRiskDetectionEvidenceQuery` | Application | Cloud | Representa una solicitud de la evidencia asociada con una detección. | `riskDetectionId: UUID` | — | Gestionada por `GetRiskDetectionEvidenceQueryHandler`. |
+| `GetRiskDetectionEvidenceQueryHandler` | Application | Cloud | Recupera la evidencia y la trazabilidad de severidad asociadas con una detección. | Dependencia de `RiskDetectionRepository` | `handle(query)` | Lee `RiskDetection`, `DetectionEvidence` y `SeverityChange`. |
+| `DetectionRuleDistributor` | Application | Cloud | Abstracción utilizada para distribuir el estado de las reglas requerido por el entorno de ejecución Edge. | — | `distribute(rule)` | Implementada por `DetectionRuleDistributionAdapter`. |
+| `RiskLocationResolver` | Application | Edge | Abstracción utilizada para resolver identificadores de Building y Zone a partir del dispositivo asociado con una medición. | — | `resolve(deviceId)` | Implementada por `RiskLocationIntegrationAdapter`. |
+| `RiskDetectionEventPublisher` | Application | Edge | Abstracción utilizada para publicar un evento de detección de riesgo generado localmente sin acoplar la Application Layer a un intermediario de mensajes ni a un mecanismo de conectividad. | — | `publish(event)` | Implementada por `RiskDetectionEventPublisherAdapter`. |
+| `DetectionRuleController` | Interface | Cloud | Recibe solicitudes REST autorizadas para configurar y activar/desactivar reglas de detección. | Dependencias de los Command Handlers de reglas de detección | `configure(request)`, `changeStatus(ruleId, request)` | Delega a los Command Handlers de la Application Layer. |
+| `RiskDetectionController` | Interface | Cloud | Expone la información persistida de detección de riesgos y su evidencia a los clientes autorizados. | Dependencias de los Query Handlers de detección de riesgos | `getById(id)`, `getEvidence(id)` | Delega a los Query Handlers de la Application Layer. |
+| `RiskDetectionEventConsumer` | Interface | Cloud | Recibe eventos sincronizados de detección de riesgos producidos por el flujo distribuido de Edge. | Dependencia de `RiskDetectionReceivedEventHandler` | `consume(event)` | Delega los eventos entrantes de detección a la Application Layer. |
+| `MeasurementConsumer` | Interface | Edge | Recibe mediciones válidas del flujo local de monitoreo y las remite para la evaluación de reglas. | Dependencia de `MeasurementReceivedEventHandler` | `consume(measurement)` | Delega los eventos entrantes de medición a la Application Layer de Edge. |
+| `DetectionRuleReplicaConsumer` | Interface | Edge | Recibe actualizaciones de reglas distribuidas desde Cloud. | Dependencia de `UpdateLocalDetectionRuleEventHandler` | `consume(ruleUpdate)` | Delega las actualizaciones de reglas a la Application Layer de Edge. |
+| `DetectionRuleRepositoryAdapter` | Infrastructure | Cloud | Implementa `DetectionRuleRepository` utilizando la tecnología de persistencia Cloud seleccionada por el equipo. | Dependencia de persistencia | `findById()`, `findActiveByVariableType()`, `save()` | Implementa `DetectionRuleRepository`. |
+| `RiskDetectionRepositoryAdapter` | Infrastructure | Cloud | Implementa `RiskDetectionRepository` para detecciones de riesgo, evidencias y cambios de severidad. | Dependencia de persistencia | `findById()`, `save()` | Implementa `RiskDetectionRepository`. |
+| `DetectionRuleDistributionAdapter` | Infrastructure | Cloud | Implementa la distribución de reglas de detección hacia el entorno de ejecución Edge. | Dependencia de mensajería/integración | `distribute(rule)` | Implementa `DetectionRuleDistributor`. |
+| `EdgeDetectionRuleRepositoryAdapter` | Infrastructure | Edge | Implementa la persistencia local de reglas de detección utilizando la pila de persistencia Edge. | Dependencia de Peewee / SQLite | `findById()`, `findActiveByVariableType()`, `save()` | Implementación Edge de `DetectionRuleRepository`. |
+| `RiskLocationIntegrationAdapter` | Infrastructure | Edge | Obtiene las referencias de Building y Zone asociadas con el dispositivo sin convertir a Risk Detection en propietario de esos dominios. | Dependencia de integración | `resolve(deviceId)` | Implementa `RiskLocationResolver`. |
+| `RiskDetectionEventPublisherAdapter` | Infrastructure | Edge | Publica eventos de riesgo detectados localmente hacia las etapas posteriores del flujo distribuido. | Dependencia de mensajería/conectividad | `publish(event)` | Implementa `RiskDetectionEventPublisher`. |
 
-The design deliberately separates the ownership of risk-detection concepts from information owned by other Bounded Contexts.
+El diseño separa deliberadamente la propiedad de los conceptos de detección de riesgos de la información perteneciente a otros Bounded Contexts.
 
-`DetectionEvidence` contains `measurementId` and `deviceId` as external references and as evidence snapshots, but Risk Detection does not manage the complete Measurement or Device aggregates.
+`DetectionEvidence` contiene `measurementId` y `deviceId` como referencias externas y como instantáneas de evidencia, pero Risk Detection no gestiona los agregados completos Measurement o Device.
 
-`RiskLocation` maintains `buildingId` and `zoneId` only as external location references. The lifecycle of buildings and zones remains outside Risk Detection.
+`RiskLocation` mantiene `buildingId` y `zoneId` únicamente como referencias externas de ubicación. El ciclo de vida de los edificios y zonas permanece fuera de Risk Detection.
 
-Likewise, `RiskDetectedEvent` communicates that a risk has been detected, but Risk Detection does not create alerts, send notifications, execute actuators, or manage the lifecycle of an incident.
+Del mismo modo, `RiskDetectedEvent` comunica que se ha detectado un riesgo, pero Risk Detection no crea alertas, no envía notificaciones, no ejecuta actuadores ni gestiona el ciclo de vida de un incidente.
 
 ---
 
 #### 4.2.2.1. Domain Layer
 
-The **Domain Layer** represents the rules and concepts required to transform monitored quantitative information into a meaningful risk detection.
+La **Domain Layer** representa las reglas y conceptos requeridos para transformar información cuantitativa monitoreada en una detección de riesgo significativa.
 
-The Domain Layer remains independent from HTTP, Flask, Cloud frameworks, SQLite, messaging technologies, and external services.
+La Domain Layer permanece independiente de HTTP, Flask, frameworks Cloud, SQLite, tecnologías de mensajería y servicios externos.
 
-The principal Aggregate Roots are `DetectionRule` and `RiskDetection`.
+Los principales Aggregate Roots son `DetectionRule` y `RiskDetection`.
 
 ##### DetectionRule
 
-**Category:** Aggregate Root.
+**Categoría:** Aggregate Root.
 
-**Purpose:** Represent a configurable rule that determines whether a monitored variable satisfies a condition associated with a specific type and severity of risk.
+**Propósito:** Representar una regla configurable que determina si una variable monitoreada satisface una condición asociada con un tipo y una severidad específicos de riesgo.
 
-**Attributes:**
+**Atributos:**
 
-- `ruleId: UUID` — Unique identifier of the detection rule.
-- `riskType: RiskType` — Type of risk represented by the rule.
-- `severityLevel: SeverityLevel` — Severity produced when the rule is satisfied.
-- `condition: DetectionCondition` — Quantitative condition evaluated against monitored information.
-- `status: DetectionRuleStatus` — Indicates whether the rule participates in evaluation.
+- `ruleId: UUID` — Identificador único de la regla de detección.
+- `riskType: RiskType` — Tipo de riesgo representado por la regla.
+- `severityLevel: SeverityLevel` — Severidad producida cuando se satisface la regla.
+- `condition: DetectionCondition` — Condición cuantitativa evaluada sobre la información monitoreada.
+- `status: DetectionRuleStatus` — Indica si la regla participa en la evaluación.
 
-**Operations:**
+**Operaciones:**
 
-- `updateCondition(condition)` — Replaces the current detection condition with a valid condition.
-- `activate()` — Activates the rule only when its configuration is valid.
-- `deactivate()` — Prevents the rule from participating in future evaluations.
-- `isActive()` — Indicates whether the rule can currently be evaluated.
-- `supports(variableType)` — Indicates whether the rule applies to the specified monitored variable.
+- `updateCondition(condition)` — Reemplaza la condición de detección actual por una condición válida.
+- `activate()` — Activa la regla únicamente cuando su configuración es válida.
+- `deactivate()` — Impide que la regla participe en evaluaciones futuras.
+- `isActive()` — Indica si la regla puede evaluarse actualmente.
+- `supports(variableType)` — Indica si la regla se aplica a la variable monitoreada especificada.
 
-A rule that contains an invalid condition must not be activated.
+Una regla que contiene una condición inválida no debe activarse.
 
 ##### DetectionCondition
 
-**Category:** Value Object.
+**Categoría:** Value Object.
 
-**Purpose:** Represent the comparison performed against a monitored value.
+**Propósito:** Representar la comparación realizada sobre un valor monitoreado.
 
-**Attributes:**
+**Atributos:**
 
 - `variableType: String`
 - `operator: ComparisonOperator`
 - `threshold: Decimal`
 
-**Operations:**
+**Operaciones:**
 
-- `isValid()` — Validates that the condition contains the information required for evaluation.
-- `matches(variableType, value)` — Determines whether the provided monitored value satisfies the condition.
+- `isValid()` — Valida que la condición contenga la información requerida para la evaluación.
+- `matches(variableType, value)` — Determina si el valor monitoreado proporcionado satisface la condición.
 
-The condition does not contain information about a physical sensor model. It operates using the monitored variable and value so that the detection domain remains independent from specific hardware.
+La condición no contiene información sobre un modelo de sensor físico. Opera utilizando la variable y el valor monitoreados para que el dominio de detección permanezca independiente de hardware específico.
 
 ##### RiskDetection
 
-**Category:** Aggregate Root.
+**Categoría:** Aggregate Root.
 
-**Purpose:** Represent a risk that has been detected and preserve the contextual information required to explain the detection.
+**Propósito:** Representar un riesgo detectado y preservar la información contextual requerida para explicar la detección.
 
-**Attributes:**
+**Atributos:**
 
 - `riskDetectionId: UUID`
 - `ruleId: UUID`
@@ -3182,21 +3182,21 @@ The condition does not contain information about a physical sensor model. It ope
 - `evidence: List<DetectionEvidence>`
 - `severityChanges: List<SeverityChange>`
 
-**Operations:**
+**Operaciones:**
 
-- `addEvidence(evidence)` — Adds monitored evidence associated with the same detection.
-- `updateSeverity(newSeverity, changedAt)` — Updates the current severity and preserves the previous value as part of the severity-change history.
-- `hasSeverity(severity)` — Indicates whether the detection currently has the specified severity.
+- `addEvidence(evidence)` — Añade evidencia monitoreada asociada con la misma detección.
+- `updateSeverity(newSeverity, changedAt)` — Actualiza la severidad actual y preserva el valor anterior como parte del historial de cambios de severidad.
+- `hasSeverity(severity)` — Indica si la detección tiene actualmente la severidad especificada.
 
-A Risk Detection does not become an Incident. Incident lifecycle and operational follow-up belong to the Incident Bounded Context.
+Una Risk Detection no se convierte en un Incident. El ciclo de vida y el seguimiento operativo de Incident pertenecen al Bounded Context Incident.
 
 ##### DetectionEvidence
 
-**Category:** Value Object.
+**Categoría:** Value Object.
 
-**Purpose:** Preserve the relevant monitored information used to justify the result of the detection process.
+**Propósito:** Preservar la información monitoreada relevante utilizada para justificar el resultado del proceso de detección.
 
-**Attributes:**
+**Atributos:**
 
 - `measurementId: UUID`
 - `deviceId: UUID`
@@ -3204,87 +3204,87 @@ A Risk Detection does not become an Incident. Incident lifecycle and operational
 - `value: Decimal`
 - `measuredAt: Instant`
 
-**Operation:**
+**Operación:**
 
 - `matchesVariable(variableType)`
 
-The object maintains the measurement and device identifiers as external references. Risk Detection does not modify the source Measurement or Device.
+El objeto mantiene los identificadores de medición y dispositivo como referencias externas. Risk Detection no modifica la Measurement o el Device de origen.
 
 ##### RiskLocation
 
-**Category:** Value Object.
+**Categoría:** Value Object.
 
-**Purpose:** Represent the location associated with a risk detection.
+**Propósito:** Representar la ubicación asociada con una detección de riesgo.
 
-**Attributes:**
+**Atributos:**
 
 - `buildingId: UUID?`
 - `zoneId: UUID?`
 - `resolutionStatus: LocationResolutionStatus`
 
-**Operation:**
+**Operación:**
 
 - `isResolved()`
 
-When the available device context allows the location to be determined, the status is `RESOLVED`.
+Cuando el contexto disponible del dispositivo permite determinar la ubicación, el estado es `RESOLVED`.
 
-When a valid location cannot be determined, Risk Detection must represent that fact explicitly through `UNRESOLVED` instead of inventing a location.
+Cuando no puede determinarse una ubicación válida, Risk Detection debe representar ese hecho explícitamente mediante `UNRESOLVED` en lugar de inventar una ubicación.
 
 ##### SeverityChange
 
-**Category:** Entity owned by `RiskDetection`.
+**Categoría:** Entity perteneciente a `RiskDetection`.
 
-**Purpose:** Preserve traceability when the severity associated with an existing detection changes.
+**Propósito:** Preservar la trazabilidad cuando cambia la severidad asociada con una detección existente.
 
-**Attributes:**
+**Atributos:**
 
 - `severityChangeId: UUID`
 - `previousSeverity: SeverityLevel`
 - `newSeverity: SeverityLevel`
 - `changedAt: Instant`
 
-This entity directly supports the requirement that a severity update must preserve traceability of the previous state.
+Esta entidad atiende directamente el requisito de que una actualización de severidad debe preservar la trazabilidad del estado anterior.
 
 ##### RiskType
 
-**Category:** Value Object.
+**Categoría:** Value Object.
 
-**Purpose:** Identify the type of risk represented by a rule and a detection.
+**Propósito:** Identificar el tipo de riesgo representado por una regla y una detección.
 
-**Attribute:**
+**Atributo:**
 
 - `code: String`
 
-A closed enumeration of fire, gas, seismic, or other risks is intentionally not imposed because the current requirements do not define an exhaustive fixed catalog.
+No se impone intencionalmente una enumeración cerrada de riesgos de incendio, gas, sismos u otros, porque los requisitos actuales no definen un catálogo fijo exhaustivo.
 
 ##### SeverityLevel
 
-**Category:** Value Object.
+**Categoría:** Value Object.
 
-**Purpose:** Represent the severity associated with a risk.
+**Propósito:** Representar la severidad asociada con un riesgo.
 
-**Attribute:**
+**Atributo:**
 
 - `code: String`
 
-The domain does not impose a fixed `LOW/MEDIUM/HIGH` enumeration because the current requirements establish the existence of a risk level but do not define a mandatory severity scale.
+El dominio no impone una enumeración fija `LOW/MEDIUM/HIGH` porque los requisitos actuales establecen la existencia de un nivel de riesgo, pero no definen una escala obligatoria de severidad.
 
 ##### DetectionRuleStatus
 
-**Category:** Enumeration.
+**Categoría:** Enumeración.
 
-**Values:**
+**Valores:**
 
 - `ACTIVE`
 - `INACTIVE`
 
-Only active rules participate in measurement evaluation.
+Solo las reglas activas participan en la evaluación de mediciones.
 
 ##### ComparisonOperator
 
-**Category:** Enumeration.
+**Categoría:** Enumeración.
 
-**Values:**
+**Valores:**
 
 - `GREATER_THAN`
 - `GREATER_THAN_OR_EQUAL`
@@ -3292,61 +3292,61 @@ Only active rules participate in measurement evaluation.
 - `LESS_THAN_OR_EQUAL`
 - `EQUAL`
 
-These operators allow a quantitative monitored value to be compared with a configured threshold without coupling the domain to a particular sensor.
+Estos operadores permiten comparar un valor cuantitativo monitoreado con un umbral configurado sin acoplar el dominio a un sensor particular.
 
 ##### LocationResolutionStatus
 
-**Category:** Enumeration.
+**Categoría:** Enumeración.
 
-**Values:**
+**Valores:**
 
 - `RESOLVED`
 - `UNRESOLVED`
 
 ##### DetectionRuleRepository
 
-**Category:** Repository Interface.
+**Categoría:** Repository Interface.
 
-**Purpose:** Provide persistence operations for `DetectionRule` while keeping the Domain Layer independent from Cloud or Edge persistence technologies.
+**Propósito:** Proporcionar operaciones de persistencia para `DetectionRule`, manteniendo la Domain Layer independiente de las tecnologías de persistencia Cloud o Edge.
 
-**Operations:**
+**Operaciones:**
 
 - `findById(ruleId)`
 - `findActiveByVariableType(variableType)`
 - `save(rule)`
 
-The same abstraction can have different Infrastructure implementations for Cloud persistence and Edge SQLite persistence.
+La misma abstracción puede tener diferentes implementaciones de Infrastructure para la persistencia Cloud y la persistencia SQLite de Edge.
 
 ##### RiskDetectionRepository
 
-**Category:** Repository Interface.
+**Categoría:** Repository Interface.
 
-**Purpose:** Persist and retrieve `RiskDetection` aggregates in the Cloud persistence environment.
+**Propósito:** Persistir y recuperar agregados `RiskDetection` en el entorno de persistencia Cloud.
 
-**Operations:**
+**Operaciones:**
 
 - `findById(riskDetectionId)`
 - `save(riskDetection)`
 
 ##### RiskEvaluationService
 
-**Category:** Domain Service.
+**Categoría:** Domain Service.
 
-**Purpose:** Evaluate whether a valid monitored evidence item satisfies an active detection rule.
+**Propósito:** Evaluar si un elemento válido de evidencia monitoreada satisface una regla de detección activa.
 
-**Operation:**
+**Operación:**
 
 - `matches(rule, evidence)`
 
-The service coordinates the domain comparison when the evaluation requires both a `DetectionRule` and `DetectionEvidence`.
+El servicio coordina la comparación de dominio cuando la evaluación requiere tanto una `DetectionRule` como `DetectionEvidence`.
 
 ##### RiskDetectedEvent
 
-**Category:** Domain Event.
+**Categoría:** Domain Event.
 
-**Purpose:** Represent the fact that a configured risk condition was detected locally and must continue through the distributed ResQ flow.
+**Propósito:** Representar el hecho de que se detectó localmente una condición de riesgo configurada y que debe continuar por el flujo distribuido de ResQ.
 
-**Attributes:**
+**Atributos:**
 
 - `riskDetectionId: UUID`
 - `ruleId: UUID`
@@ -3356,152 +3356,152 @@ The service coordinates the domain comparison when the evaluation requires both 
 - `zoneId: UUID?`
 - `occurredAt: Instant`
 
-The event communicates the detection result but does not define the alert, notification, actuator command, or incident that may subsequently be created by other Bounded Contexts.
+El evento comunica el resultado de detección, pero no define la alerta, notificación, comando de actuador o incidente que otros Bounded Contexts pueden crear posteriormente.
 
-##### Business Rules
+##### Reglas de negocio
 
-The Risk Detection domain applies the following business rules:
+El dominio de Risk Detection aplica las siguientes reglas de negocio:
 
-1. A detection rule must contain a valid detection condition before it can be activated.
+1. Una regla de detección debe contener una condición de detección válida antes de poder activarse.
 
-2. An inactive detection rule must not participate in measurement evaluation.
+2. Una regla de detección inactiva no debe participar en la evaluación de mediciones.
 
-3. A detection rule can only evaluate monitored information corresponding to the variable type defined in its condition.
+3. Una regla de detección solo puede evaluar información monitoreada correspondiente al tipo de variable definido en su condición.
 
-4. Only valid monitored information delivered to Risk Detection may participate in evaluation.
+4. Solo la información monitoreada válida entregada a Risk Detection puede participar en la evaluación.
 
-5. When a monitored value does not satisfy the configured condition, Risk Detection must not create a positive risk detection from that rule.
+5. Cuando un valor monitoreado no satisface la condición configurada, Risk Detection no debe crear una detección positiva de riesgo a partir de esa regla.
 
-6. When an active detection rule is satisfied, the resulting detection uses the `RiskType` and `SeverityLevel` defined by that rule.
+6. Cuando se satisface una regla de detección activa, la detección resultante utiliza el `RiskType` y el `SeverityLevel` definidos por esa regla.
 
-7. Every positive risk detection must preserve the relevant monitored evidence that originated the decision.
+7. Toda detección positiva de riesgo debe preservar la evidencia monitoreada relevante que originó la decisión.
 
-8. Evidence must retain the measurement identifier, device identifier, monitored variable, value, and original measurement time.
+8. La evidencia debe conservar el identificador de medición, el identificador de dispositivo, la variable monitoreada, el valor y el momento original de la medición.
 
-9. When multiple relevant measurements participate in the evolution of the same detection, the corresponding evidence must remain associated with that detection.
+9. Cuando múltiples mediciones relevantes participan en la evolución de la misma detección, la evidencia correspondiente debe permanecer asociada con esa detección.
 
-10. Risk Detection must attempt to resolve the Building and Zone associated with the originating device.
+10. Risk Detection debe intentar resolver el Building y la Zone asociados con el dispositivo de origen.
 
-11. When the location cannot be resolved using valid information, the detection must be marked with an unresolved location instead of being assigned an unverified location.
+11. Cuando la ubicación no puede resolverse utilizando información válida, la detección debe marcarse con una ubicación no resuelta en lugar de asignarle una ubicación no verificada.
 
-12. When the severity of an existing detection changes, the previous severity, new severity, and change time must remain traceable.
+12. Cuando cambia la severidad de una detección existente, la severidad anterior, la nueva severidad y el momento del cambio deben permanecer trazables.
 
-13. Critical detection rules required for local operation must remain available in the Edge environment so that measurement evaluation does not permanently depend on Cloud connectivity.
+13. Las reglas de detección críticas requeridas para la operación local deben permanecer disponibles en el entorno Edge para que la evaluación de mediciones no dependa permanentemente de la conectividad con Cloud.
 
-14. A successful local risk evaluation generates the domain information required to continue the distributed emergency-processing flow.
+14. Una evaluación local satisfactoria de riesgo genera la información de dominio requerida para continuar el flujo distribuido de procesamiento de emergencias.
 
-15. Risk Detection does not create Alerts, Notifications, Actuator Commands, or Incidents directly.
+15. Risk Detection no crea Alerts, Notifications, Actuator Commands ni Incidents directamente.
 
-16. Temporary storage and later synchronization of remote events during an Internet interruption are not owned by Risk Detection; those responsibilities belong to the Connectivity flow.
+16. El almacenamiento temporal y la sincronización posterior de eventos remotos durante una interrupción de Internet no pertenecen a Risk Detection; esas responsabilidades pertenecen al flujo de Connectivity.
 
 ---
 
 #### 4.2.2.2. Interface Layer
 
-The **Interface Layer** exposes the Risk Detection capabilities to external clients and receives information from other parts of the distributed ResQ architecture.
+La **Interface Layer** expone las capacidades de Risk Detection a clientes externos y recibe información de otras partes de la arquitectura distribuida de ResQ.
 
-Because Risk Detection participates in both Cloud and Edge execution, the Interface Layer contains different entry points according to the runtime.
+Como Risk Detection participa en la ejecución tanto en Cloud como en Edge, la Interface Layer contiene diferentes puntos de entrada según el entorno de ejecución.
 
-The Cloud Interface Layer exposes authorized configuration and query operations.
+La Interface Layer de Cloud expone operaciones autorizadas de configuración y consulta.
 
-The Edge Interface Layer receives monitored measurements and replicas of active detection rules required for local evaluation.
+La Interface Layer de Edge recibe mediciones monitoreadas y réplicas de reglas de detección activas requeridas para la evaluación local.
 
-Business rules are not implemented in the Interface Layer.
+Las reglas de negocio no se implementan en la Interface Layer.
 
 ##### DetectionRuleController
 
-**Runtime:** Cloud.
+**Entorno de ejecución:** Cloud.
 
-`DetectionRuleController` receives authorized REST requests related to detection-rule configuration.
+`DetectionRuleController` recibe solicitudes REST autorizadas relacionadas con la configuración de reglas de detección.
 
-Its responsibilities include:
+Sus responsabilidades incluyen:
 
-- receiving the information required to configure a detection rule;
-- validating the basic request representation;
-- creating a `ConfigureDetectionRuleCommand`;
-- creating a `ChangeDetectionRuleStatusCommand`;
-- delegating operations to the corresponding Application Layer handlers.
+- recibir la información requerida para configurar una regla de detección;
+- validar la representación básica de la solicitud;
+- crear un `ConfigureDetectionRuleCommand`;
+- crear un `ChangeDetectionRuleStatusCommand`;
+- delegar las operaciones a los manejadores correspondientes de la Application Layer.
 
-Example conceptual resources:
+Recursos conceptuales de ejemplo:
 
 ```text
 POST /api/v1/risk-detection/rules
 PATCH /api/v1/risk-detection/rules/{ruleId}/status
 ```
 
-The controller does not directly determine whether a condition is valid and does not persist rules directly.
+El controlador no determina directamente si una condición es válida ni persiste reglas directamente.
 
 ##### RiskDetectionController
 
-**Runtime:** Cloud.
+**Entorno de ejecución:** Cloud.
 
-`RiskDetectionController` provides authorized access to persisted risk detections and their evidence.
+`RiskDetectionController` proporciona acceso autorizado a las detecciones de riesgo persistidas y sus evidencias.
 
-Example conceptual resources:
+Recursos conceptuales de ejemplo:
 
 ```text
 GET /api/v1/risk-detections/{riskDetectionId}
 GET /api/v1/risk-detections/{riskDetectionId}/evidence
 ```
 
-The controller delegates query execution to `GetRiskDetectionQueryHandler` and `GetRiskDetectionEvidenceQueryHandler`.
+El controlador delega la ejecución de consultas a `GetRiskDetectionQueryHandler` y `GetRiskDetectionEvidenceQueryHandler`.
 
-It does not access the database directly.
+No accede directamente a la base de datos.
 
 ##### RiskDetectionEventConsumer
 
-**Runtime:** Cloud.
+**Entorno de ejecución:** Cloud.
 
-`RiskDetectionEventConsumer` receives synchronized risk-detection information produced by the distributed Edge flow.
+`RiskDetectionEventConsumer` recibe información sincronizada de detección de riesgos producida por el flujo distribuido de Edge.
 
-Its responsibility is to translate an incoming integration representation into the application representation expected by `RiskDetectionReceivedEventHandler`.
+Su responsabilidad es convertir una representación entrante de integración en la representación de aplicación esperada por `RiskDetectionReceivedEventHandler`.
 
-The consumer does not implement synchronization-retry logic because temporary event preservation and reconnection behavior belong to the Connectivity responsibility.
+El consumidor no implementa lógica de reintentos de sincronización porque la preservación temporal de eventos y el comportamiento de reconexión corresponden a la responsabilidad de Connectivity.
 
 ##### MeasurementConsumer
 
-**Runtime:** Edge.
+**Entorno de ejecución:** Edge.
 
-`MeasurementConsumer` receives valid monitored information from the local measurement-processing flow.
+`MeasurementConsumer` recibe información monitoreada válida del flujo local de procesamiento de mediciones.
 
-It transforms the incoming representation into the information expected by `MeasurementReceivedEventHandler`.
+Transforma la representación entrante en la información esperada por `MeasurementReceivedEventHandler`.
 
-The consumer does not evaluate detection rules directly.
+El consumidor no evalúa reglas de detección directamente.
 
 ##### DetectionRuleReplicaConsumer
 
-**Runtime:** Edge.
+**Entorno de ejecución:** Edge.
 
-`DetectionRuleReplicaConsumer` receives detection-rule updates distributed from Cloud.
+`DetectionRuleReplicaConsumer` recibe actualizaciones de reglas de detección distribuidas desde Cloud.
 
-It delegates the update to `UpdateLocalDetectionRuleEventHandler`, allowing the Edge runtime to maintain the local rule information required for autonomous detection.
+Delega la actualización a `UpdateLocalDetectionRuleEventHandler`, permitiendo que el entorno de ejecución Edge mantenga la información local de reglas requerida para la detección autónoma.
 
-The Interface Layer remains independent from the internal persistence implementation used for those rules.
+La Interface Layer permanece independiente de la implementación interna de persistencia utilizada para esas reglas.
 
 #### 4.2.2.3. Application Layer
 
-The Application Layer coordinates the Risk Detection use cases across the Cloud and Edge runtimes.
+La Application Layer coordina los casos de uso de Risk Detection en los entornos de ejecución Cloud y Edge.
 
-It uses Domain Layer objects and repository abstractions while remaining independent from database engines, message brokers, Cloud frameworks, and Edge persistence implementation details.
+Utiliza objetos de la Domain Layer y abstracciones de repositorios, manteniéndose independiente de motores de bases de datos, intermediarios de mensajes, frameworks Cloud y detalles de implementación de persistencia Edge.
 
-The main application capabilities are:
+Las principales capacidades de aplicación son:
 
-- detection-rule configuration;
-- detection-rule activation and deactivation;
-- distribution of detection rules to Edge;
-- local measurement evaluation;
-- location resolution;
-- publication of locally detected risks;
-- Cloud persistence of synchronized detections;
-- consultation of detections and their evidence.
+- configuración de reglas de detección;
+- activación y desactivación de reglas de detección;
+- distribución de reglas de detección hacia Edge;
+- evaluación local de mediciones;
+- resolución de ubicación;
+- publicación de riesgos detectados localmente;
+- persistencia en Cloud de detecciones sincronizadas;
+- consulta de detecciones y sus evidencias.
 
 ##### ConfigureDetectionRuleCommand
 
-**Runtime:** Cloud.
+**Entorno de ejecución:** Cloud.
 
-Represents a request to configure a detection rule.
+Representa una solicitud para configurar una regla de detección.
 
-**Attributes:**
+**Atributos:**
 
 - `riskTypeCode: String`
 - `severityCode: String`
@@ -3511,317 +3511,317 @@ Represents a request to configure a detection rule.
 
 ##### ConfigureDetectionRuleCommandHandler
 
-**Runtime:** Cloud.
+**Entorno de ejecución:** Cloud.
 
-Coordinates detection-rule configuration.
+Coordina la configuración de reglas de detección.
 
-Its execution flow is:
+Su flujo de ejecución es:
 
-1. Receive a `ConfigureDetectionRuleCommand`.
-2. Build the corresponding `RiskType`.
-3. Build the corresponding `SeverityLevel`.
-4. Build a `DetectionCondition`.
-5. Validate the detection condition.
-6. Create or update the `DetectionRule`.
-7. Persist the aggregate through `DetectionRuleRepository`.
-8. Request rule distribution through `DetectionRuleDistributor`.
+1. Recibir un `ConfigureDetectionRuleCommand`.
+2. Construir el `RiskType` correspondiente.
+3. Construir el `SeverityLevel` correspondiente.
+4. Construir una `DetectionCondition`.
+5. Validar la condición de detección.
+6. Crear o actualizar la `DetectionRule`.
+7. Persistir el agregado mediante `DetectionRuleRepository`.
+8. Solicitar la distribución de la regla mediante `DetectionRuleDistributor`.
 
-Invalid conditions must not produce an active detection rule.
+Las condiciones inválidas no deben producir una regla de detección activa.
 
 ##### ChangeDetectionRuleStatusCommand
 
-**Runtime:** Cloud.
+**Entorno de ejecución:** Cloud.
 
-Represents a request to activate or deactivate a detection rule.
+Representa una solicitud para activar o desactivar una regla de detección.
 
-**Attributes:**
+**Atributos:**
 
 - `ruleId: UUID`
 - `active: boolean`
 
 ##### ChangeDetectionRuleStatusCommandHandler
 
-**Runtime:** Cloud.
+**Entorno de ejecución:** Cloud.
 
-Coordinates changes in the operational state of a detection rule.
+Coordina los cambios en el estado operativo de una regla de detección.
 
-The handler:
+El manejador:
 
-1. Retrieves the `DetectionRule`.
-2. When activation is requested, delegates validity enforcement to the aggregate.
-3. Activates or deactivates the rule.
-4. Persists the resulting rule state.
-5. Requests distribution of the new state toward the Edge runtime.
+1. Recupera la `DetectionRule`.
+2. Cuando se solicita la activación, delega al agregado la aplicación de las condiciones de validez.
+3. Activa o desactiva la regla.
+4. Persiste el estado resultante de la regla.
+5. Solicita la distribución del nuevo estado hacia el entorno de ejecución Edge.
 
-The handler does not duplicate the rule-validity invariant outside the Domain Layer.
+El manejador no duplica la invariante de validez de la regla fuera de la Domain Layer.
 
 ##### MeasurementReceivedEventHandler
 
-**Runtime:** Edge.
+**Entorno de ejecución:** Edge.
 
-Coordinates the local evaluation of an incoming monitored measurement.
+Coordina la evaluación local de una medición monitoreada entrante.
 
-Its execution flow is:
+Su flujo de ejecución es:
 
-1. Receive the valid measurement representation from `MeasurementConsumer`.
-2. Construct the corresponding `DetectionEvidence`.
-3. Retrieve active detection rules compatible with the measurement variable using `DetectionRuleRepository`.
-4. Request the location associated with the originating `deviceId` through `RiskLocationResolver`.
-5. Evaluate every applicable rule through `RiskEvaluationService`.
-6. Ignore rules whose conditions are not satisfied.
-7. When a rule is satisfied, create or update the corresponding `RiskDetection` domain information.
-8. Associate the measurement evidence with the detection.
-9. Preserve severity changes when the current severity differs from the new severity.
-10. Create a `RiskDetectedEvent`.
-11. Publish the event through `RiskDetectionEventPublisher`.
+1. Recibir la representación de la medición válida desde `MeasurementConsumer`.
+2. Construir la `DetectionEvidence` correspondiente.
+3. Recuperar las reglas de detección activas compatibles con la variable de medición utilizando `DetectionRuleRepository`.
+4. Solicitar la ubicación asociada con el `deviceId` de origen mediante `RiskLocationResolver`.
+5. Evaluar cada regla aplicable mediante `RiskEvaluationService`.
+6. Ignorar las reglas cuyas condiciones no se satisfagan.
+7. Cuando se satisface una regla, crear o actualizar la información de dominio `RiskDetection` correspondiente.
+8. Asociar la evidencia de medición con la detección.
+9. Preservar los cambios de severidad cuando la severidad actual difiera de la nueva severidad.
+10. Crear un `RiskDetectedEvent`.
+11. Publicar el evento mediante `RiskDetectionEventPublisher`.
 
-This flow is designed to run locally and therefore does not require a Cloud request to perform the critical rule evaluation.
+Este flujo está diseñado para ejecutarse localmente y, por lo tanto, no requiere una solicitud a Cloud para realizar la evaluación crítica de reglas.
 
 ##### UpdateLocalDetectionRuleEventHandler
 
-**Runtime:** Edge.
+**Entorno de ejecución:** Edge.
 
-Coordinates the local application of a detection-rule update distributed from Cloud.
+Coordina la aplicación local de una actualización de regla de detección distribuida desde Cloud.
 
-Its execution flow is:
+Su flujo de ejecución es:
 
-1. Receive the distributed detection-rule representation.
-2. Reconstruct the corresponding `DetectionRule`.
-3. Persist the current rule state through the Edge implementation of `DetectionRuleRepository`.
+1. Recibir la representación distribuida de la regla de detección.
+2. Reconstruir la `DetectionRule` correspondiente.
+3. Persistir el estado actual de la regla mediante la implementación Edge de `DetectionRuleRepository`.
 
-This allows the Edge runtime to continue evaluating critical rules even during temporary loss of Cloud connectivity.
+Esto permite que el entorno de ejecución Edge continúe evaluando reglas críticas incluso durante una pérdida temporal de conectividad con Cloud.
 
 ##### RiskDetectionReceivedEventHandler
 
-**Runtime:** Cloud.
+**Entorno de ejecución:** Cloud.
 
-Coordinates persistence of a risk-detection event received from the Edge flow.
+Coordina la persistencia de un evento de detección de riesgo recibido desde el flujo Edge.
 
-Its responsibilities are:
+Sus responsabilidades son:
 
-- Receive the synchronized detection information.
-- Reconstruct or update the corresponding `RiskDetection`.
-- Preserve the detection evidence included in the event flow.
-- Preserve severity-change information when applicable.
-- Persist the resulting aggregate through `RiskDetectionRepository`.
+- Recibir la información sincronizada de detección.
+- Reconstruir o actualizar la `RiskDetection` correspondiente.
+- Preservar la evidencia de detección incluida en el flujo de eventos.
+- Preservar la información de cambios de severidad cuando corresponda.
+- Persistir el agregado resultante mediante `RiskDetectionRepository`.
 
-The handler does not implement offline event queues or retransmission policies.
+El manejador no implementa colas de eventos sin conexión ni políticas de retransmisión.
 
 ##### GetRiskDetectionQuery
 
-**Runtime:** Cloud.
+**Entorno de ejecución:** Cloud.
 
-**Attribute:**
+**Atributo:**
 
 - `riskDetectionId: UUID`
 
-Represents a request to obtain the current persisted information associated with a risk detection.
+Representa una solicitud para obtener la información actual persistida asociada con una detección de riesgo.
 
 ##### GetRiskDetectionQueryHandler
 
-**Runtime:** Cloud.
+**Entorno de ejecución:** Cloud.
 
-Retrieves the corresponding `RiskDetection` through `RiskDetectionRepository` and provides its current domain representation to the Interface Layer.
+Recupera la `RiskDetection` correspondiente mediante `RiskDetectionRepository` y proporciona su representación actual de dominio a la Interface Layer.
 
 ##### GetRiskDetectionEvidenceQuery
 
-**Runtime:** Cloud.
+**Entorno de ejecución:** Cloud.
 
-**Attribute:**
+**Atributo:**
 
 - `riskDetectionId: UUID`
 
-Represents a request to obtain the evidence and traceability associated with a detection.
+Representa una solicitud para obtener la evidencia y la trazabilidad asociadas con una detección.
 
 ##### GetRiskDetectionEvidenceQueryHandler
 
-**Runtime:** Cloud.
+**Entorno de ejecución:** Cloud.
 
-Retrieves the corresponding `RiskDetection` and exposes:
+Recupera la `RiskDetection` correspondiente y expone:
 
-- measurement evidence;
-- originating device references;
-- current risk type;
-- current severity;
-- resolved or unresolved location;
-- severity changes.
+- evidencia de medición;
+- referencias al dispositivo de origen;
+- tipo de riesgo actual;
+- severidad actual;
+- ubicación resuelta o no resuelta;
+- cambios de severidad.
 
 ##### DetectionRuleDistributor
 
-**Runtime:** Cloud.
+**Entorno de ejecución:** Cloud.
 
-Application abstraction responsible for requesting distribution of the rule information required by Edge.
+Abstracción de aplicación responsable de solicitar la distribución de la información de reglas requerida por Edge.
 
-**Operation:**
+**Operación:**
 
 - `distribute(rule)`
 
-The Application Layer does not depend on the transport mechanism used for distribution.
+La Application Layer no depende del mecanismo de transporte utilizado para la distribución.
 
 ##### RiskLocationResolver
 
-**Runtime:** Edge.
+**Entorno de ejecución:** Edge.
 
-Application abstraction used to resolve the location associated with the originating device.
+Abstracción de aplicación utilizada para resolver la ubicación asociada con el dispositivo de origen.
 
-**Operation:**
+**Operación:**
 
 - `resolve(deviceId)`
 
-It returns a `RiskLocation` without transferring ownership of Device, Building, or Zone to the Risk Detection Bounded Context.
+Devuelve una `RiskLocation` sin transferir la propiedad de Device, Building o Zone al Bounded Context Risk Detection.
 
 ##### RiskDetectionEventPublisher
 
-**Runtime:** Edge.
+**Entorno de ejecución:** Edge.
 
-Application abstraction responsible for publishing a `RiskDetectedEvent`.
+Abstracción de aplicación responsable de publicar un `RiskDetectedEvent`.
 
-**Operation:**
+**Operación:**
 
 - `publish(event)`
 
-The interface isolates the Application Layer from messaging and connectivity technologies.
+La interfaz aísla la Application Layer de las tecnologías de mensajería y conectividad.
 
 #### 4.2.2.4. Infrastructure Layer
 
-The Infrastructure Layer contains the technical implementations required for persistence, distributed rule propagation, location integration, and publication of risk-detection events.
+La Infrastructure Layer contiene las implementaciones técnicas requeridas para la persistencia, la propagación distribuida de reglas, la integración de ubicación y la publicación de eventos de detección de riesgos.
 
-Cloud and Edge use different infrastructure implementations while maintaining the same domain concepts.
+Cloud y Edge utilizan diferentes implementaciones de infraestructura, manteniendo los mismos conceptos de dominio.
 
 ##### DetectionRuleRepositoryAdapter
 
-**Runtime:** Cloud.
+**Entorno de ejecución:** Cloud.
 
-`DetectionRuleRepositoryAdapter` implements `DetectionRuleRepository` using the persistence technology selected for the ResQ Cloud RESTful API.
+`DetectionRuleRepositoryAdapter` implementa `DetectionRuleRepository` utilizando la tecnología de persistencia seleccionada para ResQ Cloud RESTful API.
 
-Its responsibilities are:
+Sus responsabilidades son:
 
-- retrieve detection rules by identifier;
-- retrieve active rules according to their monitored variable;
-- reconstruct `DetectionRule` aggregates;
-- persist detection-rule configuration and status.
+- recuperar reglas de detección por identificador;
+- recuperar reglas activas según su variable monitoreada;
+- reconstruir agregados `DetectionRule`;
+- persistir la configuración y el estado de las reglas de detección.
 
-The Cloud persistence framework must remain consistent with the Web Services technology selected by the team.
+El framework de persistencia Cloud debe mantener la consistencia con la tecnología de Web Services seleccionada por el equipo.
 
 ##### RiskDetectionRepositoryAdapter
 
-**Runtime:** Cloud.
+**Entorno de ejecución:** Cloud.
 
-`RiskDetectionRepositoryAdapter` implements `RiskDetectionRepository`.
+`RiskDetectionRepositoryAdapter` implementa `RiskDetectionRepository`.
 
-Its responsibilities include persistence and reconstruction of:
+Sus responsabilidades incluyen la persistencia y reconstrucción de:
 
 - `RiskDetection`;
 - `DetectionEvidence`;
 - `SeverityChange`;
-- current severity;
-- resolved or unresolved location references.
+- severidad actual;
+- referencias de ubicación resueltas o no resueltas.
 
 ##### DetectionRuleDistributionAdapter
 
-**Runtime:** Cloud.
+**Entorno de ejecución:** Cloud.
 
-`DetectionRuleDistributionAdapter` implements `DetectionRuleDistributor`.
+`DetectionRuleDistributionAdapter` implementa `DetectionRuleDistributor`.
 
-It communicates detection-rule changes toward the Edge runtime using the integration mechanism selected by the overall ResQ architecture.
+Comunica los cambios de reglas de detección hacia el entorno de ejecución Edge utilizando el mecanismo de integración seleccionado por la arquitectura general de ResQ.
 
-Its responsibility is limited to delivering the rule representation required by Edge.
+Su responsabilidad se limita a entregar la representación de las reglas requerida por Edge.
 
-The exact transport must remain aligned with the final Context Mapping and Container architecture.
+El transporte exacto debe permanecer alineado con el Context Mapping final y la arquitectura de Container.
 
 ##### EdgeDetectionRuleRepositoryAdapter
 
-**Runtime:** Edge.
+**Entorno de ejecución:** Edge.
 
-`EdgeDetectionRuleRepositoryAdapter` implements `DetectionRuleRepository` using the Edge persistence stack required for the project.
+`EdgeDetectionRuleRepositoryAdapter` implementa `DetectionRuleRepository` utilizando la pila de persistencia Edge requerida para el proyecto.
 
-For the Edge Services implementation, the Project Statement establishes:
+Para la implementación de Edge Services, el enunciado del proyecto establece:
 
-- Python as programming language;
-- Flask for Edge Services;
+- Python como lenguaje de programación;
+- Flask para Edge Services;
 - Peewee ORM;
 - SQLite.
 
-The adapter therefore provides local persistence of detection rules required for autonomous operation.
+Por lo tanto, el adaptador proporciona la persistencia local de las reglas de detección requeridas para la operación autónoma.
 
-Its responsibilities include:
+Sus responsabilidades incluyen:
 
-- storing the latest distributed rule state;
-- retrieving active local rules by monitored variable;
-- preserving rule availability during temporary loss of Cloud connectivity.
+- almacenar el último estado distribuido de las reglas;
+- recuperar reglas locales activas por variable monitoreada;
+- preservar la disponibilidad de las reglas durante una pérdida temporal de conectividad con Cloud.
 
 ##### RiskLocationIntegrationAdapter
 
-**Runtime:** Edge.
+**Entorno de ejecución:** Edge.
 
-`RiskLocationIntegrationAdapter` implements `RiskLocationResolver`.
+`RiskLocationIntegrationAdapter` implementa `RiskLocationResolver`.
 
-It obtains the minimum device-location context required to identify:
+Obtiene el contexto mínimo de ubicación del dispositivo requerido para identificar:
 
 - `buildingId`;
 - `zoneId`;
-- whether the location could be resolved.
+- si pudo resolverse la ubicación.
 
-The adapter does not reproduce or modify Building, Zone, or Device aggregates.
+El adaptador no reproduce ni modifica los agregados Building, Zone o Device.
 
-Its final integration mechanism must be consistent with the Context Mapping defined by the team.
+Su mecanismo final de integración debe mantener la consistencia con el Context Mapping definido por el equipo.
 
 ##### RiskDetectionEventPublisherAdapter
 
-**Runtime:** Edge.
+**Entorno de ejecución:** Edge.
 
-`RiskDetectionEventPublisherAdapter` implements `RiskDetectionEventPublisher`.
+`RiskDetectionEventPublisherAdapter` implementa `RiskDetectionEventPublisher`.
 
-It publishes locally generated `RiskDetectedEvent` objects to the distributed ResQ flow.
+Publica objetos `RiskDetectedEvent` generados localmente hacia el flujo distribuido de ResQ.
 
-The adapter does not own:
+El adaptador no posee:
 
-- event retry policies;
-- pending-event queues during network interruption;
-- synchronization lifecycle.
+- las políticas de reintentos de eventos;
+- las colas de eventos pendientes durante una interrupción de red;
+- el ciclo de vida de sincronización.
 
-Those responsibilities belong to the connectivity mechanism used by ResQ.
+Estas responsabilidades pertenecen al mecanismo de conectividad utilizado por ResQ.
 
-##### Persistence considerations
+##### Consideraciones de persistencia
 
-Risk Detection requires different persistence responsibilities in Cloud and Edge.
+Risk Detection requiere diferentes responsabilidades de persistencia en Cloud y Edge.
 
-Cloud persistence stores the authoritative detection-rule configuration and the risk-detection history required by the user-facing applications.
+La persistencia Cloud almacena la configuración autoritativa de reglas de detección y el historial de detección de riesgos requerido por las aplicaciones destinadas a los usuarios.
 
-It persists:
+Persiste:
 
-- detection rules;
-- current detection state;
-- evidence associated with detections;
-- severity-change traceability.
+- reglas de detección;
+- estado actual de detección;
+- evidencia asociada con las detecciones;
+- trazabilidad de cambios de severidad.
 
-Edge persistence stores the local rule representation required to evaluate critical conditions without permanent Cloud connectivity.
+La persistencia Edge almacena la representación local de las reglas requerida para evaluar condiciones críticas sin conectividad permanente con Cloud.
 
-It does not need to duplicate the complete Cloud risk-detection history.
+No necesita duplicar el historial completo de detección de riesgos de Cloud.
 
-This separation allows the Bounded Context to support local critical evaluation without assigning connectivity synchronization responsibilities to Risk Detection.
+Esta separación permite que el Bounded Context soporte la evaluación crítica local sin asignar responsabilidades de sincronización de conectividad a Risk Detection.
 
 #### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
 
-The Risk Detection Bounded Context participates in more than one deployable Container. For that reason, its Component Level architecture is represented through separate C4 Component Diagrams for the Cloud and Edge environments.
+El Bounded Context Risk Detection participa en más de un Container desplegable. Por esa razón, su arquitectura de Component Level se representa mediante C4 Component Diagrams separados para los entornos Cloud y Edge.
 
-The diagrams must preserve the same domain boundary while representing the responsibilities deployed in each Container.
+Los diagramas deben preservar los mismos límites de dominio, representando las responsabilidades desplegadas en cada Container.
 
 ##### Risk Detection — ResQ Cloud RESTful API Component Diagram
 
-The Cloud Component Diagram represents the components inside the ResQ Cloud RESTful API that participate in Risk Detection.
+El Cloud Component Diagram representa los componentes dentro de ResQ Cloud RESTful API que participan en Risk Detection.
 
-The principal components are:
+Los principales componentes son:
 
-- Detection Rule API, responsible for receiving authorized detection-rule configuration operations.
-- Risk Detection Query API, responsible for exposing persisted detection information and evidence.
-- Risk Detection Event Consumer, responsible for receiving synchronized detection events produced by Edge.
-- Risk Detection Application, responsible for coordinating Cloud use cases.
-- Risk Detection Domain, containing the domain model used by the Cloud capabilities.
-- Cloud Risk Detection Persistence, implementing persistence of rules and detections.
-- Detection Rule Distribution, responsible for propagating rule changes toward Edge.
+- Detection Rule API, responsable de recibir operaciones autorizadas de configuración de reglas de detección.
+- Risk Detection Query API, responsable de exponer la información persistida de detección y su evidencia.
+- Risk Detection Event Consumer, responsable de recibir eventos sincronizados de detección producidos por Edge.
+- Risk Detection Application, responsable de coordinar los casos de uso de Cloud.
+- Risk Detection Domain, que contiene el modelo de dominio utilizado por las capacidades de Cloud.
+- Cloud Risk Detection Persistence, que implementa la persistencia de reglas y detecciones.
+- Detection Rule Distribution, responsable de propagar los cambios de reglas hacia Edge.
 
-The main Cloud flow is conceptually:
+Conceptualmente, el flujo principal de Cloud es:
 
 ```text
 Web / Mobile Application
@@ -3844,29 +3844,29 @@ Cloud Persistence       Detection Rule Distribution
 ResQ Cloud Database          Edge Runtime
 ```
 
-Risk-detection events synchronized from Edge enter through the Risk Detection Event Consumer, are processed by the Application Layer, and are persisted using the Domain and Infrastructure Layers.
+Los eventos de detección de riesgos sincronizados desde Edge ingresan mediante Risk Detection Event Consumer, son procesados por la Application Layer y se persisten utilizando la Domain Layer y la Infrastructure Layer.
 
-The final C4 diagram must show the concrete Cloud technology once the Web Services stack is officially selected by the team.
+El diagrama C4 final debe mostrar la tecnología Cloud concreta una vez que el equipo seleccione oficialmente la pila de Web Services.
 
-**DIAGRAM — Risk Detection Cloud Component Level Diagram**
+**DIAGRAMA — Risk Detection Cloud Component Level Diagram**
 
 ![Risk Detection Cloud Component Level Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-cloud-component-level-diagram.png)
 
 ##### Risk Detection — ResQ Edge Service Component Diagram
 
-The Edge Component Diagram represents the components responsible for local risk evaluation inside the ResQ Edge Service.
+El Edge Component Diagram representa los componentes responsables de la evaluación local de riesgos dentro de ResQ Edge Service.
 
-The principal components are:
+Los principales componentes son:
 
-- Measurement Consumer, responsible for receiving valid locally available measurements.
-- Detection Rule Replica Consumer, responsible for receiving current detection-rule states from Cloud.
-- Edge Risk Detection Application, responsible for coordinating local evaluation.
-- Risk Evaluation Domain, containing the detection-rule and risk-evaluation domain logic.
-- Local Detection Rule Persistence, responsible for storing local rule replicas using Peewee and SQLite.
-- Risk Location Integration, responsible for obtaining the location references associated with an originating device.
-- Risk Detection Event Publisher, responsible for publishing the result of a successful local detection.
+- Measurement Consumer, responsable de recibir mediciones válidas disponibles localmente.
+- Detection Rule Replica Consumer, responsable de recibir los estados actuales de las reglas de detección desde Cloud.
+- Edge Risk Detection Application, responsable de coordinar la evaluación local.
+- Risk Evaluation Domain, que contiene la lógica de dominio de reglas de detección y evaluación de riesgos.
+- Local Detection Rule Persistence, responsable de almacenar réplicas locales de reglas utilizando Peewee y SQLite.
+- Risk Location Integration, responsable de obtener las referencias de ubicación asociadas con un dispositivo de origen.
+- Risk Detection Event Publisher, responsable de publicar el resultado de una detección local satisfactoria.
 
-The principal local execution flow is:
+El flujo principal de ejecución local es:
 
 ```text
 Local Measurement Flow
@@ -3894,7 +3894,7 @@ Risk Detection Event Publisher
 Distributed ResQ Flow
 ```
 
-The Edge rule-update flow is:
+El flujo de actualización de reglas en Edge es:
 
 ```text
 Cloud Rule Distribution
@@ -3909,28 +3909,28 @@ Edge Risk Detection Application
 Local Detection Rule Persistence
 ```
 
-The Edge implementation must use the technology established by the Project Statement for Edge Services: Python, Flask, Peewee ORM, and SQLite.
+La implementación Edge debe utilizar la tecnología establecida por el enunciado del proyecto para Edge Services: Python, Flask, Peewee ORM y SQLite.
 
-**DIAGRAM Risk Detection Edge Component Level Diagram**
+**DIAGRAMA Risk Detection Edge Component Level Diagram**
 
 ![Risk Detection Edge Component Level Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-edge-component-level-diagram.png)
 
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
 
-The Code Level Diagrams provide a more detailed representation of the implementation-oriented structure of the Risk Detection Bounded Context.
+Los Code Level Diagrams proporcionan una representación más detallada de la estructura orientada a la implementación del Bounded Context Risk Detection.
 
-For Risk Detection, the Code Level is represented by:
+Para Risk Detection, el Code Level se representa mediante:
 
-- Domain Layer Class Diagram, describing the object-oriented domain model, including Aggregate Roots, Entities, Value Objects, enumerations, Domain Services, Repository interfaces, attributes, methods, visibility, relationships, and multiplicities.
-- Database Design Diagram, describing the relational persistence structures required by the Cloud and Edge portions of the Bounded Context.
+- Domain Layer Class Diagram, que describe el modelo de dominio orientado a objetos, incluidos Aggregate Roots, Entities, Value Objects, enumeraciones, Domain Services, interfaces de Repository, atributos, métodos, visibilidad, relaciones y multiplicidades.
+- Database Design Diagram, que describe las estructuras de persistencia relacional requeridas por las partes Cloud y Edge del Bounded Context.
 
-The diagrams must remain consistent with the four-layer design described above.
+Los diagramas deben mantener la consistencia con el diseño de cuatro capas descrito anteriormente.
 
 ##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
 
-The Domain Layer Class Diagram represents the implementation-oriented structure of the Risk Detection domain model.
+El Domain Layer Class Diagram representa la estructura orientada a la implementación del modelo de dominio de Risk Detection.
 
-The diagram must include the following elements.
+El diagrama debe incluir los siguientes elementos.
 
 **Aggregate Roots**
 
@@ -3949,7 +3949,7 @@ The diagram must include the following elements.
 - `RiskType`
 - `SeverityLevel`
 
-**Enumerations**
+**Enumeraciones**
 
 - `DetectionRuleStatus`
 - `ComparisonOperator`
@@ -3968,33 +3968,33 @@ The diagram must include the following elements.
 
 - `RiskDetectedEvent`
 
-The principal relationships to represent are:
+Las principales relaciones que deben representarse son:
 
-- `DetectionRule` composes exactly one `DetectionCondition`.
-- `DetectionRule` composes exactly one `RiskType`.
-- `DetectionRule` composes exactly one `SeverityLevel`.
-- `DetectionRule` uses exactly one `DetectionRuleStatus`.
-- `DetectionCondition` uses exactly one `ComparisonOperator`.
-- `RiskDetection` composes exactly one `RiskType`.
-- `RiskDetection` composes exactly one current `SeverityLevel`.
-- `RiskDetection` composes exactly one `RiskLocation`.
-- `RiskDetection` owns one or more `DetectionEvidence` values.
-- `RiskDetection` owns zero or more `SeverityChange` entities.
-- `RiskLocation` uses exactly one `LocationResolutionStatus`.
-- `SeverityChange` references a previous and a new `SeverityLevel`.
-- `RiskDetection` references its originating `DetectionRule` through `ruleId`.
-- `DetectionRuleRepository` persists and retrieves `DetectionRule`.
-- `RiskDetectionRepository` persists and retrieves `RiskDetection`.
-- `RiskEvaluationService` evaluates `DetectionRule` and `DetectionEvidence`.
-- `RiskDetectedEvent` is produced from a successful Risk Detection evaluation.
+- `DetectionRule` compone exactamente un `DetectionCondition`.
+- `DetectionRule` compone exactamente un `RiskType`.
+- `DetectionRule` compone exactamente un `SeverityLevel`.
+- `DetectionRule` utiliza exactamente un `DetectionRuleStatus`.
+- `DetectionCondition` utiliza exactamente un `ComparisonOperator`.
+- `RiskDetection` compone exactamente un `RiskType`.
+- `RiskDetection` compone exactamente un `SeverityLevel` actual.
+- `RiskDetection` compone exactamente un `RiskLocation`.
+- `RiskDetection` posee uno o más valores `DetectionEvidence`.
+- `RiskDetection` posee cero o más entidades `SeverityChange`.
+- `RiskLocation` utiliza exactamente un `LocationResolutionStatus`.
+- `SeverityChange` referencia un `SeverityLevel` anterior y uno nuevo.
+- `RiskDetection` referencia su `DetectionRule` de origen mediante `ruleId`.
+- `DetectionRuleRepository` persiste y recupera `DetectionRule`.
+- `RiskDetectionRepository` persiste y recupera `RiskDetection`.
+- `RiskEvaluationService` evalúa `DetectionRule` y `DetectionEvidence`.
+- `RiskDetectedEvent` se produce a partir de una evaluación satisfactoria de Risk Detection.
 
-The diagram must show UML visibility conventions:
+El diagrama debe mostrar las convenciones de visibilidad UML:
 
-- `+` for public members;
-- `-` for private members;
-- `#` for protected members when applicable.
+- `+` para miembros públicos;
+- `-` para miembros privados;
+- `#` para miembros protegidos cuando corresponda.
 
-A conceptual multiplicity reference is:
+Una referencia conceptual de multiplicidad es:
 
 ```text
 DetectionRule "1" *-- "1" DetectionCondition
@@ -4023,7 +4023,7 @@ RiskEvaluationService ..> DetectionRule : evaluates
 RiskEvaluationService ..> DetectionEvidence : evaluates
 ```
 
-The following concepts must not appear as owned domain classes inside Risk Detection:
+Los siguientes conceptos no deben aparecer como clases de dominio propias dentro de Risk Detection:
 
 - Measurement
 - Device
@@ -4033,113 +4033,113 @@ The following concepts must not appear as owned domain classes inside Risk Detec
 - Incident
 - Actuator
 
-Their identifiers may appear as external references when required by the detection process.
+Sus identificadores pueden aparecer como referencias externas cuando el proceso de detección los requiera.
 
-**DIAGRAM — Risk Detection Domain Layer Class Diagram**
+**DIAGRAMA — Risk Detection Domain Layer Class Diagram**
 
  ![Risk Detection Domain Layer Class Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-domain-layer-class-diagram.png)
 
 ##### 4.2.2.6.2. Bounded Context Database Design Diagram
 
-The Risk Detection Database Design represents the persistence required by the Bounded Context across the Cloud and Edge execution environments.
+El Database Design de Risk Detection representa la persistencia requerida por el Bounded Context en los entornos de ejecución Cloud y Edge.
 
-Cloud persistence stores the authoritative detection-rule definitions and the persisted detection history.
+La persistencia Cloud almacena las definiciones autoritativas de reglas de detección y el historial de detección persistido.
 
-Edge persistence stores the local detection-rule replicas required for autonomous evaluation.
+La persistencia Edge almacena las réplicas locales de reglas de detección requeridas para la evaluación autónoma.
 
-The persistence model deliberately avoids creating foreign-key dependencies to tables owned by other Bounded Contexts.
+El modelo de persistencia evita deliberadamente crear dependencias de claves foráneas hacia tablas pertenecientes a otros Bounded Contexts.
 
-###### Cloud Persistence
+###### Persistencia Cloud
 
 ###### `risk_detection_rules`
 
-Stores the authoritative detection-rule configuration.
+Almacena la configuración autoritativa de reglas de detección.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `rule_id` | UUID | PRIMARY KEY | Unique identifier of the detection rule. |
-| `risk_type_code` | VARCHAR(100) | NOT NULL | Risk type produced when the condition is satisfied. |
-| `severity_code` | VARCHAR(50) | NOT NULL | Severity associated with the rule. |
-| `variable_type` | VARCHAR(100) | NOT NULL | Monitored variable evaluated by the rule. |
-| `comparison_operator` | VARCHAR(40) | NOT NULL | Comparison operator applied to the monitored value. |
-| `threshold` | DECIMAL(12,4) | NOT NULL | Quantitative threshold used by the condition. |
-| `status` | VARCHAR(20) | NOT NULL | Current rule status (ACTIVE or INACTIVE). |
+| `rule_id` | UUID | PRIMARY KEY | Identificador único de la regla de detección. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Tipo de riesgo producido cuando se satisface la condición. |
+| `severity_code` | VARCHAR(50) | NOT NULL | Severidad asociada con la regla. |
+| `variable_type` | VARCHAR(100) | NOT NULL | Variable monitoreada evaluada por la regla. |
+| `comparison_operator` | VARCHAR(40) | NOT NULL | Operador de comparación aplicado al valor monitoreado. |
+| `threshold` | DECIMAL(12,4) | NOT NULL | Umbral cuantitativo utilizado por la condición. |
+| `status` | VARCHAR(20) | NOT NULL | Estado actual de la regla (ACTIVE o INACTIVE). |
 
-DetectionCondition, RiskType, and SeverityLevel are Value Objects and therefore their persistent values are embedded within the detection-rule record instead of being modeled as independent aggregate tables.
+DetectionCondition, RiskType y SeverityLevel son Value Objects y, por lo tanto, sus valores persistentes se integran en el registro de la regla de detección en lugar de modelarse como tablas de agregados independientes.
 
 ###### `risk_detections`
 
-Stores persisted risk detections received from the distributed Edge flow.
+Almacena las detecciones de riesgo persistidas recibidas desde el flujo distribuido de Edge.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `risk_detection_id` | UUID | PRIMARY KEY | Unique identifier of the detected risk. |
-| `rule_id` | UUID | NOT NULL, FOREIGN KEY | References `risk_detection_rules.rule_id`. |
-| `risk_type_code` | VARCHAR(100) | NOT NULL | Risk type identified at detection time. |
-| `current_severity_code` | VARCHAR(50) | NOT NULL | Current severity of the detection. |
-| `building_id` | UUID | NULL | External Building reference when location can be resolved. |
-| `zone_id` | UUID | NULL | External Zone reference when location can be resolved. |
-| `location_status` | VARCHAR(20) | NOT NULL | Indicates whether the detection location was resolved. |
-| `detected_at` | TIMESTAMP | NOT NULL | Original detection time. |
+| `risk_detection_id` | UUID | PRIMARY KEY | Identificador único del riesgo detectado. |
+| `rule_id` | UUID | NOT NULL, FOREIGN KEY | Referencia `risk_detection_rules.rule_id`. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Tipo de riesgo identificado en el momento de la detección. |
+| `current_severity_code` | VARCHAR(50) | NOT NULL | Severidad actual de la detección. |
+| `building_id` | UUID | NULL | Referencia externa a Building cuando puede resolverse la ubicación. |
+| `zone_id` | UUID | NULL | Referencia externa a Zone cuando puede resolverse la ubicación. |
+| `location_status` | VARCHAR(20) | NOT NULL | Indica si se resolvió la ubicación de la detección. |
+| `detected_at` | TIMESTAMP | NOT NULL | Momento original de detección. |
 
-building_id and zone_id are intentionally not foreign keys to tables owned by other Bounded Contexts.
+building_id y zone_id se mantienen intencionalmente sin claves foráneas hacia tablas pertenecientes a otros Bounded Contexts.
 
 ###### `risk_detection_evidence`
 
-Stores the monitored evidence associated with each persisted risk detection.
+Almacena la evidencia monitoreada asociada con cada detección de riesgo persistida.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `risk_detection_id` | UUID | PRIMARY KEY, FOREIGN KEY | References `risk_detections.risk_detection_id`. |
-| `measurement_id` | UUID | PRIMARY KEY | External identifier of the monitored measurement. |
-| `device_id` | UUID | NOT NULL | External identifier of the originating device. |
-| `variable_type` | VARCHAR(100) | NOT NULL | Monitored variable represented by the evidence. |
-| `measured_value` | DECIMAL(12,4) | NOT NULL | Value used during evaluation. |
-| `measured_at` | TIMESTAMP | NOT NULL | Original measurement time. |
+| `risk_detection_id` | UUID | PRIMARY KEY, FOREIGN KEY | Referencia `risk_detections.risk_detection_id`. |
+| `measurement_id` | UUID | PRIMARY KEY | Identificador externo de la medición monitoreada. |
+| `device_id` | UUID | NOT NULL | Identificador externo del dispositivo de origen. |
+| `variable_type` | VARCHAR(100) | NOT NULL | Variable monitoreada representada por la evidencia. |
+| `measured_value` | DECIMAL(12,4) | NOT NULL | Valor utilizado durante la evaluación. |
+| `measured_at` | TIMESTAMP | NOT NULL | Momento original de medición. |
 
-The composite primary key:
+La clave primaria compuesta:
 
 `(risk_detection_id, measurement_id)`
 
-prevents the same monitored evidence from being associated more than once with the same risk detection.
+impide que la misma evidencia monitoreada se asocie más de una vez con la misma detección de riesgo.
 
-measurement_id and device_id are external references and therefore do not create direct database ownership relationships with Monitoring or Device persistence.
+measurement_id y device_id son referencias externas y, por lo tanto, no crean relaciones directas de propiedad en la base de datos con la persistencia de Monitoring o Device.
 
 ###### `risk_severity_changes`
 
-Stores severity transitions associated with persisted risk detections.
+Almacena las transiciones de severidad asociadas con las detecciones de riesgo persistidas.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `severity_change_id` | UUID | PRIMARY KEY | Unique identifier of the severity-change entity. |
-| `risk_detection_id` | UUID | NOT NULL, FOREIGN KEY | References `risk_detections.risk_detection_id`. |
-| `previous_severity_code` | VARCHAR(50) | NOT NULL | Severity before the change. |
-| `new_severity_code` | VARCHAR(50) | NOT NULL | Severity after the change. |
-| `changed_at` | TIMESTAMP | NOT NULL | Moment when the severity change occurred. |
+| `severity_change_id` | UUID | PRIMARY KEY | Identificador único de la entidad de cambio de severidad. |
+| `risk_detection_id` | UUID | NOT NULL, FOREIGN KEY | Referencia `risk_detections.risk_detection_id`. |
+| `previous_severity_code` | VARCHAR(50) | NOT NULL | Severidad anterior al cambio. |
+| `new_severity_code` | VARCHAR(50) | NOT NULL | Severidad posterior al cambio. |
+| `changed_at` | TIMESTAMP | NOT NULL | Momento en el que ocurrió el cambio de severidad. |
 
-This table preserves the traceability required when a risk changes severity.
+Esta tabla preserva la trazabilidad requerida cuando cambia la severidad de un riesgo.
 
-###### Edge Persistence
+###### Persistencia Edge
 
 ###### `edge_detection_rules`
 
-Stores the detection-rule representation required for local evaluation in the Edge SQLite database.
+Almacena la representación de reglas de detección requerida para la evaluación local en la base de datos SQLite de Edge.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `rule_id` | UUID | PRIMARY KEY | Identifier of the Cloud detection rule represented locally. |
-| `risk_type_code` | VARCHAR(100) | NOT NULL | Risk type produced by the rule. |
-| `severity_code` | VARCHAR(50) | NOT NULL | Severity associated with the rule. |
-| `variable_type` | VARCHAR(100) | NOT NULL | Monitored variable evaluated locally. |
-| `comparison_operator` | VARCHAR(40) | NOT NULL | Comparison operator used by the local condition. |
-| `threshold` | DECIMAL(12,4) | NOT NULL | Quantitative threshold used for evaluation. |
-| `status` | VARCHAR(20) | NOT NULL | Current local rule status. |
+| `rule_id` | UUID | PRIMARY KEY | Identificador de la regla de detección de Cloud representada localmente. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Tipo de riesgo producido por la regla. |
+| `severity_code` | VARCHAR(50) | NOT NULL | Severidad asociada con la regla. |
+| `variable_type` | VARCHAR(100) | NOT NULL | Variable monitoreada evaluada localmente. |
+| `comparison_operator` | VARCHAR(40) | NOT NULL | Operador de comparación utilizado por la condición local. |
+| `threshold` | DECIMAL(12,4) | NOT NULL | Umbral cuantitativo utilizado para la evaluación. |
+| `status` | VARCHAR(20) | NOT NULL | Estado actual de la regla local. |
 
-This table is not an independent source of rule ownership. It is the local Edge representation required so critical rules can continue to be evaluated without permanent Cloud connectivity.
+Esta tabla no es una fuente independiente de propiedad de las reglas. Es la representación local de Edge requerida para que las reglas críticas puedan seguir evaluándose sin conectividad permanente con Cloud.
 
-The Edge persistence implementation must use SQLite with Peewee ORM, according to the Edge Services technology required by the Project Statement.
+La implementación de persistencia Edge debe utilizar SQLite con Peewee ORM, de acuerdo con la tecnología de Edge Services requerida por el enunciado del proyecto.
 
-The internal Cloud relationships are conceptually:
+Conceptualmente, las relaciones internas de Cloud son:
 
 ```text
 risk_detection_rules
@@ -4159,9 +4159,9 @@ risk_detections
 risk_detection_evidence    risk_severity_changes
 ```
 
-The final Database Design Diagram must clearly distinguish:
+El Database Design Diagram final debe distinguir claramente:
 
-- Cloud Persistence
+- Persistencia Cloud
   - `risk_detection_rules`
   - `risk_detections`
   - `risk_detection_evidence`
@@ -4170,20 +4170,20 @@ The final Database Design Diagram must clearly distinguish:
 - Edge SQLite
   - `edge_detection_rules`
 
-The diagram must identify:
+El diagrama debe identificar:
 
-- all tables;
-- all columns;
-- primary keys;
-- foreign keys;
-- composite keys;
-- nullable external references;
-- cardinalities;
-- Cloud versus Edge persistence boundaries.
+- todas las tablas;
+- todas las columnas;
+- las claves primarias;
+- las claves foráneas;
+- las claves compuestas;
+- las referencias externas que admiten valores nulos;
+- las cardinalidades;
+- los límites de persistencia de Cloud y Edge.
 
-No database table for Alert, Incident, Device, Measurement, Building, Zone, Actuator, or Connectivity pending events must be introduced inside the Risk Detection persistence boundary.
+No debe introducirse ninguna tabla de base de datos para Alert, Incident, Device, Measurement, Building, Zone, Actuator o eventos pendientes de Connectivity dentro de los límites de persistencia de Risk Detection.
 
-**DIAGRAM — Risk Detection Database Design Diagram**
+**DIAGRAMA — Risk Detection Database Design Diagram**
 
 ![Risk Detection Database Design Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-database-design-diagram.png)
 
@@ -4223,11 +4223,11 @@ Las principales responsabilidades de este Bounded Context son:
 
 Los principales conceptos identificados para el Bounded Context Alert & Response Management son `Alert`, `AlertContext`, `ResponsePolicy`, `ResponseAction`, `ResponseExecution`, `ResponseAuthorization`, `NotificationDelivery` y `ExecutionResult`.
 
-#### Class Dictionary
+#### Diccionario de clases
 
 La siguiente tabla resume las principales clases e interfaces que conforman el Bounded Context Alert & Response Management.
 
-| Class / Interface | Layer | Purpose | Main attributes | Main operations | Main relationships |
+| Clase / Interfaz | Capa | Propósito | Atributos principales | Operaciones principales | Relaciones principales |
 |---|---|---|---|---|---|
 | `Alert` | Domain | Representa una alerta generada a partir de un riesgo detectado. Es el Aggregate Root responsable de conservar el contexto comunicado y los intentos de notificación asociados. | `alertId: UUID`, `organizationId: UUID`, `context: AlertContext`, `generatedAt: Instant`, `deliveries: List<NotificationDelivery>` | `addDelivery(delivery)`, `registerDeliveryResult(deliveryId, result)` | Compone `AlertContext`; posee `NotificationDelivery`. |
 | `AlertContext` | Domain | Value Object que conserva la información mínima del riesgo necesaria para comunicar una alerta sin reproducir el modelo de Risk Detection. | `riskDetectionId: UUID`, `riskTypeCode: String`, `severityCode: String`, `buildingId: UUID?`, `zoneId: UUID?`, `detectedAt: Instant` | — | Compuesto por `Alert`; utiliza referencias externas de Risk Detection y Building Management. |
@@ -4281,9 +4281,9 @@ La siguiente tabla resume las principales clases e interfaces que conforman el B
 | `ResponseAuthorizationDistributor` | Application | Abstracción utilizada para distribuir hacia Edge una decisión humana sobre una respuesta pendiente. | — | `distributeDecision(execution)` | Implementada por `ResponseAuthorizationDistributionAdapter`. |
 | `ActuatorCommandGateway` | Application | Abstracción utilizada en Edge para solicitar la ejecución física de una acción. | — | `execute(action): ExecutionResult` | Implementada por `ActuatorCommandAdapter`. |
 | `AlertResponseEventPublisher` | Application | Abstracción utilizada para publicar solicitudes de autorización y resultados de ejecución producidos en Edge. | — | `publish(event)` | Implementada por `AlertResponseEventPublisherAdapter`. |
-| `ResponsePolicyController` | Interface | Recibe solicitudes autorizadas para crear, modificar, consultar y cambiar el estado de políticas de respuesta. | Dependencia de handlers de comandos y consultas | `configure(request)`, `update(policyId, request)`, `changeStatus(policyId, request)`, `getById(policyId)` | Delega las operaciones a la Application Layer. |
-| `AlertController` | Interface | Expone las alertas registradas a los clientes autorizados de ResQ. | Dependencia de handlers de consulta | `getById(alertId)`, `getAlerts(request)` | Delega consultas a `GetAlertQueryHandler` y `GetAlertsQueryHandler`. |
-| `ResponseExecutionController` | Interface | Expone la trazabilidad de respuestas y recibe decisiones de autorización humana. | Dependencias de handlers de consulta y autorización | `getById(responseExecutionId)`, `getExecutions(request)`, `decideAuthorization(responseExecutionId, request)` | Delega las operaciones a la Application Layer. |
+| `ResponsePolicyController` | Interface | Recibe solicitudes autorizadas para crear, modificar, consultar y cambiar el estado de políticas de respuesta. | Dependencia de manejadores de comandos y consultas | `configure(request)`, `update(policyId, request)`, `changeStatus(policyId, request)`, `getById(policyId)` | Delega las operaciones a la Application Layer. |
+| `AlertController` | Interface | Expone las alertas registradas a los clientes autorizados de ResQ. | Dependencia de manejadores de consulta | `getById(alertId)`, `getAlerts(request)` | Delega consultas a `GetAlertQueryHandler` y `GetAlertsQueryHandler`. |
+| `ResponseExecutionController` | Interface | Expone la trazabilidad de respuestas y recibe decisiones de autorización humana. | Dependencias de manejadores de consulta y autorización | `getById(responseExecutionId)`, `getExecutions(request)`, `decideAuthorization(responseExecutionId, request)` | Delega las operaciones a la Application Layer. |
 | `RiskDetectedEventConsumer` | Interface | Recibe en Cloud información de riesgos detectados proveniente del flujo distribuido de Risk Detection. | Dependencia de `RiskDetectedEventHandler` | `consume(event)` | Delega el evento a `RiskDetectedEventHandler`. |
 | `LocalRiskDetectedConsumer` | Interface | Recibe en Edge eventos de riesgo generados localmente para iniciar el flujo de respuesta sin depender de Cloud. | Dependencia de `LocalRiskDetectedEventHandler` | `consume(event)` | Delega el evento al Application Layer de Edge. |
 | `ResponsePolicyReplicaConsumer` | Interface | Recibe en Edge actualizaciones de políticas distribuidas desde Cloud. | Dependencia de `UpdateLocalResponsePolicyEventHandler` | `consume(policyUpdate)` | Delega la actualización de la réplica local. |
@@ -4375,7 +4375,7 @@ Los cambios posteriores realizados en los modelos de Risk Detection o Building M
 
 ##### NotificationDelivery
 
-**Categoría:** Entity owned by `Alert`.
+**Categoría:** Entity perteneciente a `Alert`.
 
 **Propósito:** Representar un intento de entrega de una alerta a un usuario responsable mediante un canal de notificación.
 
@@ -4431,7 +4431,7 @@ Una versión de política recibida en Edge no debe reemplazar una versión local
 
 ##### ResponseAction
 
-**Categoría:** Entity owned by `ResponsePolicy`.
+**Categoría:** Entity perteneciente a `ResponsePolicy`.
 
 **Propósito:** Representar una acción configurada que puede realizarse cuando la política a la que pertenece resulta aplicable.
 
@@ -4510,7 +4510,7 @@ La instantánea evita que una modificación posterior de `ResponsePolicy` altere
 
 ##### ResponseAuthorization
 
-**Categoría:** Entity owned by `ResponseExecution`.
+**Categoría:** Entity perteneciente a `ResponseExecution`.
 
 **Propósito:** Representar la decisión tomada por un usuario autorizado cuando una acción requiere intervención humana.
 
@@ -4546,7 +4546,7 @@ El dominio distingue explícitamente entre una respuesta ejecutada correctamente
 
 ##### ResponsePolicyStatus
 
-**Categoría:** Enumeration.
+**Categoría:** Enumeración.
 
 **Valores:**
 
@@ -4557,7 +4557,7 @@ Solo las políticas activas pueden participar en la selección de respuestas.
 
 ##### AuthorizationMode
 
-**Categoría:** Enumeration.
+**Categoría:** Enumeración.
 
 **Valores:**
 
@@ -4570,7 +4570,7 @@ Solo las políticas activas pueden participar en la selección de respuestas.
 
 ##### AuthorizationDecision
 
-**Categoría:** Enumeration.
+**Categoría:** Enumeración.
 
 **Valores:**
 
@@ -4583,7 +4583,7 @@ Una decisión `REJECTED` finaliza la solicitud sin ejecutar la acción.
 
 ##### ResponseExecutionStatus
 
-**Categoría:** Enumeration.
+**Categoría:** Enumeración.
 
 **Valores:**
 
@@ -4613,7 +4613,7 @@ Estos estados permiten conservar la trazabilidad de una respuesta desde su creac
 
 ##### NotificationDeliveryStatus
 
-**Categoría:** Enumeration.
+**Categoría:** Enumeración.
 
 **Valores:**
 
@@ -4689,7 +4689,7 @@ El servicio únicamente considera las políticas activas previamente recuperadas
 
 La ejecución física de la acción no pertenece a este Domain Service. Esa coordinación se realiza desde la Application Layer mediante las abstracciones correspondientes.
 
-##### Business Rules
+##### Reglas de negocio
 
 El dominio Alert & Response Management aplica las siguientes reglas de negocio:
 
@@ -4769,7 +4769,7 @@ El cambio de estado se delega a `ChangeResponsePolicyStatusCommandHandler` y la 
 
 El ámbito organizacional utilizado por estas operaciones debe obtenerse del contexto autorizado de la solicitud y no debe permitir que el cliente opere libremente sobre políticas pertenecientes a otra organización.
 
-El controller no valida directamente las capacidades de los dispositivos, no aplica reglas de activación y no persiste políticas por cuenta propia.
+El controlador no valida directamente las capacidades de los dispositivos, no aplica reglas de activación y no persiste políticas por cuenta propia.
 
 ##### AlertController
 
@@ -4791,7 +4791,7 @@ La consulta de una alerta individual se delega a `GetAlertQueryHandler`, mientra
 
 El ámbito organizacional se obtiene del contexto autorizado de la solicitud para evitar que una consulta permita acceder a alertas pertenecientes a otra organización.
 
-El controller no accede directamente a la base de datos ni modifica el estado de las alertas.
+El controlador no accede directamente a la base de datos ni modifica el estado de las alertas.
 
 ##### ResponseExecutionController
 
@@ -4820,7 +4820,7 @@ La identidad del usuario que toma la decisión se obtiene del contexto autentica
 
 Del mismo modo, el ámbito organizacional utilizado para la operación debe corresponder al contexto autorizado del usuario.
 
-El controller construye un `DecideResponseAuthorizationCommand` y delega su procesamiento a `DecideResponseAuthorizationCommandHandler`.
+El controlador construye un `DecideResponseAuthorizationCommand` y delega su procesamiento a `DecideResponseAuthorizationCommandHandler`.
 
 La operación debe encontrarse protegida mediante los mecanismos de autenticación y autorización proporcionados por IAM.
 
@@ -4834,7 +4834,7 @@ La información recibida debe permitir identificar, como mínimo, la organizaci�
 
 Este componente permite iniciar el flujo de generación de alertas y notificaciones.
 
-El consumer no vuelve a determinar si existe un riesgo, no modifica su severidad y no ejecuta reglas propias de Risk Detection.
+El consumidor no vuelve a determinar si existe un riesgo, no modifica su severidad y no ejecuta reglas propias de Risk Detection.
 
 ##### LocalRiskDetectedConsumer
 
@@ -4846,7 +4846,7 @@ La información recibida debe permitir identificar la organización, la detecci�
 
 Este flujo permite iniciar localmente la evaluación de respuestas sin realizar primero una solicitud a Cloud.
 
-El consumer no decide qué política debe aplicarse ni ejecuta directamente los actuadores.
+El consumidor no decide qué política debe aplicarse ni ejecuta directamente los actuadores.
 
 ##### ResponsePolicyReplicaConsumer
 
@@ -4856,9 +4856,9 @@ Cada actualización es delegada a `UpdateLocalResponsePolicyEventHandler`.
 
 La información recibida contiene la representación necesaria para reconstruir la política y sus acciones, incluyendo su identificador, organización, tipo de riesgo, estado y versión.
 
-El consumer no decide si una versión debe reemplazar la información almacenada localmente. Esa decisión corresponde al flujo de aplicación y a las reglas definidas para las versiones de `ResponsePolicy`.
+El consumidor no decide si una versión debe reemplazar la información almacenada localmente. Esa decisión corresponde al flujo de aplicación y a las reglas definidas para las versiones de `ResponsePolicy`.
 
-El consumer tampoco implementa directamente la persistencia local.
+El consumidor tampoco implementa directamente la persistencia local.
 
 ##### ResponseAuthorizationRequestConsumer
 
@@ -4877,7 +4877,7 @@ El mensaje debe contener la información necesaria para reconstruir la ejecució
 
 Este flujo permite que una ejecución originada en Edge quede disponible en Cloud para que un usuario autorizado pueda aprobarla o rechazarla.
 
-El consumer no toma la decisión de autorización ni modifica por sí mismo el estado del agregado.
+El consumidor no toma la decisión de autorización ni modifica por sí mismo el estado del agregado.
 
 ##### ResponseAuthorizationDecisionConsumer
 
@@ -4888,13 +4888,13 @@ La decisión recibida puede ser:
 - `APPROVED`;
 - `REJECTED`.
 
-El consumer delega la información a `ResponseAuthorizationDecisionEventHandler`.
+El consumidor delega la información a `ResponseAuthorizationDecisionEventHandler`.
 
 Cuando la decisión es `APPROVED`, el flujo de aplicación puede continuar hacia la ejecución de la acción correspondiente.
 
 Cuando la decisión es `REJECTED`, la ejecución local debe finalizar sin solicitar la acción física al dispositivo.
 
-El consumer no determina si el usuario tenía permiso para tomar la decisión y no ejecuta directamente el actuador.
+El consumidor no determina si el usuario tenía permiso para tomar la decisión y no ejecuta directamente el actuador.
 
 ##### ResponseExecutionResultConsumer
 
@@ -4904,7 +4904,7 @@ Su responsabilidad es validar la representación básica del resultado recibido 
 
 La información recibida debe permitir identificar la `ResponseExecution` correspondiente y conocer el resultado final de la acción.
 
-El consumer no vuelve a ejecutar una acción cuando recibe un resultado fallido y no altera el significado del resultado comunicado por Edge.
+El consumidor no vuelve a ejecutar una acción cuando recibe un resultado fallido y no altera el significado del resultado comunicado por Edge.
 
 Su función es permitir que Cloud conserve la trazabilidad final de las respuestas realizadas localmente.
 
@@ -4955,7 +4955,7 @@ Este objeto se utiliza como representación de entrada para crear o modificar la
 
 `ConfigureResponsePolicyCommandHandler` coordina la creación de una política de respuesta.
 
-El handler realiza la siguiente secuencia:
+El manejador realiza la siguiente secuencia:
 
 1. Recibe un `ConfigureResponsePolicyCommand`.
 2. Valida la estructura de las acciones proporcionadas, cuando existan.
@@ -4965,7 +4965,7 @@ El handler realiza la siguiente secuencia:
 6. Persiste la política mediante `ResponsePolicyRepository`.
 7. Solicita su distribución hacia Edge mediante `ResponsePolicyDistributor`.
 
-El handler no consulta directamente las tablas pertenecientes a Device Management ni conoce el mecanismo utilizado para distribuir las políticas.
+El manejador no consulta directamente las tablas pertenecientes a Device Management ni conoce el mecanismo utilizado para distribuir las políticas.
 
 ##### UpdateResponsePolicyCommand
 
@@ -5050,7 +5050,7 @@ Su flujo de ejecución es:
 
 `RiskDetectedEventHandler` coordina en Cloud la generación y comunicación de una alerta cuando el flujo distribuido proporciona información correspondiente a un riesgo detectado.
 
-El handler realiza la siguiente secuencia:
+El manejador realiza la siguiente secuencia:
 
 1. Recibe la información del riesgo detectado.
 2. Construye el `AlertContext`.
@@ -5063,7 +5063,7 @@ El handler realiza la siguiente secuencia:
 9. Actualiza el `NotificationDelivery` correspondiente como `DELIVERED` o `FAILED` cuando existe un resultado confirmado.
 10. Persiste el estado actualizado del `Alert`.
 
-El handler no vuelve a determinar si el riesgo existe ni modifica su tipo o severidad. Esa información proviene de Risk Detection.
+El manejador no vuelve a determinar si el riesgo existe ni modifica su tipo o severidad. Esa información proviene de Risk Detection.
 
 ##### LocalRiskDetectedEventHandler
 
@@ -5186,7 +5186,7 @@ Su flujo de ejecución es:
 6. Registra el `ExecutionResult`.
 7. Persiste la ejecución con estado `SUCCEEDED` o `FAILED`.
 
-Este handler no vuelve a ejecutar una acción cuando recibe un resultado fallido.
+Este manejador no vuelve a ejecutar una acción cuando recibe un resultado fallido.
 
 ##### GetAlertQuery
 
@@ -5462,7 +5462,7 @@ La persistencia debe conservar la información histórica de la acción utilizad
 
 Su responsabilidad es comunicarse con el servicio externo de notificaciones seleccionado por ResQ para intentar entregar una alerta a un `NotificationTarget`.
 
-El adapter:
+El adaptador:
 
 - recibe la información de la alerta y del destinatario;
 - construye la solicitud requerida por el proveedor externo;
@@ -5482,7 +5482,7 @@ Su responsabilidad es obtener la información mínima necesaria para determinar 
 
 Para ello puede utilizar información proporcionada por User, IAM y los contextos relacionados con la organización y ubicación del riesgo.
 
-El adapter devuelve una colección de `NotificationTarget` y no persiste perfiles de usuario ni reproduce sus roles o permisos dentro de Alert & Response Management.
+El adaptador devuelve una colección de `NotificationTarget` y no persiste perfiles de usuario ni reproduce sus roles o permisos dentro de Alert & Response Management.
 
 ##### DeviceCapabilityIntegrationAdapter
 
@@ -5545,7 +5545,7 @@ La información distribuida debe permitir identificar de forma inequívoca:
 - el usuario que tomó la decisión;
 - el momento de la decisión.
 
-Este adapter no determina si la decisión es válida. La decisión debe haber sido procesada previamente por la Application Layer.
+Este adaptador no determina si la decisión es válida. La decisión debe haber sido procesada previamente por la Application Layer.
 
 ##### EdgeResponsePolicyRepositoryAdapter
 
@@ -5589,7 +5589,7 @@ Esta persistencia permite conservar el estado propio del Bounded Context mientra
 
 Su responsabilidad es traducir una `ResponseActionSnapshot` a la representación requerida por el mecanismo local encargado de ejecutar una acción sobre un dispositivo.
 
-El adapter:
+El adaptador:
 
 - identifica el dispositivo objetivo;
 - identifica la capacidad de actuación solicitada;
@@ -5612,11 +5612,11 @@ Entre los eventos que puede comunicar se encuentran:
 - resultados de acciones ejecutadas;
 - información necesaria para registrar en Cloud la trazabilidad de una `ResponseExecution`.
 
-El adapter no administra directamente las colas utilizadas para conservar eventos durante una pérdida de conectividad.
+El adaptador no administra directamente las colas utilizadas para conservar eventos durante una pérdida de conectividad.
 
 La retención temporal, los reintentos y la posterior sincronización de esos mensajes pertenecen al mecanismo proporcionado por Connectivity.
 
-##### Persistence considerations
+##### Consideraciones de persistencia
 
 El modelo de persistencia de Alert & Response Management debe mantener la integridad de los objetos que pertenecen al Bounded Context y evitar dependencias directas con las tablas internas de otros contextos.
 
@@ -5658,45 +5658,45 @@ Esta persistencia local no asigna a Alert & Response Management la responsabilid
 
 #### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
 
-The Alert & Response Management Bounded Context participates in more than one deployable Container. For that reason, its Component Level architecture is represented through separate C4 Component Diagrams for the Cloud and Edge environments.
+El Bounded Context Alert & Response Management participa en más de un Container desplegable. Por esa razón, su arquitectura de Component Level se representa mediante C4 Component Diagrams separados para los entornos Cloud y Edge.
 
-The diagrams preserve the same domain boundary while representing the responsibilities deployed in each Container.
+Los diagramas preservan los mismos límites de dominio, representando las responsabilidades desplegadas en cada Container.
 
 ##### Alert & Response Management — ResQ Cloud RESTful API Component Diagram
 
-The Cloud Component Diagram represents the components inside the ResQ Cloud RESTful API that participate in Alert & Response Management.
+El Cloud Component Diagram representa los componentes dentro de ResQ Cloud RESTful API que participan en Alert & Response Management.
 
-The principal components are:
+Los principales componentes son:
 
-- Response Policy API, responsible for receiving authorized response-policy configuration and status-management operations.
+- Response Policy API, responsable de recibir operaciones autorizadas de configuración y gestión del estado de políticas de respuesta.
 
-- Alert API, responsible for exposing generated alerts and notification-delivery information to authorized clients.
+- Alert API, responsable de exponer las alertas generadas y la información de entrega de notificaciones a los clientes autorizados.
 
-- Response Execution API, responsible for exposing response executions and receiving human authorization decisions.
+- Response Execution API, responsable de exponer las ejecuciones de respuesta y recibir decisiones de autorización humana.
 
-- Risk Detected Event Consumer, responsible for receiving synchronized risk-detection events produced by the distributed Edge flow.
+- Risk Detected Event Consumer, responsable de recibir eventos sincronizados de detección de riesgos producidos por el flujo distribuido de Edge.
 
-- Response Authorization Request Consumer, responsible for receiving authorization requests generated by response executions in Edge.
+- Response Authorization Request Consumer, responsable de recibir solicitudes de autorización generadas por ejecuciones de respuesta en Edge.
 
-- Response Execution Result Consumer, responsible for receiving results of response actions executed locally in Edge.
+- Response Execution Result Consumer, responsable de recibir los resultados de las acciones de respuesta ejecutadas localmente en Edge.
 
-- Alert & Response Application, responsible for coordinating Cloud use cases related to policies, alerts, notifications, authorization decisions and execution traceability.
+- Alert & Response Application, responsable de coordinar los casos de uso de Cloud relacionados con políticas, alertas, notificaciones, decisiones de autorización y trazabilidad de ejecución.
 
-- Alert & Response Domain, containing the domain model and business rules used by the Cloud capabilities.
+- Alert & Response Domain, que contiene el modelo de dominio y las reglas de negocio utilizados por las capacidades de Cloud.
 
-- Cloud Alert & Response Persistence, implementing persistence operations for alerts, response policies and response executions.
+- Cloud Alert & Response Persistence, que implementa operaciones de persistencia para alertas, políticas de respuesta y ejecuciones de respuesta.
 
-- Notification Integration, responsible for communicating with the external notification provider.
+- Notification Integration, responsable de comunicarse con el proveedor externo de notificaciones.
 
-- Alert Recipient Integration, responsible for resolving alert recipients and notification channels.
+- Alert Recipient Integration, responsable de resolver los destinatarios de alertas y los canales de notificación.
 
-- Device Capability Integration, responsible for validating the actuation capabilities required by configured response actions.
+- Device Capability Integration, responsable de validar las capacidades de actuación requeridas por las acciones de respuesta configuradas.
 
-- Response Policy Distribution, responsible for propagating response-policy replicas toward Edge.
+- Response Policy Distribution, responsable de propagar las réplicas de políticas de respuesta hacia Edge.
 
-- Response Authorization Distribution, responsible for propagating authorization decisions toward Edge.
+- Response Authorization Distribution, responsable de propagar las decisiones de autorización hacia Edge.
 
-The main Cloud flow is conceptually:
+Conceptualmente, el flujo principal de Cloud es:
 
 ```text
 Web / Mobile Application
@@ -5720,47 +5720,47 @@ Cloud Persistence   External        Distribution
 ResQ Cloud DB       External Service     Edge
 ```
 
-Risk-detection events synchronized from Edge enter through the Risk Detected Event Consumer and are processed by the Application Layer.
+Los eventos de detección de riesgos sincronizados desde Edge ingresan mediante Risk Detected Event Consumer y son procesados por la Application Layer.
 
-When a risk-detection event is received, the Application Layer creates the corresponding `Alert`, resolves its recipients and requests notification delivery through the configured external integration.
+Cuando se recibe un evento de detección de riesgo, la Application Layer crea la `Alert` correspondiente, resuelve sus destinatarios y solicita la entrega de notificaciones mediante la integración externa configurada.
 
-Response policies are configured in Cloud and distributed toward Edge as operational replicas.
+Las políticas de respuesta se configuran en Cloud y se distribuyen hacia Edge como réplicas operativas.
 
-Authorization requests generated by `HUMAN_REQUIRED` actions are received from Edge and registered in Cloud so that an authorized user can approve or reject the corresponding execution.
+Las solicitudes de autorización generadas por acciones `HUMAN_REQUIRED` se reciben desde Edge y se registran en Cloud para que un usuario autorizado pueda aprobar o rechazar la ejecución correspondiente.
 
-The resulting authorization decision is then distributed toward Edge.
+La decisión de autorización resultante se distribuye luego hacia Edge.
 
-Execution results produced locally are received through the Response Execution Result Consumer and persisted to maintain response traceability.
+Los resultados de ejecución producidos localmente se reciben mediante Response Execution Result Consumer y se persisten para mantener la trazabilidad de las respuestas.
 
-**DIAGRAM — Alert & Response Management Cloud Component Level Diagram**
+**DIAGRAMA — Alert & Response Management Cloud Component Level Diagram**
 
 ![Alert & Response Management Cloud Component Level Diagram](assets/images/chapter-04-solution-software-design/alert-response-management/alert-response-management-cloud-component-level-diagram.png)
 
-##### Alert & Response Management — ResQ Edge API Component Diagram
+##### Alert & Response Management — ResQ Edge Service Component Diagram
 
-The Edge Component Diagram represents the components responsible for local response evaluation and execution inside the ResQ Edge API.
+El Edge Component Diagram representa los componentes responsables de la evaluación y ejecución local de respuestas dentro de ResQ Edge Service.
 
-The principal components are:
+Los principales componentes son:
 
-- Local Risk Detected Consumer, responsible for receiving risk detections generated by the local Risk Detection flow.
+- Local Risk Detected Consumer, responsable de recibir detecciones de riesgo generadas por el flujo local de Risk Detection.
 
-- Response Policy Replica Consumer, responsible for receiving current response-policy replicas distributed from Cloud.
+- Response Policy Replica Consumer, responsable de recibir las réplicas actuales de políticas de respuesta distribuidas desde Cloud.
 
-- Response Authorization Decision Consumer, responsible for receiving human authorization decisions distributed from Cloud.
+- Response Authorization Decision Consumer, responsable de recibir las decisiones de autorización humana distribuidas desde Cloud.
 
-- Edge Alert & Response Application, responsible for coordinating local response evaluation, authorization and execution.
+- Edge Alert & Response Application, responsable de coordinar la evaluación, autorización y ejecución local de respuestas.
 
-- Alert & Response Domain, containing the response-policy and response-execution business rules required locally.
+- Alert & Response Domain, que contiene las reglas de negocio de políticas de respuesta y ejecuciones de respuesta requeridas localmente.
 
-- Edge Response Policy Persistence, responsible for storing local response-policy replicas using Peewee and SQLite.
+- Edge Response Policy Persistence, responsable de almacenar réplicas locales de políticas de respuesta utilizando Peewee y SQLite.
 
-- Edge Response Execution Persistence, responsible for storing locally originated response executions and their state.
+- Edge Response Execution Persistence, responsable de almacenar las ejecuciones de respuesta originadas localmente y su estado.
 
-- Actuator Integration, responsible for requesting authorized local actuator operations.
+- Actuator Integration, responsable de solicitar operaciones locales autorizadas de actuadores.
 
-- Alert & Response Event Publisher, responsible for publishing authorization requests and execution results toward the distributed ResQ flow.
+- Alert & Response Event Publisher, responsable de publicar solicitudes de autorización y resultados de ejecución hacia el flujo distribuido de ResQ.
 
-The principal local execution flow is:
+El flujo principal de ejecución local es:
 
 ```text
 Local Risk Detection
@@ -5784,7 +5784,7 @@ Alert & Response Event Publisher
 Distributed ResQ Flow
 ```
 
-The Edge policy-update flow is:
+El flujo de actualización de políticas en Edge es:
 
 ```text
 Cloud Policy Distribution
@@ -5799,7 +5799,7 @@ Edge Alert & Response Application
 Edge Response Policy Persistence
 ```
 
-The authorization-decision flow is:
+El flujo de decisiones de autorización es:
 
 ```text
 Cloud Authorization Decision
@@ -5821,39 +5821,39 @@ Actuator        Final State
 Execution
 ```
 
-When the Local Risk Detected Consumer receives a locally detected risk, the Application Layer retrieves the active response policies corresponding to the organization and risk type.
+Cuando Local Risk Detected Consumer recibe un riesgo detectado localmente, la Application Layer recupera las políticas de respuesta activas correspondientes a la organización y al tipo de riesgo.
 
-For actions configured with `AUTOMATIC`, Edge can continue toward local actuator execution without an additional human authorization.
+Para las acciones configuradas con `AUTOMATIC`, Edge puede continuar con la ejecución local del actuador sin una autorización humana adicional.
 
-For actions configured with `HUMAN_REQUIRED`, the corresponding `ResponseExecution` remains in `PENDING_AUTHORIZATION` and an authorization request is published toward Cloud.
+Para las acciones configuradas con `HUMAN_REQUIRED`, la `ResponseExecution` correspondiente permanece en `PENDING_AUTHORIZATION` y se publica una solicitud de autorización hacia Cloud.
 
-When an `APPROVED` decision is received, the execution continues locally. A `REJECTED` decision finalizes the execution without issuing a command to the actuator.
+Cuando se recibe una decisión `APPROVED`, la ejecución continúa localmente. Una decisión `REJECTED` finaliza la ejecución sin emitir un comando al actuador.
 
-Response-policy replicas and local execution state are persisted using Peewee and SQLite so that the state required for local operation can be maintained.
+Las réplicas de políticas de respuesta y el estado de ejecución local se persisten utilizando Peewee y SQLite para mantener el estado requerido para la operación local.
 
-The transport, retry and synchronization mechanisms used between Cloud and Edge remain the responsibility of the Connectivity Bounded Context.
+Los mecanismos de transporte, reintentos y sincronización utilizados entre Cloud y Edge siguen siendo responsabilidad del Bounded Context Connectivity.
 
-**DIAGRAM — Alert & Response Management Edge Component Level Diagram**
+**DIAGRAMA — Alert & Response Management Edge Component Level Diagram**
 
 ![Alert & Response Management Edge Component Level Diagram](assets/images/chapter-04-solution-software-design/alert-response-management/alert-response-management-edge-component-level-diagram.png)
 
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
 
-The Code Level Diagrams provide a more detailed representation of the implementation-oriented structure of the Alert & Response Management Bounded Context.
+Los Code Level Diagrams proporcionan una representación más detallada de la estructura orientada a la implementación del Bounded Context Alert & Response Management.
 
-For Alert & Response Management, the Code Level is represented by:
+Para Alert & Response Management, el Code Level se representa mediante:
 
-- Domain Layer Class Diagram, describing the object-oriented domain model, including Aggregate Roots, Entities, Value Objects, enumerations, Domain Services, Repository interfaces, attributes, methods, visibility, relationships, and multiplicities.
+- Domain Layer Class Diagram, que describe el modelo de dominio orientado a objetos, incluidos Aggregate Roots, Entities, Value Objects, enumeraciones, Domain Services, interfaces de Repository, atributos, métodos, visibilidad, relaciones y multiplicidades.
 
-- Database Design Diagram, describing the relational persistence structures required by the Cloud and Edge portions of the Bounded Context.
+- Database Design Diagram, que describe las estructuras de persistencia relacional requeridas por las partes Cloud y Edge del Bounded Context.
 
-The diagrams must remain consistent with the four-layer design described above.
+Los diagramas deben mantener la consistencia con el diseño de cuatro capas descrito anteriormente.
 
 ##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
 
-The Domain Layer Class Diagram represents the implementation-oriented structure of the Alert & Response Management domain model.
+El Domain Layer Class Diagram representa la estructura orientada a la implementación del modelo de dominio de Alert & Response Management.
 
-The diagram must include the following elements.
+El diagrama debe incluir los siguientes elementos.
 
 **Aggregate Roots**
 
@@ -5873,7 +5873,7 @@ The diagram must include the following elements.
 - `ResponseActionSnapshot`
 - `ExecutionResult`
 
-**Enumerations**
+**Enumeraciones**
 
 - `ResponsePolicyStatus`
 - `AuthorizationMode`
@@ -5891,49 +5891,49 @@ The diagram must include the following elements.
 
 - `ResponsePolicySelectionService`
 
-The principal relationships to represent are:
+Las principales relaciones que deben representarse son:
 
-- `Alert` composes exactly one `AlertContext`.
+- `Alert` compone exactamente un `AlertContext`.
 
-- `Alert` owns zero or more `NotificationDelivery` entities.
+- `Alert` posee cero o más entidades `NotificationDelivery`.
 
-- `NotificationDelivery` uses exactly one `NotificationDeliveryStatus`.
+- `NotificationDelivery` utiliza exactamente un `NotificationDeliveryStatus`.
 
-- `ResponsePolicy` owns zero or more `ResponseAction` entities while being configured.
+- `ResponsePolicy` posee cero o más entidades `ResponseAction` mientras se encuentra en configuración.
 
-- `ResponsePolicy` uses exactly one `ResponsePolicyStatus`.
+- `ResponsePolicy` utiliza exactamente un `ResponsePolicyStatus`.
 
-- `ResponseAction` uses exactly one `AuthorizationMode`.
+- `ResponseAction` utiliza exactamente un `AuthorizationMode`.
 
-- `ResponseExecution` composes exactly one `ResponseActionSnapshot`.
+- `ResponseExecution` compone exactamente un `ResponseActionSnapshot`.
 
-- `ResponseExecution` may own zero or one `ResponseAuthorization`.
+- `ResponseExecution` puede poseer cero o una `ResponseAuthorization`.
 
-- `ResponseExecution` may compose zero or one `ExecutionResult`.
+- `ResponseExecution` puede componer cero o un `ExecutionResult`.
 
-- `ResponseExecution` uses exactly one `ResponseExecutionStatus`.
+- `ResponseExecution` utiliza exactamente un `ResponseExecutionStatus`.
 
-- `ResponseActionSnapshot` uses exactly one `AuthorizationMode`.
+- `ResponseActionSnapshot` utiliza exactamente un `AuthorizationMode`.
 
-- `ResponseAuthorization` uses exactly one `AuthorizationDecision`.
+- `ResponseAuthorization` utiliza exactamente una `AuthorizationDecision`.
 
-- `AlertRepository` persists and retrieves `Alert`.
+- `AlertRepository` persiste y recupera `Alert`.
 
-- `ResponsePolicyRepository` persists and retrieves `ResponsePolicy`.
+- `ResponsePolicyRepository` persiste y recupera `ResponsePolicy`.
 
-- `ResponseExecutionRepository` persists and retrieves `ResponseExecution`.
+- `ResponseExecutionRepository` persiste y recupera `ResponseExecution`.
 
-- `ResponsePolicySelectionService` evaluates `ResponsePolicy` and its `ResponseAction` elements.
+- `ResponsePolicySelectionService` evalúa `ResponsePolicy` y sus elementos `ResponseAction`.
 
-The diagram must show UML visibility conventions:
+El diagrama debe mostrar las convenciones de visibilidad UML:
 
-- `+` for public members;
+- `+` para miembros públicos;
 
-- `-` for private members;
+- `-` para miembros privados;
 
-- `#` for protected members when applicable.
+- `#` para miembros protegidos cuando corresponda.
 
-A conceptual multiplicity reference is:
+Una referencia conceptual de multiplicidad es:
 
 ```text
 Alert "1" *-- "1" AlertContext
@@ -5975,11 +5975,11 @@ ResponsePolicySelectionService ..> ResponsePolicy : evaluates
 ResponsePolicySelectionService ..> ResponseAction : selects
 ```
 
-A `ResponsePolicy` may contain zero or more `ResponseAction` entities while it is being configured. However, it must contain at least one valid action before it can be activated.
+Una `ResponsePolicy` puede contener cero o más entidades `ResponseAction` mientras se encuentra en configuración. Sin embargo, debe contener al menos una acción válida antes de poder activarse.
 
-`ResponseActionSnapshot` preserves the exact action used when a `ResponseExecution` is created so that later modifications to the corresponding `ResponsePolicy` do not alter historical execution information.
+`ResponseActionSnapshot` preserva la acción exacta utilizada al crear una `ResponseExecution` para que las modificaciones posteriores de la `ResponsePolicy` correspondiente no alteren la información histórica de ejecución.
 
-The following concepts must not appear as owned domain classes inside Alert & Response Management:
+Los siguientes conceptos no deben aparecer como clases de dominio propias dentro de Alert & Response Management:
 
 - `RiskDetection`
 - `Device`
@@ -5988,11 +5988,11 @@ The following concepts must not appear as owned domain classes inside Alert & Re
 - `User`
 - `Incident`
 - `Actuator`
-- Connectivity queues or synchronization structures
+- Colas o estructuras de sincronización de Connectivity
 
-Their identifiers may appear as external references when required by the alert and response process.
+Sus identificadores pueden aparecer como referencias externas cuando el proceso de alerta y respuesta los requiera.
 
-The principal external references include:
+Las principales referencias externas incluyen:
 
 - `riskDetectionId`
 - `targetDeviceId`
@@ -6001,212 +6001,212 @@ The principal external references include:
 - `recipientUserId`
 - `decidedByUserId`
 
-These identifiers do not transfer ownership of the referenced aggregates to Alert & Response Management.
+Estos identificadores no transfieren la propiedad de los agregados referenciados a Alert & Response Management.
 
-**DIAGRAM — Alert & Response Management Domain Layer Class Diagram**
+**DIAGRAMA — Alert & Response Management Domain Layer Class Diagram**
 
 ![Alert & Response Management Domain Layer Class Diagram](assets/images/chapter-04-solution-software-design/alert-response-management/alert-response-management-domain-layer-class-diagram.png)
 
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram
 
-The Alert & Response Management Database Design represents the persistence required by the Bounded Context across the Cloud and Edge execution environments.
+El Database Design de Alert & Response Management representa la persistencia requerida por el Bounded Context en los entornos de ejecución Cloud y Edge.
 
-Cloud persistence stores the authoritative response-policy definitions, generated alerts, notification-delivery history, response executions, human authorization decisions, and execution results.
+La persistencia Cloud almacena las definiciones autoritativas de políticas de respuesta, las alertas generadas, el historial de entrega de notificaciones, las ejecuciones de respuesta, las decisiones de autorización humana y los resultados de ejecución.
 
-Edge persistence stores the local response-policy replicas and response-execution state required for local operation.
+La persistencia Edge almacena las réplicas locales de políticas de respuesta y el estado de ejecución de respuestas requerido para la operación local.
 
-The persistence model deliberately avoids creating foreign-key dependencies to tables owned by other Bounded Contexts.
+El modelo de persistencia evita deliberadamente crear dependencias de claves foráneas hacia tablas pertenecientes a otros Bounded Contexts.
 
-###### Cloud Persistence
+###### Persistencia Cloud
 
 ###### `response_policies`
 
-Stores the authoritative response-policy configuration.
+Almacena la configuración autoritativa de políticas de respuesta.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `policy_id` | UUID | PRIMARY KEY | Unique identifier of the response policy. |
-| `organization_id` | UUID | NOT NULL | Organization to which the policy belongs. |
-| `risk_type_code` | VARCHAR(100) | NOT NULL | Risk type to which the policy applies. |
-| `status` | VARCHAR(20) | NOT NULL | Current policy status (`ACTIVE` or `INACTIVE`). |
-| `version` | BIGINT | NOT NULL | Version used to order distributed updates toward Edge. |
-| `created_at` | TIMESTAMP | NOT NULL | Moment when the policy was created. |
-| `updated_at` | TIMESTAMP | NOT NULL | Moment when the policy was last modified. |
+| `policy_id` | UUID | PRIMARY KEY | Identificador único de la política de respuesta. |
+| `organization_id` | UUID | NOT NULL | Organización a la que pertenece la política. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Tipo de riesgo al que se aplica la política. |
+| `status` | VARCHAR(20) | NOT NULL | Estado actual de la política (`ACTIVE` o `INACTIVE`). |
+| `version` | BIGINT | NOT NULL | Versión utilizada para ordenar las actualizaciones distribuidas hacia Edge. |
+| `created_at` | TIMESTAMP | NOT NULL | Momento en el que se creó la política. |
+| `updated_at` | TIMESTAMP | NOT NULL | Momento en el que se modificó la política por última vez. |
 
-A response policy may contain zero or more actions while it is being configured, but it must contain at least one valid action before activation.
+Una política de respuesta puede contener cero o más acciones mientras se encuentra en configuración, pero debe contener al menos una acción válida antes de activarse.
 
 ###### `response_actions`
 
-Stores the response actions owned by each policy.
+Almacena las acciones de respuesta pertenecientes a cada política.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `action_id` | UUID | PRIMARY KEY | Unique identifier of the response action. |
-| `policy_id` | UUID | NOT NULL, FOREIGN KEY | References `response_policies.policy_id`. |
-| `action_code` | VARCHAR(100) | NOT NULL | Code identifying the action. |
-| `target_device_id` | UUID | NOT NULL | External identifier of the target device. |
-| `target_capability_code` | VARCHAR(100) | NOT NULL | Device actuation capability required by the action. |
-| `authorization_mode` | VARCHAR(30) | NOT NULL | Indicates whether the action is `AUTOMATIC` or `HUMAN_REQUIRED`. |
-| `critical` | BOOLEAN | NOT NULL | Indicates whether the action participates in critical local operation. |
+| `action_id` | UUID | PRIMARY KEY | Identificador único de la acción de respuesta. |
+| `policy_id` | UUID | NOT NULL, FOREIGN KEY | Referencia `response_policies.policy_id`. |
+| `action_code` | VARCHAR(100) | NOT NULL | Código que identifica la acción. |
+| `target_device_id` | UUID | NOT NULL | Identificador externo del dispositivo objetivo. |
+| `target_capability_code` | VARCHAR(100) | NOT NULL | Capacidad de actuación del dispositivo requerida por la acción. |
+| `authorization_mode` | VARCHAR(30) | NOT NULL | Indica si la acción es `AUTOMATIC` o `HUMAN_REQUIRED`. |
+| `critical` | BOOLEAN | NOT NULL | Indica si la acción participa en la operación crítica local. |
 
-`target_device_id` is an external reference and therefore does not create a direct database relationship with Device Management persistence.
+`target_device_id` es una referencia externa y, por lo tanto, no crea una relación directa de base de datos con la persistencia de Device Management.
 
 ###### `alerts`
 
-Stores alerts generated from risk-detection information received by Alert & Response Management.
+Almacena las alertas generadas a partir de la información de detección de riesgos recibida por Alert & Response Management.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `alert_id` | UUID | PRIMARY KEY | Unique identifier of the alert. |
-| `organization_id` | UUID | NOT NULL | Organization associated with the alert. |
-| `risk_detection_id` | UUID | NOT NULL | External identifier of the risk detection that originated the alert. |
-| `risk_type_code` | VARCHAR(100) | NOT NULL | Risk type captured when the alert was generated. |
-| `severity_code` | VARCHAR(50) | NOT NULL | Severity captured when the alert was generated. |
-| `detected_at` | TIMESTAMP | NOT NULL | Original risk-detection time. |
-| `building_id` | UUID | NULL | External Building reference when available. |
-| `zone_id` | UUID | NULL | External Zone reference when available. |
-| `generated_at` | TIMESTAMP | NOT NULL | Moment when the alert was generated. |
+| `alert_id` | UUID | PRIMARY KEY | Identificador único de la alerta. |
+| `organization_id` | UUID | NOT NULL | Organización asociada con la alerta. |
+| `risk_detection_id` | UUID | NOT NULL | Identificador externo de la detección de riesgo que originó la alerta. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Tipo de riesgo capturado cuando se generó la alerta. |
+| `severity_code` | VARCHAR(50) | NOT NULL | Severidad capturada cuando se generó la alerta. |
+| `detected_at` | TIMESTAMP | NOT NULL | Momento original de detección del riesgo. |
+| `building_id` | UUID | NULL | Referencia externa a Building cuando está disponible. |
+| `zone_id` | UUID | NULL | Referencia externa a Zone cuando está disponible. |
+| `generated_at` | TIMESTAMP | NOT NULL | Momento en el que se generó la alerta. |
 
-`AlertContext` is a Value Object and therefore its values are embedded within the `alerts` record instead of being stored in a separate table.
+`AlertContext` es un Value Object y, por lo tanto, sus valores se integran en el registro de `alerts` en lugar de almacenarse en una tabla separada.
 
-`risk_detection_id`, `building_id`, and `zone_id` are external references and intentionally do not create foreign keys to Risk Detection or Building Management persistence.
+`risk_detection_id`, `building_id` y `zone_id` son referencias externas e intencionalmente no crean claves foráneas hacia la persistencia de Risk Detection o Building Management.
 
 ###### `notification_deliveries`
 
-Stores notification-delivery attempts associated with generated alerts.
+Almacena los intentos de entrega de notificaciones asociados con las alertas generadas.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `delivery_id` | UUID | PRIMARY KEY | Unique identifier of the delivery attempt. |
-| `alert_id` | UUID | NOT NULL, FOREIGN KEY | References `alerts.alert_id`. |
-| `recipient_user_id` | UUID | NOT NULL | External identifier of the destination user. |
-| `channel` | VARCHAR(50) | NOT NULL | Notification channel used for the attempt. |
-| `destination` | VARCHAR(255) | NOT NULL | Destination identifier required by the selected channel. |
-| `status` | VARCHAR(20) | NOT NULL | Delivery status (`PENDING`, `DELIVERED`, or `FAILED`). |
-| `requested_at` | TIMESTAMP | NOT NULL | Moment when delivery was requested. |
-| `completed_at` | TIMESTAMP | NULL | Moment when the delivery attempt completed. |
-| `failure_reason` | VARCHAR(255) | NULL | Failure information when the delivery could not be completed. |
+| `delivery_id` | UUID | PRIMARY KEY | Identificador único del intento de entrega. |
+| `alert_id` | UUID | NOT NULL, FOREIGN KEY | Referencia `alerts.alert_id`. |
+| `recipient_user_id` | UUID | NOT NULL | Identificador externo del usuario destinatario. |
+| `channel` | VARCHAR(50) | NOT NULL | Canal de notificación utilizado para el intento. |
+| `destination` | VARCHAR(255) | NOT NULL | Identificador de destino requerido por el canal seleccionado. |
+| `status` | VARCHAR(20) | NOT NULL | Estado de entrega (`PENDING`, `DELIVERED` o `FAILED`). |
+| `requested_at` | TIMESTAMP | NOT NULL | Momento en el que se solicitó la entrega. |
+| `completed_at` | TIMESTAMP | NULL | Momento en el que finalizó el intento de entrega. |
+| `failure_reason` | VARCHAR(255) | NULL | Información del fallo cuando no pudo completarse la entrega. |
 
-`recipient_user_id` is an external reference and therefore does not create a direct relationship with User or IAM persistence.
+`recipient_user_id` es una referencia externa y, por lo tanto, no crea una relación directa con la persistencia de User o IAM.
 
 ###### `response_executions`
 
-Stores the response executions produced by the system and preserves the action snapshot used for each execution.
+Almacena las ejecuciones de respuesta producidas por el sistema y preserva la instantánea de la acción utilizada para cada ejecución.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `response_execution_id` | UUID | PRIMARY KEY | Unique identifier of the response execution. |
-| `organization_id` | UUID | NOT NULL | Organization associated with the execution. |
-| `risk_detection_id` | UUID | NOT NULL | External identifier of the originating risk detection. |
-| `policy_id` | UUID | NOT NULL | Identifier of the response policy used when the execution was created. |
-| `action_id` | UUID | NOT NULL | Identifier of the action represented by the snapshot. |
-| `action_code` | VARCHAR(100) | NOT NULL | Action code preserved in the execution snapshot. |
-| `target_device_id` | UUID | NOT NULL | External identifier of the target device. |
-| `target_capability_code` | VARCHAR(100) | NOT NULL | Capability used during the execution. |
-| `authorization_mode` | VARCHAR(30) | NOT NULL | Authorization mode captured when the execution was created. |
-| `critical` | BOOLEAN | NOT NULL | Critical-operation indicator captured in the action snapshot. |
-| `status` | VARCHAR(40) | NOT NULL | Current response-execution status. |
-| `requested_at` | TIMESTAMP | NOT NULL | Moment when the execution was created. |
-| `successful` | BOOLEAN | NULL | Indicates whether the execution completed successfully. |
-| `result_code` | VARCHAR(100) | NULL | Code identifying the final execution result. |
-| `result_message` | VARCHAR(255) | NULL | Additional information about the result. |
-| `completed_at` | TIMESTAMP | NULL | Moment when execution reached a final result. |
+| `response_execution_id` | UUID | PRIMARY KEY | Identificador único de la ejecución de respuesta. |
+| `organization_id` | UUID | NOT NULL | Organización asociada con la ejecución. |
+| `risk_detection_id` | UUID | NOT NULL | Identificador externo de la detección de riesgo de origen. |
+| `policy_id` | UUID | NOT NULL | Identificador de la política de respuesta utilizada cuando se creó la ejecución. |
+| `action_id` | UUID | NOT NULL | Identificador de la acción representada por la instantánea. |
+| `action_code` | VARCHAR(100) | NOT NULL | Código de acción preservado en la instantánea de ejecución. |
+| `target_device_id` | UUID | NOT NULL | Identificador externo del dispositivo objetivo. |
+| `target_capability_code` | VARCHAR(100) | NOT NULL | Capacidad utilizada durante la ejecución. |
+| `authorization_mode` | VARCHAR(30) | NOT NULL | Modo de autorización capturado cuando se creó la ejecución. |
+| `critical` | BOOLEAN | NOT NULL | Indicador de operación crítica capturado en la instantánea de la acción. |
+| `status` | VARCHAR(40) | NOT NULL | Estado actual de la ejecución de respuesta. |
+| `requested_at` | TIMESTAMP | NOT NULL | Momento en el que se creó la ejecución. |
+| `successful` | BOOLEAN | NULL | Indica si la ejecución finalizó satisfactoriamente. |
+| `result_code` | VARCHAR(100) | NULL | Código que identifica el resultado final de ejecución. |
+| `result_message` | VARCHAR(255) | NULL | Información adicional sobre el resultado. |
+| `completed_at` | TIMESTAMP | NULL | Momento en el que la ejecución alcanzó un resultado final. |
 
-The action-related fields stored in this table represent the `ResponseActionSnapshot`.
+Los campos relacionados con la acción almacenados en esta tabla representan el `ResponseActionSnapshot`.
 
-`ExecutionResult` is a Value Object and therefore its values are embedded within the `response_executions` record instead of being stored in an independent table.
+`ExecutionResult` es un Value Object y, por lo tanto, sus valores se integran en el registro de `response_executions` en lugar de almacenarse en una tabla independiente.
 
-The fields `successful`, `result_code`, `result_message`, and `completed_at` remain nullable while the execution has not reached a final result.
+Los campos `successful`, `result_code`, `result_message` y `completed_at` admiten valores nulos mientras la ejecución no haya alcanzado un resultado final.
 
-`risk_detection_id` and `target_device_id` are external references.
+`risk_detection_id` y `target_device_id` son referencias externas.
 
 ###### `response_authorizations`
 
-Stores human authorization decisions associated with response executions.
+Almacena las decisiones de autorización humana asociadas con las ejecuciones de respuesta.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `authorization_id` | UUID | PRIMARY KEY | Unique identifier of the authorization decision. |
-| `response_execution_id` | UUID | NOT NULL, FOREIGN KEY | References `response_executions.response_execution_id`. |
-| `decision` | VARCHAR(20) | NOT NULL | Authorization decision (`APPROVED` or `REJECTED`). |
-| `decided_by_user_id` | UUID | NOT NULL | External identifier of the user who made the decision. |
-| `decided_at` | TIMESTAMP | NOT NULL | Moment when the decision was registered. |
+| `authorization_id` | UUID | PRIMARY KEY | Identificador único de la decisión de autorización. |
+| `response_execution_id` | UUID | NOT NULL, FOREIGN KEY | Referencia `response_executions.response_execution_id`. |
+| `decision` | VARCHAR(20) | NOT NULL | Decisión de autorización (`APPROVED` o `REJECTED`). |
+| `decided_by_user_id` | UUID | NOT NULL | Identificador externo del usuario que tomó la decisión. |
+| `decided_at` | TIMESTAMP | NOT NULL | Momento en el que se registró la decisión. |
 
-A `ResponseExecution` may have zero or one associated `ResponseAuthorization`.
+Una `ResponseExecution` puede tener cero o una `ResponseAuthorization` asociada.
 
-`decided_by_user_id` is an external reference and therefore does not create a direct database relationship with User or IAM persistence.
+`decided_by_user_id` es una referencia externa y, por lo tanto, no crea una relación directa de base de datos con la persistencia de User o IAM.
 
-###### Edge Persistence
+###### Persistencia Edge
 
 ###### `edge_response_policies`
 
-Stores response-policy replicas required for local evaluation in the Edge SQLite database.
+Almacena las réplicas de políticas de respuesta requeridas para la evaluación local en la base de datos SQLite de Edge.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `policy_id` | UUID | PRIMARY KEY | Identifier of the Cloud response policy represented locally. |
-| `organization_id` | UUID | NOT NULL | Organization to which the policy belongs. |
-| `risk_type_code` | VARCHAR(100) | NOT NULL | Risk type to which the policy applies. |
-| `status` | VARCHAR(20) | NOT NULL | Current replicated policy status. |
-| `version` | BIGINT | NOT NULL | Version used to prevent older replicas from replacing newer ones. |
-| `updated_at` | TIMESTAMP | NOT NULL | Moment when the local replica was last updated. |
+| `policy_id` | UUID | PRIMARY KEY | Identificador de la política de respuesta de Cloud representada localmente. |
+| `organization_id` | UUID | NOT NULL | Organización a la que pertenece la política. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Tipo de riesgo al que se aplica la política. |
+| `status` | VARCHAR(20) | NOT NULL | Estado actual de la política replicada. |
+| `version` | BIGINT | NOT NULL | Versión utilizada para impedir que réplicas antiguas reemplacen a las más recientes. |
+| `updated_at` | TIMESTAMP | NOT NULL | Momento en el que se actualizó la réplica local por última vez. |
 
-This table is not an independent source of policy ownership. It is the local Edge representation of policy configuration administered in Cloud.
+Esta tabla no es una fuente independiente de propiedad de las políticas. Es la representación local de Edge de la configuración de políticas administrada en Cloud.
 
 ###### `edge_response_actions`
 
-Stores the actions belonging to locally replicated response policies.
+Almacena las acciones pertenecientes a las políticas de respuesta replicadas localmente.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `action_id` | UUID | PRIMARY KEY | Identifier of the replicated response action. |
-| `policy_id` | UUID | NOT NULL, FOREIGN KEY | References `edge_response_policies.policy_id`. |
-| `action_code` | VARCHAR(100) | NOT NULL | Code identifying the action. |
-| `target_device_id` | UUID | NOT NULL | External identifier of the target device. |
-| `target_capability_code` | VARCHAR(100) | NOT NULL | Actuation capability required by the action. |
-| `authorization_mode` | VARCHAR(30) | NOT NULL | Indicates whether the action is `AUTOMATIC` or `HUMAN_REQUIRED`. |
-| `critical` | BOOLEAN | NOT NULL | Indicates whether the action participates in critical local operation. |
+| `action_id` | UUID | PRIMARY KEY | Identificador de la acción de respuesta replicada. |
+| `policy_id` | UUID | NOT NULL, FOREIGN KEY | Referencia `edge_response_policies.policy_id`. |
+| `action_code` | VARCHAR(100) | NOT NULL | Código que identifica la acción. |
+| `target_device_id` | UUID | NOT NULL | Identificador externo del dispositivo objetivo. |
+| `target_capability_code` | VARCHAR(100) | NOT NULL | Capacidad de actuación requerida por la acción. |
+| `authorization_mode` | VARCHAR(30) | NOT NULL | Indica si la acción es `AUTOMATIC` o `HUMAN_REQUIRED`. |
+| `critical` | BOOLEAN | NOT NULL | Indica si la acción participa en la operación crítica local. |
 
 ###### `edge_response_executions`
 
-Stores response executions created and processed locally in Edge.
+Almacena las ejecuciones de respuesta creadas y procesadas localmente en Edge.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `response_execution_id` | UUID | PRIMARY KEY | Unique identifier of the local response execution. |
-| `organization_id` | UUID | NOT NULL | Organization associated with the execution. |
-| `risk_detection_id` | UUID | NOT NULL | External identifier of the originating risk detection. |
-| `policy_id` | UUID | NOT NULL | Identifier of the response policy used for the execution. |
-| `action_id` | UUID | NOT NULL | Identifier of the action represented by the snapshot. |
-| `action_code` | VARCHAR(100) | NOT NULL | Action code preserved in the snapshot. |
-| `target_device_id` | UUID | NOT NULL | External identifier of the target device. |
-| `target_capability_code` | VARCHAR(100) | NOT NULL | Capability used by the response. |
-| `authorization_mode` | VARCHAR(30) | NOT NULL | Authorization mode captured for the execution. |
-| `critical` | BOOLEAN | NOT NULL | Critical-operation indicator. |
-| `status` | VARCHAR(40) | NOT NULL | Current local response-execution status. |
-| `requested_at` | TIMESTAMP | NOT NULL | Moment when the execution was created. |
-| `successful` | BOOLEAN | NULL | Indicates whether execution completed successfully. |
-| `result_code` | VARCHAR(100) | NULL | Final result code when available. |
-| `result_message` | VARCHAR(255) | NULL | Additional result information. |
-| `completed_at` | TIMESTAMP | NULL | Moment when execution reached a final result. |
+| `response_execution_id` | UUID | PRIMARY KEY | Identificador único de la ejecución local de respuesta. |
+| `organization_id` | UUID | NOT NULL | Organización asociada con la ejecución. |
+| `risk_detection_id` | UUID | NOT NULL | Identificador externo de la detección de riesgo de origen. |
+| `policy_id` | UUID | NOT NULL | Identificador de la política de respuesta utilizada para la ejecución. |
+| `action_id` | UUID | NOT NULL | Identificador de la acción representada por la instantánea. |
+| `action_code` | VARCHAR(100) | NOT NULL | Código de acción preservado en la instantánea. |
+| `target_device_id` | UUID | NOT NULL | Identificador externo del dispositivo objetivo. |
+| `target_capability_code` | VARCHAR(100) | NOT NULL | Capacidad utilizada por la respuesta. |
+| `authorization_mode` | VARCHAR(30) | NOT NULL | Modo de autorización capturado para la ejecución. |
+| `critical` | BOOLEAN | NOT NULL | Indicador de operación crítica. |
+| `status` | VARCHAR(40) | NOT NULL | Estado actual de la ejecución local de respuesta. |
+| `requested_at` | TIMESTAMP | NOT NULL | Momento en el que se creó la ejecución. |
+| `successful` | BOOLEAN | NULL | Indica si la ejecución finalizó satisfactoriamente. |
+| `result_code` | VARCHAR(100) | NULL | Código de resultado final cuando está disponible. |
+| `result_message` | VARCHAR(255) | NULL | Información adicional del resultado. |
+| `completed_at` | TIMESTAMP | NULL | Momento en el que la ejecución alcanzó un resultado final. |
 
-A locally created execution can remain in `PENDING_AUTHORIZATION` while waiting for an authorization decision from Cloud.
+Una ejecución creada localmente puede permanecer en `PENDING_AUTHORIZATION` mientras espera una decisión de autorización desde Cloud.
 
 ###### `edge_response_authorizations`
 
-Stores authorization decisions received from Cloud for locally originated response executions.
+Almacena las decisiones de autorización recibidas desde Cloud para las ejecuciones de respuesta originadas localmente.
 
-| Column | Type | Constraint | Description |
+| Columna | Tipo | Restricción | Descripción |
 |---|---|---|---|
-| `authorization_id` | UUID | PRIMARY KEY | Identifier of the authorization decision. |
-| `response_execution_id` | UUID | NOT NULL, FOREIGN KEY | References `edge_response_executions.response_execution_id`. |
-| `decision` | VARCHAR(20) | NOT NULL | Authorization decision (`APPROVED` or `REJECTED`). |
-| `decided_by_user_id` | UUID | NOT NULL | External identifier of the user who made the decision. |
-| `decided_at` | TIMESTAMP | NOT NULL | Moment when the decision was registered. |
+| `authorization_id` | UUID | PRIMARY KEY | Identificador de la decisión de autorización. |
+| `response_execution_id` | UUID | NOT NULL, FOREIGN KEY | Referencia `edge_response_executions.response_execution_id`. |
+| `decision` | VARCHAR(20) | NOT NULL | Decisión de autorización (`APPROVED` o `REJECTED`). |
+| `decided_by_user_id` | UUID | NOT NULL | Identificador externo del usuario que tomó la decisión. |
+| `decided_at` | TIMESTAMP | NOT NULL | Momento en el que se registró la decisión. |
 
-The Edge persistence implementation must use SQLite with Peewee ORM, according to the Edge Services technology required by the Project Statement.
+La implementación de persistencia Edge debe utilizar SQLite con Peewee ORM, de acuerdo con la tecnología de Edge Services requerida por el enunciado del proyecto.
 
-The principal persistence relationships are conceptually:
+Conceptualmente, las principales relaciones de persistencia son:
 
 ```text
 Cloud Persistence
@@ -6258,9 +6258,9 @@ edge_response_executions
 edge_response_authorizations
 ```
 
-The final Database Design Diagram must clearly distinguish:
+El Database Design Diagram final debe distinguir claramente:
 
-- Cloud Persistence
+- Persistencia Cloud
   - `response_policies`
   - `response_actions`
   - `alerts`
@@ -6274,29 +6274,29 @@ The final Database Design Diagram must clearly distinguish:
   - `edge_response_executions`
   - `edge_response_authorizations`
 
-The diagram must identify:
+El diagrama debe identificar:
 
-- all tables;
+- todas las tablas;
 
-- all columns;
+- todas las columnas;
 
-- primary keys;
+- las claves primarias;
 
-- foreign keys internal to the Bounded Context;
+- las claves foráneas internas del Bounded Context;
 
-- nullable fields;
+- los campos que admiten valores nulos;
 
-- cardinalities;
+- las cardinalidades;
 
-- Cloud versus Edge persistence boundaries;
+- los límites de persistencia de Cloud y Edge;
 
-- external references that intentionally do not create foreign keys to other Bounded Contexts.
+- las referencias externas que intencionalmente no crean claves foráneas hacia otros Bounded Contexts.
 
-No database table for `RiskDetection`, `Device`, `Building`, `Zone`, `User`, `Incident`, `Actuator`, or Connectivity pending events must be introduced inside the Alert & Response Management persistence boundary.
+No debe introducirse ninguna tabla de base de datos para `RiskDetection`, `Device`, `Building`, `Zone`, `User`, `Incident`, `Actuator` o eventos pendientes de Connectivity dentro de los límites de persistencia de Alert & Response Management.
 
-Message queues, retries, pending-event storage, and synchronization mechanisms remain outside this persistence model because they belong to the Connectivity Bounded Context.
+Las colas de mensajes, los reintentos, el almacenamiento de eventos pendientes y los mecanismos de sincronización permanecen fuera de este modelo de persistencia porque pertenecen al Bounded Context Connectivity.
 
-**DIAGRAM — Alert & Response Management Database Design Diagram**
+**DIAGRAMA — Alert & Response Management Database Design Diagram**
 
 ![Alert & Response Management Database Design Diagram](assets/images/chapter-04-solution-software-design/alert-response-management/alert-response-management-database-design-diagram.png)
 
