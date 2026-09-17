@@ -33,7 +33,7 @@ INGENIERÍA DE SOFTWARE
   <p>U202320442 — Quispe Barzola, Fabricio Fabian</p>
   <p>U202324129 — Chacaliaza Minaya, Eduardo Fabian</p>
   <p>U202116246 - Guerrero Vasquez, Jhon Danny</p>
-  <p>Uasdasd</p>
+  <p>U202222001 - Aliaga Urbina, Wilder Gonzalo</p>
   <p>Usdasda</p>
   
 </div>
@@ -152,7 +152,7 @@ INGENIERÍA DE SOFTWARE
 
   <!-- BLOQUE 2 -->
   <tr>
-    <td>Jhon Guerrero V.</td>
+    <td>Wilder Gonzalo Aliaga Urbina</td>
     <td>
       <ul>
         <li>2.3 Needfinding</li>
