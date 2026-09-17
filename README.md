@@ -2330,7 +2330,52 @@ Como parte del proceso se realizaron cambios progresivos sobre el EventStorm, co
 El resultado permitió obtener una primera descomposición del dominio en ocho contextos candidatos. Estos límites serán refinados posteriormente mediante los **Bounded Context Canvases** y el **Context Mapping**, donde se analizarán con mayor detalle sus responsabilidades, reglas de negocio y relaciones.
 
 #### 4.1.1.2. Domain Message Flows Modeling
-[COMPLETAR]
+
+Luego de identificar los Candidate Bounded Contexts de ResQ, se utilizó la técnica de **Domain Storytelling** para representar cómo estos contextos deben colaborar frente a diferentes situaciones del negocio.
+
+Para cada escenario se identificaron los actores involucrados, los Bounded Contexts que participan y los principales mensajes intercambiados entre ellos. Estos mensajes se representan como **Commands, Events y Queries**, permitiendo visualizar qué contexto solicita una acción, cuál procesa la información y qué resultado comunica posteriormente.
+
+Se seleccionaron cuatro escenarios representativos del funcionamiento de ResQ: la configuración inicial de una edificación, la detección y respuesta automática ante un riesgo, la confirmación de una acción de alto impacto y el seguimiento de un incidente. Estos escenarios permiten observar tanto los procesos administrativos como el flujo principal de monitoreo y respuesta ante emergencias.
+
+**Escenario 1: Configuración de una edificación monitoreada**
+
+El primer escenario representa la preparación de la infraestructura antes de iniciar el monitoreo. Un administrador se autentica mediante **IAM** y la información correspondiente al usuario y su organización es gestionada por **User Management**.
+
+Posteriormente, el administrador registra la edificación y define las zonas que serán monitoreadas mediante **Building Management**. Finalmente, los dispositivos IoT son registrados y asociados con las zonas correspondientes a través de **Device Management**.
+
+Como resultado, la infraestructura queda configurada para que las mediciones futuras puedan relacionarse correctamente con un dispositivo, una zona y una edificación.
+
+![DomainMessageFlowsModeling_Scenario1](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario1.png)
+
+**Escenario 2: Detección y respuesta automática ante un riesgo**
+
+Este escenario representa el flujo principal de valor de ResQ. El proceso comienza cuando un dispositivo IoT genera una nueva medición y la envía a **Monitoring**, donde se registra y actualiza el estado observado de la zona.
+
+La información es posteriormente evaluada por **Risk Detection**, que determina si existe una condición de riesgo y establece su tipo, nivel y ubicación. Cuando se confirma un riesgo, esta información es enviada a **Alert & Response Management**, que aplica las políticas correspondientes para generar una alerta y, cuando está permitido, ejecutar una respuesta automática.
+
+Finalmente, los datos del riesgo y de la respuesta realizada son comunicados a **Incident Management**, donde se registra el incidente para permitir su posterior seguimiento.
+
+![DomainMessageFlowsModeling_Scenario2](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario2.png)
+
+**Escenario 3: Confirmación de una acción de alto impacto**
+
+Algunas acciones de seguridad pueden requerir intervención humana debido a su posible impacto. Cuando **Risk Detection** identifica una situación que requiere este tipo de respuesta, **Alert & Response Management** solicita la confirmación de un responsable autorizado.
+
+Antes de permitir la operación, **IAM** valida que el usuario posea los permisos necesarios. Una vez autorizado, el responsable puede confirmar la acción y Alert & Response Management procede con su ejecución.
+
+La decisión tomada y la respuesta realizada son posteriormente comunicadas a **Incident Management**, permitiendo conservar la trazabilidad de la intervención humana. En caso de que el responsable rechace la acción, esta no se ejecuta y la decisión también puede quedar registrada.
+
+![DomainMessageFlowsModeling_Scenario3](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario3.png)
+
+**Escenario 4: Seguimiento y cierre de un incidente**
+
+Una vez registrado un incidente, un responsable de seguridad puede consultar su información mediante **Incident Management**. Desde este contexto se puede conocer el riesgo asociado, las acciones realizadas y el responsable asignado.
+
+Cuando se requiere información actualizada sobre la zona afectada, Incident Management consulta a **Monitoring** para obtener las condiciones actuales. A medida que evoluciona la situación, el responsable puede actualizar el estado del incidente y, cuando la emergencia ha sido controlada, solicitar su cierre.
+
+De esta manera, Incident Management conserva la trazabilidad de los responsables, cambios de estado y acciones realizadas durante todo el ciclo de vida del incidente.
+
+![DomainMessageFlowsModeling_Scenario4](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario4.png)
 
 #### 4.1.1.3. Bounded Context Canvases
 [COMPLETAR]
