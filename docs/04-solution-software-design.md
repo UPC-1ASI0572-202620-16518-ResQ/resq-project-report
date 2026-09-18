@@ -387,10 +387,18 @@ Esta sección detalla la estructura técnica e interna del Bounded Context. Se c
 #### 4.2.7.6.1. Bounded Context Domain Layer Class Diagrams
 
 El diagrama representa la estructura del perfil de usuario, agrupando su identidad, nombre, información de contacto y preferencias.
-UserProfile actúa como elemento central y contiene los diferentes Value Objects que representan cada aspecto del usuario.
+`UserProfile` actúa como elemento central y contiene los diferentes `Value Objects` que representan cada aspecto del usuario.
 Esta organización permite encapsular los datos y comportamientos del dominio, manteniendo una estructura modular y coherente.
 
 ![User Domain Layer Diagrams](assets/images/chapter-04-solution-software-design/imagen6-user.png)
 
+#### 4.2.7.6.2. Bounded Context Database Design Diagram
 
+Propósito: Representa el esquema físico de persistencia (modelo relacional) diseñado para almacenar el estado de los agregados del Bounded Context `User`.
+
+- Estructura Principal: Se centra en una tabla única denominada USER_PROFILES, la cual consolida todos los datos del perfil de un usuario.
+- Estrategia de Mapeo (Embedded Pattern): Los atributos que en el dominio están encapsulados en Value Objects (FullName, ContactInformation, UserPreferences) se "aplanan" y se convierten en columnas directas dentro de la misma tabla (ej. first_name, email, pref_language). Esto optimiza las consultas al evitar joins innecesarios.
+- Punto de Integración: Destaca que la llave primaria (id) está diseñada como un UUID que coincide exactamente con el identificador de identidad gestionado en el Bounded Context IAM, estableciendo el puente lógico entre la autenticación y los datos personales sin acoplar las tablas.
+
+![User Database Desing Diagram](assets/images/chapter-04-solution-software-design/imagen7-user.png)
 
