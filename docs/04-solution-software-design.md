@@ -188,7 +188,7 @@ Los componentes se dividen en mecanismos de persistencia y adaptadores dirigidos
 
 #### 4.2.8.5. Bounded Context Software Architecture Component Level Diagrams
 
- # Flujo Principal de Interacción
+ ##### Flujo Principal de Interacción
 
 El flujo principal del Incident Bounded Context se desarrolla de manera secuencial a través de las distintas capas de la arquitectura para garantizar el cumplimiento de las reglas de negocio y el desacoplamiento técnico:
 
@@ -202,7 +202,7 @@ El flujo principal del Incident Bounded Context se desarrolla de manera secuenci
 8. **Respuesta:** El resultado del proceso se transforma de nuevo a un DTO y retorna a través del `IncidentController` hacia el cliente con el estado HTTP correspondiente.
 
 
-![Flujo Process Diagram](assets/images/chapter-04-solution-software-design/chapter-04-flujo-process-diagram.png)
+![Flujo Process Diagram](assets/images/chapter-04-solution-software-design/imagen2.png)
 
 **Diagrama - Incident Component Level Diagram**
  
@@ -215,5 +215,6 @@ El flujo principal del Incident Bounded Context se desarrolla de manera secuenci
 
 Las relaciones entre los componentes muestran cómo las solicitudes atraviesan las diferentes capas, manteniendo una separación de responsabilidades y facilitando el mantenimiento y evolución del sistema.
 
-![Incident Component Level Diagram](assets/images/chapter-04-solution-software-design/chapter-04-component-level-diagram.png)
+![Incident Component Level Diagram](assets/images/chapter-04-solution-software-design/imagen1.png)
+
 
