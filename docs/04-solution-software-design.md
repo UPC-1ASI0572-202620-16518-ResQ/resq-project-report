@@ -302,7 +302,7 @@ El agregado principal es `UserProfile`.
 
 Un `UserProfile` es identificado de manera única por un `UserId`, el cual hace de puente lógico directo con la identidad gestionada en el Bounded Context de IAM.
 
-#### UserProfile
+##### UserProfile
 
 **Categoría:** Aggregate Root / Entity.
 
@@ -327,7 +327,7 @@ El controlador principal es `UserProfileController`.
 
 Un `UserProfileController` recibe las solicitudes HTTP, extrae las identidades del contexto de seguridad y delega las operaciones hacia la Application Layer.
 
-#### UserProfileController
+##### UserProfileController
 
 **Categoría:** REST Controller / Interface.
 
@@ -345,7 +345,7 @@ La Application Layer aplica el patrón CQRS a nivel lógico para separar de form
 
 Los componentes orquestadores se dividen según su responsabilidad de comandos o consultas.
 
-#### Application Components
+##### Application Components
 
 **Categoría:** Application Services / CQRS Handlers.
 
@@ -364,7 +364,7 @@ Los componentes orquestadores se dividen según su responsabilidad de comandos o
 
 La Infrastructure Layer maneja la persistencia de los perfiles utilizando un ORM sobre una base de datos relacional, implementando los contratos definidos por el dominio.
 
-#### Infrastructure Components
+##### Infrastructure Components
 
 **Categoría:** Infrastructure Services / Adapters.
 
