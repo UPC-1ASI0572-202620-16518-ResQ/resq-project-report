@@ -2266,7 +2266,7 @@ Esta combinación presenta ventajas como la simplificación de la arquitectura a
 
 No obstante, una desventaja es la combinación de responsabilidades distintas, ya que una parte se enfoca en transacciones de alto rendimiento (recibir miles de heartbeats por segundo) y la otra en procesos administrativos (registrar MAC addresses y zonas). Esto podría generar cuellos de botella en el servidor y el riesgo de que un solo contexto asuma demasiadas funciones.
 
-![Mapping2 - ResQ](assets/images/chapter-04-solution-software-design/mapping1.png)
+![Mapping2 - ResQ](assets/images/chapter-04-solution-software-design/mapping2.png)
 
 **opcion 3**
 
@@ -2280,7 +2280,7 @@ Esta alternativa propone una arquitectura compuesta por cinco bounded contexts b
 
 * Connectivity Management se conecta con Device Management mediante una Anti-corruption Layer (ACL). Esta capa traduce los miles de datos técnicos de red y latidos a un formato simple de estados operativos que Device Management pueda entender. Así, se protege el sistema central de la inmensa carga de datos técnicos de IoT.
 
-![Mapping3 - ResQ](assets/images/chapter-04-solution-software-design/mapping1.png)
+![Mapping3 - ResQ](assets/images/chapter-04-solution-software-design/mapping3.png)
 
 **Elección**
 Elegimos la opción 3, ya que proporciona el mejor equilibrio entre la separación de responsabilidades, la capacidad de procesamiento de alto rendimiento y el cumplimiento de los requisitos críticos de un sistema de emergencias.
