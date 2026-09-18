@@ -1488,24 +1488,24 @@ Su principal objetivo profesional es implementar sistemas confiables que posteri
 
 ---
 
-##### Entrevista 5 — Andrea Paredes Salazar
+##### Entrevista 5 — Mateo Loechle Arias
 
 | Información | Detalle |
 |---|---|
-| Nombres | Andrea |
-| Apellidos | Paredes Salazar |
-| Edad | 33 años |
-| Género | Femenino |
+| Nombres | Mateo |
+| Apellidos | Loechle Arias|
+| Edad | 26 años |
+| Género | Masculino |
 | Distrito de residencia | Jesús María |
 | Ocupación / Cargo | Ingeniera de proyectos e integración IoT |
 | Tipo de organización | Empresa integradora pequeña especializada en IoT, sensores, dashboards y modernización de infraestructura |
 | Segmento objetivo | Empresas integradoras de automatización y gestión de edificios inteligentes |
-| Fecha de entrevista | [COMPLETAR] |
-| Inicio en el video | [COMPLETAR - hh:mm:ss] |
-| Duración | [COMPLETAR - mm:ss] |
-| URL del video | [COMPLETAR] |
+| Fecha de entrevista | 17/09/2026 |
+| Inicio en el video | 00:02 |
+| Duración | 13:01 |
+| URL del video | [Mateo Loechle Arias](https://upcedupe-my.sharepoint.com/personal/u202320442_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202320442%5Fupc%5Fedu%5Fpe%2FDocuments%2FEntrevistas%20%2D%20IoT%20%2D%20Grupo%203%20%2D%2016518%2Fsegmento%202%20entrevista%205%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E6ae1b621%2D5371%2D417a%2Db2cf%2Dcb2c48c82ce1) |
 
-![Entrevista 5 - Andrea Paredes Salazar](assets/images/chapter-02-requirements-elicitation-analysis/interview-05-andrea-paredes.png)
+![Entrevista 5 - Mateo Loechle Arias](assets/images/chapter-02-requirements-elicitation-analysis/MateoEntrevista.png)
 
 **Resumen de la entrevista**
 
