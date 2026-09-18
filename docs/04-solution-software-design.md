@@ -116,3 +116,27 @@ Un `IncidentController` maneja las peticiones HTTP relacionadas con la gestión 
 * **`AssignIncidentCommandDTO`:** Payload con los datos del responsable asignado.
 * **`ResolveIncidentCommandDTO`:** Payload con el resumen o tipificación de la resolución.
 
+### 4.2.8.3. Application Layer
+
+La Application Layer orquesta los flujos de trabajo delegando la ejecución a los objetos del dominio. Se implementa utilizando el patrón CQRS (Command Query Responsibility Segregation) a nivel lógico para separar las operaciones de lectura y escritura.
+
+Los manejadores se dividen según su responsabilidad en comandos y consultas.
+
+#### Application Components
+
+**Categoría:** Application Services / CQRS Handlers.
+
+**Propósito:** Coordinar los casos de uso del sistema, gestionando las transacciones de escritura y abstrayendo las consultas de lectura sin alterar el estado del dominio.
+
+**Componentes Principales:**
+
+* **Command Handlers (Escritura):**
+    * **`CreateIncidentCommandHandler`:** Orquesta la creación de un nuevo incidente (generalmente invocado por un evento asíncrono desde el contexto de Detección).
+    * **`AssignIncidentCommandHandler`:** Valida los permisos y ejecuta el método de asignación en el Aggregate Root.
+    * **`ResolveIncidentCommandHandler`:** Ejecuta la lógica de cierre del incidente y persiste el cambio.
+
+* **Query Handlers (Lectura):**
+    * **`GetIncidentByIdQueryHandler`:** Recupera los detalles de un incidente específico.
+    * **`GetHistoricalIncidentsQueryHandler`:** Ejecuta búsquedas paginadas y filtradas para la consulta de incidentes anteriores.
+
+
