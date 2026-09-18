@@ -220,6 +220,14 @@ Las relaciones entre los componentes muestran cómo las solicitudes atraviesan l
 
 ### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
 
+Esta sección presenta los diagramas de nivel de código del Bounded Context de Incident Management de ResQ, detallando la estructura interna de sus principales elementos de software.
+
+- Domain Layer: representa el Incident Aggregate, Value Objects, enumeraciones y reglas de negocio.
+- Application Layer: muestra los servicios encargados de coordinar los casos de uso y operaciones sobre incidentes.
+- Infrastructure Layer: representa los componentes de persistencia y publicación de eventos.
+- Interface Layer: muestra los controladores responsables de exponer las funcionalidades del contexto.
+- Relaciones: permiten visualizar las dependencias entre clases, componentes y responsabilidades, facilitando la comprensión de la implementación del Bounded Context.
+
 #### 4.2.8.6.1. Bounded Context Domain Layer Class Diagrams
 
 El siguiente diagrama de clases ilustra el modelo de dominio rico, destacando el Aggregate Root, sus Value Objects y métodos principales:
