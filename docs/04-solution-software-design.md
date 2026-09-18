@@ -251,3 +251,128 @@ Trazabilidad: esta estructura permite conservar una secuencia histórica de acci
 
 ![Incident Database Design Diagram](assets/images/chapter-04-solution-software-design/imagen4.png)
 
+
+### 4.2.7. Bounded Context: User
+
+El Bounded Context User es responsable de gestionar la información del perfil personal, los datos de contacto y las preferencias de las personas que interactúan con la plataforma ResQ, ya sean administradores de edificaciones, responsables de seguridad, facility managers o usuarios integradores.
+
+Este Bounded Context atiende las necesidades de personalización y contacto del sistema. Asegura que la plataforma disponga de la información necesaria para identificar humanamente a los usuarios, enviarles notificaciones de emergencia a través de los canales adecuados y adaptar la experiencia del sistema a sus preferencias, sin mezclar estos datos con la lógica estricta de control de acceso.
+
+Como se definió en la arquitectura de la solución, este contexto está estrictamente separado del Bounded Context Identity and Access Management (IAM). Mientras IAM se encarga de las credenciales, hashes, roles y tokens de sesión, el contexto User gestiona nombres, números de teléfono y configuraciones personales.
+
+#### Responsabilidades Principales
+
+Las principales responsabilidades de este Bounded Context son:
+
+* **Gestión de Identidad Humana:** Almacenar y gestionar la información personal básica del usuario (nombres, apellidos).
+* **Canales de Comunicación:** Mantener actualizados los canales de contacto (correo electrónico, número de teléfono) necesarios para el envío de alertas y notificaciones del sistema.
+* **Personalización del Sistema:** Gestionar las preferencias del usuario (ej. idioma de la interfaz, preferencias de recepción de alertas, zona horaria).
+* **Integración de Datos:** Proveer información de perfil a otros contextos cuando sea necesario (por ejemplo, para que el contexto `Incident` pueda mostrar el nombre real del responsable asignado, referenciando el ID).
+* **Aislamiento de Dominio:** Mantener el modelo de dominio independiente de los mecanismos de autenticación y autorización.
+
+Los principales conceptos identificados para el Bounded Context User son `UserProfile`, `UserId`, `FullName`, `ContactInformation` y `UserPreferences`.
+
+#### Diccionario de clases
+
+La siguiente tabla resume las principales clases e interfaces que conforman el Bounded Context User.
+
+
+| Clase / Interfaz | Capa | Propósito | Atributos principales | Operaciones principales | Relaciones principales |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **UserProfile** | Domain | Representa el perfil de un usuario en ResQ. Es el Aggregate Root responsable de mantener la coherencia de la información personal y de contacto. | id: UserId, name: FullName, contactInfo: ContactInformation, preferences: UserPreferences | updateContactInfo(info), updatePreferences(prefs), changeName(name) | Compone UserId, FullName, ContactInformation, UserPreferences. |
+| **UserId** | Domain | Value Object que representa el identificador único del usuario. Coincide con el identificador utilizado en IAM para correlacionar la identidad con el perfil. | value: UUID | value() | Compuesto por UserProfile. |
+| **FullName** | Domain | Value Object que encapsula el nombre y apellido del usuario, asegurando que no estén vacíos. | firstName: String, lastName: String | formattedName() | Compuesto por UserProfile. |
+| **ContactInformation** | Domain | Value Object que centraliza los canales de comunicación del usuario para la recepción de alertas. | email: String, phoneNumber: String | hasValidPhone() | Compuesto por UserProfile. |
+| **UserPreferences** | Domain | Value Object que almacena configuraciones específicas del usuario para la plataforma. | language: String, timeZone: String, receiveSMSAlerts: Boolean | isSmsEnabled() | Compuesto por UserProfile. |
+| **UserProfileRepository** | Domain | Abstracción utilizada para recuperar y persistir agregados UserProfile sin acoplarse a una base de datos específica. | — | findById(userId), save(profile) | Persiste y recupera agregados UserProfile. |
+| **CreateUserProfileCommand** | Application | Representa la solicitud para inicializar un perfil de usuario, típicamente invocada tras un registro exitoso en IAM. | userId: UUID, firstName: String, lastName: String, email: String | — | Gestionado por CreateUserProfileCommandHandler. |
+| **CreateUserProfileCommandHandler** | Application | Coordina la creación del perfil inicial y lo persiste en el repositorio. | Dependencia de UserProfileRepository | handle(command) | Utiliza UserProfileRepository. |
+| **UpdateContactInfoCommand** | Application | Representa la solicitud para actualizar el correo o teléfono del usuario. | userId: UUID, newEmail: String, newPhone: String | — | Gestionado por UpdateContactInfoCommandHandler. |
+| **UpdateContactInfoCommandHandler** | Application | Recupera el perfil, aplica los cambios en el dominio y persiste el estado actualizado. | Dependencia de UserProfileRepository | handle(command) | Utiliza UserProfileRepository. |
+| **GetUserProfileQuery** | Application | Representa una solicitud de lectura para obtener los datos del perfil de un usuario. | userId: UUID | — | Gestionada por GetUserProfileQueryHandler. |
+| **GetUserProfileQueryHandler** | Application | Orquesta la lectura de datos del perfil para presentarlos en las interfaces cliente. | Dependencia de UserProfileRepository o DAO | handle(query) | Recupera DTOs para la vista. |
+| **UserProfileController** | Interface | Recibe solicitudes HTTP REST (GET, PUT, PATCH) para la gestión del perfil y las delega a la capa de aplicación. | Dependencias de Command/Query Handlers | getProfile(...), updateContact(...) | Delega a la Application Layer. |
+| **JpaUserProfileRepository** | Infrastructure | Implementa UserProfileRepository utilizando Spring Data JPA para la persistencia en base de datos. | Dependencia de base de datos | findById(), save() | Implementa UserProfileRepository. |
+
+---
+
+### 4.2.7.1. Domain Layer
+
+La Domain Layer contiene la lógica centrada en la validez de la información personal. Se asegura de que los datos de contacto tengan formatos correctos y que las preferencias se mantengan dentro de los valores soportados por el sistema (ej. zonas horarias válidas). 
+
+El agregado principal es `UserProfile`.
+
+Un `UserProfile` es identificado de manera única por un `UserId`, el cual hace de puente lógico directo con la identidad gestionada en el Bounded Context de IAM.
+
+#### UserProfile
+
+**Categoría:** Aggregate Root / Entity.
+
+**Propósito:** Representar el perfil de un usuario en ResQ, responsabilizándose de mantener la coherencia y consistencia de la información personal, canales de comunicación y preferencias de configuración.
+
+**Atributos / Elementos del Dominio:**
+
+* **Value Objects:**
+    * **`id`:** UserId — Identificador único del usuario correlacionado con IAM.
+    * **`name`:** FullName — Objeto de valor que encapsula y valida el nombre y apellido del usuario.
+    * **`contactInfo`:** ContactInformation — Centraliza y valida los canales de comunicación (correo y teléfono).
+    * **`preferences`:** UserPreferences — Almacena las configuraciones de idioma, zona horaria y alertas SMS.
+
+* **Repositories (Interfaces):**
+    * **`UserProfileRepository`:** Define la abstracción necesaria para recuperar y persistir agregados `UserProfile` sin acoplarse a tecnologías específicas.
+
+### 4.2.7.2. Interface Layer
+
+La Interface Layer proporciona los endpoints RESTful para que las aplicaciones móviles o web de ResQ consulten y modifiquen la información del usuario logueado.
+
+El controlador principal es `UserProfileController`.
+
+Un `UserProfileController` recibe las solicitudes HTTP, extrae las identidades del contexto de seguridad y delega las operaciones hacia la Application Layer.
+
+#### UserProfileController
+
+**Categoría:** REST Controller / Interface.
+
+**Propósito:** Exponer los servicios HTTP para la lectura del perfil propio, actualización de datos de contacto y parametrización de preferencias.
+
+**Endpoints Principales:**
+
+* **`GET /api/v1/users/me`:** Recupera el perfil detallado del usuario autenticado.
+* **`PUT /api/v1/users/me/contact`:** Actualiza el número de teléfono y correo electrónico del usuario.
+* **`PATCH /api/v1/users/me/preferences`:** Modifica las preferencias de notificaciones y visualización de la plataforma.
+
+### 4.2.7.3. Application Layer
+
+La Application Layer aplica el patrón CQRS a nivel lógico para separar de forma clara la lectura del perfil de las operaciones de modificación de datos.
+
+Los componentes orquestadores se dividen según su responsabilidad de comandos o consultas.
+
+#### Application Components
+
+**Categoría:** Application Services / CQRS Handlers.
+
+**Propósito:** Coordinar los casos de uso relacionados con el perfil del usuario, gestionando las transacciones y abstrayendo los accesos de lectura.
+
+**Componentes Principales:**
+
+* **Command Handlers (Escritura):**
+    * **`CreateUserProfileCommandHandler`:** Coordina la inicialización del perfil base tras un registro exitoso en el sistema.
+    * **`UpdateContactInfoCommandHandler`:** Valida la existencia del perfil, delega la actualización de datos (`updateContactInfo`) al agregado de dominio y persiste el estado modificado.
+
+* **Query Handlers (Lectura):**
+    * **`GetUserProfileQueryHandler`:** Proyecta la información recuperada directamente hacia DTOs limpios para optimizar la velocidad de carga en la interfaz de usuario.
+
+### 4.2.7.4. Infrastructure Layer
+
+La Infrastructure Layer maneja la persistencia de los perfiles utilizando un ORM sobre una base de datos relacional, implementando los contratos definidos por el dominio.
+
+#### Infrastructure Components
+
+**Categoría:** Infrastructure Services / Adapters.
+
+**Propósito:** Proveer las herramientas técnicas concretas para el almacenamiento e integración de datos del perfil.
+
+**Componentes de Persistencia:**
+
+* **`JpaUserProfileRepository`:** Implementación concreta de `UserProfileRepository` utilizando Spring Data JPA para abstraer las transacciones con la base de datos.
+* **`UserProfileEntity`:** Entidad de infraestructura mapeada a la tabla correspondiente en PostgreSQL. Mapea los Value Objects del dominio (como `FullName` y `ContactInformation`) a columnas de una misma tabla (patrón *Embedded*) para optimizar el rendimiento de acceso.
