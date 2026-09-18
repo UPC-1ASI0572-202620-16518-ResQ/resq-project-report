@@ -186,6 +186,34 @@ Los componentes se dividen en mecanismos de persistencia y adaptadores dirigidos
 * **`DetectionEventListener`:** Consumidor de Kafka que escucha activamente los eventos de riesgo crítico detectados en el Edge para instanciar automáticamente los incidentes en el sistema.
 
 
+#### 4.2.8.5. Bounded Context Software Architecture Component Level Diagrams
+
+ ### Flujo Principal de Interacción
+
+El flujo principal del Incident Bounded Context se desarrolla de manera secuencial a través de las distintas capas de la arquitectura para garantizar el cumplimiento de las reglas de negocio y el desacoplamiento técnico:
+
+1. **Solicitud del usuario:** El cliente (aplicación web o móvil) envía una solicitud HTTP para consultar, asignar o resolver un incidente.
+2. **IncidentController:** La Interface Layer recibe la petición, valida el formato del DTO de entrada y la dirige al manejador correspondiente en la capa superior.
+3. **Application Layer:** El componente de aplicación toma el control utilizando el patrón CQRS; un `IncidentCommandHandler` procesa las operaciones de escritura, mientras que un `IncidentQueryHandler` gestiona las consultas de lectura.
+4. **Incident Aggregate:** En operaciones de escritura, el agregador `Incident` ejecuta la lógica de negocio central, valida las transiciones de estado y asegura la consistencia de la emergencia.
+5. **Repository Interface:** La capa de aplicación utiliza la abstracción `IncidentRepository` para solicitar la persistencia o recuperación del agregado sin acoplarse a la tecnología de almacenamiento.
+6. **JPA Repository:** La Infrastructure Layer, a través de `JpaIncidentRepository`, implementa dicho contrato y realiza las consultas u operaciones físicas sobre la base de datos PostgreSQL.
+7. **Kafka Publisher:** Si la regla de negocio del agregador generó un cambio significativo, `KafkaIncidentEventPublisher` publica los eventos de dominio resultantes (como `IncidentCreatedEvent` o `IncidentResolvedEvent`) en el bus de mensajes.
+8. **Respuesta:** El resultado del proceso se transforma de nuevo a un DTO y retorna a través del `IncidentController` hacia el cliente con el estado HTTP correspondiente.
 
 
+![Flujo Process Diagram](assets/images/chapter-04-solution-software-desing/chapter-04-flujo-process-diagram.png)
+
+**Diagrama - Incidente Component Level Diagram**
+ 
+ El siguiente diagrama C4 (Nivel 3: Componentes) detalla la estructura interna del Bounded Context de Incidentes organizada en cuatro capas:
+- Interface Layer: recibe y gestiona las solicitudes mediante el Incident Controller.
+- Application Layer: coordina los casos de uso de incidentes, separando operaciones de escritura y consulta.
+- Domain Layer: contiene las reglas de negocio mediante el Incident Aggregate y define el contrato de persistencia mediante Incident Repository Interface.
+- Infrastructure Layer: implementa la persistencia con JPA Incident Repository y la comunicación mediante eventos con Kafka Event Publisher.
+- Base de datos: almacena la información de los incidentes y registros relacionados.
+
+Las relaciones entre los componentes muestran cómo las solicitudes atraviesan las diferentes capas, manteniendo una separación de responsabilidades y facilitando el mantenimiento y evolución del sistema.
+
+![Incident Component Level Diagram](assets/images/chapter-04-solution-software-desing/chapter-04-component-level-diagram.png)
 
