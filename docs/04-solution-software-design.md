@@ -374,3 +374,30 @@ La Infrastructure Layer maneja la persistencia de los perfiles utilizando un ORM
 
 * **`JpaUserProfileRepository`:** Implementación concreta de `UserProfileRepository` utilizando Spring Data JPA para abstraer las transacciones con la base de datos.
 * **`UserProfileEntity`:** Entidad de infraestructura mapeada a la tabla correspondiente en PostgreSQL. Mapea los Value Objects del dominio (como `FullName` y `ContactInformation`) a columnas de una misma tabla (patrón *Embedded*) para optimizar el rendimiento de acceso.
+
+# 4.2.7.5. Bounded Context Software Architecture Component Level Diagrams
+
+El diagrama representa la arquitectura interna del User Bounded Context de ResQ, aplicando una separación por capas basada en Clean Architecture y DDD.
+
+**Interface Layer**
+* User Profile Controller recibe las solicitudes HTTP relacionadas con el perfil y las preferencias del usuario.
+
+**Application Layer**
+* Profile Command Handlers gestiona operaciones de escritura.
+* Profile Query Handlers se encarga de las consultas.
+
+**Domain Layer**
+* User Profile Aggregate concentra los datos y reglas de negocio del perfil.
+* User Profile Repository Interface define el contrato que debe cumplir la persistencia.
+
+**Infrastructure Layer**
+* JPA User Profile Repository implementa el repositorio utilizando Spring Data JPA.
+
+**Base de datos**
+* User Database almacena perfiles, información de contacto y preferencias.
+
+**Flujo principal**
+* Las solicitudes llegan al controlador → pasan a la capa de aplicación → interactúan con el agregado y el repositorio → finalmente se persisten o consultan los datos en PostgreSQL.
+
+![User Component Level Diagrams](assets/images/chapter-04-solution-software-design/imagen5-user.png)
+
