@@ -21,7 +21,7 @@ Las principales responsabilidades de este Bounded Context son:
 
 Los principales conceptos identificados para el Bounded Context Incident son **Incident**, **IncidentId**, **ZoneId**, **RiskType RiskLevel**, **IncidentStatus** y **AttendantId**.
 
-#### Diccionario de clases
+##### Diccionario de clases
 
 La siguiente tabla resume las principales clases e interfaces que conforman el Bounded Context Incident.
 
@@ -96,7 +96,7 @@ El controlador principal es `IncidentController`.
 
 Un `IncidentController` maneja las peticiones HTTP relacionadas con la gestión de incidentes, validando los datos de entrada y delegando la ejecución hacia la Application Layer.
 
-#### IncidentController
+##### IncidentController
 
 **Categoría:** REST Controller / Interface.
 
@@ -202,7 +202,7 @@ Esta sección presenta los diagramas de nivel de código del Bounded Context de 
 - Interface Layer: muestra los controladores responsables de exponer las funcionalidades del contexto.
 - Relaciones: permiten visualizar las dependencias entre clases, componentes y responsabilidades, facilitando la comprensión de la implementación del Bounded Context.
 
-### 4.2.8.6.1. Bounded Context Domain Layer Class Diagrams
+#### 4.2.8.6.1. Bounded Context Domain Layer Class Diagrams
 
 El siguiente diagrama de clases ilustra el modelo de dominio rico, destacando el Aggregate Root, sus Value Objects y métodos principales:
 
@@ -214,7 +214,7 @@ El siguiente diagrama de clases ilustra el modelo de dominio rico, destacando el
 
 ![Incident Layar Class Diagrams](assets/images/chapter-04-solution-software-design/imagen3.png)
 
-### 4.2.8.6.2. Bounded Context Database Design Diagram
+#### 4.2.8.6.2. Bounded Context Database Design Diagram
 
 El diseño de la base de datos refleja la persistencia del estado de los incidentes, optimizado para almacenar el histórico y soportar las consultas de indicadores y secuencias:
 
@@ -234,7 +234,7 @@ Este Bounded Context atiende las necesidades de personalización y contacto del 
 
 Como se definió en la arquitectura de la solución, este contexto está estrictamente separado del Bounded Context Identity and Access Management (IAM). Mientras IAM se encarga de las credenciales, hashes, roles y tokens de sesión, el contexto User gestiona nombres, números de teléfono y configuraciones personales.
 
-#### Responsabilidades Principales
+##### Responsabilidades Principales
 
 Las principales responsabilidades de este Bounded Context son:
 
@@ -246,7 +246,7 @@ Las principales responsabilidades de este Bounded Context son:
 
 Los principales conceptos identificados para el Bounded Context User son `UserProfile`, `UserId`, `FullName`, `ContactInformation` y `UserPreferences`.
 
-#### Diccionario de clases
+##### Diccionario de clases
 
 La siguiente tabla resume las principales clases e interfaces que conforman el Bounded Context User.
 
@@ -376,4 +376,13 @@ El diagrama representa la arquitectura interna del User Bounded Context de ResQ,
 * Las solicitudes llegan al controlador → pasan a la capa de aplicación → interactúan con el agregado y el repositorio → finalmente se persisten o consultan los datos en PostgreSQL.
 
 ![User Component Level Diagrams](assets/images/chapter-04-solution-software-design/imagen5-user.png)
+
+### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams
+Esta sección detalla la estructura técnica e interna del Bounded Context. Se compone de dos representaciones visuales:
+
+- Diagrama de Clases (Domain Layer): Modela la lógica de negocio orientada a objetos, ilustrando las entidades, Value Objects, sus atributos y las relaciones entre ellos.   
+
+- Diagrama de Diseño de Base de Datos: Muestra el esquema de persistencia física, detallando las tablas, columnas y llaves (Entity-Relationship) utilizadas para almacenar la información del dominio.
+
+### 4.2.7.6.1. Bounded Context Domain Layer Class Diagrams
 
