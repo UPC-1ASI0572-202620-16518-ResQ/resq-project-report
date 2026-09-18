@@ -22,7 +22,7 @@ INGENIERÍA DE SOFTWARE
 <h1 align="center" class="cover-title">Informe de Trabajo Final</h1>
 
 <p align="center" class="cover-product">
-  <strong>Startup:</strong> ResQ<br>
+  <strong>Startup:</strong> SecurityBear<br>
   <strong>Producto:</strong> ResQ
 </p>
 
