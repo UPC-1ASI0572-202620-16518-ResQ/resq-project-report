@@ -188,7 +188,7 @@ Los componentes se dividen en mecanismos de persistencia y adaptadores dirigidos
 
 #### 4.2.8.5. Bounded Context Software Architecture Component Level Diagrams
 
- ## Flujo Principal de Interacción
+ # Flujo Principal de Interacción
 
 El flujo principal del Incident Bounded Context se desarrolla de manera secuencial a través de las distintas capas de la arquitectura para garantizar el cumplimiento de las reglas de negocio y el desacoplamiento técnico:
 
@@ -204,7 +204,7 @@ El flujo principal del Incident Bounded Context se desarrolla de manera secuenci
 
 ![Flujo Process Diagram](assets/images/chapter-04-solution-software-design/chapter-04-flujo-process-diagram.png)
 
-**Diagrama - Incidente Component Level Diagram**
+**Diagrama - Incident Component Level Diagram**
  
  El siguiente diagrama C4 (Nivel 3: Componentes) detalla la estructura interna del Bounded Context de Incidentes organizada en cuatro capas:
 - Interface Layer: recibe y gestiona las solicitudes mediante el Incident Controller.
