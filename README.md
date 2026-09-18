@@ -1509,7 +1509,7 @@ Su principal objetivo profesional es implementar sistemas confiables que posteri
 
 **Resumen de la entrevista**
 
-Andrea Paredes Salazar tiene 33 años, reside en Jesús María, es soltera y vive con su hermana. Es ingeniera electrónica y cuenta con aproximadamente seis años de experiencia profesional. Actualmente trabaja como ingeniera de proyectos e integración IoT dentro de una empresa integradora pequeña especializada en IoT, sensores, dashboards y modernización de infraestructura.
+Mateo Loechle Arias tiene 26 años, reside en Jesús María, es soltero y vive con su hermano. Es ingeniera electrónica y cuenta con aproximadamente seis años de experiencia profesional. Actualmente trabaja como ingeniera de proyectos e integración IoT dentro de una empresa integradora pequeña especializada en IoT, sensores, dashboards y modernización de infraestructura.
 
 Participa en distintas etapas de los proyectos, desde el levantamiento inicial hasta la instalación, programación, integración y pruebas. Considera fundamentales las habilidades de investigación y resolución de problemas, además de conocimientos de redes, programación básica, electrónica y comunicación con personas que no necesariamente poseen formación técnica.
 
