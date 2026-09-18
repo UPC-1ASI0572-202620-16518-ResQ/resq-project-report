@@ -139,4 +139,29 @@ Los manejadores se dividen según su responsabilidad en comandos y consultas.
     * **`GetIncidentByIdQueryHandler`:** Recupera los detalles de un incidente específico.
     * **`GetHistoricalIncidentsQueryHandler`:** Ejecuta búsquedas paginadas y filtradas para la consulta de incidentes anteriores.
 
+### 4.2.8.4. Infrastructure Layer
+
+La Infrastructure Layer implementa las interfaces definidas en las capas superiores, gestionando la persistencia en la base de datos y la comunicación externa con el bus de mensajes.
+
+Los componentes se dividen en mecanismos de persistencia y adaptadores dirigidos por eventos.
+
+#### Infrastructure Components
+
+**Categoría:** Infrastructure Services / Adapters.
+
+**Propósito:** Proveer las implementaciones técnicas concretas para el almacenamiento de datos y la integración asíncrona con otros sistemas.
+
+**Componentes de Persistencia:**
+
+* **`JpaIncidentRepository`:** Implementación de `IncidentRepository` utilizando Spring Data JPA para la gestión del ciclo de vida de los datos.
+* **`IncidentEntity`:** Entidad de infraestructura mapeada directamente a las tablas de la base de datos relacional (MySQL/PostgreSQL).
+* **`IncidentMapper`:** Componente encargado de transformar los datos entre `IncidentEntity` (Infraestructura) e `Incident` (Dominio) para mantener el desacoplamiento.
+
+**Componentes de Mensajería (Event-Driven):**
+
+* **`KafkaIncidentEventPublisher`:** Implementación encargada de publicar los *Domain Events* hacia un tópico de Apache Kafka (e.g., `resq.incident.events`), facilitando la integración asíncrona con los contextos de Notificaciones o Analítica.
+* **`DetectionEventListener`:** Consumidor de Kafka que escucha activamente los eventos de riesgo crítico detectados en el Edge para instanciar automáticamente los incidentes en el sistema.
+
+
+
 
