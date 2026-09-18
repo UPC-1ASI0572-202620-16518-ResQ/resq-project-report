@@ -1,4 +1,4 @@
-### 4.2.4. Bounded Context: Incident
+# 4.2.4. Bounded Context: Incident
 
 El Bounded Context **Incident** es responsable de gestionar el ciclo de vida de los incidentes generados a partir de las situaciones de riesgo o emergencias (como sismos, fugas de gas o incendios) detectadas en las edificaciones monitoreadas por ResQ.
 Este Bounded Context atiende las necesidades operativas y de seguimiento del sistema, asegurando que cada emergencia crítica tenga un registro formal que permita conocer su estado, asignar personal responsable para su atención, registrar su resolución y proveer un historial confiable para posteriores auditorías o cálculos de métricas de seguridad.
@@ -54,7 +54,7 @@ Del mismo modo, almacena el `AttendantId` para indicar quién está atendiendo e
 
 ---
 
-#### 4.2.4.1. Domain Layer
+### 4.2.4.1. Domain Layer
 
 La Domain Layer encapsula la lógica de negocio central y las reglas para la gestión de incidentes, asegurando que las transiciones de estado sean válidas y coherentes con la realidad física de la emergencia.
 
@@ -88,7 +88,7 @@ Un `Incident` representa una emergencia detectada en una zona específica de la 
 * **Repositories (Interfaces):**
     * **`IncidentRepository`:** Define los contratos para persistir y recuperar agregados `Incident`.
 
-#### 4.2.8.2. Interface Layer
+### 4.2.8.2. Interface Layer
 
 La Interface Layer define los puntos de entrada al Bounded Context, exponiendo las capacidades de ResQ hacia las aplicaciones cliente (web o móvil) mediante una API RESTful.
 
@@ -115,7 +115,7 @@ Un `IncidentController` maneja las peticiones HTTP relacionadas con la gestión 
 * **`AssignIncidentCommandDTO`:** Payload con los datos del responsable asignado.
 * **`ResolveIncidentCommandDTO`:** Payload con el resumen o tipificación de la resolución.
 
-#### 4.2.8.3. Application Layer
+### 4.2.8.3. Application Layer
 
 La Application Layer orquesta los flujos de trabajo delegando la ejecución a los objetos del dominio. Se implementa utilizando el patrón CQRS (Command Query Responsibility Segregation) a nivel lógico para separar las operaciones de lectura y escritura.
 
@@ -137,7 +137,7 @@ Los manejadores se dividen según su responsabilidad en comandos y consultas.
     * **`GetIncidentByIdQueryHandler`:** Recupera los detalles de un incidente específico.
     * **`GetHistoricalIncidentsQueryHandler`:** Ejecuta búsquedas paginadas y filtradas para la consulta de incidentes anteriores.
 
-#### 4.2.8.4. Infrastructure Layer
+### 4.2.8.4. Infrastructure Layer
 
 La Infrastructure Layer implementa las interfaces definidas en las capas superiores, gestionando la persistencia en la base de datos y la comunicación externa con el bus de mensajes.
 
@@ -160,31 +160,7 @@ Los componentes se dividen en mecanismos de persistencia y adaptadores dirigidos
 * **`KafkaIncidentEventPublisher`:** Implementación encargada de publicar los *Domain Events* hacia un tópico de Apache Kafka (e.g., `resq.incident.events`), facilitando la integración asíncrona con los contextos de Notificaciones o Analítica.
 * **`DetectionEventListener`:** Consumidor de Kafka que escucha activamente los eventos de riesgo crítico detectados en el Edge para instanciar automáticamente los incidentes en el sistema.
 
-#### 4.2.8.4. Infrastructure Layer
-
-La Infrastructure Layer implementa las interfaces definidas en las capas superiores, gestionando la persistencia en la base de datos y la comunicación externa con el bus de mensajes.
-
-Los componentes se dividen en mecanismos de persistencia y adaptadores dirigidos por eventos.
-
-#### Infrastructure Components
-
-**Categoría:** Infrastructure Services / Adapters.
-
-**Propósito:** Proveer las implementaciones técnicas concretas para el almacenamiento de datos y la integración asíncrona con otros sistemas.
-
-**Componentes de Persistencia:**
-
-* **`JpaIncidentRepository`:** Implementación de `IncidentRepository` utilizando Spring Data JPA para la gestión del ciclo de vida de los datos.
-* **`IncidentEntity`:** Entidad de infraestructura mapeada directamente a las tablas de la base de datos relacional (MySQL/PostgreSQL).
-* **`IncidentMapper`:** Componente encargado de transformar los datos entre `IncidentEntity` (Infraestructura) e `Incident` (Dominio) para mantener el desacoplamiento.
-
-**Componentes de Mensajería (Event-Driven):**
-
-* **`KafkaIncidentEventPublisher`:** Implementación encargada de publicar los *Domain Events* hacia un tópico de Apache Kafka (e.g., `resq.incident.events`), facilitando la integración asíncrona con los contextos de Notificaciones o Analítica.
-* **`DetectionEventListener`:** Consumidor de Kafka que escucha activamente los eventos de riesgo crítico detectados en el Edge para instanciar automáticamente los incidentes en el sistema.
-
-
-#### 4.2.8.5. Bounded Context Software Architecture Component Level Diagrams
+### 4.2.8.5. Bounded Context Software Architecture Component Level Diagrams
 
  ##### Flujo Principal de Interacción
 
@@ -216,7 +192,7 @@ Las relaciones entre los componentes muestran cómo las solicitudes atraviesan l
 ![Incident Component Level Diagram](assets/images/chapter-04-solution-software-design/imagen1.png)
 
 
-#### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
+### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
 
 Esta sección presenta los diagramas de nivel de código del Bounded Context de Incident Management de ResQ, detallando la estructura interna de sus principales elementos de software.
 
@@ -226,7 +202,7 @@ Esta sección presenta los diagramas de nivel de código del Bounded Context de 
 - Interface Layer: muestra los controladores responsables de exponer las funcionalidades del contexto.
 - Relaciones: permiten visualizar las dependencias entre clases, componentes y responsabilidades, facilitando la comprensión de la implementación del Bounded Context.
 
-#### 4.2.8.6.1. Bounded Context Domain Layer Class Diagrams
+### 4.2.8.6.1. Bounded Context Domain Layer Class Diagrams
 
 El siguiente diagrama de clases ilustra el modelo de dominio rico, destacando el Aggregate Root, sus Value Objects y métodos principales:
 
@@ -238,7 +214,7 @@ El siguiente diagrama de clases ilustra el modelo de dominio rico, destacando el
 
 ![Incident Layar Class Diagrams](assets/images/chapter-04-solution-software-design/imagen3.png)
 
-#### 4.2.8.6.2. Bounded Context Database Design Diagram
+### 4.2.8.6.2. Bounded Context Database Design Diagram
 
 El diseño de la base de datos refleja la persistencia del estado de los incidentes, optimizado para almacenar el histórico y soportar las consultas de indicadores y secuencias:
 
@@ -250,7 +226,7 @@ Trazabilidad: esta estructura permite conservar una secuencia histórica de acci
 ![Incident Database Design Diagram](assets/images/chapter-04-solution-software-design/imagen4.png)
 
 
-### 4.2.7. Bounded Context: User
+# 4.2.7. Bounded Context: User
 
 El Bounded Context User es responsable de gestionar la información del perfil personal, los datos de contacto y las preferencias de las personas que interactúan con la plataforma ResQ, ya sean administradores de edificaciones, responsables de seguridad, facility managers o usuarios integradores.
 
@@ -294,7 +270,7 @@ La siguiente tabla resume las principales clases e interfaces que conforman el B
 
 ---
 
-#### 4.2.7.1. Domain Layer
+### 4.2.7.1. Domain Layer
 
 La Domain Layer contiene la lógica centrada en la validez de la información personal. Se asegura de que los datos de contacto tengan formatos correctos y que las preferencias se mantengan dentro de los valores soportados por el sistema (ej. zonas horarias válidas). 
 
@@ -319,7 +295,7 @@ Un `UserProfile` es identificado de manera única por un `UserId`, el cual hace 
 * **Repositories (Interfaces):**
     * **`UserProfileRepository`:** Define la abstracción necesaria para recuperar y persistir agregados `UserProfile` sin acoplarse a tecnologías específicas.
 
-#### 4.2.7.2. Interface Layer
+### 4.2.7.2. Interface Layer
 
 La Interface Layer proporciona los endpoints RESTful para que las aplicaciones móviles o web de ResQ consulten y modifiquen la información del usuario logueado.
 
@@ -339,7 +315,7 @@ Un `UserProfileController` recibe las solicitudes HTTP, extrae las identidades d
 * **`PUT /api/v1/users/me/contact`:** Actualiza el número de teléfono y correo electrónico del usuario.
 * **`PATCH /api/v1/users/me/preferences`:** Modifica las preferencias de notificaciones y visualización de la plataforma.
 
-#### 4.2.7.3. Application Layer
+### 4.2.7.3. Application Layer
 
 La Application Layer aplica el patrón CQRS a nivel lógico para separar de forma clara la lectura del perfil de las operaciones de modificación de datos.
 
@@ -360,7 +336,7 @@ Los componentes orquestadores se dividen según su responsabilidad de comandos o
 * **Query Handlers (Lectura):**
     * **`GetUserProfileQueryHandler`:** Proyecta la información recuperada directamente hacia DTOs limpios para optimizar la velocidad de carga en la interfaz de usuario.
 
-#### 4.2.7.4. Infrastructure Layer
+### 4.2.7.4. Infrastructure Layer
 
 La Infrastructure Layer maneja la persistencia de los perfiles utilizando un ORM sobre una base de datos relacional, implementando los contratos definidos por el dominio.
 
@@ -375,7 +351,7 @@ La Infrastructure Layer maneja la persistencia de los perfiles utilizando un ORM
 * **`JpaUserProfileRepository`:** Implementación concreta de `UserProfileRepository` utilizando Spring Data JPA para abstraer las transacciones con la base de datos.
 * **`UserProfileEntity`:** Entidad de infraestructura mapeada a la tabla correspondiente en PostgreSQL. Mapea los Value Objects del dominio (como `FullName` y `ContactInformation`) a columnas de una misma tabla (patrón *Embedded*) para optimizar el rendimiento de acceso.
 
-# 4.2.7.5. Bounded Context Software Architecture Component Level Diagrams
+### 4.2.7.5. Bounded Context Software Architecture Component Level Diagrams
 
 El diagrama representa la arquitectura interna del User Bounded Context de ResQ, aplicando una separación por capas basada en Clean Architecture y DDD.
 
