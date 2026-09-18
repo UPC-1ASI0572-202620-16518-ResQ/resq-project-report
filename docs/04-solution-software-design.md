@@ -218,3 +218,28 @@ Las relaciones entre los componentes muestran cómo las solicitudes atraviesan l
 ![Incident Component Level Diagram](assets/images/chapter-04-solution-software-design/imagen1.png)
 
 
+### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 4.2.8.6.1. Bounded Context Domain Layer Class Diagrams
+
+El siguiente diagrama de clases ilustra el modelo de dominio rico, destacando el Aggregate Root, sus Value Objects y métodos principales:
+
+- Aggregate Root: Incident centraliza la información y reglas de negocio relacionadas con un incidente.
+- Value Objects: IncidentId, ZoneId y AttendantId representan identificadores utilizados por el agregado.
+- Enumeraciones: RiskType, RiskLevel e IncidentStatus definen el tipo de riesgo, nivel de criticidad y estado del incidente.
+- Comportamientos: Incident encapsula operaciones como asignar un encargado, resolver el incidente y modificar su nivel de riesgo.
+- Relaciones: el agregado mantiene referencias a sus Value Objects y utiliza las enumeraciones para controlar su     comportamiento y estado.
+
+![Incident Layar Class Diagrams](assets/images/chapter-04-solution-software-design/imagen3.png)
+
+#### 4.2.8.6.2. Bounded Context Database Design Diagram
+
+El diseño de la base de datos refleja la persistencia del estado de los incidentes, optimizado para almacenar el histórico y soportar las consultas de indicadores y secuencias:
+
+- INCIDENTS: almacena la información principal de los incidentes, incluyendo su tipo, nivel de riesgo, estado, zona, responsable y fechas de creación y resolución.
+- INCIDENT_EVENTS_LOG: registra los eventos generados durante el ciclo de vida de cada incidente, permitiendo mantener un historial de cambios.
+- Relación: cada incidente puede generar múltiples eventos registrados en INCIDENT_EVENTS_LOG.
+Trazabilidad: esta estructura permite conservar una secuencia histórica de acciones y cambios asociados a cada incidente.
+
+![Incident Database Design Diagram](assets/images/chapter-04-solution-software-design/imagen4.png)
+
