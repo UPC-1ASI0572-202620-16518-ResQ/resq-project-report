@@ -87,3 +87,32 @@ Un `Incident` representa una emergencia detectada en una zona específica de la 
 
 * **Repositories (Interfaces):**
     * **`IncidentRepository`:** Define los contratos para persistir y recuperar agregados `Incident`.
+
+
+### 4.2.8.2. Interface Layer
+
+La Interface Layer define los puntos de entrada al Bounded Context, exponiendo las capacidades de ResQ hacia las aplicaciones cliente (web o móvil) mediante una API RESTful.
+
+El controlador principal es `IncidentController`.
+
+Un `IncidentController` maneja las peticiones HTTP relacionadas con la gestión de incidentes, validando los datos de entrada y delegando la ejecución hacia la Application Layer.
+
+#### IncidentController
+
+**Categoría:** REST Controller / Interface.
+
+**Propósito:** Exponer los endpoints HTTP para la consulta, asignación y resolución de emergencias e incidentes en el sistema.
+
+**Endpoints Principales:**
+
+* **`GET /api/v1/incidents`:** Recupera la lista de incidentes (activos e históricos) con soporte para filtros por zona, tipo y estado.
+* **`GET /api/v1/incidents/{incidentId}`:** Obtiene los detalles y el contexto de un incidente específico.
+* **`PATCH /api/v1/incidents/{incidentId}/assign`:** Asigna un responsable de seguridad a un incidente activo.
+* **`PATCH /api/v1/incidents/{incidentId}/resolve`:** Registra la resolución de un incidente, cambiando su estado y almacenando las observaciones finales.
+
+**Data Transfer Objects (DTOs):**
+
+* **`IncidentResponseDTO`:** Representación plana del incidente para la vista.
+* **`AssignIncidentCommandDTO`:** Payload con los datos del responsable asignado.
+* **`ResolveIncidentCommandDTO`:** Payload con el resumen o tipificación de la resolución.
+
