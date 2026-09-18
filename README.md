@@ -22,26 +22,33 @@ INGENIERÍA DE SOFTWARE
 <h1 align="center" class="cover-title">Informe de Trabajo Final</h1>
 
 <p align="center" class="cover-product">
-  <strong>Startup:</strong> ResQ<br>
+  <strong>Startup:</strong> SecurityBear<br>
   <strong>Producto:</strong> ResQ
 </p>
 
 <h3 align="center" class="cover-members-heading">Integrantes</h3>
 
-<table class="cover-members-table">
+<table
+  class="cover-members-table"
+  align="center"
+  style="margin-left: auto; margin-right: auto;"
+>
   <thead>
-    <tr><th>Código UPC</th><th>Apellidos y Nombres</th></tr>
+    <tr>
+      <th>Código UPC</th>
+      <th>Apellidos y Nombres</th>
+    </tr>
   </thead>
+
   <tbody>
     <tr><td>U202222001</td><td>Aliaga Urbina, Wilder Gonzalo</td></tr>
     <tr><td>U202324129</td><td>Chacaliaza Minaya, Eduardo Fabian</td></tr>
     <tr><td>U202116246</td><td>Guerrero Vasquez, Jhon Danny</td></tr>
     <tr><td>U202215462</td><td>Nanfuñay Liza, Pedro Jesús</td></tr>
     <tr><td>U202320442</td><td>Quispe Barzola, Fabricio Fabian</td></tr>
-    <tr><td>[CÓDIGO UPC PENDIENTE]</td><td>Sánchez Guevara, Iván Fernando</td></tr>
+    <tr><td>U202218181</td><td>Sánchez Guevara, Iván Fernando</td></tr>
   </tbody>
 </table>
-
 
 <br>
 
@@ -55,16 +62,12 @@ INGENIERÍA DE SOFTWARE
 
 | Versión | Fecha | Autor | Descripción de modificación |
 |---|---|---|---|
-| 1.1 | 04/09/2026 | Quispe Barzola, Fabricio Fabian | Creación del repositorio y de la estructura inicial del Project Report, incluyendo README principal, organización de capítulos, recursos y plantillas base del informe. |
-| 1.2 | 08/09/2026 | Sánchez Guevara, Iván Fernando | Incorporación y actualización del Startup Profile y Solution Profile correspondiente al Capítulo I. |
-| 1.3 | 10/09/2026 | Chacaliaza Minaya, Eduardo Fabian | Incorporación de segmentos objetivo, análisis competitivo y Product Backlog dentro de los Capítulos I, II y III. |
-| 1.4 | 11/09/2026 | Aliaga Urbina, Wilder Gonzalo | Incorporación de los principales artefactos de Needfinding: User Personas, User Task Matrix, User Journey Mapping y Empathy Mapping. |
-| 1.5 | 12/09/2026 | Quispe Barzola, Fabricio Fabian | Incorporación y actualización de entrevistas, User Stories e Impact Mapping para los Capítulos II y III. |
-| 1.6 | 14/09/2026 | Nanfuñay Liza, Pedro Jesus | Incorporación de Lean UX, Design-Level EventStorming, Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases. |
-| 1.7 | 15/09/2026 | Guerrero Vasquez, Jhon Danny | Incorporación de Big Picture EventStorming, Ubiquitous Language y elementos del diseño táctico correspondientes a User e Incident. |
-| 1.8 | 16/09/2026 | Quispe Barzola, Fabricio Fabian | Incorporación y actualización del Tactical-Level Domain-Driven Design, incluyendo Identity and Access Management y Risk Detection, junto con sus diagramas técnicos. |
-| 1.9 | 17/09/2026 | Sánchez Guevara, Iván Fernando | Consolidación del Context Mapping, Software Architecture y Bounded Context Connectivity dentro del Capítulo IV. |
-| 1.10 | 17/09/2026 | Quispe Barzola, Fabricio Fabian | Consolidación de la versión correspondiente a AV1, incluyendo integración de los Capítulos I–IV, Student Outcome, Collaboration Insights, Registro de Versiones, evidencias de colaboración, revisión de estructura y ajustes finales de presentación del Project Report. |
+| 1.0 | 13/09/2026 | Sánchez Guevara, Iván Fernando | Elaboración de las secciones 1.1 Startup Profile, 1.1.1 Descripción de la Startup, 1.1.2 Perfiles de integrantes del equipo, 1.2 Solution Profile, 1.2.1 Antecedentes y problemática, 4.1.2 Context Mapping, 4.1.3.2 Software Architecture Context Level Diagrams, 4.1.3.3 Software Architecture Container Level Diagrams, 4.1.3.4 Software Architecture Deployment Diagrams y 4.2.9 Bounded Context: Connectivity Management, incluyendo sus capas y diagramas técnicos. |
+| 1.1 | 14/09/2026 | Nanfuñay Liza, Pedro Jesús | Elaboración de las secciones 1.2.2 Lean UX Process, 1.2.2.1 Lean UX Problem Statements, 1.2.2.2 Lean UX Assumptions, 1.2.2.3 Lean UX Hypothesis Statements, 1.2.2.4 Lean UX Canvas, 4.1.1 Design-Level EventStorming, 4.1.1.1 Candidate Context Discovery, 4.1.1.2 Domain Message Flows Modeling, 4.1.1.3 Bounded Context Canvases y 4.2.6 Bounded Context: Monitoring, incluyendo sus capas y diagramas técnicos. |
+| 1.2 | 15/09/2026 | Chacaliaza Minaya, Eduardo Fabian | Elaboración de las secciones 1.3 Segmentos objetivo, 2.1 Competidores, 2.1.1 Análisis competitivo, 2.1.2 Estrategias y tácticas frente a competidores, 3.3 Product Backlog, 4.1 Strategic-Level Domain-Driven Design, 4.1.3 Software Architecture, 4.1.3.1 Software Architecture System Landscape Diagram, 4.2 Tactical-Level Domain-Driven Design y 4.2.3 Bounded Context: Alert & Response Management, incluyendo sus capas y diagramas técnicos. |
+| 1.3 | 16/09/2026 | Quispe Barzola, Fabricio Fabian | Elaboración de las secciones 2.2 Entrevistas, 2.2.1 Diseño de entrevistas, 2.2.2 Registro de entrevistas, 2.2.3 Análisis de entrevistas, 3.1 User Stories, 3.2 Impact Mapping, 4.2.1 Bounded Context: Identity and Access Management (IAM) y 4.2.2 Bounded Context: Risk Detection, incluyendo Domain, Interface, Application e Infrastructure Layers, Component Level Diagrams, Domain Layer Class Diagrams y Database Design Diagrams. |
+| 1.4 | 17/09/2026 | Aliaga Urbina, Wilder Gonzalo | Elaboración de las secciones 2.3.1 User Personas, 2.3.2 User Task Matrix, 2.3.3 User Journey Mapping, 2.3.4 Empathy Mapping, 4.2.4 Bounded Context: Building Management y 4.2.5 Bounded Context: Device Management, incluyendo sus capas y diagramas técnicos correspondientes. |
+| 1.5 | 17/09/2026 | Guerrero Vasquez, Jhon Danny | Elaboración de las secciones 2.3 Needfinding, 2.4 Big Picture EventStorming, 2.5 Ubiquitous Language, 4.2.7 Bounded Context: User y 4.2.8 Bounded Context: Incident, incluyendo sus capas, componentes, diagramas de clases y diseño de persistencia correspondientes. |
 
 <!-- PENDIENTE: Validar la fecha y el autor de la versión inicial y completar las siguientes versiones con base en el historial real de GitHub. Cada fila debe tener un solo autor y representar una modificación real del documento. -->
 
@@ -334,7 +337,7 @@ Con nuestro sistema inteligente e integrado, centralizamos la detección de múl
 |---|---|---|---|
 | Ivan Fernando Sanchez Guevara | U202218181 | Mi nombre es Fernando Sanchez Guevara, tengo 22 años y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona disciplinada, responsable y puntual al momento de desarrollar las asignaciones de trabajo. Además, me preocupo por mantener una buena coordinación con mi equipo, procurando apoyar a mis compañeros cuando presentan alguna dificultad. Gracias a mi compromiso y disposición para colaborar, he contribuido al desarrollo adecuado de diferentes proyectos grupales, buscando cumplir los objetivos establecidos y resolver los inconvenientes que puedan surgir durante el proceso. | ![foto1](assets/images/chapter-01-introduction/Fernando.png) |
 | Eduardo Fabian Chacaliza Minaya | U202324129 | Mi nombre es Eduardo Fabian Chacaliza Minaya y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y comprometida con el cumplimiento de los objetivos del equipo. Tengo interés en el desarrollo de soluciones tecnológicas y en la integración de los diferentes componentes de un proyecto. Durante los trabajos grupales procuro mantener una comunicación constante con mis compañeros, colaborar en la resolución de problemas y apoyar en la integración y validación de las distintas partes del proyecto para obtener un resultado consistente y funcional. | ![foto2](assets/images/chapter-01-introduction/Eduardo.png) |
-| Fabricio Fabian Quispe Barzola | U202320442 | Mi nombre es Fabricio Fabian Quispe Barzola y actualmente estudio la carrera de Ingeniería de Software. A lo largo del desarrollo de ResQ he participado de manera activa en la organización, investigación y construcción de los distintos artefactos del proyecto, manteniendo una coordinación constante con mis compañeros para que las diferentes partes de la solución mantengan coherencia entre sí. He trabajado en actividades relacionadas con el diseño, registro y análisis de entrevistas, la elaboración de User Stories e Impact Mapping, así como en el diseño de los Bounded Contexts Identity and Access Management (IAM) y Risk Detection. Durante el proceso procuro revisar cómo mis avances se relacionan con el trabajo de los demás integrantes, compartir observaciones, apoyar en la integración de los artefactos y contribuir a resolver inconsistencias cuando aparecen. Me considero una persona responsable, organizada y comprometida con el trabajo colaborativo, buscando que el equipo mantenga una visión común del proyecto y pueda cumplir de manera coordinada los objetivos establecidos para cada entrega. | ![foto3](assets/images/chapter-01-introduction/Fabricio.png) |
+| Fabricio Fabian Quispe Barzola | U202320442 | Mi nombre es Fabricio Fabian Quispe Barzola y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y comprometida con el cumplimiento de los objetivos que asumo tanto de manera individual como en equipo. Tengo interés en el desarrollo de software, el análisis de problemas y la construcción de soluciones tecnológicas que permitan responder a necesidades reales. Durante los trabajos grupales procuro mantener una comunicación constante con mis compañeros, aportar ideas, escuchar diferentes puntos de vista y colaborar en la resolución de dificultades que puedan presentarse. Asimismo, busco organizar adecuadamente mis actividades, cumplir con los plazos establecidos y contribuir a que el equipo mantenga una visión común del trabajo. Me interesa seguir fortaleciendo mis conocimientos técnicos y mis habilidades de coordinación, análisis y trabajo colaborativo a lo largo de mi formación profesional. | ![foto3](assets/images/chapter-01-introduction/Fabricio.png) |
 | Pedro Jesús Nanfuñay Liza | U202215462 | Mi nombre es Pedro Jesús Nanfuñay Liza, tengo 21 años y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona creativa, responsable, perseverante y siempre dispuesto a trabajar en equipo. Espero aportar de manera positiva al equipo y cumplir con los objetivos establecidos en el proyecto. | ![foto3](assets/images/chapter-01-introduction/Pedro.jpeg) |
 | Wilder Gonzalo Aliaga Urbina | U202222001 | Mi nombre es Gonzalo Aliaga Urbina y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y comprometida con el cumplimiento de los objetivos establecidos en cada proyecto. Tengo especial interés en el desarrollo de soluciones tecnológicas, la programación y la aplicación de nuevas tecnologías para resolver problemas de manera eficiente. Durante los trabajos grupales procuro mantener una comunicación constante con mis compañeros, aportar ideas, apoyar en la resolución de dificultades y colaborar en la integración de las diferentes partes del proyecto. Asimismo, busco cumplir con las tareas asignadas dentro de los plazos establecidos y contribuir de manera activa para que el equipo mantenga una buena organización y logre resultados consistentes y funcionales. | ![foto4](assets/images/chapter-01-introduction/Gonzalo.jpg) |
 
@@ -8132,92 +8135,59 @@ El diseño de la base de datos para el **Connectivity Management Bounded Context
      * `signal_strength`: Intensidad de la señal de red reportada.
 
 
-
-
-
-# Capítulo V: Solution UI/UX Design
-
-> Imágenes del capítulo:
-> `assets/images/chapter-05-solution-ui-ux-design/`
->
-> Fuentes editables de diagramas/diseño:
-> `assets/diagram-sources/chapter-05-solution-ui-ux-design/`
-
-## 5.1. Style Guidelines
-
-### 5.1.1. General Style Guidelines
-[COMPLETAR]
-
-### 5.1.2. Web, Mobile and IoT Style Guidelines
-[COMPLETAR]
-
-## 5.2. Information Architecture
-
-### 5.2.1. Organization Systems
-[COMPLETAR]
-
-### 5.2.2. Labeling Systems
-[COMPLETAR]
-
-### 5.2.3. SEO Tags and Meta Tags
-[COMPLETAR]
-
-### 5.2.4. Searching Systems
-[COMPLETAR]
-
-### 5.2.5. Navigation Systems
-[COMPLETAR]
-
-## 5.3. Landing Page UI Design
-
-### 5.3.1. Landing Page Wireframe
-[INSERTAR WIREFRAMES + EXPLICACIÓN]
-
-### 5.3.2. Landing Page Mock-up
-[INSERTAR MOCK-UPS + EXPLICACIÓN]
-
-## 5.4. Applications UX/UI Design
-
-### 5.4.1. Applications Wireframes
-[INSERTAR WIREFRAMES + EXPLICACIÓN]
-
-### 5.4.2. Applications Wireflow Diagrams
-[INSERTAR WIREFLOWS + EXPLICACIÓN]
-
-### 5.4.3. Applications Mock-ups
-[INSERTAR MOCK-UPS + EXPLICACIÓN]
-
-### 5.4.4. Applications User Flow Diagrams
-[INSERTAR USER FLOWS + EXPLICACIÓN]
-
-> Nota: la numeración interna fue normalizada para evitar la repetición de 5.4.2 conservada en el Project Statement.
-
-## 5.5. Applications Prototyping
-[INSERTAR EVIDENCIAS / URL + EXPLICACIÓN]
-
-## 5.6. IoT Device Design
-[INSERTAR DISEÑO DEL DISPOSITIVO + EXPLICACIÓN]
-
-# Capítulo VI: Product Implementation, Validation & Deployment
-
-> Imágenes del capítulo:
-> `assets/images/chapter-06-product-implementation-validation-deployment/`
->
-> Fuentes editables:
-> `assets/diagram-sources/chapter-06-product-implementation-validation-deployment/`
-
-## 6.1. Software Configuration Management
-
-### 6.1.1. Software Development Environment Configuration
-Documentar herramientas, plataformas, lenguajes, frameworks y configuraciones utilizadas.
-
 # Conclusiones
 
 ## Conclusiones y recomendaciones
 
-[AVANCE DE CONCLUSIONES Y RECOMENDACIONES DE AV1 PENDIENTE]
+A partir del trabajo realizado durante AV1, se logró profundizar en la problemática asociada con la gestión de riesgos y emergencias en edificaciones y establecer una primera definición sustentada de la propuesta de ResQ. El desarrollo de los artefactos correspondientes a los Capítulos I, II, III y IV permitió mantener una relación progresiva entre la comprensión del problema, la investigación de los segmentos objetivo, la especificación de requisitos y las principales decisiones de diseño y arquitectura de la solución.
 
-<!-- PENDIENTE: Redactar el avance a partir de los artefactos existentes de los Capítulos I–IV, relacionando Problem Statements, Lean UX Assumptions, Hypothesis Statements, hallazgos de entrevistas, requisitos y decisiones de diseño. Sustentar las recomendaciones sin anticipar resultados de implementación o validación posteriores a AV1. -->
+En relación con el **Problem Statement** definido durante el Lean UX Process, los resultados obtenidos durante las entrevistas proporcionaron evidencia sobre varios de los problemas inicialmente identificados. En el segmento de propietarios y administradores de edificaciones se observó que los sistemas relacionados con seguridad suelen encontrarse distribuidos entre diferentes plataformas, dispositivos y mecanismos de comunicación. Los tres participantes de este segmento indicaron que trabajan con diferentes sistemas o fuentes de información que no se encuentran completamente integrados, lo que puede requerir verificaciones físicas, llamadas, mensajes o la consulta de distintas interfaces antes de comprender completamente una situación de riesgo.
+
+Asimismo, los participantes de este primer segmento destacaron la importancia de conocer rápidamente qué está ocurriendo y dónde está ocurriendo. La necesidad de identificar la ubicación del incidente estuvo presente en los tres entrevistados, junto con la necesidad de disponer de información confiable antes de tomar decisiones relacionadas con la seguridad. Estos resultados son consistentes con el problema identificado inicialmente por ResQ respecto a la fragmentación de la información y la dependencia de actividades manuales para coordinar la respuesta ante una emergencia.
+
+La investigación también mostró que la automatización no debe entenderse como la eliminación total de la intervención humana. Los propietarios y administradores entrevistados presentaron una actitud favorable hacia la automatización de alertas, notificaciones, señalización y determinadas respuestas, pero también señalaron la necesidad de conservar mecanismos de supervisión o confirmación humana cuando una acción pueda generar consecuencias significativas sobre las personas o la infraestructura. Este hallazgo permitió reforzar la decisión de diferenciar dentro de ResQ entre respuestas automáticas previamente autorizadas y acciones de alto impacto que requieren la confirmación de un responsable autorizado.
+
+Respecto al segundo segmento, conformado por **empresas integradoras de automatización y gestión de edificios inteligentes**, las entrevistas permitieron identificar necesidades diferentes pero relacionadas con la propuesta de ResQ. Los tres representantes entrevistados señalaron la integración e interoperabilidad como factores fundamentales al evaluar nuevas tecnologías. Entre los aspectos mencionados se encuentran la compatibilidad entre fabricantes, disponibilidad de APIs y protocolos, calidad de la documentación técnica, soporte del proveedor y posibilidad de realizar pruebas antes de incorporar una tecnología dentro de un proyecto.
+
+Los participantes de este segmento también señalaron dificultades asociadas con tecnologías que presentan restricciones no identificadas inicialmente, documentación incompleta o comportamientos diferentes a los esperados durante la integración. Estas situaciones pueden generar horas adicionales de ingeniería, modificaciones de arquitectura, retrasos o mayor dependencia del proveedor. Como consecuencia, ResQ no debe plantearse únicamente como un producto funcional, sino también como una solución que pueda ser comprendida, evaluada, integrada y mantenida por empresas especializadas que trabajan con infraestructura perteneciente a diferentes fabricantes.
+
+Los resultados obtenidos permiten contrastar varios de los **assumptions** definidos durante el Lean UX Process con el comportamiento y las necesidades expresadas por los representantes de los segmentos objetivo. En el primer segmento se encontró evidencia favorable a los assumptions relacionados con monitoreo centralizado, identificación del tipo y ubicación del riesgo, consulta de información histórica y continuidad de las funciones críticas. Los tres entrevistados manifestaron que las funciones esenciales de seguridad deberían continuar operando localmente cuando se pierde temporalmente la conexión a Internet.
+
+En el segundo segmento también se encontró evidencia favorable a los assumptions relacionados con interoperabilidad, integración progresiva y evaluación técnica antes de adoptar una solución. Los tres representantes indicaron que la capacidad de integración constituye un factor fundamental y que una solución especializada puede resultar preferible frente al desarrollo interno cuando dispone de mecanismos de integración adecuados, documentación, soporte y evidencia de funcionamiento. Asimismo, parte de los entrevistados manifestó explícitamente la importancia de mantener funciones críticas localmente ante interrupciones de conectividad.
+
+Estos hallazgos proporcionan sustento inicial para mantener **Edge Computing** como una de las decisiones centrales de ResQ. El procesamiento local permite plantear que la detección de determinadas condiciones de riesgo y la ejecución de respuestas críticas no dependan permanentemente de los servicios Cloud. Al mismo tiempo, la arquitectura debe permitir conservar los eventos producidos durante una interrupción y sincronizarlos posteriormente cuando se recupere la conectividad, manteniendo la trazabilidad de lo ocurrido.
+
+Los resultados de investigación también permitieron transformar las necesidades identificadas en requisitos verificables. Las User Stories y Technical Stories definidas durante AV1 abarcan capacidades relacionadas con el monitoreo de edificaciones y zonas, consulta de mediciones, detección y contextualización de riesgos, generación de alertas, ejecución de respuestas, seguimiento de incidentes, administración de usuarios y permisos, continuidad operativa e integración con infraestructura existente. El Product Backlog permitió posteriormente priorizar estas capacidades de acuerdo con su aporte al MVP y al valor esperado para los segmentos objetivo.
+
+De manera complementaria, el **Strategic-Level Domain-Driven Design** permitió identificar y organizar las responsabilidades principales del dominio, mientras que el **Tactical-Level Domain-Driven Design** permitió profundizar en la estructura interna de los Bounded Contexts. Como resultado de este proceso se establecieron los contextos **Identity and Access Management (IAM), Risk Detection, Alert & Response Management, Building Management, Device Management, Monitoring, User, Incident y Connectivity Management**, separando responsabilidades relacionadas con usuarios, dispositivos, edificaciones, monitoreo, detección, respuesta, incidentes y comunicación.
+
+Esta separación permite plantear una arquitectura en la que la detección de riesgos, la respuesta ante emergencias y la administración de la infraestructura no dependan de un único componente monolítico. Asimismo, facilita que las capacidades relacionadas con dispositivos IoT, procesamiento Edge, servicios Cloud y aplicaciones digitales puedan evolucionar progresivamente manteniendo responsabilidades delimitadas entre los distintos elementos de la solución.
+
+En relación con los **Hypothesis Statements** definidos durante Lean UX, los resultados obtenidos en AV1 todavía no permiten considerarlos completamente validados. Las entrevistas realizadas hasta este punto corresponden principalmente a actividades de investigación orientadas a comprender problemas, necesidades, comportamientos y criterios de decisión de los segmentos objetivo. Por esta razón, si bien los hallazgos proporcionan evidencia inicial favorable para determinados assumptions, todavía será necesario comprobar mediante prototipos, implementación y sesiones de validación si las funcionalidades propuestas generan los beneficios y resultados de negocio esperados.
+
+Entre los aspectos que deberán validarse posteriormente se encuentran la capacidad de los usuarios para comprender rápidamente el estado de una edificación, identificar correctamente el tipo, nivel y ubicación de un riesgo, interpretar las alertas generadas, comprender las respuestas ejecutadas por el sistema y confiar en la automatización propuesta. Para el segmento de empresas integradoras también será necesario validar si los mecanismos de integración, la documentación técnica y el proceso de incorporación de ResQ resultan suficientemente claros y utilizables dentro de escenarios similares a los que enfrentan en proyectos reales.
+
+Respecto a los **criterios de éxito**, durante AV1 se definieron métricas iniciales que deberán ser contrastadas en futuras etapas de validación. El primer Business Goal establece como referencia que al menos el **80 % de los participantes del piloto** pueda identificar correctamente el tipo, nivel y zona de un riesgo, además de verificar la respuesta ejecutada por ResQ durante las primeras seis semanas del piloto. El segundo Business Goal plantea que al menos el **70 % de los participantes** utilice ResQ al menos dos veces por semana para actividades de monitoreo o consulta de incidentes durante un periodo continuo de ocho semanas. Finalmente, el tercer Business Goal establece como referencia que al menos el **60 % de las administraciones u organizaciones participantes** manifieste intención de continuar utilizando y pagar por el servicio, con una valoración mínima de cuatro sobre cinco al finalizar las primeras doce semanas del piloto.
+
+Estos porcentajes deben considerarse actualmente como **criterios de éxito definidos para futuras validaciones y no como resultados alcanzados**. Durante AV1 todavía no se han desarrollado las Validation Interviews asociadas con los productos digitales ni existe evidencia suficiente para afirmar el cumplimiento de estas métricas. Las siguientes iteraciones deberán recopilar resultados reales y compararlos con estos valores para determinar si las hipótesis planteadas se mantienen, requieren ajustes o deben ser descartadas.
+
+Como recomendación para las siguientes etapas, se debe mantener la trazabilidad entre los hallazgos obtenidos durante la investigación, las User Stories, las Technical Stories, el Product Backlog y las decisiones arquitectónicas. Cada funcionalidad que avance hacia implementación debería poder relacionarse con una necesidad previamente identificada y posteriormente con evidencia obtenida durante las pruebas y validaciones.
+
+También será necesario comprobar técnicamente las decisiones relacionadas con la arquitectura IoT de ResQ. Entre las prioridades se encuentra validar la captura de información desde los sensores, el procesamiento local mediante Edge Computing, la clasificación de situaciones de riesgo, la ejecución de respuestas mediante actuadores, la conservación de eventos durante interrupciones de conectividad y la posterior sincronización con los servicios Cloud. Estas pruebas permitirán determinar si las decisiones planteadas durante el diseño pueden mantenerse bajo condiciones cercanas al funcionamiento esperado del producto.
+
+Para las acciones que puedan producir un impacto significativo sobre personas o infraestructura, se recomienda mantener una estrategia de control humano acorde con los resultados obtenidos durante la investigación. Las respuestas automáticas deberían limitarse a acciones previamente autorizadas y técnicamente validadas, mientras que aquellas consideradas de alto impacto deberían conservar mecanismos de confirmación por parte de responsables con permisos adecuados.
+
+En el caso del segmento de empresas integradoras, las siguientes iteraciones deben considerar no solamente el funcionamiento interno de ResQ, sino también su capacidad de integración. Será necesario validar los mecanismos y contratos de comunicación soportados, documentar adecuadamente APIs, protocolos, autenticación, estructura de datos y manejo de errores, y realizar pruebas que permitan demostrar que una fuente externa puede incorporarse sin exigir una sustitución completa de la infraestructura existente.
+
+En relación con el **Roadmap de los productos digitales**, los siguientes pasos deberán concentrarse en transformar los requisitos y decisiones arquitectónicas definidos durante AV1 en experiencias e implementaciones que puedan ser evaluadas. Esto implica avanzar progresivamente en el diseño UI/UX del Landing Page y de las aplicaciones, desarrollar las capacidades priorizadas dentro del Product Backlog e implementar la comunicación entre Embedded Systems, Edge Computing, servicios Cloud y productos digitales.
+
+A medida que se disponga de prototipos y primeras versiones funcionales, estos productos deberán presentarse a representantes de los segmentos objetivo mediante sesiones de validación. Los resultados obtenidos deberán utilizarse para revisar los Hypothesis Statements, contrastar los criterios de éxito, identificar problemas de usabilidad o comprensión, repriorizar el Product Backlog y actualizar el Roadmap según la evidencia recopilada.
+
+Asimismo, la estrategia de evolución del producto debe considerar que el alcance de ResQ podrá ajustarse conforme se obtenga nueva información. Las funcionalidades que no demuestren aportar el beneficio esperado deberán ser revisadas, mientras que aquellas que presenten mayor valor para los segmentos podrán recibir una mayor prioridad dentro de las siguientes iteraciones. De esta manera, el Roadmap no debe considerarse una planificación inmutable, sino una guía evolutiva sustentada en evidencia obtenida durante el desarrollo y la validación.
+
+Finalmente, el trabajo realizado durante AV1 permitió transformar una problemática inicialmente planteada a nivel conceptual en una propuesta progresivamente sustentada mediante investigación, requisitos y decisiones de diseño. Las entrevistas permitieron comprender con mayor precisión las dificultades de los propietarios y administradores de edificaciones y las condiciones bajo las cuales una empresa integradora evaluaría una solución como ResQ. A partir de estos hallazgos se establecieron requisitos, prioridades, Bounded Contexts y una arquitectura inicial que servirán como base para las siguientes etapas del proyecto.
+
+Por tanto, AV1 no representa la validación definitiva de ResQ, sino el establecimiento de una base de conocimiento y diseño que deberá ser puesta a prueba durante las siguientes iteraciones. La implementación del MVP, las pruebas técnicas y las posteriores Validation Interviews permitirán determinar en qué medida las decisiones tomadas responden efectivamente a las necesidades identificadas y proporcionarán la evidencia necesaria para continuar, modificar o replantear las hipótesis y prioridades del producto.
 
 <div style="page-break-before: always; break-before: page;"></div>
 
@@ -8237,10 +8207,10 @@ Ejemplo:
 
 ### Anexo A — AV1 — Sprint Review
 
-<!-- PENDIENTE: INSERTAR SCREENSHOT DEL VIDEO DE EXPOSICIÓN AV1 -->
+![Video de exposición AV1](assets/images/general/collaboration/av1-sprint-review.png)
 
-**Figura X. Video de exposición correspondiente a la entrega AV1.**
+**Figura 10. Video de exposición correspondiente a la entrega AV1.**
 
-**Microsoft Stream / Clipchamp:** [URL PENDIENTE]
+**URL:** [URL PENDIENTE]
 
 **Duración:** [HH:MM:SS PENDIENTE]
