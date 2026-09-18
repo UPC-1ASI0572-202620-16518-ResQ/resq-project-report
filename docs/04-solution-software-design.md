@@ -58,7 +58,8 @@ Del mismo modo, almacena el `AttendantId` para indicar quién está atendiendo e
 
 La Domain Layer encapsula la lógica de negocio central y las reglas para la gestión de incidentes, asegurando que las transiciones de estado sean válidas y coherentes con la realidad física de la emergencia.
 
-El principal Aggregate Root es `Incident`.
+**Aggregate Root**
+ * **`Incident`:**
 
 Un `Incident` representa una emergencia detectada en una zona específica de la edificación. Controla su propio ciclo de vida y asegura la consistencia de sus datos.
 
