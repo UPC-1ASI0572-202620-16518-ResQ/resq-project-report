@@ -384,5 +384,13 @@ Esta sección detalla la estructura técnica e interna del Bounded Context. Se c
 
 - Diagrama de Diseño de Base de Datos: Muestra el esquema de persistencia física, detallando las tablas, columnas y llaves (Entity-Relationship) utilizadas para almacenar la información del dominio.
 
-### 4.2.7.6.1. Bounded Context Domain Layer Class Diagrams
+#### 4.2.7.6.1. Bounded Context Domain Layer Class Diagrams
+
+El diagrama representa la estructura del perfil de usuario, agrupando su identidad, nombre, información de contacto y preferencias.
+UserProfile actúa como elemento central y contiene los diferentes Value Objects que representan cada aspecto del usuario.
+Esta organización permite encapsular los datos y comportamientos del dominio, manteniendo una estructura modular y coherente.
+
+![User Domain Layer Diagrams](assets/images/chapter-04-solution-software-design/imagen6-user.png)
+
+
 
