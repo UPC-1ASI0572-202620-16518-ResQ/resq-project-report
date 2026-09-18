@@ -88,8 +88,7 @@ Un `Incident` representa una emergencia detectada en una zona específica de la 
 * **Repositories (Interfaces):**
     * **`IncidentRepository`:** Define los contratos para persistir y recuperar agregados `Incident`.
 
-
-### 4.2.8.2. Interface Layer
+#### 4.2.8.2. Interface Layer
 
 La Interface Layer define los puntos de entrada al Bounded Context, exponiendo las capacidades de ResQ hacia las aplicaciones cliente (web o móvil) mediante una API RESTful.
 
@@ -116,14 +115,13 @@ Un `IncidentController` maneja las peticiones HTTP relacionadas con la gestión 
 * **`AssignIncidentCommandDTO`:** Payload con los datos del responsable asignado.
 * **`ResolveIncidentCommandDTO`:** Payload con el resumen o tipificación de la resolución.
 
-### 4.2.8.3. Application Layer
+#### 4.2.8.3. Application Layer
 
 La Application Layer orquesta los flujos de trabajo delegando la ejecución a los objetos del dominio. Se implementa utilizando el patrón CQRS (Command Query Responsibility Segregation) a nivel lógico para separar las operaciones de lectura y escritura.
 
 Los manejadores se dividen según su responsabilidad en comandos y consultas.
 
-#### Application Components
-
+**Application Components**
 **Categoría:** Application Services / CQRS Handlers.
 
 **Propósito:** Coordinar los casos de uso del sistema, gestionando las transacciones de escritura y abstrayendo las consultas de lectura sin alterar el estado del dominio.
@@ -139,7 +137,7 @@ Los manejadores se dividen según su responsabilidad en comandos y consultas.
     * **`GetIncidentByIdQueryHandler`:** Recupera los detalles de un incidente específico.
     * **`GetHistoricalIncidentsQueryHandler`:** Ejecuta búsquedas paginadas y filtradas para la consulta de incidentes anteriores.
 
-### 4.2.8.4. Infrastructure Layer
+#### 4.2.8.4. Infrastructure Layer
 
 La Infrastructure Layer implementa las interfaces definidas en las capas superiores, gestionando la persistencia en la base de datos y la comunicación externa con el bus de mensajes.
 
@@ -162,7 +160,7 @@ Los componentes se dividen en mecanismos de persistencia y adaptadores dirigidos
 * **`KafkaIncidentEventPublisher`:** Implementación encargada de publicar los *Domain Events* hacia un tópico de Apache Kafka (e.g., `resq.incident.events`), facilitando la integración asíncrona con los contextos de Notificaciones o Analítica.
 * **`DetectionEventListener`:** Consumidor de Kafka que escucha activamente los eventos de riesgo crítico detectados en el Edge para instanciar automáticamente los incidentes en el sistema.
 
-### 4.2.8.4. Infrastructure Layer
+#### 4.2.8.4. Infrastructure Layer
 
 La Infrastructure Layer implementa las interfaces definidas en las capas superiores, gestionando la persistencia en la base de datos y la comunicación externa con el bus de mensajes.
 
@@ -218,7 +216,7 @@ Las relaciones entre los componentes muestran cómo las solicitudes atraviesan l
 ![Incident Component Level Diagram](assets/images/chapter-04-solution-software-design/imagen1.png)
 
 
-### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
+#### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
 
 Esta sección presenta los diagramas de nivel de código del Bounded Context de Incident Management de ResQ, detallando la estructura interna de sus principales elementos de software.
 
@@ -296,7 +294,7 @@ La siguiente tabla resume las principales clases e interfaces que conforman el B
 
 ---
 
-### 4.2.7.1. Domain Layer
+#### 4.2.7.1. Domain Layer
 
 La Domain Layer contiene la lógica centrada en la validez de la información personal. Se asegura de que los datos de contacto tengan formatos correctos y que las preferencias se mantengan dentro de los valores soportados por el sistema (ej. zonas horarias válidas). 
 
@@ -321,7 +319,7 @@ Un `UserProfile` es identificado de manera única por un `UserId`, el cual hace 
 * **Repositories (Interfaces):**
     * **`UserProfileRepository`:** Define la abstracción necesaria para recuperar y persistir agregados `UserProfile` sin acoplarse a tecnologías específicas.
 
-### 4.2.7.2. Interface Layer
+#### 4.2.7.2. Interface Layer
 
 La Interface Layer proporciona los endpoints RESTful para que las aplicaciones móviles o web de ResQ consulten y modifiquen la información del usuario logueado.
 
@@ -341,7 +339,7 @@ Un `UserProfileController` recibe las solicitudes HTTP, extrae las identidades d
 * **`PUT /api/v1/users/me/contact`:** Actualiza el número de teléfono y correo electrónico del usuario.
 * **`PATCH /api/v1/users/me/preferences`:** Modifica las preferencias de notificaciones y visualización de la plataforma.
 
-### 4.2.7.3. Application Layer
+#### 4.2.7.3. Application Layer
 
 La Application Layer aplica el patrón CQRS a nivel lógico para separar de forma clara la lectura del perfil de las operaciones de modificación de datos.
 
@@ -362,7 +360,7 @@ Los componentes orquestadores se dividen según su responsabilidad de comandos o
 * **Query Handlers (Lectura):**
     * **`GetUserProfileQueryHandler`:** Proyecta la información recuperada directamente hacia DTOs limpios para optimizar la velocidad de carga en la interfaz de usuario.
 
-### 4.2.7.4. Infrastructure Layer
+#### 4.2.7.4. Infrastructure Layer
 
 La Infrastructure Layer maneja la persistencia de los perfiles utilizando un ORM sobre una base de datos relacional, implementando los contratos definidos por el dominio.
 
