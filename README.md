@@ -2509,6 +2509,7 @@ Finalmente, los Hotspots y las definiciones obtenidas durante la sesión permite
 **Link del tablero de Miro:** [Big Picture EventStorming de ResQ](https://miro.com/app/board/uXjVHlZnbCs=/?share_link_id=107442553080)
 
 ## 2.5. Ubiquitous Language
+
 <p align="justify">
 El Lenguaje Ubicuo (Ubiquitous Language) es un pilar fundamental en el Diseño Guiado por el Dominio (DDD). Su objetivo es establecer un glosario estricto y compartido entre los desarrolladores, los administradores y los expertos del negocio, garantizando que no existan ambigüedades técnicas ni operativas.
 </p>
