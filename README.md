@@ -497,61 +497,171 @@ Sabremos que hemos tenido éxito cuando los representantes de ambos segmentos ut
 
 **Business Assumptions:**
 
+<p align="justify">
 1. Creemos que existe una demanda insatisfecha en el mercado de administración de edificios por soluciones que centralicen monitoreo y respuesta ante emergencias, actualmente cubierta parcialmente por sistemas aislados.
+</p>
+
+<p align="justify">
 2. Creemos que existe una oportunidad para integrar en una única solución IoT la detección, clasificación, localización y respuesta automática ante situaciones de riesgo dentro de edificios.
+</p>
+
+<p align="justify">
 3. Creemos que los propietarios y administradores de edificaciones, así como las empresas e instituciones con infraestructura propia, estarán dispuestas a adoptar una solución que complemente sus mecanismos actuales de seguridad mediante monitoreo y automatización.
+</p>
+
+<p align="justify">
 4. Creemos que la capacidad de ejecutar respuestas críticas localmente, sin depender permanentemente de la conectividad a Internet, constituirá un elemento diferenciador de la propuesta frente a sistemas que requieren comunicación constante con servicios externos.
+</p>
+
+<p align="justify">
 5. Creemos que un modelo de servicio orientado a edificios permitirá escalar progresivamente la solución mediante la incorporación de nuevos sensores, actuadores, zonas y dispositivos IoT según las necesidades de cada organización.
+</p>
+
+<p align="justify">
 6. Creemos que los clientes estarán dispuestos a asumir un costo por una solución que contribuya al monitoreo continuo, la trazabilidad de eventos y la automatización de determinadas respuestas de seguridad.
+</p>
 
 **Business Outcome Assumptions:**
 
+<p align="justify">
 1. Creemos que demostrar una solución integrada de monitoreo y respuesta ante emergencias incrementará el interés de potenciales clientes en adoptar la plataforma frente al uso exclusivo de mecanismos independientes o manuales.
-2. Creemos que al garantizar que las respuestas automáticas y del monitoreo sean las adecuadas, estas incrementarán la confiabilidad y por consecuencia; la intención de permanencia y renovación de nuestro servicio por parte de las organizaciones, reduciendo potencialmente la tasa de cancelación.
+</p>
+
+<p align="justify">
+2. Creemos que al garantizar que las respuestas automáticas y del monitoreo sean las adecuadas, estas incrementarán la confiabilidad y, por consecuencia, la intención de permanencia y renovación de nuestro servicio por parte de las organizaciones, reduciendo potencialmente la tasa de cancelación.
+</p>
+
+<p align="justify">
 3. Creemos que reducir el esfuerzo requerido para supervisar manualmente las condiciones de seguridad del edificio incrementará el valor percibido de la plataforma y la disposición de las organizaciones a pagar por el servicio.
+</p>
+
+<p align="justify">
 4. Creemos que la disponibilidad de registros históricos sobre eventos detectados, mediciones y respuestas ejecutadas incrementará el uso recurrente de la plataforma para actividades de supervisión y seguimiento.
+</p>
+
+<p align="justify">
 5. Creemos que la posibilidad de incorporar progresivamente nuevas zonas, sensores y actuadores permitirá incrementar el alcance del servicio, expandiendo nuestra solución a nuevas necesidades.
+</p>
+
+<p align="justify">
 6. Creemos que una implementación satisfactoria del MVP permitirá validar el interés de potenciales clientes y justificar la evolución de la solución hacia una mayor cantidad de dispositivos, tipos de emergencia y capacidades de respuesta.
+</p>
 
 **User Assumptions:**
 
+<p align="justify">
 1. Creemos que los propietarios y administradores de edificaciones necesitan supervisar continuamente las condiciones de seguridad de las instalaciones bajo su responsabilidad.
+</p>
+
+<p align="justify">
 2. Creemos que los responsables de seguridad, operaciones e infraestructura de empresas e instituciones necesitan centralizar la información proveniente de diferentes zonas de sus instalaciones.
+</p>
+
+<p align="justify">
 3. Creemos que ambos segmentos necesitan identificar rápidamente qué tipo de emergencia está ocurriendo, cuál es su nivel de riesgo y dónde se ha producido.
+</p>
+
+<p align="justify">
 4. Creemos que ambos segmentos necesitan conocer qué respuestas automáticas fueron ejecutadas por el sistema durante una situación de riesgo.
+</p>
+
+<p align="justify">
 5. Creemos que los administradores y responsables institucionales necesitan consultar posteriormente información sobre los eventos ocurridos para realizar actividades de seguimiento y análisis.
+</p>
+
+<p align="justify">
 6. Creemos que los usuarios de ambos segmentos cuentan habitualmente con acceso a dispositivos digitales y están familiarizados con aplicaciones utilizadas para tareas de supervisión o gestión.
+</p>
+
+<p align="justify">
 7. Creemos que los responsables de empresas e instituciones necesitan supervisar múltiples zonas desde una visión centralizada para coordinar adecuadamente una respuesta.
+</p>
+
+<p align="justify">
 8. Creemos que los responsables de ambos segmentos valorarán una solución que pueda incorporarse progresivamente a la infraestructura existente sin requerir una sustitución completa de sus mecanismos actuales de seguridad.
+</p>
 
 **User Outcome and Benefit Assumptions:**
 
+<p align="justify">
 1. Creemos que los propietarios, administradores y responsables institucionales podrán comprender con mayor rapidez el estado de sus edificaciones al contar con información de sensores y alertas centralizada en una misma plataforma.
+</p>
+
+<p align="justify">
 2. Creemos que podrán tomar decisiones con mayor rapidez al conocer el tipo de emergencia, el nivel de riesgo y la zona afectada.
+</p>
+
+<p align="justify">
 3. Creemos que tendrán mayor visibilidad sobre la respuesta del sistema al poder verificar qué acciones automáticas fueron ejecutadas durante cada evento.
+</p>
+
+<p align="justify">
 4. Creemos que podrán realizar un mejor seguimiento de las emergencias mediante el acceso al historial de eventos, mediciones y acciones ejecutadas.
+</p>
+
+<p align="justify">
 5. Creemos que los responsables de empresas e instituciones podrán coordinar mejor la respuesta ante una emergencia al disponer de información centralizada sobre las diferentes zonas de sus instalaciones.
+</p>
+
+<p align="justify">
 6. Creemos que ambos segmentos podrán reducir su dependencia de la supervisión y coordinación completamente manual durante los primeros momentos de una emergencia.
+</p>
+
+<p align="justify">
 7. Creemos que tendrán mayor confianza en la continuidad de la respuesta del sistema al mantenerse las acciones críticas locales aun cuando se pierda temporalmente la conexión a Internet.
+</p>
 
 **Feature Assumptions:**
 
-1. Creemos que una funcionalidad de **monitoreo del estado del edificio y sus zonas** permitirá a los usuarios de ambos segmentos conocer las condiciones actuales y detectar rápidamente la existencia de una situación de riesgo.
-2. Creemos que una funcionalidad de **detección y clasificación local de emergencias mediante sensores y Edge Computing** permitirá identificar el tipo y nivel de riesgo sin depender permanentemente de servicios externos.
-3. Creemos que una funcionalidad de **respuesta automática mediante actuadores** permitirá ejecutar acciones de seguridad apropiadas según el tipo y nivel de riesgo detectado.
-4. Creemos que una funcionalidad de **alertas y señalización diferenciadas** permitirá a los responsables reconocer oportunamente la existencia y gravedad de una emergencia, y facilitar la comunicación de la respuesta.
-5. Creemos que una funcionalidad de **identificación de la zona afectada** permitirá a los responsables de seguridad localizar con mayor rapidez el origen del evento y orientar adecuadamente la respuesta.
-6. Creemos que una funcionalidad de **registro e historial de eventos** permitirá consultar posteriormente las emergencias detectadas, las mediciones registradas y las respuestas ejecutadas por el sistema.
+<p align="justify">
+1. Creemos que una funcionalidad de <strong>monitoreo del estado del edificio y sus zonas</strong> permitirá a los usuarios de ambos segmentos conocer las condiciones actuales y detectar rápidamente la existencia de una situación de riesgo.
+</p>
+
+<p align="justify">
+2. Creemos que una funcionalidad de <strong>detección y clasificación local de emergencias mediante sensores y Edge Computing</strong> permitirá identificar el tipo y nivel de riesgo sin depender permanentemente de servicios externos.
+</p>
+
+<p align="justify">
+3. Creemos que una funcionalidad de <strong>respuesta automática mediante actuadores</strong> permitirá ejecutar acciones de seguridad apropiadas según el tipo y nivel de riesgo detectado.
+</p>
+
+<p align="justify">
+4. Creemos que una funcionalidad de <strong>alertas y señalización diferenciadas</strong> permitirá a los responsables reconocer oportunamente la existencia y gravedad de una emergencia, y facilitar la comunicación de la respuesta.
+</p>
+
+<p align="justify">
+5. Creemos que una funcionalidad de <strong>identificación de la zona afectada</strong> permitirá a los responsables de seguridad localizar con mayor rapidez el origen del evento y orientar adecuadamente la respuesta.
+</p>
+
+<p align="justify">
+6. Creemos que una funcionalidad de <strong>registro e historial de eventos</strong> permitirá consultar posteriormente las emergencias detectadas, las mediciones registradas y las respuestas ejecutadas por el sistema.
+</p>
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
+<p align="justify">
 1. Creemos que lograremos incrementar el valor percibido de la plataforma y la disposición a pagar por el servicio si los propietarios, administradores y responsables institucionales logran comprender con mayor rapidez el estado de sus edificaciones y zonas mediante una funcionalidad de monitoreo centralizado.
-2. Creemos que lograremos incrementar la confiabilidad percibida de la plataforma y la intención de permanencia y renovación del servicio si los usuarios de ambos segmentos pueden identificar oportunamente el tipo y nivel de riesgo y mantener la capacidad de respuesta ante una pérdida temporal de conectividad mediante una funcionalidad de detección y clasificación local basada en sensores y Edge Computing.
-3. Creemos que lograremos incrementar el valor percibido de la plataforma y la disposición a pagar por el servicio si los propietarios, administradores y responsables institucionales obtienen mayor confianza y visibilidad sobre la respuesta ante una emergencia mediante la ejecución automática de acciones de seguridad apropiadas según el tipo y nivel de riesgo detectado.
-4. Creemos que lograremos incrementar el interés y valor percibido de la plataforma si los responsables de ambos segmentos pueden reconocer oportunamente la existencia y naturaleza de una emergencia y coordinar una respuesta más clara mediante alertas y señalización diferenciadas.
-5. Creemos que lograremos incrementar el valor percibido de la plataforma para las actividades de supervisión y respuesta si los propietarios, administradores y responsables institucionales pueden tomar decisiones con mayor rapidez al conocer la ubicación del riesgo mediante una funcionalidad de identificación de la zona afectada.
-6. Creemos que lograremos incrementar el uso recurrente de la plataforma para actividades de supervisión y seguimiento si los usuarios pueden analizar posteriormente las emergencias ocurridas mediante una funcionalidad de registro e historial de eventos, mediciones y respuestas ejecutadas.
+</p>
 
+<p align="justify">
+2. Creemos que lograremos incrementar la confiabilidad percibida de la plataforma y la intención de permanencia y renovación del servicio si los usuarios de ambos segmentos pueden identificar oportunamente el tipo y nivel de riesgo y mantener la capacidad de respuesta ante una pérdida temporal de conectividad mediante una funcionalidad de detección y clasificación local basada en sensores y Edge Computing.
+</p>
+
+<p align="justify">
+3. Creemos que lograremos incrementar el valor percibido de la plataforma y la disposición a pagar por el servicio si los propietarios, administradores y responsables institucionales obtienen mayor confianza y visibilidad sobre la respuesta ante una emergencia mediante la ejecución automática de acciones de seguridad apropiadas según el tipo y nivel de riesgo detectado.
+</p>
+
+<p align="justify">
+4. Creemos que lograremos incrementar el interés y valor percibido de la plataforma si los responsables de ambos segmentos pueden reconocer oportunamente la existencia y naturaleza de una emergencia y coordinar una respuesta más clara mediante alertas y señalización diferenciadas.
+</p>
+
+<p align="justify">
+5. Creemos que lograremos incrementar el valor percibido de la plataforma para las actividades de supervisión y respuesta si los propietarios, administradores y responsables institucionales pueden tomar decisiones con mayor rapidez al conocer la ubicación del riesgo mediante una funcionalidad de identificación de la zona afectada.
+</p>
+
+<p align="justify">
+6. Creemos que lograremos incrementar el uso recurrente de la plataforma para actividades de supervisión y seguimiento si los usuarios pueden analizar posteriormente las emergencias ocurridas mediante una funcionalidad de registro e historial de eventos, mediciones y respuestas ejecutadas.
+</p>
 #### 1.2.2.4. Lean UX Canvas
 
 <p align="justify">
@@ -600,22 +710,41 @@ Este segmento está conformado por propietarios, administradores, facility manag
 
 #### Aspectos demográficos
 
+<p align="justify">
+
 - **Sexo:** Masculino y femenino.
+
 - **Rango de edad:** 30 años a más.
+
 - **Nivel socioeconómico:** Principalmente clases A, B y C.
+
 - **Ocupación:** Propietarios de inmuebles, administradores de edificios y responsables de mantenimiento, seguridad o gestión de instalaciones.
+
+</p>
 
 #### Aspectos geográficos
 
+<p align="justify">
+
 - **Nacionalidad:** Peruana.
+
 - **Zona geográfica:** Principalmente zonas urbanas de Lima Metropolitana y otras ciudades con alta concentración de edificios residenciales, comerciales y empresariales.
+
+</p>
 
 #### Aspectos psicográficos
 
+<p align="justify">
+
 - **Dolor principal:** Dependencia de sistemas que se limitan a generar alertas y que requieren intervención humana para ejecutar acciones posteriores ante una emergencia.
+
 - **Intereses:** Seguridad de los ocupantes, automatización de edificios, monitoreo remoto, prevención de riesgos y modernización de infraestructura.
+
 - **Actitudes:** Valoran soluciones que permitan actuar rápidamente ante eventos críticos y que puedan integrarse progresivamente con la infraestructura existente.
+
 - **Necesidades clave:** Monitoreo en tiempo real, identificación de la zona afectada, activación automática de alarmas y actuadores, registro de eventos y reducción del tiempo de respuesta ante emergencias.
+
+</p>
 
 ### Segmento objetivo #2: Empresas integradoras de automatización y gestión de edificios inteligentes
 
@@ -625,6 +754,8 @@ Este segmento incluye empresas especializadas en automatización de edificios, i
 
 #### Aspectos demográficos y organizacionales
 
+<p align="justify">
+
 - **Tipo de organización:** Empresas B2B dedicadas a automatización de edificios, integración IoT, sistemas BMS y gestión técnica de infraestructura.
 
 - **Tamaño:** Principalmente pequeñas, medianas y grandes empresas que desarrollan proyectos de automatización e integración tecnológica para organizaciones con infraestructura propia.
@@ -633,13 +764,21 @@ Este segmento incluye empresas especializadas en automatización de edificios, i
 
 - **Rango de edad de los responsables:** Aproximadamente entre 28 y 60 años.
 
+</p>
+
 #### Aspectos geográficos
+
+<p align="justify">
 
 - **Ubicación:** Principalmente Lima Metropolitana y principales ciudades del Perú donde se desarrollan proyectos de automatización, modernización e implementación de edificios inteligentes.
 
 - **Ámbito de operación:** Edificios corporativos, campus educativos, centros de salud, instalaciones comerciales, hoteles, complejos industriales y otras infraestructuras que requieren automatización y monitoreo técnico.
 
+</p>
+
 #### Aspectos psicográficos
+
+<p align="justify">
 
 - **Dolor principal:** Dificultad para integrar funciones de detección y respuesta ante emergencias en edificios que utilizan distintos sensores, dispositivos y sistemas de automatización.
 
@@ -648,6 +787,8 @@ Este segmento incluye empresas especializadas en automatización de edificios, i
 - **Actitudes:** Buscan soluciones modulares, confiables, escalables y fáciles de integrar con la infraestructura tecnológica que ya implementan para sus clientes.
 
 - **Necesidades clave:** Una solución fácil de integrar con diferentes sensores y sistemas de automatización, que pueda configurarse según cada edificio, adaptarse a distintos proyectos y escalar conforme aumenten las zonas o dispositivos conectados.
+
+</p>
 
 <div style="page-break-before: always; break-before: page;"></div>
 
