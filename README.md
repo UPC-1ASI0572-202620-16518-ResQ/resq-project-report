@@ -11601,16 +11601,6 @@ Por tanto, AV1 no representa la validación definitiva de ResQ, sino el establec
 
 # Bibliografía
 
-<p align="justify">
-Registrar <strong>todas</strong> las referencias utilizadas en formato <strong>APA 7.ª edición</strong>.
-</p>
-
-Ejemplo:
-
-- Autor, A. A. (Año). *Título de la obra*. Editorial / Sitio. URL
-
-<div style="page-break-before: always; break-before: page;"></div>
-
 # Anexos
 
 ## Anexo A. Videos de Exposiciones
@@ -11623,8 +11613,8 @@ Ejemplo:
   <strong>Figura 82. Video de exposición correspondiente a la entrega AV1.</strong>
 </p>
 
-**URL:** [URL PENDIENTE]
+**URL:** [Video exposición AV1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQCm8NIQa-7hSJu5uKB_dQbpAf0R6cugKBeBCTA1hMliXKs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3OfZUl)
 
 <p align="justify">
-<strong>Duración:</strong> [HH:MM:SS PENDIENTE]
+<strong>Duración:</strong> 29:19
 </p>
