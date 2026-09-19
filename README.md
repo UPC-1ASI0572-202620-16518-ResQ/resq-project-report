@@ -9,7 +9,7 @@
 <h3 align="center" class="cover-degree">
 INGENIERÍA DE SOFTWARE
 </h3>
-
+ 
 <p align="center" class="cover-cycle"><strong>Ciclo académico:</strong> 2026-20 </p>
 
 <p align="center" class="cover-course">
