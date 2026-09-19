@@ -2309,23 +2309,25 @@ Este diagrama permite identificar el alcance de la solución y comprender cómo 
 
 ![ResQ Software Architecture System Landscape Diagram](assets/images/chapter-04-solution-software-design/resq-software-architecture-system-landscape-diagram.png)
 
-#### 4.1.3.2. Software Architecture Context Level Diagrams
-[INSERTAR DIAGRAMAS + EXPLICACIÓN]
-
-#### 4.1.3.3. Software Architecture Container Level Diagrams
+### 4.1.3.2. Software Architecture Container Level Diagrams.
 
 Este diagrama muestra que la Plataforma IoT de Emergencias está compuesta por cinco contenedores principales: una **Aplicación Web (SPA)** accesible desde navegadores para la gestión administrativa; una **Aplicación Móvil** para que clientes y técnicos reciban alertas y configuren equipos; una **Cloud API** que gestiona toda la lógica de negocio (usuarios, zonas, reportes); y una **Edge/IoT API** respaldada por un **Broker MQTT** encargado exclusivamente de procesar el alto volumen de datos (telemetría y *heartbeats*) provenientes de los sensores. Finalmente, el sistema utiliza bases de datos separadas: una base de datos relacional en la nube para almacenar la información estructural del sistema y una base de datos optimizada (ej. Time-Series) para el registro histórico de latidos y conectividad.
 
 ![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_2.png)
 
-[INSERTAR DIAGRAMAS + EXPLICACIÓN]
-
-#### 4.1.3.4. Software Architecture Deployment Diagrams
+### 4.1.3.3. Software Architecture Deployment Diagrams.
 
 Este diagrama muestra que el sistema se despliega en tres entornos principales: **Microsoft Azure Cloud**, **Dispositivos Cliente** y **Edificios/Zonas Físicas**. En Azure, el sistema utiliza *App Service* para alojar las aplicaciones web y la Cloud API (Spring Boot/Java o Node.js), *Azure Database for PostgreSQL* para los datos relacionales, y *Azure IoT Hub* para gestionar las comunicaciones MQTT de alto rendimiento con los dispositivos físicos. Los usuarios acceden al sistema a través de navegadores web o dispositivos Android/iOS. En cada edificio del cliente, se instalan **Sensores de Emergencia** (ej. detectores de gas/sismo basados en ESP32/Arduino) que envían datos de estado a un **Gateway IoT** local vía WiFi o Serial, el cual transmite esta información al IoT Hub en Azure. Todas las comunicaciones entre componentes utilizan protocolos seguros como HTTPS, MQTT sobre TLS y conexiones cifradas a la base de datos.
 
 ![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_3.png)
-[INSERTAR DIAGRAMA + EXPLICACIÓN]
+La arquitectura de software de ResQ se representa mediante el modelo C4, con el propósito de describir la solución desde distintos niveles de abstracción y mostrar cómo se distribuyen sus principales responsabilidades.
+
+Estas vistas permiten representar la relación de ResQ con sus usuarios y sistemas externos, así como los principales componentes desplegables que conforman la solución y la forma en que se comunican entre sí.
+
+La arquitectura considera la naturaleza distribuida de ResQ, integrando aplicaciones cliente, servicios Cloud, servicios Edge y componentes IoT que colaboran para soportar las capacidades definidas para la solución.
+
+
+
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
