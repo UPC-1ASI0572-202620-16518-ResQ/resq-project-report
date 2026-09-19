@@ -1563,64 +1563,54 @@ Finalmente, considera que el ecosistema actual debería utilizar estándares rea
 
 ---
 
-##### Entrevista 6 — Ricardo Núñez Valdivia
+##### Entrevista 6 — Juan Diego Ramírez Torres
 
 | Información | Detalle |
 |---|---|
-| Nombres | Ricardo |
-| Apellidos | Núñez Valdivia |
-| Edad | 49 años |
+| Nombres | Juan Diego |
+| Apellidos | Ramírez Torres  |
+| Edad | 32 años |
 | Género | Masculino |
-| Distrito de residencia | La Molina |
-| Ocupación / Cargo | Gerente comercial e innovación |
-| Tipo de organización | Empresa integradora B2B de edificios inteligentes |
+| Distrito de residencia | Santiago de Surco  |
+| Estado civil | Soltero |
+| Convivencia | Vive con su familia |
+| Ocupación / Cargo | Jefe de proyecto de integración |
+| Formación profesional | Ingeniero de sistemas con especialización en gestión de proyectos |
+| Experiencia en el sector | 8 años |
+| Tipo de organización | Empresa integradora de seguridad electrónica y automatización |
 | Segmento objetivo | Empresas integradoras de automatización y gestión de edificios inteligentes |
-| Fecha de entrevista | [COMPLETAR] |
-| Inicio en el video | [COMPLETAR - hh:mm:ss] |
-| Duración | [COMPLETAR - mm:ss] |
-| URL del video | [COMPLETAR] |
+| Fecha de entrevista | 18 de septiembre de 2026  |
+| Inicio en el video | 00:00:00 |
+| Duración | 05:20 aprox. |
+| URL del video | [Entrevista a Juan Diego Ramírez Torres](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQAPdSsAbUIrTaCRfwfBBJQRAc-yV4pmTw7FpMQnPNu7zAo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=qUppVL)
 
-![Entrevista 6 - Ricardo Núñez Valdivia](assets/images/chapter-02-requirements-elicitation-analysis/interview-06-ricardo-nunez.png)
+![Entrevista 6 - Juan Diego Ramírez Torres](assets/images/chapter-02-requirements-elicitation-analysis/interview-06-juan-diego.png)
 
 **Resumen de la entrevista**
 
-Ricardo Núñez Valdivia tiene 49 años, reside en La Molina, es casado y vive con su esposa y una hija. Es ingeniero electrónico y posteriormente realizó estudios relacionados con gestión comercial. Cuenta con cerca de veinte años de experiencia en el sector.
+Juan Diego tiene 32 años, reside en Lima, es soltero y vive con su familia. Es ingeniero de sistemas con especialización en gestión de proyectos y cuenta con ocho años de experiencia en el sector de integración y seguridad electrónica.
 
-Actualmente se desempeña como gerente comercial e innovación dentro de una empresa integradora B2B de edificios inteligentes que desarrolla proyectos para empresas corporativas, clínicas, hoteles, industria y educación. Su función consiste en identificar tecnologías que puedan incorporarse al portafolio, evaluar oportunidades comerciales y trabajar conjuntamente con el equipo técnico para validar nuevas soluciones.
+Actualmente se desempeña como jefe de proyecto de integración, participando en actividades que abarcan desde la preventa hasta la implementación de las soluciones. Entre las habilidades que considera fundamentales para desempeñar su puesto menciona la organización, el criterio técnico y comercial, así como la comunicación con el cliente.
 
-Considera fundamentales las habilidades de comprensión tecnológica, negociación, comunicación y conocimiento de las necesidades del cliente. Se describe como una persona pragmática al tomar decisiones. Valora la opinión del equipo técnico, pero también analiza si una solución genera valor real y puede sostenerse comercialmente.
+Se describe como una persona analítica. Para tomar decisiones suele consultar con el equipo técnico, aunque procura decidir rápidamente una vez que cuenta con la información necesaria.
 
-Entre sus actividades habituales se encuentran reuniones con clientes, evaluación de oportunidades, reuniones con fabricantes, elaboración de propuestas comerciales y búsqueda de nuevas soluciones. Mantiene conversaciones con clientes diariamente y evalúa nuevos proveedores algunas veces al mes.
+Entre sus principales actividades se encuentran las reuniones con clientes, elaboración de cotizaciones, validación de soluciones y seguimiento de proyectos. Considera especialmente importantes las reuniones con clientes y la evaluación de nuevas tecnologías.
 
-Considera particularmente importante comprender correctamente el problema del cliente y seleccionar la tecnología adecuada, debido a que una mala elección puede trasladar dificultades hacia la implementación.
+Como ejemplo de un proceso reciente, explicó el caso de un cliente que necesitaba una solución de control de acceso con reconocimiento facial. El proceso comenzó con el levantamiento de los requisitos, seguido por la búsqueda de alternativas disponibles y la solicitud de demostraciones a distintos proveedores.
 
-Como experiencia reciente describió la evaluación de una tecnología para mejorar el monitoreo energético de varias sedes. Debido a que la empresa no contaba con una solución específica, buscaron diferentes fabricantes y realizaron reuniones con tres alternativas.
+Las soluciones fueron evaluadas considerando principalmente su compatibilidad, costo y disponibilidad de soporte local. A partir de cuatro alternativas iniciales, el equipo redujo la selección a dos opciones.
 
-Las opciones fueron filtradas primero mediante requisitos técnicos y posteriormente mediante precio, soporte, referencias y modelo comercial. Los finalistas pasaron por una prueba técnica destinada a verificar su estabilidad y capacidad de integración.
+Posteriormente se realizó un piloto en laboratorio para comprobar la integración de las soluciones con el sistema existente. Esta prueba permitió evaluar aspectos como la estabilidad de la tecnología, el tiempo de respuesta y la capacidad de soporte del proveedor.
 
-En la decisión participaron Ricardo, el gerente técnico y un ingeniero de proyectos. Después del piloto negociaron las condiciones comerciales y la tecnología fue incorporada dentro de la propuesta presentada al cliente.
+En el proceso de decisión participaron perfiles técnicos y comerciales. Una vez que una alternativa superaba satisfactoriamente el piloto, se elaboraba la propuesta económica correspondiente para presentarla al cliente.
 
-Considera que el proceso no termina después de la venta, ya que posteriormente aparecen implementación, capacitación y soporte. Para Ricardo, es durante esas etapas cuando realmente puede determinarse si un proveedor puede convertirse en un socio tecnológico.
+Juan Diego destaca que el proceso no termina con la selección o venta de la tecnología, ya que posteriormente continúan las etapas de implementación y posventa. Por ello, la capacidad de un proveedor para brindar soporte durante todo el ciclo del proyecto también influye en su evaluación.
 
-Según su experiencia, los clientes normalmente presentan un problema antes que solicitar una marca determinada. Entre las necesidades habituales menciona centralización de edificios, ahorro energético y mejora del mantenimiento. El valor de la empresa integradora consiste en seleccionar y conectar distintas tecnologías para resolver esas necesidades.
+Desde su perspectiva, una empresa integradora aporta valor al cliente al analizar diferentes alternativas, verificar su compatibilidad y reducir el riesgo antes de implementar una nueva tecnología. En lugar de limitarse a comercializar productos, la empresa integradora participa en la selección, validación e incorporación de las soluciones más adecuadas para cada proyecto.
 
-Identifica la falta de referencias como una barrera relevante para empresas tecnológicas nuevas. Los clientes suelen preguntar dónde ha sido implementado el producto, quién lo utiliza y quién responderá ante posibles fallas. Sin embargo, una empresa pequeña puede generar confianza mediante un producto adecuado, un piloto exitoso y el respaldo de una empresa integradora.
+También señala que los pilotos son importantes porque permiten validar el comportamiento real de una tecnología antes de comprometer su implementación frente al cliente. Esto resulta especialmente relevante cuando se trabaja con proveedores o soluciones nuevas.
 
-Cuando una funcionalidad no forma parte del portafolio, evalúan si realmente resulta estratégico desarrollarla internamente. En muchos casos consideran más conveniente integrar una solución especializada ya existente.
-
-Para que una solución externa sea atractiva debe cumplir tanto condiciones técnicas como comerciales. El equipo técnico presta especial atención a APIs, protocolos, documentación y soporte, mientras que desde la perspectiva comercial debe existir un modelo viable para ambas organizaciones.
-
-Ricardo observa un incremento en la demanda de centralización, analítica y monitoreo remoto. Los clientes buscan evitar depender de numerosas plataformas independientes dentro de una misma edificación.
-
-Utiliza laptop y smartphone. Para comunicación utiliza principalmente el teléfono, mientras que para propuestas y evaluaciones prefiere la laptop. Utiliza Microsoft Edge en computadora y Google Chrome en smartphone. Sus principales canales digitales son Outlook, Microsoft Teams, WhatsApp y LinkedIn.
-
-Conoce nuevas tecnologías y proveedores mediante ferias, fabricantes, distribuidores, contactos del sector y LinkedIn. Reconoce marcas como Siemens, Honeywell, Schneider Electric y Johnson Controls. Considera que las marcas conocidas facilitan la conversación con el cliente, pero también valora recomendaciones, demostraciones y casos reales de implementación.
-
-De un proveedor espera capacitación, soporte, documentación, precios claros y reglas comerciales bien definidas. Su principal preocupación consiste en que un proveedor no tenga capacidad para continuar brindando soporte después del primer proyecto. Un piloto exitoso y una respuesta rápida ante consultas técnicas aumentan considerablemente su confianza.
-
-Su principal objetivo al incorporar una tecnología nueva consiste en resolver una necesidad real del cliente y, al mismo tiempo, ampliar las capacidades del portafolio. Su mayor frustración aparece cuando una solución presenta una demostración atractiva, pero carece de respuestas claras sobre integración, mantenimiento o soporte.
-
-Finalmente, considera que la relación con un proveedor debe mantenerse a largo plazo. Cuando una empresa integradora utiliza una tecnología dentro de un proyecto también compromete su reputación frente al cliente, por lo que busca socios tecnológicos y no únicamente productos. También considera fundamental la escalabilidad: una solución debe poder extenderse desde un edificio pequeño hacia múltiples edificios y clientes sin perder estabilidad ni generar dificultades excesivas.
+Finalmente, considera que el trabajo de integración tecnológica permite encontrar soluciones innovadoras y sencillas para resolver necesidades complejas, combinando criterios técnicos, comerciales y las necesidades específicas del cliente.
 
 ### 2.2.3. Análisis de entrevistas
 
