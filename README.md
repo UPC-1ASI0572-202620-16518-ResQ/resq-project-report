@@ -2313,21 +2313,200 @@ Ambos mapas muestran que la interoperabilidad importa por motivos diferentes. Ca
 </p>
 
 ## 2.4. Big Picture EventStorming
+
 <p align="justify">
-El Big Picture de ResQ ilustra visualmente cómo la plataforma entrega valor en situaciones críticas, mapeando el ciclo de vida completo de una emergencia. A nivel empresarial, muestra cómo un incidente físico desencadena automáticamente acciones de protección inmediatas, alerta a los responsables sin demoras y registra cada paso para su gestión y auditoría posterior. De esta forma, este esquema demuestra cómo la solución elimina los cuellos de botella manuales, reduce drásticamente los tiempos de respuesta y garantiza la seguridad y continuidad operativa del edificio de principio a fin.
+El Big Picture EventStorming de ResQ se desarrolló con el propósito de representar, a un nivel amplio, los principales acontecimientos que ocurren dentro del dominio relacionado con el monitoreo y la gestión de riesgos en edificaciones. Su construcción parte de los hallazgos obtenidos durante las entrevistas y de los artefactos elaborados previamente en Needfinding, permitiendo representar el comportamiento del dominio antes de profundizar en decisiones específicas de diseño o implementación.
 </p>
 
+<p align="justify">
+Siguiendo el enfoque de Big Picture EventStorming, los principales acontecimientos del dominio fueron representados como Domain Events, es decir, hechos relevantes que ya ocurrieron dentro del proceso. A partir de estos eventos se identificaron siete procesos principales: preparación del entorno, monitoreo, detección y contextualización del riesgo, alertas y respuesta, gestión del incidente, continuidad ante pérdida de conectividad e integración con infraestructura existente.
+</p>
 
-![Diagra de Picture EventStorming](assets/images/chapter-02-requirements-elicitation-analysis/Picture%20EventStorming.png)
+<p align="justify">
+Además del flujo de eventos, durante el análisis se identificaron dudas abiertas o Hotspots que requieren discusión posterior por parte del equipo, así como términos relevantes que deben mantener un significado compartido dentro del dominio.
+</p>
+
+### Vista general de los procesos
+
+<p align="justify">
+La vista general permite observar cómo se relacionan los principales procesos identificados. El flujo operacional principal comienza con la preparación del entorno, continúa con el monitoreo de la edificación, la detección y contextualización de posibles riesgos, la coordinación de alertas y respuestas y, cuando corresponde, la gestión de un incidente.
+</p>
+
+<p align="justify">
+La integración con infraestructura existente permite que nuevas fuentes o dispositivos puedan incorporarse al entorno monitoreado. Por otro lado, la continuidad operativa constituye un proceso transversal que puede activarse durante el monitoreo, la detección de riesgos o la ejecución de respuestas cuando existe una interrupción de conectividad.
+</p>
+
+![Vista general de procesos del Big Picture EventStorming](assets/images/chapter-02-requirements-elicitation-analysis/big-picture-eventstorming-process-map.png)
 
 <p align="center">
-  <strong>Figura 22. Diagra de Picture EventStorming.</strong>
+  <strong>Vista general de los procesos identificados en el Big Picture EventStorming de ResQ.</strong>
 </p>
 
+### Preparación del entorno, monitoreo y detección del riesgo
 
 <p align="justify">
-En la arquitectura de ResQ, el flujo se construye como una cadena continua de causa y efecto: un Actor (como un sensor o administrador) o una Política automática ejecuta un Comando (la acción en azul) sobre un Agregado (el componente del sistema), el cual procesa la lógica y emite un Evento de Dominio (el hecho consumado en naranja). A su vez, este evento cumple un doble propósito: actualiza una Vista (interfaz en verde) para informar al usuario y dispara nuevas Políticas (reglas en morado) que pueden interactuar con Sistemas Externos (rosa) o lanzar automáticamente el siguiente comando, conectando sin interrupciones la detección local con la gestión en la nube.
+El primer proceso identificado corresponde a la preparación del entorno monitoreado. Antes de iniciar la supervisión de una edificación deben haberse registrado los elementos necesarios para establecer su contexto operativo. En este flujo se identificaron los eventos <code>Building Registered</code>, <code>Zone Defined</code>, <code>Device Registered</code>, <code>Device Assigned To Zone</code>, <code>User Assigned To Building</code>, <code>Detection Rule Defined</code> y <code>Response Policy Defined</code>.
 </p>
+
+<p align="justify">
+Estos acontecimientos representan la existencia previa de una edificación, sus zonas, los dispositivos asociados, los responsables de su supervisión y las reglas que posteriormente permitirán determinar cuándo existe una condición de riesgo y qué tipo de respuesta puede aplicarse.
+</p>
+
+<p align="justify">
+Una vez preparado el entorno comienza el proceso de monitoreo. El evento <code>Measurement Captured</code> representa la obtención de una medición desde un dispositivo y <code>Measurement Available</code> indica que dicha información se encuentra disponible para ser considerada dentro del dominio. A partir de esta información pueden ocurrir cambios independientes en el estado de un dispositivo, una zona o la edificación, representados mediante <code>Device Status Changed</code>, <code>Zone Status Changed</code> y <code>Building Status Changed</code>.
+</p>
+
+<p align="justify">
+El monitoreo proporciona la evidencia necesaria para el proceso de detección y contextualización del riesgo. Cuando se observa una situación fuera del comportamiento esperado se produce <code>Anomalous Condition Detected</code>. Esta condición no implica necesariamente la existencia inmediata de un riesgo, pero puede conducir a <code>Risk Detected</code> cuando se cumplen las condiciones de detección definidas.
+</p>
+
+<p align="justify">
+Posteriormente, el riesgo puede ser contextualizado mediante <code>Risk Classified</code>, <code>Risk Level Determined</code> y <code>Risk Located</code>, permitiendo determinar qué tipo de situación fue identificada, cuál es su nivel de severidad y en qué parte de la edificación se encuentra.
+</p>
+
+![Preparación, monitoreo y detección del riesgo](assets/images/chapter-02-requirements-elicitation-analysis/big-picture-eventstorming-processes-a-b-c.png)
+
+<p align="center">
+  <strong>Procesos A, B y C: preparación del entorno, monitoreo y detección y contextualización del riesgo.</strong>
+</p>
+
+### Alertas, respuesta y gestión del incidente
+
+<p align="justify">
+Una vez identificado y contextualizado un riesgo, el dominio contempla los acontecimientos asociados con la comunicación y ejecución de respuestas. <code>Alert Generated</code> representa la generación de una alerta y <code>Responsible User Notified</code> indica que la información fue comunicada a una persona responsable.
+</p>
+
+<p align="justify">
+El evento <code>Response Requested</code> representa la necesidad de ejecutar una determinada acción como consecuencia del riesgo identificado. Dependiendo del tipo de respuesta, esta puede ejecutarse directamente o requerir previamente autorización humana.
+</p>
+
+<p align="justify">
+Cuando la acción requiere validación se produce <code>Response Authorization Requested</code>. El responsable puede generar <code>Response Authorized</code> o <code>Response Rejected</code>. Cuando la ejecución es permitida, el resultado puede ser <code>Response Executed</code> si la acción se completa satisfactoriamente o <code>Response Failed</code> si no pudo ejecutarse correctamente.
+</p>
+
+<p align="justify">
+Esta bifurcación refleja uno de los hallazgos obtenidos durante la investigación: determinadas acciones pueden automatizarse, mientras que aquellas que pueden generar un impacto significativo requieren mecanismos adicionales de supervisión o autorización.
+</p>
+
+<p align="justify">
+Cuando una situación requiere seguimiento se inicia el proceso de gestión del incidente. El ciclo comienza con <code>Incident Opened</code>, seguido de <code>Incident Assigned</code> y <code>Incident Acknowledged</code>, que representan la asignación y aceptación de responsabilidad sobre la situación.
+</p>
+
+<p align="justify">
+Durante la atención pueden generarse uno o varios <code>Incident Updated</code> conforme cambia el estado de la situación. Finalmente, <code>Incident Resolved</code> representa la resolución del problema identificado y <code>Incident Closed</code> su cierre formal una vez finalizado el seguimiento.
+</p>
+
+![Alertas, respuesta, incidentes y continuidad](assets/images/chapter-02-requirements-elicitation-analysis/big-picture-eventstorming-processes-d-e-f.png)
+
+<p align="center">
+  <strong>Procesos D, E y F: alertas y respuesta, gestión del incidente y continuidad operativa.</strong>
+</p>
+
+### Continuidad ante pérdida de conectividad
+
+<p align="justify">
+La continuidad operativa fue identificada como un proceso transversal debido a que una pérdida de conectividad puede producirse durante diferentes momentos de la operación de ResQ. Por esta razón, este proceso no representa una etapa posterior a la gestión del incidente, sino un escenario que puede aparecer mientras se realizan actividades de monitoreo, detección de riesgos o respuesta.
+</p>
+
+<p align="justify">
+El proceso comienza con <code>Connectivity Lost</code>. Ante esta situación, las capacidades críticas deben poder continuar localmente, representadas por <code>Local Monitoring Continued</code>, <code>Local Detection Continued</code> y <code>Local Response Executed</code>.
+</p>
+
+<p align="justify">
+Los acontecimientos que no pueden sincronizarse inmediatamente quedan representados mediante <code>Event Pending Synchronization</code>. Cuando se recupera la conexión ocurre <code>Connectivity Restored</code>, permitiendo posteriormente <code>Pending Events Synchronized</code>.
+</p>
+
+<p align="justify">
+Este flujo permite representar la necesidad de que las funciones esenciales de ResQ no dependan permanentemente de una conexión disponible y que la información producida durante una interrupción pueda conservarse para su posterior sincronización.
+</p>
+
+### Integración con infraestructura existente
+
+<p align="justify">
+El segundo segmento objetivo evidenció la importancia de incorporar ResQ dentro de infraestructuras que pueden utilizar dispositivos, sistemas y tecnologías previamente instaladas. Por esta razón, el Big Picture EventStorming contempla también un proceso de integración.
+</p>
+
+<p align="justify">
+El flujo comienza con <code>Existing Infrastructure Surveyed</code>, que representa el levantamiento del entorno tecnológico existente. Posteriormente se identifican los sistemas relevantes mediante <code>External System Identified</code> y las restricciones mediante <code>Integration Constraints Identified</code>.
+</p>
+
+<p align="justify">
+Con la información obtenida puede realizarse <code>Compatibility Evaluated</code> y posteriormente <code>Integration Approach Defined</code>, donde queda determinada la forma en la que la integración será abordada.
+</p>
+
+<p align="justify">
+Luego se producen <code>Integration Configured</code> e <code>Integration Tested</code>. Si las pruebas son satisfactorias, los dispositivos o fuentes externas relevantes pueden ser relacionados con el entorno monitoreado mediante <code>External Device Mapped</code>, finalizando con <code>Integration Activated</code>.
+</p>
+
+<p align="justify">
+Una integración activada permite que la fuente externa participe posteriormente en el proceso normal de monitoreo.
+</p>
+
+![Integración con infraestructura existente](assets/images/chapter-02-requirements-elicitation-analysis/big-picture-eventstorming-process-g-integration.png)
+
+<p align="center">
+  <strong>Proceso G: integración de ResQ con infraestructura tecnológica existente.</strong>
+</p>
+
+### Hotspots identificados
+
+<p align="justify">
+Durante la construcción del Big Picture EventStorming se identificaron aspectos del dominio que todavía requieren discusión o una definición más precisa. En EventStorming estos elementos se mantienen visibles como Hotspots en lugar de asumir prematuramente una solución.
+</p>
+
+<p align="justify">
+Entre las principales dudas identificadas se encuentran la relación entre una condición anómala y la confirmación de un riesgo, los criterios que determinan cuándo un riesgo debe convertirse en incidente, las respuestas que pueden ejecutarse automáticamente y aquellas que requieren autorización humana.
+</p>
+
+<p align="justify">
+También se identificaron incertidumbres relacionadas con el comportamiento de las integraciones bajo condiciones reales, la información que debe conservarse durante una pérdida de conectividad y el tratamiento de una fuente externa cuando pierde su asociación con una edificación o zona.
+</p>
+
+<p align="justify">
+Estos Hotspots permanecerán como puntos de discusión que deberán resolverse conforme avance el análisis del dominio y se obtenga nueva evidencia.
+</p>
+
+![Hotspots del Big Picture EventStorming](assets/images/chapter-02-requirements-elicitation-analysis/big-picture-eventstorming-hotspots.png)
+
+<p align="center">
+  <strong>Hotspots identificados durante el Big Picture EventStorming de ResQ.</strong>
+</p>
+
+### Definiciones obtenidas durante el EventStorming
+
+<p align="justify">
+La discusión de los eventos permitió identificar términos cuyo significado debe mantenerse consistente entre los integrantes del equipo. La definición explícita de estos conceptos permite reducir interpretaciones diferentes y constituye una base para la construcción posterior del Ubiquitous Language.
+</p>
+
+<p align="justify">
+Entre los principales términos identificados se encuentran <code>Measurement</code>, <code>Anomalous Condition</code>, <code>Risk</code>, <code>Risk Level</code>, <code>Alert</code>, <code>Response</code>, <code>Incident</code>, <code>Detection Rule</code>, <code>Response Policy</code>, <code>External System</code>, <code>Integration</code>, <code>Building</code>, <code>Zone</code> y <code>Responsible User</code>.
+</p>
+
+<p align="justify">
+Las definiciones acordadas permiten distinguir, por ejemplo, una condición anómala de un riesgo confirmado, una alerta de una respuesta y un riesgo de un incidente. Asimismo, establecen el significado utilizado para los elementos físicos y actores que participan dentro del dominio de ResQ.
+</p>
+
+![Definiciones del Big Picture EventStorming](assets/images/chapter-02-requirements-elicitation-analysis/big-picture-eventstorming-definitions.png)
+
+<p align="center">
+  <strong>Definiciones obtenidas durante la exploración del dominio mediante Big Picture EventStorming.</strong>
+</p>
+
+### Resultado del Big Picture EventStorming
+
+<p align="justify">
+El Big Picture EventStorming permitió representar el dominio de ResQ desde una perspectiva centrada en acontecimientos relevantes y no en componentes específicos de implementación. Como resultado se obtuvo una visión común de cómo se prepara una edificación para su supervisión, cómo se generan y utilizan las mediciones, cómo se identifica y contextualiza un riesgo, cómo se coordinan las respuestas y cómo se mantiene trazabilidad mediante la gestión de incidentes.
+</p>
+
+<p align="justify">
+Asimismo, el análisis permitió incorporar dos aspectos relevantes identificados durante la investigación: la continuidad de las funciones críticas ante pérdidas de conectividad y la necesidad de integrar ResQ con infraestructura tecnológica existente.
+</p>
+
+<p align="justify">
+Finalmente, los Hotspots y las definiciones obtenidas durante la sesión permiten documentar las principales incertidumbres y consolidar un lenguaje compartido que será utilizado como base para la sección de Ubiquitous Language y para las posteriores actividades de diseño del dominio.
+</p>
+
+**Link del tablero de Miro:** [Big Picture EventStorming de ResQ](https://miro.com/app/board/uXjVHlZnbCs=/?share_link_id=107442553080)
 
 ## 2.5. Ubiquitous Language
 <p align="justify">
