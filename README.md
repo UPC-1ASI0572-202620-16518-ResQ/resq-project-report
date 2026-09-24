@@ -11634,6 +11634,122 @@ El diseño de la base de datos para el <strong>Connectivity Management Bounded C
      * `signal_strength`: Intensidad de la señal de red reportada.
 
 
+# 5.1. Style Guidelines.
+### 5.1.1. General Style Guidelines.
+
+en este sección definiremos algunos apartados en lo visual, simbolismo y interacción que rige toda la solucion de ResQ, asegurando coherencia respecto las plataformas. Establecemos una identidad visual clara por medio de paleta de colores, tipografia, espaciado, etc unificado.
+
+#### Brand Overview
+
+En varios ciudades, las emergencias dentro de los edificios/locales puede ser un problema demaciado serio sino sabes que paso seria mejor seguir. La falta de información correcta sobre las medidas o protocolos que se deberian hacer para las personas en dichos momentos llegue a generar panico o realizar acciones que ponga en peligro su bienestar dando como resultado heridas fatales o personas fallecidas. *ResQ* surge como una solución a este problema: Un dispositivo IoT afiliada a una plataforma para ayudar a las personas de una vivienda, local o empresa tener una alarma antes varias emergencias con protocolos que serviran a las personas para mantenerlos seguro
+
+A través de distintos sensores y un sistema de protocolos confiable, ResQ no solo facilita las acciones que uno debe tomar dependiendo de la emergencia sino tambien reduce la mortalidad garantizando rutas seguras para todas las personas
+
+---
+
+#### Brand Name
+
+El nombre de nuestra solución, ResQ, muestra la esencia del proyecto:"Res" represe la siglas de R: Revaluando, E: Entorno y S: Seguro y Q representa Qualified mostrando que nos es solo una solucion sino es la solucion mas capacitada, el conjunto de ambos trasmite da a conocer que el producto evalua la situacion y te da indicaciones con un indice de efectividad mas del 75% con el significado de nuestro nombre
+
+La elección de un nombre en inglés responde a su estructura sencilla pero universal que es llamativo para un gran publico, lo que permite escalar la solucion a varios casos mas complejos a futuro.
+
+---
+
+#### Logo
+
+A continuación, se presenta el Logo de ResQ:
+
+![Logo-ResQ.PNG](../resq-project-report/assets/images/chapter-02-requirements-elicitation-analysis/ResQ-logo.png)
+
+##### Color
+
+![Logo-Color-ResQ.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/colorperfil1.png)
+
+#### Body Text
+
+La elección de una tipografía adecuada influye en la facilidad con la que el usuario puede comrpender el texto. La tipografía puede transmitir emociones y establecer un tono para el texto.
+
+#### Tipografía 
+
+![Tipografia-ResQ.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+
+#### Paleta de colores
+
+![Coloris-ResQ.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/color1.png)
+
+#### Botones
+
+![TButtum.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/buttom1.png)
+
+### 5.1.2. Web, Mobile and IoT Style Guidelines.
+Diseñamos una interfaces Web centrada principalmente en la claridad y eficiencia,  para que la experiencia del usuario en pantallas de mayores tamaños. Tambien aplicamos una estructura responsivas, patrones de navegación y un poco de grid para asegurar que la accesibilidad y rendimiento en un entrono de escritorio
+
+#### Colour Paletie
+
+##### Recomended usage
+
+![TColors.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
+
+#### Tipografía 
+
+![Tipografia-ResQ.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+
+#### Grid
+
+![Grid.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/Grid1.png)
+
+![Button.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
+
+![NIO.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/NIOWeb1.png)
+
+Adaptamos lo Fundamental de ResQ para dispositivos móviles optimizamos la usabilidad en el apartado táctil, la jerarquía visual y  sin olvidad la agilidad de la navegación ya que es lo fundamental, priorizamos lo intuitivo, mayor rendimiento y pasos rápidos pero suaves entre pantallas, conociendo las limitaciones y contras del formato móvil
+
+#### Colour Paletie
+
+##### Recomended usage
+
+![TColors.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
+
+#### Tipografía 
+
+![Tipografia-ResQ.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+
+#### Grid
+
+![Grid.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/Grid2.png)
+
+![Button.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
+
+![NIO.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/NIOMoviel1.png)
+
+Excedemos nuestros lineamientos respecto a los dispositivos IoT para asegurar que la interfaz sea funcional y simple. Diseñamos visuales claras y compactas con código de colores efectivos y apartados visuales que faciliten la comprensión de la información
+
+#### Colour Paletie
+
+##### Recomended usage
+
+![TColors.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
+
+#### Tipografía 
+
+![Tipografia-ResQ.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+
+#### Grid
+
+![Grid.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/Grid1.png)
+
+![Button.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
+
+![NIO.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/NIOIoT1.png)
+
+
+### 5.2. Information Architecture.
+### 5.2.1. Organization Systems.
+### 5.2.2. Labeling Systems.
+### 5.2.3. SEO Tags and Meta Tags
+### 5.2.4. Searching Systems.
+### 5.2.5. Navigation Systems
+
 # Conclusiones
 
 ## Conclusiones y recomendaciones
