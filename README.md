@@ -11659,11 +11659,11 @@ La elección de un nombre en inglés responde a su estructura sencilla pero univ
 
 A continuación, se presenta el Logo de ResQ:
 
-![Logo-ResQ.PNG](../resq-project-report/assets/images/chapter-02-requirements-elicitation-analysis/ResQ-logo.png)
+![Logo-ResQ.PNG](/assets/images/chapter-02-requirements-elicitation-analysis/ResQ-logo.png)
 
 ##### Color
 
-![Logo-Color-ResQ.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/colorperfil1.png)
+![Logo-Color-ResQ.PNG](/assets/images/chapter-05-solution-ui-ux-design/colorperfil1.png)
 
 #### Body Text
 
@@ -11671,15 +11671,15 @@ La elección de una tipografía adecuada influye en la facilidad con la que el u
 
 #### Tipografía 
 
-![Tipografia-ResQ.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+![Tipografia-ResQ.PNG](/assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
 
 #### Paleta de colores
 
-![Coloris-ResQ.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/color1.png)
+![Coloris-ResQ.PNG](/assets/images/chapter-05-solution-ui-ux-design/color1.png)
 
 #### Botones
 
-![TButtum.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/buttom1.png)
+![TButtum.PNG](/assets/images/chapter-05-solution-ui-ux-design/buttom1.png)
 
 ### 5.1.2. Web, Mobile and IoT Style Guidelines.
 Diseñamos una interfaces Web centrada principalmente en la claridad y eficiencia,  para que la experiencia del usuario en pantallas de mayores tamaños. Tambien aplicamos una estructura responsivas, patrones de navegación y un poco de grid para asegurar que la accesibilidad y rendimiento en un entrono de escritorio
@@ -11688,19 +11688,19 @@ Diseñamos una interfaces Web centrada principalmente en la claridad y eficienci
 
 ##### Recomended usage
 
-![TColors.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
+![TColors.PNG](/assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
 
 #### Tipografía 
 
-![Tipografia-ResQ.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+![Tipografia-ResQ.PNG](/assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
 
 #### Grid
 
-![Grid.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/Grid1.png)
+![Grid.PNG](/assets/images/chapter-05-solution-ui-ux-design/Grid1.png)
 
-![Button.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
+![Button.PNG](/assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
 
-![NIO.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/NIOWeb1.png)
+![NIO.PNG](/assets/images/chapter-05-solution-ui-ux-design/NIOWeb1.png)
 
 Adaptamos lo Fundamental de ResQ para dispositivos móviles optimizamos la usabilidad en el apartado táctil, la jerarquía visual y  sin olvidad la agilidad de la navegación ya que es lo fundamental, priorizamos lo intuitivo, mayor rendimiento y pasos rápidos pero suaves entre pantallas, conociendo las limitaciones y contras del formato móvil
 
@@ -11708,19 +11708,19 @@ Adaptamos lo Fundamental de ResQ para dispositivos móviles optimizamos la usabi
 
 ##### Recomended usage
 
-![TColors.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
+![TColors.PNG](/assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
 
 #### Tipografía 
 
-![Tipografia-ResQ.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+![Tipografia-ResQ.PNG](/assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
 
 #### Grid
 
-![Grid.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/Grid2.png)
+![Grid.PNG](/assets/images/chapter-05-solution-ui-ux-design/Grid2.png)
 
-![Button.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
+![Button.PNG](/assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
 
-![NIO.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/NIOMoviel1.png)
+![NIO.PNG](/assets/images/chapter-05-solution-ui-ux-design/NIOMoviel1.png)
 
 Excedemos nuestros lineamientos respecto a los dispositivos IoT para asegurar que la interfaz sea funcional y simple. Diseñamos visuales claras y compactas con código de colores efectivos y apartados visuales que faciliten la comprensión de la información
 
@@ -11728,19 +11728,19 @@ Excedemos nuestros lineamientos respecto a los dispositivos IoT para asegurar qu
 
 ##### Recomended usage
 
-![TColors.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
+![TColors.PNG](/assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
 
 #### Tipografía 
 
-![Tipografia-ResQ.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+![Tipografia-ResQ.PNG](/assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
 
 #### Grid
 
-![Grid.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/Grid1.png)
+![Grid.PNG](/assets/images/chapter-05-solution-ui-ux-design/Grid1.png)
 
-![Button.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
+![Button.PNG](/assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
 
-![NIO.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/NIOIoT1.png)
+![NIO.PNG](/assets/images/chapter-05-solution-ui-ux-design/NIOIoT1.png)
 
  
 ### 5.2. Information Architecture.
