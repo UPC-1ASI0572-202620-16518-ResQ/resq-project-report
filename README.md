@@ -11742,7 +11742,7 @@ Excedemos nuestros lineamientos respecto a los dispositivos IoT para asegurar qu
 
 ![NIO.PNG](../resq-project-report/assets/images/chapter-05-solution-ui-ux-design/NIOIoT1.png)
 
-
+ 
 ### 5.2. Information Architecture.
 ### 5.2.1. Organization Systems.
 ### 5.2.2. Labeling Systems.
