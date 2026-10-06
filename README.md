@@ -12211,9 +12211,6 @@ La inspección del código evidencia que ambas experiencias son Single Page Appl
 La implementación futura puede utilizar el Router de Angular para actualizar <code>title</code>, <code>description</code>, <code>keywords</code> y <code>author</code> al activarse cada ruta, conservando inglés como idioma predeterminado y español como alternativa seleccionable. Las vistas parametrizadas —por ejemplo, el detalle de una edificación, dispositivo, alerta o incidente— deben construir títulos a partir de identificadores o nombres ya obtenidos por la aplicación, sin exponer información sensible en metadata pública. Debido a que el alcance actual corresponde a experiencias web y no existe evidencia de una aplicación publicada en una tienda de aplicaciones, ASO no aplica a esta entrega.
 </p>
 
-### 5.2.4. Searching Systems.
-### 5.2.5. Navigation Systems
-
 ### 5.6. IoT Device Design
 
 <p align="justify">
