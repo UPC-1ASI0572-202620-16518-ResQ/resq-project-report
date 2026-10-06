@@ -308,6 +308,10 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
 - [Capítulo VI: Product Implementation, Validation & Deployment](#capítulo-vi-product-implementation-validation--deployment)
   - [6.1. Software Configuration Management](#61-software-configuration-management)
     - [6.1.1. Software Development Environment Configuration](#611-software-development-environment-configuration)
+  - [6.2. Landing Page, Services & Applications Implementation](#62-landing-page-services--applications-implementation)
+    - [6.2.1. Sprint 1](#621-sprint-1)
+      - [6.2.1.1. Sprint Planning 1](#6211-sprint-planning-1)
+      - [6.2.1.4. Development Evidence for Sprint Review](#6214-development-evidence-for-sprint-review)
 
 - [Conclusiones](#conclusiones)
   - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
@@ -11634,6 +11638,8 @@ El diseño de la base de datos para el <strong>Connectivity Management Bounded C
      * `signal_strength`: Intensidad de la señal de red reportada.
 
 
+# Capítulo V: Solution UI/UX Design
+
 # 5.1. Style Guidelines.
 ### 5.1.1. General Style Guidelines.
 
@@ -11659,11 +11665,11 @@ La elección de un nombre en inglés responde a su estructura sencilla pero univ
 
 A continuación, se presenta el Logo de ResQ:
 
-![Logo-ResQ.PNG](/assets/images/chapter-02-requirements-elicitation-analysis/ResQ-logo.png)
+![Logo-ResQ.PNG](assets/images/chapter-02-requirements-elicitation-analysis/ResQ-logo.png)
 
 ##### Color
 
-![Logo-Color-ResQ.PNG](/assets/images/chapter-05-solution-ui-ux-design/colorperfil1.png)
+![Logo-Color-ResQ.PNG](assets/images/chapter-05-solution-ui-ux-design/colorperfil1.png)
 
 #### Body Text
 
@@ -11671,15 +11677,15 @@ La elección de una tipografía adecuada influye en la facilidad con la que el u
 
 #### Tipografía 
 
-![Tipografia-ResQ.PNG](/assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+![Tipografia-ResQ.PNG](assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
 
 #### Paleta de colores
 
-![Coloris-ResQ.PNG](/assets/images/chapter-05-solution-ui-ux-design/color1.png)
+![Coloris-ResQ.PNG](assets/images/chapter-05-solution-ui-ux-design/color1.png)
 
 #### Botones
 
-![TButtum.PNG](/assets/images/chapter-05-solution-ui-ux-design/buttom1.png)
+![TButtum.PNG](assets/images/chapter-05-solution-ui-ux-design/buttom1.png)
 
 ### 5.1.2. Web, Mobile and IoT Style Guidelines.
 Diseñamos una interfaces Web centrada principalmente en la claridad y eficiencia,  para que la experiencia del usuario en pantallas de mayores tamaños. Tambien aplicamos una estructura responsivas, patrones de navegación y un poco de grid para asegurar que la accesibilidad y rendimiento en un entrono de escritorio
@@ -11688,19 +11694,19 @@ Diseñamos una interfaces Web centrada principalmente en la claridad y eficienci
 
 ##### Recomended usage
 
-![TColors.PNG](/assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
+![TColors.PNG](assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
 
 #### Tipografía 
 
-![Tipografia-ResQ.PNG](/assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+![Tipografia-ResQ.PNG](assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
 
 #### Grid
 
-![Grid.PNG](/assets/images/chapter-05-solution-ui-ux-design/Grid1.png)
+![Grid.PNG](assets/images/chapter-05-solution-ui-ux-design/Grid1.png)
 
-![Button.PNG](/assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
+![Button.PNG](assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
 
-![NIO.PNG](/assets/images/chapter-05-solution-ui-ux-design/NIOWeb1.png)
+![NIO.PNG](assets/images/chapter-05-solution-ui-ux-design/NIOWeb1.png)
 
 Adaptamos lo Fundamental de ResQ para dispositivos móviles optimizamos la usabilidad en el apartado táctil, la jerarquía visual y  sin olvidad la agilidad de la navegación ya que es lo fundamental, priorizamos lo intuitivo, mayor rendimiento y pasos rápidos pero suaves entre pantallas, conociendo las limitaciones y contras del formato móvil
 
@@ -11708,19 +11714,19 @@ Adaptamos lo Fundamental de ResQ para dispositivos móviles optimizamos la usabi
 
 ##### Recomended usage
 
-![TColors.PNG](/assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
+![TColors.PNG](assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
 
 #### Tipografía 
 
-![Tipografia-ResQ.PNG](/assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+![Tipografia-ResQ.PNG](assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
 
 #### Grid
 
-![Grid.PNG](/assets/images/chapter-05-solution-ui-ux-design/Grid2.png)
+![Grid.PNG](assets/images/chapter-05-solution-ui-ux-design/Grid2.png)
 
-![Button.PNG](/assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
+![Button.PNG](assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
 
-![NIO.PNG](/assets/images/chapter-05-solution-ui-ux-design/NIOMoviel1.png)
+![NIO.PNG](assets/images/chapter-05-solution-ui-ux-design/NIOMoviel1.png)
 
 Excedemos nuestros lineamientos respecto a los dispositivos IoT para asegurar que la interfaz sea funcional y simple. Diseñamos visuales claras y compactas con código de colores efectivos y apartados visuales que faciliten la comprensión de la información
 
@@ -11728,24 +11734,116 @@ Excedemos nuestros lineamientos respecto a los dispositivos IoT para asegurar qu
 
 ##### Recomended usage
 
-![TColors.PNG](/assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
+![TColors.PNG](assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
 
 #### Tipografía 
 
-![Tipografia-ResQ.PNG](/assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+![Tipografia-ResQ.PNG](assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
 
 #### Grid
 
-![Grid.PNG](/assets/images/chapter-05-solution-ui-ux-design/Grid1.png)
+![Grid.PNG](assets/images/chapter-05-solution-ui-ux-design/Grid1.png)
 
-![Button.PNG](/assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
+![Button.PNG](assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
 
-![NIO.PNG](/assets/images/chapter-05-solution-ui-ux-design/NIOIoT1.png)
+![NIO.PNG](assets/images/chapter-05-solution-ui-ux-design/NIOIoT1.png)
 
  
 ### 5.2. Information Architecture.
+
+<p align="justify">
+La Information Architecture de ResQ define cómo se organizan, nombran, localizan y conectan los contenidos de la Landing Page y de la Web Application. Su propósito es que cada persona pueda reconocer el objetivo de la experiencia que utiliza, encontrar la información necesaria con el menor esfuerzo posible y comprender la relación entre las áreas de monitoreo, riesgos, alertas, dispositivos, edificaciones e incidentes. Para ello, la propuesta se estructura mediante <strong>Organization Systems</strong>, <strong>Labeling Systems</strong>, <strong>SEO Tags and Meta Tags</strong>, <strong>Searching Systems</strong> y <strong>Navigation Systems</strong>, desarrollados en las subsecciones 5.2.1–5.2.5.
+</p>
+
+<p align="justify">
+La Landing Page y la Web Application responden a necesidades distintas. La Landing Page presenta el problema que aborda ResQ, comunica su propuesta de valor y diferencia los beneficios relevantes para propietarios o administradores de edificaciones y para empresas integradoras de automatización y gestión de edificios inteligentes. En cambio, la Web Application organiza información operacional para usuarios autenticados que necesitan supervisar edificaciones, zonas y dispositivos, interpretar alertas y riesgos, y dar seguimiento a incidentes. Esta separación evita mezclar contenido informativo y comercial con tareas de operación que requieren contexto, permisos y atención sostenida.
+</p>
+
+<p align="justify">
+En un sistema de monitoreo y gestión de emergencias, la jerarquía del contenido tiene consecuencias operativas. Por esta razón, ResQ prioriza el estado general, el tipo y nivel del riesgo, la ubicación afectada, la vigencia de las mediciones y las respuestas ejecutadas o pendientes de autorización. La información secundaria se desplaza hacia vistas de detalle, de modo que una persona responsable pueda reconocer primero aquello que requiere atención. Este criterio reduce la carga cognitiva, limita la competencia visual entre datos de diferente criticidad y favorece decisiones oportunas sin ocultar la trazabilidad necesaria para revisar un incidente.
+</p>
+
+<p align="justify">
+Los sistemas de organización establecen la agrupación de contenidos; los sistemas de etiquetado mantienen términos coherentes con el Ubiquitous Language y con los Bounded Contexts; los SEO Tags and Meta Tags describen las páginas para buscadores, navegadores y vistas previas; los sistemas de búsqueda permiten localizar entidades operativas; y los sistemas de navegación conectan las tareas principales y sus vistas de detalle. En conjunto, estas decisiones permiten que visitantes y usuarios se adapten progresivamente a ResQ y comprendan cómo las áreas del producto colaboran dentro del flujo de monitoreo, detección, alerta, respuesta y seguimiento.
+</p>
+
 ### 5.2.1. Organization Systems.
+
+Para ResQ, los sistemas de organización de la información se plantean de acuerdo con las tareas que realizan los usuarios dentro de la plataforma, especialmente el monitoreo de edificios, dispositivos IoT, riesgos, incidentes y alertas. Buscamos que la información crítica pueda identificarse rápidamente durante una situación de emergencia y que las funciones administrativas permanezcan agrupadas de forma clara.
+
+**Organización jerárquica:** <br>
+La mayor parte del contenido de ResQ seguirá una organización jerárquica, partiendo de información general hacia información cada vez más específica.
+
+En el caso del responsable o administrador de seguridad, después de autenticarse accederá a un panel principal desde el cual podrá consultar los distintos módulos del sistema. Desde ahí podrá ingresar a la gestión de edificios, zonas, dispositivos, monitoreo, detección de riesgos, incidentes y alertas. Por ejemplo, dentro de la gestión de infraestructura se podrá navegar desde un edificio hacia sus zonas y, posteriormente, consultar los dispositivos asociados a cada ubicación.
+
+De esta forma, el usuario podrá comprender fácilmente dónde se encuentra dentro del sistema y acceder primero a una vista general antes de revisar información detallada.
+
+**Organización secuencial:**<br>
+La organización secuencial se utilizará en aquellos procesos que requieran completar una serie de pasos en un orden determinado.
+- **Registro y configuración de un dispositivo IoT:**
+
+  1. Registrar los datos generales del dispositivo.
+  2. Definir sus características y capacidades.
+  3. Asignarlo a un edificio y, de ser necesario, a una zona.
+  4. Revisar la configuración registrada.
+  5. Habilitar administrativamente el dispositivo.
+
+<br>
+
+- **Gestión de una situación de emergencia:**
+
+  1. Recepción de mediciones desde los dispositivos.
+  2. Evaluación del riesgo detectado.
+  3. Generación de una alerta o incidente.
+  4. Ejecución de acciones de respuesta.
+  5. Seguimiento del incidente.
+  6. Consulta del historial del evento.
+
+Este tipo de organización permitirá guiar al usuario durante procesos que no deberían ejecutarse de manera desordenada.
+
+**Organización matricial:**<br>
+La organización matricial se aplicará principalmente en vistas de monitoreo y análisis, donde sea necesario comparar diferentes variables al mismo tiempo. Por ejemplo, en el dashboard de la solución se podrá relacionar la ubicación con el estado de los dispositivos o el nivel de riesgo.
+
+Este tipo de presentación permitirá al responsable de seguridad comparar rápidamente diferentes zonas y detectar dónde se requiere mayor atención.
+
+<br>
+
+**Esquemas de categorización del contenido:**
+ResQ utilizará distintos esquemas de categorización según el tipo de información presentada:
+
+- **Por tópicos:** Toda la información estará agrupada según áreas funcionales como edificios, dispositivos, monitoreo, riesgos, incidentes, alertas y perfil.
+- **Cronológico:** Se utilizará principalmente para mediciones, alertas, incidentes y registros históricos, permitiendo consultar primero los eventos más recientes y revisar posteriormente sucesos anteriores.
+- **Alfabético:** Se podrá aplicar en listados extensos de edificios, zonas o dispositivos para facilitar su localización mediante el nombre o código correspondiente.
+- **Según audiencia:** La información se organizará de acuerdo con los segmentos objetivo de ResQ. Los propietarios y administradores de edificaciones tendrán acceso principalmente a información relacionada con la gestión de edificios, zonas, dispositivos, monitoreo, riesgos, incidentes y alertas. Por otro lado, las empresas integradoras de automatización y gestión de edificios inteligentes accederán principalmente a información relacionada con la configuración, integración y estado de los dispositivos instalados en las edificaciones, así como con los datos necesarios para su gestión dentro de la plataforma.
+
 ### 5.2.2. Labeling Systems.
+
+El sistema de etiquetado de ResQ utilizará palabras breves y familiares en español para representar conjuntos de información sin confundir a visitantes y usuarios. Las etiquetas conservarán el mismo significado en web y móvil; los iconos y colores complementarán el texto.
+
+**Etiquetas para visitantes**
+
+En la Landing Page se utilizarán Solución (funcionamiento de ResQ), Beneficios (valor para administradores), Integradores (compatibilidad con sistemas existentes) y Documentación (información técnica vinculada con Integradores). Las acciones se identificarán como Solicitar demostración e Iniciar sesión.
+
+**Etiquetas para usuarios**
+
+| Etiqueta | Información que representa y asociaciones |
+|---|---|
+| **Panel general** | Resumen de la edificación seleccionada, con acceso a Monitoreo, Alertas e Incidentes. |
+| **Edificaciones** | Infraestructura registrada; cada edificación contiene Zonas. |
+| **Zonas** | Áreas de una edificación; agrupan Dispositivos y permiten localizar riesgos. |
+| **Dispositivos** | Sensores y actuadores de una zona; sus mediciones se consultan en Monitoreo. |
+| **Monitoreo** | Mediciones y estado de dispositivos por edificación y zona. |
+| **Alertas** | Avisos de riesgos detectados, vinculados con su zona y el incidente correspondiente. |
+| **Incidentes** | Registros de atención que reúnen alertas, respuestas, responsable y estado. |
+| **Historial** | Incidentes anteriores y secuencia de eventos de cada caso. |
+| **Indicadores** | Frecuencia de incidentes, falsas alarmas y tiempos de atención. |
+| **Configuración** | Condiciones de detección, políticas de respuesta y usuarios y roles. |
+| **Integraciones** | Fuentes externas compatibles asociadas con dispositivos y zonas. |
+
+**Claridad de acciones y estados**
+
+Los botones indicarán acciones concretas: **Agregar zona**, **Asignar responsable** y **Autorizar acción**. El nivel de riesgo se representará como **Bajo**, **Medio**, **Alto** o **Crítico**; el estado del incidente, como **Activo**, **En atención**, **Resuelto** o **Cerrado**. Así se distinguirá la gravedad del riesgo de su atención. Se usará **Sin datos actualizados** cuando no existan mediciones vigentes, evitando interpretar esa ausencia como seguridad.
+
 ### 5.2.3. SEO Tags and Meta Tags
 ### 5.2.4. Searching Systems
 
@@ -12079,6 +12177,397 @@ Pruebas del prototipo funcionable para el apartado web y mobiel
 
 https://youtu.be/uhQxgi38vFc
 
+<p align="justify">
+La estrategia de SEO Tags and Meta Tags de ResQ diferencia el contenido público de la Landing Page y el contenido operacional de la Web Application. El Project Statement prescribe inglés como idioma predeterminado para mensajes e interfaces; por ello, la metadata recomendada se formula en inglés, mientras que la experiencia puede ofrecer español como idioma alternativo. La Landing Page requiere descripciones orientadas a que los dos segmentos objetivo comprendan la propuesta de monitoreo, detección y respuesta ante riesgos en edificaciones. La Web Application, aunque se encuentra protegida por autenticación y no debe depender del posicionamiento orgánico de sus vistas internas, requiere títulos y descripciones precisos para mantener orientación, accesibilidad y consistencia cuando una vista se comparte dentro de un entorno autorizado.
+</p>
+
+<p align="justify">
+La inspección del código evidencia que ambas experiencias son Single Page Applications desarrolladas con Angular. La Landing Page dispone actualmente de las rutas <code>/</code>, <code>/privacy</code> y <code>/terms</code>; su archivo <code>index.html</code> define un título y una descripción globales, además de metadatos Open Graph y Twitter, pero no cambia estos valores por ruta ni incorpora <code>keywords</code> o <code>author</code>. Su servicio de idioma inicia actualmente en español, salvo que exista una preferencia previa en inglés, lo cual representa una diferencia frente al idioma predeterminado indicado por el Project Statement. La Web Application, en cambio, inicia en inglés cuando no existe una preferencia almacenada, aunque mantiene un título global <code>ResQ</code> y tampoco implementa metadata dinámica por vista. Por tanto, las tablas siguientes constituyen la especificación recomendada en inglés para una futura gestión dinámica de metadata y no una afirmación de que todos estos valores ya estén implementados.
+</p>
+
+#### Landing Page
+
+| Página/Sección | Title | Description | Keywords | Author |
+|---|---|---|---|---|
+| Inicio (<code>/</code>) | ResQ \| Building Risk Monitoring and Emergency Response | Discover ResQ, SecurityBear's proposal for integrated risk monitoring, early detection and coordinated emergency response in buildings. | building risk monitoring, emergency detection, alert management, incident response, SecurityBear ResQ | SecurityBear |
+| Política de privacidad (<code>/privacy</code>) | Privacy Policy \| ResQ | Learn how the ResQ informational website handles visitor-submitted data, language preferences and links to external services. | ResQ privacy, contact data, website preferences, data protection | SecurityBear |
+| Términos y condiciones (<code>/terms</code>) | Terms and Conditions \| ResQ | Review the terms of use for the ResQ academic website and the informational scope of its monitoring, detection and response proposal. | ResQ terms of use, website conditions, SecurityBear academic project, responsible use | SecurityBear |
+
+#### Web Application
+
+| Página/Vista | Title | Description | Keywords | Author |
+|---|---|---|---|---|
+| Inicio de sesión (<code>/login</code>) | Sign In \| ResQ | Secure access for authorized personnel who monitor buildings, devices, alerts and incidents through ResQ. | ResQ access, authentication, building monitoring, authorized users | SecurityBear |
+| Dashboard (<code>/dashboard</code>) | Operational Overview \| ResQ | View monitored building status, active risks, recent alerts and conditions that require attention. | operational status, risk monitoring, active alerts, monitored buildings | SecurityBear |
+| Edificaciones (<code>/buildings</code>) | Monitored Buildings \| ResQ | Manage the buildings, floors and zones used to place ResQ devices and contextualize operational events. | building management, monitored zones, connected infrastructure, floor plans | SecurityBear |
+| Monitoreo (<code>/monitoring</code>) | Zone Monitoring \| ResQ | Monitor observed conditions and measurements associated with building floors, zones and devices. | zone monitoring, sensor measurements, device status, remote supervision | SecurityBear |
+| Espacios (<code>/spaces</code>) | Spaces and Zones \| ResQ | Locate operational spaces and review their context, assigned devices and monitoring conditions. | monitored spaces, building zones, device location, risk context | SecurityBear |
+| Dispositivos (<code>/devices</code>) | IoT Devices \| ResQ | Review the inventory, assignments, capabilities and operational status of IoT devices registered in ResQ. | IoT devices, building sensors, actuators, device management | SecurityBear |
+| Alertas (<code>/alerts</code>) | Alert Center \| ResQ | Review alerts generated by risk conditions, including their location, context and associated responses. | alert management, risk detection, emergency location, automated response | SecurityBear |
+| Incidentes (<code>/incidents</code>) | Incident Management \| ResQ | Track the status, assignees and resolution of incidents registered in monitored buildings. | incident management, emergency response, incident tracking, resolution | SecurityBear |
+| Configuración (<code>/settings</code>) | Settings \| ResQ | Manage the preferences and parameters available to authorized ResQ users. | ResQ settings, user preferences, monitoring parameters | SecurityBear |
+
+<p align="justify">
+La implementación futura puede utilizar el Router de Angular para actualizar <code>title</code>, <code>description</code>, <code>keywords</code> y <code>author</code> al activarse cada ruta, conservando inglés como idioma predeterminado y español como alternativa seleccionable. Las vistas parametrizadas —por ejemplo, el detalle de una edificación, dispositivo, alerta o incidente— deben construir títulos a partir de identificadores o nombres ya obtenidos por la aplicación, sin exponer información sensible en metadata pública. Debido a que el alcance actual corresponde a experiencias web y no existe evidencia de una aplicación publicada en una tienda de aplicaciones, ASO no aplica a esta entrega.
+</p>
+
+### 5.2.4. Searching Systems.
+### 5.2.5. Navigation Systems
+
+### 5.6. IoT Device Design
+
+<p align="justify">
+ResQ plantea una solución IoT escalable para monitorear condiciones de riesgo en edificaciones y coordinar respuestas aun cuando la conectividad con Cloud se encuentre limitada. Para el alcance de TB1 y Sprint 1, el equipo concentra esta propuesta en un MVP físico orientado a validar la integración base entre sensado, procesamiento local, visualización y alertamiento. Este alcance inicial no representa la totalidad de la solución futura: constituye una primera versión funcional y verificable sobre la cual podrán incorporarse progresivamente nuevos nodos, reglas e integraciones respaldadas por la arquitectura del Project Report.
+</p>
+
+<p align="justify">
+La Information Architecture del dispositivo prioriza una secuencia breve: captar la condición, procesarla, comunicar localmente el estado y activar una advertencia cuando corresponda. Esta jerarquía reduce la carga cognitiva durante una posible emergencia y mantiene coherencia con las Style Guidelines para IoT Device Physical Interfaces: información compacta en la OLED, código cromático rojo/verde y señal audible complementaria. El color no funciona como único canal, pues la pantalla y el buzzer refuerzan la interpretación del estado.
+</p>
+
+#### MVP Device Prototype
+
+<p align="justify">
+El MVP físico actual se centra en la detección de gas o humo mediante un sensor MQ-2, el procesamiento de la lectura en un ESP32 DevKit V1, la visualización local en una pantalla OLED SSD1306 y el alertamiento mediante un buzzer activo y dos LEDs. El montaje se realiza sobre protoboard, utiliza resistencias de 220 Ω para proteger los LEDs, jumpers para interconexión y un cable USB compatible con la placa para alimentación y programación.
+</p>
+
+| Componente | Cantidad para 1 MVP | Especificación del MVP | Función dentro de ResQ |
+|---|---:|---|---|
+| ESP32 DevKit V1 | 1 | 30 pines | Ejecutar la lógica local, recibir la lectura del sensor y controlar la OLED, el buzzer y los LEDs |
+| Sensor MQ-2 | 1 | Módulo sensor de gas/humo | Proporcionar la señal de sensado utilizada para validar la detección básica del MVP |
+| Pantalla OLED | 1 | SSD1306, 0.96”, I2C, 128×64 | Mostrar localmente el estado del nodo y la información breve necesaria para interpretar la condición |
+| Protoboard | 1 | MB-102, aproximadamente 830 puntos | Soportar el montaje provisional sin soldadura y facilitar ajustes durante la validación |
+| Buzzer activo | 1 | 5 V | Emitir una advertencia audible cuando la lógica local determine una condición de alerta |
+| LED rojo | 1 | 5 mm | Representar visualmente una condición de alerta |
+| LED verde | 1 | 5 mm | Representar visualmente una condición normal u operativa |
+| Resistencias | 4 | 220 Ω, 1/4 W; dos para uso y dos de repuesto | Limitar la corriente de los LEDs y disponer de repuestos para el montaje |
+| Jumpers macho-macho | 1 pack | 20 cm, idealmente 20–40 unidades | Conectar los componentes y los rieles de la protoboard |
+| Jumpers macho-hembra | 1 pack | 20 cm, idealmente 20–40 unidades | Conectar módulos cuando su disposición física requiera terminales hembra |
+| Cable USB para ESP32 | 1 | USB-C o Micro-USB según la placa adquirida | Alimentar, programar y depurar el ESP32 durante el desarrollo del MVP |
+
+##### Physical Design
+
+<p align="justify">
+La disposición física propuesta mantiene visibles la OLED y los LEDs, ubica el MQ-2 sin obstrucciones que limiten su exposición al ambiente y separa el área de señalización del microcontrolador. La protoboard organiza el cableado y evita contactos conductores expuestos fuera del área de montaje. La siguiente imagen es una ilustración técnica provisional generada para representar de forma visual el inventario real del MVP; deberá reemplazarse por una fotografía o mockup validado del montaje definitivo cuando el equipo lo complete.
+</p>
+
+![ResQ IoT Device Physical Design](assets/images/chapter-05-solution-ui-ux-design/resq-iot-device-physical-design.png)
+
+<p align="center">
+  <strong>Figura 82. Diseño físico propuesto del dispositivo IoT ResQ para el MVP.</strong>
+</p>
+
+<p align="justify">
+La representación incluye el ESP32, el MQ-2, la OLED, el buzzer, ambos LEDs, las resistencias, los jumpers, la protoboard y la alimentación USB. Su finalidad es comunicar la organización conceptual del MVP; no constituye evidencia de ensamblaje, calibración o prueba eléctrica.
+</p>
+
+##### Circuit Design
+
+<p align="justify">
+El circuito conceptual utiliza el ESP32 como controlador central, recibe la señal del MQ-2, comunica la OLED mediante I2C y controla el buzzer y los LEDs. Las resistencias de 220 Ω se colocan en serie con los LEDs. La alimentación inicial proviene del cable USB compatible con el ESP32. El equipo todavía debe verificar en el montaje real los GPIO, los niveles eléctricos, la distribución de tierra, el consumo del MQ-2 y cualquier etapa adicional de acondicionamiento o protección requerida por las hojas técnicas.
+</p>
+
+<p align="justify">
+La siguiente ilustración provisional adopta una presentación similar a una herramienta de diseño de circuitos y evita asignar números GPIO no validados. No reemplaza la captura o exportación real que deberá obtenerse de Cirkit Designer después de comprobar el circuito físico y el firmware.
+</p>
+
+![ResQ IoT Circuit Design](assets/images/chapter-05-solution-ui-ux-design/resq-iot-circuit-design.png)
+
+<p align="center">
+  <strong>Figura 83. Diseño del circuito del dispositivo IoT ResQ para el MVP.</strong>
+</p>
+
+<p align="justify">
+<strong>Validación humana requerida:</strong> antes de reemplazar la Figura 83 por la exportación definitiva de Cirkit Designer, el equipo debe verificar y documentar los GPIO reales del ESP32, los niveles de tensión, la distribución de tierra, la alimentación del MQ-2, las conexiones I2C y las protecciones del circuito.
+</p>
+
+##### MVP Interaction Flow
+
+<p align="justify">
+En el MVP, el MQ-2 produce una señal que el ESP32 captura y procesa localmente. El resultado se presenta en la OLED y se traduce a una señal visual: verde para condición normal y roja para condición de alerta. Cuando la condición configurada lo requiere, el buzzer proporciona una advertencia audible. Este flujo permite validar que sensado, procesamiento y alertamiento local pueden coordinarse en un único nodo antes de incorporar la integración distribuida prevista por ResQ.
+</p>
+
+#### Projected Evolution of the IoT Device
+
+<p align="justify">
+La evolución proyectada no consiste en presentar el MVP adquirido como la solución final, sino en incorporar este nodo dentro de la arquitectura distribuida ya definida. La Embedded Application capturará las mediciones; Monitoring las recibirá en Edge y podrá conservarlas temporalmente mediante el patrón store-and-forward; Risk Detection evaluará reglas locales; y Alert & Response Management coordinará las respuestas permitidas. Cuando exista conectividad, los servicios Cloud mantendrán el estado observable y la información histórica consumida por la Web Application.
+</p>
+
+<p align="justify">
+Device Management administrará la identidad, capacidades y asignación de cada nodo; Connectivity Management supervisará su disponibilidad; e Incident Management conservará el seguimiento posterior de situaciones confirmadas. La arquitectura también prescribe Python, Flask, Peewee ORM y SQLite para los Edge Services, pero los repositorios inspeccionados no contienen todavía una implementación Edge verificable con esa pila. Del mismo modo, el protocolo entre el ESP32 y Edge no puede afirmarse como implementado. Estas capacidades pertenecen a la evolución esperada y deberán validarse mediante firmware, servicios Edge y contratos reales antes de considerarlas parte del MVP operativo.
+</p>
+
+# Capítulo VI: Product Implementation, Validation & Deployment
+
+## 6.1. Software Configuration Management
+
+### 6.1.1. Software Development Environment Configuration
+
+<p align="justify">
+El entorno de desarrollo de ResQ combina herramientas de coordinación, diseño, implementación, pruebas, despliegue y documentación. La selección siguiente se sustenta en el Project Report y en los archivos de configuración de los repositorios. Cuando una versión o producto no puede verificarse, se mantiene un marcador pendiente en lugar de atribuir una herramienta al equipo sin evidencia.
+</p>
+
+| Categoría | Herramienta / Producto | Propósito en ResQ | Modalidad | URL oficial |
+|---|---|---|---|---|
+| Project Management | Jira | Organizar y distribuir actividades del equipo; el Project Report contiene evidencia de su uso en la entrega anterior | SaaS | https://www.atlassian.com/software/jira |
+| Requirements Management | Trello | Mantener el Product Backlog con User Stories, Technical Stories, Business Value, Story Points y Acceptance Criteria | SaaS | https://trello.com/ |
+| Requirements Management | Miro | Elaborar el Big Picture EventStorming enlazado desde el Project Report | SaaS | https://miro.com/ |
+| Product UX/UI Design | Figma | Elaborar Wireframes, Mock-ups y Prototypes para la Landing Page y las aplicaciones de ResQ | SaaS | https://www.figma.com/ |
+| IoT Design | Cirkit Designer | Diseñar, verificar y exportar el circuito definitivo del MVP IoT; la Figura 83 actual es provisional y deberá reemplazarse por la exportación validada | SaaS | https://www.cirkitdesigner.com/ |
+| Software Development | Git | Controlar versiones y conservar la trazabilidad de los cambios | Software local | https://git-scm.com/ |
+| Software Development | GitHub | Alojar los cuatro repositorios de la organización, administrar ramas y revisar Pull Requests | SaaS | https://github.com/ |
+| Software Development | Angular 22.2.0 (Web Application) / 22.2.1 (Landing Page) | Construir las dos Single Page Applications con componentes y enrutamiento | Framework web | https://angular.dev/ |
+| Software Development | TypeScript 6.0.3 | Implementar la Landing Page y la Web Application con tipado estático; versión resuelta en ambos lockfiles | Lenguaje | https://www.typescriptlang.org/ |
+| Software Development | npm 11.17.0 (Web Application) / 12.1.0 (Landing Page) | Administrar dependencias y ejecutar scripts de desarrollo, build y test | Gestor de paquetes local | https://www.npmjs.com/ |
+| Software Development | .NET 10 | Proporcionar el runtime y SDK objetivo del backend, según <code>net10.0</code> y el Dockerfile | Runtime y SDK | https://dotnet.microsoft.com/ |
+| Software Development | ASP.NET Core | Implementar la RESTful API, controladores, middleware y composición de servicios del backend | Framework web | https://learn.microsoft.com/aspnet/core/ |
+| Software Development | Entity Framework Core 10.0.9 | Implementar persistencia relacional y repositorios del backend | ORM | https://learn.microsoft.com/ef/core/ |
+| Software Development | MySQL / MySql.EntityFrameworkCore 10.0.9 | Persistir los agregados implementados por los Bounded Contexts del backend | Motor de base de datos / proveedor EF Core | https://www.mysql.com/ |
+| Software Development | [PENDIENTE: confirmar IDE utilizado por el equipo] | Editar, ejecutar y depurar los productos de software | Software local | [PENDIENTE: añadir URL oficial] |
+| Edge Services — prescrito, no implementado | Python | Implementar la lógica de los ResQ Edge Services según la pila establecida por el Project Statement y documentada en la arquitectura | Lenguaje | https://www.python.org/ |
+| Edge Services — prescrito, no implementado | Flask | Exponer las interfaces locales de los ResQ Edge Services; no se encontró una implementación verificable en los repositorios actuales | Framework web | https://flask.palletsprojects.com/ |
+| Edge Services — prescrito, no implementado | Peewee ORM | Administrar la persistencia local temporal y las réplicas requeridas por Monitoring, Risk Detection y Alert & Response Management en Edge | ORM | https://docs.peewee-orm.com/ |
+| Edge Services — prescrito, no implementado | SQLite | Conservar mediciones, reglas y eventos pendientes durante interrupciones de conectividad mediante almacenamiento local | Motor de base de datos embebido | https://www.sqlite.org/ |
+| Software Testing | Angular CLI Unit Test y Vitest 5.0.3 (Landing Page) | Ejecutar las pruebas unitarias configuradas para la Landing Page; la Web Application declara <code>ng test</code>, pero no se encontró una suite equivalente suficiente para afirmar su cobertura | Herramienta local | https://vitest.dev/ |
+| Software Testing | Archivo <code>ResQ.API.http</code> | Ejecutar solicitudes manuales contra la RESTful API durante el desarrollo; no sustituye una suite automatizada | Archivo de pruebas HTTP local | https://learn.microsoft.com/aspnet/core/test/http-files |
+| Software Deployment | GitHub Pages / angular-cli-ghpages 3.1.0 | Publicar la Landing Page; existe una rama <code>gh-pages</code> y configuración de despliegue en <code>angular.json</code> | Plataforma SaaS / herramienta de despliegue | https://pages.github.com/ |
+| Software Deployment | Docker | Construir una imagen multi-stage del backend con SDK y runtime de .NET 10 | Plataforma de contenedores | https://www.docker.com/ |
+| Software Documentation | Swagger UI / Swashbuckle.AspNetCore 9.0.6 y Microsoft.AspNetCore.OpenApi 9.0.10 | Generar y exponer documentación OpenAPI para los servicios backend | Librerías y UI local | https://swagger.io/tools/swagger-ui/ |
+| Software Documentation | Markdown en GitHub | Mantener el Project Report directamente en el README general y documentar los repositorios | Formato de documentación / plataforma SaaS | https://docs.github.com/get-started/writing-on-github |
+
+<p align="justify">
+Los manifiestos de dependencias y lockfiles fijan el conjunto ejecutable de los proyectos Angular; el <code>.csproj</code> y el Dockerfile describen el runtime y las dependencias del backend; y Git conserva cada cambio junto con su rama y commit. Esta combinación favorece un entorno reproducible porque permite instalar dependencias declaradas, construir cada producto desde su configuración versionada y revisar los cambios mediante Pull Requests. Los datos pendientes deberán completarse con evidencia del equipo antes de considerar cerrada la configuración del entorno.
+</p>
+
+<p align="justify">
+Existe una diferencia relevante entre la prescripción general del Project Statement y la implementación actual de la Landing Page. El enunciado propone HTML5, CSS3 y JavaScript, mientras que el repositorio <code>resq-landing-page</code> utiliza Angular y TypeScript. El equipo adoptó este stack para acelerar el desarrollo y mantener consistencia técnica con la Web Application; sin embargo, la diferencia debe conservarse documentada y no implica que el repositorio haya sido migrado o que la prescripción original deje de aplicar como criterio de evaluación.
+</p>
+
+#### 6.1.2. Source Code Management.
+
+El código fuente de ResQ se organiza en repositorios independientes dentro de la organización de GitHub del equipo, uno por cada componente de la solución que ya se encuentra en desarrollo. Los componentes Mobile Application, Edge Service y Embedded Application aún no cuentan con repositorio, por lo que se incorporarán a esta tabla cuando inicie su implementación.
+
+| Componente          | Repositorio         | Enlace                                                                                                                                             |
+|---------------------|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Backend**         | resq-backend        | [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend)                   |
+| **Landing Page**    | resq-landing-page   | [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-landing-page](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-landing-page)         |
+| **Web Application** | resq-frontend       | [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend)                 |
+
+**Flujo de trabajo GitFlow**
+
+El equipo adopta el modelo de ramificación propuesto por Vincent Driessen en *"A successful Git branching model"*, adaptado a las necesidades del proyecto bajo los siguientes lineamientos:
+
+- Una rama estable que contiene únicamente el código listo para entrega.
+- Una rama de integración donde se reúne el trabajo en curso antes de pasar a la rama estable.
+- Ramas independientes para el desarrollo de cada funcionalidad.
+- Cada cambio que llegue a la rama estable se identifica como una nueva versión.
+
+**Ramas definidas:**
+
+- **Main branch:** contiene el código estable y entregable. Solo recibe cambios provenientes de *develop* mediante Pull Request, y cada uno debe ser revisado y aprobado por otro integrante del equipo.
+- **Develop branch:** rama de integración donde se combinan las funcionalidades terminadas y se validan antes de publicarlas en *main*.
+- **Feature branches:** cada funcionalidad o sección de trabajo se desarrolla en su propia rama (por ejemplo, `feature/chapter-06-gonzalo`), creada a partir de *develop* y fusionada nuevamente en ella mediante Pull Request.
+
+**Nomenclatura de versiones:**
+
+Las versiones siguen el formato `MAJOR.MINOR.PATCH`:
+
+- **Major:** cambios significativos que rompen la compatibilidad con la versión anterior (ej. `1.0.0 -> 2.0.0`).
+- **Minor:** nuevas características o mejoras compatibles (ej. `1.1.0 -> 1.2.0`).
+- **Patch:** correcciones menores (ej. `1.1.3 -> 1.1.4`).
+
+**Sufijos de versión:**
+
+- `alpha`: versión inestable, en construcción.
+- `beta`: versión funcional pero todavía no lista para publicarse.
+- `rc`: versión candidata a publicación.
+
+**Convención de commits:**
+
+Los mensajes de commit siguen la especificación *Conventional Commits* (por ejemplo, `feat: add alerts endpoint`, `fix: correct zone validation`, `docs: update sprint evidence`), lo que mantiene un historial legible y vinculado al autor de cada cambio.
+
+
+
+
+## 6.2. Landing Page, Services & Applications Implementation
+
+### 6.2.1. Sprint 1
+
+<p align="justify">
+Sprint 1, planificado entre el 29 de septiembre y el 8 de octubre de 2026, corresponde al primer sprint formal de implementación y se centra en construir la primera versión funcional del MVP de ResQ. El incremento reúne cuatro frentes complementarios: Landing Page version 1 para comunicar la propuesta de valor; Frontend Web Application version 1 para representar flujos iniciales de monitoreo y gestión; Backend / Web Services base para soportar recursos principales; y un prototipo IoT MVP para validar sensado de gas/humo, procesamiento en ESP32, visualización local y alertamiento.
+</p>
+
+<p align="justify">
+El Sprint se documenta mediante Sprint Planning 1, Aspect Leaders and Collaborators, Sprint Backlog 1, Development Evidence for Sprint Review, Testing Suite Evidence for Sprint Review, Execution Evidence for Sprint Review, Services Documentation Evidence for Sprint Review, Software Deployment Evidence for Sprint Review y Team Collaboration Insights during Sprint. Esta sección registra el avance de los productos que integran el MVP sin presentar como concluidas las integraciones Edge o extremo a extremo que todavía no cuentan con evidencia de implementación.
+</p>
+
+#### 6.2.1.1. Sprint Planning 1
+
+<p align="justify">
+La planificación de Sprint 1 relaciona el Product Backlog con un incremento conjunto y verificable orientado al MVP. La reunión se realizó al inicio del Sprint para alinear el valor esperado de la Landing Page, la Web Application, los Web Services y el prototipo IoT. La información administrativa definida por el equipo se registra en la siguiente tabla; únicamente las métricas de Story Points permanecen pendientes porque no existe evidencia suficiente de la selección formal de historias asignadas al Sprint.
+</p>
+
+| Campo | Detalle |
+|---|---|
+| Sprint # | Sprint 1 |
+| Sprint Start Date | 2026-09-29 |
+| Sprint End Date | 2026-10-08 |
+| Date | 2026-09-29 |
+| Time | 08:00 PM |
+| Location | Virtual meeting via Discord |
+| Prepared By | Quispe Barzola, Fabricio Fabian |
+| Attendees | Quispe Barzola, Fabricio Fabian<br>Guerrero Vasquez, Jhon Danny<br>Aliaga Urbina, Wilder Gonzalo<br>Chacaliaza Minaya, Eduardo Fabian<br>Nanfuñay Liza, Pedro Jesús<br>Sánchez Guevara, Iván Fernando |
+| Sprint 0 Review Summary / Previous Iteration Review Summary | No formal previous sprint review applies because Sprint 1 corresponds to the first implementation sprint of the project. |
+| Sprint 0 Retrospective Summary / Previous Iteration Retrospective Summary | No formal previous sprint retrospective applies because Sprint 1 corresponds to the first implementation sprint of the project. |
+| Sprint 1 Goal | Entregar la primera versión funcional del MVP de ResQ, de modo que los segmentos objetivo puedan comprender la propuesta mediante la Landing Page version 1 y que el equipo pueda demostrar un flujo inicial de monitoreo y respuesta mediante la Frontend Web Application version 1, los Backend / Web Services base y el prototipo IoT de gas/humo con procesamiento y alertamiento local. |
+| Sprint 1 Velocity | 34 Story Points |
+| Sum of Story Points | 34 Story Points |
+
+<p align="justify">
+El Sprint Goal expresa un único resultado de valor: disponer de un MVP demostrable que conecte comunicación, operación digital, servicios base y validación física local. La Landing Page comunica el problema y la propuesta de ResQ; la Web Application representa los flujos iniciales de supervisión y gestión; el backend establece servicios para los recursos que ya cuentan con implementación comprobable; y el nodo IoT valida el recorrido local desde la lectura del MQ-2 hasta la OLED, los LEDs y el buzzer. Aunque el Product Backlog contiene Story Points, no existe en el README ni en los repositorios una asignación formal de historias a Sprint 1 que permita sumar puntos o calcular Velocity sin especular.
+</p>
+
+#### 6.2.1.4. Development Evidence for Sprint Review
+
+<p align="justify">
+La evidencia de desarrollo se obtuvo del historial Git de <code>resq-landing-page</code>, <code>resq-frontend</code> y <code>resq-backend</code>. El criterio de selección considera commits no merge realizados entre el inicio de Sprint 1, 2026-09-29, y su cierre definido, 2026-10-08, priorizando incrementos que evidencian la primera versión del MVP. La evidencia disponible fue revisada el 2026-10-06; por ello, la tabla no atribuye commits futuros a los dos días restantes del Sprint. Se excluyeron commits anteriores al 2026-09-29, incluso cuando proporcionaron bases técnicas relevantes. La columna Branch utiliza ramas remotas verificadas que contienen cada commit; el subject y el body se reproducen de forma literal, y se usa “—” cuando el commit no tiene body.
+</p>
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| resq-landing-page | main | <code>4499f2eeed8099b5c7894ae23a420a96c3571952</code> | feat: ResQ landing page | — | 2026-10-04 02:05:56 -0500 |
+| resq-landing-page | main | <code>afd01e2002fcd2949d17cf4f9b82844cf55b8426</code> | feat: rediseñar landing de ResQ, unificar estilos y optimizar el código | — | 2026-10-04 14:04:50 -0500 |
+| resq-landing-page | main | <code>7977f58519e8b0bff42835bd081e017c006d8fcb</code> | fix: corregir assets y despliegue en GitHub Pages | — | 2026-10-04 14:20:25 -0500 |
+| resq-frontend | main | <code>dc54e7ef1dba5792aa220a6f4b16039e07862223</code> | feat: build complete ResQ monitoring frontend | — | 2026-09-29 19:42:45 -0500 |
+| resq-frontend | feature/devices | <code>0d1b1b8a2a321e5ae25adfe7fce9e61f53610fee</code> | feat(devices): add hardware-aware device management views | — | 2026-09-30 03:09:19 -0500 |
+| resq-frontend | feature/devices | <code>dd9cd578aa541b90b45a6266aad081a5fe547d75</code> | chore(devices): Add WebP assets for device components | Add seven new device images under `public/assets/devices` for the buzzer, ESP32 devkit, LEDs, MQ2 sensor, OLED display, and ResQ MVP node to support UI/device visuals. | 2026-09-30 03:19:03 -0500 |
+| resq-frontend | feature/alerts | <code>e2754769684112120e76425c308231c9b1e6bc18</code> | feat(alerts): add contextual alert center and activity details | — | 2026-09-30 05:02:43 -0500 |
+| resq-frontend | refactor/frontend-backend-ready | <code>87a77548cc40cf14bf497179f655b08e3da5d487</code> | feat(frontend-backend): Add data-access facades and auth session flow | Introduces a full data-access layer across alerts, IAM/auth, users, buildings, connectivity, incidents, monitoring, and risk detection with gateway interfaces, DTOs, mappers, facades, providers, and mock/http adapters. It also wires these providers into app config, refactors login to use the new AuthSessionFacade + user profile loading, updates app shell/topbar/sidebar to consume session data (including sign-out), and adds the new sidebar brand logo asset. | 2026-09-30 10:56:13 -0500 |
+| resq-frontend | feature/buildings | <code>04935d3c684c312568e296060e17004cd13c8a4e</code> | feat: dd localization and revamp operations UI | — | 2026-09-30 17:34:42 -0500 |
+| resq-frontend | main | <code>2ec1133a588fabcd890101300652021c831f0fe5</code> | feat: Add risk lifecycle and auth projections | — | 2026-10-06 00:13:43 -0500 |
+| resq-frontend | main | <code>c03264025b814256cb9a985f9b809594aac7cbeb</code> | fix: Refine alert/incident UX and auth roles | Improves alert and incident clarity across the UI: alert details now show clear-reason explanations, system response wording was updated, incident details now separate original critical detection from current condition, and response action cards include richer authorization/execution context. Topbar notifications were redesigned to show event labels, concise titles, and resolved locations, with matching style updates. Authorization logic now prioritizes identity-based role mapping, and mock IAM data adds a dedicated viewer identity to keep admin/viewer behavior testable with the current mock user profile. | 2026-10-06 00:56:18 -0500 |
+| resq-backend | feature/buildings-management | <code>9640bd7abe9cb9f2a07c1756e8f71db19015b137</code> | feat: implement building and device management bounded contexts | — | 2026-09-30 16:50:08 -0500 |
+| resq-backend | feature/incident-management | <code>c89238230e56784ff5c44f88f40eb32884e6a467</code> | feat(incident-management): add Incident Management bounded context. | — | 2026-09-30 17:49:05 -0500 |
+| resq-backend | main | <code>34e57e037600ff83ba414cda742a6d6ed30b01af</code> | feat(main): add docker configuration for deploy. | — | 2026-09-30 20:04:50 -0500 |
+| resq-backend | feature/alerts | <code>a8e18a4129342567f58f5e750507192ea8d84024</code> | feat: implement alert management bounded context with commands, queries, and REST controllers | — | 2026-10-03 17:05:39 -0500 |
+| resq-backend | feature/alerts | <code>292e1afa294f95d490e37ee5536974cd0415af6d</code> | feat: implement core backend modules including IAM, Alert Management, Incident Management, and Building Management | — | 2026-10-05 20:13:29 -0500 |
+
+##### Landing Page
+
+<p align="justify">
+Los commits seleccionados evidencian la implementación, el rediseño y la preparación de publicación de la Landing Page version 1 durante el rango del Sprint. El código disponible presenta una experiencia Angular con secciones de propuesta de valor, beneficios, producto, segmentos, equipo, aliados y llamado a la acción, además de vistas de privacidad y términos. La existencia de la rama <code>gh-pages</code> demuestra la generación del artefacto de publicación del componente informativo del MVP, sin que esta sección afirme métricas de disponibilidad o validación con usuarios.
+</p>
+
+##### Frontend Web Application
+
+<p align="justify">
+El historial evidencia la construcción de la Frontend Web Application version 1, la incorporación de vistas de gestión de dispositivos alineadas con el hardware del MVP, el centro contextual de alertas y la evolución de edificios y planos. También registra una capa de acceso a datos con gateways, DTOs, mappers, facades, adaptadores mock/HTTP y flujo de sesión. Los commits más recientes refinan las proyecciones del ciclo de riesgo, la claridad de alertas e incidentes y el tratamiento de roles. La auditoría interna del repositorio advierte que varias operaciones continúan simuladas o dependen de contratos backend pendientes; por ello, estos avances demuestran el incremento funcional del MVP, pero no una integración extremo a extremo finalizada.
+</p>
+
+##### Backend / Web Services
+
+<p align="justify">
+Los commits comprendidos dentro del Sprint evidencian implementaciones para Building Management, Device Management, Incident Management y Alert Management, además de un commit integrador de módulos base y una configuración Docker multi-stage para compilar y ejecutar la API sobre .NET 10. Estas capacidades proporcionan servicios iniciales para el MVP digital. Aunque el Project Report diseña Monitoring, Risk Detection, Connectivity Management y servicios Edge, no se encontró en <code>resq-backend</code> una implementación equivalente de esos componentes; por ello, no se consideran concluidos en Sprint 1.
+</p>
+
+
+
+##### 6.2.1.7. Services Documentation Evidence for Sprint Review.
+
+En esta sección se presentan los avances logrados en la documentación de los Web Services desarrollados durante el Sprint, evidenciando la correcta implementación y estandarización de los endpoints mediante OpenAPI (Swagger). Se detallan las acciones disponibles (GET, POST, PUT), sus parámetros, ejemplos de respuesta y la descripción de su funcionamiento, garantizando la trazabilidad, comprensión y correcta integración entre los distintos componentes del sistema. Todos los endpoints requieren un token JWT en el header `Authorization: Bearer <token>`, salvo `sign-in` y `sign-up`, que son públicos.
+
+Backend repository: [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend)
+
+| endpoint | verbo http | descripción | parámetros | request body | response body | explicación |
+|---|---|---|---|---|---|---|
+| /api/v1/authentication/sign-up | POST | Registra un nuevo usuario. | — | Objeto JSON con `firstName`, `lastName`, `email`, `username`, `password` y `role` (`citizen` o `volunteer`). | Datos del usuario creado (`id`, `username`). | Permite crear nuevas cuentas de usuario en la plataforma. Endpoint público. |
+| /api/v1/authentication/sign-in | POST | Autentica a un usuario. | — | Objeto JSON con `username` y `password`. | Datos del usuario autenticado (`id`, `username`, `role`) y token JWT. | Permite iniciar sesión y obtener el token para acceder a los recursos protegidos. Endpoint público. |
+| /api/v1/users | GET | Obtiene la lista completa de usuarios. | — | — | Lista de usuarios (`id`, `username`). | Permite visualizar todos los usuarios registrados en el sistema. |
+| /api/v1/users/{id} | GET | Obtiene un usuario específico. | `id` (path) | — | Datos del usuario (`id`, `username`). | Retorna la información del usuario identificado por su ID. |
+| /api/v1/users/role/{role} | GET | Lista los usuarios de un rol determinado. | `role` (path) | — | Lista de usuarios con el rol indicado. | Permite filtrar usuarios por rol (por ejemplo, ciudadano o voluntario). |
+| /api/v1/profiles/me | GET | Obtiene el perfil del usuario autenticado. | Token JWT (header) | — | Perfil (`id`, `fullName`, `email`, `phoneNumber`). | Permite conocer los datos de perfil del usuario actualmente logueado. |
+| /api/v1/profiles/{id} | GET | Obtiene el perfil de un usuario específico. | `id` (path) | — | Perfil (`id`, `fullName`, `email`, `phoneNumber`). | Retorna la información de contacto del perfil identificado por su ID. |
+| /api/v1/profiles/contact-info | PUT | Actualiza la información de contacto del usuario autenticado. | Token JWT (header) | Objeto JSON con `email` y/o `phoneNumber`. | Perfil actualizado. | Permite modificar el correo y el teléfono del perfil propio. |
+| /api/v1/subscriptions | POST | Crea una suscripción para la organización. | — | Objeto JSON con `startDate` y `endDate`. | Suscripción creada (`id`, `organizationId`, `status`, `startDate`, `endDate`). | Permite registrar la suscripción de una organización al servicio. |
+| /api/v1/subscriptions | GET | Lista las suscripciones. | — | — | Lista de suscripciones. | Permite consultar las suscripciones registradas. |
+| /api/v1/subscriptions/{id} | GET | Obtiene una suscripción específica. | `id` (path, GUID) | — | Datos de la suscripción. | Retorna el detalle y estado de una suscripción. |
+| /api/v1/subscriptions/{id}/renew | PUT | Renueva una suscripción. | `id` (path, GUID) | Objeto JSON con `newEndDate`. | Suscripción actualizada con la nueva fecha de fin. | Extiende la vigencia de una suscripción existente. |
+| /api/v1/subscriptions/{id}/cancel | PUT | Cancela una suscripción. | `id` (path, GUID) | — | Suscripción con estado cancelado. | Permite dar de baja una suscripción. |
+| /api/v1/subscriptions/{id}/expire | PUT | Marca una suscripción como expirada. | `id` (path, GUID) | — | Suscripción con estado expirado. | Permite registrar el vencimiento de una suscripción. |
+| /api/v1/buildings | POST | Registra una nueva edificación. | — | Objeto JSON con `buildingCode`, `name`, `description` y `address` (`streetAddress`, `district`, `city`, `countryCode`). | Edificación creada con su ID asignado. | Permite añadir edificaciones a la organización. |
+| /api/v1/buildings | GET | Lista las edificaciones de forma paginada. | `administrativeStatus` (query, opcional), `page` (query, def. 0), `size` (query, def. 20) | — | Página de edificaciones (`items`, `page`, `size`, `totalElements`, `totalPages`). | Permite visualizar y filtrar las edificaciones por estado administrativo. |
+| /api/v1/buildings/{buildingId} | GET | Obtiene una edificación específica. | `buildingId` (path, GUID) | — | Datos de la edificación, incluidas sus zonas. | Retorna el detalle completo de una edificación registrada. |
+| /api/v1/buildings/{buildingId}/details | PUT | Actualiza los datos de una edificación. | `buildingId` (path, GUID) | Objeto JSON con `name`, `description` y/o `address`. | Edificación actualizada. | Modifica nombre, descripción o dirección de la edificación. |
+| /api/v1/buildings/{buildingId}/administrative-status | PUT | Cambia el estado administrativo de una edificación. | `buildingId` (path, GUID) | Objeto JSON con `administrativeStatus`. | Edificación con el nuevo estado. | Permite activar, desactivar o archivar una edificación. |
+| /api/v1/buildings/{buildingId}/zones | POST | Agrega una zona a una edificación. | `buildingId` (path, GUID) | Objeto JSON con `zoneCode`, `name`, `description` y `floorLabel`. | Zona creada con su ID asignado. | Permite subdividir la edificación en zonas monitoreables. |
+| /api/v1/buildings/{buildingId}/zones | GET | Lista las zonas de una edificación de forma paginada. | `buildingId` (path, GUID), `administrativeStatus` (query, opcional), `page` (query, def. 0), `size` (query, def. 20) | — | Página de zonas (`items`, `page`, `size`, `totalElements`, `totalPages`). | Permite consultar y filtrar las zonas de una edificación. |
+| /api/v1/buildings/{buildingId}/zones/{zoneId} | GET | Obtiene una zona específica. | `buildingId`, `zoneId` (path, GUID) | — | Datos de la zona. | Retorna el detalle de una zona de la edificación. |
+| /api/v1/buildings/{buildingId}/zones/{zoneId}/details | PUT | Actualiza los datos de una zona. | `buildingId`, `zoneId` (path, GUID) | Objeto JSON con `name`, `description` y/o `floorLabel`. | Zona actualizada. | Modifica la información descriptiva de la zona. |
+| /api/v1/buildings/{buildingId}/zones/{zoneId}/administrative-status | PUT | Cambia el estado administrativo de una zona. | `buildingId`, `zoneId` (path, GUID) | Objeto JSON con `administrativeStatus`. | Zona con el nuevo estado. | Permite activar, desactivar o archivar una zona. |
+| /api/v1/devices | POST | Registra un nuevo dispositivo IoT. | — | Objeto JSON con `deviceCode`, `name`, `description`, `specifications`, `assignment` (`buildingId`, `zoneId`), `externalReference` y `capabilities`. | Dispositivo creado con su ID asignado. | Permite incorporar sensores y actuadores a una edificación o zona. |
+| /api/v1/devices | GET | Lista los dispositivos de forma paginada. | `buildingId`, `zoneId`, `administrativeStatus` (query, opcionales), `page` (def. 0), `size` (def. 20) | — | Página de dispositivos. | Permite consultar y filtrar los dispositivos registrados. |
+| /api/v1/devices/{deviceId} | GET | Obtiene un dispositivo específico. | `deviceId` (path, GUID) | — | Datos detallados del dispositivo y sus capacidades. | Retorna la información de un dispositivo registrado. |
+| /api/v1/devices/by-external-reference | GET | Busca un dispositivo por su referencia externa. | `sourceSystem`, `externalDeviceId` (query) | — | Datos del dispositivo encontrado. | Permite que sistemas externos (p. ej. Edge/IoT) localicen un dispositivo con su propio identificador. |
+| /api/v1/devices/{deviceId}/details | PUT | Actualiza los datos de un dispositivo. | `deviceId` (path, GUID) | Objeto JSON con `name`, `description` y/o `specifications`. | Dispositivo actualizado. | Modifica la información descriptiva y técnica del dispositivo. |
+| /api/v1/devices/{deviceId}/capabilities | PUT | Reemplaza las capacidades de un dispositivo. | `deviceId` (path, GUID) | Objeto JSON con `capabilities` (`code`, `kind`, `unit`). | Dispositivo con las capacidades actualizadas. | Define qué magnitudes mide o qué acciones ejecuta el dispositivo. |
+| /api/v1/devices/{deviceId}/assignment | PUT | Asigna el dispositivo a una edificación o zona. | `deviceId` (path, GUID) | Objeto JSON con `buildingId` y `zoneId` (opcional). | Dispositivo con la nueva asignación. | Permite reubicar un dispositivo dentro de la organización. |
+| /api/v1/devices/{deviceId}/administrative-status | PUT | Cambia el estado administrativo de un dispositivo. | `deviceId` (path, GUID) | Objeto JSON con `administrativeStatus`. | Dispositivo con el nuevo estado. | Permite activar, desactivar o dar de baja un dispositivo. |
+| /api/v1/incidents | POST | Registra un nuevo incidente. | — | Objeto JSON con `zoneId`, `type` y `level`. | Incidente creado (`id`, `zoneId`, `type`, `level`, `status`, `createdAt`). | Permite reportar un incidente ocurrido en una zona. |
+| /api/v1/incidents | GET | Lista los incidentes. | `zoneId` (query, opcional) | — | Lista de incidentes. | Permite consultar los incidentes, opcionalmente filtrados por zona. |
+| /api/v1/incidents/{id} | GET | Obtiene un incidente específico. | `id` (path, GUID) | — | Datos del incidente (`status`, `assignedTo`, `resolvedAt`, `resolutionNotes`, etc.). | Retorna el detalle y el estado actual de un incidente. |
+| /api/v1/incidents/{id}/status | PUT | Cambia el estado de un incidente. | `id` (path, GUID) | Objeto JSON con `status`. | Incidente actualizado. | Permite avanzar el incidente en su ciclo de vida. |
+| /api/v1/incidents/{id}/assign | PUT | Asigna un incidente a un responsable. | `id` (path, GUID) | Objeto JSON con `attendantId`. | Incidente con el responsable asignado. | Permite designar a quién atiende el incidente. |
+| /api/v1/incidents/{id}/resolve | PUT | Resuelve un incidente. | `id` (path, GUID) | Objeto JSON con `resolutionNotes`. | Incidente resuelto con `resolvedAt` y notas. | Cierra el incidente dejando constancia de la resolución. |
+| /api/v1/alerts | GET | Lista las alertas generadas. | `buildingId`, `zoneId`, `riskTypeCode`, `from`, `to` (query, opcionales) | — | Lista de alertas (`alertId`, `context`, `generatedAt`, `deliveries`). | Permite consultar el historial de alertas con filtros por ubicación, tipo de riesgo y rango de fechas. |
+| /api/v1/alerts/{alertId} | GET | Obtiene una alerta específica. | `alertId` (path, GUID) | — | Datos de la alerta con su contexto y notificaciones. | Retorna el detalle de una alerta y el estado de sus notificaciones (`PENDING`, `DELIVERED`, `FAILED`). |
+| /api/v1/alerts | POST | Genera una alerta a partir de una detección de riesgo. | — | Objeto JSON con `riskDetectionId`, `riskTypeCode`, `severityCode`, `buildingId`, `zoneId`, `detectedAt`, `recipients` y `responseActions`. | Alerta creada con sus notificaciones. | Notifica a los destinatarios y registra las acciones de respuesta solicitadas. |
+| /api/v1/alerts/{alertId}/response-executions | GET | Lista las ejecuciones de respuesta de una alerta. | `alertId` (path, GUID) | — | Lista de ejecuciones de respuesta (`action`, `status`, `authorization`). | Permite ver las acciones automáticas o pendientes de autorización asociadas a la alerta. |
+| /api/v1/alerts/{alertId}/response-executions/{responseExecutionId}/authorization | PUT | Aprueba o rechaza una acción de respuesta. | `alertId`, `responseExecutionId` (path, GUID) | Objeto JSON con `decision` (`APPROVED` o `REJECTED`). | Ejecución de respuesta con la autorización registrada. | Permite que una persona autorice las acciones de modo `HUMAN_REQUIRED`. |
+
+
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq1.png" alt="Swagger ResQ API - evidencia 1" width="70%">
+  <br><br>
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq2.png" alt="Swagger ResQ API - evidencia 2" width="70%">
+  <br><br>
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq3.png" alt="Swagger ResQ API - evidencia 3" width="70%">
+  <br><br>
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq4.png" alt="Swagger ResQ API - evidencia 4" width="70%">
+</p>
+
+##### 6.2.1.8. Software Deployment Evidence for Sprint Review.
+
+**Landing Page**
+
+La Landing Page fue desplegada mediante GitHub Pages. Para ello, se creó un repositorio en GitHub y se configuró un workflow con GitHub Actions, el cual automatiza la publicación del sitio cada vez que se realizan cambios en la rama principal. Finalmente, se verificó el correcto funcionamiento del despliegue accediendo a la URL pública generada por GitHub Pages.
+
+**Enlace de la Landing Page:**  
+https://upc-1asi0572-202620-16518-resq.github.io/resq-landing-page/
+
+
+**Web Application**
+
+En esta sección se presentan las evidencias relacionadas con el despliegue de la aplicación web desarrollada como parte de la solución, incluyendo la configuración de los recursos necesarios para permitir su funcionamiento y acceso desde un entorno publicado.
+
+Como parte de la validación del despliegue, se verificó el acceso a la aplicación a través de su URL pública y se comprobó el correcto funcionamiento de sus principales funcionalidades.
+
+**Enlace de la aplicación web:**  
+
+https://resq-frontend.ffaaliceht2003.workers.dev/login
+
+**Backend**
+
+Para el componente backend se realizó el despliegue del servicio en la plataforma Render, permitiendo que las funcionalidades y endpoints desarrollados puedan ser consumidos desde un entorno remoto.
+
+Como parte de la validación del despliegue, se verificó el acceso a la documentación de la API mediante Swagger UI, desde donde es posible visualizar y probar los diferentes endpoints disponibles en el backend.
+
+**Enlace del backend desplegado en Render:**
+
+https://resq-api-79xy.onrender.com/swagger/index.html
+
+
+
+
 # Conclusiones
 
 ## Conclusiones y recomendaciones
@@ -12196,7 +12685,7 @@ Por tanto, AV1 no representa la validación definitiva de ResQ, sino el establec
 ![Video de exposición AV1](assets/images/general/collaboration/av1-sprint-review.png)
 
 <p align="center">
-  <strong>Figura 82. Video de exposición correspondiente a la entrega AV1.</strong>
+  <strong>Figura 84. Video de exposición correspondiente a la entrega AV1.</strong>
 </p>
 
 **URL:** [Video exposición AV1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQCm8NIQa-7hSJu5uKB_dQbpAf0R6cugKBeBCTA1hMliXKs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3OfZUl)
