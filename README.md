@@ -11963,6 +11963,52 @@ Los manifiestos de dependencias y lockfiles fijan el conjunto ejecutable de los 
 Existe una diferencia relevante entre la prescripción general del Project Statement y la implementación actual de la Landing Page. El enunciado propone HTML5, CSS3 y JavaScript, mientras que el repositorio <code>resq-landing-page</code> utiliza Angular y TypeScript. El equipo adoptó este stack para acelerar el desarrollo y mantener consistencia técnica con la Web Application; sin embargo, la diferencia debe conservarse documentada y no implica que el repositorio haya sido migrado o que la prescripción original deje de aplicar como criterio de evaluación.
 </p>
 
+#### 6.1.2. Source Code Management.
+
+El código fuente de ResQ se organiza en repositorios independientes dentro de la organización de GitHub del equipo, uno por cada componente de la solución que ya se encuentra en desarrollo. Los componentes Mobile Application, Edge Service y Embedded Application aún no cuentan con repositorio, por lo que se incorporarán a esta tabla cuando inicie su implementación.
+
+| Componente          | Repositorio         | Enlace                                                                                                                                             |
+|---------------------|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Backend**         | resq-backend        | [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend)                   |
+| **Landing Page**    | resq-landing-page   | [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-landing-page](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-landing-page)         |
+| **Web Application** | resq-frontend       | [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend)                 |
+
+**Flujo de trabajo GitFlow**
+
+El equipo adopta el modelo de ramificación propuesto por Vincent Driessen en *"A successful Git branching model"*, adaptado a las necesidades del proyecto bajo los siguientes lineamientos:
+
+- Una rama estable que contiene únicamente el código listo para entrega.
+- Una rama de integración donde se reúne el trabajo en curso antes de pasar a la rama estable.
+- Ramas independientes para el desarrollo de cada funcionalidad.
+- Cada cambio que llegue a la rama estable se identifica como una nueva versión.
+
+**Ramas definidas:**
+
+- **Main branch:** contiene el código estable y entregable. Solo recibe cambios provenientes de *develop* mediante Pull Request, y cada uno debe ser revisado y aprobado por otro integrante del equipo.
+- **Develop branch:** rama de integración donde se combinan las funcionalidades terminadas y se validan antes de publicarlas en *main*.
+- **Feature branches:** cada funcionalidad o sección de trabajo se desarrolla en su propia rama (por ejemplo, `feature/chapter-06-gonzalo`), creada a partir de *develop* y fusionada nuevamente en ella mediante Pull Request.
+
+**Nomenclatura de versiones:**
+
+Las versiones siguen el formato `MAJOR.MINOR.PATCH`:
+
+- **Major:** cambios significativos que rompen la compatibilidad con la versión anterior (ej. `1.0.0 -> 2.0.0`).
+- **Minor:** nuevas características o mejoras compatibles (ej. `1.1.0 -> 1.2.0`).
+- **Patch:** correcciones menores (ej. `1.1.3 -> 1.1.4`).
+
+**Sufijos de versión:**
+
+- `alpha`: versión inestable, en construcción.
+- `beta`: versión funcional pero todavía no lista para publicarse.
+- `rc`: versión candidata a publicación.
+
+**Convención de commits:**
+
+Los mensajes de commit siguen la especificación *Conventional Commits* (por ejemplo, `feat: add alerts endpoint`, `fix: correct zone validation`, `docs: update sprint evidence`), lo que mantiene un historial legible y vinculado al autor de cada cambio.
+
+
+
+
 ## 6.2. Landing Page, Services & Applications Implementation
 
 ### 6.2.1. Sprint 1
@@ -12043,6 +12089,105 @@ El historial evidencia la construcción de la Frontend Web Application version 1
 <p align="justify">
 Los commits comprendidos dentro del Sprint evidencian implementaciones para Building Management, Device Management, Incident Management y Alert Management, además de un commit integrador de módulos base y una configuración Docker multi-stage para compilar y ejecutar la API sobre .NET 10. Estas capacidades proporcionan servicios iniciales para el MVP digital. Aunque el Project Report diseña Monitoring, Risk Detection, Connectivity Management y servicios Edge, no se encontró en <code>resq-backend</code> una implementación equivalente de esos componentes; por ello, no se consideran concluidos en Sprint 1.
 </p>
+
+
+
+##### 6.2.1.7. Services Documentation Evidence for Sprint Review.
+
+En esta sección se presentan los avances logrados en la documentación de los Web Services desarrollados durante el Sprint, evidenciando la correcta implementación y estandarización de los endpoints mediante OpenAPI (Swagger). Se detallan las acciones disponibles (GET, POST, PUT), sus parámetros, ejemplos de respuesta y la descripción de su funcionamiento, garantizando la trazabilidad, comprensión y correcta integración entre los distintos componentes del sistema. Todos los endpoints requieren un token JWT en el header `Authorization: Bearer <token>`, salvo `sign-in` y `sign-up`, que son públicos.
+
+Backend repository: [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend)
+
+| endpoint | verbo http | descripción | parámetros | request body | response body | explicación |
+|---|---|---|---|---|---|---|
+| /api/v1/authentication/sign-up | POST | Registra un nuevo usuario. | — | Objeto JSON con `firstName`, `lastName`, `email`, `username`, `password` y `role` (`citizen` o `volunteer`). | Datos del usuario creado (`id`, `username`). | Permite crear nuevas cuentas de usuario en la plataforma. Endpoint público. |
+| /api/v1/authentication/sign-in | POST | Autentica a un usuario. | — | Objeto JSON con `username` y `password`. | Datos del usuario autenticado (`id`, `username`, `role`) y token JWT. | Permite iniciar sesión y obtener el token para acceder a los recursos protegidos. Endpoint público. |
+| /api/v1/users | GET | Obtiene la lista completa de usuarios. | — | — | Lista de usuarios (`id`, `username`). | Permite visualizar todos los usuarios registrados en el sistema. |
+| /api/v1/users/{id} | GET | Obtiene un usuario específico. | `id` (path) | — | Datos del usuario (`id`, `username`). | Retorna la información del usuario identificado por su ID. |
+| /api/v1/users/role/{role} | GET | Lista los usuarios de un rol determinado. | `role` (path) | — | Lista de usuarios con el rol indicado. | Permite filtrar usuarios por rol (por ejemplo, ciudadano o voluntario). |
+| /api/v1/profiles/me | GET | Obtiene el perfil del usuario autenticado. | Token JWT (header) | — | Perfil (`id`, `fullName`, `email`, `phoneNumber`). | Permite conocer los datos de perfil del usuario actualmente logueado. |
+| /api/v1/profiles/{id} | GET | Obtiene el perfil de un usuario específico. | `id` (path) | — | Perfil (`id`, `fullName`, `email`, `phoneNumber`). | Retorna la información de contacto del perfil identificado por su ID. |
+| /api/v1/profiles/contact-info | PUT | Actualiza la información de contacto del usuario autenticado. | Token JWT (header) | Objeto JSON con `email` y/o `phoneNumber`. | Perfil actualizado. | Permite modificar el correo y el teléfono del perfil propio. |
+| /api/v1/subscriptions | POST | Crea una suscripción para la organización. | — | Objeto JSON con `startDate` y `endDate`. | Suscripción creada (`id`, `organizationId`, `status`, `startDate`, `endDate`). | Permite registrar la suscripción de una organización al servicio. |
+| /api/v1/subscriptions | GET | Lista las suscripciones. | — | — | Lista de suscripciones. | Permite consultar las suscripciones registradas. |
+| /api/v1/subscriptions/{id} | GET | Obtiene una suscripción específica. | `id` (path, GUID) | — | Datos de la suscripción. | Retorna el detalle y estado de una suscripción. |
+| /api/v1/subscriptions/{id}/renew | PUT | Renueva una suscripción. | `id` (path, GUID) | Objeto JSON con `newEndDate`. | Suscripción actualizada con la nueva fecha de fin. | Extiende la vigencia de una suscripción existente. |
+| /api/v1/subscriptions/{id}/cancel | PUT | Cancela una suscripción. | `id` (path, GUID) | — | Suscripción con estado cancelado. | Permite dar de baja una suscripción. |
+| /api/v1/subscriptions/{id}/expire | PUT | Marca una suscripción como expirada. | `id` (path, GUID) | — | Suscripción con estado expirado. | Permite registrar el vencimiento de una suscripción. |
+| /api/v1/buildings | POST | Registra una nueva edificación. | — | Objeto JSON con `buildingCode`, `name`, `description` y `address` (`streetAddress`, `district`, `city`, `countryCode`). | Edificación creada con su ID asignado. | Permite añadir edificaciones a la organización. |
+| /api/v1/buildings | GET | Lista las edificaciones de forma paginada. | `administrativeStatus` (query, opcional), `page` (query, def. 0), `size` (query, def. 20) | — | Página de edificaciones (`items`, `page`, `size`, `totalElements`, `totalPages`). | Permite visualizar y filtrar las edificaciones por estado administrativo. |
+| /api/v1/buildings/{buildingId} | GET | Obtiene una edificación específica. | `buildingId` (path, GUID) | — | Datos de la edificación, incluidas sus zonas. | Retorna el detalle completo de una edificación registrada. |
+| /api/v1/buildings/{buildingId}/details | PUT | Actualiza los datos de una edificación. | `buildingId` (path, GUID) | Objeto JSON con `name`, `description` y/o `address`. | Edificación actualizada. | Modifica nombre, descripción o dirección de la edificación. |
+| /api/v1/buildings/{buildingId}/administrative-status | PUT | Cambia el estado administrativo de una edificación. | `buildingId` (path, GUID) | Objeto JSON con `administrativeStatus`. | Edificación con el nuevo estado. | Permite activar, desactivar o archivar una edificación. |
+| /api/v1/buildings/{buildingId}/zones | POST | Agrega una zona a una edificación. | `buildingId` (path, GUID) | Objeto JSON con `zoneCode`, `name`, `description` y `floorLabel`. | Zona creada con su ID asignado. | Permite subdividir la edificación en zonas monitoreables. |
+| /api/v1/buildings/{buildingId}/zones | GET | Lista las zonas de una edificación de forma paginada. | `buildingId` (path, GUID), `administrativeStatus` (query, opcional), `page` (query, def. 0), `size` (query, def. 20) | — | Página de zonas (`items`, `page`, `size`, `totalElements`, `totalPages`). | Permite consultar y filtrar las zonas de una edificación. |
+| /api/v1/buildings/{buildingId}/zones/{zoneId} | GET | Obtiene una zona específica. | `buildingId`, `zoneId` (path, GUID) | — | Datos de la zona. | Retorna el detalle de una zona de la edificación. |
+| /api/v1/buildings/{buildingId}/zones/{zoneId}/details | PUT | Actualiza los datos de una zona. | `buildingId`, `zoneId` (path, GUID) | Objeto JSON con `name`, `description` y/o `floorLabel`. | Zona actualizada. | Modifica la información descriptiva de la zona. |
+| /api/v1/buildings/{buildingId}/zones/{zoneId}/administrative-status | PUT | Cambia el estado administrativo de una zona. | `buildingId`, `zoneId` (path, GUID) | Objeto JSON con `administrativeStatus`. | Zona con el nuevo estado. | Permite activar, desactivar o archivar una zona. |
+| /api/v1/devices | POST | Registra un nuevo dispositivo IoT. | — | Objeto JSON con `deviceCode`, `name`, `description`, `specifications`, `assignment` (`buildingId`, `zoneId`), `externalReference` y `capabilities`. | Dispositivo creado con su ID asignado. | Permite incorporar sensores y actuadores a una edificación o zona. |
+| /api/v1/devices | GET | Lista los dispositivos de forma paginada. | `buildingId`, `zoneId`, `administrativeStatus` (query, opcionales), `page` (def. 0), `size` (def. 20) | — | Página de dispositivos. | Permite consultar y filtrar los dispositivos registrados. |
+| /api/v1/devices/{deviceId} | GET | Obtiene un dispositivo específico. | `deviceId` (path, GUID) | — | Datos detallados del dispositivo y sus capacidades. | Retorna la información de un dispositivo registrado. |
+| /api/v1/devices/by-external-reference | GET | Busca un dispositivo por su referencia externa. | `sourceSystem`, `externalDeviceId` (query) | — | Datos del dispositivo encontrado. | Permite que sistemas externos (p. ej. Edge/IoT) localicen un dispositivo con su propio identificador. |
+| /api/v1/devices/{deviceId}/details | PUT | Actualiza los datos de un dispositivo. | `deviceId` (path, GUID) | Objeto JSON con `name`, `description` y/o `specifications`. | Dispositivo actualizado. | Modifica la información descriptiva y técnica del dispositivo. |
+| /api/v1/devices/{deviceId}/capabilities | PUT | Reemplaza las capacidades de un dispositivo. | `deviceId` (path, GUID) | Objeto JSON con `capabilities` (`code`, `kind`, `unit`). | Dispositivo con las capacidades actualizadas. | Define qué magnitudes mide o qué acciones ejecuta el dispositivo. |
+| /api/v1/devices/{deviceId}/assignment | PUT | Asigna el dispositivo a una edificación o zona. | `deviceId` (path, GUID) | Objeto JSON con `buildingId` y `zoneId` (opcional). | Dispositivo con la nueva asignación. | Permite reubicar un dispositivo dentro de la organización. |
+| /api/v1/devices/{deviceId}/administrative-status | PUT | Cambia el estado administrativo de un dispositivo. | `deviceId` (path, GUID) | Objeto JSON con `administrativeStatus`. | Dispositivo con el nuevo estado. | Permite activar, desactivar o dar de baja un dispositivo. |
+| /api/v1/incidents | POST | Registra un nuevo incidente. | — | Objeto JSON con `zoneId`, `type` y `level`. | Incidente creado (`id`, `zoneId`, `type`, `level`, `status`, `createdAt`). | Permite reportar un incidente ocurrido en una zona. |
+| /api/v1/incidents | GET | Lista los incidentes. | `zoneId` (query, opcional) | — | Lista de incidentes. | Permite consultar los incidentes, opcionalmente filtrados por zona. |
+| /api/v1/incidents/{id} | GET | Obtiene un incidente específico. | `id` (path, GUID) | — | Datos del incidente (`status`, `assignedTo`, `resolvedAt`, `resolutionNotes`, etc.). | Retorna el detalle y el estado actual de un incidente. |
+| /api/v1/incidents/{id}/status | PUT | Cambia el estado de un incidente. | `id` (path, GUID) | Objeto JSON con `status`. | Incidente actualizado. | Permite avanzar el incidente en su ciclo de vida. |
+| /api/v1/incidents/{id}/assign | PUT | Asigna un incidente a un responsable. | `id` (path, GUID) | Objeto JSON con `attendantId`. | Incidente con el responsable asignado. | Permite designar a quién atiende el incidente. |
+| /api/v1/incidents/{id}/resolve | PUT | Resuelve un incidente. | `id` (path, GUID) | Objeto JSON con `resolutionNotes`. | Incidente resuelto con `resolvedAt` y notas. | Cierra el incidente dejando constancia de la resolución. |
+| /api/v1/alerts | GET | Lista las alertas generadas. | `buildingId`, `zoneId`, `riskTypeCode`, `from`, `to` (query, opcionales) | — | Lista de alertas (`alertId`, `context`, `generatedAt`, `deliveries`). | Permite consultar el historial de alertas con filtros por ubicación, tipo de riesgo y rango de fechas. |
+| /api/v1/alerts/{alertId} | GET | Obtiene una alerta específica. | `alertId` (path, GUID) | — | Datos de la alerta con su contexto y notificaciones. | Retorna el detalle de una alerta y el estado de sus notificaciones (`PENDING`, `DELIVERED`, `FAILED`). |
+| /api/v1/alerts | POST | Genera una alerta a partir de una detección de riesgo. | — | Objeto JSON con `riskDetectionId`, `riskTypeCode`, `severityCode`, `buildingId`, `zoneId`, `detectedAt`, `recipients` y `responseActions`. | Alerta creada con sus notificaciones. | Notifica a los destinatarios y registra las acciones de respuesta solicitadas. |
+| /api/v1/alerts/{alertId}/response-executions | GET | Lista las ejecuciones de respuesta de una alerta. | `alertId` (path, GUID) | — | Lista de ejecuciones de respuesta (`action`, `status`, `authorization`). | Permite ver las acciones automáticas o pendientes de autorización asociadas a la alerta. |
+| /api/v1/alerts/{alertId}/response-executions/{responseExecutionId}/authorization | PUT | Aprueba o rechaza una acción de respuesta. | `alertId`, `responseExecutionId` (path, GUID) | Objeto JSON con `decision` (`APPROVED` o `REJECTED`). | Ejecución de respuesta con la autorización registrada. | Permite que una persona autorice las acciones de modo `HUMAN_REQUIRED`. |
+
+
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq1.png" alt="Swagger ResQ API - evidencia 1" width="70%">
+  <br><br>
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq2.png" alt="Swagger ResQ API - evidencia 2" width="70%">
+  <br><br>
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq3.png" alt="Swagger ResQ API - evidencia 3" width="70%">
+  <br><br>
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq4.png" alt="Swagger ResQ API - evidencia 4" width="70%">
+</p>
+
+##### 6.2.1.8. Software Deployment Evidence for Sprint Review.
+
+**Landing Page**
+
+La Landing Page fue desplegada mediante GitHub Pages. Para ello, se creó un repositorio en GitHub y se configuró un workflow con GitHub Actions, el cual automatiza la publicación del sitio cada vez que se realizan cambios en la rama principal. Finalmente, se verificó el correcto funcionamiento del despliegue accediendo a la URL pública generada por GitHub Pages.
+
+**Enlace de la Landing Page:**  
+https://upc-1asi0572-202620-16518-resq.github.io/resq-landing-page/
+
+
+**Web Application**
+
+En esta sección se presentan las evidencias relacionadas con el despliegue de la aplicación web desarrollada como parte de la solución, incluyendo la configuración de los recursos necesarios para permitir su funcionamiento y acceso desde un entorno publicado.
+
+Como parte de la validación del despliegue, se verificó el acceso a la aplicación a través de su URL pública y se comprobó el correcto funcionamiento de sus principales funcionalidades.
+
+**Enlace de la aplicación web:**  
+
+
+
+**Backend**
+
+Para el componente backend se realizó el despliegue del servicio en la plataforma Render, permitiendo que las funcionalidades y endpoints desarrollados puedan ser consumidos desde un entorno remoto.
+
+Como parte de la validación del despliegue, se verificó el acceso a la documentación de la API mediante Swagger UI, desde donde es posible visualizar y probar los diferentes endpoints disponibles en el backend.
+
+**Enlace del backend desplegado en Render:**
+
+https://resq-api-79xy.onrender.com/swagger/index.html
+
+
+
 
 # Conclusiones
 
