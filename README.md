@@ -11747,8 +11747,335 @@ Excedemos nuestros lineamientos respecto a los dispositivos IoT para asegurar qu
 ### 5.2.1. Organization Systems.
 ### 5.2.2. Labeling Systems.
 ### 5.2.3. SEO Tags and Meta Tags
-### 5.2.4. Searching Systems.
+### 5.2.4. Searching Systems
+
+El sistema de búsqueda de ResQ está diseñado para que los administradores de edificios y los integradores técnicos puedan localizar rápidamente información crítica, como el historial de incidentes, el estado de las zonas y la conectividad de los dispositivos IoT. Esta herramienta es vital para el seguimiento post-emergencia y el mantenimiento del sistema.
+
+**Sistema de búsqueda para Propietarios y Administradores (Segmento 1)**
+| Nombre del filtro | Descripción |
+| :--- | :--- |
+| **Búsqueda por ID / Zona** | Permite ingresar el código de un incidente específico o el nombre de una zona (ej. "Sótano 1") para ver su estado actual o historial. |
+| **Filtro por Tipo de Riesgo** | Despliega opciones para buscar emergencias específicas (ej. fuga de gas, incendio, sismo). |
+| **Filtro por Estado del Incidente** | Permite visualizar los incidentes según su ciclo de vida: Abierto, Asignado, Resuelto o Cerrado. |
+| **Rango de Fechas** | Facilita la localización de incidentes históricos ocurridos en un periodo de tiempo determinado para generar reportes. |
+
+**Sistema de búsqueda para Integradores y Soporte Técnico (Segmento 2)**
+| Nombre del filtro | Descripción |
+| :--- | :--- |
+| **Búsqueda de Dispositivos (MAC/ID)** | Localiza rápidamente un sensor o actuador específico dentro de la red del edificio. |
+| **Estado de Conexión (Heartbeats)** | Filtra los dispositivos por su estado de red actual: *Online* u *Offline*. |
+
+**Características adicionales del sistema de búsqueda**
+*   **Búsqueda combinada:** El usuario puede combinar múltiples filtros a la vez (ej. incidentes de "Fuga de gas" en el "Sótano" durante el "Último mes") tal como se especifica en los criterios de aceptación (US18).
+
+---
+
 ### 5.2.5. Navigation Systems
+
+El sistema de navegación de la plataforma ResQ guiará a los usuarios a través de las distintas pantallas de monitoreo, gestión de infraestructura y atención de emergencias, proporcionando un acceso rápido en situaciones de alto estrés.
+
+**Navegación Global**
+| Nombre | Descripción |
+| :--- | :--- |
+| **Dashboard (Inicio)** | Panel principal que ofrece una vista general y centralizada del estado de la edificación y alertas activas en tiempo real. |
+| **Perfil y Accesos** | Gestión de la cuenta del usuario y sus permisos dentro de la organización. |
+
+**Navegación Operativa (Administradores y Seguridad)**
+| Nombre | Descripción |
+| :--- | :--- |
+| **Monitoreo por Zonas** | Visualización en vivo de las mediciones de los sensores distribuidos en las diferentes áreas del edificio. |
+| **Gestión de Incidentes** | Acceso a la lista de emergencias activas y al historial para asignar responsables, ver la evolución y cerrar casos. |
+| **Reportes e Indicadores** | Sección dedicada al análisis cuantitativo: frecuencia de incidentes, falsas alarmas y tiempos de atención. |
+
+**Navegación de Infraestructura (Integradores)**
+| Nombre | Descripción |
+| :--- | :--- |
+| **Edificios y Zonas** | Módulo para registrar nuevas edificaciones y subdividirlas en áreas lógicas o físicas. |
+| **Dispositivos IoT** | Sección para dar de alta nuevos sensores/actuadores y asociarlos a una zona específica. |
+
+## 5.3. Landing Page UI Design
+
+### 5.3.1. Landing Page Wireframe
+
+En esta sección representamos una estructura funcional preliminar que organiza los principales bloques de contenido sin detalles visuales para la plataforma ResQ. Su objetivo es definir la jerarquía informativa y el flujo de navegación del visitante, estructurando la propuesta de valor, beneficios, funcionamiento y opciones de contacto sin aplicar aún la línea gráfica final.
+
+![LandingWireframe1](/assets/styles/LandingPage/LandingWireframe1.png)
+![LandingWireframe2](/assets/styles/LandingPage/LandingWireframe2.png)
+![LandingWireframe3](/assets/styles/LandingPage/LandingWireframe3.png)
+![LandingWireframe4](/assets/styles/LandingPage/LandingWireframe4.png)
+![LandingWireframe5](/assets/styles/LandingPage/LandingWireframe5.png)
+![LandingWireframe6](/assets/styles/LandingPage/LandingWireframe6.png)
+![LandingWireframe7](/assets/styles/LandingPage/LandingWireframe7.png)
+![LandingWireframe8](/assets/styles/LandingPage/LandingWireframe8.png)
+
+
+### 5.3.2. Landing Page Mock-up
+
+El mockup de la landing page de ResQ muestra la versión visual refinada y final del diseño. El contenido está organizado de manera clara y profesional, destacando el valor principal de ResQ: permitir a los usuarios gestionar infraestructuras, detectar riesgos con sensores IoT y responder con confianza. Las secciones detallan el funcionamiento de la plataforma en la detección y respuesta, los beneficios centrados en la seguridad y el control, las características para edificios inteligentes, y los planes adaptados para administradores o empresas integradoras. Este mockup transmite una experiencia tecnológica, segura y confiable.
+
+![LandingMockup1](/assets/styles/LandingPage/LandingMockup1.png)
+![LandingMockup2](/assets/styles/LandingPage/LandingMockup2.png)
+![LandingMockup3](/assets/styles/LandingPage/LandingMockup3.png)
+![LandingMockup4](/assets/styles/LandingPage/LandingMockup4.png)
+![LandingMockup5](/assets/styles/LandingPage/LandingMockup5.png)
+![LandingMockup6](/assets/styles/LandingPage/LandingMockup6.png)
+![LandingMockup7](/assets/styles/LandingPage/LandingMockup7.png)
+![LandingMockup8](/assets/styles/LandingPage/LandingMockup8.png)
+
+
+## 5.4. Applications UX/UI Design
+
+### 5.4.1. Applications Wireframes
+
+Esta sección presenta los wireframes de la aplicación web y móvil de ResQ, organizados por sus respectivos módulos operativos. Cada wireframe representa la jerarquía de los paneles de control, listados y configuraciones antes de aplicar el estilo visual final.
+
+**Versión Web**
+
+* **Iniciar Sesión**
+![WireframeWeb1](/assets/styles/Web/WireframeWeb1.png)
+
+* **Panel Principal**
+![WireframeWeb21](/assets/styles/Web/WireframeWeb21.png)
+![WireframeWeb22](/assets/styles/Web/WireframeWeb22.png)
+
+* **Edificios**
+![WireframeWeb31](/assets/styles/Web/WireframeWeb31.png)
+![WireframeWeb32](/assets/styles/Web/WireframeWeb32.png)
+![WireframeWeb33](/assets/styles/Web/WireframeWeb33.png)
+![WireframeWeb34](/assets/styles/Web/WireframeWeb34.png)
+![WireframeWeb35](/assets/styles/Web/WireframeWeb35.png)
+![WireframeWeb36](/assets/styles/Web/WireframeWeb36.png)
+![WireframeWeb37](/assets/styles/Web/WireframeWeb37.png)
+![WireframeWeb38](/assets/styles/Web/WireframeWeb38.png)
+![WireframeWeb39](/assets/styles/Web/WireframeWeb39.png)
+
+* **Monitoreo de Pisos**
+![WireframeWeb41](/assets/styles/Web/WireframeWeb41.png)
+![WireframeWeb42](/assets/styles/Web/WireframeWeb42.png)
+
+* **Espacios**
+![WireframeWeb51](/assets/styles/Web/WireframeWeb51.png)
+![WireframeWeb52](/assets/styles/Web/WireframeWeb52.png)
+![WireframeWeb53](/assets/styles/Web/WireframeWeb53.png)
+![WireframeWeb54](/assets/styles/Web/WireframeWeb54.png)
+![WireframeWeb55](/assets/styles/Web/WireframeWeb55.png)
+![WireframeWeb56](/assets/styles/Web/WireframeWeb56.png)
+![WireframeWeb57](/assets/styles/Web/WireframeWeb57.png)
+
+* **Dispositivos**
+![WireframeWeb61](/assets/styles/Web/WireframeWeb61.png)
+![WireframeWeb62](/assets/styles/Web/WireframeWeb62.png)
+![WireframeWeb63](/assets/styles/Web/WireframeWeb63.png)
+![WireframeWeb64](/assets/styles/Web/WireframeWeb64.png)
+![WireframeWeb65](/assets/styles/Web/WireframeWeb65.png)
+![WireframeWeb66](/assets/styles/Web/WireframeWeb66.png)
+
+* **Alertas**
+![WireframeWeb71](/assets/styles/Web/WireframeWeb71.png)
+![WireframeWeb72](/assets/styles/Web/WireframeWeb72.png)
+
+* **Incidentes**
+![WireframeWeb81](/assets/styles/Web/WireframeWeb81.png)
+![WireframeWeb82](/assets/styles/Web/WireframeWeb82.png)
+![WireframeWeb83](/assets/styles/Web/WireframeWeb83.png)
+![WireframeWeb84](/assets/styles/Web/WireframeWeb84.png)
+![WireframeWeb85](/assets/styles/Web/WireframeWeb85.png)
+![WireframeWeb86](/assets/styles/Web/WireframeWeb86.png)
+
+* **Configuración y Perfil**
+![WireframeWeb91](/assets/styles/Web/WireframeWeb91.png)
+![WireframeWeb92](/assets/styles/Web/WireframeWeb92.png)
+![WireframeWeb93](/assets/styles/Web/WireframeWeb93.png)
+
+* **Notificaciones**
+![WireframeWebNotificaciones](/assets/styles/Web/WireframeWebNotificaciones.png)
+
+
+**Versión Móvil**
+
+* **Iniciar Sesión**
+![WireframeMobiel1](/assets/styles/Mobiel/WireframeMobiel1.png)
+
+* **Panel Principal**
+![WireframeMobiel2](/assets/styles/Mobiel/WireframeMobiel2.png)
+
+* **Edificios**
+![WireframeMobiel31](/assets/styles/Mobiel/WireframeMobiel31.png)
+![WireframeMobiel32](/assets/styles/Mobiel/WireframeMobiel32.png)
+![WireframeMobiel33](/assets/styles/Mobiel/WireframeMobiel33.png)
+
+* **Monitoreo de Pisos**
+![WireframeMobiel4](/assets/styles/Mobiel/WireframeMobiel4.png)
+
+* **Espacios**
+![WireframeMobiel51](/assets/styles/Mobiel/WireframeMobiel51.png)
+![WireframeMobiel52](/assets/styles/Mobiel/WireframeMobiel52.png)
+
+* **Dispositivos**
+![WireframeMobiel61](/assets/styles/Mobiel/WireframeMobiel61.png)
+![WireframeMobiel62](/assets/styles/Mobiel/WireframeMobiel62.png)
+![WireframeMobiel63](/assets/styles/Mobiel/WireframeMobiel63.png)
+
+* **Alertas**
+![WireframeMobiel7](/assets/styles/Mobiel/WireframeMobiel7.png)
+
+* **Incidentes**
+![WireframeMobiel81](/assets/styles/Mobiel/WireframeMobiel81.png)
+![WireframeMobiel82](/assets/styles/Mobiel/WireframeMobiel82.png)
+
+* **Configuración y Perfil**
+![WireframeMobiel9](/assets/styles/Mobiel/WireframeMobiel9.png)
+
+* **Notificaciones**
+![WireframeMobielNotificaciones](/assets/styles/Mobiel/WireframeMobielNotificaciones.png)
+
+
+### 5.4.2. Applications Wireflow Diagrams
+
+Los diagramas de Wireflow desarrollados para ResQ permiten visualizar de manera gráfica la transición entre las pantallas de la aplicación, integrando el diseño estructural de la interfaz con el flujo de navegación. Estos flujos garantizan la coherencia del diseño al registrar edificios, configurar zonas y atender alertas.
+
+**Wireflows Web**
+
+![WebbWireFlow1](/assets/styles/Flow/WebbWireFlow1.png)
+![WebbWireFlow2](/assets/styles/Flow/WebbWireFlow2.png)
+
+**Wireflows Móvil**
+
+![MobielWireFlow1](/assets/styles/Flow/MobielWireFlow1.png)
+![MobielWireFlow2](/assets/styles/Flow/MobielWireFlow2.png)
+
+
+### 5.4.3. Applications Mock-ups
+
+Esta subsección presenta las pantallas a todo color y con alto nivel de fidelidad para los entornos web y móvil de ResQ, organizadas según el módulo operativo correspondiente.
+
+**Versión Web**
+
+* **Iniciar Sesión**
+![MockupWeb1](/assets/styles/Web/MockupWeb1.png)
+
+* **Panel Principal**
+![MockupWeb21](/assets/styles/Web/MockupWeb21.png)
+![MockupWeb22](/assets/styles/Web/MockupWeb22.png)
+
+* **Edificios**
+![MockupWeb31](/assets/styles/Web/MockupWeb31.png)
+![MockupWeb32](/assets/styles/Web/MockupWeb32.png)
+![MockupWeb33](/assets/styles/Web/MockupWeb33.png)
+![MockupWeb34](/assets/styles/Web/MockupWeb34.png)
+![MockupWeb35](/assets/styles/Web/MockupWeb35.png)
+![MockupWeb36](/assets/styles/Web/MockupWeb36.png)
+![MockupWeb37](/assets/styles/Web/MockupWeb37.png)
+![MockupWeb38](/assets/styles/Web/MockupWeb38.png)
+![MockupWeb39](/assets/styles/Web/MockupWeb39.png)
+![MockupWeb310](/assets/styles/Web/MockupWeb310.png)
+
+* **Monitoreo de Pisos**
+![MockupWeb41](/assets/styles/Web/MockupWeb41.png)
+![MockupWeb42](/assets/styles/Web/MockupWeb42.png)
+
+* **Espacios**
+![MockupWeb51](/assets/styles/Web/MockupWeb51.png)
+![MockupWeb52](/assets/styles/Web/MockupWeb52.png)
+![MockupWeb53](/assets/styles/Web/MockupWeb53.png)
+![MockupWeb54](/assets/styles/Web/MockupWeb54.png)
+![MockupWeb55](/assets/styles/Web/MockupWeb55.png)
+![MockupWeb56](/assets/styles/Web/MockupWeb56.png)
+![MockupWeb57](/assets/styles/Web/MockupWeb57.png)
+
+* **Dispositivos**
+![MockupWeb61](/assets/styles/Web/MockupWeb61.png)
+![MockupWeb62](/assets/styles/Web/MockupWeb62.png)
+![MockupWeb63](/assets/styles/Web/MockupWeb63.png)
+![MockupWeb64](/assets/styles/Web/MockupWeb64.png)
+![MockupWeb65](/assets/styles/Web/MockupWeb65.png)
+![MockupWeb66](/assets/styles/Web/MockupWeb66.png)
+![MockupWeb67](/assets/styles/Web/MockupWeb67.png)
+![MockupWeb68](/assets/styles/Web/MockupWeb68.png)
+![MockupWeb69](/assets/styles/Web/MockupWeb69.png)
+
+* **Alertas**
+![MockupWeb71](/assets/styles/Web/MockupWeb71.png)
+![MockupWeb72](/assets/styles/Web/MockupWeb72.png)
+![MockupWeb73](/assets/styles/Web/MockupWeb73.png)
+
+* **Incidentes**
+![MockupWeb81](/assets/styles/Web/MockupWeb81.png)
+![MockupWeb82](/assets/styles/Web/MockupWeb82.png)
+![MockupWeb83](/assets/styles/Web/MockupWeb83.png)
+![MockupWeb84](/assets/styles/Web/MockupWeb84.png)
+![MockupWeb85](/assets/styles/Web/MockupWeb85.png)
+![MockupWeb86](/assets/styles/Web/MockupWeb86.png)
+
+* **Configuración y Perfil**
+![MockupWeb91](/assets/styles/Web/MockupWeb91.png)
+![MockupWeb92](/assets/styles/Web/MockupWeb92.png)
+![MockupWeb93](/assets/styles/Web/MockupWeb93.png)
+
+* **Notificaciones**
+![MockupWebNotificaciones](/assets/styles/Web/MockupWebNotificaciones.png)
+
+
+**Versión Móvil**
+
+* **Iniciar Sesión**
+![MockupMobiel1](/assets/styles/Mobiel/MockupMobiel1.png)
+
+* **Panel Principal**
+![MockupMobiel2](/assets/styles/Mobiel/MockupMobiel2.png)
+
+* **Edificios**
+![MockupMobiel31](/assets/styles/Mobiel/MockupMobiel31.png)
+![MockupMobiel32](/assets/styles/Mobiel/MockupMobiel32.png)
+![MockupMobiel33](/assets/styles/Mobiel/MockupMobiel33.png)
+![MockupMobiel34](/assets/styles/Mobiel/MockupMobiel34.png)
+
+* **Monitoreo de Pisos**
+![MockupMobiel41](/assets/styles/Mobiel/MockupMobiel41.png)
+![MockupMobiel42](/assets/styles/Mobiel/MockupMobiel42.png)
+
+* **Espacios**
+![MockupMobiel51](/assets/styles/Mobiel/MockupMobiel51.png)
+![MockupMobiel52](/assets/styles/Mobiel/MockupMobiel52.png)
+
+* **Dispositivos**
+![MockupMobiel61](/assets/styles/Mobiel/MockupMobiel61.png)
+![MockupMobiel62](/assets/styles/Mobiel/MockupMobiel62.png)
+![MockupMobiel63](/assets/styles/Mobiel/MockupMobiel63.png)
+
+* **Alertas**
+![MockupMobiel7](/assets/styles/Mobiel/MockupMobiel7.png)
+
+* **Incidentes**
+![MockupMobiel81](/assets/styles/Mobiel/MockupMobiel81.png)
+![MockupMobiel82](/assets/styles/Mobiel/MockupMobiel82.png)
+
+* **Configuración y Perfil**
+![MockupMobiel9](/assets/styles/Mobiel/MockupMobiel9.png)
+
+* **Notificaciones**
+![MockupMobielNotificaciones](/assets/styles/Mobiel/MockupMobielNotificaciones.png)
+
+
+### 5.4.4. Applications User Flow Diagrams
+
+Los diagramas de flujo de usuario (implementados con mockups de alta fidelidad) permiten entender cómo los administradores interactúan con la aplicación ResQ desde una perspectiva lógica e ilustrada. Estos flujos exponen de principio a fin procesos clave como la vinculación de un nuevo edificio a la plataforma y la atención completa de una alerta crítica.
+
+**User Flows Web**
+
+![WebbMockup1](/assets/styles/Flow/WebbMockup1.png)
+![WebbMockup2](/assets/styles/Flow/WebbMockup2.png)
+
+**User Flows Móvil**
+
+![MobielMockup1](/assets/styles/Flow/MobielMockup1.png)
+![MobielMockup2](/assets/styles/Flow/MobielMockup2.png)
+
+# 5.5 Applications Prototyping
+
+Pruebas del prototipo funcionable para el apartado web y mobiel
+
+https://youtu.be/uhQxgi38vFc
 
 # Conclusiones
 
