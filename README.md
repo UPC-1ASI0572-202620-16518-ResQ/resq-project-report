@@ -11929,7 +11929,7 @@ Los manifiestos de dependencias y lockfiles fijan el conjunto ejecutable de los 
 ### 6.2.1. Sprint 1
 
 <p align="justify">
-Sprint 1 registra el primer incremento de implementación comprobable de ResQ y el trabajo colaborativo distribuido entre la Landing Page, la Frontend Web Application y el Backend / Web Services. La evidencia de los repositorios muestra una Landing Page informativa publicada mediante una rama de GitHub Pages; una aplicación Angular con vistas para autenticación, dashboard, edificaciones, monitoreo, espacios, dispositivos, alertas, incidentes y configuración; y una RESTful API con implementaciones de IAM, User, Building Management, Device Management, Incident Management, Subscriptions y Alert Management.
+Sprint 1, planificado entre el 29 de septiembre y el 8 de octubre de 2026, corresponde al primer sprint formal de implementación y se centra en construir la primera versión funcional del MVP de ResQ. El incremento reúne cuatro frentes complementarios: Landing Page version 1 para comunicar la propuesta de valor; Frontend Web Application version 1 para representar flujos iniciales de monitoreo y gestión; Backend / Web Services base para soportar recursos principales; y un prototipo IoT MVP para validar sensado de gas/humo, procesamiento en ESP32, visualización local y alertamiento.
 </p>
 
 <p align="justify">
