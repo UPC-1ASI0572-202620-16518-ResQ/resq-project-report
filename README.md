@@ -11947,11 +11947,11 @@ La planificación de Sprint 1 debe relacionar el Product Backlog con un incremen
 | Sprint # | Sprint 1 |
 | Date | [PENDIENTE: fecha real del Sprint Planning] |
 | Time | [PENDIENTE: hora real] |
-| Location | [PENDIENTE: indicar si la reunión fue virtual/presencial] |
-| Prepared By | [PENDIENTE: responsable de preparar el Sprint Planning] |
-| Attendees | [PENDIENTE: confirmar asistentes] |
-| Sprint 0 Review Summary / Previous Iteration Review Summary | No se encontró evidencia de un Sprint 0 formal de implementación. Sprint 1 corresponde al primer Sprint con avances comprobables en los repositorios de producto; el trabajo previo del Project Report estableció investigación, requisitos, Product Backlog y arquitectura. |
-| Sprint 0 Retrospective Summary / Previous Iteration Retrospective Summary | No se encontró un acta de retrospectiva de una iteración de implementación anterior. [PENDIENTE: confirmar si el equipo realizó una retrospectiva previa y adjuntar su evidencia]. |
+| Location | LLamada de Discord |
+| Prepared By | Fabricio Fabian Quispe Barzola |
+| Attendees | Aliaga Urbina, Wilder Gonzalo, Chacaliaza Minaya, Eduardo Fabian, Nanfuñay Liza, Pedro Jesús, Sánchez Guevara, Iván Fernando |
+| Sprint 0 Review Summary / Previous Iteration Review Summary | - |
+| Sprint 0 Retrospective Summary / Previous Iteration Retrospective Summary | - |
 | Sprint 1 Goal | Entregar un primer incremento demostrable de ResQ que comunique su propuesta de valor en la Landing Page y habilite en la Web Application la supervisión de edificaciones, dispositivos, alertas e incidentes, sustentado por servicios backend iniciales para identidad, usuarios, edificios, dispositivos, alertas e incidentes. |
 | Sprint 1 Velocity | [PENDIENTE: confirmar Sprint Velocity en Story Points] |
 | Sum of Story Points | [PENDIENTE: confirmar suma real de Story Points del Sprint] |
