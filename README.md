@@ -11844,7 +11844,44 @@ En la Landing Page se utilizarán Solución (funcionamiento de ResQ), Beneficios
 
 Los botones indicarán acciones concretas: **Agregar zona**, **Asignar responsable** y **Autorizar acción**. El nivel de riesgo se representará como **Bajo**, **Medio**, **Alto** o **Crítico**; el estado del incidente, como **Activo**, **En atención**, **Resuelto** o **Cerrado**. Así se distinguirá la gravedad del riesgo de su atención. Se usará **Sin datos actualizados** cuando no existan mediciones vigentes, evitando interpretar esa ausencia como seguridad.
 
+
 ### 5.2.3. SEO Tags and Meta Tags
+
+<p align="justify">
+La estrategia de SEO Tags and Meta Tags de ResQ diferencia el contenido público de la Landing Page y el contenido operacional de la Web Application. El Project Statement prescribe inglés como idioma predeterminado para mensajes e interfaces; por ello, la metadata recomendada se formula en inglés, mientras que la experiencia puede ofrecer español como idioma alternativo. La Landing Page requiere descripciones orientadas a que los dos segmentos objetivo comprendan la propuesta de monitoreo, detección y respuesta ante riesgos en edificaciones. La Web Application, aunque se encuentra protegida por autenticación y no debe depender del posicionamiento orgánico de sus vistas internas, requiere títulos y descripciones precisos para mantener orientación, accesibilidad y consistencia cuando una vista se comparte dentro de un entorno autorizado.
+</p>
+
+<p align="justify">
+La inspección del código evidencia que ambas experiencias son Single Page Applications desarrolladas con Angular. La Landing Page dispone actualmente de las rutas <code>/</code>, <code>/privacy</code> y <code>/terms</code>; su archivo <code>index.html</code> define un título y una descripción globales, además de metadatos Open Graph y Twitter, pero no cambia estos valores por ruta ni incorpora <code>keywords</code> o <code>author</code>. Su servicio de idioma inicia actualmente en español, salvo que exista una preferencia previa en inglés, lo cual representa una diferencia frente al idioma predeterminado indicado por el Project Statement. La Web Application, en cambio, inicia en inglés cuando no existe una preferencia almacenada, aunque mantiene un título global <code>ResQ</code> y tampoco implementa metadata dinámica por vista. Por tanto, las tablas siguientes constituyen la especificación recomendada en inglés para una futura gestión dinámica de metadata y no una afirmación de que todos estos valores ya estén implementados.
+</p>
+
+#### Landing Page
+
+| Página/Sección | Title | Description | Keywords | Author |
+|---|---|---|---|---|
+| Inicio (<code>/</code>) | ResQ \| Building Risk Monitoring and Emergency Response | Discover ResQ, SecurityBear's proposal for integrated risk monitoring, early detection and coordinated emergency response in buildings. | building risk monitoring, emergency detection, alert management, incident response, SecurityBear ResQ | SecurityBear |
+| Política de privacidad (<code>/privacy</code>) | Privacy Policy \| ResQ | Learn how the ResQ informational website handles visitor-submitted data, language preferences and links to external services. | ResQ privacy, contact data, website preferences, data protection | SecurityBear |
+| Términos y condiciones (<code>/terms</code>) | Terms and Conditions \| ResQ | Review the terms of use for the ResQ academic website and the informational scope of its monitoring, detection and response proposal. | ResQ terms of use, website conditions, SecurityBear academic project, responsible use | SecurityBear |
+
+#### Web Application
+
+| Página/Vista | Title | Description | Keywords | Author |
+|---|---|---|---|---|
+| Inicio de sesión (<code>/login</code>) | Sign In \| ResQ | Secure access for authorized personnel who monitor buildings, devices, alerts and incidents through ResQ. | ResQ access, authentication, building monitoring, authorized users | SecurityBear |
+| Dashboard (<code>/dashboard</code>) | Operational Overview \| ResQ | View monitored building status, active risks, recent alerts and conditions that require attention. | operational status, risk monitoring, active alerts, monitored buildings | SecurityBear |
+| Edificaciones (<code>/buildings</code>) | Monitored Buildings \| ResQ | Manage the buildings, floors and zones used to place ResQ devices and contextualize operational events. | building management, monitored zones, connected infrastructure, floor plans | SecurityBear |
+| Monitoreo (<code>/monitoring</code>) | Zone Monitoring \| ResQ | Monitor observed conditions and measurements associated with building floors, zones and devices. | zone monitoring, sensor measurements, device status, remote supervision | SecurityBear |
+| Espacios (<code>/spaces</code>) | Spaces and Zones \| ResQ | Locate operational spaces and review their context, assigned devices and monitoring conditions. | monitored spaces, building zones, device location, risk context | SecurityBear |
+| Dispositivos (<code>/devices</code>) | IoT Devices \| ResQ | Review the inventory, assignments, capabilities and operational status of IoT devices registered in ResQ. | IoT devices, building sensors, actuators, device management | SecurityBear |
+| Alertas (<code>/alerts</code>) | Alert Center \| ResQ | Review alerts generated by risk conditions, including their location, context and associated responses. | alert management, risk detection, emergency location, automated response | SecurityBear |
+| Incidentes (<code>/incidents</code>) | Incident Management \| ResQ | Track the status, assignees and resolution of incidents registered in monitored buildings. | incident management, emergency response, incident tracking, resolution | SecurityBear |
+| Configuración (<code>/settings</code>) | Settings \| ResQ | Manage the preferences and parameters available to authorized ResQ users. | ResQ settings, user preferences, monitoring parameters | SecurityBear |
+
+<p align="justify">
+La implementación futura puede utilizar el Router de Angular para actualizar <code>title</code>, <code>description</code>, <code>keywords</code> y <code>author</code> al activarse cada ruta, conservando inglés como idioma predeterminado y español como alternativa seleccionable. Las vistas parametrizadas —por ejemplo, el detalle de una edificación, dispositivo, alerta o incidente— deben construir títulos a partir de identificadores o nombres ya obtenidos por la aplicación, sin exponer información sensible en metadata pública. Debido a que el alcance actual corresponde a experiencias web y no existe evidencia de una aplicación publicada en una tienda de aplicaciones, ASO no aplica a esta entrega.
+</p>
+
+
 ### 5.2.4. Searching Systems
 
 El sistema de búsqueda de ResQ está diseñado para que los administradores de edificios y los integradores técnicos puedan localizar rápidamente información crítica, como el historial de incidentes, el estado de las zonas y la conectividad de los dispositivos IoT. Esta herramienta es vital para el seguimiento post-emergencia y el mantenimiento del sistema.
