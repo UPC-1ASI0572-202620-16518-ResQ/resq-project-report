@@ -12071,6 +12071,8 @@ Los diagramas de flujo de usuario (implementados con mockups de alta fidelidad) 
 ![MobielMockup1](/assets/styles/Flow/MobielMockup1.png)
 ![MobielMockup2](/assets/styles/Flow/MobielMockup2.png)
 
+
+figma general: https://www.figma.com/board/6hSDnnG4ZYpIm93EouQQ26/Untitled?node-id=0-1&p=f&t=O17tbcBxcn3rT7Tr-0
 # 5.5 Applications Prototyping
 
 Pruebas del prototipo funcionable para el apartado web y mobiel
