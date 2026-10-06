@@ -11769,6 +11769,33 @@ Los sistemas de organización establecen la agrupación de contenidos; los siste
 
 ### 5.2.1. Organization Systems.
 ### 5.2.2. Labeling Systems.
+
+El sistema de etiquetado de ResQ utilizará palabras breves y familiares en español para representar conjuntos de información sin confundir a visitantes y usuarios. Las etiquetas conservarán el mismo significado en web y móvil; los iconos y colores complementarán el texto.
+
+**Etiquetas para visitantes**
+
+En la Landing Page se utilizarán Solución (funcionamiento de ResQ), Beneficios (valor para administradores), Integradores (compatibilidad con sistemas existentes) y Documentación (información técnica vinculada con Integradores). Las acciones se identificarán como Solicitar demostración e Iniciar sesión.
+
+**Etiquetas para usuarios**
+
+| Etiqueta | Información que representa y asociaciones |
+|---|---|
+| **Panel general** | Resumen de la edificación seleccionada, con acceso a Monitoreo, Alertas e Incidentes. |
+| **Edificaciones** | Infraestructura registrada; cada edificación contiene Zonas. |
+| **Zonas** | Áreas de una edificación; agrupan Dispositivos y permiten localizar riesgos. |
+| **Dispositivos** | Sensores y actuadores de una zona; sus mediciones se consultan en Monitoreo. |
+| **Monitoreo** | Mediciones y estado de dispositivos por edificación y zona. |
+| **Alertas** | Avisos de riesgos detectados, vinculados con su zona y el incidente correspondiente. |
+| **Incidentes** | Registros de atención que reúnen alertas, respuestas, responsable y estado. |
+| **Historial** | Incidentes anteriores y secuencia de eventos de cada caso. |
+| **Indicadores** | Frecuencia de incidentes, falsas alarmas y tiempos de atención. |
+| **Configuración** | Condiciones de detección, políticas de respuesta y usuarios y roles. |
+| **Integraciones** | Fuentes externas compatibles asociadas con dispositivos y zonas. |
+
+**Claridad de acciones y estados**
+
+Los botones indicarán acciones concretas: **Agregar zona**, **Asignar responsable** y **Autorizar acción**. El nivel de riesgo se representará como **Bajo**, **Medio**, **Alto** o **Crítico**; el estado del incidente, como **Activo**, **En atención**, **Resuelto** o **Cerrado**. Así se distinguirá la gravedad del riesgo de su atención. Se usará **Sin datos actualizados** cuando no existan mediciones vigentes, evitando interpretar esa ausencia como seguridad.
+
 ### 5.2.3. SEO Tags and Meta Tags
 
 <p align="justify">
