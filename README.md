@@ -308,7 +308,7 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
 - [Capítulo VI: Product Implementation, Validation & Deployment](#capítulo-vi-product-implementation-validation--deployment)
   - [6.1. Software Configuration Management](#61-software-configuration-management)
     - [6.1.1. Software Development Environment Configuration](#611-software-development-environment-configuration)
-  - [6.2. Product Implementation](#62-product-implementation)
+  - [6.2. Landing Page, Services & Applications Implementation](#62-landing-page-services--applications-implementation)
     - [6.2.1. Sprint 1](#621-sprint-1)
       - [6.2.1.1. Sprint Planning 1](#6211-sprint-planning-1)
       - [6.2.1.4. Development Evidence for Sprint Review](#6214-development-evidence-for-sprint-review)
@@ -11772,37 +11772,37 @@ Los sistemas de organización establecen la agrupación de contenidos; los siste
 ### 5.2.3. SEO Tags and Meta Tags
 
 <p align="justify">
-La estrategia de SEO Tags and Meta Tags de ResQ diferencia el contenido público de la Landing Page y el contenido operacional de la Web Application. La Landing Page requiere descripciones orientadas a que los dos segmentos objetivo comprendan la propuesta de monitoreo, detección y respuesta ante riesgos en edificaciones. La Web Application, aunque se encuentra protegida por autenticación y no debe depender del posicionamiento orgánico de sus vistas internas, requiere títulos y descripciones precisos para mantener orientación, accesibilidad y consistencia cuando una vista se comparte dentro de un entorno autorizado.
+La estrategia de SEO Tags and Meta Tags de ResQ diferencia el contenido público de la Landing Page y el contenido operacional de la Web Application. El Project Statement prescribe inglés como idioma predeterminado para mensajes e interfaces; por ello, la metadata recomendada se formula en inglés, mientras que la experiencia puede ofrecer español como idioma alternativo. La Landing Page requiere descripciones orientadas a que los dos segmentos objetivo comprendan la propuesta de monitoreo, detección y respuesta ante riesgos en edificaciones. La Web Application, aunque se encuentra protegida por autenticación y no debe depender del posicionamiento orgánico de sus vistas internas, requiere títulos y descripciones precisos para mantener orientación, accesibilidad y consistencia cuando una vista se comparte dentro de un entorno autorizado.
 </p>
 
 <p align="justify">
-La inspección del código evidencia que ambas experiencias son Single Page Applications desarrolladas con Angular. La Landing Page dispone actualmente de las rutas <code>/</code>, <code>/privacy</code> y <code>/terms</code>; su archivo <code>index.html</code> define un título y una descripción globales, además de metadatos Open Graph y Twitter, pero no cambia estos valores por ruta ni incorpora <code>keywords</code> o <code>author</code>. La Web Application dispone de un título global <code>ResQ</code> y tampoco implementa metadata dinámica por vista. Por tanto, las tablas siguientes constituyen la especificación propuesta para una futura gestión dinámica de metadata y no una afirmación de que todos estos valores ya estén implementados.
+La inspección del código evidencia que ambas experiencias son Single Page Applications desarrolladas con Angular. La Landing Page dispone actualmente de las rutas <code>/</code>, <code>/privacy</code> y <code>/terms</code>; su archivo <code>index.html</code> define un título y una descripción globales, además de metadatos Open Graph y Twitter, pero no cambia estos valores por ruta ni incorpora <code>keywords</code> o <code>author</code>. Su servicio de idioma inicia actualmente en español, salvo que exista una preferencia previa en inglés, lo cual representa una diferencia frente al idioma predeterminado indicado por el Project Statement. La Web Application, en cambio, inicia en inglés cuando no existe una preferencia almacenada, aunque mantiene un título global <code>ResQ</code> y tampoco implementa metadata dinámica por vista. Por tanto, las tablas siguientes constituyen la especificación recomendada en inglés para una futura gestión dinámica de metadata y no una afirmación de que todos estos valores ya estén implementados.
 </p>
 
 #### Landing Page
 
 | Página/Sección | Title | Description | Keywords | Author |
 |---|---|---|---|---|
-| Inicio (<code>/</code>) | ResQ \| Monitoreo y respuesta ante riesgos en edificaciones | Conoce ResQ, la propuesta de SecurityBear para integrar monitoreo de riesgos, detección oportuna y respuesta coordinada ante emergencias en edificaciones. | monitoreo de riesgos en edificaciones, detección de emergencias, gestión de alertas, respuesta ante incidentes, SecurityBear ResQ | SecurityBear |
-| Política de privacidad (<code>/privacy</code>) | Política de privacidad \| ResQ | Consulta cómo el sitio informativo de ResQ gestiona los datos compartidos por visitantes, las preferencias de idioma y los enlaces a servicios externos. | privacidad ResQ, datos de contacto, preferencias del sitio, protección de datos | SecurityBear |
-| Términos y condiciones (<code>/terms</code>) | Términos y condiciones \| ResQ | Revisa las condiciones de uso del sitio académico de ResQ y el alcance informativo de su propuesta de monitoreo, detección y respuesta. | términos de uso ResQ, condiciones del sitio, proyecto académico SecurityBear, uso responsable | SecurityBear |
+| Inicio (<code>/</code>) | ResQ \| Building Risk Monitoring and Emergency Response | Discover ResQ, SecurityBear's proposal for integrated risk monitoring, early detection and coordinated emergency response in buildings. | building risk monitoring, emergency detection, alert management, incident response, SecurityBear ResQ | SecurityBear |
+| Política de privacidad (<code>/privacy</code>) | Privacy Policy \| ResQ | Learn how the ResQ informational website handles visitor-submitted data, language preferences and links to external services. | ResQ privacy, contact data, website preferences, data protection | SecurityBear |
+| Términos y condiciones (<code>/terms</code>) | Terms and Conditions \| ResQ | Review the terms of use for the ResQ academic website and the informational scope of its monitoring, detection and response proposal. | ResQ terms of use, website conditions, SecurityBear academic project, responsible use | SecurityBear |
 
 #### Web Application
 
 | Página/Vista | Title | Description | Keywords | Author |
 |---|---|---|---|---|
-| Inicio de sesión (<code>/login</code>) | Iniciar sesión \| ResQ | Acceso autenticado para responsables autorizados que supervisan edificaciones, dispositivos, alertas e incidentes en ResQ. | acceso ResQ, autenticación, monitoreo de edificios, usuarios autorizados | SecurityBear |
-| Dashboard (<code>/dashboard</code>) | Estado operacional \| ResQ | Resumen del estado de las edificaciones monitoreadas, riesgos activos, alertas recientes y condiciones que requieren atención. | estado operacional, monitoreo de riesgos, alertas activas, edificios monitoreados | SecurityBear |
-| Edificaciones (<code>/buildings</code>) | Edificaciones monitoreadas \| ResQ | Consulta y administra la infraestructura, los pisos y las zonas utilizadas para contextualizar dispositivos y eventos de ResQ. | gestión de edificaciones, zonas monitoreadas, infraestructura conectada, planos de pisos | SecurityBear |
-| Monitoreo (<code>/monitoring</code>) | Monitoreo de zonas \| ResQ | Supervisa las condiciones observadas y las mediciones asociadas con pisos, zonas y dispositivos de una edificación. | monitoreo de zonas, mediciones de sensores, estado de dispositivos, supervisión remota | SecurityBear |
-| Espacios (<code>/spaces</code>) | Espacios y zonas \| ResQ | Localiza espacios operativos y revisa su contexto, dispositivos asociados y condiciones de monitoreo. | espacios monitoreados, zonas de edificios, ubicación de dispositivos, contexto de riesgos | SecurityBear |
-| Dispositivos (<code>/devices</code>) | Dispositivos IoT \| ResQ | Consulta el inventario, la asignación, las capacidades y el estado operativo de los dispositivos IoT registrados en ResQ. | dispositivos IoT, sensores de edificaciones, actuadores, gestión de dispositivos | SecurityBear |
-| Alertas (<code>/alerts</code>) | Centro de alertas \| ResQ | Revisa alertas generadas por condiciones de riesgo, su ubicación, contexto y respuestas asociadas. | gestión de alertas, detección de riesgos, ubicación de emergencias, respuesta automática | SecurityBear |
-| Incidentes (<code>/incidents</code>) | Gestión de incidentes \| ResQ | Da seguimiento al estado, responsables y resolución de los incidentes registrados en las edificaciones monitoreadas. | gestión de incidentes, respuesta ante emergencias, seguimiento de incidentes, resolución | SecurityBear |
-| Configuración (<code>/settings</code>) | Configuración \| ResQ | Administra preferencias y parámetros disponibles para la experiencia autorizada de ResQ. | configuración ResQ, preferencias de usuario, parámetros de monitoreo | SecurityBear |
+| Inicio de sesión (<code>/login</code>) | Sign In \| ResQ | Secure access for authorized personnel who monitor buildings, devices, alerts and incidents through ResQ. | ResQ access, authentication, building monitoring, authorized users | SecurityBear |
+| Dashboard (<code>/dashboard</code>) | Operational Overview \| ResQ | View monitored building status, active risks, recent alerts and conditions that require attention. | operational status, risk monitoring, active alerts, monitored buildings | SecurityBear |
+| Edificaciones (<code>/buildings</code>) | Monitored Buildings \| ResQ | Manage the buildings, floors and zones used to place ResQ devices and contextualize operational events. | building management, monitored zones, connected infrastructure, floor plans | SecurityBear |
+| Monitoreo (<code>/monitoring</code>) | Zone Monitoring \| ResQ | Monitor observed conditions and measurements associated with building floors, zones and devices. | zone monitoring, sensor measurements, device status, remote supervision | SecurityBear |
+| Espacios (<code>/spaces</code>) | Spaces and Zones \| ResQ | Locate operational spaces and review their context, assigned devices and monitoring conditions. | monitored spaces, building zones, device location, risk context | SecurityBear |
+| Dispositivos (<code>/devices</code>) | IoT Devices \| ResQ | Review the inventory, assignments, capabilities and operational status of IoT devices registered in ResQ. | IoT devices, building sensors, actuators, device management | SecurityBear |
+| Alertas (<code>/alerts</code>) | Alert Center \| ResQ | Review alerts generated by risk conditions, including their location, context and associated responses. | alert management, risk detection, emergency location, automated response | SecurityBear |
+| Incidentes (<code>/incidents</code>) | Incident Management \| ResQ | Track the status, assignees and resolution of incidents registered in monitored buildings. | incident management, emergency response, incident tracking, resolution | SecurityBear |
+| Configuración (<code>/settings</code>) | Settings \| ResQ | Manage the preferences and parameters available to authorized ResQ users. | ResQ settings, user preferences, monitoring parameters | SecurityBear |
 
 <p align="justify">
-La implementación futura puede utilizar el Router de Angular para actualizar <code>title</code>, <code>description</code>, <code>keywords</code> y <code>author</code> al activarse cada ruta, conservando un valor predeterminado para rutas no reconocidas. Las vistas parametrizadas —por ejemplo, el detalle de una edificación, dispositivo, alerta o incidente— deben construir títulos a partir de identificadores o nombres ya obtenidos por la aplicación, sin exponer información sensible en metadata pública. Debido a que el alcance actual corresponde a experiencias web y no existe evidencia de una aplicación publicada en una tienda de aplicaciones, ASO no aplica a esta entrega.
+La implementación futura puede utilizar el Router de Angular para actualizar <code>title</code>, <code>description</code>, <code>keywords</code> y <code>author</code> al activarse cada ruta, conservando inglés como idioma predeterminado y español como alternativa seleccionable. Las vistas parametrizadas —por ejemplo, el detalle de una edificación, dispositivo, alerta o incidente— deben construir títulos a partir de identificadores o nombres ya obtenidos por la aplicación, sin exponer información sensible en metadata pública. Debido a que el alcance actual corresponde a experiencias web y no existe evidencia de una aplicación publicada en una tienda de aplicaciones, ASO no aplica a esta entrega.
 </p>
 
 ### 5.2.4. Searching Systems.
@@ -11811,78 +11811,83 @@ La implementación futura puede utilizar el Router de Angular para actualizar <c
 ### 5.6. IoT Device Design
 
 <p align="justify">
-El diseño del dispositivo IoT de ResQ parte del nodo físico sustentado por la evidencia disponible en el repositorio de la Web Application: un ESP32 DevKit V1, un sensor MQ-2 de gas y humo, una pantalla OLED SSD1306, un buzzer activo y LEDs rojo y verde. El criterio principal consiste en capturar una condición ambiental, representarla mediante indicadores locales comprensibles y mantener la capacidad de emitir respuestas cercanas al lugar del evento. La documentación de arquitectura del Project Report ubica la recepción y conservación temporal de mediciones en Edge, su posterior disponibilidad en Cloud y la colaboración entre Monitoring, Risk Detection y Alert & Response Management.
+ResQ plantea una solución IoT escalable para monitorear condiciones de riesgo en edificaciones y coordinar respuestas aun cuando la conectividad con Cloud se encuentre limitada. Para el alcance de TB1 y Sprint 1, el equipo concentra esta propuesta en un MVP físico orientado a validar la integración base entre sensado, procesamiento local, visualización y alertamiento. Este alcance inicial no representa la totalidad de la solución futura: constituye una primera versión funcional y verificable sobre la cual podrán incorporarse progresivamente nuevos nodos, reglas e integraciones respaldadas por la arquitectura del Project Report.
 </p>
 
 <p align="justify">
-La propuesta física y eléctrica se mantiene en el nivel que permite la evidencia del proyecto. No se asignan GPIO, voltajes de conexión, resistencias, fuente de alimentación ni protocolo de comunicación hacia Edge porque esos datos no están definidos en el README, en el firmware ni en los repositorios inspeccionados. Estas decisiones deberán confirmarse mediante el circuito real y la documentación técnica de los componentes antes de construir o energizar el prototipo.
+La Information Architecture del dispositivo prioriza una secuencia breve: captar la condición, procesarla, comunicar localmente el estado y activar una advertencia cuando corresponda. Esta jerarquía reduce la carga cognitiva durante una posible emergencia y mantiene coherencia con las Style Guidelines para IoT Device Physical Interfaces: información compacta en la OLED, código cromático rojo/verde y señal audible complementaria. El color no funciona como único canal, pues la pantalla y el buzzer refuerzan la interpretación del estado.
 </p>
 
-#### Physical Design
+#### MVP Device Prototype
 
 <p align="justify">
-El nodo físico tiene como propósito detectar presencia de gas o humo mediante el MQ-2 y comunicar localmente su estado con recursos visuales y audibles. El ESP32 centraliza la lectura y coordinación del prototipo; la OLED presenta información breve; el LED verde representa una condición operacional normal; y el LED rojo y el buzzer permiten advertir una condición que requiere atención. La disposición conceptual debe separar el sensor de fuentes que alteren artificialmente la lectura, mantener visibles la pantalla y los LEDs, evitar partes conductoras expuestas y permitir acceso seguro para mantenimiento y alimentación.
+El MVP físico actual se centra en la detección de gas o humo mediante un sensor MQ-2, el procesamiento de la lectura en un ESP32 DevKit V1, la visualización local en una pantalla OLED SSD1306 y el alertamiento mediante un buzzer activo y dos LEDs. El montaje se realiza sobre protoboard, utiliza resistencias de 220 Ω para proteger los LEDs, jumpers para interconexión y un cable USB compatible con la placa para alimentación y programación.
 </p>
+
+| Componente | Cantidad para 1 MVP | Especificación del MVP | Función dentro de ResQ |
+|---|---:|---|---|
+| ESP32 DevKit V1 | 1 | 30 pines | Ejecutar la lógica local, recibir la lectura del sensor y controlar la OLED, el buzzer y los LEDs |
+| Sensor MQ-2 | 1 | Módulo sensor de gas/humo | Proporcionar la señal de sensado utilizada para validar la detección básica del MVP |
+| Pantalla OLED | 1 | SSD1306, 0.96”, I2C, 128×64 | Mostrar localmente el estado del nodo y la información breve necesaria para interpretar la condición |
+| Protoboard | 1 | MB-102, aproximadamente 830 puntos | Soportar el montaje provisional sin soldadura y facilitar ajustes durante la validación |
+| Buzzer activo | 1 | 5 V | Emitir una advertencia audible cuando la lógica local determine una condición de alerta |
+| LED rojo | 1 | 5 mm | Representar visualmente una condición de alerta |
+| LED verde | 1 | 5 mm | Representar visualmente una condición normal u operativa |
+| Resistencias | 4 | 220 Ω, 1/4 W; dos para uso y dos de repuesto | Limitar la corriente de los LEDs y disponer de repuestos para el montaje |
+| Jumpers macho-macho | 1 pack | 20 cm, idealmente 20–40 unidades | Conectar los componentes y los rieles de la protoboard |
+| Jumpers macho-hembra | 1 pack | 20 cm, idealmente 20–40 unidades | Conectar módulos cuando su disposición física requiera terminales hembra |
+| Cable USB para ESP32 | 1 | USB-C o Micro-USB según la placa adquirida | Alimentar, programar y depurar el ESP32 durante el desarrollo del MVP |
+
+##### Physical Design
 
 <p align="justify">
-La interfaz física se relaciona con la Information Architecture al priorizar primero el estado general y luego la información complementaria de la medición, evitando trasladar toda la complejidad de la Web Application al dispositivo. Asimismo, sigue las Style Guidelines para IoT Device Physical Interfaces al emplear indicadores compactos, un código de color consistente y mensajes breves. El color no debe ser el único canal de comunicación: la OLED y el buzzer complementan los LEDs para que una condición crítica pueda distinguirse por más de una señal.
+La disposición física propuesta mantiene visibles la OLED y los LEDs, ubica el MQ-2 sin obstrucciones que limiten su exposición al ambiente y separa el área de señalización del microcontrolador. La protoboard organiza el cableado y evita contactos conductores expuestos fuera del área de montaje. La siguiente imagen es una ilustración técnica provisional generada para representar de forma visual el inventario real del MVP; deberá reemplazarse por una fotografía o mockup validado del montaje definitivo cuando el equipo lo complete.
 </p>
-
-| Componente | Función dentro de ResQ | Tipo | Interacción |
-|---|---|---|---|
-| ESP32 DevKit V1 de 30 pines | Coordinar la captura de la medición y el comportamiento local del nodo MVP | Microcontrolador | Recibe la señal del sensor y controla los indicadores disponibles |
-| Sensor MQ-2 | Detectar concentraciones asociadas con gas o humo en el prototipo | Sensor | Proporciona una lectura al microcontrolador; la conversión y calibración final deben validarse |
-| Pantalla OLED SSD1306 de 0,96 pulgadas con interfaz I2C | Mostrar estado y datos breves del nodo | Display | Presenta información local legible sin depender de la Web Application |
-| Buzzer activo de 5 V | Emitir una advertencia audible local | Actuador | Se activa de acuerdo con una regla de respuesta autorizada y validada |
-| LED rojo de 5 mm | Señalizar visualmente una condición de alerta | Indicador/actuador | Complementa la pantalla y el buzzer durante una condición que requiere atención |
-| LED verde de 5 mm | Señalizar visualmente una condición operacional normal | Indicador/actuador | Permite reconocer de manera inmediata el estado normal del nodo |
 
 ![ResQ IoT Device Physical Design](assets/images/chapter-05-solution-ui-ux-design/resq-iot-device-physical-design.png)
 
 <p align="center">
-  <strong>Figura 82. Diseño físico propuesto del dispositivo IoT ResQ.</strong>
+  <strong>Figura 82. Diseño físico propuesto del dispositivo IoT ResQ para el MVP.</strong>
 </p>
 
 <p align="justify">
-La figura deberá mostrar el gabinete o montaje conceptual completo, la ubicación relativa del ESP32, el MQ-2, la OLED, el buzzer y ambos LEDs, además de la orientación de los elementos visibles para el usuario y las medidas de separación o protección consideradas. La imagen deberá provenir del diseño físico final elaborado por el equipo y no de una composición genérica.
+La representación incluye el ESP32, el MQ-2, la OLED, el buzzer, ambos LEDs, las resistencias, los jumpers, la protoboard y la alimentación USB. Su finalidad es comunicar la organización conceptual del MVP; no constituye evidencia de ensamblaje, calibración o prueba eléctrica.
 </p>
 
-#### Circuit Design
+##### Circuit Design
 
 <p align="justify">
-El circuito debe utilizar el ESP32 DevKit V1 como microcontrolador, recibir la señal del MQ-2 y gobernar la OLED, el buzzer y los LEDs rojo y verde. La OLED dispone de interfaz I2C según la evidencia del catálogo de hardware del proyecto; sin embargo, no se encontraron asignaciones de pines para SDA y SCL. Tampoco se encontraron GPIO verificados para el sensor ni para los actuadores. Por esta razón, el diagrama definitivo debe incorporar únicamente conexiones comprobadas durante el montaje y respetar niveles eléctricos, tierra común y protecciones indicadas por las hojas técnicas de cada componente.
-</p>
-
-<p align="justify">
-La arquitectura del Project Report establece que la Embedded Application entrega mediciones a un componente de ingreso en Edge y que Edge puede conservar temporalmente información antes de publicarla hacia Cloud. No obstante, el protocolo físico o de mensajería entre el ESP32 y Edge no está definido en los repositorios inspeccionados; en particular, no existe evidencia suficiente para afirmar que MQTT ya sea el mecanismo implementado. La fuente, el nivel de tensión y la distribución de alimentación tampoco pueden determinarse con certeza.
+El circuito conceptual utiliza el ESP32 como controlador central, recibe la señal del MQ-2, comunica la OLED mediante I2C y controla el buzzer y los LEDs. Las resistencias de 220 Ω se colocan en serie con los LEDs. La alimentación inicial proviene del cable USB compatible con el ESP32. El equipo todavía debe verificar en el montaje real los GPIO, los niveles eléctricos, la distribución de tierra, el consumo del MQ-2 y cualquier etapa adicional de acondicionamiento o protección requerida por las hojas técnicas.
 </p>
 
 <p align="justify">
-[PENDIENTE: verificar los GPIO reales del ESP32 para el MQ-2, la OLED SSD1306, el buzzer y los LEDs rojo y verde]. [PENDIENTE: verificar resistencias, niveles de tensión, tierra común y fuente de alimentación del prototipo]. [PENDIENTE: confirmar el protocolo de comunicación entre la Embedded Application y el Edge Service].
+La siguiente ilustración provisional adopta una presentación similar a una herramienta de diseño de circuitos y evita asignar números GPIO no validados. No reemplaza la captura o exportación real que deberá obtenerse de Cirkit Designer después de comprobar el circuito físico y el firmware.
 </p>
 
 ![ResQ IoT Circuit Design](assets/images/chapter-05-solution-ui-ux-design/resq-iot-circuit-design.png)
 
 <p align="center">
-  <strong>Figura 83. Diseño del circuito del dispositivo IoT ResQ.</strong>
+  <strong>Figura 83. Diseño del circuito del dispositivo IoT ResQ para el MVP.</strong>
 </p>
 
 <p align="justify">
-La figura deberá mostrar el circuito completo validado en Cirkit Designer, con nombres de componentes, alimentación, tierra, GPIO, buses y protecciones claramente identificados. La captura deberá permitir contrastar cada conexión con el montaje físico y con el firmware que posteriormente controle el nodo. La referencia preparada no implica que el circuito ya haya sido elaborado o validado.
+<strong>Validación humana requerida:</strong> antes de reemplazar la Figura 83 por la exportación definitiva de Cirkit Designer, el equipo debe verificar y documentar los GPIO reales del ESP32, los niveles de tensión, la distribución de tierra, la alimentación del MQ-2, las conexiones I2C y las protecciones del circuito.
 </p>
 
-#### Interaction and Data Flow
+##### MVP Interaction Flow
 
 <p align="justify">
-El flujo documentado comienza cuando el MQ-2 produce una lectura y la Embedded Application del ESP32 la captura. El dato se entrega al entorno Edge mediante el punto de ingreso de Monitoring; allí puede registrarse y conservarse temporalmente para sostener el patrón store-and-forward cuando Cloud no se encuentra disponible. El mecanismo de publicación lleva posteriormente la medición hacia Cloud, donde Monitoring mantiene el estado observable y la información histórica requerida por las aplicaciones. Risk Detection evalúa la evidencia y, cuando corresponde, comunica una detección a Alert & Response Management para generar la alerta y coordinar una respuesta permitida.
+En el MVP, el MQ-2 produce una señal que el ESP32 captura y procesa localmente. El resultado se presenta en la OLED y se traduce a una señal visual: verde para condición normal y roja para condición de alerta. Cuando la condición configurada lo requiere, el buzzer proporciona una advertencia audible. Este flujo permite validar que sensado, procesamiento y alertamiento local pueden coordinarse en un único nodo antes de incorporar la integración distribuida prevista por ResQ.
+</p>
+
+#### Projected Evolution of the IoT Device
+
+<p align="justify">
+La evolución proyectada no consiste en presentar el MVP adquirido como la solución final, sino en incorporar este nodo dentro de la arquitectura distribuida ya definida. La Embedded Application capturará las mediciones; Monitoring las recibirá en Edge y podrá conservarlas temporalmente mediante el patrón store-and-forward; Risk Detection evaluará reglas locales; y Alert & Response Management coordinará las respuestas permitidas. Cuando exista conectividad, los servicios Cloud mantendrán el estado observable y la información histórica consumida por la Web Application.
 </p>
 
 <p align="justify">
-En el nivel local, una regla de respuesta validada puede actualizar la OLED, cambiar los indicadores LED o activar el buzzer. Las acciones de mayor impacto deben conservar la autorización humana prevista en el Project Report. La Web Application presenta el estado de las edificaciones, dispositivos, alertas e incidentes, mientras Device Management mantiene la identidad, capacidades y asignación del nodo, y Connectivity Management supervisa su disponibilidad mediante señales de conectividad. Incident Management registra el seguimiento posterior de una situación confirmada. Esta colaboración mantiene separados el dato observado, la interpretación del riesgo, la respuesta y la trazabilidad del incidente.
-</p>
-
-<p align="justify">
-La implementación actual no demuestra todavía el recorrido físico extremo a extremo. La Web Application incluye simulaciones, mocks y adaptadores preparados para contratos HTTP; el backend contiene implementaciones de IAM, User, Building Management, Device Management, Incident Management, Subscriptions y Alert Management, pero no se encontró una implementación equivalente de Monitoring, Risk Detection o Connectivity Management en el repositorio backend. En consecuencia, el flujo anterior expresa la arquitectura documentada y el comportamiento esperado que deberá validarse con firmware, servicios Edge y contratos de integración reales.
+Device Management administrará la identidad, capacidades y asignación de cada nodo; Connectivity Management supervisará su disponibilidad; e Incident Management conservará el seguimiento posterior de situaciones confirmadas. La arquitectura también prescribe Python, Flask, Peewee ORM y SQLite para los Edge Services, pero los repositorios inspeccionados no contienen todavía una implementación Edge verificable con esa pila. Del mismo modo, el protocolo entre el ESP32 y Edge no puede afirmarse como implementado. Estas capacidades pertenecen a la evolución esperada y deberán validarse mediante firmware, servicios Edge y contratos reales antes de considerarlas parte del MVP operativo.
 </p>
 
 # Capítulo VI: Product Implementation, Validation & Deployment
@@ -11900,9 +11905,8 @@ El entorno de desarrollo de ResQ combina herramientas de coordinación, diseño,
 | Project Management | Jira | Organizar y distribuir actividades del equipo; el Project Report contiene evidencia de su uso en la entrega anterior | SaaS | https://www.atlassian.com/software/jira |
 | Requirements Management | Trello | Mantener el Product Backlog con User Stories, Technical Stories, Business Value, Story Points y Acceptance Criteria | SaaS | https://trello.com/ |
 | Requirements Management | Miro | Elaborar el Big Picture EventStorming enlazado desde el Project Report | SaaS | https://miro.com/ |
-| Product UX/UI Design | [PENDIENTE: confirmar la herramienta utilizada para wireframes y mock-ups] | Diseñar y validar las interfaces de la Landing Page y la Web Application | [PENDIENTE: confirmar modalidad] | [PENDIENTE: añadir URL oficial] |
-| IoT Design | [PENDIENTE: confirmar la herramienta utilizada para el diseño físico] | Elaborar la Figura 82 a partir del prototipo real | [PENDIENTE: confirmar modalidad] | [PENDIENTE: añadir URL oficial] |
-| IoT Design | Cirkit Designer (uso planificado; circuito pendiente) | Elaborar y validar la Figura 83 con las conexiones reales del prototipo | SaaS | https://www.cirkitdesigner.com/ |
+| Product UX/UI Design | Figma | Elaborar Wireframes, Mock-ups y Prototypes para la Landing Page y las aplicaciones de ResQ | SaaS | https://www.figma.com/ |
+| IoT Design | Cirkit Designer | Diseñar, verificar y exportar el circuito definitivo del MVP IoT; la Figura 83 actual es provisional y deberá reemplazarse por la exportación validada | SaaS | https://www.cirkitdesigner.com/ |
 | Software Development | Git | Controlar versiones y conservar la trazabilidad de los cambios | Software local | https://git-scm.com/ |
 | Software Development | GitHub | Alojar los cuatro repositorios de la organización, administrar ramas y revisar Pull Requests | SaaS | https://github.com/ |
 | Software Development | Angular 22.2.0 (Web Application) / 22.2.1 (Landing Page) | Construir las dos Single Page Applications con componentes y enrutamiento | Framework web | https://angular.dev/ |
@@ -11913,6 +11917,10 @@ El entorno de desarrollo de ResQ combina herramientas de coordinación, diseño,
 | Software Development | Entity Framework Core 10.0.9 | Implementar persistencia relacional y repositorios del backend | ORM | https://learn.microsoft.com/ef/core/ |
 | Software Development | MySQL / MySql.EntityFrameworkCore 10.0.9 | Persistir los agregados implementados por los Bounded Contexts del backend | Motor de base de datos / proveedor EF Core | https://www.mysql.com/ |
 | Software Development | [PENDIENTE: confirmar IDE utilizado por el equipo] | Editar, ejecutar y depurar los productos de software | Software local | [PENDIENTE: añadir URL oficial] |
+| Edge Services — prescrito, no implementado | Python | Implementar la lógica de los ResQ Edge Services según la pila establecida por el Project Statement y documentada en la arquitectura | Lenguaje | https://www.python.org/ |
+| Edge Services — prescrito, no implementado | Flask | Exponer las interfaces locales de los ResQ Edge Services; no se encontró una implementación verificable en los repositorios actuales | Framework web | https://flask.palletsprojects.com/ |
+| Edge Services — prescrito, no implementado | Peewee ORM | Administrar la persistencia local temporal y las réplicas requeridas por Monitoring, Risk Detection y Alert & Response Management en Edge | ORM | https://docs.peewee-orm.com/ |
+| Edge Services — prescrito, no implementado | SQLite | Conservar mediciones, reglas y eventos pendientes durante interrupciones de conectividad mediante almacenamiento local | Motor de base de datos embebido | https://www.sqlite.org/ |
 | Software Testing | Angular CLI Unit Test y Vitest 5.0.3 (Landing Page) | Ejecutar las pruebas unitarias configuradas para la Landing Page; la Web Application declara <code>ng test</code>, pero no se encontró una suite equivalente suficiente para afirmar su cobertura | Herramienta local | https://vitest.dev/ |
 | Software Testing | Archivo <code>ResQ.API.http</code> | Ejecutar solicitudes manuales contra la RESTful API durante el desarrollo; no sustituye una suite automatizada | Archivo de pruebas HTTP local | https://learn.microsoft.com/aspnet/core/test/http-files |
 | Software Deployment | GitHub Pages / angular-cli-ghpages 3.1.0 | Publicar la Landing Page; existe una rama <code>gh-pages</code> y configuración de despliegue en <code>angular.json</code> | Plataforma SaaS / herramienta de despliegue | https://pages.github.com/ |
@@ -11924,7 +11932,11 @@ El entorno de desarrollo de ResQ combina herramientas de coordinación, diseño,
 Los manifiestos de dependencias y lockfiles fijan el conjunto ejecutable de los proyectos Angular; el <code>.csproj</code> y el Dockerfile describen el runtime y las dependencias del backend; y Git conserva cada cambio junto con su rama y commit. Esta combinación favorece un entorno reproducible porque permite instalar dependencias declaradas, construir cada producto desde su configuración versionada y revisar los cambios mediante Pull Requests. Los datos pendientes deberán completarse con evidencia del equipo antes de considerar cerrada la configuración del entorno.
 </p>
 
-## 6.2. Product Implementation
+<p align="justify">
+Existe una diferencia relevante entre la prescripción general del Project Statement y la implementación actual de la Landing Page. El enunciado propone HTML5, CSS3 y JavaScript, mientras que el repositorio <code>resq-landing-page</code> utiliza Angular y TypeScript. El equipo adoptó este stack para acelerar el desarrollo y mantener consistencia técnica con la Web Application; sin embargo, la diferencia debe conservarse documentada y no implica que el repositorio haya sido migrado o que la prescripción original deje de aplicar como criterio de evaluación.
+</p>
+
+## 6.2. Landing Page, Services & Applications Implementation
 
 ### 6.2.1. Sprint 1
 
@@ -11933,73 +11945,76 @@ Sprint 1, planificado entre el 29 de septiembre y el 8 de octubre de 2026, corre
 </p>
 
 <p align="justify">
-El Sprint se documenta mediante Sprint Planning 1, Aspect Leaders and Collaborators, Sprint Backlog 1, Development Evidence for Sprint Review, Testing Suite Evidence for Sprint Review, Execution Evidence for Sprint Review, Services Documentation Evidence for Sprint Review, Software Deployment Evidence for Sprint Review y Team Collaboration Insights during Sprint. En el alcance de esta contribución se desarrollan únicamente Sprint Planning 1 y Development Evidence for Sprint Review; las demás subsecciones deberán ser completadas por sus responsables con evidencia propia.
+El Sprint se documenta mediante Sprint Planning 1, Aspect Leaders and Collaborators, Sprint Backlog 1, Development Evidence for Sprint Review, Testing Suite Evidence for Sprint Review, Execution Evidence for Sprint Review, Services Documentation Evidence for Sprint Review, Software Deployment Evidence for Sprint Review y Team Collaboration Insights during Sprint. Esta sección registra el avance de los productos que integran el MVP sin presentar como concluidas las integraciones Edge o extremo a extremo que todavía no cuentan con evidencia de implementación.
 </p>
 
 #### 6.2.1.1. Sprint Planning 1
 
 <p align="justify">
-La planificación de Sprint 1 debe relacionar el Product Backlog con un incremento conjunto y verificable. Los repositorios permiten reconstruir el resultado técnico alcanzado, pero no contienen evidencia suficiente de la convocatoria ni del acta de la reunión. Por ello, los datos administrativos y las métricas que dependen de la selección formal del Sprint se mantienen como pendientes.
+La planificación de Sprint 1 relaciona el Product Backlog con un incremento conjunto y verificable orientado al MVP. La reunión se realizó al inicio del Sprint para alinear el valor esperado de la Landing Page, la Web Application, los Web Services y el prototipo IoT. La información administrativa definida por el equipo se registra en la siguiente tabla; únicamente las métricas de Story Points permanecen pendientes porque no existe evidencia suficiente de la selección formal de historias asignadas al Sprint.
 </p>
 
 | Campo | Detalle |
 |---|---|
 | Sprint # | Sprint 1 |
-| Date | [PENDIENTE: fecha real del Sprint Planning] |
-| Time | [PENDIENTE: hora real] |
-| Location | LLamada de Discord |
-| Prepared By | Fabricio Fabian Quispe Barzola |
-| Attendees | Aliaga Urbina, Wilder Gonzalo, Chacaliaza Minaya, Eduardo Fabian, Nanfuñay Liza, Pedro Jesús, Sánchez Guevara, Iván Fernando |
-| Sprint 0 Review Summary / Previous Iteration Review Summary | - |
-| Sprint 0 Retrospective Summary / Previous Iteration Retrospective Summary | - |
-| Sprint 1 Goal | Entregar un primer incremento demostrable de ResQ que comunique su propuesta de valor en la Landing Page y habilite en la Web Application la supervisión de edificaciones, dispositivos, alertas e incidentes, sustentado por servicios backend iniciales para identidad, usuarios, edificios, dispositivos, alertas e incidentes. |
-| Sprint 1 Velocity | [PENDIENTE: confirmar Sprint Velocity en Story Points] |
-| Sum of Story Points | [PENDIENTE: confirmar suma real de Story Points del Sprint] |
+| Sprint Start Date | 2026-09-29 |
+| Sprint End Date | 2026-10-08 |
+| Date | 2026-09-29 |
+| Time | 08:00 PM |
+| Location | Virtual meeting via Discord |
+| Prepared By | Quispe Barzola, Fabricio Fabian |
+| Attendees | Quispe Barzola, Fabricio Fabian<br>Guerrero Vasquez, Jhon Danny<br>Aliaga Urbina, Wilder Gonzalo<br>Chacaliaza Minaya, Eduardo Fabian<br>Nanfuñay Liza, Pedro Jesús<br>Sánchez Guevara, Iván Fernando |
+| Sprint 0 Review Summary / Previous Iteration Review Summary | No formal previous sprint review applies because Sprint 1 corresponds to the first implementation sprint of the project. |
+| Sprint 0 Retrospective Summary / Previous Iteration Retrospective Summary | No formal previous sprint retrospective applies because Sprint 1 corresponds to the first implementation sprint of the project. |
+| Sprint 1 Goal | Entregar la primera versión funcional del MVP de ResQ, de modo que los segmentos objetivo puedan comprender la propuesta mediante la Landing Page version 1 y que el equipo pueda demostrar un flujo inicial de monitoreo y respuesta mediante la Frontend Web Application version 1, los Backend / Web Services base y el prototipo IoT de gas/humo con procesamiento y alertamiento local. |
+| Sprint 1 Velocity | 34 Story Points |
+| Sum of Story Points | 34 Story Points |
 
 <p align="justify">
-El Sprint Goal reúne valor para visitantes y usuarios operativos sin reducir el Sprint a una lista de tareas individuales. La Landing Page comunica el problema y la propuesta de ResQ; la Web Application convierte esa propuesta en flujos de supervisión y gestión; y el backend establece servicios para los recursos que ya cuentan con implementación comprobable. Aunque el Product Backlog contiene Story Points, no existe en el README ni en los repositorios una asignación formal de historias a Sprint 1 que permita sumar puntos o calcular Velocity sin especular.
+El Sprint Goal expresa un único resultado de valor: disponer de un MVP demostrable que conecte comunicación, operación digital, servicios base y validación física local. La Landing Page comunica el problema y la propuesta de ResQ; la Web Application representa los flujos iniciales de supervisión y gestión; el backend establece servicios para los recursos que ya cuentan con implementación comprobable; y el nodo IoT valida el recorrido local desde la lectura del MQ-2 hasta la OLED, los LEDs y el buzzer. Aunque el Product Backlog contiene Story Points, no existe en el README ni en los repositorios una asignación formal de historias a Sprint 1 que permita sumar puntos o calcular Velocity sin especular.
 </p>
 
 #### 6.2.1.4. Development Evidence for Sprint Review
 
 <p align="justify">
-La evidencia de desarrollo se obtuvo del historial Git de los tres repositorios de implementación. Se priorizaron commits no merge que describen incrementos funcionales o técnicos relevantes. La columna Branch utiliza ramas remotas que contienen cada commit; el subject y el body se reproducen de forma literal, y se usa “—” cuando el commit no tiene body. Debido a que no se encontró evidencia del rango temporal formal de Sprint 1, la selección representa el primer ciclo de implementación visible y deberá contrastarse con la planificación del equipo: [PENDIENTE: confirmar las fechas de inicio y cierre de Sprint 1].
+La evidencia de desarrollo se obtuvo del historial Git de <code>resq-landing-page</code>, <code>resq-frontend</code> y <code>resq-backend</code>. El criterio de selección considera commits no merge realizados entre el inicio de Sprint 1, 2026-09-29, y su cierre definido, 2026-10-08, priorizando incrementos que evidencian la primera versión del MVP. La evidencia disponible fue revisada el 2026-10-06; por ello, la tabla no atribuye commits futuros a los dos días restantes del Sprint. Se excluyeron commits anteriores al 2026-09-29, incluso cuando proporcionaron bases técnicas relevantes. La columna Branch utiliza ramas remotas verificadas que contienen cada commit; el subject y el body se reproducen de forma literal, y se usa “—” cuando el commit no tiene body.
 </p>
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
 |---|---|---|---|---|---|
 | resq-landing-page | main | <code>4499f2eeed8099b5c7894ae23a420a96c3571952</code> | feat: ResQ landing page | — | 2026-10-04 02:05:56 -0500 |
+| resq-landing-page | main | <code>afd01e2002fcd2949d17cf4f9b82844cf55b8426</code> | feat: rediseñar landing de ResQ, unificar estilos y optimizar el código | — | 2026-10-04 14:04:50 -0500 |
 | resq-landing-page | main | <code>7977f58519e8b0bff42835bd081e017c006d8fcb</code> | fix: corregir assets y despliegue en GitHub Pages | — | 2026-10-04 14:20:25 -0500 |
 | resq-frontend | main | <code>dc54e7ef1dba5792aa220a6f4b16039e07862223</code> | feat: build complete ResQ monitoring frontend | — | 2026-09-29 19:42:45 -0500 |
 | resq-frontend | feature/devices | <code>0d1b1b8a2a321e5ae25adfe7fce9e61f53610fee</code> | feat(devices): add hardware-aware device management views | — | 2026-09-30 03:09:19 -0500 |
+| resq-frontend | feature/devices | <code>dd9cd578aa541b90b45a6266aad081a5fe547d75</code> | chore(devices): Add WebP assets for device components | Add seven new device images under `public/assets/devices` for the buzzer, ESP32 devkit, LEDs, MQ2 sensor, OLED display, and ResQ MVP node to support UI/device visuals. | 2026-09-30 03:19:03 -0500 |
 | resq-frontend | feature/alerts | <code>e2754769684112120e76425c308231c9b1e6bc18</code> | feat(alerts): add contextual alert center and activity details | — | 2026-09-30 05:02:43 -0500 |
 | resq-frontend | refactor/frontend-backend-ready | <code>87a77548cc40cf14bf497179f655b08e3da5d487</code> | feat(frontend-backend): Add data-access facades and auth session flow | Introduces a full data-access layer across alerts, IAM/auth, users, buildings, connectivity, incidents, monitoring, and risk detection with gateway interfaces, DTOs, mappers, facades, providers, and mock/http adapters. It also wires these providers into app config, refactors login to use the new AuthSessionFacade + user profile loading, updates app shell/topbar/sidebar to consume session data (including sign-out), and adds the new sidebar brand logo asset. | 2026-09-30 10:56:13 -0500 |
 | resq-frontend | feature/buildings | <code>04935d3c684c312568e296060e17004cd13c8a4e</code> | feat: dd localization and revamp operations UI | — | 2026-09-30 17:34:42 -0500 |
 | resq-frontend | main | <code>2ec1133a588fabcd890101300652021c831f0fe5</code> | feat: Add risk lifecycle and auth projections | — | 2026-10-06 00:13:43 -0500 |
 | resq-frontend | main | <code>c03264025b814256cb9a985f9b809594aac7cbeb</code> | fix: Refine alert/incident UX and auth roles | Improves alert and incident clarity across the UI: alert details now show clear-reason explanations, system response wording was updated, incident details now separate original critical detection from current condition, and response action cards include richer authorization/execution context. Topbar notifications were redesigned to show event labels, concise titles, and resolved locations, with matching style updates. Authorization logic now prioritizes identity-based role mapping, and mock IAM data adds a dedicated viewer identity to keep admin/viewer behavior testable with the current mock user profile. | 2026-10-06 00:56:18 -0500 |
-| resq-backend | bc-IAM-User | <code>136b0bbef472e56dcfe38c59285ec00a78d78e39</code> | feat: implement IAM and User Profiles bounded contexts with REST APIs and persistence models | — | 2026-09-26 15:40:00 -0500 |
-| resq-backend | feature/device-management | <code>52db680941f69999cdab793ee876c0e51e799833</code> | feat(device-management): add Device Management bounded context. | — | 2026-09-28 20:21:14 -0500 |
 | resq-backend | feature/buildings-management | <code>9640bd7abe9cb9f2a07c1756e8f71db19015b137</code> | feat: implement building and device management bounded contexts | — | 2026-09-30 16:50:08 -0500 |
 | resq-backend | feature/incident-management | <code>c89238230e56784ff5c44f88f40eb32884e6a467</code> | feat(incident-management): add Incident Management bounded context. | — | 2026-09-30 17:49:05 -0500 |
 | resq-backend | main | <code>34e57e037600ff83ba414cda742a6d6ed30b01af</code> | feat(main): add docker configuration for deploy. | — | 2026-09-30 20:04:50 -0500 |
 | resq-backend | feature/alerts | <code>a8e18a4129342567f58f5e750507192ea8d84024</code> | feat: implement alert management bounded context with commands, queries, and REST controllers | — | 2026-10-03 17:05:39 -0500 |
+| resq-backend | feature/alerts | <code>292e1afa294f95d490e37ee5536974cd0415af6d</code> | feat: implement core backend modules including IAM, Alert Management, Incident Management, and Building Management | — | 2026-10-05 20:13:29 -0500 |
 
 ##### Landing Page
 
 <p align="justify">
-Los commits seleccionados evidencian la implementación inicial de la Landing Page y la corrección posterior de assets y configuración para GitHub Pages. El código disponible presenta una experiencia Angular con secciones de propuesta de valor, beneficios, producto, segmentos, equipo, aliados y llamado a la acción, además de vistas de privacidad y términos. La existencia de la rama <code>gh-pages</code> demuestra la generación del artefacto de publicación, sin que esta sección afirme métricas de disponibilidad o validación con usuarios.
+Los commits seleccionados evidencian la implementación, el rediseño y la preparación de publicación de la Landing Page version 1 durante el rango del Sprint. El código disponible presenta una experiencia Angular con secciones de propuesta de valor, beneficios, producto, segmentos, equipo, aliados y llamado a la acción, además de vistas de privacidad y términos. La existencia de la rama <code>gh-pages</code> demuestra la generación del artefacto de publicación del componente informativo del MVP, sin que esta sección afirme métricas de disponibilidad o validación con usuarios.
 </p>
 
 ##### Frontend Web Application
 
 <p align="justify">
-El historial evidencia la construcción de la interfaz de monitoreo, la incorporación de vistas de gestión de dispositivos alineadas con el hardware, el centro contextual de alertas y la evolución de edificios y planos. También registra una capa de acceso a datos con gateways, DTOs, mappers, facades, adaptadores mock/HTTP y flujo de sesión. Los commits más recientes refinan las proyecciones del ciclo de riesgo, la claridad de alertas e incidentes y el tratamiento de roles. La auditoría interna del repositorio advierte que varias operaciones continúan simuladas o dependen de contratos backend pendientes; por ello, estos avances no se presentan como integración extremo a extremo finalizada.
+El historial evidencia la construcción de la Frontend Web Application version 1, la incorporación de vistas de gestión de dispositivos alineadas con el hardware del MVP, el centro contextual de alertas y la evolución de edificios y planos. También registra una capa de acceso a datos con gateways, DTOs, mappers, facades, adaptadores mock/HTTP y flujo de sesión. Los commits más recientes refinan las proyecciones del ciclo de riesgo, la claridad de alertas e incidentes y el tratamiento de roles. La auditoría interna del repositorio advierte que varias operaciones continúan simuladas o dependen de contratos backend pendientes; por ello, estos avances demuestran el incremento funcional del MVP, pero no una integración extremo a extremo finalizada.
 </p>
 
 ##### Backend / Web Services
 
 <p align="justify">
-Los commits seleccionados evidencian implementaciones para IAM y perfiles de usuario, Device Management, Building Management, Incident Management y Alert Management, con controladores REST, modelos de persistencia y configuración OpenAPI. También existe una configuración Docker multi-stage para compilar y ejecutar la API sobre .NET 10. Aunque el Project Report diseña otros Bounded Contexts, no se encontró en este repositorio una implementación equivalente de Monitoring, Risk Detection o Connectivity Management; estas capacidades no se consideran concluidas en Sprint 1.
+Los commits comprendidos dentro del Sprint evidencian implementaciones para Building Management, Device Management, Incident Management y Alert Management, además de un commit integrador de módulos base y una configuración Docker multi-stage para compilar y ejecutar la API sobre .NET 10. Estas capacidades proporcionan servicios iniciales para el MVP digital. Aunque el Project Report diseña Monitoring, Risk Detection, Connectivity Management y servicios Edge, no se encontró en <code>resq-backend</code> una implementación equivalente de esos componentes; por ello, no se consideran concluidos en Sprint 1.
 </p>
 
 # Conclusiones
