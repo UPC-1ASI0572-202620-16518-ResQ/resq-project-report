@@ -11768,6 +11768,50 @@ Los sistemas de organización establecen la agrupación de contenidos; los siste
 </p>
 
 ### 5.2.1. Organization Systems.
+
+Para ResQ, los sistemas de organización de la información se plantean de acuerdo con las tareas que realizan los usuarios dentro de la plataforma, especialmente el monitoreo de edificios, dispositivos IoT, riesgos, incidentes y alertas. Buscamos que la información crítica pueda identificarse rápidamente durante una situación de emergencia y que las funciones administrativas permanezcan agrupadas de forma clara.
+
+**Organización jerárquica:** <br>
+La mayor parte del contenido de ResQ seguirá una organización jerárquica, partiendo de información general hacia información cada vez más específica.
+
+En el caso del responsable o administrador de seguridad, después de autenticarse accederá a un panel principal desde el cual podrá consultar los distintos módulos del sistema. Desde ahí podrá ingresar a la gestión de edificios, zonas, dispositivos, monitoreo, detección de riesgos, incidentes y alertas. Por ejemplo, dentro de la gestión de infraestructura se podrá navegar desde un edificio hacia sus zonas y, posteriormente, consultar los dispositivos asociados a cada ubicación.
+
+De esta forma, el usuario podrá comprender fácilmente dónde se encuentra dentro del sistema y acceder primero a una vista general antes de revisar información detallada.
+
+**Organización secuencial:**<br>
+La organización secuencial se utilizará en aquellos procesos que requieran completar una serie de pasos en un orden determinado.
+- **Registro y configuración de un dispositivo IoT:**
+  1. Registrar los datos generales del dispositivo.
+  2. Definir sus características y capacidades.
+  3. Asignarlo a un edificio y, de ser necesario, a una zona.
+  4. Revisar la configuración registrada.
+  5. Habilitar administrativamente el dispositivo.
+
+- **Gestión de una situación de emergencia:**
+  1. Recepción de mediciones desde los dispositivos.
+  2. Evaluación del riesgo detectado.
+  3. Generación de una alerta o incidente.
+  4. Ejecución de acciones de respuesta.
+  5. Seguimiento del incidente.
+  6. Consulta del historial del evento.
+
+Este tipo de organización permitirá guiar al usuario durante procesos que no deberían ejecutarse de manera desordenada.
+
+**Organización matricial:**<br>
+La organización matricial se aplicará principalmente en vistas de monitoreo y análisis, donde sea necesario comparar diferentes variables al mismo tiempo. Por ejemplo, en el dashboard de la solución se podrá relacionar la ubicación con el estado de los dispositivos o el nivel de riesgo.
+
+Este tipo de presentación permitirá al responsable de seguridad comparar rápidamente diferentes zonas y detectar dónde se requiere mayor atención.
+
+<br>
+
+**Esquemas de categorización del contenido:**
+ResQ utilizará distintos esquemas de categorización según el tipo de información presentada:
+
+- **Por tópicos:** Toda la información estará agrupada según áreas funcionales como edificios, dispositivos, monitoreo, riesgos, incidentes, alertas y perfil.
+- **Cronológico:** Se utilizará principalmente para mediciones, alertas, incidentes y registros históricos, permitiendo consultar primero los eventos más recientes y revisar posteriormente sucesos anteriores.
+- **Alfabético:** Se podrá aplicar en listados extensos de edificios, zonas o dispositivos para facilitar su localización mediante el nombre o código correspondiente.
+- **Según audiencia:** La información mostrada dependerá del tipo de usuario. Los responsables o administradores de seguridad tendrán acceso a funciones de configuración, monitoreo y gestión, mientras que los ocupantes recibirán principalmente alertas, indicaciones y recomendaciones relacionadas con una emergencia.
+
 ### 5.2.2. Labeling Systems.
 
 El sistema de etiquetado de ResQ utilizará palabras breves y familiares en español para representar conjuntos de información sin confundir a visitantes y usuarios. Las etiquetas conservarán el mismo significado en web y móvil; los iconos y colores complementarán el texto.
