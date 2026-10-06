@@ -12218,7 +12218,7 @@ Como parte de la validación del despliegue, se verificó el acceso a la aplicac
 
 **Enlace de la aplicación web:**  
 
-
+https://resq-frontend.ffaaliceht2003.workers.dev/login
 
 **Backend**
 
