@@ -12055,6 +12055,146 @@ Las versiones siguen el formato `MAJOR.MINOR.PATCH`:
 Los mensajes de commit siguen la especificación *Conventional Commits* (por ejemplo, `feat: add alerts endpoint`, `fix: correct zone validation`, `docs: update sprint evidence`), lo que mantiene un historial legible y vinculado al autor de cada cambio.
 
 
+#### 6.1.4. Software Deployment Configuration.
+
+La estrategia de despliegue de ResQ utiliza servicios cloud para publicar de forma independiente cada uno de los productos que componen la solución. El código fuente se mantiene en repositorios de GitHub, mientras que cada artefacto utiliza una plataforma de despliegue acorde con su función.
+
+La Landing Page se publica mediante GitHub Pages, el Frontend Web se despliega mediante Cloudflare Pages y los Web Services se ejecutan en Render utilizando Docker. Para la persistencia de información, el backend se conecta a una instancia MySQL administrada por Aiven.
+
+Esta separación permite que cada componente pueda actualizarse de manera independiente sin afectar directamente al resto de la solución.
+
+<br>
+
+**Configuración de entornos:**
+
+| Entorno | Plataforma / Tecnología | Propósito |
+|---|---|---|
+| **Desarrollo local** | Rider / .NET / Docker Desktop / MySQL | Desarrollo y validación de los componentes de la solución |
+| **Producción - Landing Page** | GitHub Pages | Publicación de la página informativa de ResQ |
+| **Producción - Web Application** | Cloudflare Pages | Publicación de la aplicación web |
+| **Producción - Web Services** | Render + Docker | Ejecución de los servicios REST de ResQ |
+| **Producción - Base de datos** | Aiven MySQL | Persistencia de la información utilizada por el backend |
+
+<br>
+
+**Despliegue de Landing Page:**
+
+La Landing Page de ResQ se encuentra almacenada en un repositorio de GitHub y se publica mediante GitHub Pages.
+
+**Configuración:**
+
+- Repositorio: resq-landing-page
+- Plataforma: GitHub Pages
+- Código fuente: GitHub
+- Entorno: Producción
+
+<br>
+
+**Proceso de despliegue:**
+
+1. Se realizan los cambios en el código de la Landing Page.
+2. Los cambios se registran en el repositorio de GitHub.
+3. La versión correspondiente se publica mediante GitHub Pages.
+4. GitHub Pages genera y sirve la página web públicamente.
+
+La Landing Page funciona como el punto de entrada informativo de ResQ y se mantiene independiente del backend y del Frontend Web.
+
+<br>
+
+**Despliegue de Web Application:**
+
+La Web Application de ResQ se encuentra almacenado en GitHub y se publica mediante Cloudflare Pages.
+
+**Configuración:**
+- Repositorio: resq-frontend
+- Plataforma: Cloudflare Pages
+- Entorno: Production
+- Código fuente: GitHub
+
+Cloudflare mantiene las versiones desplegadas del Frontend y permite administrar la versión que recibe el tráfico de producción.
+
+<br>
+
+**Proceso de despliegue:**
+
+1. Se realizan los cambios en el Frontend.
+2. El código actualizado se mantiene en el repositorio de GitHub.
+3. Se genera una nueva versión del Frontend mediante Cloudflare.
+4. Cloudflare construye y publica los archivos correspondientes.
+5. La nueva versión queda disponible en el entorno de producción.
+
+El Frontend Web consume los servicios proporcionados por el backend mediante su API REST.
+
+<br>
+
+**Despliegue del Web Services:**
+
+Los Web Services de ResQ están implementados utilizando ASP.NET Core y se ejecutan en un contenedor Docker desplegado en Render.
+
+**Configuración:**
+- Repositorio: resq-backend
+- Framework: ASP.NET Core
+- Plataforma: Render
+- Runtime: Docker
+- Entorno: Production
+- Puerto interno: 10000
+
+El backend utiliza un Dockerfile multi-stage, permitiendo separar la etapa de compilación de la imagen utilizada para ejecutar la aplicación.
+
+<br>
+
+**Construcción de la imagen:**
+
+Durante el proceso de construcción:
+1. Se utiliza la imagen `mcr.microsoft.com/dotnet/sdk:10.0` para compilar la aplicación.
+2. Se restaura el proyecto mediante `dotnet restore`.
+3. Se publica la aplicación mediante `dotnet publish`.
+4. Se genera una imagen final basada en `mcr.microsoft.com/dotnet/aspnet:10.0`.
+5. Se copian únicamente los archivos publicados a la imagen final.
+6. El contenedor ejecuta `ResQ.API.dll`.
+
+<br>
+
+**Configuración de la base de datos:**
+
+La persistencia del backend se encuentra separada del contenedor de la aplicación. ResQ utiliza MySQL administrado mediante Aiven.
+
+**Configuración:**
+- Motor: MySQL
+- Proveedor: Aiven
+- Base de datos: resq_db
+- Conexión: mediante una cadena de conexión segura
+- Comunicación: conexión SSL requerida
+
+Esta separación permite que el reinicio o actualización del contenedor del backend no implique la pérdida de la información almacenada.
+
+El backend obtiene los datos de conexión mediante variables de entorno, evitando almacenar las credenciales directamente en el código fuente.
+
+<br>
+
+**Variables de entorno:**
+
+Las configuraciones sensibles y específicas del entorno de producción se mantienen fuera del código fuente.
+
+En Render se han configurado las siguientes variables:
+
+| Variable | Propósito |
+|---|---|
+| `ConnectionStrings__DefaultConnection` | Cadena de conexión con MySQL en Aiven |
+| `DevelopmentSettings__OrganizationId` | Identificador de organización utilizado por la configuración actual del backend |
+| `TokenSettings__Secret` | Clave utilizada para la generación y validación de tokens JWT |
+
+<br>
+
+**Deployment Diagram — C4 Model:**
+
+Para complementar esta configuración, el Deployment Diagram representa dónde se ejecuta cada elemento de la solución y cómo se comunican entre sí.
+
+![DeploymentDiagramC4](./assets/images/chapter-06-product-implementation-validation-deployment/DeploymentDiagramC4.png)
+
+El repositorio de GitHub funciona como origen del código fuente de los diferentes productos. La Landing Page se publica en GitHub Pages, mientras que el Frontend Web se despliega en Cloudflare Pages.
+
+El Frontend se comunica mediante HTTPS con el Backend de ResQ, que se ejecuta como un contenedor Docker administrado por Render. Finalmente, el backend establece una conexión segura mediante SSL con la instancia MySQL de Aiven, donde se almacena la información persistente de la plataforma.
 
 
 ## 6.2. Landing Page, Services & Applications Implementation
