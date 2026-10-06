@@ -11758,13 +11758,17 @@ De esta forma, el usuario podrá comprender fácilmente dónde se encuentra dent
 **Organización secuencial:**<br>
 La organización secuencial se utilizará en aquellos procesos que requieran completar una serie de pasos en un orden determinado.
 - **Registro y configuración de un dispositivo IoT:**
+
   1. Registrar los datos generales del dispositivo.
   2. Definir sus características y capacidades.
   3. Asignarlo a un edificio y, de ser necesario, a una zona.
   4. Revisar la configuración registrada.
   5. Habilitar administrativamente el dispositivo.
 
+<br>
+
 - **Gestión de una situación de emergencia:**
+
   1. Recepción de mediciones desde los dispositivos.
   2. Evaluación del riesgo detectado.
   3. Generación de una alerta o incidente.
@@ -11787,7 +11791,7 @@ ResQ utilizará distintos esquemas de categorización según el tipo de informac
 - **Por tópicos:** Toda la información estará agrupada según áreas funcionales como edificios, dispositivos, monitoreo, riesgos, incidentes, alertas y perfil.
 - **Cronológico:** Se utilizará principalmente para mediciones, alertas, incidentes y registros históricos, permitiendo consultar primero los eventos más recientes y revisar posteriormente sucesos anteriores.
 - **Alfabético:** Se podrá aplicar en listados extensos de edificios, zonas o dispositivos para facilitar su localización mediante el nombre o código correspondiente.
-- **Según audiencia:** La información mostrada dependerá del tipo de usuario. Los responsables o administradores de seguridad tendrán acceso a funciones de configuración, monitoreo y gestión, mientras que los ocupantes recibirán principalmente alertas, indicaciones y recomendaciones relacionadas con una emergencia.
+- **Según audiencia:** La información se organizará de acuerdo con los segmentos objetivo de ResQ. Los propietarios y administradores de edificaciones tendrán acceso principalmente a información relacionada con la gestión de edificios, zonas, dispositivos, monitoreo, riesgos, incidentes y alertas. Por otro lado, las empresas integradoras de automatización y gestión de edificios inteligentes accederán principalmente a información relacionada con la configuración, integración y estado de los dispositivos instalados en las edificaciones, así como con los datos necesarios para su gestión dentro de la plataforma.
 
 ### 5.2.2. Labeling Systems.
 ### 5.2.3. SEO Tags and Meta Tags
