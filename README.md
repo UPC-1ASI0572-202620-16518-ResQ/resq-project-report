@@ -11967,8 +11967,8 @@ La planificación de Sprint 1 relaciona el Product Backlog con un incremento con
 | Sprint 0 Review Summary / Previous Iteration Review Summary | No formal previous sprint review applies because Sprint 1 corresponds to the first implementation sprint of the project. |
 | Sprint 0 Retrospective Summary / Previous Iteration Retrospective Summary | No formal previous sprint retrospective applies because Sprint 1 corresponds to the first implementation sprint of the project. |
 | Sprint 1 Goal | Entregar la primera versión funcional del MVP de ResQ, de modo que los segmentos objetivo puedan comprender la propuesta mediante la Landing Page version 1 y que el equipo pueda demostrar un flujo inicial de monitoreo y respuesta mediante la Frontend Web Application version 1, los Backend / Web Services base y el prototipo IoT de gas/humo con procesamiento y alertamiento local. |
-| Sprint 1 Velocity | [PENDIENTE: confirmar Sprint 1 Velocity en Story Points] |
-| Sum of Story Points | [PENDIENTE: confirmar suma real de Story Points del Sprint 1] |
+| Sprint 1 Velocity | 34 Story Points |
+| Sum of Story Points | 34 Story Points |
 
 <p align="justify">
 El Sprint Goal expresa un único resultado de valor: disponer de un MVP demostrable que conecte comunicación, operación digital, servicios base y validación física local. La Landing Page comunica el problema y la propuesta de ResQ; la Web Application representa los flujos iniciales de supervisión y gestión; el backend establece servicios para los recursos que ya cuentan con implementación comprobable; y el nodo IoT valida el recorrido local desde la lectura del MQ-2 hasta la OLED, los LEDs y el buzzer. Aunque el Product Backlog contiene Story Points, no existe en el README ni en los repositorios una asignación formal de historias a Sprint 1 que permita sumar puntos o calcular Velocity sin especular.
