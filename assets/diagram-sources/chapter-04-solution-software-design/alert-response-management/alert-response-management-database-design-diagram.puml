@@ -1,0 +1,66 @@
+@startuml
+!pragma layout smetana
+title Alert & Response Management\nDatabase Design Diagram (MySQL)
+
+skinparam shadowing false
+
+entity "alerts" as alerts {
+  * id : CHAR(36) <<PK>>
+  --
+  * organization_id : CHAR(36)
+  * generated_at : DATETIME(6)
+  * risk_detection_id : VARCHAR(64)
+  * risk_type_code : VARCHAR(50)
+  * severity_code : VARCHAR(20)
+  building_id : CHAR(36) <<NULL>>
+  zone_id : CHAR(36) <<NULL>>
+  * detected_at : DATETIME(6)
+}
+
+entity "notification_deliveries" as deliveries {
+  * id : CHAR(36) <<PK>>
+  --
+  * alert_id : CHAR(36) <<FK>>
+  * recipient_user_id : VARCHAR(64)
+  * channel : VARCHAR(30)
+  * destination : VARCHAR(200)
+  * status : VARCHAR(20)
+  * requested_at : DATETIME(6)
+  completed_at : DATETIME(6) <<NULL>>
+  failure_reason : VARCHAR(500) <<NULL>>
+}
+
+entity "response_executions" as executions {
+  * id : CHAR(36) <<PK>>
+  --
+  * organization_id : CHAR(36)
+  * alert_id : CHAR(36) <<INDEX>>
+  * risk_detection_id : VARCHAR(64)
+  * status : VARCHAR(30)
+  * requested_at : DATETIME(6)
+  * action_id : CHAR(36)
+  * action_code : VARCHAR(80)
+  * target_device_id : CHAR(36)
+  * target_capability_code : VARCHAR(80)
+  * authorization_mode : VARCHAR(20)
+  * critical : BOOLEAN
+  authorization_id : CHAR(36) <<NULL>>
+  authorization_decision : VARCHAR(16) <<NULL>>
+  decided_by_user_id : VARCHAR(64) <<NULL>>
+  decided_at : DATETIME(6) <<NULL>>
+}
+
+alerts ||--o{ deliveries : "has (ON DELETE CASCADE)"
+alerts ||..o{ executions : "alert_id (index, no FK)"
+
+note bottom of alerts
+  organization_id, risk_detection_id, building_id
+  and zone_id are external references (no FK).
+end note
+
+note bottom of executions
+  INDEX (organization_id, alert_id)
+  target_device_id and decided_by_user_id
+  are external references (no FK).
+end note
+@enduml
