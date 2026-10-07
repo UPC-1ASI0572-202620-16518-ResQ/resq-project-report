@@ -8573,3 +8573,98 @@ Ejemplo:
 **URL:** [URL PENDIENTE]
 
 **Duración:** [HH:MM:SS PENDIENTE]
+
+
+//Eduardo
+
+## 6.1.3. Source Code Style Guide & Conventions
+
+## 6.2.1.3. Sprint Backlog 1
+
+## 6.2.1.6. Execution Evidence for Sprint Review
+
+## 6.2.1.9. Team Collaboration Insights during Sprint
+
+<div align="justify">
+
+Durante el Sprint 1, el equipo desarrolló las actividades de implementación de manera colaborativa mediante GitHub, utilizando repositorios independientes para gestionar el desarrollo de los productos correspondientes al Sprint. La colaboración se realizó sobre el Landing Page, la aplicación Frontend y los Web Services, de acuerdo con las actividades de implementación desarrolladas por el equipo.
+
+En el repositorio correspondiente al Landing Page, la información registrada en GitHub permite observar la participación de los integrantes del equipo mediante el analítico de contribuciones y el historial de commits realizados durante el desarrollo.
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/01-landing-page-contributors.png" alt="Contributors del Landing Page" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Analítica de contribuciones de los integrantes en el repositorio del Landing Page durante el Sprint 1.</em>
+</p>
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/02-landing-page-commits.png" alt="Commits del Landing Page" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Historial de commits realizados en el repositorio del Landing Page durante el Sprint 1.</em>
+</p>
+
+En el repositorio de la aplicación Frontend también se registran las contribuciones realizadas por los integrantes y la evolución de los cambios incorporados durante el Sprint.
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/03-frontend-contributors.png" alt="Contributors del Frontend" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Analítica de contribuciones de los integrantes en el repositorio de la aplicación Frontend durante el Sprint 1.</em>
+</p>
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/04-frontend-commits.png" alt="Commits del Frontend" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Historial de commits realizados en el repositorio de la aplicación Frontend durante el Sprint 1.</em>
+</p>
+
+De manera similar, el repositorio correspondiente a los Web Services registra la actividad de los integrantes mediante sus contribuciones y commits, permitiendo realizar seguimiento al desarrollo realizado durante el Sprint.
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/05-backend-contributors.png" alt="Contributors del Backend" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Analítica de contribuciones de los integrantes en el repositorio de Web Services durante el Sprint 1.</em>
+</p>
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/06-backend-commits.png" alt="Commits del Backend" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Historial de commits realizados en el repositorio de Web Services durante el Sprint 1.</em>
+</p>
+
+Adicionalmente, el repositorio utilizado para la elaboración del informe mantiene su propio historial de colaboración, permitiendo observar la participación de los integrantes en la construcción y actualización de la documentación del proyecto.
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/07-report-contributors.png" alt="Contributors del Report" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Analítica de contribuciones de los integrantes en el repositorio del Report.</em>
+</p>
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/08-report-commits.png" alt="Commits del Report" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Historial de commits realizados en el repositorio del Report.</em>
+</p>
+
+A partir de los analíticos de colaboración y del historial de commits, se evidencia la participación de los integrantes del equipo en las actividades desarrolladas durante el Sprint 1. Los registros de GitHub permiten realizar seguimiento a las contribuciones realizadas sobre los diferentes repositorios y observar la evolución incremental de los cambios incorporados durante el desarrollo.
+
+El uso de repositorios independientes para el Landing Page, la aplicación Frontend y los Web Services permitió organizar el trabajo de implementación de cada producto y mantener trazabilidad sobre las modificaciones realizadas. Asimismo, el repositorio del Report permitió gestionar de manera independiente la elaboración y actualización de la documentación del proyecto.
+
+En conjunto, estas evidencias permiten sustentar el trabajo colaborativo realizado por el equipo durante el Sprint 1 y la participación de sus integrantes en las actividades de implementación correspondientes.
+
+</div>
