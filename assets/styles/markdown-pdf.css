@@ -1,0 +1,78 @@
+/* Export-only styles loaded by VS Code Markdown PDF. */
+@media print {
+  /* Preserve explicit alignments, tables, lists, quotations and figures. */
+  p:not([align]):not([style*="text-align"]):not([align] p):not([style*="text-align"] p):not(table p):not(li p):not(blockquote p):not(pre p):not(figure p):not(.caption):not(:has(img, svg, canvas, video, iframe)) {
+    text-align: justify;
+    text-justify: inter-word;
+  }
+
+  p[align="center"] {
+    text-align: center !important;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+}
+
+/* Cover-only presentation; preserve the rest of the report. */
+@media print {
+  h1[align="center"] {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+
+  .cover-members-table {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+  }
+
+  .cover-members-table th,
+  .cover-members-table td {
+    padding: 5px 10px;
+  }
+
+  .cover-members-table th {
+    text-align: center;
+  }
+
+  .cover-members-table td:first-child {
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .cover-members-table td:nth-child(2) {
+    text-align: left;
+  }
+}
+
+/* Spacing is limited to the existing cover blocks. */
+@media print {
+  .cover-logo { margin: 0 0 24px; }
+  .cover-university { margin: 0 0 14px; }
+  .cover-degree { margin: 0 0 24px; }
+  .cover-cycle { margin: 0 0 10px; }
+  .cover-course { margin: 0 0 28px; }
+  .cover-title { margin: 0 0 24px; }
+  .cover-product { margin: 0 0 24px; }
+  .cover-members-heading { margin: 0 0 14px; }
+  .cover-date { margin: 18px 0 0; }
+
+  /* Only the existing Camila interview image; keep its original aspect ratio. */
+  img[src="assets/images/chapter-02-requirements-elicitation-analysis/Camila-Torres-Vega-Entrevista2-Segmento2.png"] {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

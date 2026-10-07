@@ -1,0 +1,94 @@
+@startuml
+title Identity and Access Management\nDomain Layer Class Diagram
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+
+package "Identity and Access Management - Domain Layer" {
+  class Identity <<Aggregate Root>> {
+    -identityId: UUID
+    -userId: UUID
+    -loginIdentifier: LoginIdentifier
+    -credentialHash: CredentialHash
+    -status: IdentityStatus
+    -roleAssignments: Set<RoleAssignment>
+    +assignRole(roleId: UUID, organizationId: UUID): void
+    +hasRole(roleId: UUID, organizationId: UUID): boolean
+    +roleIdsFor(organizationId: UUID): Set<UUID>
+    +isActive(): boolean
+  }
+
+  class Role <<Aggregate Root>> {
+    -roleId: UUID
+    -name: String
+    -permissions: Set<Permission>
+    +grants(permissionCode: String): boolean
+    +getPermissions(): Set<Permission>
+  }
+
+  class RoleAssignment <<Entity>> {
+    -assignmentId: UUID
+    -roleId: UUID
+    -organizationId: UUID
+    +matches(roleId: UUID, organizationId: UUID): boolean
+  }
+
+  class LoginIdentifier <<Value Object>> {
+    -value: String
+    +value(): String
+  }
+
+  class CredentialHash <<Value Object>> {
+    -value: String
+    +value(): String
+  }
+
+  class Permission <<Value Object>> {
+    -code: String
+    +code(): String
+    +equals(other: Permission): boolean
+  }
+
+  enum IdentityStatus <<Enumeration>> {
+    ACTIVE
+    DISABLED
+  }
+
+  interface IdentityRepository <<Repository>> {
+    +findById(identityId: UUID): Identity
+    +findByLoginIdentifier(loginIdentifier: LoginIdentifier): Identity
+    +save(identity: Identity): void
+  }
+
+  interface RoleRepository <<Repository>> {
+    +findById(roleId: UUID): Role
+    +findAllByIds(roleIds: Set<UUID>): Set<Role>
+  }
+
+  class AuthorizationService <<Domain Service>> {
+    +isAuthorized(identity: Identity, roles: Set<Role>, permissionCode: String, organizationId: UUID): boolean
+  }
+
+  Identity "1" *-- "1" LoginIdentifier
+  Identity "1" *-- "1" CredentialHash
+  Identity "1" --> "1" IdentityStatus
+  Identity "1" *-- "0..*" RoleAssignment
+  Role "1" *-- "0..*" Permission
+  RoleAssignment ..> Role : references by roleId
+  IdentityRepository ..> Identity : persists
+  RoleRepository ..> Role : retrieves
+  AuthorizationService ..> Identity : evaluates
+  AuthorizationService ..> Role : evaluates
+}
+
+note right of Identity
+  userId is an external reference
+  to the User Bounded Context.
+  IAM does not own the User profile.
+end note
+
+note right of RoleAssignment
+  organizationId defines the authorization scope.
+  The organization lifecycle is not owned by IAM.
+end note
+@enduml

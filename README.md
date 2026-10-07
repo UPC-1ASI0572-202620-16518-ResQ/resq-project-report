@@ -1,491 +1,12582 @@
 <!-- Carátula UPC -->
 
-<p align="center">
+<p align="center" class="cover-logo">
   <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/UPC_logo_transparente.png" alt="Logo UPC" width="200">
 </p>
 
-<h2 align="center">UNIVERSIDAD PERUANA DE CIENCIAS APLICADAS</h2>
+<h2 align="center" class="cover-university">UNIVERSIDAD PERUANA DE CIENCIAS APLICADAS</h2>
 
-<h3 align="center">
+<h3 align="center" class="cover-degree">
 INGENIERÍA DE SOFTWARE
 </h3>
+ 
+<p align="center" class="cover-cycle"><strong>Ciclo académico:</strong> 2026-20 </p>
 
-<p align="center"><strong>PERIODO:</strong> 202620 </p>
-
-<p align="center">
-  1ACC0238 - Desarrollo de Soluciones IOT<br>
+<p align="center" class="cover-course">
+  1ASI0572 – Desarrollo de Soluciones IoT<br>
   <strong>NRC:</strong> 16518<br>
-  <strong>Docente:</strong> Jimmy Enrique Sanchez Portugal
+  <strong>Docente:</strong> Jimmy Enrique Sánchez Portugal
 </p>
 
-<hr style="width:60%; border:1px solid #ccc;">
 
-<h1 align="center">Informe de Trabajo Final</h1>
+<h1 align="center" class="cover-title">Informe de Trabajo Final</h1>
 
-<p align="center">
-  <strong>Startup:</strong> ResQ<br>
+<p align="center" class="cover-product">
+  <strong>Startup:</strong> SecurityBear<br>
   <strong>Producto:</strong> ResQ
 </p>
 
-<h3 align="center">Integrantes</h3>
+<h3 align="center" class="cover-members-heading">Integrantes</h3>
 
-<div align="center" style="line-height: 1.8; text-align: center;">
-  <p>U202320442 — Quispe Barzola, Fabricio Fabian</p>
-  <p>U202324129 — Chacaliaza Minaya, Eduardo Fabian</p>
-  <p>uasdaasadaa</p>
-  <p>Uasdasd</p>
-  <p>Usdasda</p>
-  
-</div>
+<table
+  class="cover-members-table"
+  align="center"
+  style="margin-left: auto; margin-right: auto;"
+>
+  <thead>
+    <tr>
+      <th>Código UPC</th>
+      <th>Apellidos y Nombres</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr><td>U202222001</td><td>Aliaga Urbina, Wilder Gonzalo</td></tr>
+    <tr><td>U202324129</td><td>Chacaliaza Minaya, Eduardo Fabian</td></tr>
+    <tr><td>U202116246</td><td>Guerrero Vasquez, Jhon Danny</td></tr>
+    <tr><td>U202215462</td><td>Nanfuñay Liza, Pedro Jesús</td></tr>
+    <tr><td>U202320442</td><td>Quispe Barzola, Fabricio Fabian</td></tr>
+    <tr><td>U202218181</td><td>Sánchez Guevara, Iván Fernando</td></tr>
+  </tbody>
+</table>
 
 <br>
 
-<p align="center" style="font-weight: bold;">202620</p>
+<p align="center" class="cover-date" style="font-weight: bold;">Septiembre 2026</p>
 
 
-<div style="page-break-after: always;"></div>
+<div style="page-break-after: always; break-after: page;"></div>
 
 
-<!--Registro de versiones-->
-<h1 align="left">Registro de versiones del Informe</h1>
-</br>
-<table border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
-  <tr>
-    <td align="center" style="border: 1px solid #ddd; padding: 8px;">Versión</td>
-    <td align="center" style="border: 1px solid #ddd; padding: 8px;">Fecha</td>
-    <td align="center" style="border: 1px solid #ddd; padding: 8px;">Autores</td>
-    <td align="center" style="border: 1px solid #ddd; padding: 8px;">Descripción</td>
-  </tr>
-  <tr>
-    <td style="border: 1px solid #ddd; padding: 8px;">AV1</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">fecha</td>
-    <td style="border: 1px solid #ddd; padding: 8px;">
-      <ul>
-        <li>Nombre de integrante</li>
-      </ul>
-    </td>
-    <td style="border: 1px solid #ddd; padding: 8px;">            
-      <ul>
-        <li>El punto que hizo</li>
-        <li>El punto que hizo</li>
-        <li>El punto que hizo</li>
-        <li>El punto que hizo</li>
-        </ul>
-    </td>
-  </tr>
-  <tr>
-  <td style="border: 1px solid #ddd; padding: 8px;">AV1</td>
-  <td style="border: 1px solid #ddd; padding: 8px;">fecha</td>
-  <td style="border: 1px solid #ddd; padding: 8px;">
-    <ul>
-      <li>Nombre de integrante</li>
-    </ul>
-  </td>
-  <td style="border: 1px solid #ddd; padding: 8px;">            
-    <ul>
-      <li>El punto que hizo</li>
-      <li>El punto que hizo</li>
-      <li>El punto que hizo</li>
-      <li>El punto que hizo</li>
-      <li>El punto que hizo</li>
-    </ul>
-  </td>
-</tr>
-</table><br>
-
-
-<h1>Project Report Collaboration Insights</h1>
-
-<h2>AV1</h2>
-
-<p>Para el desarrollo del informe perteneciente a la entrega AV1, se dividió la implementación de secciones del Capítulo I y II en bloques de trabajo, asignando cada conjunto de secciones a un integrante del equipo.</p>
-
-<p align="center">
-  <img src="assets/images/annexes/tb1.png" alt="Jira" width="500">
-</p>
-
-<p align="center">
-  <img src="assets//images/annexes/AV1.png" alt="Commits" width="500">
-</p>
-
-<table align="center" border="1" cellpadding="10" cellspacing="0" style="border-collapse: collapse; width: 100%;">
-  <tr>
-    <td align="center"><strong>Integrante</strong></td>
-    <td align="center"><strong>Tareas Asignadas</strong></td>
-  </tr>
-
-  <!-- BLOQUE 1 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>Capítulo I – Presentación</strong></li>
-        <li>1.1 Startup Profile</li>
-        <li>1.1.1 Descripción de la Startup</li>
-        <li>1.1.2 Perfiles de integrantes del equipo</li>
-        <li>1.2 Solution Profile</li>
-        <li>1.2.1 Antecedentes y problemática</li>
-        <li>1.2.2 Lean UX Process</li>
-        <li>1.2.2.1 Lean UX Problem Statements</li>
-        <li>1.2.2.2 Lean UX Assumptions</li>
-        <li>1.2.2.3 Lean UX Hypothesis Statements</li>
-        <li>1.2.2.4 Lean UX Canvas</li>
-        <li>1.3 Segmentos objetivo</li>
-      </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>Capítulo II</strong></li>
-        <li>2.1 Competidores</li>
-        <li>2.1.1 Análisis competitivo</li>
-        <li>2.1.2 Estrategias y tácticas frente a competidores</li>
-        <li>2.2 Entrevistas</li>
-        <li>2.2.1 Diseño de entrevistas</li>
-        <li>2.2.2 Registro de entrevistas</li>
-        <li>2.2.3 Análisis de entrevistas</li>
-      </ul>
-    </td>
-  </tr>
-
-  <!-- BLOQUE 2 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li>2.3 Needfinding</li>
-        <li>2.3.1 User Personas</li>
-        <li>2.3.2 User Task Matrix</li>
-        <li>2.3.3 User Journey Mapping</li>
-        <li>2.3.4 Empathy Mapping</li>
-        <li>2.3.5 Big Picture EventStorming</li>
-        <li>2.3.6 Ubiquitous Language</li>
-      </ul>
-    </td>
-  </tr>
-
-  <!-- BLOQUE 3 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li>2.4 Requirements Specification</li>
-        <li>2.4.1 User Stories</li>
-        <li>2.4.2 Impact Mapping</li>
-        <li>2.4.3 Product Backlog</li>
-      </ul>
-    </td>
-  </tr>
-
-  <!-- BLOQUE 4 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li>2.5.1 EventStorming</li>
-        <li>2.5.1.1 Candidate Context Discovery</li>
-        <li>2.5.1.2 Domain Message Flows Modeling</li>
-        <li>2.5.1.3 Bounded Context Canvases</li>
-      </ul>
-    </td>
-  </tr>
-
-  <!-- BLOQUE 5 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li>2.5.2 Context Mapping</li>
-      </ul>
-    </td>
-  </tr>
-
-  <!-- BLOQUE 6 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li>2.5.3 Software Architecture</li>
-        <li>2.5.3.1 Context Level Diagrams</li>
-        <li>2.5.3.2 Container Level Diagrams</li>
-        <li>2.5.3.3 Deployment Diagrams</li>
-      </ul>
-    </td>
-  </tr>
-
-  <!-- BLOQUE 7 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.1 Bounded Context: Bookings</strong></li>
-        <li>2.6.1.1 Domain Layer</li>
-        <li>2.6.1.2 Interface Layer</li>
-        <li>2.6.1.3 Application Layer</li>
-        <li>2.6.1.4 Infrastructure Layer</li>
-        <li>2.6.1.5 Component Level Diagrams</li>
-        <li>2.6.1.6 Code Level Diagrams</li>
-        <li>2.6.1.6.1 Class Diagram</li>
-        <li>2.6.1.6.2 Database Diagram</li>
-</ul>
-    </td>
-  </tr>
-<tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.2 Bounded Context: Payments</strong></li>
-        <li>2.6.2.1 Domain Layer</li>
-        <li>2.6.2.2 Interface Layer</li>
-        <li>2.6.2.3 Application Layer</li>
-        <li>2.6.2.4 Infrastructure Layer</li>
-        <li>2.6.2.5 Component Level Diagrams</li>
-        <li>2.6.2.6 Code Level Diagrams</li>
-        <li>2.6.2.6.1 Class Diagram</li>
-        <li>2.6.2.6.2 Database Diagram</li>
-</ul>
-    </td>
-  </tr>
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.3 Bounded Context: Users</strong></li>
-        <li>2.6.3.1 Domain Layer</li>
-        <li>2.6.3.2 Interface Layer</li>
-        <li>2.6.3.3 Application Layer</li>
-        <li>2.6.3.4 Infrastructure Layer</li>
-        <li>2.6.3.5 Component Level Diagrams</li>
-        <li>2.6.3.6 Code Level Diagrams</li>
-        <li>2.6.3.6.1 Class Diagram</li>
-        <li>2.6.3.6.2 Database Diagram</li>
-      </ul>
-    </td>
-  </tr>
-
-  <!-- BLOQUE 8 -->
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.4 Bounded Context: Coaches</strong></li>
-        <li>2.6.4.1 Domain Layer</li>
-        <li>2.6.4.2 Interface Layer</li>
-        <li>2.6.4.3 Application Layer</li>
-        <li>2.6.4.4 Infrastructure Layer</li>
-        <li>2.6.4.5 Component Level Diagrams</li>
-        <li>2.6.4.6 Code Level Diagrams</li>
-        <li>2.6.4.6.1 Class Diagram</li>
-        <li>2.6.4.6.2 Database Diagram</li>
-        </ul>
-    </td>
-  </tr>
-<tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.5 Bounded Context: Courts</strong></li>
-        <li>2.6.5.1 Domain Layer</li>
-        <li>2.6.5.2 Interface Layer</li>
-        <li>2.6.5.3 Application Layer</li>
-        <li>2.6.5.4 Infrastructure Layer</li>
-        <li>2.6.5.5 Component Level Diagrams</li>
-        <li>2.6.5.6 Code Level Diagrams</li>
-        <li>2.6.5.6.1 Class Diagram</li>
-        <li>2.6.5.6.2 Database Diagram</li>
-        </ul>
-    </td>
-  </tr>
-<tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.6 Bounded Context: Availabilities</strong></li>
-        <li>2.6.6.1 Domain Layer</li>
-        <li>2.6.6.2 Interface Layer</li>
-        <li>2.6.6.3 Application Layer</li>
-        <li>2.6.6.4 Infrastructure Layer</li>
-        <li>2.6.6.5 Component Level Diagrams</li>
-        <li>2.6.6.6 Code Level Diagrams</li>
-        <li>2.6.6.6.1 Class Diagram</li>
-        <li>2.6.6.6.2 Database Diagram</li>
-        </ul>
-    </td>
-  </tr>
-  <tr>
-    <td>Integrante</td>
-    <td>
-      <ul>
-        <li><strong>2.6.7 Bounded Context: Reviews</strong></li>
-        <li>2.6.7.1 Domain Layer</li>
-        <li>2.6.7.2 Interface Layer</li>
-        <li>2.6.7.3 Application Layer</li>
-        <li>2.6.7.4 Infrastructure Layer</li>
-        <li>2.6.7.5 Component Level Diagrams</li>
-        <li>2.6.7.6 Code Level Diagrams</li>
-        <li>2.6.7.6.1 Class Diagram</li>
-        <li>2.6.7.6.2 Database Diagram</li>
-      </ul>
-    </td>
-  </tr>
-
-
-</table>
-
-
-<!-- ÍNDICE -->
-# Contenido
-
-- [Student Outcome](docs/00-student-outcome.md)
-
-- [Capítulo I: Introducción](docs/01-introduction.md)
-  - [1.1. Startup Profile](docs/01-introduction.md#11-startup-profile)
-    - [1.1.1. Descripción de la Startup](docs/01-introduction.md#111-descripción-de-la-startup)
-    - [1.1.2. Perfiles de integrantes del equipo](docs/01-introduction.md#112-perfiles-de-integrantes-del-equipo)
-  - [1.2. Solution Profile](docs/01-introduction.md#12-solution-profile)
-    - [1.2.1. Antecedentes y problemática](docs/01-introduction.md#121-antecedentes-y-problemática)
-    - [1.2.2. Lean UX Process](docs/01-introduction.md#122-lean-ux-process)
-      - [1.2.2.1. Lean UX Problem Statements](docs/01-introduction.md#1221-lean-ux-problem-statements)
-      - [1.2.2.2. Lean UX Assumptions](docs/01-introduction.md#1222-lean-ux-assumptions)
-      - [1.2.2.3. Lean UX Hypothesis Statements](docs/01-introduction.md#1223-lean-ux-hypothesis-statements)
-      - [1.2.2.4. Lean UX Canvas](docs/01-introduction.md#1224-lean-ux-canvas)
-  - [1.3. Segmentos objetivo](docs/01-introduction.md#13-segmentos-objetivo)
-
-- [Capítulo II: Requirements Elicitation & Analysis](docs/02-requirements-elicitation-analysis.md)
-  - [2.1. Competidores](docs/02-requirements-elicitation-analysis.md#21-competidores)
-    - [2.1.1. Análisis competitivo](docs/02-requirements-elicitation-analysis.md#211-análisis-competitivo)
-    - [2.1.2. Estrategias y tácticas frente a competidores](docs/02-requirements-elicitation-analysis.md#212-estrategias-y-tácticas-frente-a-competidores)
-  - [2.2. Entrevistas](docs/02-requirements-elicitation-analysis.md#22-entrevistas)
-    - [2.2.1. Diseño de entrevistas](docs/02-requirements-elicitation-analysis.md#221-diseño-de-entrevistas)
-    - [2.2.2. Registro de entrevistas](docs/02-requirements-elicitation-analysis.md#222-registro-de-entrevistas)
-    - [2.2.3. Análisis de entrevistas](docs/02-requirements-elicitation-analysis.md#223-análisis-de-entrevistas)
-  - [2.3. Needfinding](docs/02-requirements-elicitation-analysis.md#23-needfinding)
-    - [2.3.1. User Personas](docs/02-requirements-elicitation-analysis.md#231-user-personas)
-    - [2.3.2. User Task Matrix](docs/02-requirements-elicitation-analysis.md#232-user-task-matrix)
-    - [2.3.3. User Journey Mapping](docs/02-requirements-elicitation-analysis.md#233-user-journey-mapping)
-    - [2.3.4. Empathy Mapping](docs/02-requirements-elicitation-analysis.md#234-empathy-mapping)
-  - [2.4. Big Picture EventStorming](docs/02-requirements-elicitation-analysis.md#24-big-picture-eventstorming)
-  - [2.5. Ubiquitous Language](docs/02-requirements-elicitation-analysis.md#25-ubiquitous-language)
-
-- [Capítulo III: Requirements Specification](docs/03-requirements-specification.md)
-  - [3.1. User Stories](docs/03-requirements-specification.md#31-user-stories)
-  - [3.2. Impact Mapping](docs/03-requirements-specification.md#32-impact-mapping)
-  - [3.3. Product Backlog](docs/03-requirements-specification.md#33-product-backlog)
-
-- [Capítulo IV: Solution Software Design](docs/04-solution-software-design.md)
-  - [4.1. Strategic-Level Domain-Driven Design](docs/04-solution-software-design.md#41-strategic-level-domain-driven-design)
-    - [4.1.1. Design-Level EventStorming](docs/04-solution-software-design.md#411-design-level-eventstorming)
-      - [4.1.1.1. Candidate Context Discovery](docs/04-solution-software-design.md#4111-candidate-context-discovery)
-      - [4.1.1.2. Domain Message Flows Modeling](docs/04-solution-software-design.md#4112-domain-message-flows-modeling)
-      - [4.1.1.3. Bounded Context Canvases](docs/04-solution-software-design.md#4113-bounded-context-canvases)
-    - [4.1.2. Context Mapping](docs/04-solution-software-design.md#412-context-mapping)
-    - [4.1.3. Software Architecture](docs/04-solution-software-design.md#413-software-architecture)
-      - [4.1.3.1. Software Architecture System Landscape Diagram](docs/04-solution-software-design.md#4131-software-architecture-system-landscape-diagram)
-      - [4.1.3.2. Software Architecture Context Level Diagrams](docs/04-solution-software-design.md#4132-software-architecture-context-level-diagrams)
-      - [4.1.3.2. Software Architecture Container Level Diagrams](docs/04-solution-software-design.md#4132-software-architecture-container-level-diagrams)
-      - [4.1.3.3. Software Architecture Deployment Diagrams](docs/04-solution-software-design.md#4133-software-architecture-deployment-diagrams)
-  - [4.2. Tactical-Level Domain-Driven Design](docs/04-solution-software-design.md#42-tactical-level-domain-driven-design)
-    - [4.2.X. Bounded Context: \<Bounded Context Name\>](docs/04-solution-software-design.md#42x-bounded-context-bounded-context-name)
-      - [4.2.X.1. Domain Layer](docs/04-solution-software-design.md#42x1-domain-layer)
-      - [4.2.X.2. Interface Layer](docs/04-solution-software-design.md#42x2-interface-layer)
-      - [4.2.X.3. Application Layer](docs/04-solution-software-design.md#42x3-application-layer)
-      - [4.2.X.4. Infrastructure Layer](docs/04-solution-software-design.md#42x4-infrastructure-layer)
-      - [4.2.X.5. Bounded Context Software Architecture Component Level Diagrams](docs/04-solution-software-design.md#42x5-bounded-context-software-architecture-component-level-diagrams)
-      - [4.2.X.6. Bounded Context Software Architecture Code Level Diagrams](docs/04-solution-software-design.md#42x6-bounded-context-software-architecture-code-level-diagrams)
-      - [4.2.X.6.1. Bounded Context Domain Layer Class Diagrams](docs/04-solution-software-design.md#42x61-bounded-context-domain-layer-class-diagrams)
-      - [4.2.X.6.2. Bounded Context Database Design Diagram](docs/04-solution-software-design.md#42x62-bounded-context-database-design-diagram)
-
-- [Capítulo V: Solution UI/UX Design](docs/05-solution-ui-ux-design.md)
-  - [5.1. Style Guidelines](docs/05-solution-ui-ux-design.md#51-style-guidelines)
-    - [5.1.1. General Style Guidelines](docs/05-solution-ui-ux-design.md#511-general-style-guidelines)
-    - [5.1.2. Web, Mobile and IoT Style Guidelines](docs/05-solution-ui-ux-design.md#512-web-mobile-and-iot-style-guidelines)
-  - [5.2. Information Architecture](docs/05-solution-ui-ux-design.md#52-information-architecture)
-    - [5.2.1. Organization Systems](docs/05-solution-ui-ux-design.md#521-organization-systems)
-    - [5.2.2. Labeling Systems](docs/05-solution-ui-ux-design.md#522-labeling-systems)
-    - [5.2.3. SEO Tags and Meta Tags](docs/05-solution-ui-ux-design.md#523-seo-tags-and-meta-tags)
-    - [5.2.4. Searching Systems](docs/05-solution-ui-ux-design.md#524-searching-systems)
-    - [5.2.5. Navigation Systems](docs/05-solution-ui-ux-design.md#525-navigation-systems)
-  - [5.3. Landing Page UI Design](docs/05-solution-ui-ux-design.md#53-landing-page-ui-design)
-    - [5.3.1. Landing Page Wireframe](docs/05-solution-ui-ux-design.md#531-landing-page-wireframe)
-    - [5.3.2. Landing Page Mock-up](docs/05-solution-ui-ux-design.md#532-landing-page-mock-up)
-  - [5.4. Applications UX/UI Design](docs/05-solution-ui-ux-design.md#54-applications-uxui-design)
-    - [5.4.1. Applications Wireframes](docs/05-solution-ui-ux-design.md#541-applications-wireframes)
-    - [5.4.2. Applications Wireflow Diagrams](docs/05-solution-ui-ux-design.md#542-applications-wireflow-diagrams)
-    - [5.4.2. Applications Mock-ups](docs/05-solution-ui-ux-design.md#542-applications-mock-ups)
-    - [5.4.3. Applications User Flow Diagrams](docs/05-solution-ui-ux-design.md#543-applications-user-flow-diagrams)
-  - [5.5. Applications Prototyping](docs/05-solution-ui-ux-design.md#55-applications-prototyping)
-  - [5.6. IoT Device Design](docs/05-solution-ui-ux-design.md#56-iot-device-design)
-
-- [Capítulo VI: Product Implementation, Validation & Deployment](docs/06-product-implementation-validation-deployment.md)
-  - [6.1. Software Configuration Management](docs/06-product-implementation-validation-deployment.md#61-software-configuration-management)
-    - [6.1.1. Software Development Environment Configuration](docs/06-product-implementation-validation-deployment.md#611-software-development-environment-configuration)
-    - [6.1.2. Source Code Management](docs/06-product-implementation-validation-deployment.md#612-source-code-management)
-    - [6.1.3. Source Code Style Guide & Conventions](docs/06-product-implementation-validation-deployment.md#613-source-code-style-guide--conventions)
-    - [6.1.4. Software Deployment Configuration](docs/06-product-implementation-validation-deployment.md#614-software-deployment-configuration)
-  - [6.2. Landing Page, Services & Applications Implementation](docs/06-product-implementation-validation-deployment.md#62-landing-page-services--applications-implementation)
-    - [6.2.X. Sprint n](docs/06-product-implementation-validation-deployment.md#62x-sprint-n)
-      - [6.2.X.1. Sprint Planning n](docs/06-product-implementation-validation-deployment.md#62x1-sprint-planning-n)
-      - [6.2.X.2. Aspect Leaders and Collaborators](docs/06-product-implementation-validation-deployment.md#62x2-aspect-leaders-and-collaborators)
-      - [6.2.X.3. Sprint Backlog n](docs/06-product-implementation-validation-deployment.md#62x3-sprint-backlog-n)
-      - [6.2.X.4. Development Evidence for Sprint Review](docs/06-product-implementation-validation-deployment.md#62x4-development-evidence-for-sprint-review)
-      - [6.2.X.5. Testing Suite Evidence for Sprint Review](docs/06-product-implementation-validation-deployment.md#62x5-testing-suite-evidence-for-sprint-review)
-      - [6.2.X.6. Execution Evidence for Sprint Review](docs/06-product-implementation-validation-deployment.md#62x6-execution-evidence-for-sprint-review)
-      - [6.2.X.7. Services Documentation Evidence for Sprint Review](docs/06-product-implementation-validation-deployment.md#62x7-services-documentation-evidence-for-sprint-review)
-      - [6.2.X.8. Software Deployment Evidence for Sprint Review](docs/06-product-implementation-validation-deployment.md#62x8-software-deployment-evidence-for-sprint-review)
-      - [6.2.X.9. Team Collaboration Insights during Sprint](docs/06-product-implementation-validation-deployment.md#62x9-team-collaboration-insights-during-sprint)
-  - [6.3. Validation Interviews](docs/06-product-implementation-validation-deployment.md#63-validation-interviews)
-    - [6.3.1. Diseño de Entrevistas](docs/06-product-implementation-validation-deployment.md#631-diseño-de-entrevistas)
-    - [6.3.2. Registro de Entrevistas](docs/06-product-implementation-validation-deployment.md#632-registro-de-entrevistas)
-    - [6.3.3. Evaluaciones según heurísticas](docs/06-product-implementation-validation-deployment.md#633-evaluaciones-según-heurísticas)
-  - [6.4. Video About-the-Product](docs/06-product-implementation-validation-deployment.md#64-video-about-the-product)
-
-- [Conclusiones](docs/07-conclusions.md)
-  - [Conclusiones y recomendaciones](docs/07-conclusions.md#conclusiones-y-recomendaciones)
-  - [Video About-the-Team](docs/07-conclusions.md#video-about-the-team)
-
-- [Bibliografía](docs/08-bibliography.md)
-
-- [Anexos](docs/09-annexes.md)
-
-
-## Registro de Versiones del Informe 
+# Registro de Versiones del Informe
 
 | Versión | Fecha | Autor | Descripción de modificación |
 |---|---|---|---|
-| 0.1 | [dd/mm/aaaa] | [Integrante] | Creación inicial de la estructura del Project Report. |
+| 1.0 | 13/09/2026 | Sánchez Guevara, Iván Fernando | Elaboración de las secciones 1.1 Startup Profile, 1.1.1 Descripción de la Startup, 1.1.2 Perfiles de integrantes del equipo, 1.2 Solution Profile, 1.2.1 Antecedentes y problemática, 4.1.2 Context Mapping, 4.1.3.2 Software Architecture Context Level Diagrams, 4.1.3.3 Software Architecture Container Level Diagrams, 4.1.3.4 Software Architecture Deployment Diagrams y 4.2.9 Bounded Context: Connectivity Management, incluyendo sus capas y diagramas técnicos. |
+| 1.1 | 14/09/2026 | Nanfuñay Liza, Pedro Jesús | Elaboración de las secciones 1.2.2 Lean UX Process, 1.2.2.1 Lean UX Problem Statements, 1.2.2.2 Lean UX Assumptions, 1.2.2.3 Lean UX Hypothesis Statements, 1.2.2.4 Lean UX Canvas, 4.1.1 Design-Level EventStorming, 4.1.1.1 Candidate Context Discovery, 4.1.1.2 Domain Message Flows Modeling, 4.1.1.3 Bounded Context Canvases y 4.2.6 Bounded Context: Monitoring, incluyendo sus capas y diagramas técnicos. |
+| 1.2 | 15/09/2026 | Chacaliaza Minaya, Eduardo Fabian | Elaboración de las secciones 1.3 Segmentos objetivo, 2.1 Competidores, 2.1.1 Análisis competitivo, 2.1.2 Estrategias y tácticas frente a competidores, 3.3 Product Backlog, 4.1 Strategic-Level Domain-Driven Design, 4.1.3 Software Architecture, 4.1.3.1 Software Architecture System Landscape Diagram, 4.2 Tactical-Level Domain-Driven Design y 4.2.3 Bounded Context: Alert & Response Management, incluyendo sus capas y diagramas técnicos. |
+| 1.3 | 16/09/2026 | Quispe Barzola, Fabricio Fabian | Elaboración de las secciones 2.2 Entrevistas, 2.2.1 Diseño de entrevistas, 2.2.2 Registro de entrevistas, 2.2.3 Análisis de entrevistas, 3.1 User Stories, 3.2 Impact Mapping, 4.2.1 Bounded Context: Identity and Access Management (IAM) y 4.2.2 Bounded Context: Risk Detection, incluyendo Domain, Interface, Application e Infrastructure Layers, Component Level Diagrams, Domain Layer Class Diagrams y Database Design Diagrams. |
+| 1.4 | 17/09/2026 | Aliaga Urbina, Wilder Gonzalo | Elaboración de las secciones 2.3.1 User Personas, 2.3.2 User Task Matrix, 2.3.3 User Journey Mapping, 2.3.4 Empathy Mapping, 4.2.4 Bounded Context: Building Management y 4.2.5 Bounded Context: Device Management, incluyendo sus capas y diagramas técnicos correspondientes. |
+| 1.5 | 17/09/2026 | Guerrero Vasquez, Jhon Danny | Elaboración de las secciones 2.3 Needfinding, 2.4 Big Picture EventStorming, 2.5 Ubiquitous Language, 4.2.7 Bounded Context: User y 4.2.8 Bounded Context: Incident, incluyendo sus capas, componentes, diagramas de clases y diseño de persistencia correspondientes. |
 
-**Regla del Project Statement:** cada fila debe tener un solo autor y reflejar adiciones,
-eliminaciones, correcciones o mejoras relevantes del informe.
+<!-- PENDIENTE: Validar la fecha y el autor de la versión inicial y completar las siguientes versiones con base en el historial real de GitHub. Cada fila debe tener un solo autor y representar una modificación real del documento. -->
+
+# Project Report Collaboration Insights
+
+## AV1 — Sprint Review
+
+<p align="justify">
+Durante AV1, el equipo distribuyó la elaboración de los Capítulos I, II, III y IV entre sus integrantes, cubriendo Lean UX, UX Research / Needfinding, Requirements Specification, Strategic-Level DDD, Tactical-Level DDD y Software Architecture para ResQ, solución IoT orientada al monitoreo y respuesta coordinada ante emergencias en edificios. La asignación individual y los aportes realizados quedan pendientes de sustento mediante evidencias de Jira y GitHub.
+</p>
+
+**URL del repositorio público de GitHub:** [resq-project-report](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-project-report.git)
+
+### Organización y distribución del trabajo
+
+<p align="justify">
+Para la entrega AV1, el equipo organizó las actividades del Project Report mediante Jira, distribuyendo responsabilidades de acuerdo con los capítulos y artefactos establecidos para esta entrega. La planificación consideró las dependencias existentes entre la investigación, la especificación de requisitos y el diseño de la solución, permitiendo que los aportes individuales pudieran integrarse progresivamente dentro de los Capítulos I, II, III y IV.
+</p>
+
+<p align="justify">
+La distribución contempló actividades relacionadas con Lean UX, UX Research, Requirements Specification, Strategic-Level Domain-Driven Design, Software Architecture y Tactical-Level Domain-Driven Design.
+</p>
+
+<p align="center">
+  <img src="assets/images/general/collaboration/av1-jira-distribution.png"
+       alt="Distribución de actividades del equipo en Jira para AV1"
+       width="900">
+</p>
+
+<p align="center">
+  <strong>Figura 1. Distribución de actividades del equipo para la entrega AV1.</strong>
+</p>
+
+<p align="center">
+  <img src="assets/images/general/collaboration/av1-jira-distribution-2.png"
+       alt="Distribución de actividades del equipo en Jira para AV1 v2"
+       width="900">
+</p>
+
+<p align="center">
+  <strong>Figura 2. Distribución de actividades del equipo para la entrega AV1.</strong>
+</p>
+
+<p align="justify">
+La planificación registrada en Jira permitió identificar las responsabilidades asumidas por cada integrante y verificar la cobertura del alcance correspondiente a AV1. Para el Tactical-Level Domain-Driven Design se distribuyeron los Bounded Contexts <strong>Identity and Access Management (IAM), Risk Detection, Alert & Response Management, Building, Device, Monitoring, User, Incident y Connectivity</strong>, junto con sus respectivos elementos de diseño.
+</p>
+
+### Colaboración en el Project Report
+
+<p align="justify">
+Además de la planificación registrada en Jira, la participación efectiva en la elaboración y evolución del Project Report se evidencia mediante los analíticos de colaboración y el historial de commits del repositorio de GitHub.
+</p>
+
+<p align="center">
+  <img src="assets/images/general/collaboration/av1-github-contributors.png"
+       alt="Analíticos de colaboración de GitHub para AV1"
+       width="900">
+</p>
+
+<p align="center">
+  <strong>Figura 3. Analíticos de colaboración del repositorio del Project Report durante AV1.</strong>
+</p>
+
+<p align="justify">
+Los analíticos del repositorio permiten observar la participación de los integrantes en la evolución del Project Report durante la entrega AV1. Esta evidencia complementa la planificación realizada en Jira y permite contrastar las responsabilidades asignadas con las contribuciones registradas en el repositorio.
+</p>
+
+<p align="center">
+  <img src="assets/images/general/collaboration/av1-github-commits.png"
+       alt="Historial de commits del Project Report para AV1"
+       width="900">
+</p>
+
+<p align="center">
+  <strong>Figura 4. Historial de commits realizados durante la elaboración de AV1.</strong>
+</p>
+
+<p align="justify">
+El historial de commits permite relacionar las modificaciones realizadas sobre el Project Report con sus respectivos autores y fechas. Estas contribuciones deben mantener coherencia con las modificaciones relevantes registradas en la sección <strong>Registro de Versiones del Informe</strong>.
+</p>
+
+<div style="page-break-before: always; break-before: page;"></div>
+
+# Contenido
+
+- [Student Outcome](#student-outcome)
+
+- [Capítulo I: Introducción](#capítulo-i-introducción)
+  - [1.1. Startup Profile](#11-startup-profile)
+    - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
+    - [1.1.2. Perfiles de integrantes del equipo](#112-perfiles-de-integrantes-del-equipo)
+  - [1.2. Solution Profile](#12-solution-profile)
+    - [1.2.1. Antecedentes y problemática](#121-antecedentes-y-problemática)
+    - [1.2.2. Lean UX Process](#122-lean-ux-process)
+      - [1.2.2.1. Lean UX Problem Statements](#1221-lean-ux-problem-statements)
+      - [1.2.2.2. Lean UX Assumptions](#1222-lean-ux-assumptions)
+      - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
+      - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
+  - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
+
+- [Capítulo II: Requirements Elicitation & Analysis](#capítulo-ii-requirements-elicitation--analysis)
+  - [2.1. Competidores](#21-competidores)
+    - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
+    - [2.1.2. Estrategias y tácticas frente a competidores](#212-estrategias-y-tácticas-frente-a-competidores)
+  - [2.2. Entrevistas](#22-entrevistas)
+    - [2.2.1. Diseño de entrevistas](#221-diseño-de-entrevistas)
+    - [2.2.2. Registro de entrevistas](#222-registro-de-entrevistas)
+    - [2.2.3. Análisis de entrevistas](#223-análisis-de-entrevistas)
+  - [2.3. Needfinding](#23-needfinding)
+    - [2.3.1. User Personas](#231-user-personas)
+    - [2.3.2. User Task Matrix](#232-user-task-matrix)
+    - [2.3.3. User Journey Mapping](#233-user-journey-mapping)
+    - [2.3.4. Empathy Mapping](#234-empathy-mapping)
+  - [2.4. Big Picture EventStorming](#24-big-picture-eventstorming)
+  - [2.5. Ubiquitous Language](#25-ubiquitous-language)
+
+- [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
+  - [3.1. User Stories](#31-user-stories)
+  - [3.2. Impact Mapping](#32-impact-mapping)
+  - [3.3. Product Backlog](#33-product-backlog)
+
+- [Capítulo IV: Solution Software Design](#capítulo-iv-solution-software-design)
+  - [4.1. Strategic-Level Domain-Driven Design](#41-strategic-level-domain-driven-design)
+    - [4.1.1. Design-Level EventStorming](#411-design-level-eventstorming)
+      - [4.1.1.1. Candidate Context Discovery](#4111-candidate-context-discovery)
+      - [4.1.1.2. Domain Message Flows Modeling](#4112-domain-message-flows-modeling)
+      - [4.1.1.3. Bounded Context Canvases](#4113-bounded-context-canvases)
+    - [4.1.2. Context Mapping](#412-context-mapping)
+    - [4.1.3. Software Architecture](#413-software-architecture)
+      - [4.1.3.1. Software Architecture System Landscape Diagram](#4131-software-architecture-system-landscape-diagram)
+      - [4.1.3.2. Software Architecture Context Level Diagrams](#4132-software-architecture-context-level-diagrams)
+      - [4.1.3.3. Software Architecture Container Level Diagrams](#4133-software-architecture-container-level-diagrams)
+      - [4.1.3.4. Software Architecture Deployment Diagrams](#4134-software-architecture-deployment-diagrams)
+  - [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
+    - [4.2.1. Bounded Context: Identity and Access Management (IAM)](#421-bounded-context-identity-and-access-management-iam)
+      - [4.2.1.1. Domain Layer](#4211-domain-layer)
+      - [4.2.1.2. Interface Layer](#4212-interface-layer)
+      - [4.2.1.3. Application Layer](#4213-application-layer)
+      - [4.2.1.4. Infrastructure Layer](#4214-infrastructure-layer)
+      - [4.2.1.5. Bounded Context Software Architecture Component Level Diagrams](#4215-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.1.6. Bounded Context Software Architecture Code Level Diagrams](#4216-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.1.6.1. Bounded Context Domain Layer Class Diagrams](#42161-bounded-context-domain-layer-class-diagrams)
+        - [4.2.1.6.2. Bounded Context Database Design Diagram](#42162-bounded-context-database-design-diagram)
+    - [4.2.2. Bounded Context: Risk Detection](#422-bounded-context-risk-detection)
+      - [4.2.2.1. Domain Layer](#4221-domain-layer)
+      - [4.2.2.2. Interface Layer](#4222-interface-layer)
+      - [4.2.2.3. Application Layer](#4223-application-layer)
+      - [4.2.2.4. Infrastructure Layer](#4224-infrastructure-layer)
+      - [4.2.2.5. Bounded Context Software Architecture Component Level Diagrams](#4225-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.2.6. Bounded Context Software Architecture Code Level Diagrams](#4226-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.2.6.1. Bounded Context Domain Layer Class Diagrams](#42261-bounded-context-domain-layer-class-diagrams)
+        - [4.2.2.6.2. Bounded Context Database Design Diagram](#42262-bounded-context-database-design-diagram)
+    - [4.2.3. Bounded Context: Alert & Response Management](#423-bounded-context-alert--response-management)
+      - [4.2.3.1. Domain Layer](#4231-domain-layer)
+      - [4.2.3.2. Interface Layer](#4232-interface-layer)
+      - [4.2.3.3. Application Layer](#4233-application-layer)
+      - [4.2.3.4. Infrastructure Layer](#4234-infrastructure-layer)
+      - [4.2.3.5. Bounded Context Software Architecture Component Level Diagrams](#4235-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.3.6. Bounded Context Software Architecture Code Level Diagrams](#4236-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.3.6.1. Bounded Context Domain Layer Class Diagrams](#42361-bounded-context-domain-layer-class-diagrams)
+        - [4.2.3.6.2. Bounded Context Database Design Diagram](#42362-bounded-context-database-design-diagram)
+    - [4.2.4. Bounded Context: Building Management](#424-bounded-context-building-management)
+      - [4.2.4.1. Domain Layer](#4241-domain-layer)
+      - [4.2.4.2. Interface Layer](#4242-interface-layer)
+      - [4.2.4.3. Application Layer](#4243-application-layer)
+      - [4.2.4.4. Infrastructure Layer](#4244-infrastructure-layer)
+      - [4.2.4.5. Bounded Context Software Architecture Component Level Diagrams](#4245-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.4.6. Bounded Context Software Architecture Code Level Diagrams](#4246-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.4.6.1. Bounded Context Domain Layer Class Diagrams](#42461-bounded-context-domain-layer-class-diagrams)
+        - [4.2.4.6.2. Bounded Context Database Design Diagram](#42462-bounded-context-database-design-diagram)
+    - [4.2.5. Bounded Context: Device Management](#425-bounded-context-device-management)
+      - [4.2.5.1. Domain Layer](#4251-domain-layer)
+      - [4.2.5.2. Interface Layer](#4252-interface-layer)
+      - [4.2.5.3. Application Layer](#4253-application-layer)
+      - [4.2.5.4. Infrastructure Layer](#4254-infrastructure-layer)
+      - [4.2.5.5. Bounded Context Software Architecture Component Level Diagrams](#4255-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.5.6. Bounded Context Software Architecture Code Level Diagrams](#4256-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.5.6.1. Bounded Context Domain Layer Class Diagrams](#42561-bounded-context-domain-layer-class-diagrams)
+        - [4.2.5.6.2. Bounded Context Database Design Diagram](#42562-bounded-context-database-design-diagram)
+    - [4.2.6. Bounded Context: Monitoring](#426-bounded-context-monitoring)
+      - [4.2.6.1. Domain Layer](#4261-domain-layer)
+      - [4.2.6.2. Interface Layer](#4262-interface-layer)
+      - [4.2.6.3. Application Layer](#4263-application-layer)
+      - [4.2.6.4. Infrastructure Layer](#4264-infrastructure-layer)
+      - [4.2.6.5. Bounded Context Software Architecture Component Level Diagrams](#4265-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.6.6. Bounded Context Software Architecture Code Level Diagrams](#4266-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.6.6.1. Bounded Context Domain Layer Class Diagrams](#42661-bounded-context-domain-layer-class-diagrams)
+        - [4.2.6.6.2. Bounded Context Database Design Diagram](#42662-bounded-context-database-design-diagram)
+    - [4.2.7. Bounded Context: User](#427-bounded-context-user)
+      - [4.2.7.1. Domain Layer](#4271-domain-layer)
+      - [4.2.7.2. Interface Layer](#4272-interface-layer)
+      - [4.2.7.3. Application Layer](#4273-application-layer)
+      - [4.2.7.4. Infrastructure Layer](#4274-infrastructure-layer)
+      - [4.2.7.5. Bounded Context Software Architecture Component Level Diagrams](#4275-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.7.6. Bounded Context Software Architecture Code Level Diagrams](#4276-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.7.6.1. Bounded Context Domain Layer Class Diagrams](#42761-bounded-context-domain-layer-class-diagrams)
+        - [4.2.7.6.2. Bounded Context Database Design Diagram](#42762-bounded-context-database-design-diagram)
+    - [4.2.8. Bounded Context: Incident](#428-bounded-context-incident)
+      - [4.2.8.1. Domain Layer](#4281-domain-layer)
+      - [4.2.8.2. Interface Layer](#4282-interface-layer)
+      - [4.2.8.3. Application Layer](#4283-application-layer)
+      - [4.2.8.4. Infrastructure Layer](#4284-infrastructure-layer)
+      - [4.2.8.5. Bounded Context Software Architecture Component Level Diagrams](#4285-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.8.6. Bounded Context Software Architecture Code Level Diagrams](#4286-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.8.6.1. Bounded Context Domain Layer Class Diagrams](#42861-bounded-context-domain-layer-class-diagrams)
+        - [4.2.8.6.2. Bounded Context Database Design Diagram](#42862-bounded-context-database-design-diagram)
+    - [4.2.9. Bounded Context: Connectivity Management](#429-bounded-context-connectivity-management)
+      - [4.2.9.1. Domain Layer](#4291-domain-layer)
+      - [4.2.9.2. Interface Layer](#4292-interface-layer)
+      - [4.2.9.3. Application Layer](#4293-application-layer)
+      - [4.2.9.4. Infrastructure Layer](#4294-infrastructure-layer)
+      - [4.2.9.5. Bounded Context Software Architecture Component Level Diagrams](#4295-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.9.6. Bounded Context Software Architecture Code Level Diagrams](#4296-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.9.6.1. Bounded Context Domain Layer Class Diagrams](#42961-bounded-context-domain-layer-class-diagrams)
+        - [4.2.9.6.2. Bounded Context Database Design Diagram](#42962-bounded-context-database-design-diagram)
+
+- [Capítulo V: Solution UI/UX Design](#capítulo-v-solution-uiux-design)
+  - [5.1. Style Guidelines](#51-style-guidelines)
+    - [5.1.1. General Style Guidelines](#511-general-style-guidelines)
+    - [5.1.2. Web, Mobile and IoT Style Guidelines](#512-web-mobile-and-iot-style-guidelines)
+  - [5.2. Information Architecture](#52-information-architecture)
+    - [5.2.1. Organization Systems](#521-organization-systems)
+    - [5.2.2. Labeling Systems](#522-labeling-systems)
+    - [5.2.3. SEO Tags and Meta Tags](#523-seo-tags-and-meta-tags)
+    - [5.2.4. Searching Systems](#524-searching-systems)
+    - [5.2.5. Navigation Systems](#525-navigation-systems)
+  - [5.3. Landing Page UI Design](#53-landing-page-ui-design)
+    - [5.3.1. Landing Page Wireframe](#531-landing-page-wireframe)
+    - [5.3.2. Landing Page Mock-up](#532-landing-page-mock-up)
+  - [5.4. Applications UX/UI Design](#54-applications-uxui-design)
+    - [5.4.1. Applications Wireframes](#541-applications-wireframes)
+    - [5.4.2. Applications Wireflow Diagrams](#542-applications-wireflow-diagrams)
+    - [5.4.3. Applications Mock-ups](#543-applications-mock-ups)
+    - [5.4.4. Applications User Flow Diagrams](#544-applications-user-flow-diagrams)
+  - [5.5. Applications Prototyping](#55-applications-prototyping)
+  - [5.6. IoT Device Design](#56-iot-device-design)
+
+- [Capítulo VI: Product Implementation, Validation & Deployment](#capítulo-vi-product-implementation-validation--deployment)
+  - [6.1. Software Configuration Management](#61-software-configuration-management)
+    - [6.1.1. Software Development Environment Configuration](#611-software-development-environment-configuration)
+  - [6.2. Landing Page, Services & Applications Implementation](#62-landing-page-services--applications-implementation)
+    - [6.2.1. Sprint 1](#621-sprint-1)
+      - [6.2.1.1. Sprint Planning 1](#6211-sprint-planning-1)
+      - [6.2.1.4. Development Evidence for Sprint Review](#6214-development-evidence-for-sprint-review)
+
+- [Conclusiones](#conclusiones)
+  - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
+
+- [Bibliografía](#bibliografía)
+
+- [Anexos](#anexos)
+  - [Anexo A. Videos de Exposiciones](#anexo-a-videos-de-exposiciones)
+    - [Anexo A — AV1 — Sprint Review](#anexo-a--av1--sprint-review)
+
+<div style="page-break-before: always; break-before: page;"></div>
+
+# Student Outcome
+
+<p align="justify">
+El curso contribuye al cumplimiento del Student Outcome ABET:
+</p>
+
+**ABET – EAC - Student Outcome 5**
+
+<p align="justify">
+<strong>Criterio:</strong> La capacidad de funcionar efectivamente en un equipo cuyos miembros juntos proporcionan liderazgo, crean un entorno de colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen objetivos.
+</p>
+
+<p align="justify">
+En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 5.
+</p>
+
+| Criterio específico | Acciones realizadas | Conclusiones |
+|---|---|---|
+| Trabaja en equipo para proporcionar liderazgo en forma conjunta | **Sánchez Guevara, Iván Fernando**<br><br>**AV1**<br>• Tuvo a su cargo el Startup Profile y parte del Solution Profile, desarrollando la descripción de la startup, los perfiles de los integrantes, así como los antecedentes y la problemática de ResQ.<br>• Asumió el desarrollo del Context Mapping y de los diagramas de arquitectura a nivel Context, Container y Deployment, integrando en una representación arquitectónica las responsabilidades e interacciones definidas para los distintos Bounded Contexts.<br>• Desarrolló el Bounded Context Connectivity, incluyendo Domain Layer, Interface Layer, Application Layer, Infrastructure Layer y sus diagramas de diseño correspondientes.<br><br>**Nanfuñay Liza, Pedro Jesus**<br><br>**AV1**<br>• Tuvo a su cargo el proceso de Lean UX, desarrollando Lean UX Problem Statements, Assumptions, Hypothesis Statements y Lean UX Canvas como base para orientar las decisiones iniciales del equipo.<br>• Asumió el Design-Level EventStorming, incluyendo Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases, contribuyendo a identificar y delimitar las responsabilidades posteriormente distribuidas entre los Bounded Contexts del sistema.<br>• Desarrolló el Bounded Context Monitoring, incluyendo sus capas y diagramas de diseño táctico.<br><br>**Chacaliaza Minaya, Eduardo Fabian**<br><br>**AV1**<br>• Tuvo a su cargo la definición de los segmentos objetivo, el análisis de competidores y las estrategias y tácticas de ResQ frente a la competencia.<br>• Desarrolló el Product Backlog, organizando y priorizando los requisitos funcionales identificados para la solución.<br>• Participó en el Strategic-Level Domain-Driven Design y asumió el desarrollo del System Landscape de la arquitectura.<br>• Desarrolló el Bounded Context Alert & Response Management, especificando sus capas y diagramas técnicos correspondientes.<br><br>**Quispe Barzola, Fabricio Fabian**<br><br>**AV1**<br>• Tuvo a su cargo el proceso de entrevistas, incluyendo su diseño, registro y análisis, proporcionando al equipo información proveniente de representantes de los segmentos objetivo.<br>• Desarrolló las User Stories y el Impact Mapping, trasladando los resultados obtenidos durante la investigación hacia la especificación de requisitos de ResQ.<br>• Desarrolló los Bounded Contexts Identity and Access Management (IAM) y Risk Detection, incluyendo Domain, Interface, Application e Infrastructure Layers, así como los diagramas de componentes, clases y base de datos correspondientes.<br><br>**Aliaga Urbina, Wilder Gonzalo**<br><br>**AV1**<br>• Tuvo a su cargo la elaboración de User Personas, User Task Matrix, User Journey Mapping y Empathy Mapping, estructurando los hallazgos obtenidos durante la investigación de usuarios.<br>• Utilizó estos artefactos para representar necesidades, tareas, frustraciones y recorridos de los segmentos objetivo, aportando información utilizada posteriormente por el equipo en la definición de la solución.<br>• Desarrolló los Bounded Contexts Building y Device, incluyendo sus capas y diagramas de diseño táctico correspondientes.<br><br>**Guerrero Vasquez, Jhon Danny**<br><br>**AV1**<br>• Participó en el proceso de Needfinding y tuvo a su cargo el Big Picture EventStorming y el Ubiquitous Language, contribuyendo a establecer una comprensión común del dominio de ResQ y de sus principales conceptos.<br>• El Big Picture EventStorming desarrollado permitió representar los eventos relevantes del dominio y apoyar posteriormente su descomposición en Bounded Contexts.<br>• Desarrolló los Bounded Contexts User e Incident, incluyendo sus capas, componentes, clases y diseño de persistencia. | Durante AV1, el equipo distribuyó responsabilidades entre sus integrantes en distintas etapas del proceso de ingeniería, abarcando Lean UX, UX Research, Requirements Specification, Strategic-Level Domain-Driven Design, Tactical-Level Domain-Driven Design y Software Architecture. Cada integrante asumió la responsabilidad de artefactos concretos cuyos resultados se relacionan con el trabajo realizado por los demás miembros. Esta organización permitió desarrollar en paralelo los Capítulos I, II, III y IV y posteriormente integrar sus resultados en una propuesta común para ResQ. |
+| **Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos** | **Sánchez Guevara, Iván Fernando**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió responsabilidades relacionadas con la definición inicial de la solución, Context Mapping, Software Architecture y el Bounded Context Connectivity.<br>• Su trabajo en Context Mapping y arquitectura permitió integrar visualmente las relaciones y dependencias existentes entre elementos desarrollados por diferentes miembros del equipo.<br><br>**Nanfuñay Liza, Pedro Jesus**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió la elaboración de los artefactos de Lean UX y Design-Level EventStorming.<br>• Los artefactos de Candidate Context Discovery, Domain Message Flows Modeling y Bounded Context Canvases proporcionaron una base común para organizar y distribuir posteriormente el diseño táctico entre los integrantes del equipo.<br>• Complementó este trabajo desarrollando el Bounded Context Monitoring dentro de la distribución acordada para el Capítulo IV.<br><br>**Chacaliaza Minaya, Eduardo Fabian**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió responsabilidades relacionadas con segmentos objetivo, análisis competitivo, Product Backlog, Strategic-Level Domain-Driven Design y Software Architecture.<br>• La organización del Product Backlog contribuyó a estructurar y priorizar el alcance funcional identificado por el equipo.<br>• Complementó el diseño estratégico con el desarrollo del Bounded Context Alert & Response Management, manteniendo relación entre el alcance funcional y el diseño de la solución.<br><br>**Quispe Barzola, Fabricio Fabian**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió las actividades relacionadas con entrevistas, User Stories, Impact Mapping, IAM y Risk Detection.<br>• Los resultados obtenidos en entrevistas fueron utilizados como insumo para la especificación de requisitos, permitiendo mantener trazabilidad entre investigación, necesidades identificadas y funcionalidades propuestas.<br>• El desarrollo de IAM y Risk Detection permitió continuar dicha trazabilidad desde los requisitos hasta el diseño táctico de la solución.<br><br>**Aliaga Urbina, Wilder Gonzalo**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió los principales artefactos de Needfinding y el diseño táctico de Building y Device.<br>• Organizó los resultados de investigación en User Personas, User Task Matrix, User Journey Maps y Empathy Maps, facilitando que el equipo dispusiera de una representación compartida de los usuarios y sus necesidades.<br>• Relacionó posteriormente estos hallazgos con elementos del dominio físico e IoT mediante el desarrollo de Building y Device.<br><br>**Guerrero Vasquez, Jhon Danny**<br><br>**AV1**<br>• Dentro de la planificación de AV1 asumió actividades relacionadas con Needfinding, Big Picture EventStorming, Ubiquitous Language y los Bounded Contexts User e Incident.<br>• La elaboración del Ubiquitous Language contribuyó a establecer términos y definiciones compartidas para reducir ambigüedades durante el trabajo de los distintos integrantes.<br>• Complementó el modelado general del dominio desarrollando User e Incident dentro de la distribución establecida para el Tactical-Level Domain-Driven Design. | La planificación de AV1 permitió distribuir el alcance del entregable entre los seis integrantes, estableciendo responsabilidades relacionadas entre sí y cubriendo progresivamente la comprensión del problema, investigación de usuarios, especificación de requisitos y diseño de la solución. Los artefactos desarrollados mantienen dependencias entre distintas responsabilidades: las entrevistas alimentan el Needfinding, estos resultados contribuyen a los requisitos, y los requisitos y eventos del dominio orientan la identificación y diseño de los Bounded Contexts y la arquitectura. Esta organización permitió integrar los aportes individuales dentro de una estructura común del Project Report y avanzar hacia los objetivos establecidos para AV1. |
+
+<div style="page-break-before: always; break-before: page;"></div>
+
+# Capítulo I: Introducción
+
+## 1.1. Startup Profile
+
+### 1.1.1. Descripción de la Startup
+<p align="justify">
+En una ciudad como Lima, caracterizada por su alta densidad de edificios y su constante vulnerabilidad ante emergencias como fugas de gas o movimientos sísmicos, la seguridad preventiva es un desafío crítico. Actualmente, la gestión de estos riesgos presenta grandes deficiencias: un simple error en la detección o el uso de múltiples alarmas desconectadas (que en el mejor de los casos solo emiten un aviso sonoro y dependen por completo de la rápida intervención humana) puede poner vidas en riesgo. Frente a esta realidad surge SecurityBear, una startup creada por estudiantes de la Facultad de Ingeniería de la Universidad Peruana de Ciencias Aplicadas (UPC). Reconocemos que, muchas veces, cuando las familias, trabajadores o empresas buscan estar verdaderamente preparados para cualquier eventualidad, se enfrentan a un mercado confuso y fragmentado. Surgen constantes dudas sobre cuántos dispositivos distintos se deben adquirir, su nivel de integración tecnológica y, sobre todo, si serán capaces de reportar un siniestro de manera automática y sin demoras.
+</p>
+
+<p align="justify">
+Con nuestro sistema inteligente e integrado, centralizamos la detección de múltiples amenazas en un solo dispositivo automatizada. Utilizamos tecnología de sensores avanzados para identificar riesgos al instante, notificando a los usuarios en tiempo real y eliminando los retrasos propios de la intervención manual. Nuestro enfoque se centra en brindar tranquilidad y eficiencia, transformando la prevención de emergencias en algo accesible, seguro y capaz de actuar cuando cada segundo cuenta.
+</p>
+
+### 1.1.2. Perfiles de integrantes del equipo
+
+| Nombres y Apellidos | Código | Descripción | Foto |
+|---|---|---|---|
+| Ivan Fernando Sanchez Guevara | U202218181 | Mi nombre es Fernando Sanchez Guevara, tengo 22 años y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona disciplinada, responsable y puntual al momento de desarrollar las asignaciones de trabajo. Además, me preocupo por mantener una buena coordinación con mi equipo, procurando apoyar a mis compañeros cuando presentan alguna dificultad. Gracias a mi compromiso y disposición para colaborar, he contribuido al desarrollo adecuado de diferentes proyectos grupales, buscando cumplir los objetivos establecidos y resolver los inconvenientes que puedan surgir durante el proceso. | ![foto1](assets/images/chapter-01-introduction/Fernando.png) |
+| Eduardo Fabian Chacaliza Minaya | U202324129 | Mi nombre es Eduardo Fabian Chacaliza Minaya y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y comprometida con el cumplimiento de los objetivos del equipo. Tengo interés en el desarrollo de soluciones tecnológicas y en la integración de los diferentes componentes de un proyecto. Durante los trabajos grupales procuro mantener una comunicación constante con mis compañeros, colaborar en la resolución de problemas y apoyar en la integración y validación de las distintas partes del proyecto para obtener un resultado consistente y funcional. | ![foto2](assets/images/chapter-01-introduction/Eduardo.png) |
+| Fabricio Fabian Quispe Barzola | U202320442 | Mi nombre es Fabricio Fabian Quispe Barzola y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y comprometida con el cumplimiento de los objetivos que asumo tanto de manera individual como en equipo. Tengo interés en el desarrollo de software, el análisis de problemas y la construcción de soluciones tecnológicas que permitan responder a necesidades reales. Durante los trabajos grupales procuro mantener una comunicación constante con mis compañeros, aportar ideas, escuchar diferentes puntos de vista y colaborar en la resolución de dificultades que puedan presentarse. Asimismo, busco organizar adecuadamente mis actividades, cumplir con los plazos establecidos y contribuir a que el equipo mantenga una visión común del trabajo. Me interesa seguir fortaleciendo mis conocimientos técnicos y mis habilidades de coordinación, análisis y trabajo colaborativo a lo largo de mi formación profesional. | ![foto3](assets/images/chapter-01-introduction/Fabricio.png) |
+| Pedro Jesús Nanfuñay Liza | U202215462 | Mi nombre es Pedro Jesús Nanfuñay Liza, tengo 21 años y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona creativa, responsable, perseverante y siempre dispuesto a trabajar en equipo. Espero aportar de manera positiva al equipo y cumplir con los objetivos establecidos en el proyecto. | ![foto3](assets/images/chapter-01-introduction/Pedro.jpeg) |
+| Wilder Gonzalo Aliaga Urbina | U202222001 | Mi nombre es Gonzalo Aliaga Urbina y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y comprometida con el cumplimiento de los objetivos establecidos en cada proyecto. Tengo especial interés en el desarrollo de soluciones tecnológicas, la programación y la aplicación de nuevas tecnologías para resolver problemas de manera eficiente. Durante los trabajos grupales procuro mantener una comunicación constante con mis compañeros, aportar ideas, apoyar en la resolución de dificultades y colaborar en la integración de las diferentes partes del proyecto. Asimismo, busco cumplir con las tareas asignadas dentro de los plazos establecidos y contribuir de manera activa para que el equipo mantenga una buena organización y logre resultados consistentes y funcionales. | ![foto4](assets/images/chapter-01-introduction/Gonzalo.jpg) |
+
+## 1.2. Solution Profile
+
+### 1.2.1. Antecedentes y problemática
+#### What (¿Qué?)
+- **¿Cuál es el problema?** <br>
+
+<p align="justify">
+La dificultad de gestionar múltiples alarmas durante emergencias, lo que ocasiona que las personas no cuenten con información clara ni oportuna sobre los protocolos y rutas de evacuación a seguir. Esto resulta en desorientación y pánico, aumentando el riesgo de que los usuarios sufran lesiones o queden atrapados al no saber cómo actuar ni adónde dirigirse durante un desastre.
+</p>
+
+- **¿Cuál es la relación con la persona en cuestión?** <br>
+
+<p align="justify">
+La relación con los usuarios se basa en ofrecerles una herramienta centralizada que simplifica la gestión de sensores y alertas en un solo ecosistema. Esto reduce la complejidad y proporciona información detallada, automatizada y fácil de comprender para actuar correctamente en casos de emergencia.
+</p>
+
+#### When (¿Cuándo?)
+- **¿Cuándo sucede el problema?** <br>
+
+<p align="justify">
+El problema ocurre de imprevisto antes y durante la emergencia. Principalmente al momento de intentar identificar la amenaza y seguir un protocolo de evacuación, donde la confusión y falta de indicaciones claras pueden ocasionar accidentes, obstrucción de vías de escape o el riesgo de quedar atrapado bajo los escombros.
+</p>
+
+- **¿Cuándo utiliza el cliente el producto?** <br>
+
+<p align="justify">
+El usuario utilizaría el sistema (SecurityBear / ResQ) en dos momentos clave: 1) En el instante crítico, para recibir una alerta temprana que identifique qué tipo de emergencia está ocurriendo (sismo, fuga de gas, incendio), y 2) Durante la evacuación, para recibir instrucciones y protocolos específicos que debe aplicar para ese caso en particular.
+</p>
+
+#### Where (¿Dónde?)
+- **¿Dónde está el cliente cuando utiliza el producto?** <br>
+
+<p align="justify">
+Desde cualquier lugar dentro de una infraestructura monitoreada, ya sea su hogar, su centro de trabajo, un centro comercial o un local.
+</p>
+
+- **¿A dónde se dirige?** <br>
+
+<p align="justify">
+El usuario se dirige hacia las zonas de seguridad establecidas, ya sean áreas de evacuación externas (zonas amplias y despejadas) o zonas de seguridad internas (como columnas o pilares estructurales antisísmicos).
+</p>
+
+- **¿Dónde surge el problema?** <br>
+
+<p align="justify">
+El problema se origina en el entorno físico afectado justo en el momento de la emergencia, agravado por la falta de un sistema unificado que guíe las decisiones en tiempo real. Surge en la brecha entre la activación de una alarma tradicional (que a lo mucho solo emite ruido) y la necesidad vital de conocer las acciones y rutas exactas que se deben tomar.
+</p>
+
+#### Who (¿Quiénes?)
+- **¿Quiénes están involucrados?** <br>
+
+<p align="justify">
+Los principales involucrados son todas las personas que se encuentren dentro de una estructura o edificio (residentes, trabajadores, visitantes), los administradores del recinto y los equipos de seguridad o brigadistas encargados de gestionar la emergencia.
+</p>
+
+- **¿A quiénes les sucede el problema?** <br>
+
+<p align="justify">
+El problema afecta principalmente a las personas que ocupan la edificación en el momento del siniestro, quienes sufren desorientación y exposición al peligro. También impacta a los responsables de seguridad y administradores de edificios, quienes enfrentan la dificultad de coordinar evacuaciones sin herramientas tecnológicas automatizadas.
+</p>
+
+- **¿Quién lo utiliza?** <br>
+
+<p align="justify">
+El sistema será utilizado por familias en edificios residenciales, trabajadores en oficinas y corporativos, así como administradores de instalaciones. Principalmente, está dirigido a personas e instituciones que valoran la prevención de riesgos y buscan una respuesta rápida, segura y guiada ante desastres.
+</p>
+
+#### Why (¿Por qué?)
+- **¿Cuál es la causa del problema?** <br>
+
+<p align="justify">
+La falta de un sistema centralizado, automatizado e inteligente para la gestión de riesgos. Actualmente, los edificios dependen de alarmas independientes y no interconectadas que solo generan ruido, dejando a los usuarios sin instrucciones claras, dependientes de la memoria humana y propensos a cometer errores fatales debido al estrés y el pánico del momento.
+</p>
+
+#### How (¿Cómo?)
+- **¿En qué condiciones nuestros clientes usan el producto?** <br>
+
+<p align="justify">
+Los clientes utilizan el sistema en condiciones de alto estrés, urgencia y posible pánico, con un tiempo de reacción muy limitado. Por ello, el producto funciona de manera automática, emitiendo alertas claras, directas y visuales/auditivas que no requieren interpretación compleja por parte del usuario.
+</p>
+
+- **¿Cómo nos conocieron nuestros compradores?** <br>
+
+<p align="justify">
+A través de alianzas estratégicas con constructoras y juntas de propietarios, ferias de seguridad y prevención de riesgos (Defensa Civil), marketing digital enfocado en la protección familiar y empresarial, y recomendaciones de consultores de seguridad laboral e infraestructura.
+</p>
+
+- **¿Cómo prefieren nuestros consumidores acceder a nuestro producto?** <br>
+
+<p align="justify">
+Mediante un sistema de hardware instalado en puntos clave del edificio (sensores inteligentes) que se sincroniza directamente con una aplicación móvil (ResQ) o un panel de control, permitiendo a los usuarios recibir notificaciones en tiempo real, conocer el estado de su entorno y revisar los protocolos preventivos desde sus smartphones.
+</p>
+
+- **¿Qué llevó a la persona a esa situación?** <br>
+
+<p align="justify">
+La vulnerabilidad inherente de vivir o trabajar en una ciudad con alto riesgo sísmico y fallas en infraestructuras (como fugas de gas o incendios). El profundo deseo de proteger su vida, la de su familia o la de sus empleados, sumado a la frustración de saber que los sistemas tradicionales son insuficientes para guiar a las personas cuando realmente importa.
+</p>
+
+#### How much (¿Cuánto?)
+<p align="justify">
+El Perú se encuentra en el Cinturón de Fuego del Pacífico, lo que hace que ciudades como Lima sean altamente vulnerables a sismos de gran magnitud. Según proyecciones de Defensa Civil (INDECI), un terremoto severo en la capital podría dejar cientos de miles de damnificados debido a la alta densidad poblacional y la falta de preparación. Sumado a esto, el Cuerpo General de Bomberos atiende anualmente miles de emergencias por fugas de gas e incendios urbanos, donde una detección tardía suele escalar a tragedias irreparables. La desorientación durante los primeros minutos de un siniestro incrementa exponencialmente el riesgo de mortalidad y lesiones. SecurityBear busca reducir este impacto crítico al centralizar la detección de amenazas y eliminar la dependencia exclusiva del factor humano para dar aviso. Al optimizar los tiempos de respuesta y brindar directrices claras de evacuación a través de la tecnología, nuestra plataforma contribuye directamente a salvar vidas, mitigar daños personales y reducir las pérdidas materiales ocasionadas por la falta de una alerta temprana y coordinada.
+</p>
+
+### 1.2.2. Lean UX Process
+
+#### 1.2.2.1. Lean UX Problem Statements
+<p align="justify">
+El estado actual de la seguridad y gestión de emergencias en edificios se ha enfocado principalmente en el uso de sistemas independientes y de propósito único; como detectores de humo, alarmas de gas o protocolos de evacuación manuales. Estos mecanismos son utilizados por administradores y responsables de seguridad de los edificios para identificar situaciones de riesgo; sin embargo, en muchos casos requieren de la intervención humana para coordinar una respuesta adecuada y reducir los posibles daños sobre las personas y la infraestructura.
+</p>
+
+<p align="justify">
+Lo que las soluciones existentes no suelen resolver de manera integrada es la coordinación de la información entre la detección de una emergencia y la ejecución de una respuesta física ante ella. Esto dificulta centralizar la información obtenida, emitir alertas precisas, identificar el tipo de emergencia, ubicar la zona afectada y activar respuestas diferenciadas de acuerdo con las caracterísiticas y el nivel de gravedad del evento. Asimismo, muchos sistemas dependen de mecanismos de monitoreo o comunicación centralizados, lo que puede limitar su capacidad de respuesta cuando se pierde temporalmente la conectividad a Internet durante una emergencia.
+</p>
+
+<p align="justify">
+Nuestra solución abordará esta brecha mediante una plataforma IoT capaz de monitorear variables ambientales y fisicas del edificio, procesar localmente la información obtenida de los sensores mediante Edge Computing, clasificar el tipo y grado de la emergencia y ejecutar acciones automáticas a través de actuadores (alarmas, luces de evacuación, ventilación, cierre de válvula) mientras reporta el evento y el estado del edificio en tiempo real.
+</p>
+
+<p align="justify">
+Nuestro enfoque inicial estará dirigido a los propietarios y administradores de edificaciones que requieren supervisar las condiciones de seguridad de sus instalaciones para responder oportunamente ante situaciones de riesgo. La propuesta también estará orientada a responsables de seguridad, operaciones e infraestructura de empresas e instituciones que necesitan centralizar el monitoreo y coordinar respuestas en instalaciones con diferentes zonas y niveles de concurrencia.
+</p>
+
+<p align="justify">
+Sabremos que hemos tenido éxito cuando los representantes de ambos segmentos utilicen la aplicación para monitorear el estado del edificio, reconocer el tipo y nivel de riesgo, ubicar la zona afectada, verificar la activación automática de respuestas adecuadas de los actuadores y consultar posteriormente los eventos registrados. Asimismo, consideraremos el interés de estos responsables por incorporar nuestra solución como complemento de sus mecanismos actuales de seguridad.
+</p>
+
+#### 1.2.2.2. Lean UX Assumptions
+
+**Business Assumptions:**
+
+<p align="justify">
+1. Creemos que existe una demanda insatisfecha en el mercado de administración de edificios por soluciones que centralicen monitoreo y respuesta ante emergencias, actualmente cubierta parcialmente por sistemas aislados.
+</p>
+
+<p align="justify">
+2. Creemos que existe una oportunidad para integrar en una única solución IoT la detección, clasificación, localización y respuesta automática ante situaciones de riesgo dentro de edificios.
+</p>
+
+<p align="justify">
+3. Creemos que los propietarios y administradores de edificaciones, así como las empresas e instituciones con infraestructura propia, estarán dispuestas a adoptar una solución que complemente sus mecanismos actuales de seguridad mediante monitoreo y automatización.
+</p>
+
+<p align="justify">
+4. Creemos que la capacidad de ejecutar respuestas críticas localmente, sin depender permanentemente de la conectividad a Internet, constituirá un elemento diferenciador de la propuesta frente a sistemas que requieren comunicación constante con servicios externos.
+</p>
+
+<p align="justify">
+5. Creemos que un modelo de servicio orientado a edificios permitirá escalar progresivamente la solución mediante la incorporación de nuevos sensores, actuadores, zonas y dispositivos IoT según las necesidades de cada organización.
+</p>
+
+<p align="justify">
+6. Creemos que los clientes estarán dispuestos a asumir un costo por una solución que contribuya al monitoreo continuo, la trazabilidad de eventos y la automatización de determinadas respuestas de seguridad.
+</p>
+
+**Business Outcome Assumptions:**
+
+<p align="justify">
+1. Creemos que demostrar una solución integrada de monitoreo y respuesta ante emergencias incrementará el interés de potenciales clientes en adoptar la plataforma frente al uso exclusivo de mecanismos independientes o manuales.
+</p>
+
+<p align="justify">
+2. Creemos que al garantizar que las respuestas automáticas y del monitoreo sean las adecuadas, estas incrementarán la confiabilidad y, por consecuencia, la intención de permanencia y renovación de nuestro servicio por parte de las organizaciones, reduciendo potencialmente la tasa de cancelación.
+</p>
+
+<p align="justify">
+3. Creemos que reducir el esfuerzo requerido para supervisar manualmente las condiciones de seguridad del edificio incrementará el valor percibido de la plataforma y la disposición de las organizaciones a pagar por el servicio.
+</p>
+
+<p align="justify">
+4. Creemos que la disponibilidad de registros históricos sobre eventos detectados, mediciones y respuestas ejecutadas incrementará el uso recurrente de la plataforma para actividades de supervisión y seguimiento.
+</p>
+
+<p align="justify">
+5. Creemos que la posibilidad de incorporar progresivamente nuevas zonas, sensores y actuadores permitirá incrementar el alcance del servicio, expandiendo nuestra solución a nuevas necesidades.
+</p>
+
+<p align="justify">
+6. Creemos que una implementación satisfactoria del MVP permitirá validar el interés de potenciales clientes y justificar la evolución de la solución hacia una mayor cantidad de dispositivos, tipos de emergencia y capacidades de respuesta.
+</p>
+
+**User Assumptions:**
+
+<p align="justify">
+1. Creemos que los propietarios y administradores de edificaciones necesitan supervisar continuamente las condiciones de seguridad de las instalaciones bajo su responsabilidad.
+</p>
+
+<p align="justify">
+2. Creemos que los responsables de seguridad, operaciones e infraestructura de empresas e instituciones necesitan centralizar la información proveniente de diferentes zonas de sus instalaciones.
+</p>
+
+<p align="justify">
+3. Creemos que ambos segmentos necesitan identificar rápidamente qué tipo de emergencia está ocurriendo, cuál es su nivel de riesgo y dónde se ha producido.
+</p>
+
+<p align="justify">
+4. Creemos que ambos segmentos necesitan conocer qué respuestas automáticas fueron ejecutadas por el sistema durante una situación de riesgo.
+</p>
+
+<p align="justify">
+5. Creemos que los administradores y responsables institucionales necesitan consultar posteriormente información sobre los eventos ocurridos para realizar actividades de seguimiento y análisis.
+</p>
+
+<p align="justify">
+6. Creemos que los usuarios de ambos segmentos cuentan habitualmente con acceso a dispositivos digitales y están familiarizados con aplicaciones utilizadas para tareas de supervisión o gestión.
+</p>
+
+<p align="justify">
+7. Creemos que los responsables de empresas e instituciones necesitan supervisar múltiples zonas desde una visión centralizada para coordinar adecuadamente una respuesta.
+</p>
+
+<p align="justify">
+8. Creemos que los responsables de ambos segmentos valorarán una solución que pueda incorporarse progresivamente a la infraestructura existente sin requerir una sustitución completa de sus mecanismos actuales de seguridad.
+</p>
+
+**User Outcome and Benefit Assumptions:**
+
+<p align="justify">
+1. Creemos que los propietarios, administradores y responsables institucionales podrán comprender con mayor rapidez el estado de sus edificaciones al contar con información de sensores y alertas centralizada en una misma plataforma.
+</p>
+
+<p align="justify">
+2. Creemos que podrán tomar decisiones con mayor rapidez al conocer el tipo de emergencia, el nivel de riesgo y la zona afectada.
+</p>
+
+<p align="justify">
+3. Creemos que tendrán mayor visibilidad sobre la respuesta del sistema al poder verificar qué acciones automáticas fueron ejecutadas durante cada evento.
+</p>
+
+<p align="justify">
+4. Creemos que podrán realizar un mejor seguimiento de las emergencias mediante el acceso al historial de eventos, mediciones y acciones ejecutadas.
+</p>
+
+<p align="justify">
+5. Creemos que los responsables de empresas e instituciones podrán coordinar mejor la respuesta ante una emergencia al disponer de información centralizada sobre las diferentes zonas de sus instalaciones.
+</p>
+
+<p align="justify">
+6. Creemos que ambos segmentos podrán reducir su dependencia de la supervisión y coordinación completamente manual durante los primeros momentos de una emergencia.
+</p>
+
+<p align="justify">
+7. Creemos que tendrán mayor confianza en la continuidad de la respuesta del sistema al mantenerse las acciones críticas locales aun cuando se pierda temporalmente la conexión a Internet.
+</p>
+
+**Feature Assumptions:**
+
+<p align="justify">
+1. Creemos que una funcionalidad de <strong>monitoreo del estado del edificio y sus zonas</strong> permitirá a los usuarios de ambos segmentos conocer las condiciones actuales y detectar rápidamente la existencia de una situación de riesgo.
+</p>
+
+<p align="justify">
+2. Creemos que una funcionalidad de <strong>detección y clasificación local de emergencias mediante sensores y Edge Computing</strong> permitirá identificar el tipo y nivel de riesgo sin depender permanentemente de servicios externos.
+</p>
+
+<p align="justify">
+3. Creemos que una funcionalidad de <strong>respuesta automática mediante actuadores</strong> permitirá ejecutar acciones de seguridad apropiadas según el tipo y nivel de riesgo detectado.
+</p>
+
+<p align="justify">
+4. Creemos que una funcionalidad de <strong>alertas y señalización diferenciadas</strong> permitirá a los responsables reconocer oportunamente la existencia y gravedad de una emergencia, y facilitar la comunicación de la respuesta.
+</p>
+
+<p align="justify">
+5. Creemos que una funcionalidad de <strong>identificación de la zona afectada</strong> permitirá a los responsables de seguridad localizar con mayor rapidez el origen del evento y orientar adecuadamente la respuesta.
+</p>
+
+<p align="justify">
+6. Creemos que una funcionalidad de <strong>registro e historial de eventos</strong> permitirá consultar posteriormente las emergencias detectadas, las mediciones registradas y las respuestas ejecutadas por el sistema.
+</p>
+
+#### 1.2.2.3. Lean UX Hypothesis Statements
+
+<p align="justify">
+1. Creemos que lograremos incrementar el valor percibido de la plataforma y la disposición a pagar por el servicio si los propietarios, administradores y responsables institucionales logran comprender con mayor rapidez el estado de sus edificaciones y zonas mediante una funcionalidad de monitoreo centralizado.
+</p>
+
+<p align="justify">
+2. Creemos que lograremos incrementar la confiabilidad percibida de la plataforma y la intención de permanencia y renovación del servicio si los usuarios de ambos segmentos pueden identificar oportunamente el tipo y nivel de riesgo y mantener la capacidad de respuesta ante una pérdida temporal de conectividad mediante una funcionalidad de detección y clasificación local basada en sensores y Edge Computing.
+</p>
+
+<p align="justify">
+3. Creemos que lograremos incrementar el valor percibido de la plataforma y la disposición a pagar por el servicio si los propietarios, administradores y responsables institucionales obtienen mayor confianza y visibilidad sobre la respuesta ante una emergencia mediante la ejecución automática de acciones de seguridad apropiadas según el tipo y nivel de riesgo detectado.
+</p>
+
+<p align="justify">
+4. Creemos que lograremos incrementar el interés y valor percibido de la plataforma si los responsables de ambos segmentos pueden reconocer oportunamente la existencia y naturaleza de una emergencia y coordinar una respuesta más clara mediante alertas y señalización diferenciadas.
+</p>
+
+<p align="justify">
+5. Creemos que lograremos incrementar el valor percibido de la plataforma para las actividades de supervisión y respuesta si los propietarios, administradores y responsables institucionales pueden tomar decisiones con mayor rapidez al conocer la ubicación del riesgo mediante una funcionalidad de identificación de la zona afectada.
+</p>
+
+<p align="justify">
+6. Creemos que lograremos incrementar el uso recurrente de la plataforma para actividades de supervisión y seguimiento si los usuarios pueden analizar posteriormente las emergencias ocurridas mediante una funcionalidad de registro e historial de eventos, mediciones y respuestas ejecutadas.
+</p>
+#### 1.2.2.4. Lean UX Canvas
+
+<p align="justify">
+El Lean UX Canvas sintetiza los principales elementos identificados durante el Lean UX Process, relacionando el problema de negocio, los resultados esperados, los usuarios, los beneficios, las posibles soluciones y las hipótesis planteadas.
+</p>
+
+![LeanUXCanvas-ResQ](assets/images/chapter-01-introduction/LeanUXCanvas-ResQ.png)
+
+<p align="center">
+  <strong>Figura 5. LeanUXCanvas-ResQ.</strong>
+</p>
+
+**Link del Canvas:** https://miro.com/app/board/uXjVHqdK0Tc=/?share_link_id=104899432918
+
+<p align="justify">
+En <strong>Business Problem</strong> se identificó que los sistemas de seguridad en edificios suelen funcionar de manera aislada y requieren intervención humana para coordinar la respuesta ante una emergencia. En <strong>Business Outcomes</strong> se definieron comportamientos esperados como el interés por adoptar la plataforma, la renovación del servicio, el uso recurrente y la disposición a pagar por sus funcionalidades.
+</p>
+
+<p align="justify">
+En <strong>Users and Customers</strong> se consideró como usuarios principales a los administradores y responsables de seguridad, mientras que los ocupantes del edificio representan el segmento beneficiado por las alertas y mecanismos de evacuación. Los <strong>User Benefits</strong> se enfocan en comprender rápidamente el estado del edificio, identificar el tipo y ubicación del riesgo, conocer las respuestas ejecutadas y mantener acciones críticas aun sin conexión a Internet.
+</p>
+
+<p align="justify">
+Las <strong>Solution Ideas</strong> incluyen el monitoreo por zonas, detección y clasificación local mediante Edge Computing, activación automática de actuadores, alertas diferenciadas, identificación de la zona afectada e historial de eventos. A partir de estas soluciones se formularon las hipótesis que deberán ser validadas durante el desarrollo del proyecto.
+</p>
+
+<p align="justify">
+Finalmente, se identificó como principales aspectos a validar; la confianza de los usuarios en la automatización, la capacidad del sistema para clasificar correctamente los riesgos y la comprensión de las alertas por parte de los ocupantes. Para ello se llevarán a cabo entrevistas, pruebas de prototipo y pruebas de concepto con el dispositivo IoT.
+</p>
+
+## 1.3. Segmentos objetivo
+
+<p align="justify">
+Para garantizar que la solución IoT responda de manera adecuada a las necesidades de seguridad y gestión de emergencias en edificaciones, se han identificado dos segmentos principales vinculados directamente con el problema.
+</p>
+
+<p align="justify">
+A continuación, se presentan sus principales características demográficas, geográficas y psicográficas, así como las necesidades que justifican su relevancia para la propuesta.
+</p>
+
+### Segmento objetivo #1: Propietarios y administradores de edificaciones
+
+<p align="justify">
+Este segmento está conformado por propietarios, administradores, facility managers y responsables de la gestión de edificios residenciales, comerciales o de uso mixto que buscan mejorar la capacidad de detección y respuesta ante situaciones de emergencia. Según el INDECI, entre 2012 y 2023 se registraron 3,005 incendios urbanos en el departamento de Lima, lo que evidencia la necesidad de contar con mecanismos de monitoreo y respuesta oportuna ante eventos críticos en edificaciones.
+</p>
+
+#### Aspectos demográficos
+
+<p align="justify">
+
+- **Sexo:** Masculino y femenino.
+
+- **Rango de edad:** 30 años a más.
+
+- **Nivel socioeconómico:** Principalmente clases A, B y C.
+
+- **Ocupación:** Propietarios de inmuebles, administradores de edificios y responsables de mantenimiento, seguridad o gestión de instalaciones.
+
+</p>
+
+#### Aspectos geográficos
+
+<p align="justify">
+
+- **Nacionalidad:** Peruana.
+
+- **Zona geográfica:** Principalmente zonas urbanas de Lima Metropolitana y otras ciudades con alta concentración de edificios residenciales, comerciales y empresariales.
+
+</p>
+
+#### Aspectos psicográficos
+
+<p align="justify">
+
+- **Dolor principal:** Dependencia de sistemas que se limitan a generar alertas y que requieren intervención humana para ejecutar acciones posteriores ante una emergencia.
+
+- **Intereses:** Seguridad de los ocupantes, automatización de edificios, monitoreo remoto, prevención de riesgos y modernización de infraestructura.
+
+- **Actitudes:** Valoran soluciones que permitan actuar rápidamente ante eventos críticos y que puedan integrarse progresivamente con la infraestructura existente.
+
+- **Necesidades clave:** Monitoreo en tiempo real, identificación de la zona afectada, activación automática de alarmas y actuadores, registro de eventos y reducción del tiempo de respuesta ante emergencias.
+
+</p>
+
+### Segmento objetivo #2: Empresas integradoras de automatización y gestión de edificios inteligentes
+
+<p align="justify">
+Este segmento incluye empresas especializadas en automatización de edificios, integración IoT, Building Management Systems (BMS) y gestión técnica de infraestructura. Estas organizaciones desarrollan soluciones de automatización y gestión de edificios para sus clientes y enfrentan la necesidad de incorporar capacidades de detección, monitoreo y respuesta ante emergencias dentro de infraestructuras que utilizan distintos dispositivos y sistemas. Según la Encuesta de Transformación Digital 2022 de PAD-RTM, realizada a 404 organizaciones peruanas, el 29 % indicó utilizar tecnologías de Internet of Things (IoT), lo que evidencia la presencia de este tipo de tecnologías en el entorno empresarial y la necesidad de soluciones que puedan integrarse con ellas.
+</p>
+
+#### Aspectos demográficos y organizacionales
+
+<p align="justify">
+
+- **Tipo de organización:** Empresas B2B dedicadas a automatización de edificios, integración IoT, sistemas BMS y gestión técnica de infraestructura.
+
+- **Tamaño:** Principalmente pequeñas, medianas y grandes empresas que desarrollan proyectos de automatización e integración tecnológica para organizaciones con infraestructura propia.
+
+- **Responsables de decisión:** Gerentes de proyectos, ingenieros de automatización, responsables de integración, gerentes comerciales, responsables de innovación y directores técnicos.
+
+- **Rango de edad de los responsables:** Aproximadamente entre 28 y 60 años.
+
+</p>
+
+#### Aspectos geográficos
+
+<p align="justify">
+
+- **Ubicación:** Principalmente Lima Metropolitana y principales ciudades del Perú donde se desarrollan proyectos de automatización, modernización e implementación de edificios inteligentes.
+
+- **Ámbito de operación:** Edificios corporativos, campus educativos, centros de salud, instalaciones comerciales, hoteles, complejos industriales y otras infraestructuras que requieren automatización y monitoreo técnico.
+
+</p>
+
+#### Aspectos psicográficos
+
+<p align="justify">
+
+- **Dolor principal:** Dificultad para integrar funciones de detección y respuesta ante emergencias en edificios que utilizan distintos sensores, dispositivos y sistemas de automatización.
+
+- **Intereses:** Automatización de edificios, IoT, interoperabilidad, sistemas BMS, digitalización de infraestructura, integración de sensores, escalabilidad y desarrollo de edificios inteligentes.
+
+- **Actitudes:** Buscan soluciones modulares, confiables, escalables y fáciles de integrar con la infraestructura tecnológica que ya implementan para sus clientes.
+
+- **Necesidades clave:** Una solución fácil de integrar con diferentes sensores y sistemas de automatización, que pueda configurarse según cada edificio, adaptarse a distintos proyectos y escalar conforme aumenten las zonas o dispositivos conectados.
+
+</p>
+
+<div style="page-break-before: always; break-before: page;"></div>
+
+# Capítulo II: Requirements Elicitation & Analysis
+
+
+## 2.1. Competidores
+
+### 2.1.1. Análisis competitivo
+<p align="justify">
+Para poder conocer y analizar mejor a nuestros posibles competidores, realizamos el siguiente Landscape:
+</p>
+
+<div style="page-break-before: always; break-before: page;"></div>
+
+<table style="background-color:transparent; border-collapse:collapse; width:100%; max-width:100%; margin:0 auto; table-layout:fixed; font-family:Arial,sans-serif; font-size:12px; line-height:16px; color:inherit; border:1px solid currentColor;">
+  <colgroup>
+    <col style="width:12%;">
+    <col style="width:10%;">
+    <col style="width:10%;">
+    <col style="width:18%;">
+    <col style="width:17%;">
+    <col style="width:16%;">
+    <col style="width:17%;">
+  </colgroup>
+
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; ">
+    <th colspan="7" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; text-align:left; height:17px;">
+      Competitive Analysis Landscape
+    </th>
+  </tr>
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:49px;">
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
+      ¿Por qué llevar a cabo este análisis?
+    </td>
+    <td colspan="5" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Analizar las características y propuestas de valor de competidores indirectos relacionados con el monitoreo, automatización y gestión de edificios, con el fin de identificar oportunidades de diferenciación para ResQ mediante tecnologías IoT, procesamiento Edge y automatización de respuestas ante situaciones de riesgo.  </td>
+  </tr>
+
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:50px;">
+    <td colspan="3" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
+      &nbsp;
+    </td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">ResQ<br><img src="assets/images/chapter-02-requirements-elicitation-analysis/ResQ-logo.png" alt="Logo de ResQ" width="70" style="display:block; width:70px; max-width:100%; height:auto; margin:6px auto;"></td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">ProSentry<br><img src="assets/images/chapter-02-requirements-elicitation-analysis/competidor-1.png" alt="Logo de ProSentry" width="70" style="display:block; width:70px; max-width:100%; height:auto; margin:6px auto;"></td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Siemens Building X<br><img src="assets/images/chapter-02-requirements-elicitation-analysis/competidor-2.png" alt="Logo de Siemens Building X" width="70" style="display:block; width:70px; max-width:100%; height:auto; margin:6px auto;"></td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Honeywell EBI<br><img src="assets/images/chapter-02-requirements-elicitation-analysis/competidor-3.png" alt="Logo de Honeywell EBI" width="70" style="display:block; width:70px; max-width:100%; height:auto; margin:6px auto;"></td>
+  </tr>
+
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:65px;">
+    <td rowspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; text-align:center; vertical-align:middle;">
+      <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Perfil</span>
+    </td>
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Overview</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma IoT orientada al monitoreo, detección y respuesta ante riesgos en edificaciones. Integra sensores, monitoreo digital, procesamiento Edge y actuadores.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma IoT de monitoreo preventivo de propiedades. Detecta fugas, temperatura, humedad, fallas y otras condiciones que pueden causar daños.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma digital para la gestión inteligente de edificios. Centraliza operaciones, mantenimiento, energía, seguridad y protección.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma empresarial que integra gestión del edificio, seguridad, control de accesos, videovigilancia y protección contra incendios.</td>
+  </tr>
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:82px;">
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
+      Ventaja competitiva<br>¿Qué valor ofrece a los clientes?
+    </td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Arquitectura IoT modular que integra distintos riesgos y ejecuta respuestas automáticas según sensores, zona, horario y contexto.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Detección temprana de riesgos de la propiedad, monitoreo continuo y control de ciertos dispositivos, como válvulas.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Ecosistema amplio y escalable para administrar múltiples funciones e instalaciones desde una sola plataforma.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Integra sistemas críticos del edificio y permite automatizar procedimientos y flujos de trabajo ante eventos.</td>
+  </tr>
+
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:66px;">
+    <td rowspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; text-align:center; vertical-align:middle;">
+      <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Perfil de Marketing</span>
+    </td>
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Mercado objetivo</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Propietarios y administradores de edificaciones, así como empresas integradoras de automatización y gestión de edificios inteligentes.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Propietarios, administradores y operadores de edificios residenciales y comerciales.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Propietarios, operadores y administradores de edificios, campus y organizaciones de diversos sectores.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Medianas y grandes organizaciones con edificios, campus e infraestructuras complejas.</td>
+  </tr>
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:66px;">
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Estrategias de marketing</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Estrategia B2B basada en demostraciones de la solución, contacto directo con administradores y organizaciones y alianzas con empresas vinculadas a automatización de edificios.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Estrategia B2B enfocada en reducción de daños, demostraciones, evaluaciones y casos de uso.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Venta consultiva B2B, contenido especializado, casos por industria y socios tecnológicos.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Venta empresarial mediante especialistas e integradores, demostraciones y soluciones personalizadas.</td>
+  </tr>
+
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:66px;">
+    <td rowspan="3" style="background-color:transparent; color:inherit; border:1px solid currentColor; text-align:center; vertical-align:middle;">
+      <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Perfil de Producto</span>
+    </td>
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Productos &amp; Servicios</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Solución IoT compuesta por dispositivos de monitoreo, procesamiento local y actuadores, integrada con una plataforma centralizada para supervisar riesgos, generar alertas y ejecutar respuestas automáticas ante diferentes eventos en edificaciones.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Sensores inalámbricos para fugas de agua y gas, temperatura, humedad, puertas y otros riesgos, con plataforma de monitoreo.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Building X incluye aplicaciones para operaciones, seguridad, incendios, energía, análisis e integración de equipos.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">EBI integra gestión del edificio, seguridad, videovigilancia, control de accesos, incendios y sistemas de terceros.</td>
+  </tr>
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:49px;">
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Precios &amp; Costos</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modelo basado en una implementación inicial de sensores y dispositivos IoT, complementada con una suscripción recurrente para el acceso a la plataforma de monitoreo, alertas, historial e integraciones. El costo dependerá de la cantidad de dispositivos, tamaño de la propiedad y funcionalidades contratadas.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Sensores con un costo aproximado de US$60 a US$80 por unidad y una tarifa mensual generalmente entre US$4 y US$9 por inquilino, que incluye monitoreo, dashboard, alertas y soporte.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modelo basado en suscripciones anuales a aplicaciones y APIs, con costos adicionales asociados a conectividad, dispositivos e implementación según las necesidades del proyecto.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modelo empresarial basado en licencias y suscripciones según la solución contratada. Los costos dependen de la infraestructura, integraciones, implementación y servicios requeridos.</td>
+  </tr>
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:66px;">
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">
+      Canales de distribución<br>(Web y/o Móvil)
+    </td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma web de monitoreo con alertas y acceso móvil para responsables y administradores.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma accesible por web y dispositivos móviles, con notificaciones ante eventos.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataforma cloud con acceso web y herramientas móviles según la aplicación utilizada.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Interfaces web y acceso remoto, además de opciones de uso desde móviles y tablets.</td>
+  </tr>
+
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:66px;">
+    <td rowspan="4" style="background-color:transparent; color:inherit; border:1px solid currentColor; text-align:center; vertical-align:middle;">
+      <span style="display:inline-block; writing-mode:vertical-rl; transform:rotate(180deg);">Análisis SWOT</span>
+    </td>
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Fortalezas</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Arquitectura modular; integración de diferentes riesgos; procesamiento Edge; respuestas automáticas locales; capacidad de integración con diferentes dispositivos IoT.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Solución especializada; variedad de sensores; monitoreo continuo; alertas automáticas; integraciones.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Marca consolidada; amplia experiencia; alta escalabilidad; gran capacidad de integración.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Experiencia en automatización; integración de sistemas críticos; arquitectura escalable.</td>
+  </tr>
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:50px;">
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Debilidades</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Necesidad de fortalecer la validación en entornos reales, demostrar escalabilidad y consolidar su posicionamiento frente a soluciones ya establecidas en el mercado.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Enfoque principal en mitigación de daños a la propiedad, con menor énfasis en coordinación integral de emergencias.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Puede implicar mayor complejidad y costo para organizaciones con necesidades específicas.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Requiere integración especializada e infraestructura, lo que aumenta la complejidad.</td>
+  </tr>
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:49px;">
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Oportunidades</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Creciente adopción de IoT y automatización en edificios; modernización de infraestructura; mayor demanda de monitoreo y respuesta ante riesgos; oportunidades de alianza con empresas integradoras.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Creciente demanda de monitoreo preventivo en edificaciones, adopción de sensores IoT y expansión del mercado de automatización de propiedades.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Mayor digitalización de edificios, IA, automatización y gestión centralizada.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Modernización de edificios existentes y crecimiento de IoT e integración tecnológica.</td>
+  </tr>
+  <tr style="page-break-inside: avoid; break-inside: avoid; background-color:transparent; height:49px;">
+    <td colspan="2" style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Amenazas</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Presencia de soluciones consolidadas; exigencias normativas; riesgos de ciberseguridad y rápida evolución tecnológica.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Aparición de soluciones IoT de menor costo y expansión de grandes plataformas.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Competidores especializados más ágiles y económicos, y evolución tecnológica acelerada.</td>
+    <td style="background-color:transparent; color:inherit; border:1px solid currentColor; padding:0 7px; vertical-align:top;">Plataformas cloud más flexibles, soluciones de menor costo y necesidad de modernización continua.</td>
+  </tr>
+</table>
+
+### 2.1.2. Estrategias y tácticas frente a competidores
+
+<p align="justify">
+Para afrontar las fortalezas de competidores indirectos como ProSentry, Siemens Building X y Honeywell EBI, ResQ buscará diferenciarse mediante una propuesta IoT modular y especializada en la detección y respuesta ante riesgos en edificaciones. Frente a plataformas consolidadas y de amplio alcance como Siemens Building X y Honeywell EBI, ResQ priorizará una solución más enfocada y adaptable, permitiendo implementar únicamente los dispositivos y funcionalidades necesarios y ampliar el sistema progresivamente según las características y riesgos de cada edificación.
+</p>
+
+<p align="justify">
+Para aprovechar las debilidades identificadas en la competencia, ResQ aplicará una estrategia de respuesta contextual automatizada. Mientras que algunas soluciones se concentran principalmente en el monitoreo, mitigación de daños o gestión integral del edificio, ResQ buscará relacionar información proveniente de distintos dispositivos con factores como la zona, el horario y el tipo de evento para determinar la situación detectada y ejecutar una respuesta específica. Como táctica, se implementarán reglas configurables que permitan generar diferentes alertas y acciones automáticas según el contexto del riesgo.
+</p>
+
+<p align="justify">
+Como estrategia frente a las oportunidades del mercado, ResQ aprovechará la creciente adopción de tecnologías IoT y automatización en edificaciones, así como la necesidad de mejorar la detección y respuesta ante situaciones de riesgo. La startup utilizará un modelo basado en una implementación inicial de dispositivos IoT y una suscripción recurrente para acceder a funcionalidades como monitoreo, alertas, historial e integraciones. Como tácticas comerciales, se realizarán demostraciones, pruebas piloto e implementaciones iniciales en espacios controlados, además de establecer alianzas con empresas integradoras de automatización y gestión de edificios inteligentes.
+</p>
+
+<p align="justify">
+Finalmente, para afrontar amenazas como la presencia de empresas consolidadas, los riesgos de ciberseguridad, la evolución tecnológica y la dependencia de conectividad, ResQ priorizará el procesamiento Edge de eventos críticos. Esto permitirá que determinadas acciones puedan ejecutarse localmente sin depender exclusivamente de servicios en la nube, manteniendo funciones esenciales ante interrupciones temporales de conexión. Asimismo, se buscará mantener una arquitectura modular, escalable e interoperable que permita incorporar nuevos dispositivos, tecnologías y mecanismos de respuesta conforme evolucionen las necesidades de los clientes y del mercado.
+</p>
+
+## 2.2. Entrevistas
+
+### 2.2.1. Diseño de entrevistas
+
+<p align="justify">
+Para la investigación se diseñaron entrevistas semiestructuradas diferenciadas para cada segmento objetivo. Se establecieron preguntas principales que permiten mantener una estructura común entre los entrevistados de un mismo segmento y preguntas complementarias destinadas a profundizar en sus respuestas, experiencias y comportamientos.
+</p>
+
+<p align="justify">
+El diseño prioriza preguntas abiertas orientadas a conocer experiencias reales y procesos actuales, evitando inducir respuestas o presentar anticipadamente las características de la solución propuesta. De esta manera, se busca obtener información objetiva y subjetiva sobre los entrevistados, incluyendo características demográficas, background, personalidad, habilidades, objetivos, frustraciones, marcas e influencias, dispositivos de preferencia, navegadores, tecnologías y canales digitales de interacción. Asimismo, las preguntas permiten conocer las tareas, procesos y dificultades actuales relacionadas con la prevención, detección y respuesta ante emergencias.
+</p>
+
+#### Segmento objetivo #1: Propietarios y administradores de edificaciones
+
+<p align="justify">
+Las entrevistas dirigidas a este segmento buscan comprender el perfil del propietario, administrador o responsable de la edificación, las características de la infraestructura bajo su responsabilidad, las actividades que realiza actualmente, los sistemas de seguridad que utiliza y su experiencia frente a incidentes o emergencias.
+</p>
+
+**Pregunta principal 1: ¿Podría presentarse y contarnos brevemente sobre usted?**
+
+Preguntas complementarias:
+
+- ¿Cuál es su nombre y apellido?
+- ¿Qué edad tiene?
+- ¿Con qué género se identifica?
+- ¿En qué distrito reside actualmente?
+- ¿Cuál es su estado civil?
+- ¿Cómo está conformada su familia?
+
+**Pregunta principal 2: ¿A qué se dedica actualmente y qué responsabilidades tiene dentro de la edificación que gestiona?**
+
+Preguntas complementarias:
+
+- ¿Cuál es su profesión o formación?
+- ¿Cuál es su cargo o función actual?
+- ¿Cuánto tiempo lleva realizando estas funciones?
+- ¿Cuántos años de experiencia tiene en administración, mantenimiento, operaciones o seguridad de edificaciones?
+- ¿Cuáles son sus principales responsabilidades?
+
+**Pregunta principal 3: ¿Cómo describiría su forma de trabajar y de tomar decisiones?**
+
+Preguntas complementarias:
+
+- ¿Cómo suele actuar cuando aparece un problema inesperado?
+- ¿Prefiere prevenir los problemas o actuar cuando estos ocurren?
+- ¿Qué tan importante es para usted contar con información antes de tomar una decisión?
+- ¿Qué habilidades considera más importantes para desarrollar su trabajo?
+- ¿Qué tan cómodo se siente utilizando nuevas herramientas tecnológicas?
+
+**Pregunta principal 4: ¿Podría describir la edificación que administra o gestiona?**
+
+Preguntas complementarias:
+
+- ¿Qué tipo de edificación es?
+- ¿Dónde está ubicada?
+- ¿Cuántos pisos o niveles posee?
+- ¿Cuántas personas aproximadamente pueden encontrarse en ella?
+- ¿Qué zonas o ambientes principales contiene?
+- ¿Cuáles considera que son las zonas de mayor riesgo?
+- ¿Existen horarios de mayor ocupación?
+- ¿Cuenta con personal de seguridad y mantenimiento?
+
+**Pregunta principal 5: ¿Qué actividades realiza actualmente relacionadas con la seguridad de la edificación?**
+
+Preguntas complementarias:
+
+- ¿Realiza inspecciones o revisiones?
+- ¿Revisa reportes de incidencias?
+- ¿Coordina mantenimientos?
+- ¿Participa en simulacros?
+- ¿Supervisa equipos o sistemas de seguridad?
+- ¿Atiende alertas o emergencias?
+- ¿Con qué frecuencia realiza cada actividad?
+- ¿Cuáles considera más importantes?
+- ¿Quiénes más participan en estas actividades?
+
+**Pregunta principal 6: ¿Qué sistemas o mecanismos de seguridad utiliza actualmente la edificación?**
+
+Preguntas complementarias:
+
+- ¿Qué sistemas utilizan para detectar situaciones de riesgo?
+- ¿Utilizan cámaras, alarmas, detectores, sensores u otros equipos?
+- ¿Cómo supervisan estos sistemas?
+- ¿Se encuentran integrados entre sí o funcionan de manera independiente?
+- ¿Existe algún sistema que requiera supervisión constante de una persona?
+
+**Pregunta principal 7: Cuando se genera una alerta o se reporta una situación de riesgo, ¿qué ocurre desde ese momento hasta que el incidente queda controlado?**
+
+Preguntas complementarias:
+
+- ¿Cómo se detecta normalmente la situación?
+- ¿Quién recibe primero la alerta?
+- ¿Cómo identifican la zona afectada?
+- ¿Quién verifica lo ocurrido?
+- ¿Qué acciones se realizan después?
+- ¿Quién toma las decisiones?
+- ¿Quién tiene autorización para activar una alarma o evacuación?
+- ¿Cómo se comunica la situación a las demás personas?
+- ¿Cómo determinan que el incidente ha terminado?
+- ¿Qué actividades realizan posteriormente?
+
+**Pregunta principal 8: ¿Podría contarnos sobre una alerta, incidente o emergencia real que haya tenido que gestionar?**
+
+Preguntas complementarias:
+
+- ¿Qué ocurrió?
+- ¿Cómo se enteró?
+- ¿Qué hizo primero?
+- ¿Quiénes intervinieron?
+- ¿Qué ocurrió después?
+- ¿Cuánto tiempo tardaron en identificar el problema?
+- ¿Cuánto tiempo tardaron en controlarlo?
+- ¿Qué salió bien?
+- ¿Qué dificultades aparecieron?
+- ¿Qué información le hizo falta?
+- ¿Cómo terminó la situación?
+
+**Pregunta principal 9: ¿Qué fue lo más difícil o frustrante durante esa situación?**
+
+Preguntas complementarias:
+
+- ¿Qué fue lo que más le preocupó?
+- ¿En qué momento tuvo mayor incertidumbre?
+- ¿Dependió de otras personas para obtener información?
+- ¿Hubo alguna demora?
+- ¿Qué considera que hubiera facilitado su trabajo?
+
+**Pregunta principal 10: Cuando los sistemas actuales no le permiten realizar una tarea u obtener información, ¿qué hace normalmente?**
+
+Preguntas complementarias:
+
+- ¿Realiza llamadas telefónicas?
+- ¿Utiliza WhatsApp u otra aplicación de mensajería?
+- ¿Envía a una persona a verificar físicamente?
+- ¿Consulta cámaras u otros sistemas?
+- ¿Utiliza documentos, hojas de cálculo o registros manuales?
+
+**Pregunta principal 11: ¿Qué información necesita conocer cuando ocurre una emergencia para poder tomar una decisión?**
+
+Preguntas complementarias:
+
+- ¿Necesita conocer la ubicación o zona exacta?
+- ¿El tipo de riesgo?
+- ¿El nivel de gravedad?
+- ¿La evolución de la situación?
+- ¿El estado de los sensores o equipos?
+- ¿Las personas o áreas afectadas?
+- ¿Quién está atendiendo el incidente?
+
+**Pregunta principal 12: ¿Cómo recibe actualmente las alertas o comunicaciones relacionadas con la seguridad del edificio?**
+
+Preguntas complementarias:
+
+- ¿Utiliza llamadas telefónicas?
+- ¿WhatsApp?
+- ¿Correo electrónico?
+- ¿SMS?
+- ¿Aplicaciones móviles?
+- ¿Alarmas o paneles físicos?
+- ¿Qué canal considera más rápido?
+- ¿Cuál considera más confiable?
+- ¿Qué canal prefiere para una situación crítica?
+
+**Pregunta principal 13: ¿Qué dispositivos y herramientas tecnológicas utiliza normalmente para realizar su trabajo?**
+
+Preguntas complementarias:
+
+- ¿Utiliza computadora de escritorio, laptop, smartphone o tablet?
+- ¿Cuál utiliza con mayor frecuencia?
+- ¿Qué dispositivo utiliza cuando se encuentra fuera del edificio?
+- ¿Qué sistema operativo utiliza en su computadora?
+- ¿Qué sistema operativo utiliza en su smartphone?
+- ¿Qué aplicaciones o plataformas utiliza habitualmente?
+
+**Pregunta principal 14: ¿Qué navegador web utiliza normalmente?**
+
+Preguntas complementarias:
+
+- ¿Cuál utiliza en su computadora?
+- ¿Cuál utiliza en su smartphone?
+- ¿Utiliza más de un navegador?
+- ¿Alguna plataforma de trabajo requiere un navegador específico?
+
+**Pregunta principal 15: ¿Cómo registran y consultan actualmente los incidentes ocurridos en el edificio?**
+
+Preguntas complementarias:
+
+- ¿Dónde se almacena la información?
+- ¿Quién realiza el registro?
+- ¿Qué información se registra?
+- ¿Quién puede consultarla?
+- ¿Cómo busca un incidente anterior?
+- ¿Qué criterios utiliza para buscarlo?
+- ¿Encuentra dificultades al consultar información histórica?
+
+**Pregunta principal 16: ¿Qué reportes o indicadores relacionados con seguridad utiliza actualmente?**
+
+Preguntas complementarias:
+
+- ¿Revisa cantidad de incidentes?
+- ¿Tiempos de respuesta?
+- ¿Fallas de equipos?
+- ¿Mantenimientos?
+- ¿Falsas alarmas?
+- ¿Incidentes por zona?
+- ¿Existe algún indicador que le gustaría conocer y actualmente no tenga disponible?
+
+**Pregunta principal 17: ¿Qué ocurre con los sistemas de seguridad cuando se pierde la conexión a Internet o el suministro eléctrico?**
+
+Preguntas complementarias:
+
+- ¿Los sistemas continúan funcionando localmente?
+- ¿Qué funcionalidades dejan de estar disponibles?
+- ¿Existe algún sistema de respaldo?
+- ¿Qué funciones considera que nunca deberían depender exclusivamente de Internet?
+
+**Pregunta principal 18: ¿Qué opinión tiene sobre la automatización de determinadas acciones frente a una emergencia?**
+
+Preguntas complementarias:
+
+- ¿Qué acciones considera que podrían ejecutarse automáticamente?
+- ¿Qué acciones deberían requerir confirmación humana?
+- ¿Qué necesitaría para confiar en una acción automática?
+- ¿Considera necesario mantener mecanismos manuales de respaldo?
+
+**Pregunta principal 19: ¿Quiénes deberían tener acceso a la información y funciones relacionadas con la seguridad del edificio?**
+
+Preguntas complementarias:
+
+- ¿Qué información debería poder consultar el personal de seguridad?
+- ¿Qué información debería poder consultar administración?
+- ¿Quién debería modificar configuraciones?
+- ¿Qué información considera sensible?
+- ¿Considera necesario manejar distintos niveles de acceso?
+
+**Pregunta principal 20: Cuando se evalúa adquirir una nueva tecnología de seguridad, ¿cómo se toma la decisión?**
+
+Preguntas complementarias:
+
+- ¿Quién identifica la necesidad?
+- ¿Quién busca y evalúa alternativas?
+- ¿Quién aprueba la adquisición?
+- ¿Qué importancia tienen el precio, soporte, mantenimiento, garantía e integración?
+- ¿Qué dificultades existen para implementar nuevas tecnologías en el edificio?
+
+**Pregunta principal 21: ¿Qué marcas, proveedores o soluciones relacionadas con seguridad conoce o utiliza actualmente?**
+
+Preguntas complementarias:
+
+- ¿Hay alguna marca o proveedor que le genere mayor confianza?
+- ¿Por qué?
+- ¿Quiénes influyen en sus decisiones sobre seguridad?
+- ¿Considera recomendaciones de especialistas, proveedores, otros administradores o propietarios?
+- ¿Las normas o regulaciones influyen en sus decisiones?
+
+**Pregunta principal 22: ¿Qué tipos de personas considera que requieren especial atención durante una emergencia?**
+
+Preguntas complementarias:
+
+- ¿Existen adultos mayores, niños o visitantes?
+- ¿Existen personas con movilidad reducida?
+- ¿Existen personas con discapacidad visual o auditiva?
+- ¿Qué dificultades podrían enfrentar durante una evacuación?
+- ¿Cómo se les comunica y orienta actualmente?
+
+**Pregunta principal 23: ¿En qué idioma prefiere utilizar los sistemas relacionados con su trabajo?**
+
+Preguntas complementarias:
+
+- ¿Utiliza actualmente sistemas en español o inglés?
+- ¿El idioma representa alguna dificultad para el personal?
+
+**Pregunta principal 24: ¿Qué términos utilizan habitualmente cuando gestionan alertas, incidentes o emergencias?**
+
+Preguntas complementarias:
+
+- ¿Qué nombre utilizan para una situación detectada?
+- ¿Cómo denominan los distintos niveles o tipos de emergencia?
+- ¿Qué términos utilizan para las personas, áreas y acciones involucradas?
+
+**Pregunta principal 25: ¿Cuáles considera que son actualmente los principales problemas relacionados con la gestión de emergencias en la edificación?**
+
+Preguntas complementarias:
+
+- ¿Cuáles son los tres problemas más importantes?
+- ¿Cuál considera que debería resolverse primero?
+- ¿Cuál genera mayor impacto en las personas?
+- ¿Qué resultado espera obtener al gestionar correctamente una emergencia?
+- ¿Qué le generaría mayor tranquilidad?
+
+**Pregunta principal 26: Si tuviera que resumir en una frase su principal preocupación o expectativa respecto a la gestión de emergencias, ¿cómo la expresaría?**
 
 ---
 
-## Project Report Collaboration Insights
+#### Segmento objetivo #2: Empresas integradoras de automatización y gestión de edificios inteligentes
 
-**URL del repositorio público de GitHub:** [COMPLETAR]
+<p align="justify">
+Las entrevistas dirigidas a este segmento buscan comprender cómo las empresas especializadas en automatización de edificios, integración IoT y Building Management Systems (BMS) evalúan, integran y mantienen nuevas soluciones tecnológicas dentro de los proyectos que desarrollan para sus clientes.
+</p>
 
-Esta sección debe crecer en cada entrega (AV1, TB1, AV2 y TB2) e incluir:
+<p align="justify">
+La investigación considera distintos perfiles que participan en este proceso, como gerentes técnicos, ingenieros de proyectos e integración, responsables de innovación y responsables comerciales. De esta manera, se busca comprender tanto los criterios técnicos de interoperabilidad e implementación como los factores comerciales y organizacionales que influyen en la incorporación de una nueva tecnología al portafolio de una empresa integradora.
+</p>
 
-- explicación de cómo se elaboró colaborativamente el informe;
-- capturas de analíticos de colaboración;
-- capturas/evidencias de commits;
-- interpretación de la participación del equipo;
-- coherencia con el Registro de Versiones del Informe.
+<p align="justify">
+Las preguntas se plantean de forma abierta y semiestructurada. Las preguntas principales permiten mantener una estructura comparable entre los participantes, mientras que las preguntas complementarias se utilizan para profundizar en experiencias, comportamientos, criterios de decisión y situaciones reales mencionadas por cada entrevistado.
+</p>
 
-Guardar imágenes generales de colaboración en:
-`assets/images/general/collaboration/`
+<p align="justify">
+La entrevista prioriza conocer procesos y experiencias actuales antes de presentar la propuesta de ResQ, con el propósito de evitar inducir respuestas y obtener evidencia sobre necesidades reales del segmento.
+</p>
 
-### AV1 — Sprint Review
-[COMPLETAR]
+**Pregunta principal 1: ¿Podría presentarse y contarnos brevemente sobre usted y su trayectoria profesional?**
 
-### TB1 — Stage Review
-[COMPLETAR]
+Preguntas complementarias:
 
-### AV2 — Sprint Review
-[COMPLETAR]
+- ¿Cuál es su nombre y apellido?
+- ¿Qué edad tiene?
+- ¿Con qué género se identifica?
+- ¿En qué distrito reside actualmente?
+- ¿Cuál es su estado civil?
+- ¿Cómo está conformada su familia?
+- ¿Cuál es su formación profesional?
+- ¿Cuántos años de experiencia tiene en automatización, IoT, BMS o integración tecnológica?
+- ¿Cómo llegó a desempeñarse en este sector?
 
-### TB2 — Release Review
-[COMPLETAR]
+**Pregunta principal 2: ¿Cuál es su cargo actual y qué responsabilidades tiene dentro de la empresa integradora?**
+
+Preguntas complementarias:
+
+- ¿En qué área trabaja?
+- ¿Qué decisiones dependen directamente de usted?
+- ¿Participa en diseño, integración, implementación, gestión de proyectos, evaluación de proveedores o actividades comerciales?
+- ¿Con qué otros perfiles o áreas trabaja habitualmente?
+- ¿En qué etapas de un proyecto suele participar?
+
+**Pregunta principal 3: ¿Cómo describiría su forma de trabajar y de tomar decisiones cuando aparece un problema técnico o comercial?**
+
+Preguntas complementarias:
+
+- ¿Se considera una persona analítica, práctica, preventiva u orientada a procedimientos?
+- ¿Cómo actúa cuando aparece una situación que no había previsto?
+- ¿Qué tan importante es disponer de información antes de tomar una decisión?
+- ¿Cómo maneja situaciones donde existe presión por parte del cliente?
+- ¿Qué habilidades considera fundamentales para realizar correctamente su trabajo?
+- ¿Qué tan cómodo se siente evaluando o utilizando nuevas tecnologías?
+
+**Pregunta principal 4: ¿Qué tipo de proyectos desarrolla normalmente la empresa y qué tecnologías suelen integrar?**
+
+Preguntas complementarias:
+
+- ¿Trabajan con edificios corporativos, hoteles, clínicas, instituciones educativas, centros comerciales, industria u otros sectores?
+- ¿Implementan sistemas BMS?
+- ¿Trabajan con HVAC, iluminación, energía, bombas, seguridad u otros subsistemas?
+- ¿Integran sensores y dispositivos IoT?
+- ¿Trabajan con sistemas existentes de diferentes fabricantes?
+- ¿Los proyectos suelen involucrar un edificio o múltiples edificios y sedes?
+
+**Pregunta principal 5: ¿Qué actividades realiza usted con mayor frecuencia dentro de estos proyectos?**
+
+Preguntas complementarias:
+
+- ¿Realiza levantamientos técnicos?
+- ¿Diseña o revisa arquitecturas?
+- ¿Configura dispositivos o plataformas?
+- ¿Realiza programación o integración?
+- ¿Participa en pruebas y puesta en marcha?
+- ¿Realiza reuniones con clientes o proveedores?
+- ¿Participa en propuestas comerciales?
+- ¿Realiza documentación o capacitación?
+- ¿Con qué frecuencia realiza cada una de estas actividades?
+- ¿Cuáles considera más importantes para que un proyecto sea exitoso?
+
+**Pregunta principal 6: Pensando en un proyecto reciente, ¿podría describir el proceso completo que siguieron para incorporar una tecnología nueva desde que apareció la necesidad hasta su puesta en funcionamiento?**
+
+Preguntas complementarias:
+
+- ¿Cómo apareció la necesidad?
+- ¿Qué hicieron primero?
+- ¿Realizaron un levantamiento de la infraestructura existente?
+- ¿Qué información necesitaron recopilar?
+- ¿Cómo evaluaron las posibles alternativas?
+- ¿Quiénes participaron en la decisión?
+- ¿Realizaron pruebas o pilotos antes de implementar?
+- ¿Cómo fue la instalación y configuración?
+- ¿Qué criterios utilizaron para aceptar finalmente la integración?
+- ¿Qué ocurrió después de entregar el proyecto?
+- ¿Existe una etapa posterior de soporte o ajustes?
+
+**Pregunta principal 7: ¿En qué etapas de ese proceso suelen aparecer las mayores dificultades o incertidumbres?**
+
+Preguntas complementarias:
+
+- ¿Los problemas aparecen durante el levantamiento, diseño, selección de equipos, integración, pruebas o puesta en marcha?
+- ¿Ha ocurrido que una tecnología se comporte de manera diferente a lo indicado por el fabricante?
+- ¿Han aparecido incompatibilidades que no habían sido previstas?
+- ¿Qué consecuencias generan estos problemas sobre el proyecto?
+- ¿Generan horas adicionales de ingeniería?
+- ¿Pueden afectar el presupuesto o el cronograma?
+- ¿Cómo suele sentirse cuando estos problemas aparecen durante una implementación?
+- ¿Qué situación le genera mayor preocupación?
+
+**Pregunta principal 8: ¿Con qué tecnologías, protocolos o mecanismos de integración trabajan con mayor frecuencia?**
+
+Preguntas complementarias:
+
+- ¿Utilizan BACnet?
+- ¿Modbus?
+- ¿MQTT?
+- ¿HTTP?
+- ¿APIs REST?
+- ¿Otros protocolos o tecnologías?
+- ¿En qué situaciones utilizan cada uno?
+- ¿Qué ocurre cuando un equipo utiliza un protocolo diferente?
+- ¿Utilizan gateways o capas intermedias de integración?
+
+**Pregunta principal 9: ¿Qué dificultades encuentran al integrar equipos o plataformas de diferentes fabricantes?**
+
+Preguntas complementarias:
+
+- ¿Los sistemas suelen ser realmente abiertos?
+- ¿Han encontrado restricciones de licenciamiento?
+- ¿Existen variables o funciones que no puedan accederse?
+- ¿Qué ocurre cuando un sistema no cuenta con una API o protocolo utilizable?
+- ¿Han tenido que desarrollar adaptadores o capas intermedias?
+- ¿Qué tan frecuente es encontrar documentación incompleta?
+- ¿Qué problemas generan los ecosistemas cerrados?
+
+**Pregunta principal 10: Cuando evalúa técnicamente una nueva solución, ¿qué información y capacidades necesita encontrar para poder integrarla?**
+
+Preguntas complementarias:
+
+- ¿Qué importancia tiene la documentación técnica?
+- ¿Necesita APIs o protocolos abiertos?
+- ¿Qué espera encontrar en la documentación de una API?
+- ¿Necesita ejemplos de solicitudes y respuestas?
+- ¿Es importante conocer la autenticación y los posibles errores?
+- ¿Necesita información sobre eventos o notificaciones?
+- ¿Qué importancia tiene poder realizar pruebas antes de una implementación?
+- ¿Qué importancia tienen los logs y herramientas de diagnóstico?
+- ¿Qué características le hacen confiar técnicamente en una solución?
+- ¿Qué características provocarían que la descarte?
+
+**Pregunta principal 11: ¿Qué tan importante es identificar claramente de qué dispositivo, zona o edificio proviene cada medición, alerta o evento?**
+
+Preguntas complementarias:
+
+- ¿Ha trabajado en proyectos donde la información no estuviera correctamente asociada con una zona o dispositivo?
+- ¿Qué problemas generó?
+- ¿Cómo organizan normalmente dispositivos y puntos de monitoreo?
+- ¿Cómo diferencian instalaciones, edificios, pisos o ambientes?
+- ¿Qué información debería acompañar una alerta para que resulte útil para un operador o integrador?
+
+**Pregunta principal 12: En proyectos de automatización y seguridad, ¿qué nivel de integración observa actualmente entre los distintos sistemas de un edificio?**
+
+Preguntas complementarias:
+
+- ¿El BMS, los sistemas contra incendios, CCTV, control de acceso y otros sistemas suelen funcionar de manera integrada o independiente?
+- ¿Los clientes solicitan cada vez mayor centralización?
+- ¿Ha participado en algún proyecto donde la separación entre sistemas generara dificultades?
+- ¿Qué consecuencias tiene para los operadores utilizar diferentes plataformas?
+- ¿Qué tipos de información suelen intentar centralizar?
+
+**Pregunta principal 13: ¿Qué ocurre con las soluciones que implementan cuando se pierde temporalmente la conexión a Internet?**
+
+Preguntas complementarias:
+
+- ¿Qué funcionalidades deben continuar funcionando localmente?
+- ¿La lectura de sensores debería continuar disponible?
+- ¿Qué acciones críticas no deberían depender de Internet?
+- ¿Qué ocurre con alarmas, ventilación, bombas u otros actuadores?
+- ¿Qué información puede almacenarse temporalmente?
+- ¿Cómo manejan la sincronización cuando se restablece la conexión?
+- ¿Qué funcionalidades considera aceptable mantener únicamente en la nube?
+
+**Pregunta principal 14: Cuando un cliente necesita una funcionalidad que su empresa no desarrolla directamente, ¿cómo deciden entre desarrollarla internamente o integrar una solución de terceros?**
+
+Preguntas complementarias:
+
+- ¿Qué criterios utilizan para tomar esa decisión?
+- ¿Evalúan si la funcionalidad pertenece al core del negocio?
+- ¿Qué ventajas encuentran en trabajar con una solución especializada?
+- ¿Qué responsabilidades adicionales implica desarrollar una solución internamente?
+- ¿Qué características debe tener una solución externa para que consideren integrarla?
+- ¿Qué factores harían que la descarten?
+
+**Pregunta principal 15: ¿Cómo evalúan y seleccionan nuevos fabricantes, proveedores o socios tecnológicos?**
+
+Preguntas complementarias:
+
+- ¿Quién identifica inicialmente una posible solución?
+- ¿Quién realiza la evaluación técnica?
+- ¿Quién participa en la evaluación comercial?
+- ¿Realizan demostraciones, pruebas de concepto o pilotos?
+- ¿Qué importancia tienen las referencias de otros proyectos?
+- ¿Qué importancia tienen el precio y el modelo comercial?
+- ¿Qué importancia tienen el soporte y la capacitación?
+- ¿Qué importancia tiene la experiencia previa con el fabricante?
+- ¿Qué importancia tiene la disponibilidad del producto y de repuestos?
+- ¿Quién toma finalmente la decisión?
+
+**Pregunta principal 16: ¿Qué factores generan confianza o desconfianza cuando trabajan con un proveedor tecnológico nuevo?**
+
+Preguntas complementarias:
+
+- ¿Una marca reconocida influye en la decisión?
+- ¿Qué importancia tienen los casos reales de implementación?
+- ¿Qué importancia tiene un piloto funcionando?
+- ¿Qué tan importante es la velocidad de respuesta del soporte?
+- ¿Qué sucede si un proveedor deja de brindar soporte después de la implementación?
+- ¿Qué espera de la relación con un proveedor a largo plazo?
+- ¿Prefieren proveedores puntuales o socios tecnológicos?
+- ¿Qué riesgos asume la integradora frente a su propio cliente cuando incorpora un producto externo?
+
+**Pregunta principal 17: ¿Qué dispositivos, herramientas y canales digitales utiliza habitualmente para realizar su trabajo?**
+
+Preguntas complementarias:
+
+- ¿Utiliza principalmente laptop, computadora de escritorio, smartphone o tablet?
+- ¿Cuál utiliza con mayor frecuencia para actividades técnicas?
+- ¿Cuál utiliza para coordinación?
+- ¿Qué sistema operativo utiliza?
+- ¿Qué navegador web utiliza habitualmente?
+- ¿Utiliza Microsoft Teams?
+- ¿WhatsApp?
+- ¿Correo electrónico?
+- ¿LinkedIn?
+- ¿Qué herramientas técnicas utiliza, como Postman, Visual Studio Code, herramientas MQTT, software BMS o herramientas de fabricantes?
+
+**Pregunta principal 18: Cuando necesita investigar una tecnología nueva, ¿qué fuentes, marcas o personas influyen en su decisión?**
+
+Preguntas complementarias:
+
+- ¿Consulta primero documentación oficial?
+- ¿Utiliza GitHub, Stack Overflow, YouTube o foros especializados?
+- ¿Consulta a otros ingenieros o integradores?
+- ¿Influyen distribuidores o fabricantes con los que ya trabajan?
+- ¿Participa en ferias o eventos del sector?
+- ¿Utiliza LinkedIn para conocer nuevas tecnologías?
+- ¿Qué fabricantes conoce o utiliza habitualmente?
+- ¿Qué pesa más en su evaluación: la reputación de la marca, la documentación, el soporte, una demostración o una recomendación?
+
+**Pregunta principal 19: ¿Cuáles son sus principales objetivos profesionales cuando incorpora una nueva tecnología dentro de un proyecto?**
+
+Preguntas complementarias:
+
+- ¿Busca principalmente confiabilidad?
+- ¿Facilidad de integración?
+- ¿Reducir tiempos de implementación?
+- ¿Facilidad de operación para el cliente?
+- ¿Facilidad de mantenimiento?
+- ¿Escalabilidad?
+- ¿Poder reutilizar la solución en futuros proyectos?
+- ¿Qué resultado considera una implementación exitosa?
+
+**Pregunta principal 20: ¿Cuáles son las principales frustraciones o preocupaciones que experimenta al evaluar e integrar nuevas soluciones?**
+
+Preguntas complementarias:
+
+- ¿Documentación incompleta?
+- ¿Incompatibilidades?
+- ¿Sistemas cerrados?
+- ¿Problemas que aparecen únicamente durante la instalación en campo?
+- ¿Dependencia excesiva del proveedor?
+- ¿Falta de soporte?
+- ¿Dificultad para mantener la solución después de algunos años?
+- ¿Qué situación le genera mayor presión?
+- ¿Qué aspecto le produce mayor satisfacción cuando una integración funciona correctamente?
+
+**Pregunta principal 21: ¿Qué importancia tienen el mantenimiento y la evolución de una solución después de que el proyecto ya fue entregado?**
+
+Preguntas complementarias:
+
+- ¿Quién suele encargarse de mantener las integraciones?
+- ¿Qué ocurre cuando cambian versiones de plataformas o dispositivos?
+- ¿Cómo manejan actualizaciones?
+- ¿Qué tan importante es mantener compatibilidad con sistemas existentes?
+- ¿Qué problemas aparecen después de uno, dos o más años?
+- ¿Qué espera de un proveedor durante el ciclo de vida de la solución?
+
+**Pregunta principal 22: ¿Qué importancia tiene la escalabilidad cuando evalúan una tecnología que podría incorporarse a su portafolio?**
+
+Preguntas complementarias:
+
+- ¿Debe funcionar tanto en instalaciones pequeñas como grandes?
+- ¿Debe soportar múltiples edificios?
+- ¿Debe poder utilizarse para diferentes clientes?
+- ¿Qué características técnicas evalúan para determinar si una solución puede escalar?
+- ¿Qué limitaciones impedirían incorporarla en proyectos de mayor tamaño?
+
+**Pregunta principal 23: Desde su experiencia, ¿qué cambios o necesidades observa actualmente en el mercado de automatización y edificios inteligentes?**
+
+Preguntas complementarias:
+
+- ¿Existe mayor interés por centralizar información?
+- ¿Ha aumentado la necesidad de monitoreo remoto?
+- ¿Existe mayor interés en IoT?
+- ¿Qué importancia está adquiriendo la analítica?
+- ¿Qué solicitan actualmente los clientes respecto a interoperabilidad?
+- ¿Qué oportunidades observa para nuevas soluciones especializadas?
+
+**Pregunta principal 24: Si pudiera mejorar un solo aspecto de las tecnologías o soluciones que actualmente integra, ¿qué cambiaría y por qué?**
+
+Preguntas complementarias:
+
+- ¿Mejoraría la interoperabilidad?
+- ¿La documentación?
+- ¿La estandarización?
+- ¿El soporte?
+- ¿La facilidad de configuración?
+- ¿El mantenimiento?
+- ¿La escalabilidad?
+- ¿Qué impacto tendría esa mejora sobre su trabajo y sobre los proyectos que realizan?
+
+**Pregunta principal 25: ¿Hay algún aspecto importante sobre automatización, IoT, integración de sistemas o relación con proveedores que considere relevante y que no hayamos abordado?**
+
+Preguntas complementarias:
+
+- ¿Existe algún problema recurrente que no hayamos mencionado?
+- ¿Hay alguna necesidad que actualmente no esté siendo atendida?
+- ¿Qué recomendaría considerar al desarrollar una solución que deba integrarse con sistemas existentes?
+
+### 2.2.2. Registro de entrevistas
+
+#### Segmento objetivo #1: Propietarios y administradores de edificaciones
+
+##### Entrevista 1 — Juan Jose Meza Huanacune
+
+| Información | Detalle |
+|---|---|
+| Nombres | Juan Jose |
+| Apellidos | Meza Huanacune |
+| Edad | 37 años |
+| Género | Masculino |
+| Distrito de residencia | Santiago de Surco |
+| Ocupación / Cargo | Administrador de edificio residencial |
+| Segmento objetivo | Propietarios y administradores de edificaciones |
+| Fecha de entrevista | 08/09/26 |
+| Inicio en el video | 00:00 |
+| Duración | 12:47 |
+| URL del video | [Entrevista a Juan Jose Meza Huanacune](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQDFyv3V8lzPQbp3k7bGe3aBAdY0-3KDcBEdEi1Ho2acls0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=tfOQ92) |
+
+![Entrevista 1 - Juan Jose Meza Huanacune](assets/images/chapter-02-requirements-elicitation-analysis/Entrevista1-Juan-Jose-Meza-Huanacune.png)
+
+<p align="center">
+  <strong>Figura 6. Entrevista 1 - Juan Jose Meza Huanacune.</strong>
+</p>
+
+**Resumen de la entrevista**
+
+<p align="justify">
+Juan Jose Meza Huanacune es un administrador de edificios residenciales de 37 años que reside en Santiago de Surco. Es casado y tiene dos hijos. Estudió Administración de Empresas y cuenta con aproximadamente nueve años de experiencia relacionada con la administración de condominios y edificaciones. Además de administrar un edificio residencial, brinda asesoría independiente a juntas de propietarios en asuntos administrativos y de mantenimiento.
+</p>
+
+<p align="justify">
+Se describe como una persona organizada y preventiva, que prefiere anticiparse a los problemas y contar con evidencia antes de tomar decisiones importantes. Entre las habilidades que considera fundamentales se encuentran la organización, comunicación, coordinación de personal, capacidad de reacción bajo presión y conocimiento básico de herramientas tecnológicas.
+</p>
+
+<p align="justify">
+Actualmente administra un edificio residencial de doce pisos ubicado en Miraflores, con 84 departamentos, dos sótanos de estacionamiento y una ocupación aproximada de entre 190 y 220 personas en momentos de mayor concurrencia. Considera como zonas críticas los sótanos, tableros eléctricos, cuarto de bombas, área de gas, ascensores y escaleras de evacuación.
+</p>
+
+<p align="justify">
+Entre sus principales actividades relacionadas con seguridad se encuentran la revisión diaria de novedades e informes, coordinación de mantenimientos preventivos, simulacros, revisión de incidencias, contacto con proveedores y actualización de protocolos. Considera especialmente importantes la atención oportuna de alertas y la verificación del correcto funcionamiento de los equipos de seguridad.
+</p>
+
+<p align="justify">
+El edificio utiliza CCTV, detectores de humo, central de alarma contra incendios, extintores, luces de emergencia, alarmas sonoras, control de acceso y otros sensores. Sin embargo, señala que estos sistemas no se encuentran completamente integrados, debido a que cámaras, alarmas y control de acceso operan mediante interfaces independientes.
+</p>
+
+<p align="justify">
+Como experiencia relevante, relató un incidente en el que se detectó humo en uno de los sótanos. La alerta fue recibida por seguridad y posteriormente comunicada mediante llamada telefónica. Debido a que inicialmente no se conocía la ubicación exacta, el personal tuvo que realizar una verificación física mientras otro vigilante consultaba las cámaras. La identificación del origen tomó aproximadamente cinco o seis minutos. Durante ese periodo manifestó preocupación por disponer de información incompleta y por desconocer si existían personas en peligro.
+</p>
+
+<p align="justify">
+Entre sus principales frustraciones se encuentra la dificultad para conocer rápidamente la ubicación exacta de una emergencia y la dependencia de llamadas y verificaciones manuales. Como alternativa ante la falta de integración, utiliza llamadas telefónicas, WhatsApp y CCTV para coordinar con el personal.
+</p>
+
+<p align="justify">
+En cuanto a tecnología, utiliza principalmente una laptop Lenovo con Windows y un smartphone Samsung Galaxy con Android. Su navegador principal es Google Chrome, aunque también utiliza Microsoft Edge en algunas plataformas administrativas. Entre sus servicios y aplicaciones habituales se encuentran WhatsApp, Gmail, Google Drive, Excel, sistemas de cámaras y la plataforma del proveedor del control de acceso.
+</p>
+
+<p align="justify">
+Para situaciones críticas considera conveniente recibir una notificación inmediata acompañada de una llamada cuando la gravedad lo amerite. La información que considera indispensable ante una alerta incluye el tipo de emergencia, ubicación exacta, piso o zona, hora, gravedad, evolución de la situación y responsable que se encuentra atendiendo el evento.
+</p>
+
+<p align="justify">
+Los incidentes son registrados actualmente mediante un cuaderno de ocurrencias, archivos de Excel y correos electrónicos. Señala que consultar información histórica puede resultar difícil debido a la dispersión de los registros. Entre las métricas que considera útiles se encuentran la cantidad de incidentes por zona, tiempo de respuesta, falsas alarmas y equipos con mayor frecuencia de fallas.
+</p>
+
+<p align="justify">
+Considera indispensable que las funciones críticas continúen operando localmente ante una pérdida de Internet. Respecto a la automatización, acepta acciones como alarmas o señalización automática cuando la detección sea confiable, pero considera que las acciones de mayor impacto deben contar con reglas claras o algún nivel de confirmación humana.
+</p>
+
+<p align="justify">
+En la toma de decisiones de compra participan la administración y la junta de propietarios. Los criterios más importantes son confiabilidad, soporte técnico, garantía, mantenimiento, integración con la infraestructura existente y precio. Reconoce marcas como Hikvision y Dahua, y sus decisiones también son influenciadas por personal técnico, proveedores especializados, miembros de la junta y experiencias de otros administradores.
+</p>
+
+<p align="justify">
+Finalmente, identifica como prioridades la localización rápida del problema, la reducción de verificaciones manuales y la centralización de información. Resume su principal preocupación con la siguiente frase: <strong>“Durante una emergencia, cada minuto que pasamos buscando información es un minuto que podríamos estar usando para proteger a las personas.”</strong>
+</p>
 
 ---
+
+##### Entrevista 2 — Camila Torres Vega
+
+| Información | Detalle |
+|---|---|
+| Nombres | Camila |
+| Apellidos | Torres Vega |
+| Edad | 32 años |
+| Género | Femenino |
+| Distrito de residencia | San Borja |
+| Ocupación / Cargo | Copropietaria y administradora de edificio de uso mixto |
+| Segmento objetivo | Propietarios y administradores de edificaciones |
+| Fecha de entrevista | 09/09/2026 |
+| Inicio en el video | 00:00 |
+| Duración | 10:23 |
+| URL del video | [Camila Torres Vega](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQAPP8zr8hl9SJxRu5hGW4HTAYU1RbWhVcaLcvTYusyyp0g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&e=LCM4my) |
+
+![Entrevista 2 - Camila Torres Vega](assets/images/chapter-02-requirements-elicitation-analysis/Camila-Torres-Vega-Entrevista2-Segmento2.png)
+
+<p align="center">
+  <strong>Figura 7. Entrevista 2 - Camila Torres Vega.</strong>
+</p>
+
+**Resumen de la entrevista**
+
+<p align="justify">
+Camila Torres Vega tiene 32 años, reside en San Borja, es soltera y vive con su madre. Es arquitecta y se desempeña como copropietaria y administradora de un edificio de uso mixto, actividad que realiza desde hace aproximadamente seis años.
+</p>
+
+<p align="justify">
+Se considera una persona práctica y analítica, con disposición para utilizar nuevas tecnologías siempre que estas simplifiquen las actividades existentes. Entre sus principales habilidades se encuentran la coordinación de proveedores, lectura de planos, planificación de mantenimiento, gestión presupuestal y utilización de herramientas digitales.
+</p>
+
+<p align="justify">
+La edificación que administra se encuentra en Surquillo y posee ocho pisos. Los tres primeros corresponden a oficinas y pequeños negocios, mientras que los niveles superiores son residenciales. Aproximadamente 150 personas circulan diariamente por la infraestructura. Identifica como áreas de mayor riesgo el estacionamiento, los tableros eléctricos, la zona de gas y los locales que mantienen equipos eléctricos funcionando durante largos periodos.
+</p>
+
+<p align="justify">
+Sus principales actividades relacionadas con seguridad son la coordinación de mantenimientos, revisión de reportes, supervisión de inspecciones, gestión de proveedores y recepción de información cuando ocurre un incidente. Los reportes son revisados varias veces por semana, mientras que los mantenimientos siguen calendarios mensuales o trimestrales.
+</p>
+
+<p align="justify">
+Actualmente utilizan cámaras, detectores de humo, alarmas, extintores, luces de emergencia y control de acceso. Sin embargo, cada sistema utiliza interfaces diferentes, obligando al personal a consultar distintas plataformas.
+</p>
+
+<p align="justify">
+Como experiencia relevante, relató una fuga de gas que fue detectada inicialmente por una residente debido al olor. El vigilante verificó físicamente la zona, posteriormente se contactó al responsable de mantenimiento, se cerró la llave correspondiente y se ventiló el área antes de la intervención de un técnico. El origen fue confirmado aproximadamente diez minutos después del primer reporte.
+</p>
+
+<p align="justify">
+Durante el incidente manifestó preocupación e incertidumbre. Su principal frustración fue que la detección dependiera de que una persona percibiera el olor, considerando que el problema podría haber permanecido sin identificar durante más tiempo. La información que hubiera considerado más útil era la ubicación exacta, nivel de concentración de gas y evolución de dicha concentración.
+</p>
+
+<p align="justify">
+Utiliza principalmente una MacBook Air con macOS y un iPhone con iOS. Safari es su navegador principal, aunque utiliza Google Chrome cuando alguna plataforma presenta mayor compatibilidad. Entre sus herramientas habituales se encuentran WhatsApp, Gmail, Google Drive, Notion, Excel y aplicaciones de proveedores.
+</p>
+
+<p align="justify">
+Su canal preferido para emergencias sería una notificación push inmediata, acompañada por una llamada o alarma cuando la situación sea crítica. Actualmente consulta información histórica mediante correos electrónicos, documentos almacenados en Google Drive y conversaciones de WhatsApp, proceso que considera poco práctico. Para localizar incidentes considera útiles filtros por fecha, tipo, piso o zona y estado.
+</p>
+
+<p align="justify">
+La edificación no mantiene actualmente indicadores automatizados, pero considera relevantes métricas como incidentes por mes, tiempos de respuesta, zonas con mayor cantidad de problemas, dispositivos con fallas y mantenimientos pendientes.
+</p>
+
+<p align="justify">
+Respecto a conectividad, considera indispensable que las funciones críticas continúen operando localmente cuando no exista conexión a Internet. Se muestra favorable a automatizar alarmas, notificaciones, señalización y determinadas acciones preventivas, aunque considera necesaria la intervención humana para acciones que pudieran generar riesgos adicionales.
+</p>
+
+<p align="justify">
+Los accesos a información deberían diferenciarse según los roles de administración y seguridad. En cuanto a nuevas adquisiciones, ella identifica alternativas y solicita cotizaciones antes de presentarlas a los demás propietarios. Sus criterios de decisión incluyen costo total, mantenimiento, facilidad de instalación, soporte, compatibilidad e impacto de la instalación sobre la infraestructura existente.
+</p>
+
+<p align="justify">
+Reconoce marcas como Hikvision y Yale, aunque afirma valorar principalmente la calidad del soporte. Sus decisiones son influenciadas por arquitectos, ingenieros, proveedores, otros administradores y recomendaciones vinculadas con Defensa Civil.
+</p>
+
+<p align="justify">
+Entre sus principales preocupaciones se encuentran la detección tardía, la fragmentación de información y la necesidad de supervisar las instalaciones cuando no se encuentra físicamente en ellas. Resume su expectativa mediante la frase: <strong>“No quiero enterarme de un problema cuando ya se convirtió en una emergencia.”</strong>
+</p>
+
+---
+
+##### Entrevista 3 — Sebastián Abel Cosquillo Yglesias
+
+| Información | Detalle |
+|---|---|
+| Nombres | Sebastián Abel |
+| Apellidos | Cosquillo Yglesias |
+| Edad | 28 años |
+| Género | Masculino |
+| Distrito de residencia | San Borja |
+| Ocupación / Cargo | Facility Manager de edificio corporativo |
+| Segmento objetivo | Propietarios y administradores de edificaciones |
+| Fecha de entrevista | 09/09/2026 |
+| Inicio en el video | 00:00 |
+| Duración | 10:53 |
+| URL del video | [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQCHFYEzIcVHRr60BDIm7Ov8AXJMY7yKqx4e_W7qxFo1niI?e=SFTAed&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQCHFYEzIcVHRr60BDIm7Ov8AXJMY7yKqx4e_W7qxFo1niI?e=SFTAed&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) |
+
+![Entrevista 3 - Sebastián Abel Cosquillo Yglesias](assets/images/chapter-02-requirements-elicitation-analysis/Entrevista3-Sebastian-Abel-Cosquillo-Yglesias.png)
+
+<p align="center">
+  <strong>Figura 8. Entrevista 3 - Sebastián Abel Cosquillo Yglesias.</strong>
+</p>
+
+**Resumen de la entrevista**
+
+<p align="justify">
+Sebastián Abel Cosquillo Yglesias reside en San Borja y trabaja como Facility Manager de un edificio corporativo. Es ingeniero industrial y desarrolla actividades relacionadas con operaciones, mantenimiento, infraestructura y gestión de seguridad.
+</p>
+
+<p align="justify">
+Se describe como una persona metódica y orientada al cumplimiento de procedimientos. Considera necesario que las responsabilidades estén claramente establecidas y mantiene una postura cuidadosa frente a la incorporación de tecnologías nuevas, debido a que prioriza confiabilidad, soporte y continuidad operativa.
+</p>
+
+<p align="justify">
+Entre sus principales habilidades identifica gestión operativa, evaluación de riesgos, planificación de mantenimiento, coordinación con proveedores y gestión de personal.
+</p>
+
+<p align="justify">
+La infraestructura que gestiona corresponde a un edificio corporativo de quince pisos ubicado en San Isidro, en el cual trabajan aproximadamente 700 personas. Dispone de sistema contra incendios, CCTV, control de acceso, detectores, alarmas, rociadores, luces de emergencia y generación eléctrica de respaldo.
+</p>
+
+<p align="justify">
+Entre sus actividades habituales se encuentran inspecciones, coordinación de mantenimientos, revisión de incidencias, reuniones con seguridad, simulacros y seguimiento de proveedores. Considera especialmente importante que los protocolos puedan ejecutarse correctamente incluso cuando una persona específica no se encuentre disponible.
+</p>
+
+<p align="justify">
+Cuando ocurre una emergencia, la alerta llega al centro de control. Seguridad identifica inicialmente la zona mediante cámaras o verificación presencial y posteriormente se activa el protocolo y escalamiento correspondiente. Entre los actores involucrados se encuentran el centro de control, seguridad, mantenimiento, brigadistas, Facility Management y servicios externos en incidentes de mayor gravedad.
+</p>
+
+<p align="justify">
+Como experiencia significativa describió una falsa alarma provocada por el funcionamiento incorrecto de un detector. La alerta generó una verificación física y posteriormente se identificó la falla del dispositivo. Considera que las falsas alarmas generan pérdida de tiempo y pueden disminuir progresivamente la confianza de los ocupantes y operadores en el sistema.
+</p>
+
+<p align="justify">
+La información que considera más importante durante una situación crítica incluye ubicación, sensor que produjo el evento, tipo de riesgo, estado del dispositivo, cámaras cercanas y confirmación del personal.
+</p>
+
+<p align="justify">
+Utiliza una laptop HP con Windows y un iPhone. Su navegador principal en la oficina es Microsoft Edge y utiliza Safari en su teléfono. Entre sus herramientas digitales se encuentran Outlook, Microsoft Teams, Excel, plataformas de mantenimiento, CCTV y sistemas de control de acceso.
+</p>
+
+<p align="justify">
+Para emergencias considera adecuado que el centro de control reciba las alertas directamente, mientras que los responsables externos deberían recibir notificaciones móviles y llamadas según la severidad.
+</p>
+
+<p align="justify">
+Identifica como uno de los principales problemas la existencia de distintos proveedores y plataformas no integradas. Actualmente esta fragmentación se resuelve mediante procedimientos y operadores que consultan diferentes pantallas.
+</p>
+
+<p align="justify">
+Los incidentes son registrados mediante sistemas de gestión de mantenimiento y reportes formales. Entre sus indicadores habituales se encuentran cantidad de incidencias, disponibilidad de equipos, mantenimientos pendientes y tiempos de atención. Considera útil añadir indicadores de falsas alarmas por sensor y tendencias por zona.
+</p>
+
+<p align="justify">
+Los sistemas críticos mantienen funcionamiento local ante una pérdida de Internet y disponen de UPS, baterías y generación eléctrica de respaldo. Considera viable la automatización de alertas, registro de eventos y señalización, pero exige validación adicional para acciones que puedan afectar significativamente a las personas o la infraestructura.
+</p>
+
+<p align="justify">
+Los accesos se gestionan mediante roles diferenciados entre operadores, administradores y proveedores. Para una adquisición tecnológica, Facility Management realiza la propuesta, mientras que seguridad y tecnologías de información participan en la evaluación y operaciones o finanzas realizan la aprobación. Los criterios principales son confiabilidad, certificaciones, integración, soporte, disponibilidad de repuestos y costo total de propiedad.
+</p>
+
+<p align="justify">
+Reconoce marcas como Honeywell, Bosch, Siemens e Hikvision. Sus decisiones son influenciadas por normativa, consultores especializados, experiencia de proveedores y casos de otras instalaciones.
+</p>
+
+<p align="justify">
+Sus principales dificultades son los sistemas separados, las falsas alarmas y la dependencia de los operadores para correlacionar información. Resume su perspectiva mediante la frase: <strong>“En seguridad, automatizar es útil solamente cuando también puedes confiar en lo que estás automatizando.”</strong>
+</p>
+
+---
+
+#### Segmento objetivo #2: Empresas e instituciones con infraestructura propia
+
+##### Entrevista 4 — Luis Herrera Campos
+
+| Información | Detalle |
+|---|---|
+| Nombres | Luis |
+| Apellidos | Herrera Campos |
+| Edad | 42 años |
+| Género | Masculino |
+| Distrito de residencia | San Borja |
+| Ocupación / Cargo | Gerente técnico |
+| Tipo de organización | Integradora B2B mediana especializada en automatización y Building Management Systems |
+| Segmento objetivo | Empresas que integran tecnologías de automatización y gestión de edificios |
+| Fecha de entrevista | 15/09/2026 |
+| Inicio en el video | 00:01 |
+| Duración | 17:06 |
+| URL del video | [Luis Herrera Campos](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202222001_upc_edu_pe/IQCNoLaQg5cCQqe-sn_Nu9KNAZiQmSfcgE85DpNm-rRCaeo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=Pocrij) |
+
+![Entrevista 4 - Luis Herrera Campos](assets/images/chapter-02-requirements-elicitation-analysis/entrevistaLuisSegmento2.png)
+
+<p align="center">
+  <strong>Figura 9. Entrevista 4 - Luis Herrera Campos.</strong>
+</p>
+
+**Resumen de la entrevista**
+
+<p align="justify">
+Luis Herrera Campos tiene 42 años, reside en San Borja, es casado y vive con su esposa y sus dos hijos. Es ingeniero electrónico, cuenta con especializaciones en automatización y control y posee aproximadamente quince años de experiencia en el sector. Inició su trayectoria como ingeniero de automatización, posteriormente asumió funciones relacionadas con gestión de proyectos y actualmente se desempeña como gerente técnico de una empresa integradora B2B especializada en automatización y Building Management Systems.
+</p>
+
+<p align="justify">
+Dentro de la organización supervisa el diseño de las soluciones implementadas, las arquitecturas de integración, la selección de equipos y las actividades de puesta en marcha. También brinda soporte al equipo comercial cuando una propuesta requiere sustento técnico especializado. Considera fundamentales las habilidades relacionadas con integración de sistemas, resolución de problemas, gestión de proyectos y comunicación con perfiles técnicos, comerciales y representantes del cliente.
+</p>
+
+<p align="justify">
+Se describe como una persona analítica frente a problemas técnicos. Prefiere comprender primero la causa de una falla antes de realizar modificaciones, aunque reconoce que durante una puesta en marcha también debe tomar decisiones rápidamente debido a la presión de los clientes y los plazos establecidos.
+</p>
+
+<p align="justify">
+La empresa desarrolla principalmente proyectos de automatización de edificios e integra sistemas relacionados con HVAC, iluminación, energía, bombas, seguridad y plataformas BMS. Entre sus actividades más frecuentes se encuentran la coordinación y revisión técnica, que realiza prácticamente todos los días; las reuniones con clientes, varias veces por semana; y la selección de equipos durante las etapas de diseño. La puesta en marcha se realiza con menor frecuencia debido a que corresponde a una etapa específica de cada proyecto.
+</p>
+
+<p align="justify">
+Considera que las actividades más importantes para asegurar el éxito de un proyecto son definir correctamente la arquitectura desde las primeras etapas y ejecutar pruebas adecuadas. Señala que un error de diseño inicial puede mantenerse durante el resto del proyecto y generar mayores dificultades posteriormente.
+</p>
+
+<p align="justify">
+Como experiencia reciente describió un proyecto de modernización del sistema de gestión de un hotel que contaba con equipos pertenecientes a diferentes generaciones y necesitaba centralizar su información. El proceso comenzó mediante un levantamiento de equipos, tableros, planos, comunicaciones y protocolos existentes. Posteriormente se elaboró una arquitectura preliminar y se determinó qué dispositivos podían conservarse, cuáles requerían gateways y cuáles debían reemplazarse.
+</p>
+
+<p align="justify">
+Los principales criterios utilizados para seleccionar tecnologías fueron compatibilidad, costo, disponibilidad, soporte y experiencia previa con el fabricante. Antes de realizar la implementación definitiva, el equipo ejecutó pruebas en oficina y posteriormente realizó la instalación, configuración y pruebas de campo.
+</p>
+
+<p align="justify">
+Luis identifica la integración de equipos de terceros como una de las etapas con mayor incertidumbre. Señala que algunos fabricantes declaran utilizar protocolos abiertos como BACnet, pero pueden existir variables no disponibles, restricciones específicas o licencias adicionales. Estas incompatibilidades generan horas de ingeniería no consideradas inicialmente y pueden afectar el cronograma del proyecto.
+</p>
+
+<p align="justify">
+Respecto a los sistemas relacionados con seguridad y emergencias, observa que el BMS, los sistemas contra incendios, CCTV y control de acceso suelen operar mediante plataformas independientes. Los clientes buscan progresivamente una mayor centralización, pero las restricciones de algunos sistemas pueden impedir una integración completa.
+</p>
+
+<p align="justify">
+Considera que las funciones críticas deben seguir operando incluso ante una pérdida temporal de Internet. Alarmas, control local, ventilación, bombas y otros mecanismos esenciales deberían mantenerse localmente, mientras que reportes remotos, históricos en la nube y acceso externo pueden depender de la conectividad.
+</p>
+
+<p align="justify">
+Para sus actividades utiliza principalmente una laptop y complementa la coordinación mediante smartphone. Su navegador habitual es Google Chrome. Utiliza Microsoft Teams, correo electrónico y WhatsApp, además de herramientas BMS, Postman y utilidades relacionadas con BACnet y Modbus.
+</p>
+
+<p align="justify">
+Al evaluar nuevas tecnologías consulta a otros ingenieros, integradores, distribuidores y documentación de fabricantes. Reconoce marcas como Schneider Electric, Siemens, Honeywell y Johnson Controls, aunque considera que una marca conocida no determina por sí sola una decisión.
+</p>
+
+<p align="justify">
+Para integrar una solución externa espera encontrar buena documentación, APIs o protocolos abiertos, soporte y evidencia real de funcionamiento. Evita soluciones cerradas que generen dependencia excesiva del proveedor.
+</p>
+
+<p align="justify">
+Su principal objetivo profesional es implementar sistemas confiables que posteriormente puedan ser operados por el cliente sin depender completamente de la empresa integradora. Su mayor frustración consiste en resolver incompatibilidades que no fueron indicadas previamente en la documentación. También destaca como necesidad fundamental el mantenimiento y la interoperabilidad a largo plazo.
+</p>
+
+---
+
+##### Entrevista 5 — Mateo Loechle Arias
+
+| Información | Detalle |
+|---|---|
+| Nombres | Mateo |
+| Apellidos | Loechle Arias|
+| Edad | 26 años |
+| Género | Masculino |
+| Distrito de residencia | Jesús María |
+| Ocupación / Cargo | Ingeniera de proyectos e integración IoT |
+| Tipo de organización | Empresa integradora pequeña especializada en IoT, sensores, dashboards y modernización de infraestructura |
+| Segmento objetivo | Empresas integradoras de automatización y gestión de edificios inteligentes |
+| Fecha de entrevista | 17/09/2026 |
+| Inicio en el video | 00:02 |
+| Duración | 13:01 |
+| URL del video | [Mateo Loechle Arias](https://upcedupe-my.sharepoint.com/personal/u202320442_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202320442%5Fupc%5Fedu%5Fpe%2FDocuments%2FEntrevistas%20%2D%20IoT%20%2D%20Grupo%203%20%2D%2016518%2Fsegmento%202%20entrevista%205%2Emp4&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E6ae1b621%2D5371%2D417a%2Db2cf%2Dcb2c48c82ce1) |
+
+![Entrevista 5 - Mateo Loechle Arias](assets/images/chapter-02-requirements-elicitation-analysis/MateoEntrevista.png)
+
+<p align="center">
+  <strong>Figura 10. Entrevista 5 - Mateo Loechle Arias.</strong>
+</p>
+
+**Resumen de la entrevista**
+
+<p align="justify">
+Mateo Loechle Arias tiene 26 años, reside en Jesús María, es soltero y vive con su hermano. Es ingeniera electrónica y cuenta con aproximadamente seis años de experiencia profesional. Actualmente trabaja como ingeniera de proyectos e integración IoT dentro de una empresa integradora pequeña especializada en IoT, sensores, dashboards y modernización de infraestructura.
+</p>
+
+<p align="justify">
+Participa en distintas etapas de los proyectos, desde el levantamiento inicial hasta la instalación, programación, integración y pruebas. Considera fundamentales las habilidades de investigación y resolución de problemas, además de conocimientos de redes, programación básica, electrónica y comunicación con personas que no necesariamente poseen formación técnica.
+</p>
+
+<p align="justify">
+Se describe como una persona persistente al enfrentar problemas desconocidos. Procura reproducir el problema, revisar logs, realizar pruebas y descartar posibles causas hasta encontrar el origen.
+</p>
+
+<p align="justify">
+Dentro de una semana habitual desarrolla levantamientos, configuración de dispositivos, programación, integración, pruebas y documentación. Considera particularmente importantes las pruebas y el levantamiento inicial, ya que información incorrecta obtenida al comienzo puede generar dificultades durante toda la implementación.
+</p>
+
+<p align="justify">
+Como experiencia reciente describió un proyecto de monitoreo de diferentes áreas de un almacén mediante temperatura, humedad y estados de equipos. El proceso comenzó con un levantamiento destinado a determinar puntos de instalación, disponibilidad de alimentación, cobertura de red y variables necesarias.
+</p>
+
+<p align="justify">
+Posteriormente evaluaron dispositivos de una marca con la cual no habían trabajado anteriormente. Durante las pruebas analizaron comunicación, estabilidad, frecuencia de transmisión, documentación y capacidad de integración con su broker y dashboard.
+</p>
+
+<p align="justify">
+Aunque el fabricante declaraba soporte para MQTT, la estructura de los mensajes resultó limitada, por lo que fue necesario implementar una capa intermedia de transformación. Esta situación generó frustración porque añadió trabajo técnico que no había sido contemplado inicialmente.
+</p>
+
+<p align="justify">
+Andrea trabaja habitualmente con MQTT, Modbus, HTTP, APIs REST y algunas integraciones BACnet. Cuando un sistema no cuenta con una API o protocolo adecuado, puede ser necesario utilizar un gateway o incluso descartar la integración si el esfuerzo requerido resulta demasiado elevado.
+</p>
+
+<p align="justify">
+Al revisar una API espera encontrar autenticación, endpoints, ejemplos de solicitudes y respuestas, estructura de datos, errores y eventos disponibles. También considera fundamental identificar correctamente el dispositivo y la zona desde la cual se origina cada evento.
+</p>
+
+<p align="justify">
+Cuando una necesidad no es cubierta directamente por la empresa, primero buscan soluciones existentes. Si una alternativa puede integrarse y resulta económicamente conveniente, prefieren utilizarla antes que desarrollar completamente la funcionalidad desde cero.
+</p>
+
+<p align="justify">
+Para confiar técnicamente en una solución considera fundamental realizar pruebas reales. Una documentación deficiente, comportamiento inestable o restricciones que obliguen a trabajar exclusivamente con dispositivos de una misma marca pueden provocar que descarte una tecnología.
+</p>
+
+<p align="justify">
+Respecto a conectividad, considera que la lectura de sensores y las acciones críticas deben seguir operando localmente cuando se pierde Internet. También valora que la información pueda almacenarse temporalmente y sincronizarse posteriormente. Los reportes o históricos pueden depender de la recuperación de conectividad.
+</p>
+
+<p align="justify">
+Utiliza principalmente una laptop para actividades técnicas y un smartphone para coordinación e instalaciones. Su navegador habitual es Google Chrome. Entre sus herramientas se encuentran Visual Studio Code, Postman, herramientas MQTT, dashboards, Excel y herramientas proporcionadas por fabricantes.
+</p>
+
+<p align="justify">
+Para comunicarse utiliza Microsoft Teams, WhatsApp y correo electrónico. Cuando necesita aprender una nueva tecnología consulta primero documentación oficial y después utiliza recursos como YouTube, Stack Overflow, GitHub y foros técnicos. También utiliza LinkedIn para seguir empresas relacionadas con IoT.
+</p>
+
+<p align="justify">
+Ha trabajado con marcas como Schneider Electric y Siemens, aunque considera que una buena documentación puede resultar más importante que el reconocimiento de la marca cuando debe realizar personalmente la integración.
+</p>
+
+<p align="justify">
+Su principal objetivo consiste en lograr una integración estable y posteriormente sencilla de mantener. Su mayor frustración es encontrar documentación incompleta. Antes de una instalación le preocupa especialmente que una solución que funcionó correctamente en laboratorio presente problemas de red, interferencias, distancias o infraestructura cuando se instala en un entorno real.
+</p>
+
+<p align="justify">
+Finalmente, considera que el ecosistema actual debería utilizar estándares realmente interoperables y depender menos de plataformas cerradas.
+</p>
+
+---
+
+##### Entrevista 6 — Juan Diego Ramírez Torres
+
+| Información | Detalle |
+|---|---|
+| Nombres | Juan Diego |
+| Apellidos | Ramírez Torres  |
+| Edad | 32 años |
+| Género | Masculino |
+| Distrito de residencia | Santiago de Surco  |
+| Estado civil | Soltero |
+| Convivencia | Vive con su familia |
+| Ocupación / Cargo | Jefe de proyecto de integración |
+| Formación profesional | Ingeniero de sistemas con especialización en gestión de proyectos |
+| Experiencia en el sector | 8 años |
+| Tipo de organización | Empresa integradora de seguridad electrónica y automatización |
+| Segmento objetivo | Empresas integradoras de automatización y gestión de edificios inteligentes |
+| Fecha de entrevista | 18 de septiembre de 2026  |
+| Inicio en el video | 00:00:00 |
+| Duración | 05:20 aprox. |
+| URL del video | [Entrevista a Juan Diego Ramírez Torres](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQAPdSsAbUIrTaCRfwfBBJQRAc-yV4pmTw7FpMQnPNu7zAo?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=qUppVL)
+
+![Entrevista 6 - Juan Diego Ramírez Torres](assets/images/chapter-02-requirements-elicitation-analysis/interview-06-juan-diego.png)
+
+<p align="center">
+  <strong>Figura 11. Entrevista 6 - Ricardo Núñez Valdivia.</strong>
+</p>
+
+**Resumen de la entrevista**
+<p align="justify">
+Juan Diego tiene 32 años, reside en Lima, es soltero y vive con su familia. Es ingeniero de sistemas con especialización en gestión de proyectos y cuenta con ocho años de experiencia en el sector de integración y seguridad electrónica.
+</p>
+
+<p align="justify">
+Actualmente se desempeña como jefe de proyecto de integración, participando en actividades que abarcan desde la preventa hasta la implementación de las soluciones. Entre las habilidades que considera fundamentales para desempeñar su puesto menciona la organización, el criterio técnico y comercial, así como la comunicación con el cliente.
+</p>
+
+<p align="justify">
+Se describe como una persona analítica. Para tomar decisiones suele consultar con el equipo técnico, aunque procura decidir rápidamente una vez que cuenta con la información necesaria.
+</p>
+
+<p align="justify">
+Entre sus principales actividades se encuentran las reuniones con clientes, elaboración de cotizaciones, validación de soluciones y seguimiento de proyectos. Considera especialmente importantes las reuniones con clientes y la evaluación de nuevas tecnologías.
+</p>
+
+<p align="justify">
+Como ejemplo de un proceso reciente, explicó el caso de un cliente que necesitaba una solución de control de acceso con reconocimiento facial. El proceso comenzó con el levantamiento de los requisitos, seguido por la búsqueda de alternativas disponibles y la solicitud de demostraciones a distintos proveedores.
+</p>
+
+<p align="justify">
+Las soluciones fueron evaluadas considerando principalmente su compatibilidad, costo y disponibilidad de soporte local. A partir de cuatro alternativas iniciales, el equipo redujo la selección a dos opciones.
+</p>
+
+<p align="justify">
+Posteriormente se realizó un piloto en laboratorio para comprobar la integración de las soluciones con el sistema existente. Esta prueba permitió evaluar aspectos como la estabilidad de la tecnología, el tiempo de respuesta y la capacidad de soporte del proveedor.
+</p>
+
+<p align="justify">
+En el proceso de decisión participaron perfiles técnicos y comerciales. Una vez que una alternativa superaba satisfactoriamente el piloto, se elaboraba la propuesta económica correspondiente para presentarla al cliente.
+</p>
+
+<p align="justify">
+Juan Diego destaca que el proceso no termina con la selección o venta de la tecnología, ya que posteriormente continúan las etapas de implementación y posventa. Por ello, la capacidad de un proveedor para brindar soporte durante todo el ciclo del proyecto también influye en su evaluación.
+</p>
+
+<p align="justify">
+Desde su perspectiva, una empresa integradora aporta valor al cliente al analizar diferentes alternativas, verificar su compatibilidad y reducir el riesgo antes de implementar una nueva tecnología. En lugar de limitarse a comercializar productos, la empresa integradora participa en la selección, validación e incorporación de las soluciones más adecuadas para cada proyecto.
+</p>
+
+<p align="justify">
+También señala que los pilotos son importantes porque permiten validar el comportamiento real de una tecnología antes de comprometer su implementación frente al cliente. Esto resulta especialmente relevante cuando se trabaja con proveedores o soluciones nuevas.
+</p>
+
+<p align="justify">
+Finalmente, considera que el trabajo de integración tecnológica permite encontrar soluciones innovadoras y sencillas para resolver necesidades complejas, combinando criterios técnicos, comerciales y las necesidades específicas del cliente.
+</p>
+
+### 2.2.3. Análisis de entrevistas
+
+<p align="justify">
+A partir de las entrevistas realizadas se analizaron de manera independiente los resultados correspondientes a cada segmento objetivo. Para cada segmento se consideraron tres participantes, por lo que cada entrevistado representa aproximadamente el 33.3 % de la muestra correspondiente.
+</p>
+
+<p align="justify">
+El análisis considera características objetivas, como edad, género, ubicación, formación profesional, rol, experiencia, dispositivos, navegadores y canales digitales; así como características subjetivas relacionadas con personalidad, comportamiento, objetivos, necesidades, frustraciones, criterios de decisión y actitudes frente a la tecnología.
+</p>
+
+<p align="justify">
+Los porcentajes presentados corresponden exclusivamente a los participantes entrevistados y tienen un propósito descriptivo dentro de la muestra estudiada. Estos resultados no buscan generalizar estadísticamente a toda la población, sino identificar los patrones predominantes que servirán como sustento para la construcción de los User Personas y los demás artefactos de Needfinding.
+</p>
+
+---
+
+#### Segmento objetivo #1: Propietarios y administradores de edificaciones
+
+##### Características objetivas
+
+<p align="justify">
+El análisis de las características objetivas permite identificar el perfil demográfico, profesional y tecnológico predominante entre los propietarios y administradores entrevistados.
+</p>
+
+![Cuadro estadístico de características objetivas - Segmento 1](assets/images/chapter-02-requirements-elicitation-analysis/interview-analysis-segment-01-objective.png)
+
+<p align="center">
+  <strong>Figura 12. Cuadro estadístico de características objetivas - Segmento 1.</strong>
+</p>
+
+<p align="justify">
+En relación con la edad, el 66.7 % de los entrevistados se encuentra entre los 30 y 39 años, mientras que el 33.3 % se encuentra entre los 20 y 29 años. Respecto al género, el 66.7 % corresponde al género masculino y el 33.3 % al femenino.
+</p>
+
+<p align="justify">
+El 100 % reside en Lima Metropolitana. Específicamente, el 66.7 % reside en San Borja y el 33.3 % en Santiago de Surco. Asimismo, el 100 % cuenta con formación profesional y desarrolla actividades directamente vinculadas con la administración, operación, mantenimiento o gestión de infraestructura de edificaciones.
+</p>
+
+<p align="justify">
+Las edificaciones representadas en la muestra corresponden a tres contextos distintos: residencial, uso mixto y corporativo, lo que permite observar necesidades compartidas en diferentes tipos de infraestructura.
+</p>
+
+<p align="justify">
+Desde la perspectiva tecnológica, el 100 % utiliza una laptop y un smartphone como herramientas habituales de trabajo. En computadoras, el 66.7 % utiliza Windows y el 33.3 % macOS. Respecto al navegador principal, existe una distribución equivalente: 33.3 % utiliza Google Chrome, 33.3 % Microsoft Edge y 33.3 % Safari.
+</p>
+
+<p align="justify">
+El 100 % utiliza correo electrónico y Excel dentro de sus actividades laborales, mientras que el 66.7 % utiliza WhatsApp como mecanismo frecuente de comunicación y coordinación.
+</p>
+
+##### Características subjetivas
+
+<p align="justify">
+El análisis subjetivo permite identificar comportamientos, necesidades, frustraciones, objetivos y criterios de decisión compartidos por los representantes del segmento.
+</p>
+
+![Cuadro estadístico de características subjetivas - Segmento 1](assets/images/chapter-02-requirements-elicitation-analysis/interview-analysis-segment-01-subjective.png)
+
+<p align="center">
+  <strong>Figura 13. Cuadro estadístico de características subjetivas - Segmento 1.</strong>
+</p>
+
+<p align="justify">
+El 100 % de los entrevistados presenta una forma de trabajo orientada a la prevención, el análisis o el seguimiento estructurado de sus responsabilidades. Aunque existen diferencias individuales, los tres participantes consideran fundamental disponer de información confiable antes de tomar decisiones relacionadas con la seguridad.
+</p>
+
+<p align="justify">
+El 100 % trabaja actualmente con diferentes sistemas o fuentes de información relacionadas con seguridad que no se encuentran completamente integrados. Esta fragmentación obliga a consultar diferentes plataformas, comunicarse con otras personas o realizar verificaciones adicionales para comprender una situación.
+</p>
+
+<p align="justify">
+La necesidad de identificar rápidamente la ubicación del incidente aparece en el 100 % de los entrevistados. Asimismo, el 100 % manifestó que durante determinadas alertas existe algún nivel de verificación humana antes de confirmar el evento o ejecutar acciones de mayor impacto.
+</p>
+
+<p align="justify">
+El 100 % considera que las funciones críticas deberían continuar operando localmente cuando se pierde la conexión a Internet. También el 100 % mantiene una actitud favorable hacia la automatización de alertas, notificaciones, señalización o registro de eventos, pero considera necesaria la supervisión o validación humana cuando una acción pueda generar consecuencias importantes sobre personas o infraestructura.
+</p>
+
+<p align="justify">
+La integración y el soporte aparecen como criterios relevantes para la adopción de nuevas tecnologías en el 100 % de los casos. Además, el 100 % manifestó interés en contar con información histórica o indicadores que permitan realizar seguimiento de los incidentes.
+</p>
+
+<p align="justify">
+En el 66.7 % de los casos existen dificultades para consultar información histórica debido a que los registros se encuentran distribuidos entre documentos, correos, hojas de cálculo o conversaciones. De forma relacionada, el 66.7 % utiliza WhatsApp como mecanismo complementario de coordinación.
+</p>
+
+##### Perfil predominante del segmento
+
+<p align="justify">
+Los resultados permiten identificar como perfil predominante a un profesional responsable de administrar u operar una edificación, acostumbrado a coordinar con personal de seguridad, mantenimiento, propietarios y proveedores.
+</p>
+
+<p align="justify">
+Utiliza habitualmente una computadora y un smartphone, consulta diferentes sistemas y necesita disponer de información confiable antes de tomar decisiones. Su principal objetivo es mantener la seguridad de los ocupantes y reaccionar oportunamente ante situaciones de riesgo.
+</p>
+
+<p align="justify">
+Sus principales frustraciones se relacionan con la fragmentación de los sistemas, la necesidad de realizar verificaciones manuales y la dificultad para conocer inmediatamente qué ocurre y dónde ocurre. El segmento presenta una actitud favorable hacia la automatización, siempre que esta sea confiable y mantenga mecanismos adecuados de control humano.
+</p>
+
+---
+
+#### Segmento objetivo #2: Empresas integradoras de automatización y gestión de edificios inteligentes
+
+##### Características objetivas
+
+<p align="justify">
+El análisis de las características objetivas permite identificar el perfil demográfico, profesional y tecnológico de los representantes de empresas dedicadas a automatización de edificios, integración IoT y Building Management Systems.
+</p>
+
+![Cuadro estadístico de características objetivas - Segmento 2](assets/images/chapter-02-requirements-elicitation-analysis/interview-analysis-segment-02-objective.png)
+
+<p align="center">
+  <strong>Figura 14. Cuadro estadístico de características objetivas - Segmento 2.</strong>
+</p>
+
+<p align="justify">
+En relación con la edad, el 33.3 % de los entrevistados se encuentra entre los 30 y 39 años, mientras que el 66.7 % se encuentra entre los 40 y 49 años. Respecto al género, el 66.7 % corresponde al género masculino y el 33.3 % al femenino.
+</p>
+
+<p align="justify">
+El 100 % reside en Lima Metropolitana, con participantes ubicados en San Borja, Jesús María y La Molina. Cada distrito representa el 33.3 % de la muestra.
+</p>
+
+<p align="justify">
+El 100 % cuenta con formación en Ingeniería Electrónica y posee experiencia profesional directamente relacionada con tecnología, automatización o integración. El 100 % posee seis o más años de experiencia en el sector, mientras que el 66.7 % cuenta con más de diez años de trayectoria profesional.
+</p>
+
+<p align="justify">
+Los perfiles profesionales representan distintas etapas del proceso de integración: el 33.3 % corresponde a dirección técnica, el 33.3 % a ingeniería de proyectos e integración IoT y el 33.3 % a gestión comercial e innovación. De esta manera, la muestra incorpora perspectivas técnicas, operativas y comerciales.
+</p>
+
+<p align="justify">
+El 100 % utiliza una laptop y un smartphone como herramientas habituales. Respecto al navegador utilizado principalmente desde la computadora, el 66.7 % utiliza Google Chrome y el 33.3 % Microsoft Edge.
+</p>
+
+<p align="justify">
+Microsoft Teams, WhatsApp y correo electrónico son utilizados por el 100 % de los entrevistados como canales de comunicación profesional. Además, el 66.7 % mencionó LinkedIn como una fuente utilizada para conocer empresas, tecnologías o proveedores.
+</p>
+
+##### Características subjetivas
+
+<p align="justify">
+El análisis subjetivo del segmento permite identificar los criterios mediante los cuales las empresas integradoras evalúan tecnologías, afrontan problemas de interoperabilidad y deciden incorporar soluciones externas dentro de los proyectos que desarrollan para sus clientes.
+</p>
+
+![Cuadro estadístico de características subjetivas - Segmento 2](assets/images/chapter-02-requirements-elicitation-analysis/interview-analysis-segment-02-subjective.png)
+
+<p align="center">
+  <strong>Figura 15. Cuadro estadístico de características subjetivas - Segmento 2.</strong>
+</p>
+
+<p align="justify">
+El 100 % de los entrevistados considera la capacidad de integración e interoperabilidad como un factor fundamental al evaluar una nueva tecnología. Los tres participantes mencionaron dificultades relacionadas con compatibilidad, protocolos, APIs, documentación o integración entre productos de diferentes fabricantes.
+</p>
+
+<p align="justify">
+El 100 % considera necesario disponer de documentación técnica, soporte y mecanismos adecuados de integración antes de incorporar una solución externa. APIs, protocolos abiertos, documentación comprensible y capacidad de soporte aparecen como factores recurrentes en la evaluación.
+</p>
+
+<p align="justify">
+Asimismo, el 100 % considera importante realizar una prueba, demostración técnica o piloto antes de confiar plenamente en una tecnología nueva. Esto evidencia que la adopción no depende solamente de una presentación comercial, sino de comprobar que la solución puede integrarse y funcionar en condiciones reales.
+</p>
+
+<p align="justify">
+El 100 % indicó que, cuando existe una solución especializada adecuada, puede resultar preferible integrarla antes que desarrollar internamente toda la funcionalidad. Esta decisión busca evitar asumir innecesariamente actividades adicionales de desarrollo, mantenimiento, pruebas y soporte.
+</p>
+
+<p align="justify">
+En los tres participantes aparece también una preocupación relacionada con el mantenimiento posterior a la implementación. El 100 % considera importante que una tecnología continúe siendo estable, mantenible y respaldada por el proveedor después de su instalación inicial.
+</p>
+
+<p align="justify">
+El 100 % manifestó frustraciones relacionadas con soluciones cuya compatibilidad, documentación o facilidad de integración no corresponde con lo esperado inicialmente. Estas situaciones pueden generar horas adicionales de ingeniería, retrasos, modificaciones de arquitectura o dificultades para mantener posteriormente la solución.
+</p>
+
+<p align="justify">
+La reputación de una marca puede influir en el proceso, pero el 100 % considera que esta no es suficiente por sí sola para determinar una decisión. La documentación, las pruebas, el soporte, las recomendaciones y los casos reales también influyen en la confianza hacia una tecnología.
+</p>
+
+<p align="justify">
+Respecto a la continuidad ante pérdida de conectividad, el 66.7 % mencionó explícitamente que las funciones críticas deberían continuar operando localmente sin depender permanentemente de Internet.
+</p>
+
+<p align="justify">
+La escalabilidad fue mencionada explícitamente por el 33.3 % como un criterio necesario para determinar si una tecnología puede utilizarse no solamente en un edificio, sino también en múltiples edificios y clientes.
+</p>
+
+##### Perfil predominante del segmento
+
+<p align="justify">
+Los resultados permiten identificar como perfil predominante a un profesional con formación técnica y experiencia en automatización, IoT o integración de sistemas, que participa en la evaluación, implementación o incorporación comercial de nuevas tecnologías.
+</p>
+
+<p align="justify">
+Su trabajo exige conectar soluciones pertenecientes a distintos fabricantes y adaptarlas a la infraestructura disponible en los proyectos de sus clientes. Por esta razón, valora especialmente la interoperabilidad, documentación, estabilidad, soporte, pruebas y facilidad de mantenimiento.
+</p>
+
+<p align="justify">
+Su principal objetivo es incorporar tecnologías confiables que puedan integrarse con sistemas existentes sin generar un esfuerzo desproporcionado de implementación o mantenimiento. Sus principales frustraciones aparecen cuando una solución presenta incompatibilidades no documentadas, ecosistemas cerrados o requerimientos técnicos que solo se descubren durante las etapas de prueba o puesta en marcha.
+</p>
+
+<p align="justify">
+Este segmento no evalúa únicamente el producto. También evalúa la capacidad del proveedor para actuar como un socio tecnológico, responder ante problemas y sostener la solución durante su ciclo de vida.
+</p>
+
+---
+
+#### Síntesis de los resultados
+
+<p align="justify">
+Los resultados muestran diferencias claras entre ambos segmentos.
+</p>
+
+<p align="justify">
+Los propietarios y administradores de edificaciones se concentran principalmente en la operación cotidiana de una infraestructura y en la necesidad de comprender y responder rápidamente ante situaciones de riesgo. Para este segmento, la fragmentación de sistemas genera dificultades al momento de localizar un incidente, reunir información y coordinar la respuesta.
+</p>
+
+<p align="justify">
+Las empresas integradoras, en cambio, analizan el problema desde la implementación tecnológica. Su principal preocupación se relaciona con la capacidad de incorporar una nueva solución dentro de infraestructuras que ya poseen dispositivos, plataformas y sistemas pertenecientes a diferentes fabricantes.
+</p>
+
+<p align="justify">
+En ambos segmentos la integración constituye un aspecto relevante, aunque desde perspectivas diferentes. Para los administradores significa disponer de una visión más clara y centralizada de la infraestructura; para los integradores significa contar con protocolos, APIs, documentación y mecanismos que permitan incorporar nuevas capacidades dentro de proyectos existentes.
+</p>
+
+<p align="justify">
+Los resultados del análisis servirán como base para actualizar los User Personas y los demás artefactos de Needfinding, manteniendo trazabilidad entre las características representadas y la evidencia recopilada durante las entrevistas.
+</p>
+
+## 2.3. Needfinding
+
+### 2.3.1. User Personas
+
+<p align="justify">
+Los User Personas representan los dos segmentos objetivo de ResQ: propietarios y administradores de edificaciones, y empresas integradoras de automatización y gestión de edificios inteligentes. Permiten relacionar las responsabilidades de cada perfil con sus objetivos, dificultades y condiciones de uso de una solución IoT.
+</p>
+
+**Segmento objetivo #1: Propietarios y administradores de edificaciones — Carlos Mendoza**
+
+<p align="justify">
+Carlos Mendoza, de 37 años, representa al administrador de un edificio residencial que coordina seguridad y mantenimiento tanto desde la oficina como fuera de la instalación. Es organizado y preventivo, pero depende de llamadas, mensajes y sistemas separados para comprender una alerta. Su necesidad principal consiste en conocer el tipo de riesgo, su ubicación y evolución, y quién está atendiendo el evento. Para ResQ, este perfil orienta el monitoreo remoto por zonas, las alertas comprensibles y la consulta de las respuestas ejecutadas por el sistema.
+</p>
+
+
+
+![User Persona de Carlos Mendoza](assets/images/chapter-02-requirements-elicitation-analysis/CarlosMendozaUserPerson.png)
+
+<p align="center">
+  <strong>Figura 16. User Persona de Carlos Mendoza.</strong>
+</p>
+
+**Segmento objetivo #2: Empresas integradoras de automatización y gestión de edificios inteligentes — Alex Rivera**
+
+<p align="justify">
+Alex Rivera es un profesional que evalúa e integra tecnologías de automatización, IoT y BMS en proyectos de clientes. 
+</p>
+
+
+![User Persona de Alex Rivera, arquetipo del integrador](assets/images/chapter-02-requirements-elicitation-analysis/segmento-2-user-persona.png)
+
+<p align="center">
+  <strong>Figura 17. User Persona de Alex Rivera, arquetipo del integrador.</strong>
+</p>
+
+
+
+### 2.3.2. User Task Matrix
+
+<p align="justify">
+La User Task Matrix organiza tareas que cada User Persona realiza independientemente de que ResQ exista. La frecuencia indica qué tan seguido se realiza una actividad y la importancia expresa su relevancia para cumplir las responsabilidades del perfil. Ambas dimensiones se clasifican como alta, media o baja. Las valoraciones son una interpretación cualitativa de los relatos; no representan frecuencias medidas ni porcentajes de la población.
+</p>
+
+**Segmento objetivo #1: Carlos Mendoza — Propietarios y administradores de edificaciones**
+
+| Tarea | Frecuencia | Importancia |
+|---|---|---|
+| Revisar novedades y condiciones de seguridad del edificio | Alta | Alta |
+| Identificar el tipo de alerta, su ubicación y gravedad | Media | Alta |
+| Coordinar la verificación y respuesta con vigilancia y mantenimiento | Media | Alta |
+| Dar seguimiento a incidentes cuando se encuentra fuera del edificio | Media | Alta |
+| Verificar el funcionamiento de los equipos de seguridad | Alta | Alta |
+| Coordinar el mantenimiento preventivo de los equipos | Media | Alta |
+| Registrar los incidentes y las acciones ejecutadas | Media | Alta |
+| Consultar antecedentes de incidentes por fecha, tipo o zona | Media | Media |
+| Evaluar nuevas alternativas de seguridad y presentarlas a la junta | Baja | Media |
+
+**Segmento objetivo #2: Alex Rivera — Empresas integradoras de automatización y gestión de edificios inteligentes**
+
+| Tarea | Frecuencia | Importancia |
+|---|---|---|
+| Comprender las necesidades del cliente y definir el alcance del proyecto | Alta | Alta |
+| Levantar equipos, zonas, planos y condiciones de conectividad | Media | Alta |
+| Revisar documentación, protocolos y compatibilidad de los sistemas | Alta | Alta |
+| Diseñar y revisar la arquitectura de integración | Alta | Alta |
+| Evaluar proveedores y realizar pruebas de concepto o pilotos | Media | Alta |
+| Configurar dispositivos e integrar sistemas de distintos fabricantes | Alta | Alta |
+| Validar en campo mediciones, comandos y funcionamiento sin Internet | Media | Alta |
+| Documentar la solución, capacitar al cliente y coordinar la entrega | Media | Alta |
+| Dar soporte, mantener la compatibilidad y evaluar ampliaciones | Alta | Alta |
+
+
+### 2.3.3. User Journey Mapping
+
+<p align="justify">
+Los User Journey Maps describen experiencias actuales planteadas en los guiones. El recorrido del primer segmento sigue la atención de una alerta; el del segundo sigue la evaluación e integración de tecnología en un proyecto de automatización. Ambos son recorridos As-Is que distinguen los canales y problemas actuales de las oportunidades propuestas para ResQ. Las emociones son interpretaciones cualitativas, no mediciones de satisfacción ni mejoras comprobadas.
+</p>
+
+**Segmento objetivo #1: Carlos Mendoza — Atención de una alerta de humo en el sótano**
+
+<p align="justify">
+El recorrido presenta a Carlos fuera del edificio cuando recibe una llamada por una alerta de humo. Su objetivo es comprender la ubicación y gravedad del problema, coordinar con el personal y seguir la atención. El punto de mayor incertidumbre aparece mientras vigilancia revisa el sótano y las cámaras sin una vista unificada.
+</p>
+
+![User Journey Map de Carlos Mendoza](assets/images/chapter-02-requirements-elicitation-analysis/Customerjourneymap1.png)
+
+<p align="center">
+  <strong>Figura 18. User Journey Map de Carlos Mendoza.</strong>
+</p>
+
+**Segmento objetivo #2: Alex Rivera — Evaluación e integración de una solución de automatización**
+
+<p align="justify">
+El Journey combina el levantamiento y modernización relatados por Luis, las pruebas de comunicación y problemas de campo descritos por Andrea, y la evaluación de proveedores y soporte explicados por Ricardo. Sus cinco etapas agrupan el recorrido completo: comprender, levantar, proponer un diseño, evaluar y probar, ajustar el diseño, implementar, poner en marcha, entregar y mantener. El diseño inicial es preliminar y se revisa a partir de los resultados del piloto.
+</p>
+
+![User Journey Map As-Is de Alex Rivera](assets/images/chapter-02-requirements-elicitation-analysis/segmento-2-journey-map.png)
+
+<p align="center">
+  <strong>Figura 19. User Journey Map As-Is de Alex Rivera.</strong>
+</p>
+
+
+### 2.3.4. Empathy Mapping
+
+<p align="justify">
+Los mapas de empatía complementan los perfiles y recorridos al relacionar lo que cada persona necesita hacer con lo que ve, escucha, dice, piensa y siente. Su contenido sintetiza los guiones y explicita interpretaciones de diseño; no representa observaciones de campo realizadas por el equipo. Los bloques de dificultades y beneficios esperados permiten traducir esas perspectivas en necesidades que deberán validarse.
+</p>
+
+**Segmento objetivo #1: Carlos Mendoza — Propietarios y administradores de edificaciones**
+
+<p align="justify">
+El mapa de Carlos refleja la tensión entre su intención de prevenir incidentes y la dependencia de otras personas para reunir información durante una alerta. Aunque dispone de cámaras y alarmas, necesita comprender lo que ocurre cuando no está presente. La oportunidad para ResQ consiste en ofrecer información contextualizada y trazable que le permita coordinar con mayor claridad y conocer qué respuesta ha ejecutado el sistema.
+</p>
+
+![Mapa de empatía de Carlos Mendoza](assets/images/chapter-02-requirements-elicitation-analysis/CarlosMendozaEmpathy.png)
+
+<p align="center">
+  <strong>Figura 20. Mapa de empatía de Carlos Mendoza.</strong>
+</p>
+
+**Segmento objetivo #2: Alex Rivera — Empresas integradoras de automatización y gestión de edificios inteligentes**
+
+<p align="justify">
+El mapa sintetiza la necesidad de comprobar la interoperabilidad antes de comprometer el proyecto, reducir trabajo adicional y mantener el respaldo del proveedor después de la entrega. Integra las perspectivas técnica, de implementación y comercial presentes en los relatos de los entrevistados.
+</p>
+
+![Mapa de empatía de Alex Rivera](assets/images/chapter-02-requirements-elicitation-analysis/segmento-2-empathy-map.png)
+
+<p align="center">
+  <strong>Figura 21. Mapa de empatía de Alex Rivera.</strong>
+</p>
+
+
+<p align="justify">
+Ambos mapas muestran que la interoperabilidad importa por motivos diferentes. Carlos necesita comprender el riesgo y la respuesta en su edificio; Alex necesita evaluar si la tecnología puede integrarse y mantenerse en proyectos de clientes. Por ello, la evidencia de pruebas, la operación local de funciones críticas y la claridad sobre los límites de integración son esenciales para que una empresa integradora considere incorporar ResQ.
+</p>
+
+## 2.4. Big Picture EventStorming
+
+<p align="justify">
+El Big Picture EventStorming de ResQ se desarrolló con el propósito de representar, a un nivel amplio, los principales acontecimientos que ocurren dentro del dominio relacionado con el monitoreo y la gestión de riesgos en edificaciones. Su construcción parte de los hallazgos obtenidos durante las entrevistas y de los artefactos elaborados previamente en Needfinding, permitiendo representar el comportamiento del dominio antes de profundizar en decisiones específicas de diseño o implementación.
+</p>
+
+<p align="justify">
+Siguiendo el enfoque de Big Picture EventStorming, los principales acontecimientos del dominio fueron representados como Domain Events, es decir, hechos relevantes que ya ocurrieron dentro del proceso. A partir de estos eventos se identificaron siete procesos principales: preparación del entorno, monitoreo, detección y contextualización del riesgo, alertas y respuesta, gestión del incidente, continuidad ante pérdida de conectividad e integración con infraestructura existente.
+</p>
+
+<p align="justify">
+Además del flujo de eventos, durante el análisis se identificaron dudas abiertas o Hotspots que requieren discusión posterior por parte del equipo, así como términos relevantes que deben mantener un significado compartido dentro del dominio.
+</p>
+
+### Vista general de los procesos
+
+<p align="justify">
+La vista general permite observar cómo se relacionan los principales procesos identificados. El flujo operacional principal comienza con la preparación del entorno, continúa con el monitoreo de la edificación, la detección y contextualización de posibles riesgos, la coordinación de alertas y respuestas y, cuando corresponde, la gestión de un incidente.
+</p>
+
+<p align="justify">
+La integración con infraestructura existente permite que nuevas fuentes o dispositivos puedan incorporarse al entorno monitoreado. Por otro lado, la continuidad operativa constituye un proceso transversal que puede activarse durante el monitoreo, la detección de riesgos o la ejecución de respuestas cuando existe una interrupción de conectividad.
+</p>
+
+![Vista general de procesos del Big Picture EventStorming](assets/images/chapter-02-requirements-elicitation-analysis/big-picture-eventstorming-process-map.png)
+
+<p align="center">
+  <strong>Vista general de los procesos identificados en el Big Picture EventStorming de ResQ.</strong>
+</p>
+
+### Preparación del entorno, monitoreo y detección del riesgo
+
+<p align="justify">
+El primer proceso identificado corresponde a la preparación del entorno monitoreado. Antes de iniciar la supervisión de una edificación deben haberse registrado los elementos necesarios para establecer su contexto operativo. En este flujo se identificaron los eventos <code>Building Registered</code>, <code>Zone Defined</code>, <code>Device Registered</code>, <code>Device Assigned To Zone</code>, <code>User Assigned To Building</code>, <code>Detection Rule Defined</code> y <code>Response Policy Defined</code>.
+</p>
+
+<p align="justify">
+Estos acontecimientos representan la existencia previa de una edificación, sus zonas, los dispositivos asociados, los responsables de su supervisión y las reglas que posteriormente permitirán determinar cuándo existe una condición de riesgo y qué tipo de respuesta puede aplicarse.
+</p>
+
+<p align="justify">
+Una vez preparado el entorno comienza el proceso de monitoreo. El evento <code>Measurement Captured</code> representa la obtención de una medición desde un dispositivo y <code>Measurement Available</code> indica que dicha información se encuentra disponible para ser considerada dentro del dominio. A partir de esta información pueden ocurrir cambios independientes en el estado de un dispositivo, una zona o la edificación, representados mediante <code>Device Status Changed</code>, <code>Zone Status Changed</code> y <code>Building Status Changed</code>.
+</p>
+
+<p align="justify">
+El monitoreo proporciona la evidencia necesaria para el proceso de detección y contextualización del riesgo. Cuando se observa una situación fuera del comportamiento esperado se produce <code>Anomalous Condition Detected</code>. Esta condición no implica necesariamente la existencia inmediata de un riesgo, pero puede conducir a <code>Risk Detected</code> cuando se cumplen las condiciones de detección definidas.
+</p>
+
+<p align="justify">
+Posteriormente, el riesgo puede ser contextualizado mediante <code>Risk Classified</code>, <code>Risk Level Determined</code> y <code>Risk Located</code>, permitiendo determinar qué tipo de situación fue identificada, cuál es su nivel de severidad y en qué parte de la edificación se encuentra.
+</p>
+
+![Preparación, monitoreo y detección del riesgo](assets/images/chapter-02-requirements-elicitation-analysis/big-picture-eventstorming-processes-a-b-c.png)
+
+<p align="center">
+  <strong>Procesos A, B y C: preparación del entorno, monitoreo y detección y contextualización del riesgo.</strong>
+</p>
+
+### Alertas, respuesta y gestión del incidente
+
+<p align="justify">
+Una vez identificado y contextualizado un riesgo, el dominio contempla los acontecimientos asociados con la comunicación y ejecución de respuestas. <code>Alert Generated</code> representa la generación de una alerta y <code>Responsible User Notified</code> indica que la información fue comunicada a una persona responsable.
+</p>
+
+<p align="justify">
+El evento <code>Response Requested</code> representa la necesidad de ejecutar una determinada acción como consecuencia del riesgo identificado. Dependiendo del tipo de respuesta, esta puede ejecutarse directamente o requerir previamente autorización humana.
+</p>
+
+<p align="justify">
+Cuando la acción requiere validación se produce <code>Response Authorization Requested</code>. El responsable puede generar <code>Response Authorized</code> o <code>Response Rejected</code>. Cuando la ejecución es permitida, el resultado puede ser <code>Response Executed</code> si la acción se completa satisfactoriamente o <code>Response Failed</code> si no pudo ejecutarse correctamente.
+</p>
+
+<p align="justify">
+Esta bifurcación refleja uno de los hallazgos obtenidos durante la investigación: determinadas acciones pueden automatizarse, mientras que aquellas que pueden generar un impacto significativo requieren mecanismos adicionales de supervisión o autorización.
+</p>
+
+<p align="justify">
+Cuando una situación requiere seguimiento se inicia el proceso de gestión del incidente. El ciclo comienza con <code>Incident Opened</code>, seguido de <code>Incident Assigned</code> y <code>Incident Acknowledged</code>, que representan la asignación y aceptación de responsabilidad sobre la situación.
+</p>
+
+<p align="justify">
+Durante la atención pueden generarse uno o varios <code>Incident Updated</code> conforme cambia el estado de la situación. Finalmente, <code>Incident Resolved</code> representa la resolución del problema identificado y <code>Incident Closed</code> su cierre formal una vez finalizado el seguimiento.
+</p>
+
+![Alertas, respuesta, incidentes y continuidad](assets/images/chapter-02-requirements-elicitation-analysis/big-picture-eventstorming-processes-d-e-f.png)
+
+<p align="center">
+  <strong>Procesos D, E y F: alertas y respuesta, gestión del incidente y continuidad operativa.</strong>
+</p>
+
+### Continuidad ante pérdida de conectividad
+
+<p align="justify">
+La continuidad operativa fue identificada como un proceso transversal debido a que una pérdida de conectividad puede producirse durante diferentes momentos de la operación de ResQ. Por esta razón, este proceso no representa una etapa posterior a la gestión del incidente, sino un escenario que puede aparecer mientras se realizan actividades de monitoreo, detección de riesgos o respuesta.
+</p>
+
+<p align="justify">
+El proceso comienza con <code>Connectivity Lost</code>. Ante esta situación, las capacidades críticas deben poder continuar localmente, representadas por <code>Local Monitoring Continued</code>, <code>Local Detection Continued</code> y <code>Local Response Executed</code>.
+</p>
+
+<p align="justify">
+Los acontecimientos que no pueden sincronizarse inmediatamente quedan representados mediante <code>Event Pending Synchronization</code>. Cuando se recupera la conexión ocurre <code>Connectivity Restored</code>, permitiendo posteriormente <code>Pending Events Synchronized</code>.
+</p>
+
+<p align="justify">
+Este flujo permite representar la necesidad de que las funciones esenciales de ResQ no dependan permanentemente de una conexión disponible y que la información producida durante una interrupción pueda conservarse para su posterior sincronización.
+</p>
+
+### Integración con infraestructura existente
+
+<p align="justify">
+El segundo segmento objetivo evidenció la importancia de incorporar ResQ dentro de infraestructuras que pueden utilizar dispositivos, sistemas y tecnologías previamente instaladas. Por esta razón, el Big Picture EventStorming contempla también un proceso de integración.
+</p>
+
+<p align="justify">
+El flujo comienza con <code>Existing Infrastructure Surveyed</code>, que representa el levantamiento del entorno tecnológico existente. Posteriormente se identifican los sistemas relevantes mediante <code>External System Identified</code> y las restricciones mediante <code>Integration Constraints Identified</code>.
+</p>
+
+<p align="justify">
+Con la información obtenida puede realizarse <code>Compatibility Evaluated</code> y posteriormente <code>Integration Approach Defined</code>, donde queda determinada la forma en la que la integración será abordada.
+</p>
+
+<p align="justify">
+Luego se producen <code>Integration Configured</code> e <code>Integration Tested</code>. Si las pruebas son satisfactorias, los dispositivos o fuentes externas relevantes pueden ser relacionados con el entorno monitoreado mediante <code>External Device Mapped</code>, finalizando con <code>Integration Activated</code>.
+</p>
+
+<p align="justify">
+Una integración activada permite que la fuente externa participe posteriormente en el proceso normal de monitoreo.
+</p>
+
+![Integración con infraestructura existente](assets/images/chapter-02-requirements-elicitation-analysis/big-picture-eventstorming-process-g-integration.png)
+
+<p align="center">
+  <strong>Proceso G: integración de ResQ con infraestructura tecnológica existente.</strong>
+</p>
+
+### Hotspots identificados
+
+<p align="justify">
+Durante la construcción del Big Picture EventStorming se identificaron aspectos del dominio que todavía requieren discusión o una definición más precisa. En EventStorming estos elementos se mantienen visibles como Hotspots en lugar de asumir prematuramente una solución.
+</p>
+
+<p align="justify">
+Entre las principales dudas identificadas se encuentran la relación entre una condición anómala y la confirmación de un riesgo, los criterios que determinan cuándo un riesgo debe convertirse en incidente, las respuestas que pueden ejecutarse automáticamente y aquellas que requieren autorización humana.
+</p>
+
+<p align="justify">
+También se identificaron incertidumbres relacionadas con el comportamiento de las integraciones bajo condiciones reales, la información que debe conservarse durante una pérdida de conectividad y el tratamiento de una fuente externa cuando pierde su asociación con una edificación o zona.
+</p>
+
+<p align="justify">
+Estos Hotspots permanecerán como puntos de discusión que deberán resolverse conforme avance el análisis del dominio y se obtenga nueva evidencia.
+</p>
+
+![Hotspots del Big Picture EventStorming](assets/images/chapter-02-requirements-elicitation-analysis/big-picture-eventstorming-hotspots.png)
+
+<p align="center">
+  <strong>Hotspots identificados durante el Big Picture EventStorming de ResQ.</strong>
+</p>
+
+### Definiciones obtenidas durante el EventStorming
+
+<p align="justify">
+La discusión de los eventos permitió identificar términos cuyo significado debe mantenerse consistente entre los integrantes del equipo. La definición explícita de estos conceptos permite reducir interpretaciones diferentes y constituye una base para la construcción posterior del Ubiquitous Language.
+</p>
+
+<p align="justify">
+Entre los principales términos identificados se encuentran <code>Measurement</code>, <code>Anomalous Condition</code>, <code>Risk</code>, <code>Risk Level</code>, <code>Alert</code>, <code>Response</code>, <code>Incident</code>, <code>Detection Rule</code>, <code>Response Policy</code>, <code>External System</code>, <code>Integration</code>, <code>Building</code>, <code>Zone</code> y <code>Responsible User</code>.
+</p>
+
+<p align="justify">
+Las definiciones acordadas permiten distinguir, por ejemplo, una condición anómala de un riesgo confirmado, una alerta de una respuesta y un riesgo de un incidente. Asimismo, establecen el significado utilizado para los elementos físicos y actores que participan dentro del dominio de ResQ.
+</p>
+
+![Definiciones del Big Picture EventStorming](assets/images/chapter-02-requirements-elicitation-analysis/big-picture-eventstorming-definitions.png)
+
+<p align="center">
+  <strong>Definiciones obtenidas durante la exploración del dominio mediante Big Picture EventStorming.</strong>
+</p>
+
+### Resultado del Big Picture EventStorming
+
+<p align="justify">
+El Big Picture EventStorming permitió representar el dominio de ResQ desde una perspectiva centrada en acontecimientos relevantes y no en componentes específicos de implementación. Como resultado se obtuvo una visión común de cómo se prepara una edificación para su supervisión, cómo se generan y utilizan las mediciones, cómo se identifica y contextualiza un riesgo, cómo se coordinan las respuestas y cómo se mantiene trazabilidad mediante la gestión de incidentes.
+</p>
+
+<p align="justify">
+Asimismo, el análisis permitió incorporar dos aspectos relevantes identificados durante la investigación: la continuidad de las funciones críticas ante pérdidas de conectividad y la necesidad de integrar ResQ con infraestructura tecnológica existente.
+</p>
+
+<p align="justify">
+Finalmente, los Hotspots y las definiciones obtenidas durante la sesión permiten documentar las principales incertidumbres y consolidar un lenguaje compartido que será utilizado como base para la sección de Ubiquitous Language y para las posteriores actividades de diseño del dominio.
+</p>
+
+**Link del tablero de Miro:** [Big Picture EventStorming de ResQ](https://miro.com/app/board/uXjVHlZnbCs=/?share_link_id=107442553080)
+
+## 2.5. Ubiquitous Language
+
+<p align="justify">
+El Lenguaje Ubicuo (Ubiquitous Language) es un pilar fundamental en el Diseño Guiado por el Dominio (DDD). Su objetivo es establecer un glosario estricto y compartido entre los desarrolladores, los administradores y los expertos del negocio, garantizando que no existan ambigüedades técnicas ni operativas.
+</p>
+
+| Término | Definición |
+|---|---|
+| Building | Infraestructura física (residencial, comercial o institucional) que se encuentra bajo el monitoreo y gestión de la plataforma ResQ. |
+| Zone | Subdivisión lógica y física dentro de una Edificación (ej. pasillo, sótano, comedor) que permite localizar el origen exacto de las mediciones y los riesgos. |
+| IoT Device | Hardware instalado en las Zonas. Se divide en dos tipos: Sensores (capturan variables ambientales/físicas) y Actuadores (ejecutan respuestas físicas, como alarmas o válvulas). |
+| Anomalous Condition | Lectura o estado reportado por un Sensor que supera los umbrales seguros predefinidos, pero que aún requiere clasificación. |
+| Risk | Amenaza confirmada y clasificada (ej. fuga de gas, sismo, incendio) que desencadena los protocolos de seguridad. Tiene asociado un Nivel (gravedad) y un Tipo. |
+| Automatic Response | Acción de seguridad ejecutada de forma inmediata por los actuadores (ej. luces de evacuación, sirenas) sin necesidad de intervención humana. |
+| High-Impact Action | Respuesta física que, por su potencial de generar un riesgo adicional o interrumpir operaciones, requiere obligatoriamente la Confirmación manual de un usuario humano antes de ejecutarse. |
+| Incident | Registro formal e histórico de un Riesgo detectado. Agrupa toda la información relacionada: fecha, Zona afectada, respuestas ejecutadas y el estado actual de atención. |
+| Authorized Manager | Usuario de la plataforma (administrador, facility manager o jefe de seguridad) con los permisos necesarios para gestionar Zonas, confirmar Acciones de Alto Impacto y cerrar Incidentes. |
+| Edge Computing | Capacidad de la infraestructura local para procesar datos de los sensores y ejecutar Respuestas Automáticas de manera autónoma, garantizando la Continuidad Operativa ante la pérdida de conexión a Internet. |
+| Detection/Response Rule | Configuración lógica que determina qué condiciones disparan una alerta y qué acciones específicas deben ejecutarse según el contexto, horario y tipo de Riesgo. |
+
+<div style="page-break-before: always; break-before: page;"></div>
+
+# Capítulo III: Requirements Specification
+
+
+## 3.1. User Stories
+
+<p align="justify">
+A partir de los hallazgos obtenidos durante el proceso de Requirements Elicitation & Analysis, se identificaron las principales necesidades de los dos segmentos objetivo de ResQ: <strong>propietarios y administradores de edificaciones</strong> y <strong>empresas integradoras de automatización y gestión de edificios inteligentes</strong>.
+</p>
+
+<p align="justify">
+Las <strong>Epics</strong> representan capacidades amplias del producto asociadas con resultados que los usuarios necesitan alcanzar y que, debido a su alcance, requieren ser descompuestas en múltiples User Stories. Por esta razón, las Epics no representan módulos técnicos ni equivalen directamente a los Bounded Contexts definidos para la arquitectura.
+</p>
+
+<p align="justify">
+Las <strong>User Stories</strong> expresan objetivos concretos de los usuarios mediante la estructura <strong>“Como [rol], deseo [objetivo], para [beneficio]”</strong>, priorizando el valor que el usuario espera obtener y evitando describir directamente pantallas, componentes tecnológicos o decisiones de implementación.
+</p>
+
+<p align="justify">
+Las funcionalidades necesarias para soportar la arquitectura distribuida IoT de ResQ que no representan una interacción directa con usuarios finales se especifican mediante <strong>Technical Stories</strong>, utilizando el rol <strong>Developer</strong>.
+</p>
+
+<p align="justify">
+La definición considera los Bounded Contexts previamente establecidos para ResQ: <strong>IAM, User, Building, Device, Monitoring, Risk Detection, Alert & Response Management, Incident y Connectividad</strong>. Estos Bounded Contexts no se utilizan como criterio para definir las Epics. Una Epic o User Story puede requerir la colaboración de uno o varios Bounded Contexts para satisfacer el objetivo del usuario.
+</p>
+
+<p align="justify">
+Los criterios de aceptación se plantean mediante escenarios verificables utilizando la estructura <strong>Given-When-Then</strong>. Estos describen el comportamiento esperado del producto sin establecer detalles específicos de interfaz de usuario.
+</p>
+
+| Epic / Story ID | Título                                                   | Descripción                                                                                                                                                                                                                       | Criterios de Aceptación                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Relacionado con (Epic ID) |
+| --------------- | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
+| **EP01**        | **Visibilidad operativa de la edificación**              | Agrupa las capacidades necesarias para que los responsables comprendan el estado actual de una edificación, sus zonas y dispositivos sin depender de múltiples fuentes de información.                                            | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | —                         |
+| **US01**        | Consultar el estado general de una edificación           | Como responsable de una edificación, deseo conocer el estado general de la infraestructura, para identificar oportunamente si existe alguna condición que requiera atención.                                                      | **AC1:** Given el usuario está autorizado para consultar una edificación, When consulta su estado actual, Then el sistema proporciona el estado vigente de la edificación e informa si existe algún riesgo activo.<br><br>**AC2:** Given no existen riesgos activos en la edificación, When se consulta su estado, Then el sistema informa que no existen condiciones de riesgo activas y proporciona la última actualización disponible.                                                                           | EP01                      |
+| **US02**        | Consultar el estado de una zona                          | Como responsable de una edificación, deseo conocer el estado de cada zona monitoreada, para identificar rápidamente dónde existe una condición anómala.                                                                           | **AC1:** Given una edificación posee zonas monitoreadas, When el usuario consulta el estado de una zona, Then el sistema proporciona su condición actual utilizando la información disponible.<br><br>**AC2:** Given una zona presenta una condición de riesgo activa, When se consulta su estado, Then el sistema identifica dicha condición y la relaciona con la zona correspondiente.                                                                                                                           | EP01                      |
+| **US03**        | Consultar mediciones actuales                            | Como responsable de una edificación, deseo consultar las mediciones actuales de los dispositivos, para comprender las condiciones de las zonas supervisadas.                                                                      | **AC1:** Given un dispositivo registra una medición válida, When el responsable consulta la información disponible, Then el sistema proporciona el valor más reciente junto con su tipo de variable y momento de registro.<br><br>**AC2:** Given no existe una medición vigente para un dispositivo, When se consulta su información, Then el sistema identifica que no dispone de un valor actualizado sin presentar datos antiguos como actuales.                                                                 | EP01                      |
+| **US04**        | Conocer el estado operativo de un dispositivo            | Como responsable de una edificación, deseo conocer si un dispositivo se encuentra operativo, para distinguir una condición real de una posible falla del equipo.                                                                  | **AC1:** Given un dispositivo registrado mantiene comunicación dentro del periodo esperado, When se consulta su estado, Then el sistema lo identifica como disponible.<br><br>**AC2:** Given un dispositivo deja de comunicar información durante el periodo establecido, When se evalúa su estado, Then el sistema identifica su falta de disponibilidad.                                                                                                                                                          | EP01                      |
+| **US05**        | Supervisar remotamente una edificación                   | Como administrador o facility manager, deseo supervisar remotamente la infraestructura, para mantener visibilidad aun cuando no me encuentre físicamente en el edificio.                                                          | **AC1:** Given el responsable posee autorización sobre una edificación, When consulta remotamente su información, Then puede conocer sus zonas, riesgos activos y estado general.<br><br>**AC2:** Given ocurre un cambio relevante en la edificación, When la información actualizada se encuentra disponible, Then el estado consultable refleja el cambio registrado.                                                                                                                                             | EP01                      |
+| **EP02**        | **Comprensión y contextualización del riesgo**           | Agrupa las capacidades destinadas a determinar qué situación de riesgo existe, dónde ocurre, qué nivel presenta y qué evidencia originó su detección.                                                                             | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | —                         |
+| **US06**        | Conocer el tipo de riesgo detectado                      | Como responsable de seguridad, deseo conocer el tipo de riesgo detectado, para comprender qué situación está ocurriendo.                                                                                                          | **AC1:** Given las mediciones cumplen las condiciones correspondientes a un tipo de riesgo definido, When se identifica el riesgo, Then el sistema lo clasifica utilizando el tipo correspondiente.<br><br>**AC2:** Given las mediciones no satisfacen ninguna condición definida, When son evaluadas, Then el sistema no registra un tipo de riesgo sin evidencia suficiente.                                                                                                                                      | EP02                      |
+| **US07**        | Conocer el nivel de riesgo                               | Como responsable de seguridad, deseo conocer el nivel del riesgo detectado, para determinar la urgencia con la que debe atenderse.                                                                                                | **AC1:** Given se detecta un riesgo, When las condiciones permiten determinar su severidad, Then el sistema asigna el nivel correspondiente.<br><br>**AC2:** Given la condición del riesgo cambia, When la nueva información modifica su nivel, Then el sistema actualiza la severidad conservando trazabilidad del cambio.                                                                                                                                                                                         | EP02                      |
+| **US08**        | Conocer la ubicación del riesgo                          | Como responsable de seguridad, deseo conocer la zona donde se originó el riesgo, para dirigir la respuesta hacia el lugar correcto.                                                                                               | **AC1:** Given un dispositivo asociado con una zona origina una detección, When el riesgo es registrado, Then el sistema lo relaciona con la edificación y zona correspondientes.<br><br>**AC2:** Given el dispositivo no posee una ubicación válida, When genera información asociada con un posible riesgo, Then el sistema identifica que la localización no puede determinarse correctamente.                                                                                                                   | EP02                      |
+| **US09**        | Consultar el contexto de una detección                   | Como responsable de seguridad, deseo conocer qué dispositivo y mediciones originaron la detección, para contar con contexto antes de tomar una decisión.                                                                          | **AC1:** Given existe un riesgo detectado, When el responsable consulta su información, Then puede conocer los dispositivos y valores relevantes utilizados para determinarlo.<br><br>**AC2:** Given distintas mediciones intervienen en la detección, When se consulta el contexto, Then el sistema conserva su relación con el mismo evento de riesgo.                                                                                                                                                            | EP02                      |
+| **EP03**        | **Coordinación de alertas y respuesta**                  | Agrupa las capacidades destinadas a comunicar situaciones de riesgo y coordinar o ejecutar las respuestas correspondientes de acuerdo con las políticas establecidas.                                                             | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | —                         |
+| **US10**        | Recibir una alerta de riesgo                             | Como responsable de una edificación, deseo recibir una alerta cuando se detecte una situación de riesgo, para conocer oportunamente lo ocurrido.                                                                                  | **AC1:** Given se detecta un riesgo que requiere comunicación, When se genera la alerta, Then esta contiene como mínimo el tipo de riesgo, nivel, zona y momento del evento.<br><br>**AC2:** Given existen responsables autorizados para recibir la alerta, When esta es generada, Then el sistema inicia su comunicación a los responsables correspondientes.                                                                                                                                                      | EP03                      |
+| **US11**        | Ejecutar una respuesta automática autorizada             | Como responsable de una edificación, deseo que determinadas respuestas se ejecuten automáticamente cuando se cumplan condiciones previamente autorizadas, para reducir el tiempo de reacción.                                     | **AC1:** Given existe una política de respuesta automática habilitada, When ocurre el riesgo asociado y se cumplen sus condiciones, Then el sistema ejecuta la respuesta definida.<br><br>**AC2:** Given una política no autoriza ejecución automática para una condición, When se detecta dicha condición, Then el sistema no ejecuta la acción automáticamente.                                                                                                                                                   | EP03                      |
+| **US12**        | Confirmar una acción de alto impacto                     | Como responsable autorizado, deseo confirmar las respuestas que puedan generar un impacto significativo, para mantener control humano sobre acciones sensibles.                                                                   | **AC1:** Given una respuesta requiere autorización humana, When se solicita su ejecución, Then la acción permanece pendiente hasta recibir una decisión de un usuario autorizado.<br><br>**AC2:** Given el usuario autorizado rechaza la acción, When la decisión es registrada, Then la respuesta no se ejecuta y la decisión queda asociada con el incidente.                                                                                                                                                     | EP03                      |
+| **US13**        | Conocer las respuestas ejecutadas                        | Como responsable de seguridad, deseo conocer qué respuestas fueron ejecutadas, para verificar cómo actuó el sistema durante el evento.                                                                                            | **AC1:** Given una respuesta se ejecuta durante un incidente, When su resultado es registrado, Then el sistema conserva el tipo de acción, momento y resultado obtenido.<br><br>**AC2:** Given una respuesta solicitada no puede completarse, When se registra el resultado, Then el sistema diferencia la acción fallida de una ejecución satisfactoria.                                                                                                                                                           | EP03                      |
+| **EP04**        | **Trazabilidad y seguimiento de incidentes**             | Agrupa las capacidades necesarias para conocer el ciclo de vida de una situación de riesgo, las decisiones adoptadas, las respuestas ejecutadas y la información histórica resultante.                                            | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | —                         |
+| **US14**        | Consultar el estado de un incidente                      | Como responsable de seguridad, deseo conocer el estado actual de un incidente, para saber si todavía requiere atención.                                                                                                           | **AC1:** Given existe un incidente activo, When el responsable consulta su estado, Then el sistema proporciona su estado vigente y la última actualización registrada.<br><br>**AC2:** Given el incidente cambia de estado, When el cambio es registrado, Then el nuevo estado queda disponible sin eliminar la trazabilidad de estados anteriores.                                                                                                                                                                 | EP04                      |
+| **US15**        | Asignar un responsable de atención                       | Como responsable de seguridad, deseo identificar quién se encuentra atendiendo un incidente, para coordinar las acciones y evitar responsabilidades ambiguas.                                                                     | **AC1:** Given existe un incidente que requiere atención, When un usuario autorizado asigna un responsable, Then el incidente queda asociado con dicho responsable.<br><br>**AC2:** Given cambia la persona responsable del incidente, When se registra la nueva asignación, Then el sistema conserva evidencia de la modificación realizada.                                                                                                                                                                       | EP04                      |
+| **US16**        | Registrar la resolución de un incidente                  | Como responsable de seguridad, deseo registrar la resolución y cierre de un incidente, para conservar evidencia de cómo terminó la situación.                                                                                     | **AC1:** Given un incidente ha sido atendido, When un usuario autorizado registra su resolución, Then el sistema conserva el resultado y momento de resolución.<br><br>**AC2:** Given el incidente no cumple las condiciones necesarias para su cierre, When se intenta cerrarlo, Then el sistema mantiene su estado sin registrarlo como finalizado.                                                                                                                                                               | EP04                      |
+| **US17**        | Consultar incidentes anteriores                          | Como responsable de una edificación, deseo consultar incidentes anteriores, para revisar situaciones ocurridas en la infraestructura.                                                                                             | **AC1:** Given existen incidentes registrados, When el responsable consulta el historial autorizado, Then el sistema proporciona los incidentes correspondientes a su ámbito de acceso.<br><br>**AC2:** Given no existen incidentes para el periodo consultado, When se realiza la consulta, Then el sistema informa que no existen resultados correspondientes.                                                                                                                                                    | EP04                      |
+| **US18**        | Buscar incidentes históricos                             | Como responsable de una edificación, deseo localizar incidentes mediante fecha, zona, tipo o estado, para encontrar rápidamente información histórica relevante.                                                                  | **AC1:** Given existen incidentes con diferentes características, When el responsable aplica criterios de búsqueda válidos, Then el sistema devuelve únicamente los incidentes que cumplen dichos criterios.<br><br>**AC2:** Given se utilizan varios criterios simultáneamente, When se realiza la búsqueda, Then los resultados satisfacen conjuntamente las condiciones proporcionadas.                                                                                                                          | EP04                      |
+| **US19**        | Consultar la secuencia de un incidente                   | Como responsable de una edificación, deseo consultar la secuencia de mediciones, alertas y respuestas asociadas con un incidente, para comprender cómo evolucionó.                                                                | **AC1:** Given existe información trazable asociada con un incidente, When se consulta su evolución, Then el sistema proporciona los eventos relevantes en orden temporal.<br><br>**AC2:** Given una acción o cambio se encuentra relacionado con el incidente, When se consulta su trazabilidad, Then la información conserva el momento y relación correspondientes.                                                                                                                                              | EP04                      |
+| **US20**        | Consultar indicadores de incidentes                      | Como facility manager, deseo consultar indicadores como frecuencia de incidentes, falsas alarmas y tiempos de atención, para identificar tendencias que requieran acciones preventivas.                                           | **AC1:** Given existen incidentes con información suficiente, When se calculan indicadores para un periodo determinado, Then el sistema utiliza únicamente datos correspondientes al periodo seleccionado.<br><br>**AC2:** Given no existe información suficiente para calcular un indicador, When se solicita dicho indicador, Then el sistema no presenta un resultado cuantitativo sin sustento.                                                                                                                 | EP04                      |
+| **EP05**        | **Preparación y gobierno del entorno monitoreado**       | Agrupa las capacidades necesarias para preparar las edificaciones, zonas, dispositivos, reglas, usuarios y responsabilidades requeridas antes y durante la operación de ResQ.                                                     | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | —                         |
+| **US21**        | Registrar una edificación                                | Como administrador, deseo registrar una edificación que será monitoreada, para organizar la infraestructura gestionada por ResQ.                                                                                                  | **AC1:** Given el administrador proporciona los datos obligatorios de una nueva edificación, When confirma su registro, Then la edificación queda disponible dentro de la organización correspondiente.<br><br>**AC2:** Given faltan datos obligatorios o estos son inválidos, When se solicita el registro, Then el sistema no crea una edificación incompleta.                                                                                                                                                    | EP05                      |
+| **US22**        | Definir zonas de una edificación                         | Como administrador, deseo definir las zonas de una edificación, para localizar correctamente dispositivos y eventos.                                                                                                              | **AC1:** Given existe una edificación registrada, When el administrador registra una zona válida, Then esta queda asociada con la edificación correspondiente.<br><br>**AC2:** Given una zona posee dispositivos o incidentes relacionados, When se modifica su información, Then sus relaciones se mantienen consistentes.                                                                                                                                                                                         | EP05                      |
+| **US23**        | Asociar un dispositivo con una zona                      | Como administrador, deseo asociar cada dispositivo con su zona correspondiente, para identificar el origen de mediciones y alertas.                                                                                               | **AC1:** Given existe un dispositivo registrado y una zona válida, When el administrador realiza la asociación, Then las nuevas mediciones del dispositivo pueden relacionarse con dicha zona.<br><br>**AC2:** Given el dispositivo cambia de ubicación, When su asociación es actualizada, Then las nuevas mediciones utilizan la nueva ubicación sin alterar la trazabilidad histórica previa.                                                                                                                    | EP05                      |
+| **US24**        | Configurar una condición de detección                    | Como responsable autorizado, deseo configurar condiciones de detección, para adaptar la identificación de riesgos a las características de la instalación.                                                                        | **AC1:** Given existe una variable monitoreada compatible, When el responsable registra una condición válida, Then esta puede utilizarse para evaluar mediciones posteriores.<br><br>**AC2:** Given una condición posee parámetros inválidos, When se intenta habilitarla, Then el sistema impide utilizarla para clasificar riesgos.                                                                                                                                                                               | EP05                      |
+| **US25**        | Configurar una política de respuesta                     | Como responsable autorizado, deseo configurar las respuestas permitidas para cada tipo de riesgo, para establecer previamente cómo deberá actuar el sistema.                                                                      | **AC1:** Given existe un tipo de riesgo configurado, When el responsable define una política válida, Then esta establece las respuestas permitidas para dicho riesgo.<br><br>**AC2:** Given una respuesta requiere autorización humana, When se configura la política, Then dicha condición se conserva antes de permitir su ejecución.                                                                                                                                                                             | EP05                      |
+| **US26**        | Asignar roles y responsabilidades                        | Como administrador, deseo asignar roles y responsabilidades a los usuarios, para limitar el acceso a información y acciones sensibles.                                                                                            | **AC1:** Given existe un usuario perteneciente a la organización, When el administrador le asigna un rol válido, Then sus operaciones permitidas corresponden a los permisos del rol.<br><br>**AC2:** Given un usuario carece del permiso requerido, When intenta ejecutar una operación protegida, Then el sistema rechaza la operación.                                                                                                                                                                           | EP05                      |
+| **US27**        | Acceder de forma autenticada                             | Como usuario autorizado, deseo autenticarme antes de acceder a ResQ, para utilizar únicamente las funciones correspondientes a mis responsabilidades.                                                                             | **AC1:** Given el usuario proporciona credenciales válidas, When solicita autenticarse, Then el sistema establece una identidad autenticada correspondiente al usuario.<br><br>**AC2:** Given las credenciales proporcionadas son inválidas, When se solicita autenticación, Then el sistema rechaza el acceso sin establecer una sesión autorizada.                                                                                                                                                                | EP05                      |
+| **EP06**        | **Continuidad operativa ante pérdida de conectividad**   | Agrupa las capacidades necesarias para mantener las funciones críticas de ResQ durante interrupciones de conectividad y conservar posteriormente la trazabilidad de los eventos producidos.                                       | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | —                         |
+| **US28**        | Mantener funciones críticas sin Internet                 | Como responsable de una edificación, deseo que la detección y las respuestas críticas continúen funcionando cuando se pierde Internet, para mantener la capacidad de reacción ante una emergencia.                                | **AC1:** Given la edificación se encuentra siendo monitoreada y se pierde temporalmente la conexión a Internet, When ocurre una condición que cumple una regla de detección crítica, Then el sistema continúa detectando localmente la situación de riesgo.<br><br>**AC2:** Given existe una respuesta crítica previamente autorizada y no existe conexión a Internet, When se detecta la condición asociada con dicha respuesta, Then el sistema ejecuta la respuesta sin depender de la recuperación de Internet. | EP06                      |
+| **US29**        | Recuperar eventos producidos durante una interrupción    | Como responsable de una edificación, deseo que los eventos producidos durante una interrupción de conectividad estén disponibles posteriormente, para conservar la trazabilidad de lo ocurrido.                                   | **AC1:** Given se producen eventos durante una interrupción de conectividad, When el sistema recupera la comunicación necesaria, Then los eventos ocurridos durante la interrupción pueden incorporarse al historial correspondiente.<br><br>**AC2:** Given un evento ocurrió durante la interrupción, When posteriormente se encuentra disponible para consulta, Then conserva el momento original en el que se produjo.                                                                                           | EP06                      |
+| **EP07**        | **Integración de ResQ con infraestructuras existentes**  | Agrupa las capacidades necesarias para que una empresa integradora pueda evaluar, probar e incorporar ResQ en proyectos que utilizan dispositivos o sistemas existentes mediante mecanismos oficialmente soportados.              | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | —                         |
+| **US30**        | Conocer los mecanismos de integración compatibles        | Como ingeniero de integración, deseo conocer qué mecanismos de integración soporta ResQ, para determinar si puede incorporarse a la infraestructura de mi cliente.                                                                | **AC1:** Given el integrador consulta las capacidades técnicas de ResQ, When revisa los mecanismos oficialmente soportados, Then puede identificar los protocolos o interfaces disponibles.<br><br>**AC2:** Given una tecnología no se encuentra soportada, When se consulta su compatibilidad, Then esta no se presenta como un mecanismo disponible.                                                                                                                                                              | EP07                      |
+| **US31**        | Integrar una fuente externa compatible                   | Como ingeniero de integración, deseo conectar a ResQ un dispositivo o sistema externo mediante un mecanismo de integración soportado, para incorporar sus mediciones sin sustituir innecesariamente la infraestructura instalada. | **AC1:** Given una fuente externa utiliza un mecanismo oficialmente soportado, When proporciona datos válidos de acuerdo con el contrato definido, Then ResQ puede recibirlos para su procesamiento.<br><br>**AC2:** Given la fuente proporciona información incompatible con el contrato definido, When ResQ la recibe, Then los datos inválidos no se consideran mediciones válidas.                                                                                                                              | EP07                      |
+| **US32**        | Validar una integración antes de activarla               | Como ingeniero de integración, deseo comprobar que una fuente externa entrega información compatible antes de utilizarla operativamente, para detectar incompatibilidades antes de su implementación definitiva.                  | **AC1:** Given una integración se encuentra configurada pero todavía no está habilitada para operación, When el integrador realiza una prueba con información válida, Then el sistema permite determinar si los datos pueden interpretarse correctamente.<br><br>**AC2:** Given la prueba detecta datos incompatibles o un problema de comunicación, When se obtiene el resultado, Then la integración permanece sin habilitarse para operación normal.                                                             | EP07                      |
+| **US33**        | Asociar dispositivos externos con su contexto            | Como ingeniero de integración, deseo relacionar los dispositivos externos con el edificio y zona correspondientes, para conservar el contexto de las mediciones y eventos integrados.                                             | **AC1:** Given existe un dispositivo externo reconocido, When el integrador lo relaciona con una zona válida, Then sus nuevas mediciones pueden vincularse con dicha ubicación.<br><br>**AC2:** Given un dispositivo externo no posee una asociación válida, When genera información, Then el sistema evita atribuirle una ubicación no confirmada.                                                                                                                                                                 | EP07                      |
+| **EP08**        | **Evaluación y adopción de ResQ**                        | Agrupa las capacidades del Landing Page y de la experiencia inicial destinadas a comunicar la propuesta de valor de ResQ a los segmentos objetivo y facilitar el inicio de una relación con la solución.                          | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | —                         |
+| **US34**        | Comprender la propuesta de ResQ                          | Como visitante, deseo comprender el problema que aborda ResQ y su propuesta de solución, para determinar si resulta relevante para mis necesidades.                                                                               | **AC1:** Given un visitante accede al contenido informativo de ResQ, When consulta la propuesta, Then dispone de información sobre el problema abordado, las capacidades principales y la forma general de funcionamiento.<br><br>**AC2:** Given el visitante todavía no conoce ResQ, When revisa la propuesta, Then puede distinguir el propósito de la solución frente a una alarma o sensor aislado.                                                                                                             | EP08                      |
+| **US35**        | Conocer los beneficios para administradores              | Como propietario o administrador de una edificación, deseo conocer los beneficios de ResQ aplicables a una edificación, para evaluar su utilidad dentro de mi infraestructura.                                                    | **AC1:** Given un visitante pertenece al segmento de propietarios o administradores, When consulta la información dirigida a dicho segmento, Then encuentra beneficios relacionados con monitoreo, detección, respuesta y trazabilidad.<br><br>**AC2:** Given el visitante evalúa la aplicación de ResQ, When revisa la información disponible, Then puede identificar las principales capacidades relevantes para la gestión de una edificación.                                                                   | EP08                      |
+| **US36**        | Conocer los beneficios para empresas integradoras        | Como representante de una empresa integradora, deseo conocer cómo puede incorporarse ResQ a sistemas existentes, para evaluar si puede formar parte de nuestros proyectos.                                                        | **AC1:** Given el visitante pertenece a una empresa integradora, When consulta la propuesta orientada a su segmento, Then dispone de información sobre interoperabilidad, integración y aplicación de ResQ en proyectos existentes.<br><br>**AC2:** Given el integrador evalúa una posible incorporación, When revisa la propuesta, Then puede identificar a ResQ como una solución complementaria que no exige sustituir toda la infraestructura existente.                                                        | EP08                      |
+| **US37**        | Acceder a documentación técnica de integración           | Como representante técnico de una empresa integradora, deseo acceder desde el sitio web a la documentación técnica disponible, para realizar una evaluación preliminar antes de iniciar un proyecto.                              | **AC1:** Given existe documentación técnica publicada para integradores, When el representante accede a ella desde los recursos disponibles, Then puede consultar información sobre mecanismos soportados y requisitos principales.<br><br>**AC2:** Given una capacidad se encuentra fuera del alcance soportado, When se consulta la documentación, Then esta no se presenta como característica disponible.                                                                                                       | EP08                      |
+| **US38**        | Solicitar una demostración o contacto                    | Como representante de una empresa integradora, deseo solicitar una demostración, piloto o contacto con ResQ, para evaluar una posible colaboración.                                                                               | **AC1:** Given el representante proporciona la información obligatoria de contacto, When registra una solicitud válida, Then la solicitud queda registrada para su posterior atención.<br><br>**AC2:** Given faltan datos indispensables para atender la solicitud, When se intenta registrarla, Then el sistema identifica que la información requerida se encuentra incompleta.                                                                                                                                   | EP08                      |
+| **US39**        | Acceder a los productos digitales de ResQ                | Como visitante, deseo acceder desde el Landing Page a los productos digitales disponibles, para continuar mi experiencia con la solución.                                                                                         | **AC1:** Given existe un producto digital público disponible, When el visitante selecciona su acceso desde el Landing Page, Then es dirigido al producto correspondiente.<br><br>**AC2:** Given un producto todavía no se encuentra disponible públicamente, When el visitante consulta las opciones existentes, Then no se presenta como un acceso funcional disponible.                                                                                                                                           | EP08                      |
+| **TS01**        | Capturar mediciones desde los Embedded Systems           | Como Developer, deseo que la Embedded Application capture las mediciones de los sensores conectados, para proporcionar al procesamiento local la información necesaria para monitoreo y detección.                                | **AC1:** Given un sensor compatible produce una lectura válida, When la Embedded Application la captura, Then genera una medición con identificación del dispositivo, tipo de variable, valor y momento correspondiente.<br><br>**AC2:** Given la lectura obtenida es inválida, When la aplicación la procesa, Then no la comunica como una medición válida.                                                                                                                                                        | EP01                      |
+| **TS02**        | Recibir mediciones mediante un Edge API                  | Como Developer, deseo disponer de un Edge API para recibir mediciones provenientes de los dispositivos, para desacoplar la captura física del procesamiento local.                                                                | **AC1:** Given un dispositivo autorizado envía una solicitud válida, When el Edge API recibe la medición, Then responde satisfactoriamente y entrega la información al procesamiento local.<br><br>**AC2:** Given la solicitud contiene información inválida, When el Edge API la recibe, Then responde con un resultado de error y no procesa la información como medición válida.                                                                                                                                 | EP01                      |
+| **TS03**        | Procesar reglas de detección localmente                  | Como Developer, deseo evaluar las condiciones de riesgo en el Edge, para que la detección crítica no dependa permanentemente de servicios Cloud.                                                                                  | **AC1:** Given existe una regla activa y una nueva medición válida, When la medición es procesada localmente, Then la condición correspondiente es evaluada sin requerir comunicación Cloud.<br><br>**AC2:** Given la condición de riesgo se cumple, When finaliza la evaluación, Then se genera el evento local necesario para continuar el flujo de detección.                                                                                                                                                    | EP02                      |
+| **TS04**        | Ejecutar comandos de actuadores localmente               | Como Developer, deseo que el Edge pueda coordinar comandos con los actuadores conectados, para ejecutar respuestas críticas sin depender permanentemente de Cloud.                                                                | **AC1:** Given una respuesta local autorizada requiere un actuador disponible, When el Edge solicita la acción, Then el comando correspondiente es enviado al dispositivo.<br><br>**AC2:** Given el actuador no confirma la ejecución esperada, When finaliza el intento, Then el resultado fallido queda disponible para la trazabilidad del evento.                                                                                                                                                               | EP03                      |
+| **TS05**        | Integrar un servicio externo de notificaciones           | Como Developer, deseo disponer de un mecanismo para entregar notificaciones externas, para complementar la comunicación de alertas generadas por ResQ.                                                                            | **AC1:** Given existe una alerta y un destinatario válido, When el servicio recibe la solicitud de notificación, Then intenta entregar el mensaje utilizando el canal configurado.<br><br>**AC2:** Given el proveedor externo rechaza o no puede entregar la solicitud, When se recibe el resultado, Then el sistema registra el fallo sin considerar la notificación como entregada.                                                                                                                               | EP03                      |
+| **TS06**        | Proveer servicios mediante RESTful API                   | Como Developer, deseo disponer de una RESTful API para los recursos Cloud de ResQ, para permitir que las aplicaciones digitales consuman los servicios de la plataforma.                                                          | **AC1:** Given un cliente autorizado envía una solicitud válida a un recurso disponible, When la API la procesa, Then responde utilizando el código HTTP y representación correspondientes al resultado.<br><br>**AC2:** Given una solicitud no está autorizada o contiene información inválida, When la API la procesa, Then responde mediante el resultado de error correspondiente sin ejecutar una operación no permitida.                                                                                      | EP01                      |
+| **TS07**        | Conservar y sincronizar eventos durante una interrupción | Como Developer, deseo conservar temporalmente los eventos que no pueden enviarse a los servicios remotos, para sincronizarlos cuando la comunicación sea restablecida.                                                            | **AC1:** Given no existe comunicación disponible con los servicios remotos, When se genera un evento que requiere sincronización, Then este queda almacenado temporalmente como pendiente.<br><br>**AC2:** Given vuelve a existir conectividad, When inicia la sincronización, Then los eventos pendientes se transmiten conservando su momento original y evitando duplicar los ya confirmados.                                                                                                                    | EP06                      |
+| **TS08**        | Proveer un mecanismo de integración externa              | Como Developer, deseo exponer un mecanismo de integración basado en tecnologías soportadas, para permitir el intercambio de información con dispositivos o plataformas externas.                                                  | **AC1:** Given una fuente externa autorizada utiliza un contrato soportado, When transmite información válida, Then ResQ puede interpretarla y procesarla.<br><br>**AC2:** Given una fuente transmite información que no satisface el contrato, When el mecanismo la recibe, Then registra o devuelve el error correspondiente sin incorporar información inconsistente.                                                                                                                                            | EP07                      |
+| **TS09**        | Procesar información cuantitativa para indicadores       | Como Developer, deseo calcular indicadores a partir de los incidentes registrados, para proporcionar información cuantitativa sustentada a las aplicaciones de ResQ.                                                              | **AC1:** Given existen datos válidos para un periodo determinado, When se solicita el cálculo de un indicador soportado, Then el resultado se obtiene utilizando únicamente la información aplicable.<br><br>**AC2:** Given no existen datos suficientes para realizar el cálculo, When se solicita el indicador, Then el servicio informa la ausencia de información suficiente y no genera un valor ficticio.                                                                                                     | EP04                      |
+
+
+
+
+## 3.2. Impact Mapping
+
+<p align="justify">
+El Impact Mapping de ResQ permite relacionar los objetivos de negocio definidos para la solución con los comportamientos que se espera promover en los representantes de los segmentos objetivo y con las funcionalidades necesarias para conseguir dichos resultados.
+</p>
+
+<p align="justify">
+Para su elaboración se consideraron dos User Personas: el <strong>Administrador de edificaciones (UP01)</strong>, representante del segmento de propietarios y administradores de edificaciones, y el <strong>Responsable institucional de seguridad y operaciones (UP02)</strong>, representante de empresas e instituciones con infraestructura propia.
+</p>
+
+<p align="justify">
+A partir de los resultados obtenidos durante el proceso de investigación y de las hipótesis planteadas durante el Lean UX Process, se establecieron tres Business Goals medibles relacionados con la validación de la utilidad operativa de ResQ, el uso recurrente de la plataforma y la validación de su valor comercial.
+</p>
+
+### Business Goals
+
+**BG01 — Validar la utilidad operativa del MVP**
+
+<p align="justify">
+Lograr que al menos el <strong>80 % de los usuarios participantes del piloto</strong> pueda identificar correctamente el tipo, nivel y zona de un riesgo, así como verificar la respuesta ejecutada por ResQ en escenarios de prueba, durante las <strong>primeras 6 semanas del piloto</strong>.
+</p>
+
+**BG02 — Promover el uso recurrente de ResQ**
+
+<p align="justify">
+Lograr que al menos el <strong>70 % de los usuarios participantes del piloto</strong> utilice ResQ al menos <strong>dos veces por semana</strong> para actividades de monitoreo o consulta de incidentes durante un periodo continuo de <strong>8 semanas</strong>.
+</p>
+
+**BG03 — Validar el valor comercial de la solución**
+
+<p align="justify">
+Lograr que al menos el <strong>60 % de las administraciones u organizaciones participantes del piloto</strong> manifieste una intención de continuar utilizando y pagar por el servicio, con una valoración mínima de <strong>4 sobre 5</strong>, al finalizar las <strong>primeras 12 semanas del piloto</strong>.
+</p>
+
+### Estructura del Impact Mapping
+
+#### BG01 — Validar la utilidad operativa del MVP
+
+| Actor / Persona | Impact | Deliverable | User Stories |
+|---|---|---|---|
+| **UP01 — Administrador de edificaciones** | Consulta el estado de la edificación y sus zonas para reconocer rápidamente una condición anómala sin depender de diferentes fuentes de información. | Monitoreo centralizado del estado de la edificación, zonas y dispositivos IoT. | **US01:** Como propietario, administrador o responsable institucional, quiero conocer el estado general de la edificación, para identificar oportunamente si existe alguna situación que requiera atención.<br><br>**US02:** Como responsable de una edificación, quiero conocer el estado individual de cada zona monitoreada, para identificar rápidamente dónde existe una condición anómala.<br><br>**US03:** Como responsable de una edificación, quiero conocer las mediciones obtenidas y el estado de los dispositivos IoT, para verificar las condiciones monitoreadas y detectar posibles fallas de los equipos. |
+| **UP01 — Administrador de edificaciones** | Identifica el tipo, nivel y ubicación del riesgo antes de tomar decisiones relacionadas con la emergencia. | Detección, clasificación y localización de riesgos. | **US04:** Como responsable de seguridad o administración, quiero conocer el tipo y nivel de riesgo detectado, para evaluar la situación y tomar decisiones con mayor rapidez.<br><br>**US05:** Como responsable de una edificación, quiero conocer la ubicación del riesgo detectado, para dirigir la respuesta hacia la zona correcta sin perder tiempo en localizar el incidente. |
+| **UP01 — Administrador de edificaciones** | Comprueba qué acciones fueron realizadas por el sistema durante la emergencia y mantiene visibilidad sobre su resultado. | Seguimiento de respuestas ejecutadas mediante actuadores. | **US09:** Como responsable de una edificación, quiero que determinadas acciones de seguridad se ejecuten automáticamente según el riesgo detectado, para reducir el tiempo de respuesta durante los primeros momentos de una emergencia.<br><br>**US10:** Como responsable de una edificación, quiero conocer qué acciones se ejecutaron durante una emergencia, para tener visibilidad sobre la respuesta realizada por el sistema. |
+| **UP02 — Responsable institucional de seguridad y operaciones** | Supervisa diferentes zonas utilizando información centralizada para comprender con rapidez el alcance de una emergencia. | Monitoreo por zonas y detección localizada de incidentes. | **US02:** Como responsable de una edificación, quiero conocer el estado individual de cada zona monitoreada, para identificar rápidamente dónde existe una condición anómala.<br><br>**US04:** Como responsable de seguridad o administración, quiero conocer el tipo y nivel de riesgo detectado, para evaluar la situación y tomar decisiones con mayor rapidez.<br><br>**US05:** Como responsable de una edificación, quiero conocer la ubicación del riesgo detectado, para dirigir la respuesta hacia la zona correcta sin perder tiempo en localizar el incidente. |
+| **UP02 — Responsable institucional de seguridad y operaciones** | Recibe información oportuna sobre los incidentes y coordina su atención hasta el cierre. | Alertas de emergencia y seguimiento del estado del incidente. | **US07:** Como responsable de una edificación, quiero recibir alertas cuando se detecte una situación de riesgo, para conocer oportunamente qué ocurre y poder realizar el seguimiento correspondiente.<br><br>**US12:** Como responsable de seguridad u operaciones, quiero conocer el estado actual y el responsable de atención de un incidente, para coordinar las acciones hasta su cierre. |
+| **UP02 — Responsable institucional de seguridad y operaciones** | Mantiene control humano sobre las acciones que pueden producir un impacto significativo sobre personas u operaciones. | Confirmación de acciones de alto impacto. | **US11:** Como responsable autorizado, quiero confirmar determinadas acciones antes de su ejecución cuando requieran intervención humana, para evitar respuestas automáticas que puedan generar un riesgo adicional. |
+
+#### BG02 — Promover el uso recurrente de ResQ
+
+| Actor / Persona | Impact | Deliverable | User Stories |
+|---|---|---|---|
+| **UP01 — Administrador de edificaciones** | Supervisa periódicamente sus instalaciones incluso cuando no se encuentra físicamente en el edificio. | Supervisión remota de la edificación. | **US06:** Como propietario, administrador o responsable institucional, quiero consultar remotamente el estado de las zonas y eventos de la edificación, para mantener la supervisión aunque no me encuentre físicamente en las instalaciones. |
+| **UP01 — Administrador de edificaciones** | Consulta eventos anteriores para revisar lo ocurrido y realizar seguimiento de la seguridad de la edificación. | Historial y detalle de incidentes. | **US13:** Como propietario, administrador o responsable institucional, quiero consultar los incidentes registrados anteriormente, para realizar seguimiento y analizar situaciones ocurridas en la edificación.<br><br>**US15:** Como responsable de una edificación, quiero revisar las mediciones y acciones asociadas con un incidente, para comprender cómo evolucionó y cómo respondió el sistema. |
+| **UP01 — Administrador de edificaciones** | Localiza información histórica sin tener que revisar manualmente correos, documentos o registros separados. | Búsqueda y filtrado de incidentes históricos. | **US14:** Como responsable de una edificación, quiero localizar incidentes utilizando diferentes criterios, para encontrar información histórica sin revisar manualmente múltiples registros. |
+| **UP02 — Responsable institucional de seguridad y operaciones** | Utiliza información histórica y cuantitativa para realizar seguimiento de incidentes y detectar patrones entre zonas. | Indicadores y análisis de información de seguridad. | **US16:** Como propietario, administrador o responsable institucional, quiero consultar indicadores obtenidos de los eventos registrados, para identificar tendencias y evaluar la gestión de seguridad de las instalaciones.<br><br>**US13:** Como propietario, administrador o responsable institucional, quiero consultar los incidentes registrados anteriormente, para realizar seguimiento y analizar situaciones ocurridas en la edificación. |
+| **UP02 — Responsable institucional de seguridad y operaciones** | Integra ResQ a sus actividades habituales de seguimiento manteniendo responsabilidades diferenciadas entre las áreas participantes. | Acceso y permisos de acuerdo con responsabilidades. | **US17:** Como responsable autorizado, quiero acceder a la plataforma mediante una identidad válida, para consultar únicamente la información asociada con mis responsabilidades.<br><br>**US18:** Como responsable de una organización, quiero que las capacidades de acceso estén diferenciadas según el rol del usuario, para proteger información y acciones sensibles. |
+| **UP02 — Responsable institucional de seguridad y operaciones** | Continúa confiando en el sistema durante interrupciones de conectividad al mantenerse disponibles las funciones críticas locales. | Continuidad de detección y respuesta sin dependencia permanente de Internet. | **US19:** Como responsable de una edificación, quiero que las funciones críticas de detección y respuesta continúen localmente cuando se pierde Internet, para mantener la capacidad de reacción durante una emergencia. |
+
+#### BG03 — Validar el valor comercial de la solución
+
+| Actor / Persona | Impact | Deliverable | User Stories |
+|---|---|---|---|
+| **UP01 — Administrador de edificaciones** | Reconoce que ResQ disminuye la necesidad de consultar diferentes sistemas y coordinar manualmente las primeras acciones ante una emergencia. | Monitoreo centralizado, alertas y respuestas automáticas. | **US01:** Como propietario, administrador o responsable institucional, quiero conocer el estado general de la edificación, para identificar oportunamente si existe alguna situación que requiera atención.<br><br>**US07:** Como responsable de una edificación, quiero recibir alertas cuando se detecte una situación de riesgo, para conocer oportunamente qué ocurre y poder realizar el seguimiento correspondiente.<br><br>**US09:** Como responsable de una edificación, quiero que determinadas acciones de seguridad se ejecuten automáticamente según el riesgo detectado, para reducir el tiempo de respuesta durante los primeros momentos de una emergencia. |
+| **UP01 — Administrador de edificaciones** | Comprende la propuesta de valor de ResQ y reconoce su aplicación en la administración de edificaciones. | Landing Page orientado a propietarios y administradores. | **US20:** Como visitante, quiero comprender qué problema aborda ResQ y cómo funciona la propuesta, para determinar si resulta relevante para mis necesidades de seguridad y gestión de emergencias.<br><br>**US21:** Como visitante del segmento de propietarios y administradores de edificaciones, quiero conocer los beneficios de ResQ aplicables a la gestión de un edificio, para evaluar si la solución responde a mis necesidades.<br><br>**US23:** Como visitante, quiero acceder desde el Landing Page al producto digital correspondiente, para continuar mi experiencia con ResQ según mi segmento y dispositivo. |
+| **UP01 — Administrador de edificaciones** | Percibe confianza en la continuidad del servicio al comprobar que la respuesta crítica no depende permanentemente de Internet. | Procesamiento y respuesta local ante pérdida de conectividad. | **US19:** Como responsable de una edificación, quiero que las funciones críticas de detección y respuesta continúen localmente cuando se pierde Internet, para mantener la capacidad de reacción durante una emergencia. |
+| **UP02 — Responsable institucional de seguridad y operaciones** | Reconoce valor en una plataforma capaz de centralizar información y coordinar el seguimiento de incidentes entre distintas áreas. | Monitoreo, alertas y seguimiento centralizado de incidentes. | **US02:** Como responsable de una edificación, quiero conocer el estado individual de cada zona monitoreada, para identificar rápidamente dónde existe una condición anómala.<br><br>**US07:** Como responsable de una edificación, quiero recibir alertas cuando se detecte una situación de riesgo, para conocer oportunamente qué ocurre y poder realizar el seguimiento correspondiente.<br><br>**US12:** Como responsable de seguridad u operaciones, quiero conocer el estado actual y el responsable de atención de un incidente, para coordinar las acciones hasta su cierre. |
+| **UP02 — Responsable institucional de seguridad y operaciones** | Percibe que la plataforma puede adaptarse a una organización con diferentes responsabilidades y necesidades de seguimiento. | Gestión de roles, historial e indicadores de seguridad. | **US18:** Como responsable de una organización, quiero que las capacidades de acceso estén diferenciadas según el rol del usuario, para proteger información y acciones sensibles.<br><br>**US13:** Como propietario, administrador o responsable institucional, quiero consultar los incidentes registrados anteriormente, para realizar seguimiento y analizar situaciones ocurridas en la edificación.<br><br>**US16:** Como propietario, administrador o responsable institucional, quiero consultar indicadores obtenidos de los eventos registrados, para identificar tendencias y evaluar la gestión de seguridad de las instalaciones. |
+| **UP02 — Responsable institucional de seguridad y operaciones** | Comprende los beneficios de ResQ para instalaciones con múltiples zonas y evalúa la solución como una alternativa aplicable a su organización. | Landing Page orientado a empresas e instituciones. | **US20:** Como visitante, quiero comprender qué problema aborda ResQ y cómo funciona la propuesta, para determinar si resulta relevante para mis necesidades de seguridad y gestión de emergencias.<br><br>**US22:** Como visitante del segmento de empresas e instituciones con infraestructura propia, quiero conocer los beneficios de ResQ para instalaciones con múltiples zonas, para evaluar su aporte a la seguridad y coordinación operativa.<br><br>**US23:** Como visitante, quiero acceder desde el Landing Page al producto digital correspondiente, para continuar mi experiencia con ResQ según mi segmento y dispositivo. |
+
+### Impact Mapping de ResQ
+
+<p align="justify">
+El siguiente artefacto representa visualmente la relación entre los Business Goals, los User Personas, los cambios de comportamiento esperados, los Deliverables y las User Stories identificadas para ResQ.
+</p>
+
+![Impact Mapping - ResQ](assets/images/chapter-03-requirements-specification/Impact-Mapping-ResQ.png)
+
+<p align="center">
+  <strong>Figura 23. Impact Mapping - ResQ.</strong>
+</p>
+
+### Análisis del Impact Mapping
+
+<p align="justify">
+El primer Business Goal se encuentra orientado a comprobar que las principales capacidades operativas de ResQ aportan valor durante una situación de riesgo. Para ambos User Personas resulta fundamental poder reconocer el estado de la infraestructura, identificar la zona afectada, conocer el tipo y nivel del riesgo y disponer de visibilidad sobre las acciones ejecutadas. Por ello, sus principales Deliverables se concentran en el monitoreo, la detección, la localización, las alertas y el seguimiento de las respuestas.
+</p>
+
+<p align="justify">
+El segundo Business Goal busca incorporar ResQ en las actividades habituales de supervisión y seguimiento. Para el Administrador de edificaciones, esto implica poder revisar remotamente el estado de sus instalaciones y consultar fácilmente incidentes anteriores. Para el Responsable institucional, implica además utilizar indicadores, gestionar responsabilidades diferenciadas y mantener continuidad operativa cuando existe una pérdida temporal de conectividad.
+</p>
+
+<p align="justify">
+El tercer Business Goal permite relacionar las capacidades funcionales de ResQ con la validación de su propuesta de valor. En el caso de los propietarios y administradores, el valor se concentra en reducir la fragmentación de información y la dependencia de coordinación manual. Para las empresas e instituciones, se complementa con la necesidad de coordinar diferentes áreas, administrar accesos, analizar información histórica y mantener funciones críticas disponibles. El Landing Page participa en este objetivo comunicando de forma diferenciada los beneficios de la solución a cada segmento y facilitando el acceso al producto digital correspondiente.
+</p>
+
+<p align="justify">
+En conjunto, el Impact Mapping mantiene trazabilidad desde los objetivos de negocio hasta las User Stories definidas en la sección anterior. De esta manera, cada funcionalidad considerada para ResQ se encuentra relacionada con un cambio de comportamiento esperado en alguno de los User Personas y con un resultado que contribuye a los objetivos establecidos para el modelo de negocio.
+</p>
+
+## 3.3. Product Backlog
+
+<p align="justify">
+El Product Backlog de ResQ organiza y prioriza las User Stories y Technical Stories definidas para la solución. La priorización considera principalmente el valor que cada historia aporta a los segmentos objetivo y al funcionamiento de las capacidades principales de monitoreo, detección, contextualización, respuesta, continuidad operativa e integración.
+</p>
+
+<p align="justify">
+Las historias relacionadas con la detección y contextualización de riesgos, la generación de alertas, la ejecución de respuestas y la continuidad de las funciones críticas se encuentran entre los elementos de mayor prioridad debido a que representan parte central de la propuesta de valor de ResQ. Asimismo, las User Stories correspondientes al Landing Page se consideran dentro del primer bloque del backlog para permitir su desarrollo desde los primeros Sprints y apoyar la comunicación temprana de la propuesta de valor hacia los segmentos objetivo.
+</p>
+
+<p align="justify">
+Para complementar la priorización se utiliza la columna Business Value, definida en una escala de 1 a 10, donde un valor mayor representa una mayor contribución al valor de negocio, al MVP y a las necesidades de los segmentos objetivo. Esta valoración es definida desde la perspectiva del Product Owner.
+</p>
+
+<p align="justify">
+Las estimaciones de esfuerzo se expresan mediante Story Points, utilizando los valores 1, 2, 3, 5 y 8. Los Story Points son estimados por el equipo de desarrollo y representan el esfuerzo relativo necesario para implementar cada historia considerando su complejidad, incertidumbre e integración con los diferentes componentes de la solución.
+</p>
+
+<p align="justify">
+El orden del Product Backlog se establece principalmente según el valor aportado al negocio. Cuando dos o más historias poseen un Business Value similar, se consideran también sus dependencias y la necesidad de habilitar capacidades posteriores del producto.
+</p>
+
+| Order | User Story ID | Title | Description | Business Value | Story Points |
+|---:|---|---|---|---:|---:|
+| 1 | US01 | Consultar el estado general de una edificación | Como responsable de una edificación, deseo conocer el estado general de la infraestructura, para identificar oportunamente si existe alguna condición que requiera atención. | 10 | 5 |
+| 2 | US06 | Conocer el tipo de riesgo detectado | Como responsable de seguridad, deseo conocer el tipo de riesgo detectado, para comprender qué situación está ocurriendo. | 10 | 3 |
+| 3 | US08 | Conocer la ubicación del riesgo | Como responsable de seguridad, deseo conocer la zona donde se originó el riesgo, para dirigir la respuesta hacia el lugar correcto. | 10 | 3 |
+| 4 | US10 | Recibir una alerta de riesgo | Como responsable de una edificación, deseo recibir una alerta cuando se detecte una situación de riesgo, para conocer oportunamente lo ocurrido. | 10 | 5 |
+| 5 | US11 | Ejecutar una respuesta automática autorizada | Como responsable de una edificación, deseo que determinadas respuestas se ejecuten automáticamente cuando se cumplan condiciones previamente autorizadas, para reducir el tiempo de reacción. | 10 | 8 |
+| 6 | US28 | Mantener funciones críticas sin Internet | Como responsable de una edificación, deseo que la detección y las respuestas críticas continúen funcionando cuando se pierde Internet, para mantener la capacidad de reacción ante una emergencia. | 10 | 8 |
+| 7 | US34 | Comprender la propuesta de ResQ | Como visitante, deseo comprender el problema que aborda ResQ y su propuesta de solución, para determinar si resulta relevante para mis necesidades. | 9 | 2 |
+| 8 | US35 | Conocer los beneficios para administradores | Como propietario o administrador de una edificación, deseo conocer los beneficios de ResQ aplicables a una edificación, para evaluar su utilidad dentro de mi infraestructura. | 9 | 2 |
+| 9 | US36 | Conocer los beneficios para empresas integradoras | Como representante de una empresa integradora, deseo conocer cómo puede incorporarse ResQ a sistemas existentes, para evaluar si puede formar parte de nuestros proyectos. | 9 | 2 |
+| 10 | US39 | Acceder a los productos digitales de ResQ | Como visitante, deseo acceder desde el Landing Page a los productos digitales disponibles, para continuar mi experiencia con la solución. | 9 | 2 |
+| 11 | US21 | Registrar una edificación | Como administrador, deseo registrar una edificación que será monitoreada, para organizar la infraestructura gestionada por ResQ. | 9 | 3 |
+| 12 | US22 | Definir zonas de una edificación | Como administrador, deseo definir las zonas de una edificación, para localizar correctamente dispositivos y eventos. | 9 | 3 |
+| 13 | US23 | Asociar un dispositivo con una zona | Como administrador, deseo asociar cada dispositivo con su zona correspondiente, para identificar el origen de mediciones y alertas. | 9 | 5 |
+| 14 | US24 | Configurar una condición de detección | Como responsable autorizado, deseo configurar condiciones de detección, para adaptar la identificación de riesgos a las características de la instalación. | 9 | 5 |
+| 15 | US25 | Configurar una política de respuesta | Como responsable autorizado, deseo configurar las respuestas permitidas para cada tipo de riesgo, para establecer previamente cómo deberá actuar el sistema. | 9 | 8 |
+| 16 | US07 | Conocer el nivel de riesgo | Como responsable de seguridad, deseo conocer el nivel del riesgo detectado, para determinar la urgencia con la que debe atenderse. | 9 | 3 |
+| 17 | US02 | Consultar el estado de una zona | Como responsable de una edificación, deseo conocer el estado de cada zona monitoreada, para identificar rápidamente dónde existe una condición anómala. | 9 | 3 |
+| 18 | US03 | Consultar mediciones actuales | Como responsable de una edificación, deseo consultar las mediciones actuales de los dispositivos, para comprender las condiciones de las zonas supervisadas. | 9 | 3 |
+| 19 | TS01 | Capturar mediciones desde los Embedded Systems | Como Developer, deseo que la Embedded Application capture las mediciones de los sensores conectados, para proporcionar al procesamiento local la información necesaria para monitoreo y detección. | 9 | 5 |
+| 20 | TS03 | Procesar reglas de detección localmente | Como Developer, deseo evaluar las condiciones de riesgo en el Edge, para que la detección crítica no dependa permanentemente de servicios Cloud. | 9 | 8 |
+| 21 | TS04 | Ejecutar comandos de actuadores localmente | Como Developer, deseo que el Edge pueda coordinar comandos con los actuadores conectados, para ejecutar respuestas críticas sin depender permanentemente de Cloud. | 9 | 8 |
+| 22 | US04 | Conocer el estado operativo de un dispositivo | Como responsable de una edificación, deseo conocer si un dispositivo se encuentra operativo, para distinguir una condición real de una posible falla del equipo. | 8 | 3 |
+| 23 | US05 | Supervisar remotamente una edificación | Como administrador o facility manager, deseo supervisar remotamente la infraestructura, para mantener visibilidad aun cuando no me encuentre físicamente en el edificio. | 8 | 3 |
+| 24 | US09 | Consultar el contexto de una detección | Como responsable de seguridad, deseo conocer qué dispositivo y mediciones originaron la detección, para contar con contexto antes de tomar una decisión. | 8 | 5 |
+| 25 | US12 | Confirmar una acción de alto impacto | Como responsable autorizado, deseo confirmar las respuestas que puedan generar un impacto significativo, para mantener control humano sobre acciones sensibles. | 8 | 5 |
+| 26 | US13 | Conocer las respuestas ejecutadas | Como responsable de seguridad, deseo conocer qué respuestas fueron ejecutadas, para verificar cómo actuó el sistema durante el evento. | 8 | 3 |
+| 27 | US26 | Asignar roles y responsabilidades | Como administrador, deseo asignar roles y responsabilidades a los usuarios, para limitar el acceso a información y acciones sensibles. | 8 | 5 |
+| 28 | US27 | Acceder de forma autenticada | Como usuario autorizado, deseo autenticarme antes de acceder a ResQ, para utilizar únicamente las funciones correspondientes a mis responsabilidades. | 8 | 3 |
+| 29 | US29 | Recuperar eventos producidos durante una interrupción | Como responsable de una edificación, deseo que los eventos producidos durante una interrupción de conectividad estén disponibles posteriormente, para conservar la trazabilidad de lo ocurrido. | 8 | 8 |
+| 30 | US30 | Conocer los mecanismos de integración compatibles | Como ingeniero de integración, deseo conocer qué mecanismos de integración soporta ResQ, para determinar si puede incorporarse a la infraestructura de mi cliente. | 8 | 3 |
+| 31 | US31 | Integrar una fuente externa compatible | Como ingeniero de integración, deseo conectar a ResQ un dispositivo o sistema externo mediante un mecanismo de integración soportado, para incorporar sus mediciones sin sustituir innecesariamente la infraestructura instalada. | 8 | 8 |
+| 32 | US32 | Validar una integración antes de activarla | Como ingeniero de integración, deseo comprobar que una fuente externa entrega información compatible antes de utilizarla operativamente, para detectar incompatibilidades antes de su implementación definitiva. | 8 | 5 |
+| 33 | US33 | Asociar dispositivos externos con su contexto | Como ingeniero de integración, deseo relacionar los dispositivos externos con el edificio y zona correspondientes, para conservar el contexto de las mediciones y eventos integrados. | 8 | 5 |
+| 34 | US37 | Acceder a documentación técnica de integración | Como representante técnico de una empresa integradora, deseo acceder desde el sitio web a la documentación técnica disponible, para realizar una evaluación preliminar antes de iniciar un proyecto. | 8 | 3 |
+| 35 | US38 | Solicitar una demostración o contacto | Como representante de una empresa integradora, deseo solicitar una demostración, piloto o contacto con ResQ, para evaluar una posible colaboración. | 8 | 3 |
+| 36 | TS02 | Recibir mediciones mediante un Edge API | Como Developer, deseo disponer de un Edge API para recibir mediciones provenientes de los dispositivos, para desacoplar la captura física del procesamiento local. | 8 | 8 |
+| 37 | TS05 | Integrar un servicio externo de notificaciones | Como Developer, deseo disponer de un mecanismo para entregar notificaciones externas, para complementar la comunicación de alertas generadas por ResQ. | 8 | 5 |
+| 38 | TS06 | Proveer servicios mediante RESTful API | Como Developer, deseo disponer de una RESTful API para los recursos Cloud de ResQ, para permitir que las aplicaciones digitales consuman los servicios de la plataforma. | 8 | 8 |
+| 39 | TS07 | Conservar y sincronizar eventos durante una interrupción | Como Developer, deseo conservar temporalmente los eventos que no pueden enviarse a los servicios remotos, para sincronizarlos cuando la comunicación sea restablecida. | 8 | 8 |
+| 40 | TS08 | Proveer un mecanismo de integración externa | Como Developer, deseo exponer un mecanismo de integración basado en tecnologías soportadas, para permitir el intercambio de información con dispositivos o plataformas externas. | 8 | 8 |
+| 41 | US14 | Consultar el estado de un incidente | Como responsable de seguridad, deseo conocer el estado actual de un incidente, para saber si todavía requiere atención. | 7 | 3 |
+| 42 | US15 | Asignar un responsable de atención | Como responsable de seguridad, deseo identificar quién se encuentra atendiendo un incidente, para coordinar las acciones y evitar responsabilidades ambiguas. | 7 | 3 |
+| 43 | US16 | Registrar la resolución de un incidente | Como responsable de seguridad, deseo registrar la resolución y cierre de un incidente, para conservar evidencia de cómo terminó la situación. | 7 | 3 |
+| 44 | US17 | Consultar incidentes anteriores | Como responsable de una edificación, deseo consultar incidentes anteriores, para revisar situaciones ocurridas en la infraestructura. | 7 | 3 |
+| 45 | US18 | Buscar incidentes históricos | Como responsable de una edificación, deseo localizar incidentes mediante fecha, zona, tipo o estado, para encontrar rápidamente información histórica relevante. | 6 | 5 |
+| 46 | US19 | Consultar la secuencia de un incidente | Como responsable de una edificación, deseo consultar la secuencia de mediciones, alertas y respuestas asociadas con un incidente, para comprender cómo evolucionó. | 6 | 5 |
+| 47 | US20 | Consultar indicadores de incidentes | Como facility manager, deseo consultar indicadores como frecuencia de incidentes, falsas alarmas y tiempos de atención, para identificar tendencias que requieran acciones preventivas. | 5 | 8 |
+| 48 | TS09 | Procesar información cuantitativa para indicadores | Como Developer, deseo calcular indicadores a partir de los incidentes registrados, para proporcionar información cuantitativa sustentada a las aplicaciones de ResQ. | 5 | 8 |
+
+### Product Backlog en Trello
+
+<p align="justify">
+El Product Backlog de ResQ se mantiene también en Trello, donde las User Stories y Technical Stories se encuentran organizadas y ordenadas de acuerdo con la prioridad definida para la solución. El tablero permite visualizar y gestionar los elementos del backlog, seleccionar posteriormente las historias correspondientes a cada Sprint y realizar el seguimiento de su avance durante el proceso de desarrollo.
+</p>
+
+<p align="justify">
+La priorización registrada en Trello mantiene coherencia con el Business Value definido por el Product Owner y las estimaciones de Story Points realizadas por el equipo de desarrollo. El Business Value representa la importancia relativa de cada historia para los objetivos del producto y las necesidades de los segmentos objetivo, mientras que los Story Points representan el esfuerzo relativo requerido para su implementación.
+</p>
+
+<p align="justify">
+Cada tarjeta del tablero contiene el identificador y título de la User Story o Technical Story, la Epic relacionada, su tipo de historia, Business Value, Story Points y sus respectivos Acceptance Criteria. Asimismo, las tarjetas se encuentran agrupadas visualmente mediante etiquetas correspondientes a las Epics definidas para ResQ.
+</p>
+
+<p align="justify">
+La siguiente imagen muestra el Product Backlog de ResQ registrado en Trello:
+</p>
+
+![Product Backlog - ResQ](assets/images/chapter-03-requirements-specification/Product-Backlog-ResQ.png)
+
+<p align="center">
+  <strong>Figura 24. Product Backlog - ResQ.</strong>
+</p>
+
+**Link del Product Backlog:** [ResQ - Product Backlog](https://trello.com/invite/b/6aab49b781accd44e61a7276/ATTI008620e96295fff92c9f73aa53404faf8E74AD19/resq-product-backlog)
+
+<div style="page-break-before: always; break-before: page;"></div>
+
+# Capítulo IV: Solution Software Design
+
+## 4.1. Strategic-Level Domain-Driven Design
+
+<p align="justify">
+El proceso de <strong>Strategic-Level Domain-Driven Design</strong> se utilizó para definir los principales límites del dominio de ResQ y organizar la solución de acuerdo con las capacidades identificadas durante las actividades de Needfinding y Requirements.
+</p>
+
+<p align="justify">
+A partir del análisis del problema, los principales escenarios operativos, las User Stories y las Technical Stories, el equipo identificó grupos de conceptos, reglas y responsabilidades relacionadas entre sí. Estas responsabilidades fueron separadas considerando su significado dentro del dominio, la propiedad de la información y de las reglas de negocio, y la necesidad de reducir el acoplamiento entre diferentes partes de la solución.
+</p>
+
+<p align="justify">
+Como resultado de este proceso, el dominio de ResQ fue organizado en distintos Bounded Contexts, cada uno con responsabilidades claramente delimitadas sobre su modelo de dominio y sus reglas de negocio.
+</p>
+
+### 4.1.1. Design-Level EventStorming
+
+<p align="justify">
+Con el objetivo de profundizar el modelado del dominio de ResQ, el equipo realizó una sesión de <strong>Design-Level EventStorming</strong> tomando como referencia el Big Picture EventStorming elaborado previamente. La finalidad fue identificar con mayor detalle los actores, acciones, eventos, reglas y responsabilidades que intervienen en el funcionamiento de la solución.
+</p>
+
+<p align="justify">
+Durante la sesión se utilizaron los principales elementos de EventStorming: <strong>Actors, Commands, Domain Events, Aggregates, Policies, Read Models y External Systems</strong>. Para mantener coherencia con el Ubiquitous Language previamente definido, se emplearon conceptos como <code>Building</code>, <code>Zone</code>, <code>IoT Device</code>, <code>Risk</code>, <code>Automatic Response</code>, <code>High-Impact Action</code>, <code>Incident</code> y <code>Authorized Manager</code>.
+</p>
+
+<p align="justify">
+Durante la reunión se siguieron las siguientes actividades:
+</p>
+
+- **Exploración del dominio general:** Se revisó el Big Picture EventStorming y se discutieron los principales procesos que intervienen desde la preparación de la plataforma hasta la atención y cierre de una emergencia.
+- **Identificación de actores y usuarios:** Se reconocieron los participantes que interactúan con el sistema, como administradores, responsables autorizados, usuarios de la plataforma y dispositivos IoT.
+- **Identificación de Domain Events:** Se registraron los hechos relevantes que ocurren dentro del dominio, como `Usuario autenticado`, `Medición del sensor registrada`, `Condición anómala detectada`, `Riesgo clasificado y localizado`, `Alerta generada`, `Respuesta automática ejecutada` e `Incidente cerrado`.
+- **Identificación de Commands:** Para cada evento se analizaron las acciones que lo originan, como autenticar usuarios, registrar mediciones, clasificar riesgos, generar alertas, ejecutar respuestas y gestionar incidentes.
+- **Identificación de Policies y reglas del dominio:** Se incorporaron las reglas que reaccionan ante determinados eventos, especialmente las relacionadas con detección de riesgos, respuestas automáticas y acciones de alto impacto.
+- **Identificación de Aggregates, Read Models y External Systems:** Se organizaron los elementos responsables de procesar los comandos, las vistas necesarias para consultar el estado del sistema y los servicios externos que participan en determinados flujos.
+- **Asignación de responsabilidades:** Finalmente, se revisó qué actores y elementos del dominio participan en cada proceso, permitiendo reconocer agrupaciones de responsabilidades que posteriormente servirían para el Candidate Context Discovery.
+
+<p align="justify">
+Como resultado de la sesión se identificaron cuatro procesos principales dentro de ResQ: <strong>Acceso y Configuración</strong>, <strong>Monitoreo y Detección</strong>, <strong>Alerta y Respuesta Automática</strong> y <strong>Gestión y Seguimiento</strong>.
+</p>
+
+<p align="justify">
+El flujo principal del dominio puede resumirse de la siguiente manera:
+</p>
+
+**Configuración → Medición registrada → Condición anómala detectada → Riesgo clasificado y localizado → Alerta o respuesta ejecutada → Incidente registrado → Seguimiento → Incidente cerrado**
+
+![Design-Level_EventStorming_ResQ](assets/images/chapter-04-solution-software-design/Design-Level_EventStorming_ResQ.jpg)
+
+<p align="center">
+  <strong>Figura 25. Design-Level_EventStorming_ResQ.</strong>
+</p>
+
+<p align="justify">
+El Design-Level EventStorming permitió obtener una visión más detallada del comportamiento del dominio y reconocer con mayor claridad las responsabilidades existentes. Este resultado fue utilizado posteriormente como base para el <strong>Candidate Context Discovery</strong>, donde los elementos del EventStorm fueron agrupados para identificar los Bounded Contexts candidatos de ResQ.
+</p>
+
+#### 4.1.1.1. Candidate Context Discovery
+
+<p align="justify">
+A partir del modelo obtenido en el Design-Level EventStorming, se realizó el <strong>Candidate Context Discovery</strong> con el objetivo de identificar los límites naturales de responsabilidad dentro del dominio de ResQ y proponer los Bounded Contexts que organizarán posteriormente el diseño estratégico de la solución.
+</p>
+
+<p align="justify">
+Para identificar los contextos candidatos se aplicaron principalmente las técnicas <strong>start-with-value</strong> y <strong>look-for-pivotal-events</strong>. La primera permitió reconocer las capacidades que concentran el principal valor de negocio de ResQ, mientras que la segunda permitió identificar eventos relevantes que representan cambios de responsabilidad dentro del flujo del dominio.
+</p>
+
+<p align="justify">
+Mediante <strong>start-with-value</strong>, se identificaron <strong>Risk Detection</strong> y <strong>Alert & Response Management</strong> como las capacidades centrales de la solución. <code>Risk Detection</code> concentra la lógica encargada de interpretar las mediciones y determinar el tipo, nivel y ubicación de una situación de riesgo, mientras que <code>Alert &amp; Response Management</code> determina las alertas y acciones que deben ejecutarse como consecuencia del riesgo identificado.
+</p>
+
+<p align="justify">
+Posteriormente, mediante <strong>look-for-pivotal-events</strong>, se analizaron eventos relevantes como:
+</p>
+
+- `Sensor measurement recorded`
+- `Anomalous condition detected`
+- `Risk classified and located`
+- `Alert generated`
+- `Automatic response executed`
+- `Incident registered in history`
+- `Incident closed`
+
+<p align="justify">
+Estos eventos permitieron reconocer transiciones entre las responsabilidades de monitoreo, detección, respuesta y seguimiento. En particular, <code>Risk classified and located</code> representa el cambio entre la interpretación de las condiciones monitoreadas y el inicio de las acciones de respuesta, mientras que <code>Incident registered in history</code> marca el comienzo del seguimiento formal de la situación.
+</p>
+
+<p align="justify">
+Como resultado del análisis se identificaron los siguientes Candidate Bounded Contexts:
+</p>
+
+| Candidate Bounded Context | Descripción |
+|---|---|
+| **IAM** | Gestiona la autenticación y autorización de los usuarios de ResQ, incluyendo validación de identidad, asignación de roles y control de permisos sobre las funcionalidades protegidas. |
+| **User Management** | Gestiona la información, estado y responsabilidades de los usuarios pertenecientes a una organización. |
+| **Building Management** | Gestiona la información de las edificaciones y sus zonas, permitiendo mantener la estructura física que será monitoreada por ResQ. |
+| **Device Management** | Gestiona los dispositivos IoT registrados en la plataforma y su asociación con una edificación o zona determinada. |
+| **Monitoring** | Gestiona las mediciones y estados actuales de las zonas y dispositivos IoT para proporcionar visibilidad sobre las condiciones monitoreadas. |
+| **Risk Detection** | Analiza las mediciones y aplica reglas de detección para identificar condiciones de riesgo y determinar su tipo, nivel y ubicación. |
+| **Alert & Response Management** | Gestiona las alertas y respuestas derivadas de un riesgo, incluyendo señalización, acciones automáticas mediante actuadores y acciones que requieren confirmación humana. |
+| **Incident Management** | Gestiona el ciclo de vida de los incidentes, incluyendo su registro, responsable, estado, evolución y cierre. |
+
+<p align="justify">
+La técnica <strong>start-with-value</strong> permitió reconocer que <code>Risk Detection</code> y <code>Alert &amp; Response Management</code> concentran el mayor valor de negocio de ResQ, debido a que representan la interpretación de una situación de riesgo y la coordinación de la respuesta correspondiente.
+</p>
+
+<p align="justify">
+Por otro lado, los demás contextos fueron delimitados al identificar responsabilidades específicas dentro del dominio. <code>Monitoring</code> mantiene el estado observado de la infraestructura, <code>Incident Management</code> gestiona el seguimiento posterior de una situación, mientras que <code>IAM</code>, <code>User Management</code>, <code>Building Management</code> y <code>Device Management</code> proporcionan las capacidades necesarias para preparar y administrar el entorno en el que opera la solución.
+</p>
+
+<p align="justify">
+Como parte del proceso se realizaron cambios progresivos sobre el EventStorm, comenzando con el modelo sin límites definidos, continuando con la identificación de las capacidades de mayor valor y los eventos pivotales, y finalizando con la delimitación de los ocho Candidate Bounded Contexts.
+</p>
+
+![CandidateContextDiscovery_Initial](assets/images/chapter-04-solution-software-design/CandidateContextDiscovery_Initial.png)
+
+<p align="center">
+  <strong>Figura 26. CandidateContextDiscovery_Initial.</strong>
+</p>
+
+![CandidateContextDiscovery_Core](assets/images/chapter-04-solution-software-design/CandidateContextDiscovery_Core.png)
+
+<p align="center">
+  <strong>Figura 27. CandidateContextDiscovery_Core.</strong>
+</p>
+
+![CandidateContextDiscovery_Final](assets/images/chapter-04-solution-software-design/CandidateContextDiscovery_Final.png)
+
+<p align="center">
+  <strong>Figura 28. CandidateContextDiscovery_Final.</strong>
+</p>
+
+<p align="justify">
+El resultado permitió obtener una primera descomposición del dominio en ocho contextos candidatos. Estos límites serán refinados posteriormente mediante los <strong>Bounded Context Canvases</strong> y el <strong>Context Mapping</strong>, donde se analizarán con mayor detalle sus responsabilidades, reglas de negocio y relaciones.
+</p>
+
+#### 4.1.1.2. Domain Message Flows Modeling
+
+<p align="justify">
+Luego de identificar los Candidate Bounded Contexts de ResQ, se utilizó la técnica de <strong>Domain Storytelling</strong> para representar cómo estos contextos deben colaborar frente a diferentes situaciones del negocio.
+</p>
+
+<p align="justify">
+Para cada escenario se identificaron los actores involucrados, los Bounded Contexts que participan y los principales mensajes intercambiados entre ellos. Estos mensajes se representan como <strong>Commands, Events y Queries</strong>, permitiendo visualizar qué contexto solicita una acción, cuál procesa la información y qué resultado comunica posteriormente.
+</p>
+
+<p align="justify">
+Se seleccionaron cuatro escenarios representativos del funcionamiento de ResQ: la configuración inicial de una edificación, la detección y respuesta automática ante un riesgo, la confirmación de una acción de alto impacto y el seguimiento de un incidente. Estos escenarios permiten observar tanto los procesos administrativos como el flujo principal de monitoreo y respuesta ante emergencias.
+</p>
+
+**Escenario 1: Configuración de una edificación monitoreada**
+
+<p align="justify">
+El primer escenario representa la preparación de la infraestructura antes de iniciar el monitoreo. Un administrador se autentica mediante <strong>IAM</strong> y la información correspondiente al usuario y su organización es gestionada por <strong>User Management</strong>.
+</p>
+
+<p align="justify">
+Posteriormente, el administrador registra la edificación y define las zonas que serán monitoreadas mediante <strong>Building Management</strong>. Finalmente, los dispositivos IoT son registrados y asociados con las zonas correspondientes a través de <strong>Device Management</strong>.
+</p>
+
+<p align="justify">
+Como resultado, la infraestructura queda configurada para que las mediciones futuras puedan relacionarse correctamente con un dispositivo, una zona y una edificación.
+</p>
+
+![DomainMessageFlowsModeling_Scenario1](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario1.png)
+
+<p align="center">
+  <strong>Figura 29. DomainMessageFlowsModeling_Scenario1.</strong>
+</p>
+
+**Escenario 2: Detección y respuesta automática ante un riesgo**
+
+<p align="justify">
+Este escenario representa el flujo principal de valor de ResQ. El proceso comienza cuando un dispositivo IoT genera una nueva medición y la envía a <strong>Monitoring</strong>, donde se registra y actualiza el estado observado de la zona.
+</p>
+
+<p align="justify">
+La información es posteriormente evaluada por <strong>Risk Detection</strong>, que determina si existe una condición de riesgo y establece su tipo, nivel y ubicación. Cuando se confirma un riesgo, esta información es enviada a <strong>Alert & Response Management</strong>, que aplica las políticas correspondientes para generar una alerta y, cuando está permitido, ejecutar una respuesta automática.
+</p>
+
+<p align="justify">
+Finalmente, los datos del riesgo y de la respuesta realizada son comunicados a <strong>Incident Management</strong>, donde se registra el incidente para permitir su posterior seguimiento.
+</p>
+
+![DomainMessageFlowsModeling_Scenario2](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario2.png)
+
+<p align="center">
+  <strong>Figura 30. DomainMessageFlowsModeling_Scenario2.</strong>
+</p>
+
+**Escenario 3: Confirmación de una acción de alto impacto**
+
+<p align="justify">
+Algunas acciones de seguridad pueden requerir intervención humana debido a su posible impacto. Cuando <strong>Risk Detection</strong> identifica una situación que requiere este tipo de respuesta, <strong>Alert & Response Management</strong> solicita la confirmación de un responsable autorizado.
+</p>
+
+<p align="justify">
+Antes de permitir la operación, <strong>IAM</strong> valida que el usuario posea los permisos necesarios. Una vez autorizado, el responsable puede confirmar la acción y Alert & Response Management procede con su ejecución.
+</p>
+
+<p align="justify">
+La decisión tomada y la respuesta realizada son posteriormente comunicadas a <strong>Incident Management</strong>, permitiendo conservar la trazabilidad de la intervención humana. En caso de que el responsable rechace la acción, esta no se ejecuta y la decisión también puede quedar registrada.
+</p>
+
+![DomainMessageFlowsModeling_Scenario3](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario3.png)
+
+<p align="center">
+  <strong>Figura 31. DomainMessageFlowsModeling_Scenario3.</strong>
+</p>
+
+**Escenario 4: Seguimiento y cierre de un incidente**
+
+<p align="justify">
+Una vez registrado un incidente, un responsable de seguridad puede consultar su información mediante <strong>Incident Management</strong>. Desde este contexto se puede conocer el riesgo asociado, las acciones realizadas y el responsable asignado.
+</p>
+
+<p align="justify">
+Cuando se requiere información actualizada sobre la zona afectada, Incident Management consulta a <strong>Monitoring</strong> para obtener las condiciones actuales. A medida que evoluciona la situación, el responsable puede actualizar el estado del incidente y, cuando la emergencia ha sido controlada, solicitar su cierre.
+</p>
+
+<p align="justify">
+De esta manera, Incident Management conserva la trazabilidad de los responsables, cambios de estado y acciones realizadas durante todo el ciclo de vida del incidente.
+</p>
+
+![DomainMessageFlowsModeling_Scenario4](./assets/images/chapter-04-solution-software-design/DomainMessageFlowsModeling_Scenario4.png)
+
+<p align="center">
+  <strong>Figura 32. DomainMessageFlowsModeling_Scenario4.</strong>
+</p>
+
+#### 4.1.1.3. Bounded Context Canvases
+##### *Connectivity Management.*
+
+![Entrevista 2 - Camila Torres Vega](assets/images/chapter-04-solution-software-design/ConnectivityCanvase.png)
+
+<p align="center">
+  <strong>Figura 33. Entrevista 2 - Camila Torres Vega.</strong>
+</p>
+<p align="justify">
+Luego de identificar los Candidate Bounded Contexts de ResQ, se elaboraron sus respectivos <strong>Bounded Context Canvases</strong> para detallar responsabilidades, lenguaje ubicuo, reglas de negocio, capacidades y relaciones con otros contextos.
+</p>
+
+<p align="justify">
+El proceso siguió un enfoque iterativo basado en <strong>Context Overview Definition</strong>, <strong>Business Rules Distillation & Ubiquitous Language Capture</strong>, <strong>Capability Analysis</strong>, <strong>Capability Layering</strong>, <strong>Dependencies Capture</strong> y <strong>Design Critique</strong>.
+</p>
+
+<p align="justify">
+Los Bounded Contexts fueron trabajados en orden de importancia, priorizando primero aquellos que concentran el mayor valor del negocio y que participan directamente en el flujo principal de ResQ.
+</p>
+
+<p align="justify">
+A continuación, se presentan los Bounded Context Canvases definidos:
+</p>
+
+![BoundedContextCanvases_RiskDetection](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_RiskDetection.png)
+
+<p align="center">
+  <strong>Figura 34. BoundedContextCanvases_RiskDetection.</strong>
+</p>
+
+![BoundedContextCanvases_Alert&ResponseManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_Alert&ResponseManagement.png)
+
+<p align="center">
+  <strong>Figura 35. BoundedContextCanvases_Alert&ResponseManagement.</strong>
+</p>
+
+![BoundedContextCanvases_IncidentManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_IncidentManagement.png)
+
+<p align="center">
+  <strong>Figura 36. BoundedContextCanvases_IncidentManagement.</strong>
+</p>
+
+![BoundedContextCanvases_Monitoring](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_Monitoring.png)
+
+<p align="center">
+  <strong>Figura 37. BoundedContextCanvases_Monitoring.</strong>
+</p>
+
+![BoundedContextCanvases_DeviceManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_DeviceManagement.png)
+
+<p align="center">
+  <strong>Figura 38. BoundedContextCanvases_DeviceManagement.</strong>
+</p>
+
+![BoundedContextCanvases_BuildingManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_BuildingManagement.png)
+
+<p align="center">
+  <strong>Figura 39. BoundedContextCanvases_BuildingManagement.</strong>
+</p>
+
+![BoundedContextCanvases_UserManagement](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_UserManagement.png)
+
+<p align="center">
+  <strong>Figura 40. BoundedContextCanvases_UserManagement.</strong>
+</p>
+
+![BoundedContextCanvases_IAM](./assets/images/chapter-04-solution-software-design/BoundedContextCanvases_IAM.png)
+
+<p align="center">
+  <strong>Figura 41. BoundedContextCanvases_IAM.</strong>
+</p>
+
+### 4.1.2. Context Mapping
+<p align="justify">
+En esta sección desarrollamos un conjunto de context maps para visualizar las relaciones entre los bounded contexts del sistema de sensores de emergencia. A partir de la información recolectada, exploramos distintas alternativas de diseño, cuestionando cómo cambiaría la estructura si reubicamos, dividimos o agrupamos capabilities. Finalmente, evaluamos cada propuesta considerando patrones como Anti-corruption Layer, Conformist, Customer/Supplier y Shared Kernel, con el fin de definir la mejor aproximación para la arquitectura del dominio. A continuación presentaremos las opciones que contemplamos y la estructura final.
+</p>
+
+**opcion 1**
+
+<p align="justify">
+En esta estructura mantenemos los cinco bounded contexts separados con relaciones claramente definidas. Las ventajas de este tipo de contexto son por un lado la clara separación de responsabilidades y por otro lado, se especifica que cada contexto se enfoca en una funcionalidad específica. Una de las principales desventajas es que hay una mayor complejidad en la sincronización entre contextos, especialmente con el alto volumen de datos de conectividad.
+</p>
+
+![Mapping1 - ResQ](assets/images/chapter-04-solution-software-design/mapping1.png)
+
+<p align="center">
+  <strong>Figura 42. Mapping1 - ResQ.</strong>
+</p>
+
+
+**opcion 2**
+
+<p align="justify">
+Esta alternativa propone unir los contextos de Connectivity Management y Device Management en un solo bounded context. Al hacerlo, se elimina la necesidad de sincronización externa entre el inventario físico de sensores y su estado de red, manteniendo relaciones similares con los demás contextos del sistema.
+</p>
+
+<p align="justify">
+Esta combinación presenta ventajas como la simplificación de la arquitectura al disminuir la cantidad de bounded contexts, permitiendo una comunicación más directa entre el alta de un dispositivo y su monitoreo de latidos.
+</p>
+
+<p align="justify">
+No obstante, una desventaja es la combinación de responsabilidades distintas, ya que una parte se enfoca en transacciones de alto rendimiento (recibir miles de heartbeats por segundo) y la otra en procesos administrativos (registrar MAC addresses y zonas). Esto podría generar cuellos de botella en el servidor y el riesgo de que un solo contexto asuma demasiadas funciones.
+</p>
+
+![Mapping2 - ResQ](assets/images/chapter-04-solution-software-design/mapping2.png)
+
+<p align="center">
+  <strong>Figura 43. Mapping2 - ResQ.</strong>
+</p>
+
+**opcion 3**
+
+<p align="justify">
+Esta alternativa propone una arquitectura compuesta por cinco bounded contexts bien definidos, con relaciones claras entre ellos. La estructura busca equilibrar la separación de responsabilidades, para permitir que el sistema escale (vital para el procesamiento de redes IoT) y se mantenga con facilidad. Además, asegura tiempos de respuesta críticos ante emergencias.
+</p>
+
+* Building Management se comunica con Risk Detection y Device Management, proporcionando la información de la ubicación y zonas físicas (edificios, pisos). En ambos casos, la relación es del tipo Customer/Supplier, donde Building es el proveedor.  
+
+* Device Management y Alert & Response Management comparten el modelo del "Sensor" y su criticidad. Por eso, tienen una relación de tipo Shared Kernel, lo que asegura que ambos usen los mismos conceptos al reportar qué aparato falló.  
+
+* Alert & Response Management también se relaciona con Risk Detection, pero en este caso la relación es Conformist. El sistema de alertas utiliza la información del riesgo (sismo, gas), adaptándose a su estructura sin modificarla.
+
+* Connectivity Management se conecta con Device Management mediante una Anti-corruption Layer (ACL). Esta capa traduce los miles de datos técnicos de red y latidos a un formato simple de estados operativos que Device Management pueda entender. Así, se protege el sistema central de la inmensa carga de datos técnicos de IoT.
+
+![Mapping3 - ResQ](assets/images/chapter-04-solution-software-design/mapping3.png)
+
+<p align="center">
+  <strong>Figura 44. Mapping3 - ResQ.</strong>
+</p>
+
+**Elección**
+<p align="justify">
+Elegimos la opción 3, ya que proporciona el mejor equilibrio entre la separación de responsabilidades, la capacidad de procesamiento de alto rendimiento y el cumplimiento de los requisitos críticos de un sistema de emergencias.
+</p>
+
+<p align="justify">
+Al definir cinco bounded contexts con relaciones claras, se facilita la evolución independiente de cada parte del sistema. Al separar la gestión de tráfico de red (Connectivity Management) mediante una Anti-corruption Layer, se aísla la carga técnica de los heartbeats constantes, evitando saturar la base de datos de los dispositivos. Asimismo, esta estructura garantiza tiempos de respuesta rápidos al procesar alertas reales de sismos o gas, brindando una plataforma robusta y confiable para la seguridad de los usuarios.
+</p>
+
+
+### 4.1.3. Software Architecture
+<p align="justify">
+La arquitectura de software de ResQ se representa mediante el modelo C4, con el propósito de describir la solución desde distintos niveles de abstracción y mostrar cómo se distribuyen sus principales responsabilidades.
+</p>
+
+<p align="justify">
+Estas vistas permiten representar la relación de ResQ con sus usuarios y sistemas externos, así como los principales componentes desplegables que conforman la solución y la forma en que se comunican entre sí.
+</p>
+
+<p align="justify">
+La arquitectura considera la naturaleza distribuida de ResQ, integrando aplicaciones cliente, servicios Cloud, servicios Edge y componentes IoT que colaboran para soportar las capacidades definidas para la solución.
+</p>
+
+#### 4.1.3.1. Software Architecture System Landscape Diagram
+
+![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_1.png)
+
+<p align="center">
+  <strong>Figura 45. Diagram C4 - ResQ.</strong>
+</p>
+
+
+<p align="justify">
+El System Landscape Diagram presenta una vista general del ecosistema de software en el que participa ResQ, mostrando las principales personas, sistemas involucrados y las relaciones existentes entre ellos.
+</p>
+
+
+<p align="justify">
+Este diagrama permite identificar el alcance de la solución y comprender cómo los diferentes elementos del ecosistema de ResQ interactúan entre sí.
+</p>
+
+**DIAGRAM — ResQ Software Architecture System Landscape Diagram**
+
+![ResQ Software Architecture System Landscape Diagram](assets/images/chapter-04-solution-software-design/resq-software-architecture-system-landscape-diagram.png)
+
+<p align="center">
+  <strong>Figura 46. ResQ Software Architecture System Landscape Diagram.</strong>
+</p>
+
+### 4.1.3.2. Software Architecture Container Level Diagrams.
+
+<p align="justify">
+Este diagrama muestra que la Plataforma IoT de Emergencias está compuesta por cinco contenedores principales: una <strong>Aplicación Web (SPA)</strong> accesible desde navegadores para la gestión administrativa; una <strong>Aplicación Móvil</strong> para que clientes y técnicos reciban alertas y configuren equipos; una <strong>Cloud API</strong> que gestiona toda la lógica de negocio (usuarios, zonas, reportes); y una <strong>Edge/IoT API</strong> respaldada por un <strong>Broker MQTT</strong> encargado exclusivamente de procesar el alto volumen de datos (telemetría y <em>heartbeats</em>) provenientes de los sensores. Finalmente, el sistema utiliza bases de datos separadas: una base de datos relacional en la nube para almacenar la información estructural del sistema y una base de datos optimizada (ej. Time-Series) para el registro histórico de latidos y conectividad.
+</p>
+
+![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_2.png)
+
+<p align="center">
+  <strong>Figura 47. Diagram C4 - ResQ.</strong>
+</p>
+
+### 4.1.3.3. Software Architecture Deployment Diagrams.
+
+<p align="justify">
+Este diagrama muestra que el sistema se despliega en tres entornos principales: <strong>Microsoft Azure Cloud</strong>, <strong>Dispositivos Cliente</strong> y <strong>Edificios/Zonas Físicas</strong>. En Azure, el sistema utiliza <em>App Service</em> para alojar las aplicaciones web y la Cloud API (Spring Boot/Java o Node.js), <em>Azure Database for PostgreSQL</em> para los datos relacionales, y <em>Azure IoT Hub</em> para gestionar las comunicaciones MQTT de alto rendimiento con los dispositivos físicos. Los usuarios acceden al sistema a través de navegadores web o dispositivos Android/iOS. En cada edificio del cliente, se instalan <strong>Sensores de Emergencia</strong> (ej. detectores de gas/sismo basados en ESP32/Arduino) que envían datos de estado a un <strong>Gateway IoT</strong> local vía WiFi o Serial, el cual transmite esta información al IoT Hub en Azure. Todas las comunicaciones entre componentes utilizan protocolos seguros como HTTPS, MQTT sobre TLS y conexiones cifradas a la base de datos.
+</p>
+
+![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_3.png)
+
+<p align="center">
+  <strong>Figura 48. Diagram C4 - ResQ.</strong>
+</p>
+<p align="justify">
+La arquitectura de software de ResQ se representa mediante el modelo C4, con el propósito de describir la solución desde distintos niveles de abstracción y mostrar cómo se distribuyen sus principales responsabilidades.
+</p>
+
+<p align="justify">
+Estas vistas permiten representar la relación de ResQ con sus usuarios y sistemas externos, así como los principales componentes desplegables que conforman la solución y la forma en que se comunican entre sí.
+</p>
+
+<p align="justify">
+La arquitectura considera la naturaleza distribuida de ResQ, integrando aplicaciones cliente, servicios Cloud, servicios Edge y componentes IoT que colaboran para soportar las capacidades definidas para la solución.
+</p>
+
+
+
+
+## 4.2. Tactical-Level Domain-Driven Design
+
+<p align="justify">
+El Tactical-Level Domain-Driven Design se utilizó para definir con mayor detalle la estructura interna de los Bounded Contexts identificados durante el diseño estratégico.
+</p>
+
+<p align="justify">
+Para cada Bounded Context se modelaron los principales elementos del dominio, sus reglas de negocio, las responsabilidades de las capas de aplicación, interfaz e infraestructura, así como las abstracciones necesarias para persistencia e integración.
+</p>
+
+<p align="justify">
+Este nivel de diseño permite representar de manera más precisa cómo se implementan las responsabilidades de cada contexto, manteniendo sus límites y evitando que conceptos pertenecientes a otros Bounded Contexts sean incorporados como parte de su propio modelo.
+</p>
+
+<p align="justify">
+La estructura de cada Bounded Context se documenta mediante sus capas de Domain, Interface, Application e Infrastructure, complementadas con diagramas de componentes, diagramas de clases del dominio y diagramas de diseño de base de datos.
+</p>
+
+### 4.2.1. Bounded Context: Identity and Access Management (IAM)
+
+<p align="justify">
+El Bounded Context <strong>Identity and Access Management (IAM)</strong> es responsable de gestionar la identidad, la autenticación, la asignación de roles, los permisos y los mecanismos de autorización necesarios para proteger la información y las operaciones disponibles en ResQ.
+</p>
+
+<p align="justify">
+Este Bounded Context atiende las necesidades de control de acceso de la plataforma, asegurando que solo las identidades autenticadas puedan interactuar con recursos protegidos y que cada operación se ejecute de acuerdo con los permisos asociados a los roles asignados al usuario.
+</p>
+
+<p align="justify">
+Sus responsabilidades se derivan principalmente de los requisitos relacionados con el acceso autenticado y la autorización basada en roles. En particular, ResQ exige que los usuarios se autentiquen antes de acceder a capacidades protegidas y que las operaciones se restrinjan según los roles y permisos asignados a cada identidad.
+</p>
+
+<p align="justify">
+El Bounded Context Identity and Access Management soporta principalmente <strong>US26 — Asignar roles y responsabilidades</strong>, <strong>US27 — Acceso autenticado</strong> y la restricción de autorización definida por <strong>TS06 — Proporcionar servicios mediante la API RESTful</strong>.
+</p>
+
+<p align="justify">
+El Bounded Context IAM no gestiona información del perfil personal, como nombres, números de teléfono, preferencias u otra información específica del usuario. Estas responsabilidades pertenecen al <strong>Bounded Context User</strong>. IAM solo mantiene la información necesaria para identificar, autenticar y autorizar a un usuario.
+</p>
+
+<p align="justify">
+Asimismo, IAM no gestiona edificios, zonas, dispositivos, mediciones, incidentes, alertas ni reglas de detección de riesgos. Solo proporciona los mecanismos de autenticación y autorización que otros Bounded Contexts pueden utilizar cuando sus operaciones requieren control de acceso.
+</p>
+
+<p align="justify">
+Las principales responsabilidades de este Bounded Context son:
+</p>
+
+- Autenticar una identidad utilizando credenciales válidas.
+- Rechazar los intentos de autenticación cuando las credenciales sean inválidas.
+- Mantener el estado de una identidad relacionado con la autenticación.
+- Asociar identidades con roles dentro de un ámbito organizacional.
+- Determinar los permisos otorgados por cada rol.
+- Evitar asignaciones de roles duplicadas dentro de la misma organización.
+- Verificar si una identidad autenticada está autorizada para realizar una operación protegida.
+- Rechazar las operaciones protegidas cuando la identidad autenticada no tenga el permiso requerido.
+- Mantener el modelo de dominio de IAM independiente de la información personal gestionada por el Bounded Context User.
+
+<p align="justify">
+Los principales conceptos identificados para el Bounded Context Identity and Access Management son <strong>Identity</strong>, <strong>Role</strong>, <strong>Role Assignment</strong>, <strong>Permission</strong>, <strong>Login Identifier</strong>, <strong>Credential Hash</strong> e <strong>Identity Status</strong>.
+</p>
+
+#### Diccionario de clases
+
+<p align="justify">
+La siguiente tabla resume las principales clases e interfaces que conforman el Bounded Context Identity and Access Management.
+</p>
+
+| Clase / Interfaz | Capa | Propósito | Atributos principales | Operaciones principales | Relaciones principales |
+|---|---|---|---|---|---|
+| `Identity` | Domain | Representa la identidad de autenticación y autorización asociada con un usuario de ResQ. Es el Aggregate Root responsable de mantener el estado de autenticación y las asignaciones de roles. | `identityId: UUID`, `userId: UUID`, `loginIdentifier: LoginIdentifier`, `credentialHash: CredentialHash`, `status: IdentityStatus`, `roleAssignments: Set<RoleAssignment>` | `assignRole(roleId, organizationId)`, `hasRole(roleId, organizationId)`, `roleIdsFor(organizationId)`, `isActive()` | Posee `RoleAssignment`; compone `LoginIdentifier` y `CredentialHash`; utiliza `IdentityStatus`. |
+| `Role` | Domain | Representa un rol de autorización con nombre y los permisos otorgados por ese rol. | `roleId: UUID`, `name: String`, `permissions: Set<Permission>` | `grants(permissionCode)`, `getPermissions()` | Compone valores `Permission`. |
+| `RoleAssignment` | Domain | Representa la asignación de un rol a una identidad dentro de una organización específica. | `assignmentId: UUID`, `roleId: UUID`, `organizationId: UUID` | `matches(roleId, organizationId)` | Pertenece a `Identity`; referencia `Role` mediante `roleId`; utiliza `organizationId` como referencia externa al ámbito de autorización. |
+| `LoginIdentifier` | Domain | Value Object que representa el identificador utilizado por una identidad durante la autenticación. El formato exacto se mantiene independiente del perfil personal gestionado por el Bounded Context User. | `value: String` | `value()` | Compuesto por `Identity`. |
+| `CredentialHash` | Domain | Value Object que representa la forma protegida del secreto de autenticación. Las credenciales en texto plano nunca se almacenan en el modelo de dominio. | `value: String` | `value()` | Compuesto por `Identity`. |
+| `Permission` | Domain | Value Object que identifica una capacidad requerida para ejecutar una operación protegida. | `code: String` | `code()`, `equals()` | Compuesto por `Role`. |
+| `IdentityStatus` | Domain | Enumeración que representa si una identidad puede utilizarse actualmente para la autenticación. | `ACTIVE`, `DISABLED` | — | Utilizada por `Identity`. |
+| `IdentityRepository` | Domain | Abstracción de Repository utilizada para recuperar y persistir agregados Identity sin acoplar la Domain Layer a una tecnología de persistencia. | — | `findById(identityId)`, `findByLoginIdentifier(loginIdentifier)`, `save(identity)` | Persiste y recupera agregados `Identity`. |
+| `RoleRepository` | Domain | Abstracción de Repository utilizada para recuperar roles y sus permisos asociados. | — | `findById(roleId)`, `findAllByIds(roleIds)` | Recupera agregados `Role`. |
+| `AuthorizationService` | Domain | Domain Service responsable de evaluar si los roles asignados a una identidad otorgan un permiso requerido dentro de un ámbito organizacional. | — | `isAuthorized(identity, roles, permissionCode, organizationId)` | Evalúa los datos de `Identity` y `Role` utilizando `permissionCode` y `organizationId`. |
+| `AuthenticateCommand` | Application | Representa una solicitud para autenticar una identidad. | `loginIdentifier: String`, `credentialSecret: String` | — | Gestionado por `AuthenticateCommandHandler`. |
+| `AuthenticateCommandHandler` | Application | Coordina el caso de uso de autenticación utilizando el modelo de dominio y las abstracciones de infraestructura requeridas. | Dependencias de `IdentityRepository`, `CredentialVerifier`, `AuthenticationSessionProvider` | `handle(command)` | Utiliza `IdentityRepository`, `CredentialVerifier` y `AuthenticationSessionProvider`. |
+| `AssignRoleCommand` | Application | Representa una solicitud para asignar un rol válido a una identidad dentro de una organización. | `identityId: UUID`, `roleId: UUID`, `organizationId: UUID` | — | Gestionado por `AssignRoleCommandHandler`. |
+| `AssignRoleCommandHandler` | Application | Coordina la asignación de roles y valida las condiciones requeridas antes de modificar el agregado Identity. | Dependencias de `IdentityRepository`, `RoleRepository`, `OrganizationMembershipValidator` | `handle(command)` | Utiliza `IdentityRepository`, `RoleRepository` y `OrganizationMembershipValidator`. |
+| `CheckPermissionQuery` | Application | Representa una solicitud de autorización para una identidad, un permiso y una organización. | `identityId: UUID`, `permissionCode: String`, `organizationId: UUID` | — | Gestionada por `CheckPermissionQueryHandler`. |
+| `CheckPermissionQueryHandler` | Application | Recupera la identidad y sus roles y delega la decisión de autorización a la Domain Layer. | Dependencias de `IdentityRepository`, `RoleRepository`, `AuthorizationService` | `handle(query)` | Utiliza `IdentityRepository`, `RoleRepository` y `AuthorizationService`. |
+| `AuthenticationResult` | Application | Representa el resultado satisfactorio de un proceso de autenticación sin exponer información de las credenciales. | `identityId: UUID`, `sessionToken: String` | — | Devuelto por `AuthenticateCommandHandler`. |
+| `CredentialVerifier` | Application | Abstracción utilizada para comparar una credencial recibida durante la autenticación con la representación protegida de la credencial almacenada. | — | `matches(rawCredential, credentialHash)` | Utilizada por `AuthenticateCommandHandler`; implementada por `CredentialHashVerifier`. |
+| `AuthenticationSessionProvider` | Application | Abstracción responsable de generar la representación necesaria para mantener una sesión autenticada. | — | `createSession(identityId)` | Utilizada por `AuthenticateCommandHandler`; implementada por `AuthenticationSessionProviderAdapter`. |
+| `OrganizationMembershipValidator` | Application | Abstracción utilizada para validar que el usuario objetivo pertenece a la organización en la que se asigna un rol. | — | `belongsToOrganization(userId, organizationId)` | Utilizada por `AssignRoleCommandHandler`; implementada por `OrganizationMembershipAdapter`. |
+| `AuthenticationController` | Interface | Recibe solicitudes de autenticación y las delega al Command Handler correspondiente de la Application Layer. | Dependencia de `AuthenticateCommandHandler` | `authenticate(request)` | Delega a `AuthenticateCommandHandler`. |
+| `RoleAssignmentController` | Interface | Recibe solicitudes autorizadas de asignación de roles y delega la operación a la Application Layer. | Dependencia de `AssignRoleCommandHandler` | `assignRole(identityId, request)` | Delega a `AssignRoleCommandHandler`. |
+| `AuthorizationFilter` | Interface | Intercepta solicitudes protegidas y verifica que la identidad autenticada tenga el permiso requerido por la operación solicitada. | Dependencia de `CheckPermissionQueryHandler` | `authorize(requestContext)` | Delega las verificaciones de autorización a `CheckPermissionQueryHandler`. |
+| `IdentityRepositoryAdapter` | Infrastructure | Implementa `IdentityRepository` utilizando el mecanismo de persistencia seleccionado para ResQ Cloud RESTful API. | Dependencia de persistencia | `findById()`, `findByLoginIdentifier()`, `save()` | Implementa `IdentityRepository`. |
+| `RoleRepositoryAdapter` | Infrastructure | Implementa `RoleRepository` y reconstruye los roles junto con sus permisos a partir del almacenamiento persistente. | Dependencia de persistencia | `findById()`, `findAllByIds()` | Implementa `RoleRepository`. |
+| `CredentialHashVerifier` | Infrastructure | Implementa la verificación de credenciales utilizando el mecanismo de seguridad adoptado por la implementación del backend. | Dependencia de biblioteca de seguridad | `matches()` | Implementa `CredentialVerifier`. |
+| `AuthenticationSessionProviderAdapter` | Infrastructure | Implementa la creación de la representación de la sesión autenticada consumida por las aplicaciones cliente. | Dependencia de seguridad/sesión | `createSession()` | Implementa `AuthenticationSessionProvider`. |
+| `OrganizationMembershipAdapter` | Infrastructure | Proporciona el mecanismo necesario para verificar la pertenencia a una organización sin transferir a IAM la propiedad de la información del usuario o de la organización. | Dependencia de la fuente responsable de la información sobre pertenencia a una organización | `belongsToOrganization()` | Implementa `OrganizationMembershipValidator`. |
+
+<p align="justify">
+Las relaciones entre estas clases preservan los límites del Bounded Context. <code>Identity</code> mantiene únicamente el <code>userId</code> que referencia al usuario asociado con la identidad de autenticación. El perfil de User no se duplica dentro de IAM.
+</p>
+
+<p align="justify">
+Del mismo modo, <code>RoleAssignment</code> utiliza un <code>organizationId</code> para indicar el ámbito de autorización de la asignación, pero IAM no modela ni administra la organización en sí.
+</p>
+
+---
+
+#### 4.2.1.1. Domain Layer
+
+<p align="justify">
+La <strong>Domain Layer</strong> contiene los conceptos, reglas y abstracciones de negocio que definen la gestión de identidad y acceso dentro de ResQ. Esta capa no depende de HTTP, motores de bases de datos, bibliotecas de seguridad ni frameworks de aplicación.
+</p>
+
+<p align="justify">
+El principal Aggregate Root es <code>Identity</code>.
+</p>
+
+<p align="justify">
+Una <code>Identity</code> representa la identidad de seguridad asociada con un usuario de ResQ. Contiene la información mínima necesaria para autenticar al usuario y determinar los roles asignados a esa identidad.
+</p>
+
+<p align="justify">
+El atributo <code>userId</code> actúa únicamente como referencia externa al usuario representado en el Bounded Context User. La información personal se excluye deliberadamente del modelo de dominio de IAM.
+</p>
+
+<p align="justify">
+<code>Identity</code> posee su colección de objetos <code>RoleAssignment</code>. Una asignación de rol establece que la identidad tiene un rol específico dentro de una organización.
+</p>
+
+<p align="justify">
+El Aggregate Root <code>Identity</code> es responsable de proteger la consistencia de estas asignaciones. En particular, no debe asignarse el mismo rol más de una vez a la misma identidad dentro de la misma organización.
+</p>
+
+##### Identity
+
+<p align="justify">
+<strong>Categoría:</strong> Aggregate Root / Entity.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar la identidad de seguridad utilizada para autenticar a un usuario de ResQ y mantener las asignaciones de roles asociadas con esa identidad.
+</p>
+
+**Atributos:**
+
+- `identityId: UUID` — Identificador único de la identidad.
+- `userId: UUID` — Referencia externa al usuario correspondiente.
+- `loginIdentifier: LoginIdentifier` — Identificador utilizado durante la autenticación.
+- `credentialHash: CredentialHash` — Representación protegida de la credencial de autenticación.
+- `status: IdentityStatus` — Estado actual de autenticación de la identidad.
+- `roleAssignments: Set<RoleAssignment>` — Roles asignados a la identidad en diferentes organizaciones.
+
+**Operaciones:**
+
+- `assignRole(roleId, organizationId)` — Añade una asignación de rol válida evitando duplicaciones.
+- `hasRole(roleId, organizationId)` — Indica si la identidad ya tiene el rol especificado dentro de la organización.
+- `roleIdsFor(organizationId)` — Obtiene los identificadores de los roles que se aplican a un ámbito organizacional.
+- `isActive()` — Indica si la identidad está habilitada para la autenticación.
+
+##### Role
+
+<p align="justify">
+<strong>Categoría:</strong> Aggregate Root / Entity.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar un rol de autorización que contiene los permisos que habilitan operaciones protegidas específicas.
+</p>
+
+**Atributos:**
+
+- `roleId: UUID`
+- `name: String`
+- `permissions: Set<Permission>`
+
+**Operaciones:**
+
+- `grants(permissionCode)` — Indica si el rol contiene el permiso solicitado.
+- `getPermissions()` — Devuelve los permisos asociados con el rol.
+
+<p align="justify">
+El alcance actual requiere la asignación y evaluación de roles válidos. La creación o modificación administrativa de roles no se incluye como caso de uso porque ninguna User Story actual requiere esa capacidad.
+</p>
+
+##### RoleAssignment
+
+<p align="justify">
+<strong>Categoría:</strong> Entity perteneciente a <code>Identity</code>.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar la asociación entre una identidad, un rol y la organización en la que se aplica el rol.
+</p>
+
+**Atributos:**
+
+- `assignmentId: UUID`
+- `roleId: UUID`
+- `organizationId: UUID`
+
+**Operaciones:**
+
+- `matches(roleId, organizationId)` — Determina si la asignación corresponde a un rol y una organización específicos.
+
+<p align="justify">
+<code>organizationId</code> se trata como referencia externa. IAM no posee el ciclo de vida de la organización.
+</p>
+
+##### LoginIdentifier
+
+<p align="justify">
+<strong>Categoría:</strong> Value Object.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Encapsular el identificador presentado durante la autenticación.
+</p>
+
+**Atributo:**
+
+- `value: String`
+
+<p align="justify">
+El valor se mantiene independiente del perfil de User porque la identidad de autenticación y la información del perfil personal corresponden a responsabilidades diferentes.
+</p>
+
+##### CredentialHash
+
+<p align="justify">
+<strong>Categoría:</strong> Value Object.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar la forma protegida de una credencial de autenticación.
+</p>
+
+**Atributo:**
+
+- `value: String`
+
+<p align="justify">
+Las credenciales en texto plano nunca deben persistirse como parte del estado del dominio.
+</p>
+
+##### Permission
+
+<p align="justify">
+<strong>Categoría:</strong> Value Object.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar una capacidad de autorización requerida para ejecutar una operación protegida.
+</p>
+
+**Atributo:**
+
+- `code: String`
+
+<p align="justify">
+Los permisos se asocian con los roles. Por lo tanto, la autorización se determina a partir de los permisos otorgados por los roles asignados a la identidad.
+</p>
+
+##### IdentityStatus
+
+<p align="justify">
+<strong>Categoría:</strong> Enumeración.
+</p>
+
+**Valores:**
+
+- `ACTIVE`
+- `DISABLED`
+
+<p align="justify">
+Solo una identidad activa puede completar satisfactoriamente el proceso de autenticación.
+</p>
+
+##### IdentityRepository
+
+<p align="justify">
+<strong>Categoría:</strong> Repository Interface.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Definir las operaciones de persistencia requeridas por la Domain Layer y la Application Layer sin depender de una tecnología específica de base de datos.
+</p>
+
+**Operaciones:**
+
+- `findById(identityId)`
+- `findByLoginIdentifier(loginIdentifier)`
+- `save(identity)`
+
+##### RoleRepository
+
+<p align="justify">
+<strong>Categoría:</strong> Repository Interface.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Recuperar los roles y permisos requeridos durante la asignación de roles y la autorización.
+</p>
+
+**Operaciones:**
+
+- `findById(roleId)`
+- `findAllByIds(roleIds)`
+
+##### AuthorizationService
+
+<p align="justify">
+<strong>Categoría:</strong> Domain Service.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Evaluar la autorización cuando la decisión requiere información de la identidad y de uno o más roles.
+</p>
+
+**Operación:**
+
+- `isAuthorized(identity, roles, permissionCode, organizationId)`
+
+<p align="justify">
+El servicio considera únicamente los roles asignados a la identidad dentro de la organización asociada con la operación protegida.
+</p>
+
+##### Reglas de negocio
+
+<p align="justify">
+El dominio de Identity and Access Management aplica las siguientes reglas de negocio:
+</p>
+
+1. Una identidad debe existir antes de poder autenticarse.
+
+2. Solo una identidad con estado `ACTIVE` puede completar satisfactoriamente la autenticación.
+
+3. La autenticación tiene éxito únicamente cuando la credencial proporcionada por el usuario corresponde a la representación protegida de la credencial almacenada para la identidad.
+
+4. Las credenciales inválidas no deben establecer una sesión autenticada.
+
+5. Solo puede asignarse un rol cuando tanto la identidad como el rol son válidos.
+
+6. Antes de asignar un rol en una organización, el usuario asociado debe pertenecer a esa organización.
+
+7. No puede asignarse el mismo rol más de una vez a la misma identidad dentro de la misma organización.
+
+8. Una asignación de rol es válida únicamente para el ámbito organizacional asociado con la asignación.
+
+9. Una operación protegida se autoriza únicamente cuando al menos un rol asignado a la identidad en la organización correspondiente otorga el permiso requerido.
+
+10. Cuando no se dispone del permiso requerido, debe rechazarse la operación protegida.
+
+<p align="justify">
+Estas reglas permiten que el Bounded Context IAM implemente el acceso autenticado y basado en roles, manteniendo la información sobre perfiles de usuario, edificios, dispositivos, monitoreo, incidentes y gestión de riesgos fuera de los límites de su dominio.
+</p>
+
+---
+
+#### 4.2.1.2. Interface Layer
+
+<p align="justify">
+La <strong>Interface Layer</strong> expone las capacidades del Bounded Context Identity and Access Management a los clientes y a otras partes de la plataforma ResQ.
+</p>
+
+<p align="justify">
+Su responsabilidad es recibir solicitudes, validar su representación básica, convertirlas en Commands o Queries de la Application Layer y convertir las respuestas resultantes en la representación esperada por el cliente.
+</p>
+
+<p align="justify">
+Las reglas de negocio no se implementan en esta capa.
+</p>
+
+<p align="justify">
+Los principales componentes son <code>AuthenticationController</code>, <code>RoleAssignmentController</code> y <code>AuthorizationFilter</code>.
+</p>
+
+##### AuthenticationController
+
+<p align="justify">
+<code>AuthenticationController</code> recibe solicitudes de autenticación de las aplicaciones cliente de ResQ.
+</p>
+
+<p align="justify">
+Su principal responsabilidad es construir un <code>AuthenticateCommand</code> utilizando los datos de autenticación recibidos del cliente y delegar su ejecución a <code>AuthenticateCommandHandler</code>.
+</p>
+
+<p align="justify">
+El controlador no compara directamente las credenciales ni consulta la base de datos.
+</p>
+
+<p align="justify">
+Conceptualmente, la interacción RESTful representa la creación de una sesión autenticada.
+</p>
+
+Recurso de ejemplo:
+
+```text
+POST /api/v1/auth/sessions
+```
+
+<p align="justify">
+La solicitud contiene el identificador de inicio de sesión y la credencial de autenticación.
+</p>
+
+<p align="justify">
+Una respuesta satisfactoria representa la identidad autenticada y la información de sesión generada por la plataforma.
+</p>
+
+<p align="justify">
+Las credenciales inválidas se devuelven como un fallo de autenticación sin revelar si una credencial específica o un registro interno causó el fallo.
+</p>
+
+##### RoleAssignmentController
+
+<p align="justify">
+<code>RoleAssignmentController</code> recibe solicitudes para asociar un rol válido con una identidad dentro de una organización.
+</p>
+
+<p align="justify">
+Conceptualmente, la operación se representa como la creación de un recurso de asignación de rol.
+</p>
+
+Recurso de ejemplo:
+
+```text
+POST /api/v1/iam/identities/{identityId}/role-assignments
+```
+
+<p align="justify">
+La solicitud identifica:
+</p>
+
+- el rol que se debe asignar;
+- la organización en la que debe aplicarse el rol.
+
+<p align="justify">
+El controlador delega la operación a <code>AssignRoleCommandHandler</code>.
+</p>
+
+<p align="justify">
+El propio endpoint es una operación protegida y, por lo tanto, solo puede ejecutarse cuando quien realiza la solicitud está autenticado y tiene el permiso requerido para asignar roles.
+</p>
+
+##### AuthorizationFilter
+
+<p align="justify">
+<code>AuthorizationFilter</code> protege las operaciones de la API RESTful que requieren una identidad autenticada y autorizada.
+</p>
+
+<p align="justify">
+Antes de que una solicitud protegida llegue a su controlador correspondiente, el filtro identifica:
+</p>
+
+- la identidad autenticada;
+- la organización asociada con la solicitud;
+- el permiso requerido por la operación protegida.
+
+<p align="justify">
+Luego crea una <code>CheckPermissionQuery</code> y delega la decisión de autorización a <code>CheckPermissionQueryHandler</code>.
+</p>
+
+<p align="justify">
+Si el resultado indica que no se dispone del permiso requerido, la solicitud se rechaza antes de ejecutar la operación protegida.
+</p>
+
+<p align="justify">
+Este comportamiento atiende el requisito de que las solicitudes no autorizadas no deben ejecutar operaciones protegidas.
+</p>
+
+#### 4.2.1.3. Application Layer
+
+<p align="justify">
+La Application Layer coordina los casos de uso soportados por IAM.
+</p>
+
+<p align="justify">
+Esta capa orquesta objetos de dominio, repositorios y abstracciones externas, pero no contiene detalles de implementación de persistencia o criptografía específicos de la infraestructura.
+</p>
+
+<p align="justify">
+Se consideran tres flujos principales de aplicación:
+</p>
+
+- Autenticación.
+- Asignación de roles.
+- Verificación de autorización.
+
+##### AuthenticateCommand
+
+<p align="justify">
+<code>AuthenticateCommand</code> representa un intento de autenticación.
+</p>
+
+**Atributos:**
+
+- `loginIdentifier: String`
+- `credentialSecret: String`
+
+<p align="justify">
+La credencial en texto plano existe únicamente durante la solicitud de autenticación y nunca se almacena como parte del estado del dominio.
+</p>
+
+##### AuthenticateCommandHandler
+
+<p align="justify">
+<code>AuthenticateCommandHandler</code> coordina el proceso de autenticación.
+</p>
+
+<p align="justify">
+El manejador realiza la siguiente secuencia:
+</p>
+
+1. Recibe un `AuthenticateCommand`.
+2. Construye o valida el `LoginIdentifier` correspondiente.
+3. Utiliza `IdentityRepository` para localizar la identidad asociada con el identificador de inicio de sesión.
+4. Verifica que la identidad exista.
+5. Verifica que la identidad esté activa.
+6. Delega la comparación de credenciales a `CredentialVerifier`.
+7. Rechaza la operación si la credencial es inválida.
+8. Solicita la creación de una sesión autenticada mediante `AuthenticationSessionProvider`.
+9. Devuelve un `AuthenticationResult`.
+
+<p align="justify">
+El manejador no conoce qué algoritmo de hash, formato de sesión o biblioteca de seguridad del backend se utiliza.
+</p>
+
+##### AuthenticationResult
+
+<p align="justify">
+<code>AuthenticationResult</code> representa el resultado de un proceso de autenticación satisfactorio.
+</p>
+
+**Atributos:**
+
+- `identityId: UUID`
+- `sessionToken: String`
+
+<p align="justify">
+<code>sessionToken</code> representa una credencial de sesión opaca desde el punto de vista de la Application Layer. Su implementación concreta depende del mecanismo de seguridad seleccionado para el backend.
+</p>
+
+##### AssignRoleCommand
+
+<p align="justify">
+<code>AssignRoleCommand</code> representa la asignación de un rol a una identidad en una organización específica.
+</p>
+
+**Atributos:**
+
+- `identityId: UUID`
+- `roleId: UUID`
+- `organizationId: UUID`
+
+##### AssignRoleCommandHandler
+
+<p align="justify">
+<code>AssignRoleCommandHandler</code> coordina el caso de uso de asignación de roles.
+</p>
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Recibir el `AssignRoleCommand`.
+2. Recuperar la `Identity` objetivo desde `IdentityRepository`.
+3. Recuperar el `Role` solicitado desde `RoleRepository`.
+4. Verificar mediante `OrganizationMembershipValidator` que el usuario referenciado por la identidad pertenezca a la organización especificada.
+5. Verificar mediante el Aggregate Root `Identity` que la misma asignación de rol no exista previamente.
+6. Invocar `Identity.assignRole(roleId, organizationId)`.
+7. Persistir el agregado modificado mediante `IdentityRepository`.
+
+<p align="justify">
+La autorización del usuario que solicita esta operación se realiza antes de ejecutar la operación protegida mediante el mecanismo de autorización de IAM.
+</p>
+
+##### CheckPermissionQuery
+
+<p align="justify">
+<code>CheckPermissionQuery</code> representa una solicitud para determinar si una identidad puede ejecutar una operación protegida.
+</p>
+
+**Atributos:**
+
+- `identityId: UUID`
+- `permissionCode: String`
+- `organizationId: UUID`
+
+##### CheckPermissionQueryHandler
+
+<p align="justify">
+<code>CheckPermissionQueryHandler</code> coordina la verificación de autorización.
+</p>
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Recuperar la `Identity`.
+2. Rechazar la autorización cuando la identidad no exista o esté inactiva.
+3. Obtener los identificadores de los roles asignados a la identidad dentro de la organización solicitada.
+4. Recuperar los agregados `Role` correspondientes.
+5. Delegar la evaluación a `AuthorizationService`.
+6. Devolver si se otorga el permiso requerido.
+
+<p align="justify">
+Este diseño centraliza la evaluación de autorización e impide que cada Bounded Context protegido vuelva a implementar las reglas de IAM de manera independiente.
+</p>
+
+##### CredentialVerifier
+
+<p align="justify">
+<code>CredentialVerifier</code> es una abstracción de la Application Layer que evita que los casos de uso de autenticación dependan directamente de un framework criptográfico o de seguridad.
+</p>
+
+**Operación:**
+
+- `matches(rawCredential, credentialHash)`
+
+##### AuthenticationSessionProvider
+
+<p align="justify">
+<code>AuthenticationSessionProvider</code> es responsable de abstraer la creación de sesiones.
+</p>
+
+**Operación:**
+
+- `createSession(identityId)`
+
+<p align="justify">
+La representación exacta de la sesión es un aspecto de implementación de la Infrastructure Layer.
+</p>
+
+##### OrganizationMembershipValidator
+
+<p align="justify">
+<code>OrganizationMembershipValidator</code> representa la dependencia requerida para verificar el criterio de aceptación según el cual solo puede asignarse un rol a un usuario que pertenezca a la organización correspondiente.
+</p>
+
+**Operación:**
+
+- `belongsToOrganization(userId, organizationId)`
+
+<p align="justify">
+Esta validación no convierte al Bounded Context IAM en responsable de gestionar organizaciones o perfiles de usuario. Solo consume la información mínima necesaria para proteger la invariante de asignación de roles.
+</p>
+
+#### 4.2.1.4. Infrastructure Layer
+
+<p align="justify">
+La Infrastructure Layer contiene las implementaciones técnicas requeridas por el Bounded Context Identity and Access Management.
+</p>
+
+<p align="justify">
+Implementa las abstracciones de repositorios y servicios definidas por la Domain Layer y la Application Layer y encapsula los detalles de persistencia, seguridad de credenciales, generación de sesiones autenticadas e integración.
+</p>
+
+<p align="justify">
+Los principales componentes de infraestructura son IdentityRepositoryAdapter, RoleRepositoryAdapter, CredentialHashVerifier, AuthenticationSessionProviderAdapter y OrganizationMembershipAdapter.
+</p>
+
+##### IdentityRepositoryAdapter
+
+<p align="justify">
+<code>IdentityRepositoryAdapter</code> implementa la interfaz <code>IdentityRepository</code>.
+</p>
+
+<p align="justify">
+Sus responsabilidades son:
+</p>
+
+- recuperar una `Identity` utilizando su identificador;
+- recuperar una `Identity` utilizando su identificador de inicio de sesión;
+- reconstruir el Aggregate `Identity` a partir de los datos persistidos;
+- persistir las modificaciones de `Identity` y sus Role Assignments.
+
+<p align="justify">
+Por lo tanto, la Domain Layer es independiente de la tecnología de base de datos seleccionada para el backend de ResQ.
+</p>
+
+##### RoleRepositoryAdapter
+
+<p align="justify">
+<code>RoleRepositoryAdapter</code> implementa <code>RoleRepository</code>.
+</p>
+
+<p align="justify">
+Recupera:
+</p>
+
+- la información de los roles;
+- los permisos asociados con un rol;
+- los múltiples roles requeridos durante la evaluación de autorización.
+
+<p align="justify">
+El adaptador reconstruye la representación de dominio de Role antes de devolverla a la Application Layer.
+</p>
+
+##### CredentialHashVerifier
+
+<p align="justify">
+<code>CredentialHashVerifier</code> implementa <code>CredentialVerifier</code>.
+</p>
+
+<p align="justify">
+Su responsabilidad es comparar la credencial recibida durante la autenticación con la representación protegida de la credencial asociada con la identidad.
+</p>
+
+<p align="justify">
+La comparación debe implementarse mediante el mecanismo de seguridad seleccionado para el backend.
+</p>
+
+<p align="justify">
+Las credenciales de autenticación en texto plano no se persisten.
+</p>
+
+##### AuthenticationSessionProviderAdapter
+
+<p align="justify">
+<code>AuthenticationSessionProviderAdapter</code> implementa <code>AuthenticationSessionProvider</code>.
+</p>
+
+<p align="justify">
+Su responsabilidad es generar la representación de sesión que permitirá que las solicitudes posteriores identifiquen una identidad autenticada.
+</p>
+
+<p align="justify">
+La tecnología concreta de token o sesión permanece encapsulada en la Infrastructure Layer y no se expone como dependencia de la Domain Layer.
+</p>
+
+##### OrganizationMembershipAdapter
+
+<p align="justify">
+<code>OrganizationMembershipAdapter</code> implementa <code>OrganizationMembershipValidator</code>.
+</p>
+
+<p align="justify">
+Obtiene la información mínima necesaria para determinar si el usuario asociado con una identidad pertenece a la organización en la que se solicita una asignación de rol.
+</p>
+
+<p align="justify">
+IAM no persiste ni modifica el perfil completo del usuario ni el modelo de la organización.
+</p>
+
+<p align="justify">
+El mecanismo final de comunicación utilizado por este adaptador debe mantener la consistencia con el Context Mapping definido para ResQ.
+</p>
+
+##### Consideraciones de persistencia
+
+<p align="justify">
+El modelo de persistencia de IAM debe mantener la integridad referencial entre los objetos que pertenecen a IAM, evitando la propiedad directa de objetos pertenecientes a otros Bounded Contexts.
+</p>
+
+<p align="justify">
+Por esa razón:
+</p>
+
+- `user_id` se almacena como identificador externo y no se utiliza para reproducir el agregado User dentro de IAM.
+- `organization_id` se almacena como identificador externo del ámbito de autorización.
+- las relaciones entre identidades, roles, permisos y asignaciones de roles se gestionan internamente en IAM.
+- las credenciales se almacenan únicamente en su representación protegida.
+- las asignaciones de roles duplicadas para la misma identidad, rol y organización deben evitarse mediante una invariante de dominio y una restricción de unicidad en la persistencia.
+
+#### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
+
+<p align="justify">
+El Component Level Diagram del Bounded Context Identity and Access Management presenta los componentes internos que colaboran dentro del contenedor ResQ Cloud RESTful API para proporcionar capacidades de autenticación y autorización.
+</p>
+
+<p align="justify">
+El diagrama debe representar los siguientes componentes principales:
+</p>
+
+- Authentication Interface Component, responsable de recibir solicitudes de autenticación.
+- Role Assignment Interface Component, responsable de recibir solicitudes de asignación de roles.
+- Authorization Interface Component, responsable de proteger las operaciones que requieren autorización.
+- IAM Application Component, que contiene los casos de uso de autenticación, asignación de roles y autorización.
+- IAM Domain Component, que contiene Identity, Role, Permission, Role Assignment y las reglas de negocio de autorización.
+- IAM Persistence Component, que implementa repositorios para identidades, roles, permisos y asignaciones de roles.
+- Credential Security Component, responsable de verificar las credenciales.
+- Authentication Session Component, responsable de generar la representación de la sesión autenticada.
+- Organization Membership Integration Component, responsable de obtener la información externa mínima necesaria para validar la pertenencia a una organización.
+
+<p align="justify">
+El flujo principal de interacción representado en el diagrama es:
+</p>
+
+```text
+Client Application
+        |
+        v
+IAM Interface Components
+        |
+        v
+IAM Application Component
+        |
+        v
+IAM Domain Component
+        |
+        +----------------------+
+        |                      |
+        v                      v
+Persistence Component   Infrastructure Security/
+                        Integration Components
+        |
+        v
+IAM Persistence Storage
+```
+
+<p align="justify">
+Las solicitudes de autenticación ingresan mediante Authentication Interface Component y son coordinadas por la Application Layer. La verificación de credenciales se delega a la Infrastructure Layer, mientras que el Aggregate Identity sigue siendo responsable de su estado de autenticación.
+</p>
+
+<p align="justify">
+Las operaciones protegidas pasan por Authorization Interface Component. La Application Layer recupera la identidad y los roles involucrados, mientras que la Domain Layer evalúa si se otorga el permiso correspondiente.
+</p>
+
+<p align="justify">
+Las solicitudes de asignación de roles también se procesan mediante la Application Layer y deben satisfacer tanto las reglas de autorización como la restricción de pertenencia a una organización antes de modificar el Aggregate Identity.
+</p>
+
+**DIAGRAMA — IAM Component Level Diagram**
+
+![Identity and Access Management Component Level Diagram](assets/images/chapter-04-solution-software-design/iam/iam-component-level-diagram.png)
+
+<p align="center">
+  <strong>Figura 49. Identity and Access Management Component Level Diagram.</strong>
+</p>
+
+#### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
+
+<p align="justify">
+Los Code Level Diagrams proporcionan una representación detallada de la estructura orientada a la implementación del Bounded Context Identity and Access Management.
+</p>
+
+<p align="justify">
+Para IAM, este nivel se representa mediante dos diagramas complementarios:
+</p>
+
+- Domain Layer Class Diagram, que representa las clases, interfaces, enumeraciones, métodos, atributos, relaciones, direcciones y multiplicidades que conforman el modelo de dominio.
+- Database Design Diagram, que representa las estructuras de persistencia requeridas para almacenar identidades, roles, permisos y asignaciones de roles.
+
+<p align="justify">
+Los dos diagramas representan perspectivas diferentes del mismo Bounded Context. El diagrama de clases describe el modelo de dominio orientado a objetos, mientras que el diagrama de base de datos describe cómo se almacena el estado persistente requerido por ese modelo.
+</p>
+
+##### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
+
+<p align="justify">
+El Domain Layer Class Diagram representa la estructura orientada a la implementación del modelo de dominio de IAM.
+</p>
+
+<p align="justify">
+El diagrama debe incluir los siguientes elementos:
+</p>
+
+**Aggregate Roots y Entities**
+
+- `Identity`
+- `Role`
+- `RoleAssignment`
+
+**Value Objects**
+
+- `LoginIdentifier`
+- `CredentialHash`
+- `Permission`
+
+**Enumeración**
+
+- `IdentityStatus`
+
+**Repository Interfaces**
+
+- `IdentityRepository`
+- `RoleRepository`
+
+**Domain Service**
+
+- `AuthorizationService`
+
+<p align="justify">
+Las principales relaciones que deben representarse son:
+</p>
+
+- `Identity` se asocia con exactamente un `LoginIdentifier`.
+- `Identity` se asocia con exactamente un `CredentialHash`.
+- `Identity` tiene exactamente un `IdentityStatus`.
+- `Identity` contiene cero o más entidades `RoleAssignment`.
+- Cada `RoleAssignment` referencia un `Role` mediante `roleId`.
+- Cada `RoleAssignment` se aplica a una organización mediante `organizationId`.
+- `Role` contiene cero o más Value Objects `Permission`.
+- `IdentityRepository` gestiona la persistencia de `Identity`.
+- `RoleRepository` recupera agregados `Role`.
+- `AuthorizationService` evalúa los datos de `Identity` y `Role` utilizando `permissionCode` y `organizationId`; no depende directamente de `Permission`.
+
+<p align="justify">
+El diagrama de clases debe mostrar la visibilidad de los atributos y operaciones utilizando las convenciones UML:
+</p>
+
+- `+` para público.
+- `-` para privado.
+- `#` para protegido.
+
+<p align="justify">
+También debe indicar la dirección y multiplicidad de las relaciones cuando corresponda.
+</p>
+
+<p align="justify">
+Una referencia conceptual de multiplicidad para el diagrama final es:
+</p>
+
+```text
+Identity "1" *-- "0..*" RoleAssignment
+Identity "1" *-- "1" LoginIdentifier
+Identity "1" *-- "1" CredentialHash
+Identity "1" --> "1" IdentityStatus
+
+Role "1" *-- "0..*" Permission
+
+RoleAssignment ..> Role : references by roleId
+```
+
+<p align="justify">
+organizationId y userId se representan como identificadores externos en lugar de relaciones entre objetos con agregados pertenecientes a otros Bounded Contexts.
+</p>
+
+**DIAGRAMA — IAM Domain Layer Class Diagram**
+
+![Identity and Access Management Domain Layer Class Diagram](assets/images/chapter-04-solution-software-design/iam/iam-domain-layer-class-diagram.png)
+
+<p align="center">
+  <strong>Figura 50. Identity and Access Management Domain Layer Class Diagram.</strong>
+</p>
+
+##### 4.2.1.6.2. Bounded Context Database Design Diagram
+
+<p align="justify">
+El Database Design de Identity and Access Management persiste únicamente la información que pertenece a IAM.
+</p>
+
+<p align="justify">
+El modelo lógico de persistencia propuesto contiene las siguientes tablas:
+</p>
+
+###### `iam_identities`
+
+<p align="justify">
+Almacena la identidad de autenticación asociada con un usuario de ResQ.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `identity_id` | UUID | PRIMARY KEY | Identificador único de la identidad de IAM. |
+| `user_id` | UUID | NOT NULL, UNIQUE | Referencia externa al usuario correspondiente. |
+| `login_identifier` | VARCHAR | NOT NULL, UNIQUE | Identificador utilizado durante la autenticación. |
+| `credential_hash` | VARCHAR | NOT NULL | Representación protegida de la credencial de autenticación. |
+| `status` | VARCHAR | NOT NULL | Estado actual de la identidad. |
+
+<p align="justify">
+La tabla no almacena nombres, números de teléfono, preferencias ni otra información del perfil de User.
+</p>
+
+###### `iam_roles`
+
+<p align="justify">
+Almacena los roles disponibles para la autorización de IAM.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `role_id` | UUID | PRIMARY KEY | Identificador único del rol. |
+| `name` | VARCHAR | NOT NULL, UNIQUE | Nombre del rol. |
+
+<p align="justify">
+El diseño actual requiere que los roles existan y puedan asignarse, pero no define una User Story para la creación o administración de roles.
+</p>
+
+###### `iam_permissions`
+
+<p align="justify">
+Almacena los permisos de autorización utilizados para proteger las operaciones de ResQ.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `code` | VARCHAR(150) | PRIMARY KEY | Código estable de permiso utilizado por las reglas de autorización y que constituye la identidad del valor Permission persistido. |
+
+###### `iam_role_permissions`
+
+<p align="justify">
+Representa la relación de muchos a muchos entre roles y permisos.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `role_id` | UUID | PRIMARY KEY, FOREIGN KEY | Referencia `iam_roles.role_id`. |
+| `permission_code` | VARCHAR(150) | PRIMARY KEY, FOREIGN KEY | Referencia `iam_permissions.code`. |
+
+<p align="justify">
+La clave primaria compuesta <code>(role_id, permission_code)</code> impide que el mismo permiso se asocie con el mismo rol más de una vez. Las claves foráneas conectan <code>role_id</code> con <code>iam_roles.role_id</code> y <code>permission_code</code> con <code>iam_permissions.code</code>.
+</p>
+
+###### `iam_role_assignments`
+
+<p align="justify">
+Almacena las asignaciones de roles realizadas a identidades dentro de una organización.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `assignment_id` | UUID | PRIMARY KEY | Identificador único de la asignación. |
+| `identity_id` | UUID | NOT NULL, FOREIGN KEY | Referencia `iam_identities.identity_id`. |
+| `role_id` | UUID | NOT NULL, FOREIGN KEY | Referencia `iam_roles.role_id`. |
+| `organization_id` | UUID | NOT NULL | Identificador externo de la organización en la que se aplica el rol. |
+
+<p align="justify">
+Debe definirse una restricción de unicidad sobre:
+</p>
+
+`(identity_id, role_id, organization_id)`
+
+<p align="justify">
+Esta restricción complementa la invariante de dominio que impide asignaciones de roles duplicadas para la misma identidad dentro de la misma organización.
+</p>
+
+<p align="justify">
+Las relaciones internas de la base de datos son:
+</p>
+
+```text
+iam_identities
+      |
+      | 1
+      |
+      | 0..*
+      v
+iam_role_assignments
+      |
+      | *               *
+      +-------> iam_roles --------+
+                    |              |
+                    | *            | *
+                    |              |
+                    v              |
+             iam_role_permissions |
+             (role_id,             |
+              permission_code)     |
+                    |              |
+                    | *            |
+                    v              |
+             iam_permissions <-----+
+             (code PK)
+```
+
+<p align="justify">
+user_id y organization_id se tratan intencionalmente como referencias externas en lugar de claves foráneas a tablas pertenecientes a otros Bounded Contexts. Esto evita acoplar el modelo de persistencia de IAM directamente con la representación interna de la base de datos de otros contextos de dominio.
+</p>
+
+<p align="justify">
+El Database Design Diagram final debe identificar:
+</p>
+
+- las tablas;
+- las columnas;
+- las claves primarias;
+- las claves foráneas;
+- las restricciones de unicidad;
+- las cardinalidades;
+- las relaciones entre las tablas de IAM.
+
+**DIAGRAMA — IAM Database Design Diagram**
+
+![Identity and Access Management Database Design Diagram](assets/images/chapter-04-solution-software-design/iam/iam-database-design-diagram.png)
+
+<p align="center">
+  <strong>Figura 51. Identity and Access Management Database Design Diagram.</strong>
+</p>
+
+### 4.2.2. Bounded Context: Risk Detection
+
+<p align="justify">
+El Bounded Context <strong>Risk Detection</strong> es responsable de evaluar la información monitoreada mediante las reglas de detección configuradas para identificar situaciones de riesgo, determinar su tipo y severidad, preservar la evidencia que originó cada detección y mantener el contexto de ubicación necesario para comprender dónde ocurrió la condición detectada.
+</p>
+
+<p align="justify">
+Este Bounded Context representa el conocimiento de dominio involucrado en transformar mediciones monitoreadas válidas en detecciones de riesgo significativas. No posee los sensores físicos que producen las mediciones, los dispositivos asociados con esos sensores, los edificios y zonas en los que se instalan los dispositivos ni las alertas y respuestas ejecutadas después de detectar un riesgo.
+</p>
+
+<p align="justify">
+El Bounded Context Risk Detection soporta principalmente <strong>US06 — Conocer el tipo de riesgo detectado</strong>, <strong>US07 — Conocer el nivel de riesgo</strong>, <strong>US08 — Conocer la ubicación del riesgo</strong>, <strong>US09 — Consultar el contexto de detección</strong>, <strong>US24 — Configurar una condición de detección</strong>, <strong>US28 — Mantener funciones críticas sin Internet</strong> y <strong>TS03 — Procesar reglas de detección localmente</strong>.
+</p>
+
+<p align="justify">
+Risk Detection consume mediciones válidas producidas por el flujo de monitoreo y las evalúa utilizando reglas de detección activas. Cuando se satisface una condición, el Bounded Context crea o actualiza una detección de riesgo y genera la información necesaria para que el resto de la plataforma ResQ continúe el flujo de gestión de emergencias.
+</p>
+
+<p align="justify">
+Un requisito arquitectónico central de este Bounded Context es que la detección crítica debe permanecer disponible incluso cuando se interrumpe la conectividad a Internet con los servicios Cloud. Por esa razón, las reglas de detección activas requeridas para la operación crítica también deben estar disponibles en el entorno Edge, donde las mediciones pueden evaluarse localmente.
+</p>
+
+<p align="justify">
+Por lo tanto, el Bounded Context participa en dos entornos principales de ejecución:
+</p>
+
+- **ResQ Cloud RESTful API**, donde los usuarios autorizados configuran reglas de detección y consultan detecciones de riesgo persistidas y sus evidencias.
+- **ResQ Edge Service**, donde las reglas de detección activas están disponibles localmente y las mediciones entrantes pueden evaluarse sin depender permanentemente de la conectividad con Cloud.
+
+<p align="justify">
+Risk Detection no genera notificaciones para los usuarios, no ejecuta comandos de actuadores, no gestiona el ciclo de vida de los incidentes ni posee las colas de recuperación de conectividad. Estas responsabilidades pertenecen a otros Bounded Contexts, como Alert & Response Management, Incident y Connectivity.
+</p>
+
+<p align="justify">
+Asimismo, Risk Detection no reproduce los modelos completos de Measurement, Device, Building o Zone. Solo mantiene las referencias externas y la evidencia necesarias para justificar una decisión de detección de riesgo.
+</p>
+
+<p align="justify">
+Los principales conceptos identificados para el Bounded Context Risk Detection son <strong>Detection Rule</strong>, <strong>Detection Condition</strong>, <strong>Risk Detection</strong>, <strong>Detection Evidence</strong>, <strong>Risk Location</strong>, <strong>Risk Type</strong>, <strong>Severity Level</strong> y <strong>Severity Change</strong>.
+</p>
+
+#### Diccionario de clases
+
+<p align="justify">
+La siguiente tabla resume las principales clases e interfaces identificadas para el Bounded Context Risk Detection.
+</p>
+
+| Clase / Interfaz | Capa | Entorno de ejecución | Propósito | Atributos principales | Operaciones principales | Relaciones principales |
+|---|---|---|---|---|---|---|
+| `DetectionRule` | Domain | Cloud / Edge | Aggregate Root que representa una regla activa o inactiva utilizada para determinar si un valor monitoreado representa una condición de riesgo. | `ruleId: UUID`, `riskType: RiskType`, `severityLevel: SeverityLevel`, `condition: DetectionCondition`, `status: DetectionRuleStatus` | `updateCondition(condition)`, `activate()`, `deactivate()`, `isActive()`, `supports(variableType)` | Compone un `DetectionCondition`, un `RiskType`, un `SeverityLevel` y un `DetectionRuleStatus`. |
+| `DetectionCondition` | Domain | Cloud / Edge | Value Object que define la comparación que debe realizarse sobre una variable monitoreada. | `variableType: String`, `operator: ComparisonOperator`, `threshold: Decimal` | `isValid()`, `matches(variableType, value)` | Pertenece a `DetectionRule`; utiliza `ComparisonOperator`. |
+| `RiskDetection` | Domain | Cloud / Edge | Aggregate Root que representa un riesgo detectado junto con su severidad actual, ubicación, evidencia y trazabilidad de los cambios de severidad. | `riskDetectionId: UUID`, `ruleId: UUID`, `riskType: RiskType`, `currentSeverity: SeverityLevel`, `location: RiskLocation`, `detectedAt: Instant`, `evidence: List<DetectionEvidence>`, `severityChanges: List<SeverityChange>` | `addEvidence(evidence)`, `updateSeverity(newSeverity, changedAt)`, `hasSeverity(severity)` | Compone `RiskLocation`, `DetectionEvidence`, `SeverityChange`, `RiskType` y `SeverityLevel`; referencia una `DetectionRule` mediante `ruleId`. |
+| `DetectionEvidence` | Domain | Cloud / Edge | Value Object que contiene la información monitoreada utilizada como evidencia para una decisión de detección de riesgo. | `measurementId: UUID`, `deviceId: UUID`, `variableType: String`, `value: Decimal`, `measuredAt: Instant` | `matchesVariable(variableType)` | Pertenece a `RiskDetection`; referencia Measurement y Device mediante identificadores externos. |
+| `RiskLocation` | Domain | Cloud / Edge | Value Object que representa el contexto de ubicación conocido de una detección sin reproducir el modelo de dominio de Building. | `buildingId: UUID?`, `zoneId: UUID?`, `resolutionStatus: LocationResolutionStatus` | `isResolved()` | Pertenece a `RiskDetection`; utiliza identificadores externos de Building/Zone. |
+| `SeverityChange` | Domain | Cloud | Entity perteneciente a `RiskDetection` que preserva una transición entre niveles de severidad. | `severityChangeId: UUID`, `previousSeverity: SeverityLevel`, `newSeverity: SeverityLevel`, `changedAt: Instant` | — | Pertenece a `RiskDetection`; utiliza valores `SeverityLevel`. |
+| `RiskType` | Domain | Cloud / Edge | Value Object que representa el tipo de riesgo identificado por una regla de detección. | `code: String` | `code()`, `equals(other)` | Utilizado por `DetectionRule` y `RiskDetection`. |
+| `SeverityLevel` | Domain | Cloud / Edge | Value Object que representa la severidad asignada a un riesgo sin imponer un catálogo fijo de severidad que no está definido por los requisitos actuales. | `code: String` | `code()`, `equals(other)` | Utilizado por `DetectionRule`, `RiskDetection` y `SeverityChange`. |
+| `DetectionRuleStatus` | Domain | Cloud / Edge | Enumeración que representa si una regla de detección puede participar en la evaluación. | `ACTIVE`, `INACTIVE` | — | Utilizada por `DetectionRule`. |
+| `ComparisonOperator` | Domain | Cloud / Edge | Enumeración que representa la operación de comparación realizada por una condición de detección. | `GREATER_THAN`, `GREATER_THAN_OR_EQUAL`, `LESS_THAN`, `LESS_THAN_OR_EQUAL`, `EQUAL` | — | Utilizada por `DetectionCondition`. |
+| `LocationResolutionStatus` | Domain | Cloud / Edge | Enumeración que indica si la ubicación de un riesgo detectado pudo resolverse a partir del contexto disponible del dispositivo. | `RESOLVED`, `UNRESOLVED` | — | Utilizada por `RiskLocation`. |
+| `DetectionRuleRepository` | Domain | Cloud / Edge | Abstracción de Repository para recuperar y persistir reglas de detección. | — | `findById(ruleId)`, `findActiveByVariableType(variableType)`, `save(rule)` | Persiste y recupera agregados `DetectionRule`. |
+| `RiskDetectionRepository` | Domain | Cloud | Abstracción de Repository para detecciones de riesgo persistidas. | — | `findById(riskDetectionId)`, `save(riskDetection)` | Persiste y recupera agregados `RiskDetection`. |
+| `RiskEvaluationService` | Domain | Edge | Domain Service responsable de determinar si una regla de detección activa se satisface mediante evidencia válida de detección. | — | `matches(rule, evidence)` | Evalúa `DetectionRule` utilizando `DetectionEvidence`. |
+| `RiskDetectedEvent` | Domain | Edge | Domain Event producido cuando se satisface una regla de detección y una detección de riesgo debe continuar por el flujo distribuido de ResQ. | `riskDetectionId: UUID`, `ruleId: UUID`, `riskType: String`, `severity: String`, `buildingId: UUID?`, `zoneId: UUID?`, `occurredAt: Instant` | — | Generado a partir de `RiskDetection` y publicado mediante una abstracción de aplicación. |
+| `ConfigureDetectionRuleCommand` | Application | Cloud | Representa la solicitud para configurar una regla de detección. | `riskTypeCode: String`, `severityCode: String`, `variableType: String`, `operator: String`, `threshold: Decimal` | — | Gestionado por `ConfigureDetectionRuleCommandHandler`. |
+| `ConfigureDetectionRuleCommandHandler` | Application | Cloud | Coordina la creación o configuración de reglas de detección. | Dependencias de `DetectionRuleRepository` y `DetectionRuleDistributor` | `handle(command)` | Crea/actualiza `DetectionRule` y solicita su distribución hacia Edge. |
+| `ChangeDetectionRuleStatusCommand` | Application | Cloud | Representa una solicitud para activar o desactivar una regla de detección existente. | `ruleId: UUID`, `active: boolean` | — | Gestionado por `ChangeDetectionRuleStatusCommandHandler`. |
+| `ChangeDetectionRuleStatusCommandHandler` | Application | Cloud | Coordina la activación/desactivación de reglas preservando su validez. | Dependencias de `DetectionRuleRepository` y `DetectionRuleDistributor` | `handle(command)` | Modifica `DetectionRule` y distribuye el estado resultante. |
+| `MeasurementReceivedEventHandler` | Application | Edge | Gestiona una medición monitoreada válida entregada a Risk Detection y coordina su evaluación local. | Dependencias de `DetectionRuleRepository`, `RiskLocationResolver`, `RiskEvaluationService`, `RiskDetectionEventPublisher` | `handle(event)` | Evalúa la evidencia de medición utilizando agregados locales activos `DetectionRule`. |
+| `UpdateLocalDetectionRuleEventHandler` | Application | Edge | Aplica una actualización de regla de detección recibida desde Cloud a la réplica de la regla en Edge. | Dependencia de `DetectionRuleRepository` | `handle(event)` | Persiste la representación de `DetectionRule` en Edge. |
+| `RiskDetectionReceivedEventHandler` | Application | Cloud | Procesa la información sincronizada de detección de riesgos recibida desde el flujo Edge y persiste el estado de detección correspondiente. | Dependencia de `RiskDetectionRepository` | `handle(event)` | Reconstruye o actualiza `RiskDetection`. |
+| `GetRiskDetectionQuery` | Application | Cloud | Representa una solicitud de la información actual de una detección de riesgo persistida. | `riskDetectionId: UUID` | — | Gestionada por `GetRiskDetectionQueryHandler`. |
+| `GetRiskDetectionQueryHandler` | Application | Cloud | Recupera una detección de riesgo persistida para los clientes de la aplicación. | Dependencia de `RiskDetectionRepository` | `handle(query)` | Lee `RiskDetection`. |
+| `GetRiskDetectionEvidenceQuery` | Application | Cloud | Representa una solicitud de la evidencia asociada con una detección. | `riskDetectionId: UUID` | — | Gestionada por `GetRiskDetectionEvidenceQueryHandler`. |
+| `GetRiskDetectionEvidenceQueryHandler` | Application | Cloud | Recupera la evidencia y la trazabilidad de severidad asociadas con una detección. | Dependencia de `RiskDetectionRepository` | `handle(query)` | Lee `RiskDetection`, `DetectionEvidence` y `SeverityChange`. |
+| `DetectionRuleDistributor` | Application | Cloud | Abstracción utilizada para distribuir el estado de las reglas requerido por el entorno de ejecución Edge. | — | `distribute(rule)` | Implementada por `DetectionRuleDistributionAdapter`. |
+| `RiskLocationResolver` | Application | Edge | Abstracción utilizada para resolver identificadores de Building y Zone a partir del dispositivo asociado con una medición. | — | `resolve(deviceId)` | Implementada por `RiskLocationIntegrationAdapter`. |
+| `RiskDetectionEventPublisher` | Application | Edge | Abstracción utilizada para publicar un evento de detección de riesgo generado localmente sin acoplar la Application Layer a un intermediario de mensajes ni a un mecanismo de conectividad. | — | `publish(event)` | Implementada por `RiskDetectionEventPublisherAdapter`. |
+| `DetectionRuleController` | Interface | Cloud | Recibe solicitudes REST autorizadas para configurar y activar/desactivar reglas de detección. | Dependencias de los Command Handlers de reglas de detección | `configure(request)`, `changeStatus(ruleId, request)` | Delega a los Command Handlers de la Application Layer. |
+| `RiskDetectionController` | Interface | Cloud | Expone la información persistida de detección de riesgos y su evidencia a los clientes autorizados. | Dependencias de los Query Handlers de detección de riesgos | `getById(id)`, `getEvidence(id)` | Delega a los Query Handlers de la Application Layer. |
+| `RiskDetectionEventConsumer` | Interface | Cloud | Recibe eventos sincronizados de detección de riesgos producidos por el flujo distribuido de Edge. | Dependencia de `RiskDetectionReceivedEventHandler` | `consume(event)` | Delega los eventos entrantes de detección a la Application Layer. |
+| `MeasurementConsumer` | Interface | Edge | Recibe mediciones válidas del flujo local de monitoreo y las remite para la evaluación de reglas. | Dependencia de `MeasurementReceivedEventHandler` | `consume(measurement)` | Delega los eventos entrantes de medición a la Application Layer de Edge. |
+| `DetectionRuleReplicaConsumer` | Interface | Edge | Recibe actualizaciones de reglas distribuidas desde Cloud. | Dependencia de `UpdateLocalDetectionRuleEventHandler` | `consume(ruleUpdate)` | Delega las actualizaciones de reglas a la Application Layer de Edge. |
+| `DetectionRuleRepositoryAdapter` | Infrastructure | Cloud | Implementa `DetectionRuleRepository` utilizando la tecnología de persistencia Cloud seleccionada por el equipo. | Dependencia de persistencia | `findById()`, `findActiveByVariableType()`, `save()` | Implementa `DetectionRuleRepository`. |
+| `RiskDetectionRepositoryAdapter` | Infrastructure | Cloud | Implementa `RiskDetectionRepository` para detecciones de riesgo, evidencias y cambios de severidad. | Dependencia de persistencia | `findById()`, `save()` | Implementa `RiskDetectionRepository`. |
+| `DetectionRuleDistributionAdapter` | Infrastructure | Cloud | Implementa la distribución de reglas de detección hacia el entorno de ejecución Edge. | Dependencia de mensajería/integración | `distribute(rule)` | Implementa `DetectionRuleDistributor`. |
+| `EdgeDetectionRuleRepositoryAdapter` | Infrastructure | Edge | Implementa la persistencia local de reglas de detección utilizando la pila de persistencia Edge. | Dependencia de Peewee / SQLite | `findById()`, `findActiveByVariableType()`, `save()` | Implementación Edge de `DetectionRuleRepository`. |
+| `RiskLocationIntegrationAdapter` | Infrastructure | Edge | Obtiene las referencias de Building y Zone asociadas con el dispositivo sin convertir a Risk Detection en propietario de esos dominios. | Dependencia de integración | `resolve(deviceId)` | Implementa `RiskLocationResolver`. |
+| `RiskDetectionEventPublisherAdapter` | Infrastructure | Edge | Publica eventos de riesgo detectados localmente hacia las etapas posteriores del flujo distribuido. | Dependencia de mensajería/conectividad | `publish(event)` | Implementa `RiskDetectionEventPublisher`. |
+
+<p align="justify">
+El diseño separa deliberadamente la propiedad de los conceptos de detección de riesgos de la información perteneciente a otros Bounded Contexts.
+</p>
+
+<p align="justify">
+<code>DetectionEvidence</code> contiene <code>measurementId</code> y <code>deviceId</code> como referencias externas y como instantáneas de evidencia, pero Risk Detection no gestiona los agregados completos Measurement o Device.
+</p>
+
+<p align="justify">
+<code>RiskLocation</code> mantiene <code>buildingId</code> y <code>zoneId</code> únicamente como referencias externas de ubicación. El ciclo de vida de los edificios y zonas permanece fuera de Risk Detection.
+</p>
+
+<p align="justify">
+Del mismo modo, <code>RiskDetectedEvent</code> comunica que se ha detectado un riesgo, pero Risk Detection no crea alertas, no envía notificaciones, no ejecuta actuadores ni gestiona el ciclo de vida de un incidente.
+</p>
+
+---
+
+#### 4.2.2.1. Domain Layer
+
+<p align="justify">
+La <strong>Domain Layer</strong> representa las reglas y conceptos requeridos para transformar información cuantitativa monitoreada en una detección de riesgo significativa.
+</p>
+
+<p align="justify">
+La Domain Layer permanece independiente de HTTP, Flask, frameworks Cloud, SQLite, tecnologías de mensajería y servicios externos.
+</p>
+
+<p align="justify">
+Los principales Aggregate Roots son <code>DetectionRule</code> y <code>RiskDetection</code>.
+</p>
+
+##### DetectionRule
+
+<p align="justify">
+<strong>Categoría:</strong> Aggregate Root.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar una regla configurable que determina si una variable monitoreada satisface una condición asociada con un tipo y una severidad específicos de riesgo.
+</p>
+
+**Atributos:**
+
+- `ruleId: UUID` — Identificador único de la regla de detección.
+- `riskType: RiskType` — Tipo de riesgo representado por la regla.
+- `severityLevel: SeverityLevel` — Severidad producida cuando se satisface la regla.
+- `condition: DetectionCondition` — Condición cuantitativa evaluada sobre la información monitoreada.
+- `status: DetectionRuleStatus` — Indica si la regla participa en la evaluación.
+
+**Operaciones:**
+
+- `updateCondition(condition)` — Reemplaza la condición de detección actual por una condición válida.
+- `activate()` — Activa la regla únicamente cuando su configuración es válida.
+- `deactivate()` — Impide que la regla participe en evaluaciones futuras.
+- `isActive()` — Indica si la regla puede evaluarse actualmente.
+- `supports(variableType)` — Indica si la regla se aplica a la variable monitoreada especificada.
+
+<p align="justify">
+Una regla que contiene una condición inválida no debe activarse.
+</p>
+
+##### DetectionCondition
+
+<p align="justify">
+<strong>Categoría:</strong> Value Object.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar la comparación realizada sobre un valor monitoreado.
+</p>
+
+**Atributos:**
+
+- `variableType: String`
+- `operator: ComparisonOperator`
+- `threshold: Decimal`
+
+**Operaciones:**
+
+- `isValid()` — Valida que la condición contenga la información requerida para la evaluación.
+- `matches(variableType, value)` — Determina si el valor monitoreado proporcionado satisface la condición.
+
+<p align="justify">
+La condición no contiene información sobre un modelo de sensor físico. Opera utilizando la variable y el valor monitoreados para que el dominio de detección permanezca independiente de hardware específico.
+</p>
+
+##### RiskDetection
+
+<p align="justify">
+<strong>Categoría:</strong> Aggregate Root.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar un riesgo detectado y preservar la información contextual requerida para explicar la detección.
+</p>
+
+**Atributos:**
+
+- `riskDetectionId: UUID`
+- `ruleId: UUID`
+- `riskType: RiskType`
+- `currentSeverity: SeverityLevel`
+- `location: RiskLocation`
+- `detectedAt: Instant`
+- `evidence: List<DetectionEvidence>`
+- `severityChanges: List<SeverityChange>`
+
+**Operaciones:**
+
+- `addEvidence(evidence)` — Añade evidencia monitoreada asociada con la misma detección.
+- `updateSeverity(newSeverity, changedAt)` — Actualiza la severidad actual y preserva el valor anterior como parte del historial de cambios de severidad.
+- `hasSeverity(severity)` — Indica si la detección tiene actualmente la severidad especificada.
+
+<p align="justify">
+Una Risk Detection no se convierte en un Incident. El ciclo de vida y el seguimiento operativo de Incident pertenecen al Bounded Context Incident.
+</p>
+
+##### DetectionEvidence
+
+<p align="justify">
+<strong>Categoría:</strong> Value Object.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Preservar la información monitoreada relevante utilizada para justificar el resultado del proceso de detección.
+</p>
+
+**Atributos:**
+
+- `measurementId: UUID`
+- `deviceId: UUID`
+- `variableType: String`
+- `value: Decimal`
+- `measuredAt: Instant`
+
+**Operación:**
+
+- `matchesVariable(variableType)`
+
+<p align="justify">
+El objeto mantiene los identificadores de medición y dispositivo como referencias externas. Risk Detection no modifica la Measurement o el Device de origen.
+</p>
+
+##### RiskLocation
+
+<p align="justify">
+<strong>Categoría:</strong> Value Object.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar la ubicación asociada con una detección de riesgo.
+</p>
+
+**Atributos:**
+
+- `buildingId: UUID?`
+- `zoneId: UUID?`
+- `resolutionStatus: LocationResolutionStatus`
+
+**Operación:**
+
+- `isResolved()`
+
+<p align="justify">
+Cuando el contexto disponible del dispositivo permite determinar la ubicación, el estado es <code>RESOLVED</code>.
+</p>
+
+<p align="justify">
+Cuando no puede determinarse una ubicación válida, Risk Detection debe representar ese hecho explícitamente mediante <code>UNRESOLVED</code> en lugar de inventar una ubicación.
+</p>
+
+##### SeverityChange
+
+<p align="justify">
+<strong>Categoría:</strong> Entity perteneciente a <code>RiskDetection</code>.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Preservar la trazabilidad cuando cambia la severidad asociada con una detección existente.
+</p>
+
+**Atributos:**
+
+- `severityChangeId: UUID`
+- `previousSeverity: SeverityLevel`
+- `newSeverity: SeverityLevel`
+- `changedAt: Instant`
+
+<p align="justify">
+Esta entidad atiende directamente el requisito de que una actualización de severidad debe preservar la trazabilidad del estado anterior.
+</p>
+
+##### RiskType
+
+<p align="justify">
+<strong>Categoría:</strong> Value Object.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Identificar el tipo de riesgo representado por una regla y una detección.
+</p>
+
+**Atributo:**
+
+- `code: String`
+
+<p align="justify">
+No se impone intencionalmente una enumeración cerrada de riesgos de incendio, gas, sismos u otros, porque los requisitos actuales no definen un catálogo fijo exhaustivo.
+</p>
+
+##### SeverityLevel
+
+<p align="justify">
+<strong>Categoría:</strong> Value Object.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar la severidad asociada con un riesgo.
+</p>
+
+**Atributo:**
+
+- `code: String`
+
+<p align="justify">
+El dominio no impone una enumeración fija <code>LOW/MEDIUM/HIGH</code> porque los requisitos actuales establecen la existencia de un nivel de riesgo, pero no definen una escala obligatoria de severidad.
+</p>
+
+##### DetectionRuleStatus
+
+<p align="justify">
+<strong>Categoría:</strong> Enumeración.
+</p>
+
+**Valores:**
+
+- `ACTIVE`
+- `INACTIVE`
+
+<p align="justify">
+Solo las reglas activas participan en la evaluación de mediciones.
+</p>
+
+##### ComparisonOperator
+
+<p align="justify">
+<strong>Categoría:</strong> Enumeración.
+</p>
+
+**Valores:**
+
+- `GREATER_THAN`
+- `GREATER_THAN_OR_EQUAL`
+- `LESS_THAN`
+- `LESS_THAN_OR_EQUAL`
+- `EQUAL`
+
+<p align="justify">
+Estos operadores permiten comparar un valor cuantitativo monitoreado con un umbral configurado sin acoplar el dominio a un sensor particular.
+</p>
+
+##### LocationResolutionStatus
+
+<p align="justify">
+<strong>Categoría:</strong> Enumeración.
+</p>
+
+**Valores:**
+
+- `RESOLVED`
+- `UNRESOLVED`
+
+##### DetectionRuleRepository
+
+<p align="justify">
+<strong>Categoría:</strong> Repository Interface.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Proporcionar operaciones de persistencia para <code>DetectionRule</code>, manteniendo la Domain Layer independiente de las tecnologías de persistencia Cloud o Edge.
+</p>
+
+**Operaciones:**
+
+- `findById(ruleId)`
+- `findActiveByVariableType(variableType)`
+- `save(rule)`
+
+<p align="justify">
+La misma abstracción puede tener diferentes implementaciones de Infrastructure para la persistencia Cloud y la persistencia SQLite de Edge.
+</p>
+
+##### RiskDetectionRepository
+
+<p align="justify">
+<strong>Categoría:</strong> Repository Interface.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Persistir y recuperar agregados <code>RiskDetection</code> en el entorno de persistencia Cloud.
+</p>
+
+**Operaciones:**
+
+- `findById(riskDetectionId)`
+- `save(riskDetection)`
+
+##### RiskEvaluationService
+
+<p align="justify">
+<strong>Categoría:</strong> Domain Service.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Evaluar si un elemento válido de evidencia monitoreada satisface una regla de detección activa.
+</p>
+
+**Operación:**
+
+- `matches(rule, evidence)`
+
+<p align="justify">
+El servicio coordina la comparación de dominio cuando la evaluación requiere tanto una <code>DetectionRule</code> como <code>DetectionEvidence</code>.
+</p>
+
+##### RiskDetectedEvent
+
+<p align="justify">
+<strong>Categoría:</strong> Domain Event.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar el hecho de que se detectó localmente una condición de riesgo configurada y que debe continuar por el flujo distribuido de ResQ.
+</p>
+
+**Atributos:**
+
+- `riskDetectionId: UUID`
+- `ruleId: UUID`
+- `riskType: String`
+- `severity: String`
+- `buildingId: UUID?`
+- `zoneId: UUID?`
+- `occurredAt: Instant`
+
+<p align="justify">
+El evento comunica el resultado de detección, pero no define la alerta, notificación, comando de actuador o incidente que otros Bounded Contexts pueden crear posteriormente.
+</p>
+
+##### Reglas de negocio
+
+<p align="justify">
+El dominio de Risk Detection aplica las siguientes reglas de negocio:
+</p>
+
+1. Una regla de detección debe contener una condición de detección válida antes de poder activarse.
+
+2. Una regla de detección inactiva no debe participar en la evaluación de mediciones.
+
+3. Una regla de detección solo puede evaluar información monitoreada correspondiente al tipo de variable definido en su condición.
+
+4. Solo la información monitoreada válida entregada a Risk Detection puede participar en la evaluación.
+
+5. Cuando un valor monitoreado no satisface la condición configurada, Risk Detection no debe crear una detección positiva de riesgo a partir de esa regla.
+
+6. Cuando se satisface una regla de detección activa, la detección resultante utiliza el `RiskType` y el `SeverityLevel` definidos por esa regla.
+
+7. Toda detección positiva de riesgo debe preservar la evidencia monitoreada relevante que originó la decisión.
+
+8. La evidencia debe conservar el identificador de medición, el identificador de dispositivo, la variable monitoreada, el valor y el momento original de la medición.
+
+9. Cuando múltiples mediciones relevantes participan en la evolución de la misma detección, la evidencia correspondiente debe permanecer asociada con esa detección.
+
+10. Risk Detection debe intentar resolver el Building y la Zone asociados con el dispositivo de origen.
+
+11. Cuando la ubicación no puede resolverse utilizando información válida, la detección debe marcarse con una ubicación no resuelta en lugar de asignarle una ubicación no verificada.
+
+12. Cuando cambia la severidad de una detección existente, la severidad anterior, la nueva severidad y el momento del cambio deben permanecer trazables.
+
+13. Las reglas de detección críticas requeridas para la operación local deben permanecer disponibles en el entorno Edge para que la evaluación de mediciones no dependa permanentemente de la conectividad con Cloud.
+
+14. Una evaluación local satisfactoria de riesgo genera la información de dominio requerida para continuar el flujo distribuido de procesamiento de emergencias.
+
+15. Risk Detection no crea Alerts, Notifications, Actuator Commands ni Incidents directamente.
+
+16. El almacenamiento temporal y la sincronización posterior de eventos remotos durante una interrupción de Internet no pertenecen a Risk Detection; esas responsabilidades pertenecen al flujo de Connectivity.
+
+---
+
+#### 4.2.2.2. Interface Layer
+
+<p align="justify">
+La <strong>Interface Layer</strong> expone las capacidades de Risk Detection a clientes externos y recibe información de otras partes de la arquitectura distribuida de ResQ.
+</p>
+
+<p align="justify">
+Como Risk Detection participa en la ejecución tanto en Cloud como en Edge, la Interface Layer contiene diferentes puntos de entrada según el entorno de ejecución.
+</p>
+
+<p align="justify">
+La Interface Layer de Cloud expone operaciones autorizadas de configuración y consulta.
+</p>
+
+<p align="justify">
+La Interface Layer de Edge recibe mediciones monitoreadas y réplicas de reglas de detección activas requeridas para la evaluación local.
+</p>
+
+<p align="justify">
+Las reglas de negocio no se implementan en la Interface Layer.
+</p>
+
+##### DetectionRuleController
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Cloud.
+</p>
+
+<p align="justify">
+<code>DetectionRuleController</code> recibe solicitudes REST autorizadas relacionadas con la configuración de reglas de detección.
+</p>
+
+<p align="justify">
+Sus responsabilidades incluyen:
+</p>
+
+- recibir la información requerida para configurar una regla de detección;
+- validar la representación básica de la solicitud;
+- crear un `ConfigureDetectionRuleCommand`;
+- crear un `ChangeDetectionRuleStatusCommand`;
+- delegar las operaciones a los manejadores correspondientes de la Application Layer.
+
+Recursos conceptuales de ejemplo:
+
+```text
+POST /api/v1/risk-detection/rules
+PATCH /api/v1/risk-detection/rules/{ruleId}/status
+```
+
+<p align="justify">
+El controlador no determina directamente si una condición es válida ni persiste reglas directamente.
+</p>
+
+##### RiskDetectionController
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Cloud.
+</p>
+
+<p align="justify">
+<code>RiskDetectionController</code> proporciona acceso autorizado a las detecciones de riesgo persistidas y sus evidencias.
+</p>
+
+Recursos conceptuales de ejemplo:
+
+```text
+GET /api/v1/risk-detections/{riskDetectionId}
+GET /api/v1/risk-detections/{riskDetectionId}/evidence
+```
+
+<p align="justify">
+El controlador delega la ejecución de consultas a <code>GetRiskDetectionQueryHandler</code> y <code>GetRiskDetectionEvidenceQueryHandler</code>.
+</p>
+
+<p align="justify">
+No accede directamente a la base de datos.
+</p>
+
+##### RiskDetectionEventConsumer
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Cloud.
+</p>
+
+<p align="justify">
+<code>RiskDetectionEventConsumer</code> recibe información sincronizada de detección de riesgos producida por el flujo distribuido de Edge.
+</p>
+
+<p align="justify">
+Su responsabilidad es convertir una representación entrante de integración en la representación de aplicación esperada por <code>RiskDetectionReceivedEventHandler</code>.
+</p>
+
+<p align="justify">
+El consumidor no implementa lógica de reintentos de sincronización porque la preservación temporal de eventos y el comportamiento de reconexión corresponden a la responsabilidad de Connectivity.
+</p>
+
+##### MeasurementConsumer
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Edge.
+</p>
+
+<p align="justify">
+<code>MeasurementConsumer</code> recibe información monitoreada válida del flujo local de procesamiento de mediciones.
+</p>
+
+<p align="justify">
+Transforma la representación entrante en la información esperada por <code>MeasurementReceivedEventHandler</code>.
+</p>
+
+<p align="justify">
+El consumidor no evalúa reglas de detección directamente.
+</p>
+
+##### DetectionRuleReplicaConsumer
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Edge.
+</p>
+
+<p align="justify">
+<code>DetectionRuleReplicaConsumer</code> recibe actualizaciones de reglas de detección distribuidas desde Cloud.
+</p>
+
+<p align="justify">
+Delega la actualización a <code>UpdateLocalDetectionRuleEventHandler</code>, permitiendo que el entorno de ejecución Edge mantenga la información local de reglas requerida para la detección autónoma.
+</p>
+
+<p align="justify">
+La Interface Layer permanece independiente de la implementación interna de persistencia utilizada para esas reglas.
+</p>
+
+#### 4.2.2.3. Application Layer
+
+<p align="justify">
+La Application Layer coordina los casos de uso de Risk Detection en los entornos de ejecución Cloud y Edge.
+</p>
+
+<p align="justify">
+Utiliza objetos de la Domain Layer y abstracciones de repositorios, manteniéndose independiente de motores de bases de datos, intermediarios de mensajes, frameworks Cloud y detalles de implementación de persistencia Edge.
+</p>
+
+<p align="justify">
+Las principales capacidades de aplicación son:
+</p>
+
+- configuración de reglas de detección;
+- activación y desactivación de reglas de detección;
+- distribución de reglas de detección hacia Edge;
+- evaluación local de mediciones;
+- resolución de ubicación;
+- publicación de riesgos detectados localmente;
+- persistencia en Cloud de detecciones sincronizadas;
+- consulta de detecciones y sus evidencias.
+
+##### ConfigureDetectionRuleCommand
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Cloud.
+</p>
+
+<p align="justify">
+Representa una solicitud para configurar una regla de detección.
+</p>
+
+**Atributos:**
+
+- `riskTypeCode: String`
+- `severityCode: String`
+- `variableType: String`
+- `operator: String`
+- `threshold: Decimal`
+
+##### ConfigureDetectionRuleCommandHandler
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Cloud.
+</p>
+
+<p align="justify">
+Coordina la configuración de reglas de detección.
+</p>
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Recibir un `ConfigureDetectionRuleCommand`.
+2. Construir el `RiskType` correspondiente.
+3. Construir el `SeverityLevel` correspondiente.
+4. Construir una `DetectionCondition`.
+5. Validar la condición de detección.
+6. Crear o actualizar la `DetectionRule`.
+7. Persistir el agregado mediante `DetectionRuleRepository`.
+8. Solicitar la distribución de la regla mediante `DetectionRuleDistributor`.
+
+<p align="justify">
+Las condiciones inválidas no deben producir una regla de detección activa.
+</p>
+
+##### ChangeDetectionRuleStatusCommand
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Cloud.
+</p>
+
+<p align="justify">
+Representa una solicitud para activar o desactivar una regla de detección.
+</p>
+
+**Atributos:**
+
+- `ruleId: UUID`
+- `active: boolean`
+
+##### ChangeDetectionRuleStatusCommandHandler
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Cloud.
+</p>
+
+<p align="justify">
+Coordina los cambios en el estado operativo de una regla de detección.
+</p>
+
+<p align="justify">
+El manejador:
+</p>
+
+1. Recupera la `DetectionRule`.
+2. Cuando se solicita la activación, delega al agregado la aplicación de las condiciones de validez.
+3. Activa o desactiva la regla.
+4. Persiste el estado resultante de la regla.
+5. Solicita la distribución del nuevo estado hacia el entorno de ejecución Edge.
+
+<p align="justify">
+El manejador no duplica la invariante de validez de la regla fuera de la Domain Layer.
+</p>
+
+##### MeasurementReceivedEventHandler
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Edge.
+</p>
+
+<p align="justify">
+Coordina la evaluación local de una medición monitoreada entrante.
+</p>
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Recibir la representación de la medición válida desde `MeasurementConsumer`.
+2. Construir la `DetectionEvidence` correspondiente.
+3. Recuperar las reglas de detección activas compatibles con la variable de medición utilizando `DetectionRuleRepository`.
+4. Solicitar la ubicación asociada con el `deviceId` de origen mediante `RiskLocationResolver`.
+5. Evaluar cada regla aplicable mediante `RiskEvaluationService`.
+6. Ignorar las reglas cuyas condiciones no se satisfagan.
+7. Cuando se satisface una regla, crear o actualizar la información de dominio `RiskDetection` correspondiente.
+8. Asociar la evidencia de medición con la detección.
+9. Preservar los cambios de severidad cuando la severidad actual difiera de la nueva severidad.
+10. Crear un `RiskDetectedEvent`.
+11. Publicar el evento mediante `RiskDetectionEventPublisher`.
+
+<p align="justify">
+Este flujo está diseñado para ejecutarse localmente y, por lo tanto, no requiere una solicitud a Cloud para realizar la evaluación crítica de reglas.
+</p>
+
+##### UpdateLocalDetectionRuleEventHandler
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Edge.
+</p>
+
+<p align="justify">
+Coordina la aplicación local de una actualización de regla de detección distribuida desde Cloud.
+</p>
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Recibir la representación distribuida de la regla de detección.
+2. Reconstruir la `DetectionRule` correspondiente.
+3. Persistir el estado actual de la regla mediante la implementación Edge de `DetectionRuleRepository`.
+
+<p align="justify">
+Esto permite que el entorno de ejecución Edge continúe evaluando reglas críticas incluso durante una pérdida temporal de conectividad con Cloud.
+</p>
+
+##### RiskDetectionReceivedEventHandler
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Cloud.
+</p>
+
+<p align="justify">
+Coordina la persistencia de un evento de detección de riesgo recibido desde el flujo Edge.
+</p>
+
+<p align="justify">
+Sus responsabilidades son:
+</p>
+
+- Recibir la información sincronizada de detección.
+- Reconstruir o actualizar la `RiskDetection` correspondiente.
+- Preservar la evidencia de detección incluida en el flujo de eventos.
+- Preservar la información de cambios de severidad cuando corresponda.
+- Persistir el agregado resultante mediante `RiskDetectionRepository`.
+
+<p align="justify">
+El manejador no implementa colas de eventos sin conexión ni políticas de retransmisión.
+</p>
+
+##### GetRiskDetectionQuery
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Cloud.
+</p>
+
+**Atributo:**
+
+- `riskDetectionId: UUID`
+
+<p align="justify">
+Representa una solicitud para obtener la información actual persistida asociada con una detección de riesgo.
+</p>
+
+##### GetRiskDetectionQueryHandler
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Cloud.
+</p>
+
+<p align="justify">
+Recupera la <code>RiskDetection</code> correspondiente mediante <code>RiskDetectionRepository</code> y proporciona su representación actual de dominio a la Interface Layer.
+</p>
+
+##### GetRiskDetectionEvidenceQuery
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Cloud.
+</p>
+
+**Atributo:**
+
+- `riskDetectionId: UUID`
+
+<p align="justify">
+Representa una solicitud para obtener la evidencia y la trazabilidad asociadas con una detección.
+</p>
+
+##### GetRiskDetectionEvidenceQueryHandler
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Cloud.
+</p>
+
+<p align="justify">
+Recupera la <code>RiskDetection</code> correspondiente y expone:
+</p>
+
+- evidencia de medición;
+- referencias al dispositivo de origen;
+- tipo de riesgo actual;
+- severidad actual;
+- ubicación resuelta o no resuelta;
+- cambios de severidad.
+
+##### DetectionRuleDistributor
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Cloud.
+</p>
+
+<p align="justify">
+Abstracción de aplicación responsable de solicitar la distribución de la información de reglas requerida por Edge.
+</p>
+
+**Operación:**
+
+- `distribute(rule)`
+
+<p align="justify">
+La Application Layer no depende del mecanismo de transporte utilizado para la distribución.
+</p>
+
+##### RiskLocationResolver
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Edge.
+</p>
+
+<p align="justify">
+Abstracción de aplicación utilizada para resolver la ubicación asociada con el dispositivo de origen.
+</p>
+
+**Operación:**
+
+- `resolve(deviceId)`
+
+<p align="justify">
+Devuelve una <code>RiskLocation</code> sin transferir la propiedad de Device, Building o Zone al Bounded Context Risk Detection.
+</p>
+
+##### RiskDetectionEventPublisher
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Edge.
+</p>
+
+<p align="justify">
+Abstracción de aplicación responsable de publicar un <code>RiskDetectedEvent</code>.
+</p>
+
+**Operación:**
+
+- `publish(event)`
+
+<p align="justify">
+La interfaz aísla la Application Layer de las tecnologías de mensajería y conectividad.
+</p>
+
+#### 4.2.2.4. Infrastructure Layer
+
+<p align="justify">
+La Infrastructure Layer contiene las implementaciones técnicas requeridas para la persistencia, la propagación distribuida de reglas, la integración de ubicación y la publicación de eventos de detección de riesgos.
+</p>
+
+<p align="justify">
+Cloud y Edge utilizan diferentes implementaciones de infraestructura, manteniendo los mismos conceptos de dominio.
+</p>
+
+##### DetectionRuleRepositoryAdapter
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Cloud.
+</p>
+
+<p align="justify">
+<code>DetectionRuleRepositoryAdapter</code> implementa <code>DetectionRuleRepository</code> utilizando la tecnología de persistencia seleccionada para ResQ Cloud RESTful API.
+</p>
+
+<p align="justify">
+Sus responsabilidades son:
+</p>
+
+- recuperar reglas de detección por identificador;
+- recuperar reglas activas según su variable monitoreada;
+- reconstruir agregados `DetectionRule`;
+- persistir la configuración y el estado de las reglas de detección.
+
+<p align="justify">
+El framework de persistencia Cloud debe mantener la consistencia con la tecnología de Web Services seleccionada por el equipo.
+</p>
+
+##### RiskDetectionRepositoryAdapter
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Cloud.
+</p>
+
+<p align="justify">
+<code>RiskDetectionRepositoryAdapter</code> implementa <code>RiskDetectionRepository</code>.
+</p>
+
+<p align="justify">
+Sus responsabilidades incluyen la persistencia y reconstrucción de:
+</p>
+
+- `RiskDetection`;
+- `DetectionEvidence`;
+- `SeverityChange`;
+- severidad actual;
+- referencias de ubicación resueltas o no resueltas.
+
+##### DetectionRuleDistributionAdapter
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Cloud.
+</p>
+
+<p align="justify">
+<code>DetectionRuleDistributionAdapter</code> implementa <code>DetectionRuleDistributor</code>.
+</p>
+
+<p align="justify">
+Comunica los cambios de reglas de detección hacia el entorno de ejecución Edge utilizando el mecanismo de integración seleccionado por la arquitectura general de ResQ.
+</p>
+
+<p align="justify">
+Su responsabilidad se limita a entregar la representación de las reglas requerida por Edge.
+</p>
+
+<p align="justify">
+El transporte exacto debe permanecer alineado con el Context Mapping final y la arquitectura de Container.
+</p>
+
+##### EdgeDetectionRuleRepositoryAdapter
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Edge.
+</p>
+
+<p align="justify">
+<code>EdgeDetectionRuleRepositoryAdapter</code> implementa <code>DetectionRuleRepository</code> utilizando la pila de persistencia Edge requerida para el proyecto.
+</p>
+
+<p align="justify">
+Para la implementación de Edge Services, el enunciado del proyecto establece:
+</p>
+
+- Python como lenguaje de programación;
+- Flask para Edge Services;
+- Peewee ORM;
+- SQLite.
+
+<p align="justify">
+Por lo tanto, el adaptador proporciona la persistencia local de las reglas de detección requeridas para la operación autónoma.
+</p>
+
+<p align="justify">
+Sus responsabilidades incluyen:
+</p>
+
+- almacenar el último estado distribuido de las reglas;
+- recuperar reglas locales activas por variable monitoreada;
+- preservar la disponibilidad de las reglas durante una pérdida temporal de conectividad con Cloud.
+
+##### RiskLocationIntegrationAdapter
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Edge.
+</p>
+
+<p align="justify">
+<code>RiskLocationIntegrationAdapter</code> implementa <code>RiskLocationResolver</code>.
+</p>
+
+<p align="justify">
+Obtiene el contexto mínimo de ubicación del dispositivo requerido para identificar:
+</p>
+
+- `buildingId`;
+- `zoneId`;
+- si pudo resolverse la ubicación.
+
+<p align="justify">
+El adaptador no reproduce ni modifica los agregados Building, Zone o Device.
+</p>
+
+<p align="justify">
+Su mecanismo final de integración debe mantener la consistencia con el Context Mapping definido por el equipo.
+</p>
+
+##### RiskDetectionEventPublisherAdapter
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Edge.
+</p>
+
+<p align="justify">
+<code>RiskDetectionEventPublisherAdapter</code> implementa <code>RiskDetectionEventPublisher</code>.
+</p>
+
+<p align="justify">
+Publica objetos <code>RiskDetectedEvent</code> generados localmente hacia el flujo distribuido de ResQ.
+</p>
+
+<p align="justify">
+El adaptador no posee:
+</p>
+
+- las políticas de reintentos de eventos;
+- las colas de eventos pendientes durante una interrupción de red;
+- el ciclo de vida de sincronización.
+
+<p align="justify">
+Estas responsabilidades pertenecen al mecanismo de conectividad utilizado por ResQ.
+</p>
+
+##### Consideraciones de persistencia
+
+<p align="justify">
+Risk Detection requiere diferentes responsabilidades de persistencia en Cloud y Edge.
+</p>
+
+<p align="justify">
+La persistencia Cloud almacena la configuración autoritativa de reglas de detección y el historial de detección de riesgos requerido por las aplicaciones destinadas a los usuarios.
+</p>
+
+<p align="justify">
+Persiste:
+</p>
+
+- reglas de detección;
+- estado actual de detección;
+- evidencia asociada con las detecciones;
+- trazabilidad de cambios de severidad.
+
+<p align="justify">
+La persistencia Edge almacena la representación local de las reglas requerida para evaluar condiciones críticas sin conectividad permanente con Cloud.
+</p>
+
+<p align="justify">
+No necesita duplicar el historial completo de detección de riesgos de Cloud.
+</p>
+
+<p align="justify">
+Esta separación permite que el Bounded Context soporte la evaluación crítica local sin asignar responsabilidades de sincronización de conectividad a Risk Detection.
+</p>
+
+#### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+<p align="justify">
+El Bounded Context Risk Detection participa en más de un Container desplegable. Por esa razón, su arquitectura de Component Level se representa mediante C4 Component Diagrams separados para los entornos Cloud y Edge.
+</p>
+
+<p align="justify">
+Los diagramas deben preservar los mismos límites de dominio, representando las responsabilidades desplegadas en cada Container.
+</p>
+
+##### Risk Detection — ResQ Cloud RESTful API Component Diagram
+
+<p align="justify">
+El Cloud Component Diagram representa los componentes dentro de ResQ Cloud RESTful API que participan en Risk Detection.
+</p>
+
+<p align="justify">
+Los principales componentes son:
+</p>
+
+- Detection Rule API, responsable de recibir operaciones autorizadas de configuración de reglas de detección.
+- Risk Detection Query API, responsable de exponer la información persistida de detección y su evidencia.
+- Risk Detection Event Consumer, responsable de recibir eventos sincronizados de detección producidos por Edge.
+- Risk Detection Application, responsable de coordinar los casos de uso de Cloud.
+- Risk Detection Domain, que contiene el modelo de dominio utilizado por las capacidades de Cloud.
+- Cloud Risk Detection Persistence, que implementa la persistencia de reglas y detecciones.
+- Detection Rule Distribution, responsable de propagar los cambios de reglas hacia Edge.
+
+<p align="justify">
+Conceptualmente, el flujo principal de Cloud es:
+</p>
+
+```text
+Web / Mobile Application
+          |
+          v
+Detection Rule API / Risk Detection Query API
+          |
+          v
+Risk Detection Application
+          |
+          v
+Risk Detection Domain
+          |
+          +------------------------+
+          |                        |
+          v                        v
+Cloud Persistence       Detection Rule Distribution
+          |                        |
+          v                        v
+ResQ Cloud Database          Edge Runtime
+```
+
+<p align="justify">
+Los eventos de detección de riesgos sincronizados desde Edge ingresan mediante Risk Detection Event Consumer, son procesados por la Application Layer y se persisten utilizando la Domain Layer y la Infrastructure Layer.
+</p>
+
+<p align="justify">
+El diagrama C4 final debe mostrar la tecnología Cloud concreta una vez que el equipo seleccione oficialmente la pila de Web Services.
+</p>
+
+**DIAGRAMA — Risk Detection Cloud Component Level Diagram**
+
+![Risk Detection Cloud Component Level Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-cloud-component-level-diagram.png)
+
+<p align="center">
+  <strong>Figura 52. Risk Detection Cloud Component Level Diagram.</strong>
+</p>
+
+##### Risk Detection — ResQ Edge Service Component Diagram
+
+<p align="justify">
+El Edge Component Diagram representa los componentes responsables de la evaluación local de riesgos dentro de ResQ Edge Service.
+</p>
+
+<p align="justify">
+Los principales componentes son:
+</p>
+
+- Measurement Consumer, responsable de recibir mediciones válidas disponibles localmente.
+- Detection Rule Replica Consumer, responsable de recibir los estados actuales de las reglas de detección desde Cloud.
+- Edge Risk Detection Application, responsable de coordinar la evaluación local.
+- Risk Evaluation Domain, que contiene la lógica de dominio de reglas de detección y evaluación de riesgos.
+- Local Detection Rule Persistence, responsable de almacenar réplicas locales de reglas utilizando Peewee y SQLite.
+- Risk Location Integration, responsable de obtener las referencias de ubicación asociadas con un dispositivo de origen.
+- Risk Detection Event Publisher, responsable de publicar el resultado de una detección local satisfactoria.
+
+<p align="justify">
+El flujo principal de ejecución local es:
+</p>
+
+```text
+Local Measurement Flow
+          |
+          v
+Measurement Consumer
+          |
+          v
+Edge Risk Detection Application
+          |
+          v
+Risk Evaluation Domain
+      /            \
+     v              v
+Local Rule      Risk Location
+Persistence     Integration
+     |
+     v
+Risk Detection Event
+     |
+     v
+Risk Detection Event Publisher
+     |
+     v
+Distributed ResQ Flow
+```
+
+<p align="justify">
+El flujo de actualización de reglas en Edge es:
+</p>
+
+```text
+Cloud Rule Distribution
+          |
+          v
+Detection Rule Replica Consumer
+          |
+          v
+Edge Risk Detection Application
+          |
+          v
+Local Detection Rule Persistence
+```
+
+<p align="justify">
+La implementación Edge debe utilizar la tecnología establecida por el enunciado del proyecto para Edge Services: Python, Flask, Peewee ORM y SQLite.
+</p>
+
+**DIAGRAMA Risk Detection Edge Component Level Diagram**
+
+![Risk Detection Edge Component Level Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-edge-component-level-diagram.png)
+
+<p align="center">
+  <strong>Figura 53. Risk Detection Edge Component Level Diagram.</strong>
+</p>
+
+#### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
+
+<p align="justify">
+Los Code Level Diagrams proporcionan una representación más detallada de la estructura orientada a la implementación del Bounded Context Risk Detection.
+</p>
+
+<p align="justify">
+Para Risk Detection, el Code Level se representa mediante:
+</p>
+
+- Domain Layer Class Diagram, que describe el modelo de dominio orientado a objetos, incluidos Aggregate Roots, Entities, Value Objects, enumeraciones, Domain Services, interfaces de Repository, atributos, métodos, visibilidad, relaciones y multiplicidades.
+- Database Design Diagram, que describe las estructuras de persistencia relacional requeridas por las partes Cloud y Edge del Bounded Context.
+
+<p align="justify">
+Los diagramas deben mantener la consistencia con el diseño de cuatro capas descrito anteriormente.
+</p>
+
+##### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+<p align="justify">
+El Domain Layer Class Diagram representa la estructura orientada a la implementación del modelo de dominio de Risk Detection.
+</p>
+
+<p align="justify">
+El diagrama debe incluir los siguientes elementos.
+</p>
+
+**Aggregate Roots**
+
+- `DetectionRule`
+- `RiskDetection`
+
+**Entity**
+
+- `SeverityChange`
+
+**Value Objects**
+
+- `DetectionCondition`
+- `DetectionEvidence`
+- `RiskLocation`
+- `RiskType`
+- `SeverityLevel`
+
+**Enumeraciones**
+
+- `DetectionRuleStatus`
+- `ComparisonOperator`
+- `LocationResolutionStatus`
+
+**Repository Interfaces**
+
+- `DetectionRuleRepository`
+- `RiskDetectionRepository`
+
+**Domain Service**
+
+- `RiskEvaluationService`
+
+**Domain Event**
+
+- `RiskDetectedEvent`
+
+<p align="justify">
+Las principales relaciones que deben representarse son:
+</p>
+
+- `DetectionRule` compone exactamente un `DetectionCondition`.
+- `DetectionRule` compone exactamente un `RiskType`.
+- `DetectionRule` compone exactamente un `SeverityLevel`.
+- `DetectionRule` utiliza exactamente un `DetectionRuleStatus`.
+- `DetectionCondition` utiliza exactamente un `ComparisonOperator`.
+- `RiskDetection` compone exactamente un `RiskType`.
+- `RiskDetection` compone exactamente un `SeverityLevel` actual.
+- `RiskDetection` compone exactamente un `RiskLocation`.
+- `RiskDetection` posee uno o más valores `DetectionEvidence`.
+- `RiskDetection` posee cero o más entidades `SeverityChange`.
+- `RiskLocation` utiliza exactamente un `LocationResolutionStatus`.
+- `SeverityChange` referencia un `SeverityLevel` anterior y uno nuevo.
+- `RiskDetection` referencia su `DetectionRule` de origen mediante `ruleId`.
+- `DetectionRuleRepository` persiste y recupera `DetectionRule`.
+- `RiskDetectionRepository` persiste y recupera `RiskDetection`.
+- `RiskEvaluationService` evalúa `DetectionRule` y `DetectionEvidence`.
+- `RiskDetectedEvent` se produce a partir de una evaluación satisfactoria de Risk Detection.
+
+<p align="justify">
+El diagrama debe mostrar las convenciones de visibilidad UML:
+</p>
+
+- `+` para miembros públicos;
+- `-` para miembros privados;
+- `#` para miembros protegidos cuando corresponda.
+
+<p align="justify">
+Una referencia conceptual de multiplicidad es:
+</p>
+
+```text
+DetectionRule "1" *-- "1" DetectionCondition
+DetectionRule "1" *-- "1" RiskType
+DetectionRule "1" *-- "1" SeverityLevel
+DetectionRule "1" --> "1" DetectionRuleStatus
+
+DetectionCondition "1" --> "1" ComparisonOperator
+
+RiskDetection "1" *-- "1" RiskType
+RiskDetection "1" *-- "1" SeverityLevel
+RiskDetection "1" *-- "1" RiskLocation
+RiskDetection "1" *-- "1..*" DetectionEvidence
+RiskDetection "1" *-- "0..*" SeverityChange
+
+RiskLocation "1" --> "1" LocationResolutionStatus
+
+SeverityChange --> SeverityLevel : previous/new
+
+RiskDetection ..> DetectionRule : references by ruleId
+
+DetectionRuleRepository ..> DetectionRule : persists
+RiskDetectionRepository ..> RiskDetection : persists
+
+RiskEvaluationService ..> DetectionRule : evaluates
+RiskEvaluationService ..> DetectionEvidence : evaluates
+```
+
+<p align="justify">
+Los siguientes conceptos no deben aparecer como clases de dominio propias dentro de Risk Detection:
+</p>
+
+- Measurement
+- Device
+- Building
+- Zone
+- Alert
+- Incident
+- Actuator
+
+<p align="justify">
+Sus identificadores pueden aparecer como referencias externas cuando el proceso de detección los requiera.
+</p>
+
+**DIAGRAMA — Risk Detection Domain Layer Class Diagram**
+
+ ![Risk Detection Domain Layer Class Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-domain-layer-class-diagram.png)
+
+<p align="center">
+  <strong>Figura 54. Risk Detection Domain Layer Class Diagram.</strong>
+</p>
+
+##### 4.2.2.6.2. Bounded Context Database Design Diagram
+
+<p align="justify">
+El Database Design de Risk Detection representa la persistencia requerida por el Bounded Context en los entornos de ejecución Cloud y Edge.
+</p>
+
+<p align="justify">
+La persistencia Cloud almacena las definiciones autoritativas de reglas de detección y el historial de detección persistido.
+</p>
+
+<p align="justify">
+La persistencia Edge almacena las réplicas locales de reglas de detección requeridas para la evaluación autónoma.
+</p>
+
+<p align="justify">
+El modelo de persistencia evita deliberadamente crear dependencias de claves foráneas hacia tablas pertenecientes a otros Bounded Contexts.
+</p>
+
+###### Persistencia Cloud
+
+###### `risk_detection_rules`
+
+<p align="justify">
+Almacena la configuración autoritativa de reglas de detección.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `rule_id` | UUID | PRIMARY KEY | Identificador único de la regla de detección. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Tipo de riesgo producido cuando se satisface la condición. |
+| `severity_code` | VARCHAR(50) | NOT NULL | Severidad asociada con la regla. |
+| `variable_type` | VARCHAR(100) | NOT NULL | Variable monitoreada evaluada por la regla. |
+| `comparison_operator` | VARCHAR(40) | NOT NULL | Operador de comparación aplicado al valor monitoreado. |
+| `threshold` | DECIMAL(12,4) | NOT NULL | Umbral cuantitativo utilizado por la condición. |
+| `status` | VARCHAR(20) | NOT NULL | Estado actual de la regla (ACTIVE o INACTIVE). |
+
+<p align="justify">
+DetectionCondition, RiskType y SeverityLevel son Value Objects y, por lo tanto, sus valores persistentes se integran en el registro de la regla de detección en lugar de modelarse como tablas de agregados independientes.
+</p>
+
+###### `risk_detections`
+
+<p align="justify">
+Almacena las detecciones de riesgo persistidas recibidas desde el flujo distribuido de Edge.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `risk_detection_id` | UUID | PRIMARY KEY | Identificador único del riesgo detectado. |
+| `rule_id` | UUID | NOT NULL, FOREIGN KEY | Referencia `risk_detection_rules.rule_id`. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Tipo de riesgo identificado en el momento de la detección. |
+| `current_severity_code` | VARCHAR(50) | NOT NULL | Severidad actual de la detección. |
+| `building_id` | UUID | NULL | Referencia externa a Building cuando puede resolverse la ubicación. |
+| `zone_id` | UUID | NULL | Referencia externa a Zone cuando puede resolverse la ubicación. |
+| `location_status` | VARCHAR(20) | NOT NULL | Indica si se resolvió la ubicación de la detección. |
+| `detected_at` | TIMESTAMP | NOT NULL | Momento original de detección. |
+
+<p align="justify">
+building_id y zone_id se mantienen intencionalmente sin claves foráneas hacia tablas pertenecientes a otros Bounded Contexts.
+</p>
+
+###### `risk_detection_evidence`
+
+<p align="justify">
+Almacena la evidencia monitoreada asociada con cada detección de riesgo persistida.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `risk_detection_id` | UUID | PRIMARY KEY, FOREIGN KEY | Referencia `risk_detections.risk_detection_id`. |
+| `measurement_id` | UUID | PRIMARY KEY | Identificador externo de la medición monitoreada. |
+| `device_id` | UUID | NOT NULL | Identificador externo del dispositivo de origen. |
+| `variable_type` | VARCHAR(100) | NOT NULL | Variable monitoreada representada por la evidencia. |
+| `measured_value` | DECIMAL(12,4) | NOT NULL | Valor utilizado durante la evaluación. |
+| `measured_at` | TIMESTAMP | NOT NULL | Momento original de medición. |
+
+<p align="justify">
+La clave primaria compuesta:
+</p>
+
+`(risk_detection_id, measurement_id)`
+
+<p align="justify">
+impide que la misma evidencia monitoreada se asocie más de una vez con la misma detección de riesgo.
+</p>
+
+<p align="justify">
+measurement_id y device_id son referencias externas y, por lo tanto, no crean relaciones directas de propiedad en la base de datos con la persistencia de Monitoring o Device.
+</p>
+
+###### `risk_severity_changes`
+
+<p align="justify">
+Almacena las transiciones de severidad asociadas con las detecciones de riesgo persistidas.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `severity_change_id` | UUID | PRIMARY KEY | Identificador único de la entidad de cambio de severidad. |
+| `risk_detection_id` | UUID | NOT NULL, FOREIGN KEY | Referencia `risk_detections.risk_detection_id`. |
+| `previous_severity_code` | VARCHAR(50) | NOT NULL | Severidad anterior al cambio. |
+| `new_severity_code` | VARCHAR(50) | NOT NULL | Severidad posterior al cambio. |
+| `changed_at` | TIMESTAMP | NOT NULL | Momento en el que ocurrió el cambio de severidad. |
+
+<p align="justify">
+Esta tabla preserva la trazabilidad requerida cuando cambia la severidad de un riesgo.
+</p>
+
+###### Persistencia Edge
+
+###### `edge_detection_rules`
+
+<p align="justify">
+Almacena la representación de reglas de detección requerida para la evaluación local en la base de datos SQLite de Edge.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `rule_id` | UUID | PRIMARY KEY | Identificador de la regla de detección de Cloud representada localmente. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Tipo de riesgo producido por la regla. |
+| `severity_code` | VARCHAR(50) | NOT NULL | Severidad asociada con la regla. |
+| `variable_type` | VARCHAR(100) | NOT NULL | Variable monitoreada evaluada localmente. |
+| `comparison_operator` | VARCHAR(40) | NOT NULL | Operador de comparación utilizado por la condición local. |
+| `threshold` | DECIMAL(12,4) | NOT NULL | Umbral cuantitativo utilizado para la evaluación. |
+| `status` | VARCHAR(20) | NOT NULL | Estado actual de la regla local. |
+
+<p align="justify">
+Esta tabla no es una fuente independiente de propiedad de las reglas. Es la representación local de Edge requerida para que las reglas críticas puedan seguir evaluándose sin conectividad permanente con Cloud.
+</p>
+
+<p align="justify">
+La implementación de persistencia Edge debe utilizar SQLite con Peewee ORM, de acuerdo con la tecnología de Edge Services requerida por el enunciado del proyecto.
+</p>
+
+<p align="justify">
+Conceptualmente, las relaciones internas de Cloud son:
+</p>
+
+```text
+risk_detection_rules
+        |
+        | 1
+        |
+        | 0..*
+        v
+risk_detections
+        |
+        +------------------------+
+        |                        |
+        | 1                      | 1
+        |                        |
+        | 1..*                   | 0..*
+        v                        v
+risk_detection_evidence    risk_severity_changes
+```
+
+<p align="justify">
+El Database Design Diagram final debe distinguir claramente:
+</p>
+
+- Persistencia Cloud
+  - `risk_detection_rules`
+  - `risk_detections`
+  - `risk_detection_evidence`
+  - `risk_severity_changes`
+
+- Edge SQLite
+  - `edge_detection_rules`
+
+<p align="justify">
+El diagrama debe identificar:
+</p>
+
+- todas las tablas;
+- todas las columnas;
+- las claves primarias;
+- las claves foráneas;
+- las claves compuestas;
+- las referencias externas que admiten valores nulos;
+- las cardinalidades;
+- los límites de persistencia de Cloud y Edge.
+
+<p align="justify">
+No debe introducirse ninguna tabla de base de datos para Alert, Incident, Device, Measurement, Building, Zone, Actuator o eventos pendientes de Connectivity dentro de los límites de persistencia de Risk Detection.
+</p>
+
+**DIAGRAMA — Risk Detection Database Design Diagram**
+
+![Risk Detection Database Design Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-database-design-diagram.png)
+
+<p align="center">
+  <strong>Figura 55. Risk Detection Database Design Diagram.</strong>
+</p>
+
+### 4.2.3. Bounded Context: Alert & Response Management
+
+<p align="justify">
+El Bounded Context <strong>Alert & Response Management</strong> es responsable de gestionar la generación y comunicación de alertas, la configuración de políticas de respuesta, la autorización de acciones sensibles y la coordinación de las acciones que deben ejecutarse cuando ResQ recibe información sobre un riesgo detectado.
+</p>
+
+<p align="justify">
+Este Bounded Context atiende las necesidades de comunicación y respuesta de la plataforma, asegurando que una situación de riesgo pueda ser informada a los responsables correspondientes y que las acciones asociadas se ejecuten de acuerdo con las políticas previamente configuradas. Algunas respuestas pueden estar autorizadas para ejecutarse automáticamente, mientras que otras requieren una decisión explícita de un usuario autorizado antes de continuar.
+</p>
+
+<p align="justify">
+Sus responsabilidades se derivan principalmente de los requisitos relacionados con la generación de alertas, la ejecución de respuestas automáticas, la autorización humana de acciones de alto impacto, la trazabilidad de las respuestas realizadas y la continuidad de determinadas funciones críticas cuando no existe conexión con los servicios Cloud.
+</p>
+
+<p align="justify">
+El Bounded Context Alert & Response Management soporta principalmente <strong>US10 — Recibir una alerta de riesgo</strong>, <strong>US11 — Ejecutar una respuesta automática autorizada</strong>, <strong>US12 — Confirmar una acción de alto impacto</strong>, <strong>US13 — Conocer las respuestas ejecutadas</strong>, <strong>US25 — Configurar una política de respuesta</strong>, <strong>US28 — Mantener funciones críticas sin Internet</strong>, <strong>TS04 — Ejecutar comandos de actuadores localmente</strong> y <strong>TS05 — Integrar un servicio externo de notificaciones</strong>.
+</p>
+
+<p align="justify">
+Alert & Response Management no determina si existe un riesgo ni realiza su clasificación. Esa responsabilidad pertenece al Bounded Context <strong>Risk Detection</strong>, que proporciona la información necesaria para iniciar el flujo de alerta y respuesta.
+</p>
+
+<p align="justify">
+Asimismo, este Bounded Context no administra el catálogo ni el ciclo de vida de los dispositivos y sus capacidades, no gestiona edificios o zonas, no mantiene las identidades y permisos de los usuarios, no controla el ciclo de vida completo de los incidentes y no administra las colas, reintentos o mecanismos de sincronización utilizados durante una pérdida de conectividad. Estas responsabilidades pertenecen respectivamente a otros Bounded Contexts como <strong>Device Management</strong>, <strong>Building Management</strong>, <strong>IAM</strong>, <strong>User</strong>, <strong>Incident</strong> y <strong>Connectivity</strong>.
+</p>
+
+<p align="justify">
+Alert & Response Management utiliza únicamente las referencias externas necesarias para realizar sus funciones. Por ejemplo, puede conservar identificadores como <code>riskDetectionId</code>, <code>targetDeviceId</code>, <code>buildingId</code>, <code>zoneId</code>, <code>recipientUserId</code> o <code>decidedByUserId</code>, pero no reproduce dentro de su modelo los agregados completos pertenecientes a otros Bounded Contexts.
+</p>
+
+<p align="justify">
+Las principales responsabilidades de este Bounded Context son:
+</p>
+
+- Generar una alerta a partir de una situación de riesgo previamente detectada.
+- Conservar el contexto necesario para comunicar el tipo, severidad y ubicación del riesgo.
+- Identificar a los responsables que deben recibir una alerta.
+- Solicitar la entrega de notificaciones mediante los canales externos disponibles.
+- Registrar el resultado de los intentos de entrega de una notificación.
+- Configurar políticas que definan las respuestas asociadas con determinados riesgos.
+- Determinar qué acciones configuradas son aplicables ante un riesgo detectado.
+- Distinguir entre acciones autorizadas para ejecución automática y acciones que requieren autorización humana.
+- Mantener pendiente una acción sensible hasta que un usuario autorizado tome una decisión.
+- Impedir la ejecución de una acción cuando esta ha sido rechazada.
+- Coordinar la ejecución local de acciones sobre capacidades de actuación de los dispositivos.
+- Registrar si una respuesta fue ejecutada correctamente o si terminó con un error.
+- Mantener la trazabilidad entre el riesgo detectado, la política aplicada, la autorización realizada y el resultado de la respuesta.
+- Mantener disponibles en el entorno Edge las políticas necesarias para ejecutar respuestas críticas automáticas durante una interrupción temporal de Internet.
+- Mantener el modelo de alertas y respuestas independiente de los modelos administrados por Risk Detection, Device Management, IAM, User, Building Management, Incident y Connectivity.
+
+<p align="justify">
+Los principales conceptos identificados para el Bounded Context Alert & Response Management son <code>Alert</code>, <code>AlertContext</code>, <code>ResponsePolicy</code>, <code>ResponseAction</code>, <code>ResponseExecution</code>, <code>ResponseAuthorization</code>, <code>NotificationDelivery</code> y <code>ExecutionResult</code>.
+</p>
+
+#### Diccionario de clases
+
+<p align="justify">
+La siguiente tabla resume las principales clases e interfaces que conforman el Bounded Context Alert & Response Management.
+</p>
+
+| Clase / Interfaz | Capa | Propósito | Atributos principales | Operaciones principales | Relaciones principales |
+|---|---|---|---|---|---|
+| `Alert` | Domain | Representa una alerta generada a partir de un riesgo detectado. Es el Aggregate Root responsable de conservar el contexto comunicado y los intentos de notificación asociados. | `alertId: UUID`, `organizationId: UUID`, `context: AlertContext`, `generatedAt: Instant`, `deliveries: List<NotificationDelivery>` | `addDelivery(delivery)`, `registerDeliveryResult(deliveryId, result)` | Compone `AlertContext`; posee `NotificationDelivery`. |
+| `AlertContext` | Domain | Value Object que conserva la información mínima del riesgo necesaria para comunicar una alerta sin reproducir el modelo de Risk Detection. | `riskDetectionId: UUID`, `riskTypeCode: String`, `severityCode: String`, `buildingId: UUID?`, `zoneId: UUID?`, `detectedAt: Instant` | — | Compuesto por `Alert`; utiliza referencias externas de Risk Detection y Building Management. |
+| `NotificationDelivery` | Domain | Representa un intento de entregar una alerta a un usuario responsable mediante un canal de notificación. | `deliveryId: UUID`, `recipientUserId: UUID`, `channel: String`, `destination: String`, `status: NotificationDeliveryStatus`, `requestedAt: Instant`, `completedAt: Instant?`, `failureReason: String?` | `markDelivered(at)`, `markFailed(reason, at)` | Pertenece a `Alert`; utiliza `NotificationDeliveryStatus` y referencia externamente a un usuario. |
+| `ResponsePolicy` | Domain | Aggregate Root que representa una política configurada para determinar qué acciones pueden realizarse ante un tipo de riesgo. | `policyId: UUID`, `organizationId: UUID`, `riskTypeCode: String`, `status: ResponsePolicyStatus`, `actions: List<ResponseAction>`, `version: long` | `addAction(action)`, `replaceActions(actions)`, `activate()`, `deactivate()`, `isActive()` | Posee `0..*` `ResponseAction`; para activarse debe contener al menos una acción válida; utiliza `ResponsePolicyStatus`. La versión permite ordenar las actualizaciones distribuidas hacia Edge y evitar aplicar réplicas antiguas. |
+| `ResponseAction` | Domain | Representa una acción configurada dentro de una política de respuesta y el dispositivo o capacidad sobre la cual debe ejecutarse. | `actionId: UUID`, `actionCode: String`, `targetDeviceId: UUID`, `targetCapabilityCode: String`, `authorizationMode: AuthorizationMode`, `critical: boolean` | `requiresAuthorization()`, `canExecuteAutomatically()` | Pertenece a `ResponsePolicy`; utiliza `AuthorizationMode`; referencia externamente un Device. |
+| `ResponseExecution` | Domain | Aggregate Root que representa un intento concreto de ejecutar una acción de respuesta asociada con un riesgo detectado. | `responseExecutionId: UUID`, `organizationId: UUID`, `riskDetectionId: UUID`, `policyId: UUID`, `action: ResponseActionSnapshot`, `status: ResponseExecutionStatus`, `requestedAt: Instant`, `authorization: ResponseAuthorization?`, `result: ExecutionResult?` | `requestAuthorization()`, `authorize(userId, decidedAt)`, `reject(userId, decidedAt)`, `markExecutionRequested()`, `complete(result)` | Compone `ResponseActionSnapshot` y `ExecutionResult`; puede poseer `ResponseAuthorization`; utiliza `ResponseExecutionStatus`. |
+| `ResponseActionSnapshot` | Domain | Value Object que conserva la definición de la acción utilizada al crear una ejecución para evitar que cambios posteriores en la política modifiquen su historial. | `actionId: UUID`, `actionCode: String`, `targetDeviceId: UUID`, `targetCapabilityCode: String`, `authorizationMode: AuthorizationMode`, `critical: boolean` | `requiresAuthorization()` | Compuesto por `ResponseExecution`; utiliza `AuthorizationMode`. |
+| `ResponseAuthorization` | Domain | Representa la decisión realizada por un usuario autorizado cuando una acción requiere confirmación humana. | `authorizationId: UUID`, `decision: AuthorizationDecision`, `decidedByUserId: UUID`, `decidedAt: Instant` | — | Pertenece a `ResponseExecution`; utiliza `AuthorizationDecision`; referencia externamente un User. |
+| `ExecutionResult` | Domain | Value Object que representa el resultado final de un intento de ejecutar una acción. | `successful: boolean`, `resultCode: String`, `message: String?`, `completedAt: Instant` | `isSuccessful()` | Compuesto por `ResponseExecution`. |
+| `ResponsePolicyStatus` | Domain | Enumeración que indica si una política puede participar en la evaluación de respuestas. | `ACTIVE`, `INACTIVE` | — | Utilizada por `ResponsePolicy`. |
+| `AuthorizationMode` | Domain | Enumeración que determina si una acción puede ejecutarse automáticamente o requiere confirmación humana. | `AUTOMATIC`, `HUMAN_REQUIRED` | — | Utilizada por `ResponseAction` y `ResponseActionSnapshot`. |
+| `AuthorizationDecision` | Domain | Enumeración que representa la decisión realizada sobre una acción pendiente de autorización. | `APPROVED`, `REJECTED` | — | Utilizada por `ResponseAuthorization`. |
+| `ResponseExecutionStatus` | Domain | Enumeración que representa el estado actual de una ejecución de respuesta. | `PENDING`, `PENDING_AUTHORIZATION`, `AUTHORIZED`, `EXECUTION_REQUESTED`, `SUCCEEDED`, `FAILED`, `REJECTED` | — | Utilizada por `ResponseExecution`. |
+| `NotificationDeliveryStatus` | Domain | Enumeración que representa el estado de un intento de entrega de una notificación. | `PENDING`, `DELIVERED`, `FAILED` | — | Utilizada por `NotificationDelivery`. |
+| `AlertRepository` | Domain | Abstracción de repositorio utilizada para recuperar y persistir agregados `Alert` sin depender de una tecnología específica. | — | `findById(alertId)`, `findByRiskDetectionId(riskDetectionId)`, `findByOrganizationId(organizationId, criteria)`, `save(alert)` | Persiste y recupera agregados `Alert`. |
+| `ResponsePolicyRepository` | Domain | Abstracción de repositorio utilizada para recuperar y persistir políticas de respuesta. | — | `findById(policyId)`, `findActiveByOrganizationAndRiskType(organizationId, riskTypeCode)`, `save(policy)` | Persiste y recupera agregados `ResponsePolicy`; dispone de implementaciones diferentes para Cloud y Edge. |
+| `ResponseExecutionRepository` | Domain | Abstracción de repositorio utilizada para conservar la trazabilidad y el estado de las ejecuciones de respuesta. | — | `findById(responseExecutionId)`, `findByRiskDetectionId(riskDetectionId)`, `findByOrganizationId(organizationId, criteria)`, `save(execution)` | Persiste y recupera agregados `ResponseExecution`; dispone de implementaciones Cloud y Edge. |
+| `ResponsePolicySelectionService` | Domain | Domain Service responsable de determinar las políticas y acciones activas aplicables a un riesgo detectado. | — | `selectApplicableActions(policies, riskTypeCode)` | Evalúa `ResponsePolicy` y sus acciones según el tipo de riesgo. |
+| `ResponseActionData` | Application | Representa los datos necesarios para configurar una acción dentro de una política. | `actionCode: String`, `targetDeviceId: UUID`, `targetCapabilityCode: String`, `authorizationMode: AuthorizationMode`, `critical: boolean` | — | Utilizada por `ConfigureResponsePolicyCommand` y `UpdateResponsePolicyCommand`. |
+| `ConfigureResponsePolicyCommand` | Application | Representa una solicitud para crear una nueva política de respuesta. | `organizationId: UUID`, `riskTypeCode: String`, `actions: List<ResponseActionData>` | — | Gestionado por `ConfigureResponsePolicyCommandHandler`. |
+| `ConfigureResponsePolicyCommandHandler` | Application | Coordina la creación de una política y valida las capacidades de actuación utilizadas por sus acciones. | Dependencias de `ResponsePolicyRepository`, `DeviceCapabilityGateway`, `ResponsePolicyDistributor` | `handle(command)` | Crea `ResponsePolicy`, valida sus acciones y solicita su distribución. |
+| `UpdateResponsePolicyCommand` | Application | Representa una solicitud para modificar la configuración de una política existente. | `policyId: UUID`, `organizationId: UUID`, `riskTypeCode: String`, `actions: List<ResponseActionData>` | — | Gestionado por `UpdateResponsePolicyCommandHandler`. |
+| `UpdateResponsePolicyCommandHandler` | Application | Coordina la modificación de una política existente y la distribución de su nueva versión. | Dependencias de `ResponsePolicyRepository`, `DeviceCapabilityGateway`, `ResponsePolicyDistributor` | `handle(command)` | Modifica `ResponsePolicy`, incrementa su versión y solicita su distribución hacia Edge. |
+| `ChangeResponsePolicyStatusCommand` | Application | Representa una solicitud para activar o desactivar una política existente. | `policyId: UUID`, `organizationId: UUID`, `active: boolean` | — | Gestionado por `ChangeResponsePolicyStatusCommandHandler`. |
+| `ChangeResponsePolicyStatusCommandHandler` | Application | Coordina la activación o desactivación de una política y propaga el nuevo estado hacia Edge. | Dependencias de `ResponsePolicyRepository`, `DeviceCapabilityGateway`, `ResponsePolicyDistributor` | `handle(command)` | Modifica `ResponsePolicy` y solicita su distribución. |
+| `GetResponsePolicyQuery` | Application | Representa una solicitud para consultar una política determinada dentro de una organización. | `policyId: UUID`, `organizationId: UUID` | — | Gestionada por `GetResponsePolicyQueryHandler`. |
+| `GetResponsePolicyQueryHandler` | Application | Recupera una política y verifica que corresponda al ámbito organizacional solicitado. | Dependencia de `ResponsePolicyRepository` | `handle(query)` | Consulta `ResponsePolicy`. |
+| `GetAlertQuery` | Application | Representa una solicitud para consultar una alerta determinada dentro de una organización. | `alertId: UUID`, `organizationId: UUID` | — | Gestionada por `GetAlertQueryHandler`. |
+| `GetAlertQueryHandler` | Application | Recupera una alerta junto con la información de sus intentos de notificación. | Dependencia de `AlertRepository` | `handle(query)` | Consulta `Alert`. |
+| `GetAlertsQuery` | Application | Representa una solicitud para consultar alertas pertenecientes a una organización utilizando filtros opcionales. | `organizationId: UUID`, `buildingId: UUID?`, `zoneId: UUID?`, `riskTypeCode: String?`, `from: Instant?`, `to: Instant?` | — | Gestionada por `GetAlertsQueryHandler`. |
+| `GetAlertsQueryHandler` | Application | Coordina la consulta de múltiples alertas dentro del ámbito de una organización. | Dependencia de `AlertRepository` | `handle(query)` | Consulta agregados `Alert` según los criterios solicitados. |
+| `GetResponseExecutionQuery` | Application | Representa una solicitud para consultar una ejecución de respuesta determinada dentro de una organización. | `responseExecutionId: UUID`, `organizationId: UUID` | — | Gestionada por `GetResponseExecutionQueryHandler`. |
+| `GetResponseExecutionQueryHandler` | Application | Recupera una ejecución junto con su autorización y resultado cuando existan. | Dependencia de `ResponseExecutionRepository` | `handle(query)` | Consulta `ResponseExecution`. |
+| `GetResponseExecutionsQuery` | Application | Representa una solicitud para consultar la trazabilidad de múltiples ejecuciones dentro de una organización. | `organizationId: UUID`, `riskDetectionId: UUID?`, `status: ResponseExecutionStatus?`, `from: Instant?`, `to: Instant?` | — | Gestionada por `GetResponseExecutionsQueryHandler`. |
+| `GetResponseExecutionsQueryHandler` | Application | Coordina la consulta de ejecuciones de respuesta utilizando criterios de búsqueda. | Dependencia de `ResponseExecutionRepository` | `handle(query)` | Consulta múltiples `ResponseExecution`. |
+| `RiskDetectedEventHandler` | Application | Procesa la información sincronizada desde Risk Detection y coordina la creación y comunicación de la alerta correspondiente en Cloud. | Dependencias de `AlertRepository`, `AlertRecipientResolver`, `NotificationGateway` | `handle(event)` | Crea `Alert`, identifica destinatarios y solicita notificaciones. |
+| `LocalRiskDetectedEventHandler` | Application | Procesa localmente un riesgo detectado y coordina las respuestas configuradas en Edge. | Dependencias de `ResponsePolicyRepository`, `ResponseExecutionRepository`, `ResponsePolicySelectionService`, `ActuatorCommandGateway`, `AlertResponseEventPublisher` | `handle(event)` | Evalúa políticas locales, crea `ResponseExecution` y ejecuta o solicita autorización para cada acción aplicable. |
+| `UpdateLocalResponsePolicyEventHandler` | Application | Coordina la actualización de una réplica local de `ResponsePolicy` en Edge. | Dependencia de `ResponsePolicyRepository` | `handle(event)` | Aplica una actualización únicamente cuando su versión es posterior a la almacenada localmente. |
+| `ResponseAuthorizationRequestReceivedEventHandler` | Application | Registra en Cloud una `ResponseExecution` originada en Edge que requiere autorización humana. | Dependencia de `ResponseExecutionRepository` | `handle(event)` | Reconstruye y persiste la ejecución con estado `PENDING_AUTHORIZATION`. |
+| `DecideResponseAuthorizationCommand` | Application | Representa la decisión de un usuario autorizado sobre una ejecución pendiente. | `responseExecutionId: UUID`, `organizationId: UUID`, `decision: AuthorizationDecision` | — | Gestionado por `DecideResponseAuthorizationCommandHandler`. |
+| `DecideResponseAuthorizationCommandHandler` | Application | Coordina la aprobación o rechazo de una respuesta que requiere intervención humana. | Dependencias de `ResponseExecutionRepository` y `ResponseAuthorizationDistributor` | `handle(command)` | Registra la decisión y solicita su distribución hacia Edge. |
+| `ResponseAuthorizationDecisionEventHandler` | Application | Procesa en Edge una decisión de autorización recibida desde Cloud. | Dependencias de `ResponseExecutionRepository`, `ActuatorCommandGateway`, `AlertResponseEventPublisher` | `handle(event)` | Ejecuta la acción cuando la decisión es `APPROVED` o finaliza la ejecución sin actuar cuando es `REJECTED`. |
+| `ResponseExecutionResultReceivedEventHandler` | Application | Registra en Cloud el resultado de una ejecución realizada en Edge. | Dependencia de `ResponseExecutionRepository` | `handle(event)` | Registra o actualiza la `ResponseExecution` y conserva su resultado final. |
+| `NotificationTarget` | Application | Representa la información mínima necesaria para intentar entregar una alerta a un destinatario mediante un canal determinado. | `recipientUserId: UUID`, `channel: String`, `destination: String` | — | Devuelto por `AlertRecipientResolver` y utilizado por `NotificationGateway`. |
+| `NotificationSendResult` | Application | Representa el resultado obtenido al intentar entregar una notificación mediante un proveedor externo. | `successful: boolean`, `completedAt: Instant`, `failureReason: String?` | — | Devuelto por `NotificationGateway` y utilizado para actualizar `NotificationDelivery`. |
+| `NotificationGateway` | Application | Abstracción utilizada para solicitar la entrega de notificaciones mediante un proveedor externo. | — | `send(alert, target): NotificationSendResult` | Utilizada por `RiskDetectedEventHandler`; implementada por `NotificationServiceAdapter`. |
+| `AlertRecipientResolver` | Application | Abstracción utilizada para identificar los destinatarios y canales correspondientes para una alerta. | — | `resolve(alertContext): List<NotificationTarget>` | Implementada mediante integración con User/IAM. |
+| `DeviceCapabilityGateway` | Application | Abstracción utilizada para validar que el dispositivo objetivo posee la capacidad de actuación requerida por una política. | — | `validateActuationCapability(deviceId, capabilityCode)` | Implementada mediante integración con Device Management. |
+| `ResponsePolicyDistributor` | Application | Abstracción utilizada para distribuir hacia Edge las políticas necesarias para la operación local. | — | `distribute(policy)` | Implementada por `ResponsePolicyDistributionAdapter`. |
+| `ResponseAuthorizationDistributor` | Application | Abstracción utilizada para distribuir hacia Edge una decisión humana sobre una respuesta pendiente. | — | `distributeDecision(execution)` | Implementada por `ResponseAuthorizationDistributionAdapter`. |
+| `ActuatorCommandGateway` | Application | Abstracción utilizada en Edge para solicitar la ejecución física de una acción. | — | `execute(action): ExecutionResult` | Implementada por `ActuatorCommandAdapter`. |
+| `AlertResponseEventPublisher` | Application | Abstracción utilizada para publicar solicitudes de autorización y resultados de ejecución producidos en Edge. | — | `publish(event)` | Implementada por `AlertResponseEventPublisherAdapter`. |
+| `ResponsePolicyController` | Interface | Recibe solicitudes autorizadas para crear, modificar, consultar y cambiar el estado de políticas de respuesta. | Dependencia de manejadores de comandos y consultas | `configure(request)`, `update(policyId, request)`, `changeStatus(policyId, request)`, `getById(policyId)` | Delega las operaciones a la Application Layer. |
+| `AlertController` | Interface | Expone las alertas registradas a los clientes autorizados de ResQ. | Dependencia de manejadores de consulta | `getById(alertId)`, `getAlerts(request)` | Delega consultas a `GetAlertQueryHandler` y `GetAlertsQueryHandler`. |
+| `ResponseExecutionController` | Interface | Expone la trazabilidad de respuestas y recibe decisiones de autorización humana. | Dependencias de manejadores de consulta y autorización | `getById(responseExecutionId)`, `getExecutions(request)`, `decideAuthorization(responseExecutionId, request)` | Delega las operaciones a la Application Layer. |
+| `RiskDetectedEventConsumer` | Interface | Recibe en Cloud información de riesgos detectados proveniente del flujo distribuido de Risk Detection. | Dependencia de `RiskDetectedEventHandler` | `consume(event)` | Delega el evento a `RiskDetectedEventHandler`. |
+| `LocalRiskDetectedConsumer` | Interface | Recibe en Edge eventos de riesgo generados localmente para iniciar el flujo de respuesta sin depender de Cloud. | Dependencia de `LocalRiskDetectedEventHandler` | `consume(event)` | Delega el evento al Application Layer de Edge. |
+| `ResponsePolicyReplicaConsumer` | Interface | Recibe en Edge actualizaciones de políticas distribuidas desde Cloud. | Dependencia de `UpdateLocalResponsePolicyEventHandler` | `consume(policyUpdate)` | Delega la actualización de la réplica local. |
+| `ResponseAuthorizationRequestConsumer` | Interface | Recibe en Cloud solicitudes de autorización originadas por una ejecución local en Edge. | Dependencia de `ResponseAuthorizationRequestReceivedEventHandler` | `consume(event)` | Permite registrar en Cloud la ejecución pendiente de autorización. |
+| `ResponseAuthorizationDecisionConsumer` | Interface | Recibe en Edge una decisión `APPROVED` o `REJECTED` previamente registrada en Cloud. | Dependencia de `ResponseAuthorizationDecisionEventHandler` | `consume(event)` | Continúa o finaliza la ejecución local según la decisión recibida. |
+| `ResponseExecutionResultConsumer` | Interface | Recibe en Cloud resultados de acciones ejecutadas en Edge. | Dependencia de `ResponseExecutionResultReceivedEventHandler` | `consume(event)` | Delega el registro de la trazabilidad final de la ejecución. |
+| `AlertRepositoryAdapter` | Infrastructure | Implementa `AlertRepository` utilizando la persistencia seleccionada para los servicios Cloud de ResQ. | Dependencia de persistencia | `findById()`, `findByRiskDetectionId()`, `findByOrganizationId()`, `save()` | Implementa `AlertRepository`. |
+| `ResponsePolicyRepositoryAdapter` | Infrastructure | Implementa la persistencia Cloud de las políticas y sus acciones. | Dependencia de persistencia | `findById()`, `findActiveByOrganizationAndRiskType()`, `save()` | Implementa `ResponsePolicyRepository`. |
+| `ResponseExecutionRepositoryAdapter` | Infrastructure | Implementa en Cloud la persistencia de ejecuciones, autorizaciones y resultados. | Dependencia de persistencia | `findById()`, `findByRiskDetectionId()`, `findByOrganizationId()`, `save()` | Implementa `ResponseExecutionRepository`. |
+| `NotificationServiceAdapter` | Infrastructure | Implementa la entrega de notificaciones utilizando el servicio externo seleccionado por ResQ. | Dependencia de servicio externo | `send()` | Implementa `NotificationGateway`. |
+| `AlertRecipientIntegrationAdapter` | Infrastructure | Obtiene la información mínima necesaria para identificar destinatarios y canales sin transferir la propiedad de User o IAM al Bounded Context. | Dependencia de integración | `resolve()` | Implementa `AlertRecipientResolver`. |
+| `DeviceCapabilityIntegrationAdapter` | Infrastructure | Consulta Device Management para validar la capacidad de actuación utilizada por una política. | Dependencia de integración | `validateActuationCapability()` | Implementa `DeviceCapabilityGateway`. |
+| `ResponsePolicyDistributionAdapter` | Infrastructure | Distribuye las políticas de respuesta necesarias hacia el entorno Edge. | Dependencia de mensajería/integración | `distribute()` | Implementa `ResponsePolicyDistributor`. |
+| `ResponseAuthorizationDistributionAdapter` | Infrastructure | Distribuye hacia Edge las decisiones `APPROVED` o `REJECTED` correspondientes a respuestas pendientes. | Dependencia de mensajería/integración | `distributeDecision()` | Implementa `ResponseAuthorizationDistributor`. |
+| `EdgeResponsePolicyRepositoryAdapter` | Infrastructure | Implementa la persistencia local de políticas en Edge para permitir respuestas críticas sin conexión permanente a Cloud. | Peewee / SQLite | `findById()`, `findActiveByOrganizationAndRiskType()`, `save()` | Implementación Edge de `ResponsePolicyRepository`. |
+| `EdgeResponseExecutionRepositoryAdapter` | Infrastructure | Implementa la persistencia local de ejecuciones de respuesta, autorizaciones y resultados necesarios para conservar su estado durante la operación Edge. | Peewee / SQLite | `findById()`, `findByRiskDetectionId()`, `findByOrganizationId()`, `save()` | Implementación Edge de `ResponseExecutionRepository`. |
+| `ActuatorCommandAdapter` | Infrastructure | Traduce una acción de respuesta a la representación requerida por el flujo local encargado de controlar el actuador. | Dependencia de integración local | `execute()` | Implementa `ActuatorCommandGateway`. |
+| `AlertResponseEventPublisherAdapter` | Infrastructure | Publica solicitudes de autorización y resultados de acciones desde Edge hacia el flujo distribuido de ResQ. | Dependencia de mensajería/conectividad | `publish()` | Implementa `AlertResponseEventPublisher`. |
+
+<p align="justify">
+Las relaciones entre estas clases mantienen los límites del Bounded Context. <code>AlertContext</code> conserva únicamente la información necesaria de un riesgo detectado, como <code>riskDetectionId</code>, tipo, severidad y referencias de ubicación. El agregado completo <code>RiskDetection</code> no se reproduce dentro de Alert & Response Management.
+</p>
+
+<p align="justify">
+Del mismo modo, <code>ResponseAction</code> y <code>ResponseActionSnapshot</code> utilizan <code>targetDeviceId</code> y <code>targetCapabilityCode</code> para identificar el equipo y la capacidad sobre los que se debe actuar, pero la administración del dispositivo y sus capacidades continúa perteneciendo a <strong>Device Management</strong>.
+</p>
+
+<p align="justify">
+<code>NotificationDelivery</code> y <code>ResponseAuthorization</code> utilizan identificadores de usuario únicamente como referencias externas. Los perfiles de usuario, la autenticación, los roles y los permisos continúan siendo responsabilidad de <strong>User</strong> e <strong>IAM</strong>.
+</p>
+
+<p align="justify">
+Las políticas configuradas en Cloud pueden disponer de réplicas operativas en Edge mediante <code>EdgeResponsePolicyRepositoryAdapter</code>. Asimismo, las <code>ResponseExecution</code> originadas localmente pueden conservarse mediante <code>EdgeResponseExecutionRepositoryAdapter</code> para mantener su estado mientras esperan una autorización o completan una acción.
+</p>
+
+<p align="justify">
+Esta persistencia local no convierte al entorno Edge en una segunda fuente de propiedad de las políticas ni le asigna la responsabilidad de sincronización. Las colas de mensajes, reintentos y mecanismos de sincronización utilizados durante una pérdida de conectividad continúan perteneciendo a <strong>Connectivity</strong>.
+</p>
+
+<p align="justify">
+Finalmente, Alert & Response Management coordina la respuesta ante un riesgo, pero no administra el ciclo de vida completo del incidente. Esa responsabilidad permanece en el Bounded Context <strong>Incident</strong>.
+</p>
+
+---
+
+#### 4.2.3.1. Domain Layer
+
+<p align="justify">
+La <strong>Domain Layer</strong> contiene los conceptos, reglas y abstracciones de negocio que definen la gestión de alertas y respuestas dentro de ResQ. Esta capa no depende de HTTP, bases de datos, servicios externos de notificación, protocolos de comunicación con dispositivos ni frameworks de aplicación.
+</p>
+
+<p align="justify">
+Los principales Aggregate Roots son <code>Alert</code>, <code>ResponsePolicy</code> y <code>ResponseExecution</code>.
+</p>
+
+<p align="justify">
+Un <code>Alert</code> representa la comunicación generada a partir de un riesgo previamente detectado. Conserva el contexto necesario para informar qué ocurrió, dónde ocurrió y cuál era la severidad del riesgo en el momento en que se generó la alerta.
+</p>
+
+<p align="justify">
+Un <code>ResponsePolicy</code> representa la configuración que determina qué acciones pueden realizarse ante un determinado tipo de riesgo dentro de una organización. Durante su configuración, una política puede contener cero o más acciones de respuesta. Para encontrarse activa y participar en la evaluación de respuestas debe contener al menos una acción válida. Cada acción establece si puede ejecutarse automáticamente o si requiere autorización humana.
+</p>
+
+<p align="justify">
+Un <code>ResponseExecution</code> representa un intento concreto de ejecutar una de esas acciones. Conserva la acción utilizada, su estado, una posible decisión de autorización y el resultado final obtenido.
+</p>
+
+<p align="justify">
+Los identificadores <code>riskDetectionId</code>, <code>targetDeviceId</code>, <code>buildingId</code>, <code>zoneId</code>, <code>recipientUserId</code> y <code>decidedByUserId</code> actúan únicamente como referencias externas hacia otros Bounded Contexts. Alert & Response Management no administra los agregados correspondientes a riesgos, dispositivos, ubicaciones o usuarios.
+</p>
+
+##### Alert
+
+<p align="justify">
+<strong>Categoría:</strong> Aggregate Root.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar una alerta generada como consecuencia de un riesgo detectado y conservar la información necesaria para su comunicación a los responsables correspondientes.
+</p>
+
+**Atributos:**
+
+- `alertId: UUID` — Identificador único de la alerta.
+- `organizationId: UUID` — Organización dentro de la cual se produjo la alerta.
+- `context: AlertContext` — Información del riesgo que originó la alerta.
+- `generatedAt: Instant` — Momento en el que se generó la alerta.
+- `deliveries: List<NotificationDelivery>` — Intentos de notificación asociados con la alerta.
+
+**Operaciones:**
+
+- `addDelivery(delivery)` — Registra un nuevo intento de entrega de la alerta.
+- `registerDeliveryResult(deliveryId, result)` — Registra el resultado obtenido por un intento de notificación.
+
+<p align="justify">
+Una alerta puede tener varios intentos de entrega debido a que puede ser comunicada a distintos responsables o mediante diferentes canales.
+</p>
+
+<p align="justify">
+La generación de una alerta no implica que una notificación externa haya sido entregada correctamente. El estado de cada intento se conserva mediante <code>NotificationDelivery</code>.
+</p>
+
+##### AlertContext
+
+<p align="justify">
+<strong>Categoría:</strong> Value Object.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Conservar una instantánea de la información mínima necesaria para comprender el riesgo que originó una alerta.
+</p>
+
+**Atributos:**
+
+- `riskDetectionId: UUID` — Referencia externa a la detección que originó la alerta.
+- `riskTypeCode: String` — Tipo de riesgo identificado.
+- `severityCode: String` — Severidad del riesgo al momento de generar la alerta.
+- `buildingId: UUID?` — Referencia a la edificación cuando la ubicación se encuentra disponible.
+- `zoneId: UUID?` — Referencia a la zona cuando la ubicación se encuentra disponible.
+- `detectedAt: Instant` — Momento original en el que el riesgo fue detectado.
+
+<p align="justify">
+<code>AlertContext</code> no contiene un objeto <code>RiskDetection</code>, <code>Building</code> o <code>Zone</code>. Mantiene únicamente los valores y referencias necesarios para comunicar el evento y preservar su contexto histórico.
+</p>
+
+<p align="justify">
+Los cambios posteriores realizados en los modelos de Risk Detection o Building Management no modifican los valores almacenados previamente en un <code>AlertContext</code>.
+</p>
+
+##### NotificationDelivery
+
+<p align="justify">
+<strong>Categoría:</strong> Entity perteneciente a <code>Alert</code>.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar un intento de entrega de una alerta a un usuario responsable mediante un canal de notificación.
+</p>
+
+**Atributos:**
+
+- `deliveryId: UUID` — Identificador del intento de entrega.
+- `recipientUserId: UUID` — Referencia externa al usuario destinatario.
+- `destination: String` — Identificador requerido por el canal seleccionado para intentar la entrega de la notificación.
+- `status: NotificationDeliveryStatus` — Estado actual del intento.
+- `requestedAt: Instant` — Momento en que se solicitó la entrega.
+- `completedAt: Instant?` — Momento en que finalizó el intento.
+- `failureReason: String?` — Información del error cuando la entrega falla.
+
+**Operaciones:**
+
+- `markDelivered(at)` — Registra que la notificación fue entregada correctamente.
+- `markFailed(reason, at)` — Registra que el intento de entrega finalizó con error.
+
+<p align="justify">
+<code>recipientUserId</code> es únicamente una referencia externa. La información personal, roles y permisos del destinatario pertenecen a los Bounded Contexts User e IAM.
+</p>
+
+<p align="justify">
+Mientras el mecanismo externo no haya confirmado el resultado, la entrega puede permanecer en estado <code>PENDING</code>. Una notificación que haya fallado no debe registrarse como <code>DELIVERED</code>.
+</p>
+
+##### ResponsePolicy
+
+<p align="justify">
+<strong>Categoría:</strong> Aggregate Root.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar una política que define las acciones permitidas cuando se detecta un determinado tipo de riesgo dentro de una organización.
+</p>
+
+**Atributos:**
+
+- `policyId: UUID` — Identificador único de la política.
+- `organizationId: UUID` — Organización en la que se aplica la política.
+- `riskTypeCode: String` — Tipo de riesgo al que responde la política.
+- `status: ResponsePolicyStatus` — Estado actual de la política.
+- `actions: List<ResponseAction>` — Acciones configuradas dentro de la política.
+- `version: long` — Versión de la política utilizada para identificar actualizaciones y evitar aplicar en Edge una réplica anterior a la disponible localmente.
+
+**Operaciones:**
+
+- `addAction(action)` — Incorpora una acción válida a la política.
+- `replaceActions(actions)` — Sustituye las acciones configuradas por una nueva colección válida.
+- `activate()` — Activa la política cuando su configuración es válida.
+- `deactivate()` — Evita que la política participe en nuevas evaluaciones.
+- `isActive()` — Indica si la política puede ser utilizada actualmente.
+
+<p align="justify">
+Una política activa debe contener al menos una acción válida.
+</p>
+
+<p align="justify">
+Las acciones configuradas pueden ser automáticas o requerir autorización humana.
+</p>
+
+<p align="justify">
+Las políticas necesarias para las funciones críticas pueden disponer de una réplica local en Edge para permitir su evaluación durante una interrupción temporal de Internet.
+</p>
+
+<p align="justify">
+Una versión de política recibida en Edge no debe reemplazar una versión local más reciente.
+</p>
+
+##### ResponseAction
+
+<p align="justify">
+<strong>Categoría:</strong> Entity perteneciente a <code>ResponsePolicy</code>.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar una acción configurada que puede realizarse cuando la política a la que pertenece resulta aplicable.
+</p>
+
+**Atributos:**
+
+- `actionId: UUID` — Identificador de la acción dentro de la política.
+- `actionCode: String` — Código que identifica el tipo de acción.
+- `targetDeviceId: UUID` — Referencia externa al dispositivo que debe recibir la acción.
+- `targetCapabilityCode: String` — Capacidad de actuación requerida en el dispositivo.
+- `authorizationMode: AuthorizationMode` — Determina si la acción es automática o requiere autorización humana.
+- `critical: boolean` — Indica si la acción debe permanecer disponible para operación crítica local.
+
+**Operaciones:**
+
+- `requiresAuthorization()` — Indica si la acción necesita una decisión humana antes de ejecutarse.
+- `canExecuteAutomatically()` — Indica si la acción puede ejecutarse automáticamente cuando su política es aplicable.
+
+<p align="justify">
+<code>targetDeviceId</code> y <code>targetCapabilityCode</code> no convierten al dispositivo en parte de este agregado. La existencia del equipo y sus capacidades pertenece a Device Management.
+</p>
+
+##### ResponseExecution
+
+<p align="justify">
+<strong>Categoría:</strong> Aggregate Root.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar un intento concreto de ejecutar una acción de respuesta como consecuencia de un riesgo detectado.
+</p>
+
+**Atributos:**
+
+- `responseExecutionId: UUID` — Identificador único de la ejecución.
+- `organizationId: UUID` — Organización asociada con la ejecución.
+- `riskDetectionId: UUID` — Referencia externa a la detección que originó la respuesta.
+- `policyId: UUID` — Identificador de la política que determinó la respuesta.
+- `action: ResponseActionSnapshot` — Instantánea de la acción que debe ejecutarse.
+- `status: ResponseExecutionStatus` — Estado actual de la ejecución.
+- `requestedAt: Instant` — Momento en que se creó la ejecución.
+- `authorization: ResponseAuthorization?` — Decisión humana cuando la acción la requiere.
+- `result: ExecutionResult?` — Resultado final cuando la acción fue ejecutada.
+
+**Operaciones:**
+
+- `requestAuthorization()` — Coloca la ejecución en espera de una decisión humana.
+- `authorize(userId, decidedAt)` — Registra la autorización de la acción por un usuario autorizado.
+- `reject(userId, decidedAt)` — Registra el rechazo de la acción.
+- `markExecutionRequested()` — Registra que la ejecución física de la acción fue solicitada.
+- `complete(result)` — Registra el resultado final de la acción.
+
+<p align="justify">
+Una nueva <code>ResponseExecution</code> comienza en estado <code>PENDING</code>.
+</p>
+
+<p align="justify">
+Cuando la acción utiliza <code>AuthorizationMode.AUTOMATIC</code>, puede avanzar desde <code>PENDING</code> hacia <code>EXECUTION_REQUESTED</code> sin una autorización humana adicional.
+</p>
+
+<p align="justify">
+Cuando utiliza <code>AuthorizationMode.HUMAN_REQUIRED</code>, debe pasar de <code>PENDING</code> a <code>PENDING_AUTHORIZATION</code> antes de recibir una decisión.
+</p>
+
+<p align="justify">
+Una acción configurada con autorización humana no puede pasar a ejecución sin una decisión <code>APPROVED</code>.
+</p>
+
+<p align="justify">
+Una acción rechazada no puede ejecutarse posteriormente como parte de la misma <code>ResponseExecution</code>.
+</p>
+
+##### ResponseActionSnapshot
+
+<p align="justify">
+<strong>Categoría:</strong> Value Object.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Conservar la definición exacta de la acción utilizada al crear una ejecución de respuesta.
+</p>
+
+**Atributos:**
+
+- `actionId: UUID`
+- `actionCode: String`
+- `targetDeviceId: UUID`
+- `targetCapabilityCode: String`
+- `authorizationMode: AuthorizationMode`
+- `critical: boolean`
+
+**Operación:**
+
+- `requiresAuthorization()` — Indica si la acción almacenada requiere aprobación humana.
+
+<p align="justify">
+La instantánea evita que una modificación posterior de <code>ResponsePolicy</code> altere el significado histórico de una respuesta ya solicitada o ejecutada.
+</p>
+
+##### ResponseAuthorization
+
+<p align="justify">
+<strong>Categoría:</strong> Entity perteneciente a <code>ResponseExecution</code>.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar la decisión tomada por un usuario autorizado cuando una acción requiere intervención humana.
+</p>
+
+**Atributos:**
+
+- `authorizationId: UUID` — Identificador de la decisión.
+- `decision: AuthorizationDecision` — Resultado de la decisión.
+- `decidedByUserId: UUID` — Referencia externa al usuario que tomó la decisión.
+- `decidedAt: Instant` — Momento en el que se registró la decisión.
+
+<p align="justify">
+Una autorización está asociada con una única <code>ResponseExecution</code> y no puede reutilizarse para autorizar otra ejecución.
+</p>
+
+<p align="justify">
+<code>decidedByUserId</code> se mantiene únicamente como referencia. La autenticación y validación de permisos del usuario pertenecen a IAM.
+</p>
+
+##### ExecutionResult
+
+<p align="justify">
+<strong>Categoría:</strong> Value Object.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar el resultado obtenido después de intentar ejecutar físicamente una acción de respuesta.
+</p>
+
+**Atributos:**
+
+- `successful: boolean` — Indica si la acción terminó correctamente.
+- `resultCode: String` — Código que identifica el resultado obtenido.
+- `message: String?` — Información adicional sobre el resultado.
+- `completedAt: Instant` — Momento en que finalizó el intento.
+
+**Operación:**
+
+- `isSuccessful()` — Indica si la respuesta fue ejecutada satisfactoriamente.
+
+<p align="justify">
+El dominio distingue explícitamente entre una respuesta ejecutada correctamente y una respuesta cuyo intento terminó con error.
+</p>
+
+##### ResponsePolicyStatus
+
+<p align="justify">
+<strong>Categoría:</strong> Enumeración.
+</p>
+
+**Valores:**
+
+- `ACTIVE`
+- `INACTIVE`
+
+<p align="justify">
+Solo las políticas activas pueden participar en la selección de respuestas.
+</p>
+
+##### AuthorizationMode
+
+<p align="justify">
+<strong>Categoría:</strong> Enumeración.
+</p>
+
+**Valores:**
+
+- `AUTOMATIC`
+- `HUMAN_REQUIRED`
+
+<p align="justify">
+<code>AUTOMATIC</code> indica que la acción puede ejecutarse sin solicitar una decisión adicional cuando la política correspondiente resulta aplicable.
+</p>
+
+<p align="justify">
+<code>HUMAN_REQUIRED</code> indica que la acción debe permanecer pendiente hasta que un usuario autorizado la apruebe o rechace.
+</p>
+
+##### AuthorizationDecision
+
+<p align="justify">
+<strong>Categoría:</strong> Enumeración.
+</p>
+
+**Valores:**
+
+- `APPROVED`
+- `REJECTED`
+
+<p align="justify">
+Una decisión <code>APPROVED</code> permite continuar con la ejecución correspondiente.
+</p>
+
+<p align="justify">
+Una decisión <code>REJECTED</code> finaliza la solicitud sin ejecutar la acción.
+</p>
+
+##### ResponseExecutionStatus
+
+<p align="justify">
+<strong>Categoría:</strong> Enumeración.
+</p>
+
+**Valores:**
+
+- `PENDING`
+- `PENDING_AUTHORIZATION`
+- `AUTHORIZED`
+- `EXECUTION_REQUESTED`
+- `SUCCEEDED`
+- `FAILED`
+- `REJECTED`
+
+<p align="justify">
+<code>PENDING</code> representa una ejecución recién creada cuya siguiente transición todavía no ha sido procesada.
+</p>
+
+<p align="justify">
+Para una acción automática, el flujo principal es:
+</p>
+
+<p align="justify">
+<code>PENDING</code> → <code>EXECUTION_REQUESTED</code> → <code>SUCCEEDED</code> o <code>FAILED</code>.
+</p>
+
+<p align="justify">
+Para una acción que requiere intervención humana, el flujo principal es:
+</p>
+
+<p align="justify">
+<code>PENDING</code> → <code>PENDING_AUTHORIZATION</code> → <code>AUTHORIZED</code> → <code>EXECUTION_REQUESTED</code> → <code>SUCCEEDED</code> o <code>FAILED</code>.
+</p>
+
+<p align="justify">
+Cuando la decisión humana es negativa, el flujo finaliza en:
+</p>
+
+<p align="justify">
+<code>PENDING_AUTHORIZATION</code> → <code>REJECTED</code>.
+</p>
+
+<p align="justify">
+Estos estados permiten conservar la trazabilidad de una respuesta desde su creación hasta su resultado final.
+</p>
+
+##### NotificationDeliveryStatus
+
+<p align="justify">
+<strong>Categoría:</strong> Enumeración.
+</p>
+
+**Valores:**
+
+- `PENDING`
+- `DELIVERED`
+- `FAILED`
+
+<p align="justify">
+<code>PENDING</code> representa una entrega solicitada cuyo resultado todavía no ha sido confirmado.
+</p>
+
+<p align="justify">
+<code>DELIVERED</code> representa una entrega confirmada satisfactoriamente.
+</p>
+
+<p align="justify">
+<code>FAILED</code> representa un intento cuyo mecanismo de entrega confirmó que no pudo completarse correctamente.
+</p>
+
+##### AlertRepository
+
+<p align="justify">
+<strong>Categoría:</strong> Repository Interface.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Definir las operaciones necesarias para persistir y recuperar agregados <code>Alert</code> sin depender de una tecnología específica de almacenamiento.
+</p>
+
+**Operaciones:**
+
+- `findById(alertId)`
+- `findByRiskDetectionId(riskDetectionId)`
+- `findByOrganizationId(organizationId, criteria)`
+- `save(alert)`
+
+<p align="justify">
+Las consultas de múltiples alertas deben respetar el ámbito de la organización correspondiente.
+</p>
+
+##### ResponsePolicyRepository
+
+<p align="justify">
+<strong>Categoría:</strong> Repository Interface.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Definir las operaciones de persistencia necesarias para administrar políticas de respuesta tanto en Cloud como en su representación local en Edge.
+</p>
+
+**Operaciones:**
+
+- `findById(policyId)`
+- `findActiveByOrganizationAndRiskType(organizationId, riskTypeCode)`
+- `save(policy)`
+
+<p align="justify">
+El uso de <code>organizationId</code> evita que una política perteneciente a una organización sea aplicada a un riesgo correspondiente a otra.
+</p>
+
+<p align="justify">
+La misma abstracción puede disponer de diferentes implementaciones de Infrastructure para Cloud y Edge.
+</p>
+
+##### ResponseExecutionRepository
+
+<p align="justify">
+<strong>Categoría:</strong> Repository Interface.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Conservar y recuperar el estado y la trazabilidad de las ejecuciones de respuesta.
+</p>
+
+**Operaciones:**
+
+- `findById(responseExecutionId)`
+- `findByRiskDetectionId(riskDetectionId)`
+- `findByOrganizationId(organizationId, criteria)`
+- `save(execution)`
+
+<p align="justify">
+La persistencia incluye la acción utilizada, el estado de la ejecución, la autorización cuando corresponda y su resultado final.
+</p>
+
+<p align="justify">
+Esta abstracción puede disponer de implementaciones diferentes en Cloud y Edge. La implementación Edge permite conservar el estado de las ejecuciones locales, especialmente cuando una respuesta debe esperar una decisión humana.
+</p>
+
+##### ResponsePolicySelectionService
+
+<p align="justify">
+<strong>Categoría:</strong> Domain Service.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Determinar qué acciones de las políticas activas son aplicables al tipo de riesgo recibido.
+</p>
+
+**Operación:**
+
+- `selectApplicableActions(policies, riskTypeCode)`
+
+<p align="justify">
+El servicio únicamente considera las políticas activas previamente recuperadas para la organización y el tipo de riesgo correspondientes.
+</p>
+
+<p align="justify">
+La ejecución física de la acción no pertenece a este Domain Service. Esa coordinación se realiza desde la Application Layer mediante las abstracciones correspondientes.
+</p>
+
+##### Reglas de negocio
+
+<p align="justify">
+El dominio Alert & Response Management aplica las siguientes reglas de negocio:
+</p>
+
+1. Una alerta solo puede generarse a partir de información válida correspondiente a un riesgo previamente detectado.
+
+2. Toda alerta debe conservar el identificador de la detección, el tipo de riesgo, la severidad, el momento original de detección y, cuando se encuentre disponible, la ubicación asociada. El sistema no debe inventar una ubicación cuando esta no pueda determinarse.
+
+3. Cada intento de notificación debe estar asociado con una alerta y con un destinatario identificado.
+
+4. Una notificación solo puede registrarse como `DELIVERED` cuando el mecanismo de entrega confirma un resultado satisfactorio. Mientras no exista un resultado confirmado puede permanecer en `PENDING`, y cuando el mecanismo de entrega confirme un fallo debe registrarse como `FAILED`.
+
+5. Una política de respuesta debe contener al menos una acción válida antes de poder activarse.
+
+6. Una política con estado `INACTIVE` no debe participar en la selección de respuestas.
+
+7. Una política de respuesta solo puede aplicarse al tipo de riesgo y a la organización para los cuales fue configurada.
+
+8. Toda acción configurada debe referenciar una capacidad de actuación válida del dispositivo objetivo antes de que la política pueda utilizarse operativamente.
+
+9. Una acción configurada con `AUTOMATIC` puede ejecutarse sin una autorización humana adicional cuando la política correspondiente resulta aplicable.
+
+10. Una acción configurada con `HUMAN_REQUIRED` debe permanecer en estado `PENDING_AUTHORIZATION` hasta que un usuario autorizado tome una decisión.
+
+11. Una respuesta pendiente de autorización solo puede continuar hacia su ejecución cuando recibe una decisión `APPROVED`. Una decisión `REJECTED` impide la ejecución de la acción.
+
+12. Una autorización solo es válida para la `ResponseExecution` específica para la cual fue registrada.
+
+13. Toda ejecución debe conservar la acción utilizada, el dispositivo objetivo, el momento de solicitud, su estado y, cuando finalice, el resultado obtenido.
+
+14. Una modificación posterior de `ResponsePolicy` no debe alterar la información histórica almacenada en un `ResponseActionSnapshot`.
+
+15. Una actualización de `ResponsePolicy` recibida en Edge solo debe reemplazar la réplica almacenada cuando corresponda a una versión posterior.
+
+16. Las políticas necesarias para respuestas críticas automáticas deben mantenerse disponibles en el entorno Edge para permitir su ejecución durante una interrupción temporal de Internet. La pérdida de conectividad no debe convertir una acción `HUMAN_REQUIRED` en una acción `AUTOMATIC`.
+
+<p align="justify">
+Estas reglas permiten que Alert & Response Management mantenga la consistencia de las alertas, notificaciones, políticas, autorizaciones y ejecuciones de respuesta dentro de ResQ.
+</p>
+
+---
+
+#### 4.2.3.2. Interface Layer
+
+<p align="justify">
+La <strong>Interface Layer</strong> expone las capacidades del Bounded Context <strong>Alert & Response Management</strong> a las aplicaciones cliente y recibe información proveniente de otros componentes de la plataforma ResQ.
+</p>
+
+<p align="justify">
+Su responsabilidad es recibir solicitudes o eventos, validar su representación básica, transformarlos en Commands, Queries o mensajes de aplicación según corresponda, delegar su procesamiento a la Application Layer y convertir los resultados obtenidos en la representación esperada por el cliente o por el flujo distribuido.
+</p>
+
+<p align="justify">
+Las reglas de negocio no se implementan en esta capa.
+</p>
+
+<p align="justify">
+Debido a que Alert & Response Management participa tanto en Cloud como en Edge, la Interface Layer contiene diferentes componentes de entrada según el flujo que se esté procesando.
+</p>
+
+<p align="justify">
+Los principales componentes son <code>ResponsePolicyController</code>, <code>AlertController</code>, <code>ResponseExecutionController</code>, <code>RiskDetectedEventConsumer</code>, <code>LocalRiskDetectedConsumer</code>, <code>ResponsePolicyReplicaConsumer</code>, <code>ResponseAuthorizationRequestConsumer</code>, <code>ResponseAuthorizationDecisionConsumer</code> y <code>ResponseExecutionResultConsumer</code>.
+</p>
+
+##### ResponsePolicyController
+
+<p align="justify">
+<code>ResponsePolicyController</code> recibe en los servicios Cloud solicitudes autorizadas relacionadas con la configuración y administración de políticas de respuesta.
+</p>
+
+<p align="justify">
+Su principal responsabilidad es construir los Commands o Queries correspondientes a partir de la información recibida y delegar su ejecución a la Application Layer.
+</p>
+
+Ejemplos conceptuales de recursos REST:
+
+- `POST /api/v1/response-policies`
+- `GET /api/v1/response-policies/{policyId}`
+- `PUT /api/v1/response-policies/{policyId}`
+- `PATCH /api/v1/response-policies/{policyId}/status`
+
+<p align="justify">
+La información necesaria para crear o modificar una política puede incluir:
+</p>
+
+- el tipo de riesgo asociado;
+- las acciones de respuesta;
+- el dispositivo objetivo de cada acción;
+- la capacidad de actuación requerida;
+- el modo de autorización de cada acción;
+- la indicación de si la acción es crítica.
+
+<p align="justify">
+La creación de una política se delega a <code>ConfigureResponsePolicyCommandHandler</code>, mientras que su modificación se delega a <code>UpdateResponsePolicyCommandHandler</code>.
+</p>
+
+<p align="justify">
+El cambio de estado se delega a <code>ChangeResponsePolicyStatusCommandHandler</code> y la consulta de una política se procesa mediante <code>GetResponsePolicyQueryHandler</code>.
+</p>
+
+<p align="justify">
+El ámbito organizacional utilizado por estas operaciones debe obtenerse del contexto autorizado de la solicitud y no debe permitir que el cliente opere libremente sobre políticas pertenecientes a otra organización.
+</p>
+
+<p align="justify">
+El controlador no valida directamente las capacidades de los dispositivos, no aplica reglas de activación y no persiste políticas por cuenta propia.
+</p>
+
+##### AlertController
+
+<p align="justify">
+<code>AlertController</code> proporciona en Cloud acceso autorizado a las alertas generadas por ResQ.
+</p>
+
+Ejemplos conceptuales de recursos REST:
+
+- `GET /api/v1/alerts`
+- `GET /api/v1/alerts/{alertId}`
+
+<p align="justify">
+La consulta de múltiples alertas puede considerar criterios como:
+</p>
+
+- edificación;
+- zona;
+- tipo de riesgo;
+- periodo de generación.
+
+<p align="justify">
+La consulta de una alerta individual se delega a <code>GetAlertQueryHandler</code>, mientras que la consulta de múltiples alertas se delega a <code>GetAlertsQueryHandler</code>.
+</p>
+
+<p align="justify">
+El ámbito organizacional se obtiene del contexto autorizado de la solicitud para evitar que una consulta permita acceder a alertas pertenecientes a otra organización.
+</p>
+
+<p align="justify">
+El controlador no accede directamente a la base de datos ni modifica el estado de las alertas.
+</p>
+
+##### ResponseExecutionController
+
+<p align="justify">
+<code>ResponseExecutionController</code> permite consultar en Cloud la trazabilidad de las respuestas generadas por el sistema y registrar decisiones humanas sobre aquellas acciones que requieren autorización.
+</p>
+
+Ejemplos conceptuales de recursos REST:
+
+- `GET /api/v1/response-executions`
+- `GET /api/v1/response-executions/{responseExecutionId}`
+- `PATCH /api/v1/response-executions/{responseExecutionId}/authorization`
+
+<p align="justify">
+La consulta de múltiples ejecuciones puede considerar criterios como:
+</p>
+
+- riesgo detectado;
+- estado de la ejecución;
+- periodo de ejecución.
+
+<p align="justify">
+La consulta individual se delega a <code>GetResponseExecutionQueryHandler</code>, mientras que la consulta de múltiples ejecuciones se delega a <code>GetResponseExecutionsQueryHandler</code>.
+</p>
+
+<p align="justify">
+La operación de autorización permite registrar una decisión:
+</p>
+
+- `APPROVED`;
+- `REJECTED`.
+
+<p align="justify">
+La identidad del usuario que toma la decisión se obtiene del contexto autenticado de la solicitud y no debe ser proporcionada libremente por el cliente.
+</p>
+
+<p align="justify">
+Del mismo modo, el ámbito organizacional utilizado para la operación debe corresponder al contexto autorizado del usuario.
+</p>
+
+<p align="justify">
+El controlador construye un <code>DecideResponseAuthorizationCommand</code> y delega su procesamiento a <code>DecideResponseAuthorizationCommandHandler</code>.
+</p>
+
+<p align="justify">
+La operación debe encontrarse protegida mediante los mecanismos de autenticación y autorización proporcionados por IAM.
+</p>
+
+##### RiskDetectedEventConsumer
+
+<p align="justify">
+<code>RiskDetectedEventConsumer</code> recibe en Cloud información de riesgos detectados que ha sido sincronizada desde el flujo distribuido de Risk Detection.
+</p>
+
+<p align="justify">
+Su responsabilidad es validar la representación básica del mensaje recibido y delegarlo a <code>RiskDetectedEventHandler</code>.
+</p>
+
+<p align="justify">
+La información recibida debe permitir identificar, como mínimo, la organización, la detección de riesgo, el tipo de riesgo, la severidad, el momento de detección y las referencias de ubicación disponibles.
+</p>
+
+<p align="justify">
+Este componente permite iniciar el flujo de generación de alertas y notificaciones.
+</p>
+
+<p align="justify">
+El consumidor no vuelve a determinar si existe un riesgo, no modifica su severidad y no ejecuta reglas propias de Risk Detection.
+</p>
+
+##### LocalRiskDetectedConsumer
+
+<p align="justify">
+<code>LocalRiskDetectedConsumer</code> recibe en Edge los eventos de riesgo producidos localmente por Risk Detection.
+</p>
+
+<p align="justify">
+Su responsabilidad es validar la representación básica del evento y delegarlo a <code>LocalRiskDetectedEventHandler</code>.
+</p>
+
+<p align="justify">
+La información recibida debe permitir identificar la organización, la detección correspondiente y el tipo de riesgo necesario para seleccionar las políticas locales aplicables.
+</p>
+
+<p align="justify">
+Este flujo permite iniciar localmente la evaluación de respuestas sin realizar primero una solicitud a Cloud.
+</p>
+
+<p align="justify">
+El consumidor no decide qué política debe aplicarse ni ejecuta directamente los actuadores.
+</p>
+
+##### ResponsePolicyReplicaConsumer
+
+<p align="justify">
+<code>ResponsePolicyReplicaConsumer</code> recibe en Edge las actualizaciones de políticas de respuesta distribuidas desde Cloud.
+</p>
+
+<p align="justify">
+Cada actualización es delegada a <code>UpdateLocalResponsePolicyEventHandler</code>.
+</p>
+
+<p align="justify">
+La información recibida contiene la representación necesaria para reconstruir la política y sus acciones, incluyendo su identificador, organización, tipo de riesgo, estado y versión.
+</p>
+
+<p align="justify">
+El consumidor no decide si una versión debe reemplazar la información almacenada localmente. Esa decisión corresponde al flujo de aplicación y a las reglas definidas para las versiones de <code>ResponsePolicy</code>.
+</p>
+
+<p align="justify">
+El consumidor tampoco implementa directamente la persistencia local.
+</p>
+
+##### ResponseAuthorizationRequestConsumer
+
+<p align="justify">
+<code>ResponseAuthorizationRequestConsumer</code> recibe en Cloud las solicitudes de autorización originadas por una <code>ResponseExecution</code> creada localmente en Edge.
+</p>
+
+<p align="justify">
+Su responsabilidad es transformar el mensaje recibido y delegarlo a <code>ResponseAuthorizationRequestReceivedEventHandler</code>.
+</p>
+
+<p align="justify">
+El mensaje debe contener la información necesaria para reconstruir la ejecución pendiente, incluyendo:
+</p>
+
+- `responseExecutionId`;
+- `organizationId`;
+- `riskDetectionId`;
+- `policyId`;
+- la instantánea de la acción;
+- el momento en que la ejecución fue solicitada.
+
+<p align="justify">
+Este flujo permite que una ejecución originada en Edge quede disponible en Cloud para que un usuario autorizado pueda aprobarla o rechazarla.
+</p>
+
+<p align="justify">
+El consumidor no toma la decisión de autorización ni modifica por sí mismo el estado del agregado.
+</p>
+
+##### ResponseAuthorizationDecisionConsumer
+
+<p align="justify">
+<code>ResponseAuthorizationDecisionConsumer</code> recibe en Edge una decisión humana registrada previamente en Cloud para una <code>ResponseExecution</code> pendiente de autorización.
+</p>
+
+<p align="justify">
+La decisión recibida puede ser:
+</p>
+
+- `APPROVED`;
+- `REJECTED`.
+
+<p align="justify">
+El consumidor delega la información a <code>ResponseAuthorizationDecisionEventHandler</code>.
+</p>
+
+<p align="justify">
+Cuando la decisión es <code>APPROVED</code>, el flujo de aplicación puede continuar hacia la ejecución de la acción correspondiente.
+</p>
+
+<p align="justify">
+Cuando la decisión es <code>REJECTED</code>, la ejecución local debe finalizar sin solicitar la acción física al dispositivo.
+</p>
+
+<p align="justify">
+El consumidor no determina si el usuario tenía permiso para tomar la decisión y no ejecuta directamente el actuador.
+</p>
+
+##### ResponseExecutionResultConsumer
+
+<p align="justify">
+<code>ResponseExecutionResultConsumer</code> recibe en Cloud los resultados correspondientes a acciones ejecutadas en Edge.
+</p>
+
+<p align="justify">
+Su responsabilidad es validar la representación básica del resultado recibido y delegarlo a <code>ResponseExecutionResultReceivedEventHandler</code>.
+</p>
+
+<p align="justify">
+La información recibida debe permitir identificar la <code>ResponseExecution</code> correspondiente y conocer el resultado final de la acción.
+</p>
+
+<p align="justify">
+El consumidor no vuelve a ejecutar una acción cuando recibe un resultado fallido y no altera el significado del resultado comunicado por Edge.
+</p>
+
+<p align="justify">
+Su función es permitir que Cloud conserve la trazabilidad final de las respuestas realizadas localmente.
+</p>
+
+#### 4.2.3.3. Application Layer
+
+<p align="justify">
+La <strong>Application Layer</strong> coordina los casos de uso soportados por Alert & Response Management.
+</p>
+
+<p align="justify">
+Esta capa orquesta objetos del Domain Layer, repositorios y abstracciones externas, pero no contiene detalles específicos de persistencia, proveedores de notificaciones, protocolos de comunicación con dispositivos ni mecanismos concretos de mensajería.
+</p>
+
+<p align="justify">
+Los principales flujos de aplicación considerados son:
+</p>
+
+- Creación y modificación de políticas de respuesta.
+- Activación y desactivación de políticas.
+- Consulta de políticas de respuesta.
+- Generación y comunicación de alertas.
+- Evaluación local de respuestas.
+- Solicitud y registro de autorizaciones humanas.
+- Procesamiento de decisiones de autorización.
+- Ejecución local de acciones.
+- Registro de resultados de ejecución.
+- Consulta de alertas y respuestas.
+
+##### ResponseActionData
+
+<p align="justify">
+<code>ResponseActionData</code> representa los datos necesarios para configurar una acción dentro de una política de respuesta.
+</p>
+
+**Atributos:**
+
+- `actionCode: String`
+- `targetDeviceId: UUID`
+- `targetCapabilityCode: String`
+- `authorizationMode: AuthorizationMode`
+- `critical: boolean`
+
+<p align="justify">
+Este objeto se utiliza como representación de entrada para crear o modificar las acciones pertenecientes a una <code>ResponsePolicy</code>.
+</p>
+
+##### ConfigureResponsePolicyCommand
+
+<p align="justify">
+<code>ConfigureResponsePolicyCommand</code> representa una solicitud para crear una nueva política de respuesta asociada con un determinado tipo de riesgo.
+</p>
+
+**Atributos:**
+
+- `organizationId: UUID`
+- `riskTypeCode: String`
+- `actions: List<ResponseActionData>`
+
+##### ConfigureResponsePolicyCommandHandler
+
+<p align="justify">
+<code>ConfigureResponsePolicyCommandHandler</code> coordina la creación de una política de respuesta.
+</p>
+
+<p align="justify">
+El manejador realiza la siguiente secuencia:
+</p>
+
+1. Recibe un `ConfigureResponsePolicyCommand`.
+2. Valida la estructura de las acciones proporcionadas, cuando existan.
+3. Valida mediante `DeviceCapabilityGateway` que los dispositivos posean las capacidades de actuación requeridas por las acciones proporcionadas.
+4. Construye las entidades `ResponseAction`.
+5. Crea el agregado `ResponsePolicy` en estado `INACTIVE`.
+6. Persiste la política mediante `ResponsePolicyRepository`.
+7. Solicita su distribución hacia Edge mediante `ResponsePolicyDistributor`.
+
+<p align="justify">
+El manejador no consulta directamente las tablas pertenecientes a Device Management ni conoce el mecanismo utilizado para distribuir las políticas.
+</p>
+
+##### UpdateResponsePolicyCommand
+
+<p align="justify">
+<code>UpdateResponsePolicyCommand</code> representa una solicitud para modificar la configuración de una política existente.
+</p>
+
+**Atributos:**
+
+- `policyId: UUID`
+- `organizationId: UUID`
+- `riskTypeCode: String`
+- `actions: List<ResponseActionData>`
+
+##### UpdateResponsePolicyCommandHandler
+
+<p align="justify">
+<code>UpdateResponsePolicyCommandHandler</code> coordina la modificación de una política existente.
+</p>
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Recibe un `UpdateResponsePolicyCommand`.
+2. Recupera la `ResponsePolicy` mediante `ResponsePolicyRepository`.
+3. Verifica que la política pertenezca a la organización indicada.
+4. Valida las capacidades de actuación requeridas mediante `DeviceCapabilityGateway`.
+5. Construye la nueva colección de `ResponseAction`.
+6. Invoca `replaceActions(actions)` sobre la política.
+7. Si la política permanece activa, verifica que conserve al menos una acción válida.
+8. Actualiza el tipo de riesgo cuando la operación lo permite.
+9. Incrementa la versión de la política.
+10. Persiste la política modificada.
+11. Solicita la distribución de la nueva versión mediante `ResponsePolicyDistributor`.
+
+<p align="justify">
+La modificación de una política no altera las <code>ResponseExecution</code> creadas previamente, ya que estas conservan su propia <code>ResponseActionSnapshot</code>.
+</p>
+
+##### ChangeResponsePolicyStatusCommand
+
+<p align="justify">
+<code>ChangeResponsePolicyStatusCommand</code> representa la solicitud de activar o desactivar una política de respuesta existente.
+</p>
+
+**Atributos:**
+
+- `policyId: UUID`
+- `organizationId: UUID`
+- `active: boolean`
+
+##### ChangeResponsePolicyStatusCommandHandler
+
+<p align="justify">
+<code>ChangeResponsePolicyStatusCommandHandler</code> coordina el cambio de estado de una política de respuesta.
+</p>
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Recupera la `ResponsePolicy` mediante `ResponsePolicyRepository`.
+2. Verifica que la política exista y pertenezca a la organización indicada.
+3. Cuando se solicita activación, comprueba que la política posea acciones válidas.
+4. Valida las capacidades de actuación requeridas cuando corresponda.
+5. Invoca `activate()` o `deactivate()` sobre el agregado.
+6. Actualiza la versión de la política.
+7. Persiste el nuevo estado.
+8. Solicita la distribución de la nueva versión mediante `ResponsePolicyDistributor`.
+
+<p align="justify">
+Las reglas que determinan si una política puede activarse permanecen en el Domain Layer.
+</p>
+
+##### GetResponsePolicyQuery
+
+<p align="justify">
+<code>GetResponsePolicyQuery</code> representa una solicitud para consultar una política de respuesta determinada.
+</p>
+
+**Atributos:**
+
+- `policyId: UUID`
+- `organizationId: UUID`
+
+##### GetResponsePolicyQueryHandler
+
+<p align="justify">
+<code>GetResponsePolicyQueryHandler</code> coordina la consulta de una política.
+</p>
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Recibe `GetResponsePolicyQuery`.
+2. Recupera la `ResponsePolicy` mediante `ResponsePolicyRepository`.
+3. Verifica que la política exista.
+4. Verifica que pertenezca a la organización indicada.
+5. Retorna la información requerida por la Interface Layer.
+
+##### RiskDetectedEventHandler
+
+<p align="justify">
+<code>RiskDetectedEventHandler</code> coordina en Cloud la generación y comunicación de una alerta cuando el flujo distribuido proporciona información correspondiente a un riesgo detectado.
+</p>
+
+<p align="justify">
+El manejador realiza la siguiente secuencia:
+</p>
+
+1. Recibe la información del riesgo detectado.
+2. Construye el `AlertContext`.
+3. Crea un nuevo `Alert`.
+4. Identifica los destinatarios y canales correspondientes mediante `AlertRecipientResolver`.
+5. Crea los `NotificationDelivery` necesarios a partir de los `NotificationTarget`, conservando el destinatario, canal y destino de cada intento.
+6. Persiste inicialmente el `Alert` mediante `AlertRepository`.
+7. Solicita cada entrega mediante `NotificationGateway`.
+8. Obtiene un `NotificationSendResult` por cada intento.
+9. Actualiza el `NotificationDelivery` correspondiente como `DELIVERED` o `FAILED` cuando existe un resultado confirmado.
+10. Persiste el estado actualizado del `Alert`.
+
+<p align="justify">
+El manejador no vuelve a determinar si el riesgo existe ni modifica su tipo o severidad. Esa información proviene de Risk Detection.
+</p>
+
+##### LocalRiskDetectedEventHandler
+
+<p align="justify">
+<code>LocalRiskDetectedEventHandler</code> coordina la evaluación de respuestas cuando un riesgo es detectado localmente en Edge.
+</p>
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Recibe la información del riesgo detectado.
+2. Recupera mediante `ResponsePolicyRepository` las políticas activas correspondientes al `organizationId` y `riskTypeCode` recibidos.
+3. Solicita a `ResponsePolicySelectionService` las acciones aplicables.
+4. Crea una `ResponseExecution` en estado `PENDING` para cada acción seleccionada.
+5. Persiste inicialmente cada ejecución mediante `ResponseExecutionRepository`.
+6. Cuando una acción utiliza `AuthorizationMode.AUTOMATIC`, invoca `markExecutionRequested()`.
+7. Solicita la acción mediante `ActuatorCommandGateway`.
+8. Obtiene el `ExecutionResult`.
+9. Invoca `complete(result)` y persiste la ejecución actualizada.
+10. Publica el resultado mediante `AlertResponseEventPublisher`.
+11. Cuando una acción utiliza `AuthorizationMode.HUMAN_REQUIRED`, invoca `requestAuthorization()`.
+12. Persiste la ejecución con estado `PENDING_AUTHORIZATION`.
+13. Publica una solicitud de autorización mediante `AlertResponseEventPublisher`.
+14. Mantiene la acción sin ejecutar hasta recibir una decisión válida.
+
+<p align="justify">
+Este flujo permite que las acciones automáticas configuradas puedan ejecutarse localmente sin depender permanentemente de los servicios Cloud.
+</p>
+
+##### UpdateLocalResponsePolicyEventHandler
+
+<p align="justify">
+<code>UpdateLocalResponsePolicyEventHandler</code> coordina la actualización de las políticas de respuesta disponibles localmente en Edge.
+</p>
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Recibe la representación distribuida de una `ResponsePolicy`.
+2. Recupera la versión almacenada localmente cuando existe.
+3. Compara la versión recibida con la versión local.
+4. Descarta la actualización cuando la versión recibida es igual o anterior a la almacenada.
+5. Reconstruye la política y sus acciones cuando la versión recibida es posterior.
+6. Persiste la nueva representación mediante la implementación Edge de `ResponsePolicyRepository`.
+
+<p align="justify">
+Esta operación evita que una réplica antigua reemplace una versión más reciente almacenada en Edge.
+</p>
+
+##### ResponseAuthorizationRequestReceivedEventHandler
+
+<p align="justify">
+<code>ResponseAuthorizationRequestReceivedEventHandler</code> coordina en Cloud el registro de una ejecución originada en Edge que requiere autorización humana.
+</p>
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Recibe la solicitud de autorización proveniente de Edge.
+2. Obtiene la información necesaria para reconstruir la `ResponseExecution`.
+3. Verifica si la ejecución ya se encuentra registrada.
+4. Cuando no existe, reconstruye la ejecución con estado `PENDING_AUTHORIZATION`.
+5. Persiste la ejecución mediante `ResponseExecutionRepository`.
+6. Cuando la ejecución ya existe, evita crear un registro duplicado.
+
+<p align="justify">
+Este flujo permite que las acciones pendientes originadas localmente estén disponibles en Cloud para que un usuario autorizado pueda tomar una decisión.
+</p>
+
+##### DecideResponseAuthorizationCommand
+
+<p align="justify">
+<code>DecideResponseAuthorizationCommand</code> representa una decisión humana sobre una respuesta pendiente de autorización.
+</p>
+
+**Atributos:**
+
+- `responseExecutionId: UUID`
+- `organizationId: UUID`
+- `decision: AuthorizationDecision`
+
+<p align="justify">
+La identidad del usuario que toma la decisión se obtiene del contexto autenticado y no se recibe como un identificador arbitrario proporcionado por el cliente.
+</p>
+
+##### DecideResponseAuthorizationCommandHandler
+
+<p align="justify">
+<code>DecideResponseAuthorizationCommandHandler</code> coordina el registro de una decisión sobre una respuesta pendiente.
+</p>
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Recibe `DecideResponseAuthorizationCommand`.
+2. Recupera la `ResponseExecution` mediante `ResponseExecutionRepository`.
+3. Verifica que la ejecución pertenezca a la organización correspondiente.
+4. Verifica que se encuentre en `PENDING_AUTHORIZATION`.
+5. Obtiene la identidad del usuario autenticado.
+6. Cuando la decisión es `APPROVED`, invoca `authorize(userId, decidedAt)`.
+7. Cuando la decisión es `REJECTED`, invoca `reject(userId, decidedAt)`.
+8. Persiste la ejecución actualizada.
+9. Solicita mediante `ResponseAuthorizationDistributor` la distribución de la decisión hacia Edge.
+
+<p align="justify">
+La autorización del usuario para realizar esta operación debe haberse validado mediante los mecanismos de IAM antes de ejecutar el caso de uso.
+</p>
+
+<p align="justify">
+Una decisión ya registrada no debe ser reemplazada silenciosamente por una nueva decisión.
+</p>
+
+##### ResponseAuthorizationDecisionEventHandler
+
+<p align="justify">
+<code>ResponseAuthorizationDecisionEventHandler</code> coordina en Edge el procesamiento de una decisión humana recibida desde Cloud.
+</p>
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Recibe la decisión correspondiente a una `ResponseExecution`.
+2. Recupera la ejecución mediante la implementación Edge de `ResponseExecutionRepository`.
+3. Verifica que la ejecución se encuentre en `PENDING_AUTHORIZATION`.
+4. Verifica que la decisión corresponda a la ejecución esperada.
+5. Cuando la decisión es `REJECTED`, registra el rechazo y persiste el estado `REJECTED`.
+6. Cuando la decisión es `APPROVED`, registra la autorización.
+7. Persiste el estado `AUTHORIZED`.
+8. Invoca `markExecutionRequested()`.
+9. Solicita la ejecución mediante `ActuatorCommandGateway`.
+10. Obtiene el `ExecutionResult`.
+11. Invoca `complete(result)`.
+12. Persiste el resultado de la ejecución.
+13. Publica el resultado mediante `AlertResponseEventPublisher`.
+
+<p align="justify">
+Una decisión <code>REJECTED</code> finaliza la ejecución sin enviar ningún comando físico al dispositivo.
+</p>
+
+##### ResponseExecutionResultReceivedEventHandler
+
+<p align="justify">
+<code>ResponseExecutionResultReceivedEventHandler</code> coordina en Cloud el registro de los resultados producidos por acciones ejecutadas en Edge.
+</p>
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Recibe la información correspondiente a la ejecución y su resultado.
+2. Busca la `ResponseExecution` mediante `ResponseExecutionRepository`.
+3. Cuando la ejecución ya existe, actualiza su resultado y estado final.
+4. Cuando la ejecución automática todavía no existe en Cloud, reconstruye la información necesaria a partir del evento recibido.
+5. Conserva la `ResponseActionSnapshot` utilizada durante la ejecución.
+6. Registra el `ExecutionResult`.
+7. Persiste la ejecución con estado `SUCCEEDED` o `FAILED`.
+
+<p align="justify">
+Este manejador no vuelve a ejecutar una acción cuando recibe un resultado fallido.
+</p>
+
+##### GetAlertQuery
+
+<p align="justify">
+<code>GetAlertQuery</code> representa una solicitud para consultar una alerta registrada.
+</p>
+
+**Atributos:**
+
+- `alertId: UUID`
+- `organizationId: UUID`
+
+##### GetAlertQueryHandler
+
+<p align="justify">
+<code>GetAlertQueryHandler</code> coordina la consulta de una alerta.
+</p>
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Recibe `GetAlertQuery`.
+2. Recupera el `Alert` mediante `AlertRepository`.
+3. Verifica que la alerta exista.
+4. Verifica que pertenezca a la organización solicitada.
+5. Retorna la información requerida por la Interface Layer.
+
+<p align="justify">
+La información obtenida puede incluir:
+</p>
+
+- contexto del riesgo;
+- momento de generación;
+- destinatarios;
+- canales de notificación;
+- estado de los intentos de entrega.
+
+##### GetAlertsQuery
+
+<p align="justify">
+<code>GetAlertsQuery</code> representa una solicitud para consultar múltiples alertas dentro de una organización.
+</p>
+
+**Atributos:**
+
+- `organizationId: UUID`
+- `buildingId: UUID?`
+- `zoneId: UUID?`
+- `riskTypeCode: String?`
+- `from: Instant?`
+- `to: Instant?`
+
+##### GetAlertsQueryHandler
+
+<p align="justify">
+<code>GetAlertsQueryHandler</code> coordina la consulta de múltiples alertas.
+</p>
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Recibe `GetAlertsQuery`.
+2. Construye los criterios de consulta recibidos.
+3. Recupera mediante `AlertRepository` únicamente las alertas pertenecientes a la organización indicada.
+4. Aplica los filtros solicitados.
+5. Retorna la información requerida por la Interface Layer.
+
+##### GetResponseExecutionQuery
+
+<p align="justify">
+<code>GetResponseExecutionQuery</code> representa una solicitud para consultar una ejecución de respuesta.
+</p>
+
+**Atributos:**
+
+- `responseExecutionId: UUID`
+- `organizationId: UUID`
+
+##### GetResponseExecutionQueryHandler
+
+<p align="justify">
+<code>GetResponseExecutionQueryHandler</code> coordina la consulta de una respuesta ejecutada o pendiente.
+</p>
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Recibe `GetResponseExecutionQuery`.
+2. Recupera la `ResponseExecution` mediante `ResponseExecutionRepository`.
+3. Verifica que la ejecución exista.
+4. Verifica que pertenezca a la organización indicada.
+5. Retorna la información requerida por la Interface Layer.
+
+<p align="justify">
+La consulta puede proporcionar:
+</p>
+
+- referencia al riesgo detectado;
+- política utilizada;
+- acción aplicada;
+- dispositivo objetivo;
+- modo de autorización;
+- estado actual;
+- decisión de autorización, cuando corresponda;
+- resultado de ejecución, cuando esté disponible.
+
+##### GetResponseExecutionsQuery
+
+<p align="justify">
+<code>GetResponseExecutionsQuery</code> representa una solicitud para consultar múltiples ejecuciones de respuesta dentro de una organización.
+</p>
+
+**Atributos:**
+
+- `organizationId: UUID`
+- `riskDetectionId: UUID?`
+- `status: ResponseExecutionStatus?`
+- `from: Instant?`
+- `to: Instant?`
+
+##### GetResponseExecutionsQueryHandler
+
+<p align="justify">
+<code>GetResponseExecutionsQueryHandler</code> coordina la consulta de múltiples ejecuciones de respuesta.
+</p>
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Recibe `GetResponseExecutionsQuery`.
+2. Construye los criterios correspondientes.
+3. Recupera mediante `ResponseExecutionRepository` las ejecuciones pertenecientes a la organización indicada.
+4. Aplica los filtros solicitados.
+5. Retorna la información requerida por la Interface Layer.
+
+##### NotificationTarget
+
+<p align="justify">
+<code>NotificationTarget</code> representa la información mínima necesaria para intentar entregar una alerta a un destinatario mediante un determinado canal.
+</p>
+
+**Atributos:**
+
+- `recipientUserId: UUID`
+- `channel: String`
+- `destination: String`
+
+<p align="justify">
+<code>destination</code> representa el identificador requerido por el canal seleccionado, como una dirección o identificador externo de entrega.
+</p>
+
+##### NotificationSendResult
+
+<p align="justify">
+<code>NotificationSendResult</code> representa el resultado obtenido después de solicitar una entrega a un proveedor externo.
+</p>
+
+**Atributos:**
+
+- `successful: boolean`
+- `completedAt: Instant`
+- `failureReason: String?`
+
+<p align="justify">
+Este resultado permite actualizar el <code>NotificationDelivery</code> correspondiente sin exponer detalles específicos del proveedor al Domain Layer.
+</p>
+
+##### NotificationGateway
+
+<p align="justify">
+<code>NotificationGateway</code> es una abstracción de Application Layer utilizada para solicitar la entrega de una alerta mediante un servicio externo.
+</p>
+
+**Operación:**
+
+- `send(alert, target): NotificationSendResult`
+
+<p align="justify">
+La Application Layer no conoce el proveedor concreto utilizado para realizar la entrega.
+</p>
+
+##### AlertRecipientResolver
+
+<p align="justify">
+<code>AlertRecipientResolver</code> representa la dependencia utilizada para determinar qué responsables y canales deben utilizarse para comunicar una alerta.
+</p>
+
+**Operación:**
+
+- `resolve(alertContext): List<NotificationTarget>`
+
+<p align="justify">
+La implementación puede utilizar información proveniente de User, IAM y otros contextos necesarios, sin transferir la propiedad de esos modelos a Alert & Response Management.
+</p>
+
+##### DeviceCapabilityGateway
+
+<p align="justify">
+<code>DeviceCapabilityGateway</code> representa la dependencia utilizada para comprobar que un dispositivo posee la capacidad de actuación necesaria para una acción configurada.
+</p>
+
+**Operación:**
+
+- `validateActuationCapability(deviceId, capabilityCode)`
+
+<p align="justify">
+Alert & Response Management utiliza únicamente el resultado de esta validación y no administra el catálogo de dispositivos.
+</p>
+
+##### ResponsePolicyDistributor
+
+<p align="justify">
+<code>ResponsePolicyDistributor</code> abstrae la distribución de las políticas de respuesta necesarias desde Cloud hacia Edge.
+</p>
+
+**Operación:**
+
+- `distribute(policy)`
+
+<p align="justify">
+La Application Layer no depende del mecanismo de transporte utilizado para realizar esta distribución.
+</p>
+
+##### ResponseAuthorizationDistributor
+
+<p align="justify">
+<code>ResponseAuthorizationDistributor</code> abstrae la distribución hacia Edge de una decisión humana registrada sobre una <code>ResponseExecution</code>.
+</p>
+
+**Operación:**
+
+- `distributeDecision(execution)`
+
+<p align="justify">
+La decisión distribuida puede ser <code>APPROVED</code> o <code>REJECTED</code>.
+</p>
+
+<p align="justify">
+La implementación concreta del mecanismo de entrega corresponde a Infrastructure Layer.
+</p>
+
+##### ActuatorCommandGateway
+
+<p align="justify">
+<code>ActuatorCommandGateway</code> abstrae la solicitud de ejecución de una acción física sobre un dispositivo.
+</p>
+
+**Operación:**
+
+- `execute(action): ExecutionResult`
+
+<p align="justify">
+La Application Layer no conoce el hardware, protocolo o mecanismo específico utilizado para controlar el actuador.
+</p>
+
+##### AlertResponseEventPublisher
+
+<p align="justify">
+<code>AlertResponseEventPublisher</code> abstrae la publicación de información producida por el flujo local de respuesta.
+</p>
+
+**Operación:**
+
+- `publish(event)`
+
+<p align="justify">
+Esta abstracción permite comunicar principalmente:
+</p>
+
+- solicitudes de autorización;
+- resultados de ejecución.
+
+<p align="justify">
+La conservación temporal, los reintentos y la sincronización posterior de estos eventos durante una interrupción de conectividad pertenecen al Bounded Context Connectivity.
+</p>
+
+---
+
+#### 4.2.3.4. Infrastructure Layer
+
+<p align="justify">
+La <strong>Infrastructure Layer</strong> contiene las implementaciones técnicas requeridas por el Bounded Context Alert & Response Management.
+</p>
+
+<p align="justify">
+Esta capa implementa las abstracciones definidas por las capas Domain y Application y encapsula los detalles relacionados con persistencia, servicios externos de notificación, integración con Device Management, distribución de políticas hacia Edge, comunicación de decisiones de autorización y ejecución local de acciones.
+</p>
+
+<p align="justify">
+Los principales componentes de infraestructura son <code>AlertRepositoryAdapter</code>, <code>ResponsePolicyRepositoryAdapter</code>, <code>ResponseExecutionRepositoryAdapter</code>, <code>NotificationServiceAdapter</code>, <code>AlertRecipientIntegrationAdapter</code>, <code>DeviceCapabilityIntegrationAdapter</code>, <code>ResponsePolicyDistributionAdapter</code>, <code>ResponseAuthorizationDistributionAdapter</code>, <code>EdgeResponsePolicyRepositoryAdapter</code>, <code>EdgeResponseExecutionRepositoryAdapter</code>, <code>ActuatorCommandAdapter</code> y <code>AlertResponseEventPublisherAdapter</code>.
+</p>
+
+##### AlertRepositoryAdapter
+
+<p align="justify">
+<code>AlertRepositoryAdapter</code> implementa la interfaz <code>AlertRepository</code>.
+</p>
+
+<p align="justify">
+Sus responsabilidades son:
+</p>
+
+- recuperar un `Alert` mediante su identificador;
+- recuperar alertas asociadas con una determinada detección de riesgo;
+- recuperar alertas pertenecientes a una organización aplicando los criterios solicitados;
+- reconstruir el agregado `Alert` a partir de la información persistida;
+- persistir el `Alert` junto con su `AlertContext`;
+- persistir y actualizar los `NotificationDelivery` asociados.
+
+<p align="justify">
+Las referencias como <code>riskDetectionId</code>, <code>buildingId</code>, <code>zoneId</code> y <code>recipientUserId</code> se almacenan como identificadores externos y no convierten los modelos de otros Bounded Contexts en parte del agregado <code>Alert</code>.
+</p>
+
+##### ResponsePolicyRepositoryAdapter
+
+<p align="justify">
+<code>ResponsePolicyRepositoryAdapter</code> implementa <code>ResponsePolicyRepository</code> para la persistencia Cloud de las políticas de respuesta.
+</p>
+
+<p align="justify">
+Sus responsabilidades son:
+</p>
+
+- recuperar una `ResponsePolicy` mediante su identificador;
+- recuperar políticas activas correspondientes a una organización y un tipo de riesgo;
+- reconstruir la política junto con sus `ResponseAction`;
+- persistir la configuración y estado de la política;
+- conservar la versión de la política.
+
+<p align="justify">
+Las acciones forman parte de <code>ResponsePolicy</code> y no disponen de un repositorio independiente.
+</p>
+
+<p align="justify">
+La información de <code>targetDeviceId</code> y <code>targetCapabilityCode</code> se almacena como referencia hacia Device Management y no genera propiedad sobre el dispositivo.
+</p>
+
+##### ResponseExecutionRepositoryAdapter
+
+<p align="justify">
+<code>ResponseExecutionRepositoryAdapter</code> implementa <code>ResponseExecutionRepository</code> en Cloud.
+</p>
+
+<p align="justify">
+Sus responsabilidades son:
+</p>
+
+- recuperar una `ResponseExecution` mediante su identificador;
+- consultar ejecuciones asociadas con una detección de riesgo;
+- recuperar ejecuciones pertenecientes a una organización utilizando criterios de búsqueda;
+- reconstruir la acción utilizada mediante `ResponseActionSnapshot`;
+- persistir el estado actual de la ejecución;
+- persistir una `ResponseAuthorization` cuando corresponda;
+- persistir el `ExecutionResult` cuando la ejecución finaliza.
+
+<p align="justify">
+La persistencia debe conservar la información histórica de la acción utilizada aunque posteriormente se modifique la <code>ResponsePolicy</code> que originó la respuesta.
+</p>
+
+##### NotificationServiceAdapter
+
+<p align="justify">
+<code>NotificationServiceAdapter</code> implementa <code>NotificationGateway</code>.
+</p>
+
+<p align="justify">
+Su responsabilidad es comunicarse con el servicio externo de notificaciones seleccionado por ResQ para intentar entregar una alerta a un <code>NotificationTarget</code>.
+</p>
+
+<p align="justify">
+El adaptador:
+</p>
+
+- recibe la información de la alerta y del destinatario;
+- construye la solicitud requerida por el proveedor externo;
+- solicita la entrega de la notificación;
+- interpreta la respuesta del proveedor;
+- construye un `NotificationSendResult`.
+
+<p align="justify">
+Los detalles específicos del proveedor, credenciales, SDK, protocolo o formato de comunicación permanecen encapsulados en Infrastructure Layer.
+</p>
+
+<p align="justify">
+Un fallo confirmado por el proveedor externo no debe interpretarse como una notificación entregada correctamente.
+</p>
+
+##### AlertRecipientIntegrationAdapter
+
+<p align="justify">
+<code>AlertRecipientIntegrationAdapter</code> implementa <code>AlertRecipientResolver</code>.
+</p>
+
+<p align="justify">
+Su responsabilidad es obtener la información mínima necesaria para determinar los destinatarios y canales mediante los cuales debe comunicarse una alerta.
+</p>
+
+<p align="justify">
+Para ello puede utilizar información proporcionada por User, IAM y los contextos relacionados con la organización y ubicación del riesgo.
+</p>
+
+<p align="justify">
+El adaptador devuelve una colección de <code>NotificationTarget</code> y no persiste perfiles de usuario ni reproduce sus roles o permisos dentro de Alert & Response Management.
+</p>
+
+##### DeviceCapabilityIntegrationAdapter
+
+<p align="justify">
+<code>DeviceCapabilityIntegrationAdapter</code> implementa <code>DeviceCapabilityGateway</code>.
+</p>
+
+<p align="justify">
+Su responsabilidad es comprobar que el dispositivo referenciado por una <code>ResponseAction</code> posee la capacidad de actuación indicada.
+</p>
+
+<p align="justify">
+La validación considera como mínimo:
+</p>
+
+- la existencia del dispositivo;
+- la existencia de la capacidad indicada;
+- que la capacidad corresponda a una operación de actuación válida.
+
+<p align="justify">
+La información obtenida desde Device Management se utiliza únicamente para validar la configuración de la política.
+</p>
+
+<p align="justify">
+Alert & Response Management no modifica el dispositivo ni mantiene una copia completa de su agregado.
+</p>
+
+##### ResponsePolicyDistributionAdapter
+
+<p align="justify">
+<code>ResponsePolicyDistributionAdapter</code> implementa <code>ResponsePolicyDistributor</code>.
+</p>
+
+<p align="justify">
+Su responsabilidad es distribuir hacia Edge la representación de las políticas necesarias para ejecutar respuestas locales.
+</p>
+
+<p align="justify">
+La información principal de una política distribuida incluye:
+</p>
+
+- `policyId`;
+- `organizationId`;
+- `riskTypeCode`;
+- `status`;
+- `version`;
+- `actions`.
+
+<p align="justify">
+Cada elemento de <code>actions</code> contiene:
+</p>
+
+- `actionId`;
+- `actionCode`;
+- `targetDeviceId`;
+- `targetCapabilityCode`;
+- `authorizationMode`;
+- `critical`.
+
+<p align="justify">
+El mecanismo concreto utilizado para transportar esta información permanece encapsulado en Infrastructure Layer.
+</p>
+
+##### ResponseAuthorizationDistributionAdapter
+
+<p align="justify">
+<code>ResponseAuthorizationDistributionAdapter</code> implementa <code>ResponseAuthorizationDistributor</code>.
+</p>
+
+<p align="justify">
+Su responsabilidad es comunicar hacia Edge una decisión registrada sobre una <code>ResponseExecution</code> pendiente.
+</p>
+
+<p align="justify">
+La decisión distribuida puede ser:
+</p>
+
+- `APPROVED`;
+- `REJECTED`.
+
+<p align="justify">
+La información distribuida debe permitir identificar de forma inequívoca:
+</p>
+
+- la ejecución correspondiente;
+- la acción asociada;
+- la decisión registrada;
+- el usuario que tomó la decisión;
+- el momento de la decisión.
+
+<p align="justify">
+Este adaptador no determina si la decisión es válida. La decisión debe haber sido procesada previamente por la Application Layer.
+</p>
+
+##### EdgeResponsePolicyRepositoryAdapter
+
+<p align="justify">
+<code>EdgeResponsePolicyRepositoryAdapter</code> implementa <code>ResponsePolicyRepository</code> en Edge.
+</p>
+
+<p align="justify">
+Su responsabilidad es mantener localmente las políticas necesarias para la operación local de Alert & Response Management, incluyendo acciones automáticas y acciones que requieren autorización humana.
+</p>
+
+<p align="justify">
+Sus operaciones incluyen:
+</p>
+
+- recuperar una política mediante su identificador;
+- recuperar políticas activas mediante `organizationId` y `riskTypeCode`;
+- almacenar una política recibida desde Cloud;
+- reemplazar una réplica cuando la versión recibida es posterior;
+- reconstruir sus `ResponseAction`.
+
+<p align="justify">
+La persistencia local permite que las políticas necesarias continúen disponibles durante una interrupción temporal de conectividad con Cloud.
+</p>
+
+<p align="justify">
+La representación almacenada en Edge es una réplica operativa de la configuración administrada desde Cloud.
+</p>
+
+##### EdgeResponseExecutionRepositoryAdapter
+
+<p align="justify">
+<code>EdgeResponseExecutionRepositoryAdapter</code> implementa <code>ResponseExecutionRepository</code> en Edge.
+</p>
+
+<p align="justify">
+Su responsabilidad es conservar localmente el estado de las ejecuciones originadas en el entorno Edge.
+</p>
+
+<p align="justify">
+Sus operaciones incluyen:
+</p>
+
+- almacenar una nueva `ResponseExecution`;
+- recuperar una ejecución mediante su identificador;
+- recuperar ejecuciones relacionadas con una detección de riesgo;
+- conservar ejecuciones en `PENDING_AUTHORIZATION` mientras esperan una decisión proveniente de Cloud;
+- persistir la `ResponseAuthorization` asociada cuando se recibe una decisión humana válida desde Cloud;
+- actualizar el estado de la ejecución de acuerdo con la decisión recibida;
+- persistir el `ExecutionResult` cuando la acción finaliza.
+
+<p align="justify">
+Esta persistencia permite conservar el estado propio del Bounded Context mientras Connectivity administra de forma independiente las colas, reintentos y sincronización de mensajes.
+</p>
+
+##### ActuatorCommandAdapter
+
+<p align="justify">
+<code>ActuatorCommandAdapter</code> implementa <code>ActuatorCommandGateway</code>.
+</p>
+
+<p align="justify">
+Su responsabilidad es traducir una <code>ResponseActionSnapshot</code> a la representación requerida por el mecanismo local encargado de ejecutar una acción sobre un dispositivo.
+</p>
+
+<p align="justify">
+El adaptador:
+</p>
+
+- identifica el dispositivo objetivo;
+- identifica la capacidad de actuación solicitada;
+- construye el comando requerido por el flujo local;
+- solicita la ejecución de la acción;
+- interpreta la respuesta obtenida;
+- construye el `ExecutionResult` correspondiente.
+
+<p align="justify">
+El Domain Layer no depende de protocolos específicos, librerías de hardware, GPIO, MQTT u otros mecanismos concretos utilizados para controlar actuadores.
+</p>
+
+##### AlertResponseEventPublisherAdapter
+
+<p align="justify">
+<code>AlertResponseEventPublisherAdapter</code> implementa <code>AlertResponseEventPublisher</code>.
+</p>
+
+<p align="justify">
+Su responsabilidad es publicar hacia el flujo distribuido de ResQ la información producida por las respuestas procesadas en Edge.
+</p>
+
+<p align="justify">
+Entre los eventos que puede comunicar se encuentran:
+</p>
+
+- solicitudes de autorización para acciones `HUMAN_REQUIRED`;
+- resultados de acciones ejecutadas;
+- información necesaria para registrar en Cloud la trazabilidad de una `ResponseExecution`.
+
+<p align="justify">
+El adaptador no administra directamente las colas utilizadas para conservar eventos durante una pérdida de conectividad.
+</p>
+
+<p align="justify">
+La retención temporal, los reintentos y la posterior sincronización de esos mensajes pertenecen al mecanismo proporcionado por Connectivity.
+</p>
+
+##### Consideraciones de persistencia
+
+<p align="justify">
+El modelo de persistencia de Alert & Response Management debe mantener la integridad de los objetos que pertenecen al Bounded Context y evitar dependencias directas con las tablas internas de otros contextos.
+</p>
+
+<p align="justify">
+La persistencia Cloud conserva la información principal relacionada con:
+</p>
+
+- políticas de respuesta;
+- acciones pertenecientes a cada política;
+- alertas generadas;
+- intentos de notificación;
+- ejecuciones de respuesta;
+- decisiones de autorización;
+- resultados de ejecución.
+
+<p align="justify">
+En la persistencia Cloud:
+</p>
+
+- `riskDetectionId` se almacena como referencia externa y no genera una relación directa con las tablas internas de Risk Detection;
+- `targetDeviceId` se almacena como referencia externa hacia Device Management;
+- `buildingId` y `zoneId` se conservan como referencias externas de ubicación;
+- `recipientUserId` y `decidedByUserId` se almacenan como referencias externas hacia User e IAM;
+- las relaciones entre `Alert` y `NotificationDelivery` son administradas internamente por este Bounded Context;
+- las relaciones entre `ResponsePolicy` y sus `ResponseAction` son administradas internamente por este Bounded Context;
+- las relaciones entre `ResponseExecution`, `ResponseAuthorization` y `ExecutionResult` son administradas internamente por este Bounded Context;
+- el `ResponseActionSnapshot` se conserva independientemente de modificaciones posteriores realizadas sobre la política.
+
+<p align="justify">
+La persistencia Edge conserva la información necesaria para soportar la operación local de Alert & Response Management.
+</p>
+
+<p align="justify">
+En la persistencia Edge:
+</p>
+
+- se conservan réplicas de las `ResponsePolicy` necesarias para la operación local;
+- se conservan las `ResponseAction` pertenecientes a dichas políticas;
+- se conserva el `version` de cada política para evitar reemplazar una réplica local por una versión anterior;
+- se conservan las `ResponseExecution` originadas localmente mientras se encuentran pendientes o hasta que su resultado pueda ser registrado;
+- las ejecuciones que requieren intervención humana pueden permanecer en `PENDING_AUTHORIZATION` hasta recibir una decisión válida desde Cloud;
+- se conserva la `ResponseAuthorization` asociada cuando una ejecución recibe una decisión humana válida;
+- se conserva el `ExecutionResult` cuando una acción alcanza un resultado final;
+- las políticas almacenadas localmente son réplicas operativas y no una fuente de verdad independiente de la configuración administrada desde Cloud.
+
+<p align="justify">
+Esta persistencia local no asigna a Alert & Response Management la responsabilidad de gestionar la sincronización de mensajes. Las colas de eventos pendientes, los reintentos y los mecanismos de sincronización utilizados durante una pérdida de conectividad continúan siendo responsabilidad de Connectivity.
+</p>
+
+#### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+<p align="justify">
+El Bounded Context Alert & Response Management participa en más de un Container desplegable. Por esa razón, su arquitectura de Component Level se representa mediante C4 Component Diagrams separados para los entornos Cloud y Edge.
+</p>
+
+<p align="justify">
+Los diagramas preservan los mismos límites de dominio, representando las responsabilidades desplegadas en cada Container.
+</p>
+
+##### Alert & Response Management — ResQ Cloud RESTful API Component Diagram
+
+<p align="justify">
+El Cloud Component Diagram representa los componentes dentro de ResQ Cloud RESTful API que participan en Alert & Response Management.
+</p>
+
+<p align="justify">
+Los principales componentes son:
+</p>
+
+- Response Policy API, responsable de recibir operaciones autorizadas de configuración y gestión del estado de políticas de respuesta.
+
+- Alert API, responsable de exponer las alertas generadas y la información de entrega de notificaciones a los clientes autorizados.
+
+- Response Execution API, responsable de exponer las ejecuciones de respuesta y recibir decisiones de autorización humana.
+
+- Risk Detected Event Consumer, responsable de recibir eventos sincronizados de detección de riesgos producidos por el flujo distribuido de Edge.
+
+- Response Authorization Request Consumer, responsable de recibir solicitudes de autorización generadas por ejecuciones de respuesta en Edge.
+
+- Response Execution Result Consumer, responsable de recibir los resultados de las acciones de respuesta ejecutadas localmente en Edge.
+
+- Alert & Response Application, responsable de coordinar los casos de uso de Cloud relacionados con políticas, alertas, notificaciones, decisiones de autorización y trazabilidad de ejecución.
+
+- Alert & Response Domain, que contiene el modelo de dominio y las reglas de negocio utilizados por las capacidades de Cloud.
+
+- Cloud Alert & Response Persistence, que implementa operaciones de persistencia para alertas, políticas de respuesta y ejecuciones de respuesta.
+
+- Notification Integration, responsable de comunicarse con el proveedor externo de notificaciones.
+
+- Alert Recipient Integration, responsable de resolver los destinatarios de alertas y los canales de notificación.
+
+- Device Capability Integration, responsable de validar las capacidades de actuación requeridas por las acciones de respuesta configuradas.
+
+- Response Policy Distribution, responsable de propagar las réplicas de políticas de respuesta hacia Edge.
+
+- Response Authorization Distribution, responsable de propagar las decisiones de autorización hacia Edge.
+
+<p align="justify">
+Conceptualmente, el flujo principal de Cloud es:
+</p>
+
+```text
+Web / Mobile Application
+          |
+          v
+Cloud Interface Components
+          |
+          v
+Alert & Response Application
+          |
+          v
+Alert & Response Domain
+          |
+          +-----------------------------+
+          |              |              |
+          v              v              v
+Cloud Persistence   External        Distribution
+                    Integrations     Components
+          |              |              |
+          v              v              v
+ResQ Cloud DB       External Service     Edge
+```
+
+<p align="justify">
+Los eventos de detección de riesgos sincronizados desde Edge ingresan mediante Risk Detected Event Consumer y son procesados por la Application Layer.
+</p>
+
+<p align="justify">
+Cuando se recibe un evento de detección de riesgo, la Application Layer crea la <code>Alert</code> correspondiente, resuelve sus destinatarios y solicita la entrega de notificaciones mediante la integración externa configurada.
+</p>
+
+<p align="justify">
+Las políticas de respuesta se configuran en Cloud y se distribuyen hacia Edge como réplicas operativas.
+</p>
+
+<p align="justify">
+Las solicitudes de autorización generadas por acciones <code>HUMAN_REQUIRED</code> se reciben desde Edge y se registran en Cloud para que un usuario autorizado pueda aprobar o rechazar la ejecución correspondiente.
+</p>
+
+<p align="justify">
+La decisión de autorización resultante se distribuye luego hacia Edge.
+</p>
+
+<p align="justify">
+Los resultados de ejecución producidos localmente se reciben mediante Response Execution Result Consumer y se persisten para mantener la trazabilidad de las respuestas.
+</p>
+
+**DIAGRAMA — Alert & Response Management Cloud Component Level Diagram**
+
+![Alert & Response Management Cloud Component Level Diagram](assets/images/chapter-04-solution-software-design/alert-response-management/alert-response-management-cloud-component-level-diagram.png)
+
+<p align="center">
+  <strong>Figura 56. Alert & Response Management Cloud Component Level Diagram.</strong>
+</p>
+
+##### Alert & Response Management — ResQ Edge Service Component Diagram
+
+<p align="justify">
+El Edge Component Diagram representa los componentes responsables de la evaluación y ejecución local de respuestas dentro de ResQ Edge Service.
+</p>
+
+<p align="justify">
+Los principales componentes son:
+</p>
+
+- Local Risk Detected Consumer, responsable de recibir detecciones de riesgo generadas por el flujo local de Risk Detection.
+
+- Response Policy Replica Consumer, responsable de recibir las réplicas actuales de políticas de respuesta distribuidas desde Cloud.
+
+- Response Authorization Decision Consumer, responsable de recibir las decisiones de autorización humana distribuidas desde Cloud.
+
+- Edge Alert & Response Application, responsable de coordinar la evaluación, autorización y ejecución local de respuestas.
+
+- Alert & Response Domain, que contiene las reglas de negocio de políticas de respuesta y ejecuciones de respuesta requeridas localmente.
+
+- Edge Response Policy Persistence, responsable de almacenar réplicas locales de políticas de respuesta utilizando Peewee y SQLite.
+
+- Edge Response Execution Persistence, responsable de almacenar las ejecuciones de respuesta originadas localmente y su estado.
+
+- Actuator Integration, responsable de solicitar operaciones locales autorizadas de actuadores.
+
+- Alert & Response Event Publisher, responsable de publicar solicitudes de autorización y resultados de ejecución hacia el flujo distribuido de ResQ.
+
+<p align="justify">
+El flujo principal de ejecución local es:
+</p>
+
+```text
+Local Risk Detection
+          |
+          v
+Local Risk Detected Consumer
+          |
+          v
+Edge Alert & Response Application
+          |
+          v
+Alert & Response Domain
+      /             \
+     v               v
+Edge Persistence   Actuator Integration
+     |
+     v
+Alert & Response Event Publisher
+     |
+     v
+Distributed ResQ Flow
+```
+
+<p align="justify">
+El flujo de actualización de políticas en Edge es:
+</p>
+
+```text
+Cloud Policy Distribution
+          |
+          v
+Response Policy Replica Consumer
+          |
+          v
+Edge Alert & Response Application
+          |
+          v
+Edge Response Policy Persistence
+```
+
+<p align="justify">
+El flujo de decisiones de autorización es:
+</p>
+
+```text
+Cloud Authorization Decision
+          |
+          v
+Response Authorization Decision Consumer
+          |
+          v
+Edge Alert & Response Application
+          |
+          v
+Response Execution
+      /           \
+     v             v
+ APPROVED       REJECTED
+     |             |
+     v             v
+Actuator        Final State
+Execution
+```
+
+<p align="justify">
+Cuando Local Risk Detected Consumer recibe un riesgo detectado localmente, la Application Layer recupera las políticas de respuesta activas correspondientes a la organización y al tipo de riesgo.
+</p>
+
+<p align="justify">
+Para las acciones configuradas con <code>AUTOMATIC</code>, Edge puede continuar con la ejecución local del actuador sin una autorización humana adicional.
+</p>
+
+<p align="justify">
+Para las acciones configuradas con <code>HUMAN_REQUIRED</code>, la <code>ResponseExecution</code> correspondiente permanece en <code>PENDING_AUTHORIZATION</code> y se publica una solicitud de autorización hacia Cloud.
+</p>
+
+<p align="justify">
+Cuando se recibe una decisión <code>APPROVED</code>, la ejecución continúa localmente. Una decisión <code>REJECTED</code> finaliza la ejecución sin emitir un comando al actuador.
+</p>
+
+<p align="justify">
+Las réplicas de políticas de respuesta y el estado de ejecución local se persisten utilizando Peewee y SQLite para mantener el estado requerido para la operación local.
+</p>
+
+<p align="justify">
+Los mecanismos de transporte, reintentos y sincronización utilizados entre Cloud y Edge siguen siendo responsabilidad del Bounded Context Connectivity.
+</p>
+
+**DIAGRAMA — Alert & Response Management Edge Component Level Diagram**
+
+![Alert & Response Management Edge Component Level Diagram](assets/images/chapter-04-solution-software-design/alert-response-management/alert-response-management-edge-component-level-diagram.png)
+
+<p align="center">
+  <strong>Figura 57. Alert & Response Management Edge Component Level Diagram.</strong>
+</p>
+
+#### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
+
+<p align="justify">
+Los Code Level Diagrams proporcionan una representación más detallada de la estructura orientada a la implementación del Bounded Context Alert & Response Management.
+</p>
+
+<p align="justify">
+Para Alert & Response Management, el Code Level se representa mediante:
+</p>
+
+- Domain Layer Class Diagram, que describe el modelo de dominio orientado a objetos, incluidos Aggregate Roots, Entities, Value Objects, enumeraciones, Domain Services, interfaces de Repository, atributos, métodos, visibilidad, relaciones y multiplicidades.
+
+- Database Design Diagram, que describe las estructuras de persistencia relacional requeridas por las partes Cloud y Edge del Bounded Context.
+
+<p align="justify">
+Los diagramas deben mantener la consistencia con el diseño de cuatro capas descrito anteriormente.
+</p>
+
+##### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
+
+<p align="justify">
+El Domain Layer Class Diagram representa la estructura orientada a la implementación del modelo de dominio de Alert & Response Management.
+</p>
+
+<p align="justify">
+El diagrama debe incluir los siguientes elementos.
+</p>
+
+**Aggregate Roots**
+
+- `Alert`
+- `ResponsePolicy`
+- `ResponseExecution`
+
+**Entities**
+
+- `NotificationDelivery`
+- `ResponseAction`
+- `ResponseAuthorization`
+
+**Value Objects**
+
+- `AlertContext`
+- `ResponseActionSnapshot`
+- `ExecutionResult`
+
+**Enumeraciones**
+
+- `ResponsePolicyStatus`
+- `AuthorizationMode`
+- `AuthorizationDecision`
+- `ResponseExecutionStatus`
+- `NotificationDeliveryStatus`
+
+**Repository Interfaces**
+
+- `AlertRepository`
+- `ResponsePolicyRepository`
+- `ResponseExecutionRepository`
+
+**Domain Service**
+
+- `ResponsePolicySelectionService`
+
+<p align="justify">
+Las principales relaciones que deben representarse son:
+</p>
+
+- `Alert` compone exactamente un `AlertContext`.
+
+- `Alert` posee cero o más entidades `NotificationDelivery`.
+
+- `NotificationDelivery` utiliza exactamente un `NotificationDeliveryStatus`.
+
+- `ResponsePolicy` posee cero o más entidades `ResponseAction` mientras se encuentra en configuración.
+
+- `ResponsePolicy` utiliza exactamente un `ResponsePolicyStatus`.
+
+- `ResponseAction` utiliza exactamente un `AuthorizationMode`.
+
+- `ResponseExecution` compone exactamente un `ResponseActionSnapshot`.
+
+- `ResponseExecution` puede poseer cero o una `ResponseAuthorization`.
+
+- `ResponseExecution` puede componer cero o un `ExecutionResult`.
+
+- `ResponseExecution` utiliza exactamente un `ResponseExecutionStatus`.
+
+- `ResponseActionSnapshot` utiliza exactamente un `AuthorizationMode`.
+
+- `ResponseAuthorization` utiliza exactamente una `AuthorizationDecision`.
+
+- `AlertRepository` persiste y recupera `Alert`.
+
+- `ResponsePolicyRepository` persiste y recupera `ResponsePolicy`.
+
+- `ResponseExecutionRepository` persiste y recupera `ResponseExecution`.
+
+- `ResponsePolicySelectionService` evalúa `ResponsePolicy` y sus elementos `ResponseAction`.
+
+<p align="justify">
+El diagrama debe mostrar las convenciones de visibilidad UML:
+</p>
+
+- `+` para miembros públicos;
+
+- `-` para miembros privados;
+
+- `#` para miembros protegidos cuando corresponda.
+
+<p align="justify">
+Una referencia conceptual de multiplicidad es:
+</p>
+
+```text
+Alert "1" *-- "1" AlertContext
+
+Alert "1" *-- "0..*" NotificationDelivery
+
+NotificationDelivery --> NotificationDeliveryStatus
+
+
+ResponsePolicy "1" *-- "0..*" ResponseAction
+
+ResponsePolicy --> ResponsePolicyStatus
+
+ResponseAction --> AuthorizationMode
+
+
+ResponseExecution "1" *-- "1" ResponseActionSnapshot
+
+ResponseExecution "1" *-- "0..1" ResponseAuthorization
+
+ResponseExecution "1" *-- "0..1" ExecutionResult
+
+ResponseExecution --> ResponseExecutionStatus
+
+ResponseActionSnapshot --> AuthorizationMode
+
+ResponseAuthorization --> AuthorizationDecision
+
+
+AlertRepository ..> Alert : persists
+
+ResponsePolicyRepository ..> ResponsePolicy : persists
+
+ResponseExecutionRepository ..> ResponseExecution : persists
+
+
+ResponsePolicySelectionService ..> ResponsePolicy : evaluates
+
+ResponsePolicySelectionService ..> ResponseAction : selects
+```
+
+<p align="justify">
+Una <code>ResponsePolicy</code> puede contener cero o más entidades <code>ResponseAction</code> mientras se encuentra en configuración. Sin embargo, debe contener al menos una acción válida antes de poder activarse.
+</p>
+
+<p align="justify">
+<code>ResponseActionSnapshot</code> preserva la acción exacta utilizada al crear una <code>ResponseExecution</code> para que las modificaciones posteriores de la <code>ResponsePolicy</code> correspondiente no alteren la información histórica de ejecución.
+</p>
+
+<p align="justify">
+Los siguientes conceptos no deben aparecer como clases de dominio propias dentro de Alert & Response Management:
+</p>
+
+- `RiskDetection`
+- `Device`
+- `Building`
+- `Zone`
+- `User`
+- `Incident`
+- `Actuator`
+- Colas o estructuras de sincronización de Connectivity
+
+<p align="justify">
+Sus identificadores pueden aparecer como referencias externas cuando el proceso de alerta y respuesta los requiera.
+</p>
+
+<p align="justify">
+Las principales referencias externas incluyen:
+</p>
+
+- `riskDetectionId`
+- `targetDeviceId`
+- `buildingId`
+- `zoneId`
+- `recipientUserId`
+- `decidedByUserId`
+
+<p align="justify">
+Estos identificadores no transfieren la propiedad de los agregados referenciados a Alert & Response Management.
+</p>
+
+**DIAGRAMA — Alert & Response Management Domain Layer Class Diagram**
+
+![Alert & Response Management Domain Layer Class Diagram](assets/images/chapter-04-solution-software-design/alert-response-management/alert-response-management-domain-layer-class-diagram.png)
+
+<p align="center">
+  <strong>Figura 58. Alert & Response Management Domain Layer Class Diagram.</strong>
+</p>
+
+##### 4.2.3.6.2. Bounded Context Database Design Diagram
+
+<p align="justify">
+El Database Design de Alert & Response Management representa la persistencia requerida por el Bounded Context en los entornos de ejecución Cloud y Edge.
+</p>
+
+<p align="justify">
+La persistencia Cloud almacena las definiciones autoritativas de políticas de respuesta, las alertas generadas, el historial de entrega de notificaciones, las ejecuciones de respuesta, las decisiones de autorización humana y los resultados de ejecución.
+</p>
+
+<p align="justify">
+La persistencia Edge almacena las réplicas locales de políticas de respuesta y el estado de ejecución de respuestas requerido para la operación local.
+</p>
+
+<p align="justify">
+El modelo de persistencia evita deliberadamente crear dependencias de claves foráneas hacia tablas pertenecientes a otros Bounded Contexts.
+</p>
+
+###### Persistencia Cloud
+
+###### `response_policies`
+
+<p align="justify">
+Almacena la configuración autoritativa de políticas de respuesta.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `policy_id` | UUID | PRIMARY KEY | Identificador único de la política de respuesta. |
+| `organization_id` | UUID | NOT NULL | Organización a la que pertenece la política. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Tipo de riesgo al que se aplica la política. |
+| `status` | VARCHAR(20) | NOT NULL | Estado actual de la política (`ACTIVE` o `INACTIVE`). |
+| `version` | BIGINT | NOT NULL | Versión utilizada para ordenar las actualizaciones distribuidas hacia Edge. |
+| `created_at` | TIMESTAMP | NOT NULL | Momento en el que se creó la política. |
+| `updated_at` | TIMESTAMP | NOT NULL | Momento en el que se modificó la política por última vez. |
+
+<p align="justify">
+Una política de respuesta puede contener cero o más acciones mientras se encuentra en configuración, pero debe contener al menos una acción válida antes de activarse.
+</p>
+
+###### `response_actions`
+
+<p align="justify">
+Almacena las acciones de respuesta pertenecientes a cada política.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `action_id` | UUID | PRIMARY KEY | Identificador único de la acción de respuesta. |
+| `policy_id` | UUID | NOT NULL, FOREIGN KEY | Referencia `response_policies.policy_id`. |
+| `action_code` | VARCHAR(100) | NOT NULL | Código que identifica la acción. |
+| `target_device_id` | UUID | NOT NULL | Identificador externo del dispositivo objetivo. |
+| `target_capability_code` | VARCHAR(100) | NOT NULL | Capacidad de actuación del dispositivo requerida por la acción. |
+| `authorization_mode` | VARCHAR(30) | NOT NULL | Indica si la acción es `AUTOMATIC` o `HUMAN_REQUIRED`. |
+| `critical` | BOOLEAN | NOT NULL | Indica si la acción participa en la operación crítica local. |
+
+<p align="justify">
+<code>target_device_id</code> es una referencia externa y, por lo tanto, no crea una relación directa de base de datos con la persistencia de Device Management.
+</p>
+
+###### `alerts`
+
+<p align="justify">
+Almacena las alertas generadas a partir de la información de detección de riesgos recibida por Alert & Response Management.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `alert_id` | UUID | PRIMARY KEY | Identificador único de la alerta. |
+| `organization_id` | UUID | NOT NULL | Organización asociada con la alerta. |
+| `risk_detection_id` | UUID | NOT NULL | Identificador externo de la detección de riesgo que originó la alerta. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Tipo de riesgo capturado cuando se generó la alerta. |
+| `severity_code` | VARCHAR(50) | NOT NULL | Severidad capturada cuando se generó la alerta. |
+| `detected_at` | TIMESTAMP | NOT NULL | Momento original de detección del riesgo. |
+| `building_id` | UUID | NULL | Referencia externa a Building cuando está disponible. |
+| `zone_id` | UUID | NULL | Referencia externa a Zone cuando está disponible. |
+| `generated_at` | TIMESTAMP | NOT NULL | Momento en el que se generó la alerta. |
+
+<p align="justify">
+<code>AlertContext</code> es un Value Object y, por lo tanto, sus valores se integran en el registro de <code>alerts</code> en lugar de almacenarse en una tabla separada.
+</p>
+
+<p align="justify">
+<code>risk_detection_id</code>, <code>building_id</code> y <code>zone_id</code> son referencias externas e intencionalmente no crean claves foráneas hacia la persistencia de Risk Detection o Building Management.
+</p>
+
+###### `notification_deliveries`
+
+<p align="justify">
+Almacena los intentos de entrega de notificaciones asociados con las alertas generadas.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `delivery_id` | UUID | PRIMARY KEY | Identificador único del intento de entrega. |
+| `alert_id` | UUID | NOT NULL, FOREIGN KEY | Referencia `alerts.alert_id`. |
+| `recipient_user_id` | UUID | NOT NULL | Identificador externo del usuario destinatario. |
+| `channel` | VARCHAR(50) | NOT NULL | Canal de notificación utilizado para el intento. |
+| `destination` | VARCHAR(255) | NOT NULL | Identificador de destino requerido por el canal seleccionado. |
+| `status` | VARCHAR(20) | NOT NULL | Estado de entrega (`PENDING`, `DELIVERED` o `FAILED`). |
+| `requested_at` | TIMESTAMP | NOT NULL | Momento en el que se solicitó la entrega. |
+| `completed_at` | TIMESTAMP | NULL | Momento en el que finalizó el intento de entrega. |
+| `failure_reason` | VARCHAR(255) | NULL | Información del fallo cuando no pudo completarse la entrega. |
+
+<p align="justify">
+<code>recipient_user_id</code> es una referencia externa y, por lo tanto, no crea una relación directa con la persistencia de User o IAM.
+</p>
+
+###### `response_executions`
+
+<p align="justify">
+Almacena las ejecuciones de respuesta producidas por el sistema y preserva la instantánea de la acción utilizada para cada ejecución.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `response_execution_id` | UUID | PRIMARY KEY | Identificador único de la ejecución de respuesta. |
+| `organization_id` | UUID | NOT NULL | Organización asociada con la ejecución. |
+| `risk_detection_id` | UUID | NOT NULL | Identificador externo de la detección de riesgo de origen. |
+| `policy_id` | UUID | NOT NULL | Identificador de la política de respuesta utilizada cuando se creó la ejecución. |
+| `action_id` | UUID | NOT NULL | Identificador de la acción representada por la instantánea. |
+| `action_code` | VARCHAR(100) | NOT NULL | Código de acción preservado en la instantánea de ejecución. |
+| `target_device_id` | UUID | NOT NULL | Identificador externo del dispositivo objetivo. |
+| `target_capability_code` | VARCHAR(100) | NOT NULL | Capacidad utilizada durante la ejecución. |
+| `authorization_mode` | VARCHAR(30) | NOT NULL | Modo de autorización capturado cuando se creó la ejecución. |
+| `critical` | BOOLEAN | NOT NULL | Indicador de operación crítica capturado en la instantánea de la acción. |
+| `status` | VARCHAR(40) | NOT NULL | Estado actual de la ejecución de respuesta. |
+| `requested_at` | TIMESTAMP | NOT NULL | Momento en el que se creó la ejecución. |
+| `successful` | BOOLEAN | NULL | Indica si la ejecución finalizó satisfactoriamente. |
+| `result_code` | VARCHAR(100) | NULL | Código que identifica el resultado final de ejecución. |
+| `result_message` | VARCHAR(255) | NULL | Información adicional sobre el resultado. |
+| `completed_at` | TIMESTAMP | NULL | Momento en el que la ejecución alcanzó un resultado final. |
+
+<p align="justify">
+Los campos relacionados con la acción almacenados en esta tabla representan el <code>ResponseActionSnapshot</code>.
+</p>
+
+<p align="justify">
+<code>ExecutionResult</code> es un Value Object y, por lo tanto, sus valores se integran en el registro de <code>response_executions</code> en lugar de almacenarse en una tabla independiente.
+</p>
+
+<p align="justify">
+Los campos <code>successful</code>, <code>result_code</code>, <code>result_message</code> y <code>completed_at</code> admiten valores nulos mientras la ejecución no haya alcanzado un resultado final.
+</p>
+
+<p align="justify">
+<code>risk_detection_id</code> y <code>target_device_id</code> son referencias externas.
+</p>
+
+###### `response_authorizations`
+
+<p align="justify">
+Almacena las decisiones de autorización humana asociadas con las ejecuciones de respuesta.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `authorization_id` | UUID | PRIMARY KEY | Identificador único de la decisión de autorización. |
+| `response_execution_id` | UUID | NOT NULL, FOREIGN KEY | Referencia `response_executions.response_execution_id`. |
+| `decision` | VARCHAR(20) | NOT NULL | Decisión de autorización (`APPROVED` o `REJECTED`). |
+| `decided_by_user_id` | UUID | NOT NULL | Identificador externo del usuario que tomó la decisión. |
+| `decided_at` | TIMESTAMP | NOT NULL | Momento en el que se registró la decisión. |
+
+<p align="justify">
+Una <code>ResponseExecution</code> puede tener cero o una <code>ResponseAuthorization</code> asociada.
+</p>
+
+<p align="justify">
+<code>decided_by_user_id</code> es una referencia externa y, por lo tanto, no crea una relación directa de base de datos con la persistencia de User o IAM.
+</p>
+
+###### Persistencia Edge
+
+###### `edge_response_policies`
+
+<p align="justify">
+Almacena las réplicas de políticas de respuesta requeridas para la evaluación local en la base de datos SQLite de Edge.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `policy_id` | UUID | PRIMARY KEY | Identificador de la política de respuesta de Cloud representada localmente. |
+| `organization_id` | UUID | NOT NULL | Organización a la que pertenece la política. |
+| `risk_type_code` | VARCHAR(100) | NOT NULL | Tipo de riesgo al que se aplica la política. |
+| `status` | VARCHAR(20) | NOT NULL | Estado actual de la política replicada. |
+| `version` | BIGINT | NOT NULL | Versión utilizada para impedir que réplicas antiguas reemplacen a las más recientes. |
+| `updated_at` | TIMESTAMP | NOT NULL | Momento en el que se actualizó la réplica local por última vez. |
+
+<p align="justify">
+Esta tabla no es una fuente independiente de propiedad de las políticas. Es la representación local de Edge de la configuración de políticas administrada en Cloud.
+</p>
+
+###### `edge_response_actions`
+
+<p align="justify">
+Almacena las acciones pertenecientes a las políticas de respuesta replicadas localmente.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `action_id` | UUID | PRIMARY KEY | Identificador de la acción de respuesta replicada. |
+| `policy_id` | UUID | NOT NULL, FOREIGN KEY | Referencia `edge_response_policies.policy_id`. |
+| `action_code` | VARCHAR(100) | NOT NULL | Código que identifica la acción. |
+| `target_device_id` | UUID | NOT NULL | Identificador externo del dispositivo objetivo. |
+| `target_capability_code` | VARCHAR(100) | NOT NULL | Capacidad de actuación requerida por la acción. |
+| `authorization_mode` | VARCHAR(30) | NOT NULL | Indica si la acción es `AUTOMATIC` o `HUMAN_REQUIRED`. |
+| `critical` | BOOLEAN | NOT NULL | Indica si la acción participa en la operación crítica local. |
+
+###### `edge_response_executions`
+
+<p align="justify">
+Almacena las ejecuciones de respuesta creadas y procesadas localmente en Edge.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `response_execution_id` | UUID | PRIMARY KEY | Identificador único de la ejecución local de respuesta. |
+| `organization_id` | UUID | NOT NULL | Organización asociada con la ejecución. |
+| `risk_detection_id` | UUID | NOT NULL | Identificador externo de la detección de riesgo de origen. |
+| `policy_id` | UUID | NOT NULL | Identificador de la política de respuesta utilizada para la ejecución. |
+| `action_id` | UUID | NOT NULL | Identificador de la acción representada por la instantánea. |
+| `action_code` | VARCHAR(100) | NOT NULL | Código de acción preservado en la instantánea. |
+| `target_device_id` | UUID | NOT NULL | Identificador externo del dispositivo objetivo. |
+| `target_capability_code` | VARCHAR(100) | NOT NULL | Capacidad utilizada por la respuesta. |
+| `authorization_mode` | VARCHAR(30) | NOT NULL | Modo de autorización capturado para la ejecución. |
+| `critical` | BOOLEAN | NOT NULL | Indicador de operación crítica. |
+| `status` | VARCHAR(40) | NOT NULL | Estado actual de la ejecución local de respuesta. |
+| `requested_at` | TIMESTAMP | NOT NULL | Momento en el que se creó la ejecución. |
+| `successful` | BOOLEAN | NULL | Indica si la ejecución finalizó satisfactoriamente. |
+| `result_code` | VARCHAR(100) | NULL | Código de resultado final cuando está disponible. |
+| `result_message` | VARCHAR(255) | NULL | Información adicional del resultado. |
+| `completed_at` | TIMESTAMP | NULL | Momento en el que la ejecución alcanzó un resultado final. |
+
+<p align="justify">
+Una ejecución creada localmente puede permanecer en <code>PENDING_AUTHORIZATION</code> mientras espera una decisión de autorización desde Cloud.
+</p>
+
+###### `edge_response_authorizations`
+
+<p align="justify">
+Almacena las decisiones de autorización recibidas desde Cloud para las ejecuciones de respuesta originadas localmente.
+</p>
+
+| Columna | Tipo | Restricción | Descripción |
+|---|---|---|---|
+| `authorization_id` | UUID | PRIMARY KEY | Identificador de la decisión de autorización. |
+| `response_execution_id` | UUID | NOT NULL, FOREIGN KEY | Referencia `edge_response_executions.response_execution_id`. |
+| `decision` | VARCHAR(20) | NOT NULL | Decisión de autorización (`APPROVED` o `REJECTED`). |
+| `decided_by_user_id` | UUID | NOT NULL | Identificador externo del usuario que tomó la decisión. |
+| `decided_at` | TIMESTAMP | NOT NULL | Momento en el que se registró la decisión. |
+
+<p align="justify">
+La implementación de persistencia Edge debe utilizar SQLite con Peewee ORM, de acuerdo con la tecnología de Edge Services requerida por el enunciado del proyecto.
+</p>
+
+<p align="justify">
+Conceptualmente, las principales relaciones de persistencia son:
+</p>
+
+```text
+Cloud Persistence
+
+response_policies
+        |
+        | 1
+        |
+        | 0..*
+        v
+response_actions
+
+
+alerts
+        |
+        | 1
+        |
+        | 0..*
+        v
+notification_deliveries
+
+
+response_executions
+        |
+        | 1
+        |
+        | 0..1
+        v
+response_authorizations
+
+
+Edge SQLite
+
+edge_response_policies
+        |
+        | 1
+        |
+        | 0..*
+        v
+edge_response_actions
+
+
+edge_response_executions
+        |
+        | 1
+        |
+        | 0..1
+        v
+edge_response_authorizations
+```
+
+<p align="justify">
+El Database Design Diagram final debe distinguir claramente:
+</p>
+
+- Persistencia Cloud
+  - `response_policies`
+  - `response_actions`
+  - `alerts`
+  - `notification_deliveries`
+  - `response_executions`
+  - `response_authorizations`
+
+- Edge SQLite
+  - `edge_response_policies`
+  - `edge_response_actions`
+  - `edge_response_executions`
+  - `edge_response_authorizations`
+
+<p align="justify">
+El diagrama debe identificar:
+</p>
+
+- todas las tablas;
+
+- todas las columnas;
+
+- las claves primarias;
+
+- las claves foráneas internas del Bounded Context;
+
+- los campos que admiten valores nulos;
+
+- las cardinalidades;
+
+- los límites de persistencia de Cloud y Edge;
+
+- las referencias externas que intencionalmente no crean claves foráneas hacia otros Bounded Contexts.
+
+<p align="justify">
+No debe introducirse ninguna tabla de base de datos para <code>RiskDetection</code>, <code>Device</code>, <code>Building</code>, <code>Zone</code>, <code>User</code>, <code>Incident</code>, <code>Actuator</code> o eventos pendientes de Connectivity dentro de los límites de persistencia de Alert & Response Management.
+</p>
+
+<p align="justify">
+Las colas de mensajes, los reintentos, el almacenamiento de eventos pendientes y los mecanismos de sincronización permanecen fuera de este modelo de persistencia porque pertenecen al Bounded Context Connectivity.
+</p>
+
+**DIAGRAMA — Alert & Response Management Database Design Diagram**
+
+![Alert & Response Management Database Design Diagram](assets/images/chapter-04-solution-software-design/alert-response-management/alert-response-management-database-design-diagram.png)
+
+<p align="center">
+  <strong>Figura 59. Alert & Response Management Database Design Diagram.</strong>
+</p>
+
+### 4.2.4. Bounded Context: Building Management
+
+#### 4.2.4.1. Domain Layer
+
+**Aggregates**
+
+`Building`
+
+<p align="justify">
+Raíz del aggregate que representa una edificación de una organización. Mantiene su identificación, dirección, estado administrativo y zonas. Todas las modificaciones de una zona se realizan a través de Building.
+</p>
+
+| Atributo | Tipo de dato | Visibilidad | Descripción |
+|---|---|---|---|
+| id | Guid | Private | Identificador interno e inmutable de la edificación. |
+| organizationId | Guid | Private | Organización a la que pertenece la edificación. |
+| buildingCode | BuildingCode | Private | Código único dentro de la organización. |
+| name | string | Private | Nombre de la edificación, entre 1 y 120 caracteres. |
+| description | string? | Private | Descripción opcional de hasta 500 caracteres. |
+| address | BuildingAddress | Private | Dirección física de la edificación. |
+| administrativeStatus | LocationAdministrativeStatus | Private | Estado administrativo ACTIVE o INACTIVE. |
+| zones | List\<Zone\> | Private | Zonas de la edificación; puede estar vacía al registrarse. |
+| createdAt | DateTimeOffset | Private | Fecha y hora UTC de registro. |
+| updatedAt | DateTimeOffset | Private | Fecha y hora UTC de la última modificación del agregado. |
+| version | long | Private | Versión del agregado, incluidos los cambios en sus zonas. |
+
+| Método | Tipo de retorno | Descripción |
+|---|---|---|
+| Register(...) | Building | Registra una edificación activa, inicialmente sin zonas. |
+| UpdateDetails(name, description, address) | void | Actualiza los datos descriptivos y la dirección. |
+| ChangeAdministrativeStatus(status) | void | Activa o desactiva administrativamente la edificación. |
+| AddZone(zoneCode, name, description, floorLabel) | Zone | Agrega una zona activa a una edificación activa y verifica que su código no se repita. |
+| UpdateZone(zoneId, name, description, floorLabel) | void | Modifica los datos de una zona perteneciente a la edificación. |
+| ChangeZoneAdministrativeStatus(zoneId, status) | void | Cambia el estado de una zona; su activación exige una edificación activa. |
+| IsAvailableForAssignment(zoneId?) | bool | Comprueba si la edificación y, cuando se indica, la zona están disponibles para asignar dispositivos. |
+
+**Entities**
+
+`Zone`
+
+<p align="justify">
+<strong>Descripción:</strong> Área física de una edificación, como una cocina, un almacén o una sala técnica. Tiene identidad propia y pertenece a un único Building. No contiene dispositivos, mediciones ni reglas de detección.
+</p>
+
+| Atributo | Tipo de dato | Visibilidad | Descripción |
+|---|---|---|---|
+| id | Guid | Private | Identificador interno e inmutable de la zona. |
+| zoneCode | ZoneCode | Private | Código único dentro de la edificación. |
+| name | string | Private | Nombre de la zona, entre 1 y 120 caracteres. |
+| description | string? | Private | Descripción opcional de hasta 500 caracteres. |
+| floorLabel | string? | Private | Referencia opcional del nivel, hasta 50 caracteres; por ejemplo, Piso 2 o Sótano 1. |
+| administrativeStatus | LocationAdministrativeStatus | Private | Estado administrativo propio de la zona. |
+| createdAt | DateTimeOffset | Private | Fecha y hora UTC de creación. |
+| updatedAt | DateTimeOffset | Private | Fecha y hora UTC de su última modificación. |
+
+<p align="justify">
+El nivel es un dato descriptivo; esta propuesta no incorpora un agregado Floor ni una jerarquía de zonas. Zone no tiene repositorio independiente ni cambia de edificación. Si el área física se reemplaza, se registra otra zona y se desactiva la anterior para conservar sus referencias.
+</p>
+
+**Value Objects**
+
+| Value Object (`record`) | Atributos | Validación y significado |
+|---|---|---|
+| BuildingCode | value: string | Entre 1 y 64 caracteres; letras ASCII, números, guion y guion bajo. Se eliminan espacios exteriores y se convierte a mayúsculas. |
+| ZoneCode | value: string | Aplica la misma normalización que BuildingCode; su unicidad se limita a la edificación. |
+| BuildingAddress | streetAddress: string, district: string, city: string, countryCode: string | Dirección de hasta 200 caracteres; distrito y ciudad de hasta 100; código de país de dos letras mayúsculas, por ejemplo PE. Todos los campos son obligatorios. |
+
+<p align="justify">
+Los identificadores rechazan <code>Guid.Empty</code>. Los códigos, la organización y la pertenencia de una zona son inmutables. Las propiedades públicas de records en C# utilizan PascalCase; los campos de los contratos JSON se presentan en camelCase.
+</p>
+
+**Enumerations**
+
+| Enumeración | Valores | Significado |
+|---|---|---|
+| LocationAdministrativeStatus | ACTIVE, INACTIVE | Ubicación habilitada o deshabilitada administrativamente para nuevas asignaciones. |
+
+<p align="justify">
+Desactivar una edificación impide nuevas asignaciones tanto a ella como a sus zonas, pero conserva el estado propio de cada zona. Al reactivarla, solo quedan disponibles las zonas que conservan ACTIVE. No se eliminan asociaciones existentes ni se confirma ninguna acción sobre equipos físicos. Estos estados y las reglas de normalización son decisiones de diseño propuestas para desarrollar US21 y US22; no se presentan como requisitos explícitos de sus criterios de aceptación.
+</p>
+
+**Commands**
+
+<p align="justify">
+<code>organizationId</code> procede del contexto autorizado. <code>expectedVersion</code> corresponde siempre a la versión de Building, incluso al modificar una zona.
+</p>
+
+| Command (`record`) | Datos |
+|---|---|
+| RegisterBuildingCommand | organizationId, buildingCode, name, description?, address |
+| UpdateBuildingDetailsCommand | organizationId, buildingId, name, description?, address, expectedVersion |
+| ChangeBuildingAdministrativeStatusCommand | organizationId, buildingId, administrativeStatus, expectedVersion |
+| AddZoneToBuildingCommand | organizationId, buildingId, zoneCode, name, description?, floorLabel?, expectedVersion |
+| UpdateZoneCommand | organizationId, buildingId, zoneId, name, description?, floorLabel?, expectedVersion |
+| ChangeZoneAdministrativeStatusCommand | organizationId, buildingId, zoneId, administrativeStatus, expectedVersion |
+
+**Queries**
+
+| Query (`record`) | Datos | Resultado |
+|---|---|---|
+| GetBuildingByIdQuery | organizationId, buildingId | Building? |
+| GetBuildingsQuery | organizationId, administrativeStatus?, page, size | PagedResult\<Building\> |
+| GetZonesByBuildingIdQuery | organizationId, buildingId, administrativeStatus?, page, size | PagedResult\<Zone\> |
+| GetZoneByIdQuery | organizationId, buildingId, zoneId | Zone? |
+
+**Services**
+
+| Interfaz | Método | Tipo de retorno |
+|---|---|---|
+| IBuildingCommandService | Handle(RegisterBuildingCommand) | Building |
+| IBuildingCommandService | Handle(UpdateBuildingDetailsCommand) | Building |
+| IBuildingCommandService | Handle(ChangeBuildingAdministrativeStatusCommand) | Building |
+| IBuildingCommandService | Handle(AddZoneToBuildingCommand) | Building |
+| IBuildingCommandService | Handle(UpdateZoneCommand) | Building |
+| IBuildingCommandService | Handle(ChangeZoneAdministrativeStatusCommand) | Building |
+| IBuildingQueryService | Handle(GetBuildingByIdQuery) | Building? |
+| IBuildingQueryService | Handle(GetBuildingsQuery) | PagedResult\<Building\> |
+| IBuildingQueryService | Handle(GetZonesByBuildingIdQuery) | PagedResult\<Zone\> |
+| IBuildingQueryService | Handle(GetZoneByIdQuery) | Zone? |
+
+<p align="justify">
+<code>IBuildingRepository</code> declara el contrato de persistencia del agregado. <code>BuildingReadScope</code> representa las edificaciones y zonas visibles para el solicitante; <code>BuildingFilters</code> y <code>ZoneFilters</code> contienen los filtros de consulta. Estos contratos no dependen del framework web ni de clases internas de IAM. <code>PagedResult&lt;T&gt;</code> contiene Items, Page, Size, TotalElements y TotalPages.
+</p>
+
+**Domain Events**
+
+| Evento | Se produce cuando |
+|---|---|
+| BuildingRegistered | Se registra una edificación. |
+| BuildingDetailsUpdated | Cambian sus datos descriptivos o dirección. |
+| BuildingAdministrativeStatusChanged | Cambia el estado administrativo de la edificación. |
+| ZoneAddedToBuilding | Se agrega una zona. |
+| ZoneDetailsUpdated | Cambian los datos descriptivos de una zona. |
+| ZoneAdministrativeStatusChanged | Cambia el estado administrativo de una zona. |
+
+<p align="justify">
+Cada cambio efectivo incrementa una vez la versión de Building y genera un evento. Repetir valores existentes no produce un cambio adicional. El mensaje de integración contiene eventId, eventType, schemaVersion, organizationId, buildingId, aggregateVersion, occurredAt y una instantánea de la edificación con sus zonas. Los cambios de zona incluyen además affectedZoneId. La aplicación conserva el mensaje mediante una outbox para informar a los consumidores sin compartir tablas.
+</p>
+
+#### 4.2.4.2. Interface Layer
+
+**REST Controllers**
+
+`BuildingsController`
+
+<p align="justify">
+<strong>Descripción:</strong> Expone el registro y consulta de edificaciones y zonas. Construye comandos y consultas, aplica el contrato HTTP y transforma los resultados en recursos. Las rutas anidadas expresan que cada zona pertenece a una edificación.
+</p>
+
+| Método | Ruta | Descripción | Respuesta exitosa |
+|---|---|---|---|
+| RegisterBuilding() | POST /api/v1/buildings | Registra una edificación. | 201, BuildingResource, Location y ETag |
+| GetBuildings() | GET /api/v1/buildings | Lista edificaciones; admite administrativeStatus, page y size. | 200, BuildingPageResource |
+| GetBuildingById() | GET /api/v1/buildings/{buildingId} | Consulta una edificación y sus zonas visibles. | 200, BuildingResource y ETag |
+| UpdateBuildingDetails() | PUT /api/v1/buildings/{buildingId}/details | Actualiza nombre, descripción y dirección. | 200, BuildingResource y ETag |
+| ChangeBuildingAdministrativeStatus() | PUT /api/v1/buildings/{buildingId}/administrative-status | Activa o desactiva la edificación. | 200, BuildingResource y ETag |
+| AddZoneToBuilding() | POST /api/v1/buildings/{buildingId}/zones | Agrega una zona a la edificación. | 201, BuildingResource, Location de la zona y ETag |
+| GetZonesByBuildingId() | GET /api/v1/buildings/{buildingId}/zones | Lista zonas; admite administrativeStatus, page y size. | 200, ZonePageResource |
+| GetZoneById() | GET /api/v1/buildings/{buildingId}/zones/{zoneId} | Consulta una zona de la edificación indicada. | 200, ZoneResource |
+| UpdateZone() | PUT /api/v1/buildings/{buildingId}/zones/{zoneId}/details | Actualiza los datos de una zona. | 200, BuildingResource y ETag |
+| ChangeZoneAdministrativeStatus() | PUT /api/v1/buildings/{buildingId}/zones/{zoneId}/administrative-status | Activa o desactiva una zona. | 200, BuildingResource y ETag |
+
+<p align="justify">
+Los PUT y el POST de creación de una zona requieren <code>If-Match</code> con el ETag de Building, obtenido en GET /buildings/{buildingId}. Los comandos devuelven el agregado actualizado y su nuevo ETag; una zona no tiene versión independiente. La paginación comienza en cero, con tamaño predeterminado 20 y máximo 100, y utiliza un orden estable por createdAt e id. No se exponen operaciones DELETE.
+</p>
+
+**Resources**
+
+| Resource (`record`) | Contenido |
+|---|---|
+| RegisterBuildingResource | buildingCode, name, description?, address |
+| UpdateBuildingDetailsResource | name, description?, address |
+| ChangeBuildingAdministrativeStatusResource | administrativeStatus |
+| AddZoneToBuildingResource | zoneCode, name, description?, floorLabel? |
+| UpdateZoneResource | name, description?, floorLabel? |
+| ChangeZoneAdministrativeStatusResource | administrativeStatus |
+| BuildingAddressResource | streetAddress, district, city, countryCode |
+| BuildingResource | id, organizationId, buildingCode, name, description?, address, administrativeStatus, zones, createdAt, updatedAt, version |
+| ZoneResource | id, buildingId, zoneCode, name, description?, floorLabel?, administrativeStatus, availableForAssignment, createdAt, updatedAt |
+| BuildingPageResource | items: List\<BuildingResource\>, page, size, totalElements, totalPages |
+| ZonePageResource | items: List\<ZoneResource\>, page, size, totalElements, totalPages |
+| ErrorResource | code, message, fieldErrors?, traceId |
+
+<p align="justify">
+<code>availableForAssignment</code> se calcula con el estado de Building y Zone; no se almacena como columna. Los filtros de estado de zonas se refieren a su estado propio. Los recursos de entrada no aceptan organizationId, IDs generados, fechas ni versión como campos editables. Todas las salidas, incluidas las zonas anidadas y los totales, respetan el alcance autorizado.
+</p>
+
+**Assemblers**
+
+| Assembler | Responsabilidad |
+|---|---|
+| RegisterBuildingCommandFromResourceAssembler | Construye RegisterBuildingCommand con el recurso y la organización autorizada. |
+| UpdateBuildingDetailsCommandFromResourceAssembler | Construye UpdateBuildingDetailsCommand con el recurso, buildingId y versión esperada. |
+| ChangeBuildingAdministrativeStatusCommandFromResourceAssembler | Construye ChangeBuildingAdministrativeStatusCommand. |
+| AddZoneToBuildingCommandFromResourceAssembler | Construye AddZoneToBuildingCommand usando la versión de Building. |
+| UpdateZoneCommandFromResourceAssembler | Construye UpdateZoneCommand con buildingId, zoneId y versión esperada. |
+| ChangeZoneAdministrativeStatusCommandFromResourceAssembler | Construye ChangeZoneAdministrativeStatusCommand. |
+| BuildingQueriesFromRequestAssembler | Convierte parámetros de ruta y consulta en las cuatro consultas del dominio. |
+| BuildingResourceFromEntityAssembler | Convierte Building y las zonas visibles en BuildingResource. |
+| ZoneResourceFromEntityAssembler | Convierte Zone y el estado de su Building en ZoneResource. |
+| BuildingPageResourceFromPageAssembler | Construye BuildingPageResource. |
+| ZonePageResourceFromPageAssembler | Construye ZonePageResource. |
+
+**Contrato de errores**
+
+| Código HTTP | Situación |
+|---|---|
+| 400 | Identificadores vacíos, campos, estados o paginación inválidos. |
+| 401 | Identidad ausente o inválida. |
+| 403 | Falta permiso para registrar o modificar la ubicación. |
+| 404 | Edificación o zona no encontrada dentro del ámbito visible, incluida una zona que no pertenece a la edificación indicada. |
+| 409 | Código duplicado; creación o activación de una zona en una edificación inactiva. |
+| 412 | La versión de Building ya cambió. |
+| 428 | Falta If-Match al modificar un agregado existente. |
+| 503 | No puede completarse una validación de autorización obligatoria. |
+
+
+**Fachada de integración**
+
+<p align="justify">
+<code>BuildingsContextFacade</code> expone <code>ValidateAssignment(organizationId, buildingId, zoneId?)</code> a contextos autorizados. Utiliza <code>IBuildingQueryService</code> para comprobar organización, existencia, pertenencia de la zona y disponibilidad administrativa. Devuelve <code>BuildingAssignmentValidation</code> con organizationId, buildingId, zoneId, buildingVersion y availableForAssignment; no entrega entidades persistentes. Una ubicación inexistente o no visible responde como no encontrada y una ubicación inactiva no se considera disponible. Device traduce la respuesta a su contrato local <code>ValidatedAssignment</code>. Esta fachada completa el componente ya representado en el diagrama.
+</p>
+
+#### 4.2.4.3. Application Layer
+
+`BuildingCommandServiceImpl`
+
+<p align="justify">
+<strong>Descripción:</strong> Implementa IBuildingCommandService. Verifica permisos, carga el agregado, aplica sus reglas y persiste Building, sus zonas y el mensaje outbox en una transacción local.
+</p>
+
+| Método | Descripción |
+|---|---|
+| Handle(RegisterBuildingCommand) | Comprueba permiso de creación en la organización y código disponible; registra la edificación activa con versión 1. |
+| Handle(UpdateBuildingDetailsCommand) | Verifica acceso y versión; actualiza nombre, descripción y dirección. |
+| Handle(ChangeBuildingAdministrativeStatusCommand) | Cambia el estado de Building sin eliminar zonas ni modificar sus estados propios. |
+| Handle(AddZoneToBuildingCommand) | Verifica acceso, versión y edificación activa; agrega una zona con código único dentro del agregado. |
+| Handle(UpdateZoneCommand) | Comprueba que la zona pertenece al Building y es editable por el solicitante; actualiza sus datos descriptivos. |
+| Handle(ChangeZoneAdministrativeStatusCommand) | Cambia el estado propio de la zona; exige Building activo para activarla. |
+
+<p align="justify">
+Toda modificación de Zone incrementa la versión de Building. Una escritura compara expectedVersion con la versión almacenada y revierte la transacción completa ante conflicto. Las restricciones únicas de MySQL también protegen frente a registros simultáneos. Una edificación o zona inactiva puede conservar y corregir sus datos descriptivos.
+</p>
+
+`BuildingQueryServiceImpl`
+
+<p align="justify">
+<strong>Descripción:</strong> Implementa IBuildingQueryService sin modificar datos. Aplica los filtros y el alcance de IAM antes de paginar o calcular los totales.
+</p>
+
+| Método | Descripción |
+|---|---|
+| Handle(GetBuildingByIdQuery) | Obtiene una edificación dentro de la organización y el alcance del solicitante. |
+| Handle(GetBuildingsQuery) | Lista las edificaciones visibles por estado administrativo. |
+| Handle(GetZonesByBuildingIdQuery) | Lista las zonas visibles de la edificación indicada. |
+| Handle(GetZoneByIdQuery) | Obtiene una zona comprobando su edificación, organización y alcance autorizado. |
+
+**Puertos de aplicación e integración**
+
+| Puerto | Métodos principales | Responsabilidad |
+|---|---|---|
+| IBuildingAccessGateway | RequirePermission(action, organizationId, buildingId?, zoneId?); GetReadScope(organizationId): BuildingReadScope | Valida permisos de IAM para la organización y ubicación. La creación de una edificación exige permiso a nivel de organización. |
+| IBuildingOutboxRepository | Append(message); FindPending(batchSize); MarkPublished(eventId); RecordFailure(eventId, nextAttemptAt) | Conserva los mensajes de integración y su estado de publicación. |
+| IBuildingEventPublisher | Publish(message) | Entrega mensajes a los consumidores mediante el transporte configurado. |
+
+<p align="justify">
+<code>BuildingIntegrationEventMapper</code> construye el mensaje con la instantánea del agregado. <code>BuildingOutboxDispatcher</code> publica mensajes pendientes y reintenta los fallidos. Los consumidores deduplican por eventId y aplican únicamente versiones superiores a la conocida. Un fallo de publicación posterior al commit conserva el mensaje pendiente.
+</p>
+
+**Coordinación con Device Management**
+
+<p align="justify">
+Buildings conserva los identificadores de edificaciones y zonas, incluso cuando están inactivas. Esta entrega utiliza desactivación reversible; no incorpora retiro definitivo ni eliminación física. Devices consulta la fachada al registrar, reasignar o activar un equipo. Desactivar una ubicación bloquea futuras validaciones, pero no borra dispositivos ni altera mediciones o incidentes anteriores.
+</p>
+
+<p align="justify">
+La validación describe la disponibilidad en el momento de la consulta. Si una asignación y una desactivación se ejecutan simultáneamente en servicios separados, la consulta por sí sola no garantiza atomicidad entre contextos. La integración deberá revalidar o reconciliar esa asignación ante cambios concurrentes; no se interpreta una respuesta válida como una reserva permanente. Las instantáneas históricas conservadas por Monitoring e Incident Management no se reescriben al renombrar una ubicación.
+</p>
+
+#### 4.2.4.4. Infrastructure Layer
+
+**Persistencia del agregado**
+
+`IBuildingRepository` / `RelationalBuildingRepository`
+
+<p align="justify">
+<strong>Descripción:</strong> IBuildingRepository define el contrato del dominio. RelationalBuildingRepository guarda el agregado y consulta sus zonas en MySQL. No se publica un repositorio de escritura independiente para Zone.
+</p>
+
+| Método del puerto | Tipo de retorno | Descripción |
+|---|---|---|
+| FindByIdAndOrganizationId(buildingId, organizationId) | Building? | Recupera Building con sus zonas dentro de una organización; la aplicación verifica además el alcance de acceso. |
+| FindPage(organizationId, filters, readScope, page, size) | PagedResult\<Building\> | Consulta edificaciones visibles y aplica el filtro de estado. |
+| FindZonesPage(organizationId, buildingId, filters, readScope, page, size) | PagedResult\<Zone\> | Consulta zonas mediante su relación con Building y aplica el alcance antes de paginar. |
+| FindZoneById(organizationId, buildingId, zoneId) | Zone? | Busca una zona que pertenezca a la edificación y organización indicadas. |
+| ExistsByOrganizationIdAndBuildingCode(organizationId, buildingCode) | bool | Detecta códigos de edificación repetidos. |
+| Save(building, expectedVersion?) | Building | Inserta o actualiza Building y sus zonas de forma atómica, con control de versión. |
+
+<p align="justify">
+La unicidad del código de zona se verifica dentro del agregado y mediante UNIQUE(building_id, zone_code). Las consultas de zonas siempre se restringen por la organización del Building; no se acepta zoneId como prueba suficiente de acceso.
+</p>
+
+**Adaptadores**
+
+| Componente | Puerto implementado | Descripción |
+|---|---|---|
+| IamBuildingAccessAdapter | IBuildingAccessGateway | Adapta los permisos y el alcance de IAM. |
+| RelationalBuildingOutboxRepository | IBuildingOutboxRepository | Persiste mensajes en la misma transacción y base de datos del agregado. |
+| BuildingEventPublisherAdapter | IBuildingEventPublisher | Publica mensajes mediante el transporte de integración elegido. |
+| BuildingPersistenceMapper | No aplica | Convierte Building, Zone y sus value objects hacia y desde registros relacionales. |
+
+
+#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Diagrama de componentes de Building Management](assets/images/chapter-04-solution-software-design/buildings-components.png)
+
+<p align="center">
+  <strong>Figura 60. Diagrama de componentes de Building Management.</strong>
+</p>
+
+<p align="justify">
+Web y Mobile son contenedores separados y consumen BuildingsController. Los servicios de aplicación coordinan reglas de Building y Zone y persistencia en MySQL. Device valida ubicaciones mediante BuildingsContextFacade. La vista muestra el flujo principal; los adaptadores de IAM y publicación outbox se detallan en las capas anteriores para mantener el diagrama simple.
+</p>
+
+#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
+
+![Diagrama UML del agregado Building](assets/images/chapter-04-solution-software-design/buildings-domain-model.png)
+
+<p align="center">
+  <strong>Figura 61. Diagrama UML del agregado Building.</strong>
+</p>
+
+![Diagrama UML de contratos de Building Management](assets/images/chapter-04-solution-software-design/buildings-domain-contracts.png)
+
+<p align="center">
+  <strong>Figura 62. Diagrama UML de contratos de Building Management.</strong>
+</p>
+
+<p align="justify">
+Building es la raíz y contiene cero o más zonas, cada una perteneciente a una única edificación. Los value objects encapsulan códigos y dirección; los contratos de comandos, consultas y repositorio operan sobre esa estructura. Renombrar una zona mantiene su identidad y referencias, en correspondencia con US22, AC2.
+</p>
+
+##### 4.2.4.6.2. Bounded Context Database Design Diagram
+
+![Diagrama relacional de Building Management](assets/images/chapter-04-solution-software-design/buildings-database.png)
+
+<p align="center">
+  <strong>Figura 63. Diagrama relacional de Building Management.</strong>
+</p>
+
+<p align="justify">
+<code>zones.building_id</code> referencia a <code>buildings.id</code>. Los códigos son únicos por organización o edificación, respectivamente. <code>building_outbox</code> conserva los mensajes de integración en la misma transacción que el agregado; es una tabla técnica. <code>organization_id</code> es una referencia externa, sin FK hacia otro bounded context. La versión de Building también controla los cambios en sus zonas.
+</p>
+
+### 4.2.5. Bounded Context: Device Management
+
+#### 4.2.5.1. Domain Layer
+
+**Aggregates**
+
+`Device`
+
+<p align="justify">
+Raíz del aggregate que representa un equipo IoT registrado en una organización. Controla sus características, capacidades y asignación física. Un mismo equipo puede medir varias variables y ejecutar acciones; por ello se utiliza una colección de capacidades en lugar de exigir que sea exclusivamente sensor o actuador.
+</p>
+
+| Atributo | Tipo de dato | Visibilidad | Descripción |
+|---|---|---|---|
+| id | Guid | Private | Identificador interno e inmutable del dispositivo. |
+| organizationId | Guid | Private | Identificador de la organización propietaria del registro; no representa al usuario que lo creó. |
+| deviceCode | DeviceCode | Private | Código estable y único dentro de la organización. |
+| name | string | Private | Nombre visible del equipo; obligatorio, de 1 a 120 caracteres. |
+| description | string? | Private | Descripción administrativa opcional, hasta 500 caracteres. |
+| specifications | DeviceSpecifications | Private | Fabricante, modelo y número de serie, cuando se conocen. |
+| assignment | DeviceAssignment | Private | Edificación obligatoria y zona opcional donde está instalado. |
+| externalReference | ExternalDeviceReference? | Private | Correspondencia opcional con un equipo de un sistema externo. |
+| administrativeStatus | DeviceAdministrativeStatus | Private | Estado administrativo del registro. |
+| capabilities | List\<DeviceCapability\> | Private | Capacidades de medición y actuación que pertenecen al agregado. |
+| createdAt | DateTimeOffset | Private | Fecha y hora UTC del registro. |
+| updatedAt | DateTimeOffset | Private | Fecha y hora UTC de la última modificación. |
+| version | long | Private | Versión para controlar modificaciones concurrentes y ordenar eventos. |
+
+| Método | Tipo de retorno | Descripción |
+|---|---|---|
+| Register(...) | Device | Crea el agregado en estado `INACTIVE` con al menos una capacidad válida. |
+| UpdateDetails(name, description, specifications) | void | Modifica datos descriptivos sin alterar la identidad del equipo. |
+| ReplaceCapabilities(capabilityDefinitions) | void | Sustituye las capacidades de un dispositivo inactivo; conserva el ID de las capacidades cuyo código no cambia. |
+| AssignTo(assignment) | void | Cambia la edificación o zona de un dispositivo inactivo, previa validación externa de la ubicación. |
+| ChangeAdministrativeStatus(status) | void | Aplica una transición válida del ciclo de vida administrativo. |
+
+**Entities**
+
+`DeviceCapability`
+
+<p align="justify">
+<strong>Descripción:</strong> Capacidad individual de un dispositivo. Tiene identidad propia dentro del agregado y solo se modifica a través de <code>Device</code>; no tiene repositorio ni controlador independiente.
+</p>
+
+| Atributo | Tipo de dato | Visibilidad | Descripción |
+|---|---|---|---|
+| id | Guid | Private | Identificador de la capacidad. |
+| code | string | Private | Código estable, de 1 a 80 caracteres, único dentro del dispositivo; por ejemplo, `ambient_temperature` o `close_valve`. |
+| kind | CapabilityKind | Private | `MEASUREMENT` o `ACTUATION`. |
+| unit | string? | Private | Unidad de una medición, hasta 30 caracteres; no aplica a capacidades de actuación. |
+
+<p align="justify">
+Las capacidades describen lo que el equipo puede hacer. No contienen valores medidos, reglas, parámetros de ejecución, resultados de acciones ni datos de conexión. Los ejemplos de códigos son ilustrativos; no constituyen un catálogo de hardware ya seleccionado.
+</p>
+
+**Value Objects**
+
+| Value Object (`record`) | Atributos | Validación y significado |
+|---|---|---|
+| DeviceCode | value: string | Entre 1 y 64 caracteres; espacios exteriores eliminados y conversión a mayúsculas. Se propone admitir letras ASCII, números, guion y guion bajo. |
+| DeviceSpecifications | manufacturer: string?, model: string?, serialNumber: string? | Metadatos opcionales de hasta 100 caracteres cada uno. El número de serie no sustituye al identificador interno ni se presume único entre fabricantes. |
+| DeviceAssignment | buildingId: Guid, zoneId: Guid? | Siempre exige una edificación. Si existe zona, esta debe pertenecer a esa edificación y a la misma organización. La comprobación de existencia se coordina desde Application Layer. |
+| ExternalDeviceReference | sourceSystem: string, externalDeviceId: string | Ambos valores son obligatorios si se proporciona la referencia, de hasta 80 y 120 caracteres. Identifican al equipo en una instancia de integración dentro de la organización. |
+| CapabilityDefinition | code: string, kind: CapabilityKind, unit: string? | Entrada inmutable para crear o reemplazar capacidades; aplica las mismas reglas que `DeviceCapability`, sin aceptar su ID desde el cliente. |
+
+<p align="justify">
+<code>sourceSystem</code> identifica una <strong>instancia</strong> de integración, por ejemplo <code>bms-campus-norte</code>, y no solo el nombre del fabricante. Se normaliza a minúsculas y admite letras ASCII, números, guion y guion bajo; <code>externalDeviceId</code> conserva mayúsculas y minúsculas y se compara exactamente tras quitar espacios exteriores. La referencia externa y <code>deviceCode</code> son inmutables en esta propuesta; sustituir físicamente el equipo requiere registrar otro <code>Device</code> y retirar el anterior.
+</p>
+
+**Enumerations**
+
+| Enumeración | Valores | Significado |
+|---|---|---|
+| DeviceAdministrativeStatus | INACTIVE, ACTIVE, RETIRED | Registrado y deshabilitado administrativamente; habilitado administrativamente; retirado de manera definitiva. |
+| CapabilityKind | MEASUREMENT, ACTUATION | Capacidad para producir una medición o para recibir una acción. |
+
+<p align="justify">
+El ciclo administrativo propuesto admite INACTIVE → ACTIVE, ACTIVE → INACTIVE e INACTIVE → RETIRED. RETIRED es terminal; retirar un equipo activo exige desactivarlo primero. Estos estados no equivalen a conectado/desconectado ni al resultado de una prueba de integración. Las modificaciones de ubicación o capacidades solo se permiten en INACTIVE; un equipo retirado permanece consultable y no editable.
+</p>
+
+**Commands**
+
+<p align="justify">
+Los comandos representan intenciones de modificación. <code>organizationId</code> se obtiene del contexto autorizado del solicitante. <code>expectedVersion</code> se obtiene de <code>If-Match</code> para impedir que una edición sobrescriba cambios más recientes.
+</p>
+
+| Command (`record`) | Datos |
+|---|---|
+| RegisterDeviceCommand | organizationId, deviceCode, name, description?, specifications, assignment, externalReference?, capabilities: List\<CapabilityDefinition\> |
+| UpdateDeviceDetailsCommand | organizationId, deviceId, name, description?, specifications, expectedVersion |
+| ReplaceDeviceCapabilitiesCommand | organizationId, deviceId, capabilities: List\<CapabilityDefinition\>, expectedVersion |
+| AssignDeviceToLocationCommand | organizationId, deviceId, buildingId, zoneId?, expectedVersion |
+| ChangeDeviceAdministrativeStatusCommand | organizationId, deviceId, administrativeStatus, expectedVersion |
+
+**Queries**
+
+| Query (`record`) | Datos | Resultado |
+|---|---|---|
+| GetDeviceByIdQuery | organizationId, deviceId | Device? |
+| GetDevicesQuery | organizationId, buildingId?, zoneId?, administrativeStatus?, page, size | PagedResult\<Device\> |
+| GetDeviceByExternalReferenceQuery | organizationId, sourceSystem, externalDeviceId | Device? |
+
+**Services**
+
+| Interfaz | Métodos | Tipo de retorno |
+|---|---|---|
+| IDeviceCommandService | Handle(RegisterDeviceCommand) | Device |
+| IDeviceCommandService | Handle(UpdateDeviceDetailsCommand) | Device |
+| IDeviceCommandService | Handle(ReplaceDeviceCapabilitiesCommand) | Device |
+| IDeviceCommandService | Handle(AssignDeviceToLocationCommand) | Device |
+| IDeviceCommandService | Handle(ChangeDeviceAdministrativeStatusCommand) | Device |
+| IDeviceQueryService | Handle(GetDeviceByIdQuery) | Device? |
+| IDeviceQueryService | Handle(GetDevicesQuery) | PagedResult\<Device\> |
+| IDeviceQueryService | Handle(GetDeviceByExternalReferenceQuery) | Device? |
+
+<p align="justify">
+<code>IDeviceRepository</code> es el puerto de persistencia del agregado, declarado en el dominio. Su implementación se describe en Infrastructure Layer. Los servicios anteriores son contratos; <code>DeviceCommandServiceImpl</code> y <code>DeviceQueryServiceImpl</code> son sus implementaciones de aplicación. La separación de comandos y consultas no exige bases de datos diferentes.
+</p>
+
+<p align="justify">
+Los contratos auxiliares <code>DeviceReadScope</code> y <code>DeviceFilters</code> contienen identificadores de ubicaciones autorizadas y filtros de consulta, respectivamente; no dependen de clases de IAM, del framework web ni de la infraestructura. <code>PagedResult&lt;T&gt;</code> contiene <code>Items</code>, <code>Page</code>, <code>Size</code>, <code>TotalElements</code> y <code>TotalPages</code>. Las propiedades públicas de records en C# siguen PascalCase; los nombres camelCase de las tablas de entrada y salida corresponden a su representación JSON. Los identificadores obligatorios rechazan <code>Guid.Empty</code>.
+</p>
+
+**Domain Events**
+
+| Evento | Se produce cuando |
+|---|---|
+| DeviceRegistered | Se registra un dispositivo. |
+| DeviceDetailsUpdated | Cambian sus datos descriptivos. |
+| DeviceCapabilitiesReplaced | Cambia su conjunto de capacidades. |
+| DeviceAssignedToLocation | Cambia su asignación física. |
+| DeviceAdministrativeStatusChanged | Se aplica una transición administrativa. |
+
+<p align="justify">
+Los eventos se producen únicamente ante cambios efectivos. La aplicación los convierte en mensajes de integración con <code>eventId</code>, <code>eventType</code>, <code>schemaVersion</code>, <code>organizationId</code>, <code>deviceId</code>, <code>aggregateVersion</code>, <code>occurredAt</code> y una instantánea del catálogo del dispositivo. El evento de asignación incluye también la asignación anterior. La instantánea contiene metadatos, capacidades, estado y asignación; no contiene mediciones ni credenciales. Permite que Monitoring y Alert & Response Management actualicen su referencia del equipo sin acceder a las tablas de Devices.
+</p>
+
+#### 4.2.5.2. Interface Layer
+
+**REST Controllers**
+
+`DevicesController`
+
+<p align="justify">
+<strong>Descripción:</strong> Recibe solicitudes autenticadas, valida su forma, construye comandos o consultas y transforma los resultados en recursos REST. Las reglas del agregado permanecen en Domain Layer y la coordinación de permisos, ubicación y persistencia se ejecuta en Application Layer.
+</p>
+
+| Método | Ruta | Descripción | Respuesta exitosa |
+|---|---|---|---|
+| RegisterDevice() | POST /api/v1/devices | Registra el equipo con sus capacidades y ubicación inicial. | 201, DeviceResource, Location y ETag |
+| GetDevices() | GET /api/v1/devices | Lista los dispositivos visibles para el solicitante; admite buildingId, zoneId, administrativeStatus, page y size. | 200, DevicePageResource |
+| GetDeviceById() | GET /api/v1/devices/{deviceId} | Consulta un dispositivo de la organización autorizada. | 200, DeviceResource y ETag |
+| GetDeviceByExternalReference() | GET /api/v1/devices/by-external-reference?sourceSystem=...&externalDeviceId=... | Resuelve un identificador de una integración. | 200, DeviceResource y ETag |
+| UpdateDeviceDetails() | PUT /api/v1/devices/{deviceId}/details | Sustituye sus datos descriptivos. | 200, DeviceResource y ETag |
+| ReplaceDeviceCapabilities() | PUT /api/v1/devices/{deviceId}/capabilities | Sustituye el conjunto de capacidades de un equipo inactivo. | 200, DeviceResource y ETag |
+| AssignDeviceToLocation() | PUT /api/v1/devices/{deviceId}/assignment | Asigna o reasigna un equipo inactivo a una edificación y, opcionalmente, una zona. | 200, DeviceResource y ETag |
+| ChangeDeviceAdministrativeStatus() | PUT /api/v1/devices/{deviceId}/administrative-status | Habilita, deshabilita o retira administrativamente el equipo. | 200, DeviceResource y ETag |
+
+<p align="justify">
+Las modificaciones con <code>PUT</code> requieren <code>If-Match</code> con el ETag obtenido al consultar el recurso, derivado de <code>version</code>. Se propone paginación desde cero, tamaño predeterminado 20, máximo 100 y orden estable por <code>createdAt</code> e <code>id</code>. Las consultas sin filtros tampoco devuelven dispositivos fuera del ámbito autorizado. Los dispositivos retirados siguen siendo consultables; el filtro administrativo permite excluirlos. No se expone eliminación física.
+</p>
+
+**Resources**
+
+| Resource (`record`) | Contenido |
+|---|---|
+| RegisterDeviceResource | deviceCode, name, description?, specifications, assignment, externalReference?, capabilities |
+| UpdateDeviceDetailsResource | name, description?, specifications |
+| ReplaceDeviceCapabilitiesResource | capabilities: List\<CapabilityDefinitionResource\> |
+| AssignDeviceToLocationResource | buildingId, zoneId? |
+| ChangeDeviceAdministrativeStatusResource | administrativeStatus |
+| DeviceSpecificationsResource | manufacturer?, model?, serialNumber? |
+| DeviceAssignmentResource | buildingId, zoneId? |
+| ExternalDeviceReferenceResource | sourceSystem, externalDeviceId |
+| CapabilityDefinitionResource | code, kind, unit? |
+| DeviceCapabilityResource | id, code, kind, unit? |
+| DeviceResource | id, organizationId, deviceCode, name, description?, specifications, assignment, externalReference?, administrativeStatus, capabilities, createdAt, updatedAt, version |
+| DevicePageResource | items: List\<DeviceResource\>, page, size, totalElements, totalPages |
+| ErrorResource | code, message, fieldErrors?, traceId |
+
+<p align="justify">
+Los recursos de entrada no aceptan <code>organizationId</code>, IDs internos de capacidades, fechas ni versión como campos editables. La organización activa se obtiene de un contexto de acceso validado; en usuarios con varias organizaciones, IAM verifica la selección. No se exponen credenciales de equipos o integraciones.
+</p>
+
+**Assemblers**
+
+| Assembler | Responsabilidad |
+|---|---|
+| RegisterDeviceCommandFromResourceAssembler | Construye RegisterDeviceCommand con el recurso y la organización autorizada. |
+| UpdateDeviceDetailsCommandFromResourceAssembler | Construye UpdateDeviceDetailsCommand con el recurso, deviceId, organización y versión esperada. |
+| ReplaceDeviceCapabilitiesCommandFromResourceAssembler | Construye ReplaceDeviceCapabilitiesCommand. |
+| AssignDeviceToLocationCommandFromResourceAssembler | Construye AssignDeviceToLocationCommand. |
+| ChangeDeviceAdministrativeStatusCommandFromResourceAssembler | Construye ChangeDeviceAdministrativeStatusCommand. |
+| DeviceQueriesFromRequestAssembler | Convierte parámetros de ruta y consulta en las tres consultas del dominio. |
+| DeviceResourceFromEntityAssembler | Convierte Device y sus objetos anidados en DeviceResource. |
+| DevicePageResourceFromPageAssembler | Convierte una página de agregados en DevicePageResource. |
+
+**Contrato de errores**
+
+| Código HTTP | Situación |
+|---|---|
+| 400 | Campos, tipos, enumeraciones, capacidades o parámetros de paginación inválidos; falta una parte de la referencia externa. |
+| 401 | Identidad ausente o inválida. |
+| 403 | Solicitante autenticado sin permiso para la operación o la ubicación seleccionada. |
+| 404 | Dispositivo no encontrado dentro del ámbito visible, o ubicación inexistente dentro del ámbito autorizado. |
+| 409 | Código o referencia externa duplicados; transición prohibida; edición de un equipo retirado o cambio de ubicación/capacidades de un equipo activo; zona incompatible con la edificación. |
+| 412 | If-Match no coincide con la versión vigente. |
+| 428 | Falta If-Match en una modificación que lo requiere. |
+| 503 | No puede completarse una validación obligatoria contra IAM o Buildings; no se registra el cambio. |
+
+<p align="justify">
+Las lecturas de IDs ajenos al ámbito visible responden 404 sin revelar metadatos de otras organizaciones. Los errores de infraestructura no se convierten en permisos concedidos ni en ubicaciones válidas.
+</p>
+
+**Fachada de integración**
+
+<p align="justify">
+<code>DevicesContextFacade</code> expone <code>GetDeviceCatalogEntry(organizationId, deviceId)</code> para consultas entre contextos autorizados. Devuelve <code>DeviceCatalogEntry</code> con identidad, ubicación, capacidades, estado y versión, sin entidades persistentes ni tablas compartidas. Utiliza <code>IDeviceQueryService</code>; las identidades de servicio también tienen permisos limitados. Esta fachada permite consultar el catálogo inicial o recuperar información, mientras los eventos comunican cambios posteriores.
+</p>
+
+#### 4.2.5.3. Application Layer
+
+`DeviceCommandServiceImpl`
+
+<p align="justify">
+<strong>Descripción:</strong> Implementa IDeviceCommandService y coordina los casos de uso. Comprueba autorización y alcance, consulta Buildings cuando corresponde, carga el agregado, invoca sus métodos y guarda el resultado junto con los mensajes pendientes de integración en una misma transacción local.
+</p>
+
+| Método | Descripción |
+|---|---|
+| Handle(RegisterDeviceCommand) | Valida permiso sobre la edificación y zona, comprueba duplicados, verifica la ubicación, crea Device inactivo y persiste DeviceRegistered. |
+| Handle(UpdateDeviceDetailsCommand) | Carga el dispositivo dentro del ámbito autorizado, verifica la versión y modifica sus datos descriptivos. |
+| Handle(ReplaceDeviceCapabilitiesCommand) | Comprueba versión y estado inactivo; valida la colección completa, conserva IDs para códigos existentes y reemplaza las capacidades mediante el agregado. |
+| Handle(AssignDeviceToLocationCommand) | Exige permisos tanto sobre la ubicación actual como sobre la de destino; valida la nueva relación organización–edificación–zona y cambia la asignación del equipo inactivo. |
+| Handle(ChangeDeviceAdministrativeStatusCommand) | Comprueba versión y transición. Al activar, revalida la ubicación; al desactivar o retirar, conserva identidad y referencias históricas. |
+
+<p align="justify">
+La comprobación previa de duplicados mejora el mensaje al usuario, pero las restricciones únicas de la base de datos resuelven también los registros simultáneos. Una escritura usa comparación de versión; si otro proceso modificó el agregado, se revierte toda la transacción y se responde 412. La versión inicial es 1 y aumenta una vez por cambio efectivo. El estado guardado y la instantánea del evento corresponden a la misma versión.
+</p>
+
+`DeviceQueryServiceImpl`
+
+<p align="justify">
+<strong>Descripción:</strong> Implementa IDeviceQueryService sin modificar el agregado.
+</p>
+
+| Método | Descripción |
+|---|---|
+| Handle(GetDeviceByIdQuery) | Recupera un equipo filtrando por organización y alcance de acceso del solicitante. |
+| Handle(GetDevicesQuery) | Aplica los filtros solicitados y el alcance autorizado antes de paginar y contar los resultados. |
+| Handle(GetDeviceByExternalReferenceQuery) | Resuelve una referencia externa únicamente dentro de la organización y ubicaciones visibles. |
+
+**Puertos de aplicación e integración**
+
+| Puerto | Métodos principales | Responsabilidad |
+|---|---|---|
+| IBuildingContextGateway | ValidateAssignment(organizationId, buildingId, zoneId?): ValidatedAssignment | Consulta el contrato de Buildings y comprueba existencia, pertenencia y disponibilidad administrativa para la asignación. |
+| IDeviceAccessGateway | RequirePermission(action, organizationId, buildingId, zoneId?); GetReadScope(organizationId): DeviceReadScope | Obtiene de IAM el permiso de operación y las restricciones de visibilidad del solicitante. |
+| IOutboxRepository | Append(message); FindPending(batchSize); MarkPublished(eventId); RecordFailure(eventId, nextAttemptAt) | Almacena y gestiona mensajes de integración pendientes. |
+| IIntegrationEventPublisher | Publish(message) | Entrega un mensaje al transporte de integración elegido. |
+
+#### 4.2.5.4. Infrastructure Layer
+
+**Persistencia del agregado**
+
+`IDeviceRepository` / `RelationalDeviceRepository`
+
+<p align="justify">
+<strong>Descripción:</strong> IDeviceRepository define el contrato del dominio y RelationalDeviceRepository lo implementa mediante el mecanismo de persistencia relacional elegido. La infraestructura mapea los value objects a columnas, carga las capacidades y aplica transacciones, restricciones de unicidad y control de versión.
+</p>
+
+| Método del puerto | Tipo de retorno | Descripción |
+|---|---|---|
+| FindByIdAndOrganizationId(deviceId, organizationId) | Device? | Carga un agregado dentro de una organización; la aplicación verifica además el alcance sobre su ubicación. |
+| FindByExternalReference(organizationId, sourceSystem, externalDeviceId) | Device? | Busca por referencia externa y organización. |
+| FindPage(organizationId, filters, readScope, page, size) | PagedResult\<Device\> | Filtra por organización, ubicación, estado y alcance de acceso antes de paginar. |
+| ExistsByOrganizationIdAndDeviceCode(organizationId, deviceCode) | bool | Detecta un código administrativo ya registrado. |
+| ExistsByExternalReference(organizationId, sourceSystem, externalDeviceId) | bool | Detecta una referencia externa ya registrada. |
+| Save(device, expectedVersion?) | Device | Inserta un nuevo agregado o actualiza uno existente comparando su versión; guarda sus capacidades en la misma transacción. |
+
+<p align="justify">
+El repositorio no publica un método de eliminación física del agregado. Las capacidades no tienen repositorio público: se insertan, conservan o eliminan como parte de la actualización de Device. La eliminación de una capacidad del catálogo actual no borra los datos históricos que otros contextos ya registraron con su identidad y significado.
+</p>
+
+**Adaptadores**
+
+| Componente | Puerto implementado | Descripción |
+|---|---|---|
+| BuildingContextAdapter | IBuildingContextGateway | Consume la fachada o API de Buildings y traduce su respuesta a ValidatedAssignment. |
+| IamDeviceAccessAdapter | IDeviceAccessGateway | Adapta el contexto de identidad y las decisiones de autorización de IAM. |
+| RelationalOutboxRepository | IOutboxRepository | Persiste mensajes pendientes en la misma base de datos y transacción del agregado. |
+| IntegrationEventPublisherAdapter | IIntegrationEventPublisher | Publica mensajes mediante el transporte configurado. El diseño no presupone un producto de mensajería. |
+| DevicePersistenceMapper | No aplica | Convierte Device, DeviceCapability y sus value objects hacia y desde los registros relacionales. |
+
+
+#### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Diagrama de componentes de Devices](assets/images/chapter-04-solution-software-design/DevicesComponents.png)
+
+<p align="center">
+  <strong>Figura 64. Diagrama de componentes de Devices.</strong>
+</p>
+
+#### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
+
+##### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams
+
+![Diagrama UML del agregado Device](assets/images/chapter-04-solution-software-design/devices-domain-model.png)
+
+<p align="center">
+  <strong>Figura 65. Diagrama UML del agregado Device.</strong>
+</p>
+
+
+![Diagrama UML de contratos de Devices](assets/images/chapter-04-solution-software-design/devices-domain-contracts.png)
+
+<p align="center">
+  <strong>Figura 66. Diagrama UML de contratos de Devices.</strong>
+</p>
+
+##### 4.2.5.6.2. Bounded Context Database Design Diagram
+
+![Diagrama relacional de Devices](assets/images/chapter-04-solution-software-design/devices-database.png)
+
+<p align="center">
+  <strong>Figura 67. Diagrama relacional de Devices.</strong>
+</p>
+
+<div style="page-break-before: always; break-before: page;"></div>
+
+### 4.2.6. Bounded Context: Monitoring
+
+<p align="justify">
+El Bounded Context <strong>Monitoring</strong> es responsable de gestionar las mediciones obtenidas desde los dispositivos IoT y mantener una representación actualizada del estado observado de las edificaciones, zonas y dispositivos monitoreados por ResQ.
+</p>
+
+<p align="justify">
+Su principal propósito es proporcionar visibilidad operacional sobre la infraestructura sin asumir responsabilidades que corresponden a otros Bounded Contexts. Monitoring registra y consulta las condiciones observadas, mientras que <strong>Risk Detection</strong> interpreta estas mediciones para determinar si representan una situación de riesgo.
+</p>
+
+<p align="justify">
+Este Bounded Context soporta principalmente:
+</p>
+
+- **US01 — Consultar el estado general de una edificación.**
+- **US02 — Consultar el estado de una zona.**
+- **US03 — Consultar mediciones actuales.**
+- **US04 — Conocer el estado operativo de un dispositivo.**
+- **US05 — Supervisar remotamente una edificación.**
+
+<p align="justify">
+Monitoring participa tanto en el entorno <strong>Edge</strong> como en <strong>Cloud</strong>: en Edge recibe y conserva temporalmente las mediciones provenientes de los dispositivos IoT, mientras que en Cloud almacena la información histórica, mantiene los estados operacionales y expone la información requerida por las aplicaciones Web y Mobile.
+</p>
+
+<p align="justify">
+Monitoring no administra la configuración de los dispositivos, la estructura de las edificaciones, las reglas de detección, las políticas de respuesta ni el ciclo de vida de los incidentes. Para ello colabora respectivamente con <strong>Device Management</strong>, <strong>Building Management</strong>, <strong>Risk Detection</strong>, <strong>Alert & Response Management</strong> e <strong>Incident Management</strong>.
+</p>
+
+<p align="justify">
+Los principales conceptos identificados para este Bounded Context son <strong>Measurement</strong>, <strong>Measurement Value</strong>, <strong>Device Monitoring State</strong>, <strong>Zone Monitoring State</strong>, <strong>Device Availability</strong>, <strong>Freshness Policy</strong> y <strong>Monitored Condition</strong>.
+</p>
+
+<p align="justify">
+Las principales responsabilidades del Bounded Context <strong>Monitoring</strong> son:
+</p>
+
+- Recibir y registrar las mediciones generadas por los dispositivos IoT.
+- Mantener actualizado el estado operativo de los dispositivos monitoreados.
+- Mantener actualizado el estado operativo de las zonas monitoreadas.
+- Asociar cada medición con el dispositivo, zona y edificación correspondientes.
+- Conservar la fecha y hora original en la que se generó cada medición.
+- Determinar si una medición continúa siendo vigente de acuerdo con la política de actualidad definida.
+- Proporcionar el estado actual de edificaciones, zonas y dispositivos a las aplicaciones de ResQ.
+- Proporcionar mediciones válidas al Bounded Context **Risk Detection** para su posterior evaluación.
+- Proporcionar a **Incident Management** información actualizada sobre las condiciones de una zona cuando sea requerida para el seguimiento de un incidente.
+- Actualizar las representaciones de monitoreo cuando se reciben cambios relevantes relacionados con el estado de un riesgo.
+- Mantener el historial de mediciones de los sensores para su posterior consulta y análisis.
+- Conservar temporalmente las mediciones en el entorno Edge cuando la comunicación con Cloud no se encuentre disponible.
+- Permitir la sincronización posterior de las mediciones pendientes sin modificar el momento original en que fueron obtenidas.
+- Mantener las responsabilidades de Monitoring separadas de la clasificación de riesgos, ejecución de respuestas, gestión de incidentes y administración de dispositivos o edificaciones.
+
+#### Class Dictionary
+
+| Class / Interface | Layer | Runtime | Purpose | Main attributes | Main operations |
+|---|---|---|---|---|---|
+| `Measurement` | Domain | Edge / Cloud | Representa una medición obtenida desde un dispositivo IoT. | `measurementId`, `deviceId`, `buildingId`, `zoneId`, `variableType`, `value`, `unit`, `measuredAt` | `isCurrent(referenceTime, freshnessPolicy)` |
+| `MeasurementValue` | Domain | Edge / Cloud | Value Object que representa el valor cuantitativo y su unidad. | `value`, `unit` | `value()`, `unit()` |
+| `DeviceMonitoringState` | Domain | Cloud | Representa el estado operacional observado de un dispositivo. | `deviceId`, `zoneId`, `availability`, `lastMeasurementAt`, `updatedAt` | `recordCommunication()`, `markUnavailable()`, `isAvailable()` |
+| `ZoneMonitoringState` | Domain | Cloud | Representa el estado operacional observado de una zona. | `zoneId`, `buildingId`, `lastUpdatedAt`, `activeRiskId`, `conditionCode` | `updateObservation()`, `markRiskActive()`, `clearRisk()` |
+| `DeviceAvailability` | Domain | Cloud | Enumeración del estado de disponibilidad observado. | `AVAILABLE`, `UNAVAILABLE`, `UNKNOWN` | — |
+| `FreshnessPolicy` | Domain | Cloud | Value Object que determina cuándo una medición puede considerarse vigente. | `maximumAge` | `isCurrent(measuredAt, referenceTime)` |
+| `MeasurementRepository` | Domain | Cloud / Edge | Abstracción para almacenar y consultar mediciones. | — | `save()`, `findLatestByDevice()`, `findLatestByZone()` |
+| `DeviceMonitoringStateRepository` | Domain | Cloud | Abstracción de persistencia de estados operacionales de dispositivos. | — | `findByDeviceId()`, `save()` |
+| `ZoneMonitoringStateRepository` | Domain | Cloud | Abstracción de persistencia de estados observados de zonas. | — | `findByZoneId()`, `findByBuildingId()`, `save()` |
+| `MonitoringStateService` | Domain | Cloud | Coordina la actualización de estados a partir de nuevas observaciones. | — | `updateDeviceState()`, `updateZoneState()` |
+| `RecordMeasurementCommand` | Application | Edge | Representa el ingreso de una nueva medición. | `deviceId`, `variableType`, `value`, `unit`, `measuredAt` | — |
+| `RecordMeasurementCommandHandler` | Application | Edge | Coordina el registro local y publicación de una medición. | Dependencies | `handle()` |
+| `MeasurementRecordedEvent` | Domain | Edge / Cloud | Representa el hecho de que una medición válida fue registrada. | Measurement data | — |
+| `MeasurementReceivedEventHandler` | Application | Cloud | Procesa una medición proveniente del flujo Edge. | Dependencies | `handle()` |
+| `RiskStateChangedEventHandler` | Application | Cloud | Actualiza la proyección de estado de una zona cuando cambia un riesgo. | Dependencies | `handle()` |
+| `GetBuildingStatusQuery` | Application | Cloud | Solicita el estado actual de una edificación. | `buildingId` | — |
+| `GetBuildingStatusQueryHandler` | Application | Cloud | Construye la vista operacional de una edificación. | Dependencies | `handle()` |
+| `GetZoneStatusQuery` | Application | Cloud | Solicita el estado actual de una zona. | `zoneId` | — |
+| `GetZoneStatusQueryHandler` | Application | Cloud | Recupera el estado observado de una zona. | Dependencies | `handle()` |
+| `GetCurrentMeasurementsQuery` | Application | Cloud | Solicita las mediciones vigentes de un dispositivo o zona. | `deviceId` / `zoneId` | — |
+| `GetCurrentMeasurementsQueryHandler` | Application | Cloud | Recupera mediciones y aplica la política de vigencia. | Dependencies | `handle()` |
+| `GetDeviceStatusQuery` | Application | Cloud | Solicita el estado operacional de un dispositivo. | `deviceId` | — |
+| `GetDeviceStatusQueryHandler` | Application | Cloud | Determina la disponibilidad observada del dispositivo. | Dependencies | `handle()` |
+| `MeasurementEventPublisher` | Application | Edge | Abstracción para publicar mediciones hacia Cloud. | — | `publish()` |
+| `DeviceContextResolver` | Application | Edge / Cloud | Obtiene el contexto mínimo de un dispositivo desde Device Management. | — | `resolve(deviceId)` |
+| `MeasurementIngestionController` | Interface | Edge | Recibe mediciones provenientes del Embedded System. | Handler dependency | `recordMeasurement()` |
+| `MonitoringQueryController` | Interface | Cloud | Expone consultas de monitoreo mediante REST. | Query handlers | `getBuildingStatus()`, `getZoneStatus()`, `getMeasurements()`, `getDeviceStatus()` |
+| `MeasurementEventConsumer` | Interface | Cloud | Consume mediciones publicadas desde Edge. | Handler dependency | `consume()` |
+| `RiskStateEventConsumer` | Interface | Cloud | Consume cambios relevantes provenientes de Risk Detection. | Handler dependency | `consume()` |
+| `EdgeMeasurementRepositoryAdapter` | Infrastructure | Edge | Implementa almacenamiento local temporal mediante SQLite/Peewee. | SQLite / Peewee | `save()`, `findPending()` |
+| `MeasurementEventPublisherAdapter` | Infrastructure | Edge | Publica mediciones hacia el flujo distribuido. | Communication dependency | `publish()` |
+| `MeasurementTimeSeriesRepositoryAdapter` | Infrastructure | Cloud | Persiste mediciones longitudinales en InfluxDB. | InfluxDB | `save()`, `findLatestByDevice()`, `findLatestByZone()` |
+| `MonitoringStateRepositoryAdapter` | Infrastructure | Cloud | Persiste estados operacionales en PostgreSQL. | PostgreSQL | `find()`, `save()` |
+| `DeviceContextIntegrationAdapter` | Infrastructure | Edge / Cloud | Traduce información proveniente de Device Management. | Integration dependency | `resolve()` |
+| `BuildingContextIntegrationAdapter` | Infrastructure | Cloud | Obtiene el contexto mínimo de edificaciones y zonas. | Integration dependency | `resolveZone()`, `resolveBuilding()` |
+
+<p align="justify">
+Monitoring conserva únicamente las referencias externas necesarias para asociar una medición con el dispositivo, zona y edificación correspondientes.
+</p>
+
+<p align="justify">
+El ciclo de vida de <code>IoT Device</code>, <code>Building</code> y <code>Zone</code> continúa perteneciendo a sus respectivos Bounded Contexts.
+</p>
+
+---
+
+#### 4.2.6.1. Domain Layer
+
+<p align="justify">
+La <strong>Domain Layer</strong> contiene los conceptos y reglas que permiten representar las mediciones y el estado operacional observado de la infraestructura.
+</p>
+
+<p align="justify">
+Esta capa es independiente de HTTP, Flask, bases de datos, frameworks Cloud y mecanismos de comunicación.
+</p>
+
+<p align="justify">
+Los principales Aggregate Roots son <code>Measurement</code>, <code>DeviceMonitoringState</code> y <code>ZoneMonitoringState</code>.
+</p>
+
+##### Measurement
+
+<p align="justify">
+<strong>Categoría:</strong> Aggregate Root / Entity.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar una observación cuantitativa producida por un dispositivo IoT en un momento determinado.
+</p>
+
+**Atributos:**
+
+- `measurementId: UUID`
+- `deviceId: UUID`
+- `buildingId: UUID`
+- `zoneId: UUID`
+- `variableType: String`
+- `measurementValue: MeasurementValue`
+- `measuredAt: Instant`
+- `recordedAt: Instant`
+
+<p align="justify">
+<code>deviceId</code>, <code>buildingId</code> y <code>zoneId</code> representan referencias externas hacia otros Bounded Contexts.
+</p>
+
+**Operaciones:**
+
+- `isCurrent(referenceTime, freshnessPolicy)`
+- `belongsToDevice(deviceId)`
+- `belongsToZone(zoneId)`
+
+<p align="justify">
+Una medición representa un hecho ocurrido y, por lo tanto, no debe ser modificada posteriormente para reflejar nuevos valores.
+</p>
+
+##### MeasurementValue
+
+<p align="justify">
+<strong>Categoría:</strong> Value Object.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar el valor cuantitativo de una medición junto con su unidad.
+</p>
+
+**Atributos:**
+
+- `value: Decimal`
+- `unit: String`
+
+##### DeviceMonitoringState
+
+<p align="justify">
+<strong>Categoría:</strong> Aggregate Root.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Mantener la representación operacional de un dispositivo sin apropiarse de su configuración administrativa.
+</p>
+
+**Atributos:**
+
+- `deviceId: UUID`
+- `zoneId: UUID`
+- `availability: DeviceAvailability`
+- `lastMeasurementAt: Instant?`
+- `updatedAt: Instant`
+
+**Operaciones:**
+
+- `recordCommunication(measuredAt)`
+- `markUnavailable()`
+- `markAvailable()`
+- `isAvailable()`
+
+##### ZoneMonitoringState
+
+<p align="justify">
+<strong>Categoría:</strong> Aggregate Root.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Mantener una representación resumida de las condiciones observadas en una zona.
+</p>
+
+**Atributos:**
+
+- `zoneId: UUID`
+- `buildingId: UUID`
+- `lastUpdatedAt: Instant`
+- `activeRiskId: UUID?`
+- `conditionCode: String`
+
+**Operaciones:**
+
+- `updateObservation(at)`
+- `markRiskActive(riskDetectionId, conditionCode)`
+- `clearRisk()`
+
+<p align="justify">
+<code>activeRiskId</code> constituye una referencia externa hacia Risk Detection. Monitoring no administra el riesgo.
+</p>
+
+##### DeviceAvailability
+
+<p align="justify">
+<strong>Categoría:</strong> Enumeration.
+</p>
+
+**Valores:**
+
+- `AVAILABLE`
+- `UNAVAILABLE`
+- `UNKNOWN`
+
+<p align="justify">
+La disponibilidad representa el estado observado del dispositivo y no su estado administrativo dentro de Device Management.
+</p>
+
+##### FreshnessPolicy
+
+<p align="justify">
+<strong>Categoría:</strong> Value Object.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Determinar si una medición puede presentarse como información actual.
+</p>
+
+**Atributo:**
+
+- `maximumAge: Duration`
+
+**Operación:**
+
+- `isCurrent(measuredAt, referenceTime)`
+
+<p align="justify">
+Esto permite satisfacer el requerimiento de no presentar una medición antigua como si fuera vigente.
+</p>
+
+##### MeasurementRepository
+
+<p align="justify">
+<strong>Categoría:</strong> Repository Interface.
+</p>
+
+**Operaciones:**
+
+- `save(measurement)`
+- `findLatestByDevice(deviceId)`
+- `findLatestByZone(zoneId)`
+- `findByTimeRange(deviceId, from, to)`
+
+##### DeviceMonitoringStateRepository
+
+<p align="justify">
+<strong>Categoría:</strong> Repository Interface.
+</p>
+
+**Operaciones:**
+
+- `findByDeviceId(deviceId)`
+- `save(deviceMonitoringState)`
+
+##### ZoneMonitoringStateRepository
+
+<p align="justify">
+<strong>Categoría:</strong> Repository Interface.
+</p>
+
+**Operaciones:**
+
+- `findByZoneId(zoneId)`
+- `findByBuildingId(buildingId)`
+- `save(zoneMonitoringState)`
+
+##### MonitoringStateService
+
+<p align="justify">
+<strong>Categoría:</strong> Domain Service.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Coordinar actualizaciones del estado operacional cuando estas requieren combinar una nueva observación con el estado previamente conocido.
+</p>
+
+**Operaciones:**
+
+- `updateDeviceState(state, measurement)`
+- `updateZoneState(state, measurement)`
+- `evaluateAvailability(state, referenceTime, expectedCommunicationPeriod)`
+
+##### Business Rules
+
+<p align="justify">
+El dominio Monitoring aplica las siguientes reglas:
+</p>
+
+1. Toda medición registrada debe mantener un identificador único.
+
+2. Toda medición debe estar asociada con el dispositivo que la originó.
+
+3. Cuando el contexto de ubicación se encuentra disponible, la medición debe conservar las referencias de la zona y edificación correspondientes.
+
+4. Una medición conserva permanentemente el momento original en el que fue obtenida.
+
+5. Las mediciones históricas no deben modificarse cuando un dispositivo sea posteriormente trasladado a otra zona.
+
+6. Una medición solo puede presentarse como vigente cuando cumple la política de frescura configurada.
+
+7. Cuando no exista una medición vigente, ResQ debe indicar que no dispone de información actual en lugar de presentar información histórica como si fuera reciente.
+
+8. Un dispositivo se considera disponible cuando mantiene comunicación dentro del periodo esperado.
+
+9. Cuando un dispositivo deja de comunicar información durante el periodo establecido, su estado observado debe reflejar indisponibilidad.
+
+10. Monitoring no determina si una medición representa un riesgo.
+
+11. La clasificación del tipo y nivel del riesgo pertenece a Risk Detection.
+
+12. Monitoring puede conservar una referencia a un riesgo activo para construir sus vistas operacionales, pero no administra su ciclo de vida.
+
+13. El estado de una zona debe actualizarse cuando exista nueva información operacional relevante.
+
+14. El estado general de una edificación debe construirse a partir de la información disponible de sus zonas sin apropiarse del modelo de Building Management.
+
+15. Solo mediciones consideradas válidas por el flujo de ingreso pueden ser incorporadas al estado operacional.
+
+---
+
+#### 4.2.6.2. Interface Layer
+
+<p align="justify">
+La <strong>Interface Layer</strong> permite que las aplicaciones, dispositivos y otros Bounded Contexts interactúen con las capacidades de Monitoring. Su responsabilidad es recibir solicitudes o eventos externos, transformar la información recibida al formato requerido por la Application Layer y devolver las respuestas correspondientes.
+</p>
+
+<p align="justify">
+Monitoring cuenta con interfaces tanto en el entorno <strong>Edge</strong> como en <strong>Cloud</strong>, debido a que las mediciones son recibidas inicialmente cerca del dispositivo y posteriormente son almacenadas y consultadas desde los servicios centrales de ResQ.
+</p>
+
+##### MeasurementIngestionController
+
+<p align="justify">
+<strong>Runtime:</strong> Edge.
+</p>
+
+<p align="justify">
+<code>MeasurementIngestionController</code> recibe las mediciones enviadas por los dispositivos IoT hacia el Edge Service.
+</p>
+
+Ejemplo conceptual:
+
+```text
+POST /edge/v1/measurements
+```
+
+<p align="justify">
+La solicitud contiene información como:
+</p>
+
+- Identificador del dispositivo.
+- Tipo de variable medida.
+- Valor obtenido.
+- Unidad de medida.
+- Fecha y hora original de la medición.
+
+<p align="justify">
+El controlador transforma la información recibida en un <code>RecordMeasurementCommand</code> y delega su procesamiento a <code>RecordMeasurementCommandHandler</code>.
+</p>
+
+<p align="justify">
+Este componente no determina si una medición representa una situación de riesgo, ya que dicha responsabilidad corresponde a <strong>Risk Detection</strong>.
+</p>
+
+##### MonitoringQueryController
+
+<p align="justify">
+<strong>Runtime:</strong> Cloud.
+</p>
+
+<p align="justify">
+<code>MonitoringQueryController</code> expone las operaciones que permiten a las aplicaciones Web y Mobile consultar el estado actual de la infraestructura monitoreada.
+</p>
+
+Ejemplos conceptuales:
+
+```text
+GET /api/v1/monitoring/buildings/{buildingId}/status
+GET /api/v1/monitoring/zones/{zoneId}/status
+GET /api/v1/monitoring/devices/{deviceId}/status
+GET /api/v1/monitoring/devices/{deviceId}/measurements/current
+```
+
+<p align="justify">
+Estas operaciones permiten consultar:
+</p>
+
+- Estado general de una edificación.
+- Estado actual de una zona.
+- Disponibilidad de un dispositivo.
+- Mediciones actuales.
+
+<p align="justify">
+Cada solicitud es delegada al Query Handler correspondiente dentro de la Application Layer.
+</p>
+
+##### MeasurementEventConsumer
+
+<p align="justify">
+<strong>Runtime:</strong> Cloud.
+</p>
+
+<p align="justify">
+<code>MeasurementEventConsumer</code> recibe las mediciones publicadas desde el entorno Edge y las entrega a <code>MeasurementReceivedEventHandler</code>.
+</p>
+
+<p align="justify">
+Su función consiste en adaptar el mensaje recibido al modelo utilizado por la Application Layer, sin implementar reglas del dominio.
+</p>
+
+##### RiskStateEventConsumer
+
+<p align="justify">
+<strong>Runtime:</strong> Cloud.
+</p>
+
+<p align="justify">
+<code>RiskStateEventConsumer</code> recibe eventos relevantes provenientes de <strong>Risk Detection</strong>, como la detección o finalización de una situación de riesgo.
+</p>
+
+<p align="justify">
+Estos eventos permiten actualizar la representación operacional de las zonas mostradas por Monitoring.
+</p>
+
+<p align="justify">
+Monitoring únicamente conserva la información necesaria para representar el estado actual; la lógica utilizada para determinar el riesgo continúa perteneciendo a Risk Detection.
+</p>
+
+---
+
+#### 4.2.6.3. Application Layer
+
+<p align="justify">
+La <strong>Application Layer</strong> coordina los casos de uso del Bounded Context Monitoring y conecta las interfaces externas con las reglas definidas en la Domain Layer.
+</p>
+
+<p align="justify">
+Esta capa organiza principalmente los procesos de:
+</p>
+
+- Registro de mediciones.
+- Publicación de mediciones desde Edge.
+- Almacenamiento de mediciones en Cloud.
+- Actualización del estado de dispositivos y zonas.
+- Consulta del estado de edificaciones.
+- Consulta del estado de zonas.
+- Consulta de mediciones actuales.
+- Consulta de disponibilidad de dispositivos.
+
+##### RecordMeasurementCommand
+
+<p align="justify">
+<strong>Runtime:</strong> Edge.
+</p>
+
+<p align="justify">
+Representa la solicitud de registrar una nueva medición obtenida desde un dispositivo IoT.
+</p>
+
+**Atributos:**
+
+- `deviceId: UUID`
+- `variableType: String`
+- `value: Decimal`
+- `unit: String`
+- `measuredAt: Instant`
+
+##### RecordMeasurementCommandHandler
+
+<p align="justify">
+<strong>Runtime:</strong> Edge.
+</p>
+
+<p align="justify">
+Coordina el ingreso de una nueva medición al sistema.
+</p>
+
+<p align="justify">
+El flujo principal es:
+</p>
+
+1. Recibir el `RecordMeasurementCommand`.
+2. Obtener el contexto mínimo del dispositivo mediante `DeviceContextResolver`.
+3. Construir el objeto `Measurement`.
+4. Conservar temporalmente la medición en el entorno Edge cuando sea necesario.
+5. Crear un `MeasurementRecordedEvent`.
+6. Publicar el evento mediante `MeasurementEventPublisher`.
+
+<p align="justify">
+La fecha y hora original de la medición se conserva durante todo el proceso.
+</p>
+
+##### MeasurementReceivedEventHandler
+
+<p align="justify">
+<strong>Runtime:</strong> Cloud.
+</p>
+
+<p align="justify">
+Procesa las mediciones provenientes del entorno Edge.
+</p>
+
+<p align="justify">
+Su flujo principal es:
+</p>
+
+1. Recibir un `MeasurementRecordedEvent`.
+2. Reconstruir la medición.
+3. Almacenar la medición en la base de datos longitudinal.
+4. Recuperar el estado operacional del dispositivo.
+5. Actualizar la última comunicación del dispositivo.
+6. Recuperar el estado operacional de la zona.
+7. Actualizar la última observación de la zona.
+8. Persistir los estados actualizados.
+
+<p align="justify">
+Una vez registrada, la medición puede ser utilizada por <strong>Risk Detection</strong> para evaluar posibles situaciones de riesgo.
+</p>
+
+##### RiskStateChangedEventHandler
+
+<p align="justify">
+<strong>Runtime:</strong> Cloud.
+</p>
+
+<p align="justify">
+Procesa eventos provenientes de Risk Detection cuando cambia el estado de riesgo asociado a una zona.
+</p>
+
+<p align="justify">
+Permite:
+</p>
+
+- Asociar un riesgo activo con una zona.
+- Actualizar la condición mostrada en Monitoring.
+- Eliminar la referencia cuando el riesgo deja de estar activo.
+
+<p align="justify">
+Este handler no determina la existencia ni severidad del riesgo.
+</p>
+
+##### GetBuildingStatusQuery
+
+<p align="justify">
+Representa una solicitud para consultar el estado actual de una edificación.
+</p>
+
+**Atributo:**
+
+- `buildingId: UUID`
+
+##### GetBuildingStatusQueryHandler
+
+<p align="justify">
+Construye la vista actual de una edificación utilizando los estados disponibles de sus diferentes zonas.
+</p>
+
+<p align="justify">
+La respuesta puede contener:
+</p>
+
+- Última actualización.
+- Zonas monitoreadas.
+- Estado operacional de cada zona.
+- Disponibilidad de dispositivos.
+- Referencia a riesgos activos, cuando corresponda.
+
+##### GetZoneStatusQuery
+
+<p align="justify">
+Representa una solicitud para consultar el estado de una zona.
+</p>
+
+**Atributo:**
+
+- `zoneId: UUID`
+
+##### GetZoneStatusQueryHandler
+
+<p align="justify">
+Recupera la información operacional disponible para la zona indicada, incluyendo su condición actual y la fecha de última actualización.
+</p>
+
+##### GetCurrentMeasurementsQuery
+
+<p align="justify">
+Permite solicitar las mediciones actuales asociadas con un dispositivo o zona.
+</p>
+
+<p align="justify">
+Puede contener:
+</p>
+
+- `deviceId: UUID`, o
+- `zoneId: UUID`.
+
+##### GetCurrentMeasurementsQueryHandler
+
+<p align="justify">
+Obtiene las mediciones más recientes y utiliza <code>FreshnessPolicy</code> para determinar si pueden considerarse actuales.
+</p>
+
+<p align="justify">
+Cuando la última medición supera el periodo permitido, el sistema debe indicar que no existe información vigente en lugar de presentar una medición antigua como actual.
+</p>
+
+##### GetDeviceStatusQuery
+
+<p align="justify">
+Representa una solicitud para consultar el estado operacional de un dispositivo.
+</p>
+
+**Atributo:**
+
+- `deviceId: UUID`
+
+##### GetDeviceStatusQueryHandler
+
+<p align="justify">
+Obtiene <code>DeviceMonitoringState</code> y devuelve información como:
+</p>
+
+- Disponibilidad.
+- Última comunicación.
+- Zona asociada.
+- Fecha de última actualización.
+
+##### MeasurementEventPublisher
+
+<p align="justify">
+<strong>Runtime:</strong> Edge.
+</p>
+
+<p align="justify">
+Abstracción utilizada para publicar las nuevas mediciones hacia el flujo distribuido de ResQ.
+</p>
+
+**Operación:**
+
+```text
+publish(event)
+```
+
+<p align="justify">
+La Application Layer no depende directamente del mecanismo de comunicación utilizado.
+</p>
+
+##### DeviceContextResolver
+
+<p align="justify">
+Permite obtener el contexto mínimo necesario del dispositivo que originó una medición.
+</p>
+
+**Operación:**
+
+```text
+resolve(deviceId)
+```
+
+<p align="justify">
+La información obtenida puede incluir:
+</p>
+
+- `deviceId`.
+- `buildingId`.
+- `zoneId`.
+
+<p align="justify">
+Monitoring no copia ni administra el modelo completo de Device Management.
+</p>
+
+---
+
+#### 4.2.6.4. Infrastructure Layer
+
+<p align="justify">
+La <strong>Infrastructure Layer</strong> implementa los mecanismos técnicos necesarios para almacenar, transmitir y recuperar la información utilizada por Monitoring.
+</p>
+
+<p align="justify">
+Debido a que el Bounded Context maneja distintos tipos de información, se utiliza una estrategia de persistencia diferenciada:
+</p>
+
+- **InfluxDB** para las mediciones longitudinales o series temporales.
+- **PostgreSQL** para los estados operacionales actuales.
+- **SQLite**, mediante **Peewee ORM**, para el almacenamiento temporal utilizado por el Edge Service.
+
+##### EdgeMeasurementRepositoryAdapter
+
+<p align="justify">
+<strong>Runtime:</strong> Edge.
+</p>
+
+<p align="justify">
+Implementa el almacenamiento temporal de mediciones mediante <strong>SQLite y Peewee ORM</strong>.
+</p>
+
+<p align="justify">
+Sus principales responsabilidades son:
+</p>
+
+- Almacenar mediciones pendientes.
+- Conservar el timestamp original.
+- Recuperar registros pendientes.
+- Actualizar el estado de sincronización cuando la información haya sido enviada correctamente.
+
+<p align="justify">
+Este almacenamiento soporta el patrón <strong>store-and-forward</strong> utilizado cuando existe una interrupción temporal de la conectividad.
+</p>
+
+##### MeasurementEventPublisherAdapter
+
+<p align="justify">
+<strong>Runtime:</strong> Edge.
+</p>
+
+<p align="justify">
+Implementa <code>MeasurementEventPublisher</code>.
+</p>
+
+<p align="justify">
+Se encarga de transmitir las mediciones registradas hacia los servicios Cloud mediante el mecanismo de comunicación definido por la arquitectura general de ResQ.
+</p>
+
+##### MeasurementTimeSeriesRepositoryAdapter
+
+<p align="justify">
+<strong>Runtime:</strong> Cloud.
+</p>
+
+<p align="justify">
+Implementa la persistencia de mediciones utilizando <strong>InfluxDB</strong>.
+</p>
+
+<p align="justify">
+InfluxDB resulta apropiado para esta información debido a que las mediciones se generan continuamente y se encuentran asociadas a un instante de tiempo.
+</p>
+
+<p align="justify">
+Permite realizar operaciones como:
+</p>
+
+- Registrar una medición.
+- Obtener la medición más reciente de un dispositivo.
+- Consultar mediciones de una zona.
+- Recuperar series de mediciones dentro de un intervalo temporal.
+
+##### MonitoringStateRepositoryAdapter
+
+<p align="justify">
+<strong>Runtime:</strong> Cloud.
+</p>
+
+<p align="justify">
+Implementa la persistencia de <code>DeviceMonitoringState</code> y <code>ZoneMonitoringState</code> utilizando <strong>PostgreSQL</strong>.
+</p>
+
+<p align="justify">
+PostgreSQL almacena los estados operacionales actuales que requieren consistencia y consultas frecuentes desde la aplicación.
+</p>
+
+##### DeviceContextIntegrationAdapter
+
+<p align="justify">
+Permite obtener la información necesaria desde <strong>Device Management</strong>.
+</p>
+
+<p align="justify">
+Este adapter traduce el contrato externo hacia la representación que Monitoring necesita, evitando depender directamente del modelo interno de Device Management.
+</p>
+
+##### BuildingContextIntegrationAdapter
+
+<p align="justify">
+Permite obtener el contexto mínimo necesario desde <strong>Building Management</strong>, principalmente la relación entre edificaciones y zonas.
+</p>
+
+<p align="justify">
+Monitoring utiliza esta información como referencia, pero no modifica ni administra estos elementos.
+</p>
+
+##### Consideraciones de persistencia
+
+<p align="justify">
+Monitoring utiliza una estrategia de persistencia políglota:
+</p>
+
+- Las **mediciones históricas** se almacenan en InfluxDB debido a su naturaleza temporal.
+- Los **estados actuales de dispositivos y zonas** se almacenan en PostgreSQL.
+- Las **mediciones pendientes del Edge Service** se conservan temporalmente en SQLite.
+
+<p align="justify">
+Esta separación permite utilizar el almacenamiento más adecuado según las características de cada tipo de dato.
+</p>
+
+---
+
+#### 4.2.6.5. Bounded Context Software Architecture Component Level Diagrams
+
+<p align="justify">
+Monitoring participa tanto en el <strong>ResQ Edge Service</strong> como en el <strong>ResQ Cloud RESTful API</strong>. Por esta razón, se representan dos Component Level Diagrams.
+</p>
+
+##### Monitoring — ResQ Edge Service Component Diagram
+
+<p align="justify">
+Los principales componentes del entorno Edge son:
+</p>
+
+- **Measurement Ingestion Interface**, encargado de recibir mediciones del Embedded Application.
+- **Edge Monitoring Application**, responsable de coordinar el registro y publicación de las mediciones.
+- **Monitoring Domain**, que contiene los conceptos y reglas relacionados con las mediciones.
+- **Local Measurement Buffer**, encargado de conservar temporalmente las mediciones utilizando SQLite y Peewee.
+- **Device Context Integration**, utilizado para obtener información mínima sobre el dispositivo y su ubicación.
+- **Measurement Event Publisher**, encargado de transmitir las mediciones hacia Cloud.
+
+<p align="justify">
+El flujo principal puede representarse de la siguiente manera:
+</p>
+
+```text
+ESP32 / Embedded Application
+            |
+            v
+Measurement Ingestion Interface
+            |
+            v
+Edge Monitoring Application
+            |
+            v
+Monitoring Domain
+       /           \
+      v             v
+Device Context   Local SQLite Buffer
+ Integration
+      \             /
+       \           /
+            v
+Measurement Event Publisher
+            |
+            v
+ResQ Cloud
+```
+
+**DIAGRAM — Monitoring Edge Component Level Diagram**
+
+![MonitoringEdgeComponentLevelDiagram](assets/images/chapter-04-solution-software-design/monitoring/MonitoringEdgeComponentLevelDiagram.png)
+
+<p align="center">
+  <strong>Figura 68. MonitoringEdgeComponentLevelDiagram.</strong>
+</p>
+
+##### Monitoring — ResQ Cloud RESTful API Component Diagram
+
+<p align="justify">
+Los principales componentes del entorno Cloud son:
+</p>
+
+- **Monitoring Query API**
+- **Measurement Event Consumer**
+- **Risk State Event Consumer**
+- **Monitoring Application**
+- **Monitoring Domain**
+- **Time-Series Persistence**
+- **Operational State Persistence**
+- **Device Management Integration**
+- **Building Management Integration**
+
+<p align="justify">
+El flujo principal puede representarse como:
+</p>
+
+```text
+                   Web / Mobile Applications
+                             |
+                             v
+                    Monitoring Query API
+                             |
+                             v
+                   Monitoring Application
+                             |
+                             v
+                     Monitoring Domain
+                      /             \
+                     v               v
+         Operational State       Time-Series
+           Persistence           Persistence
+           PostgreSQL             InfluxDB
+
+
+Edge Measurement Flow
+        |
+        v
+Measurement Event Consumer
+        |
+        v
+Monitoring Application
+```
+
+<p align="justify">
+Los eventos relevantes provenientes de Risk Detection ingresan mediante <code>Risk State Event Consumer</code> para actualizar las representaciones operacionales utilizadas por Monitoring.
+</p>
+
+**DIAGRAM — Monitoring Cloud Component Level Diagram**
+
+![MonitoringCloudComponentLevelDiagram](assets/images/chapter-04-solution-software-design/monitoring/MonitoringCloudComponentLevelDiagrampng.png)
+
+<p align="center">
+  <strong>Figura 69. MonitoringCloudComponentLevelDiagram.</strong>
+</p>
+
+---
+
+#### 4.2.6.6. Bounded Context Software Architecture Code Level Diagrams
+
+<p align="justify">
+Los <strong>Code Level Diagrams</strong> representan la estructura interna del Bounded Context Monitoring con un mayor nivel de detalle.
+</p>
+
+<p align="justify">
+Para Monitoring se elaboran dos diagramas principales:
+</p>
+
+- **Domain Layer Class Diagram**, que representa las clases, Value Objects, enumeraciones, repositorios y servicios del dominio.
+- **Database Design Diagram**, que representa las estructuras de persistencia utilizadas en Cloud y Edge.
+
+---
+
+##### 4.2.6.6.1. Bounded Context Domain Layer Class Diagrams
+
+<p align="justify">
+El Domain Layer Class Diagram debe representar los siguientes elementos.
+</p>
+
+**Aggregate Roots / Entities**
+
+- `Measurement`
+- `DeviceMonitoringState`
+- `ZoneMonitoringState`
+
+**Value Objects**
+
+- `MeasurementValue`
+- `FreshnessPolicy`
+
+**Enumeration**
+
+- `DeviceAvailability`
+
+**Repository Interfaces**
+
+- `MeasurementRepository`
+- `DeviceMonitoringStateRepository`
+- `ZoneMonitoringStateRepository`
+
+**Domain Service**
+
+- `MonitoringStateService`
+
+<p align="justify">
+Las principales relaciones son:
+</p>
+
+```text
+Measurement "1" *-- "1" MeasurementValue
+
+DeviceMonitoringState "1" --> "1" DeviceAvailability
+
+ZoneMonitoringState "1" ..> Measurement : updated from
+
+MeasurementRepository ..> Measurement : persists
+
+DeviceMonitoringStateRepository ..> DeviceMonitoringState : persists
+
+ZoneMonitoringStateRepository ..> ZoneMonitoringState : persists
+
+MonitoringStateService ..> Measurement
+MonitoringStateService ..> DeviceMonitoringState
+MonitoringStateService ..> ZoneMonitoringState
+
+FreshnessPolicy ..> Measurement : evaluates freshness
+```
+
+<p align="justify">
+<code>Measurement</code> conserva como referencias externas:
+</p>
+
+```text
+deviceId
+buildingId
+zoneId
+```
+
+<p align="justify">
+Por esta razón, los siguientes conceptos no deben modelarse como Aggregates pertenecientes a Monitoring:
+</p>
+
+- `IoT Device`
+- `Building`
+- `Zone`
+- `Risk`
+- `Incident`
+- `Alert`
+
+<p align="justify">
+Estos conceptos pertenecen a otros Bounded Contexts.
+</p>
+
+<p align="justify">
+El diagrama debe mostrar:
+</p>
+
+- Atributos.
+- Métodos.
+- Visibilidad UML.
+- Relaciones.
+- Multiplicidades.
+- Composiciones.
+- Dependencias.
+
+**DIAGRAM — Monitoring Domain Layer Class Diagram**
+
+![MonitoringDomainLayerClassDiagram](assets/images/chapter-04-solution-software-design/monitoring/MonitoringDomainLayerClassDiagram.png)
+
+<p align="center">
+  <strong>Figura 70. MonitoringDomainLayerClassDiagram.</strong>
+</p>
+
+---
+
+##### 4.2.6.6.2. Bounded Context Database Design Diagram
+
+<p align="justify">
+El diseño de persistencia de Monitoring se divide en tres componentes:
+</p>
+
+1. **InfluxDB**, para almacenar las mediciones longitudinales.
+2. **PostgreSQL**, para almacenar los estados operacionales actuales.
+3. **SQLite**, para mantener el buffer temporal utilizado en Edge.
+
+###### Cloud — InfluxDB
+
+<p align="justify">
+Las mediciones se almacenan conceptualmente en:
+</p>
+
+`monitoring_measurements`
+
+| Elemento | Tipo | Descripción |
+|---|---|---|
+| `time` | Timestamp | Momento original de la medición. |
+| `measurement_id` | UUID | Identificador único de la medición. |
+| `device_id` | UUID | Referencia al dispositivo de origen. |
+| `building_id` | UUID | Referencia externa a la edificación. |
+| `zone_id` | UUID | Referencia externa a la zona. |
+| `variable_type` | String | Variable observada. |
+| `value` | Decimal | Valor medido. |
+| `unit` | String | Unidad de medida. |
+
+<p align="justify">
+Los identificadores de dispositivo, edificación y zona se utilizan como referencias y no implican que Monitoring sea propietario de estos conceptos.
+</p>
+
+###### Cloud — PostgreSQL
+
+###### `monitoring_device_states`
+
+<p align="justify">
+Almacena el estado operacional actual de cada dispositivo.
+</p>
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `device_id` | UUID | PRIMARY KEY | Referencia externa al dispositivo. |
+| `zone_id` | UUID | NOT NULL | Zona asociada. |
+| `availability_status` | VARCHAR(20) | NOT NULL | Disponibilidad observada. |
+| `last_measurement_at` | TIMESTAMP | NULL | Última medición recibida. |
+| `updated_at` | TIMESTAMP | NOT NULL | Última actualización del estado. |
+
+###### `monitoring_zone_states`
+
+<p align="justify">
+Almacena el estado operacional actual de cada zona.
+</p>
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `zone_id` | UUID | PRIMARY KEY | Referencia externa a la zona. |
+| `building_id` | UUID | NOT NULL | Referencia externa a la edificación. |
+| `active_risk_id` | UUID | NULL | Referencia externa al riesgo activo. |
+| `condition_code` | VARCHAR(50) | NOT NULL | Condición operacional actual. |
+| `last_updated_at` | TIMESTAMP | NOT NULL | Última actualización disponible. |
+
+<p align="justify">
+<code>active_risk_id</code> no constituye una clave foránea hacia la persistencia interna de Risk Detection, evitando acoplamiento directo entre bases de datos pertenecientes a distintos Bounded Contexts.
+</p>
+
+###### Edge — SQLite
+
+###### `edge_measurement_buffer`
+
+<p align="justify">
+Mantiene temporalmente las mediciones pendientes de envío hacia Cloud.
+</p>
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `measurement_id` | UUID | PRIMARY KEY | Identificador de la medición. |
+| `device_id` | UUID | NOT NULL | Dispositivo de origen. |
+| `building_id` | UUID | NULL | Edificación asociada. |
+| `zone_id` | UUID | NULL | Zona asociada. |
+| `variable_type` | VARCHAR(100) | NOT NULL | Variable observada. |
+| `measured_value` | DECIMAL | NOT NULL | Valor registrado. |
+| `unit` | VARCHAR(50) | NOT NULL | Unidad de medida. |
+| `measured_at` | DATETIME | NOT NULL | Fecha y hora original. |
+| `sync_status` | VARCHAR(20) | NOT NULL | Estado de sincronización. |
+| `retry_count` | INTEGER | NOT NULL | Número de intentos realizados. |
+
+<p align="justify">
+Esta tabla permite soportar el patrón <strong>store-and-forward</strong>, conservando la información cuando la comunicación con Cloud se encuentra temporalmente interrumpida.
+</p>
+
+<p align="justify">
+Conceptualmente, la persistencia queda organizada de la siguiente manera:
+</p>
+
+```text
+                    MONITORING
+
+          ┌──────────── CLOUD ────────────┐
+          │                               │
+          │          InfluxDB             │
+          │  monitoring_measurements      │
+          │                               │
+          │         PostgreSQL            │
+          │ ┌───────────────────────────┐ │
+          │ │ monitoring_device_states │ │
+          │ │ monitoring_zone_states   │ │
+          │ └───────────────────────────┘ │
+          └───────────────────────────────┘
+                          ▲
+                          │
+                    sincronización
+                          │
+          ┌──────────── EDGE ─────────────┐
+          │                               │
+          │       SQLite + Peewee         │
+          │ edge_measurement_buffer       │
+          │                               │
+          └───────────────────────────────┘
+```
+
+<p align="justify">
+Monitoring no debe crear tablas propias para:
+</p>
+
+- Devices.
+- Buildings.
+- Zones.
+- Risks.
+- Alerts.
+- Incidents.
+
+<p align="justify">
+Estos conceptos continúan perteneciendo a sus respectivos Bounded Contexts.
+</p>
+
+**DIAGRAM — Monitoring Database Design Diagram**
+
+![MonitoringDatabaseLayerClassDiagram](assets/images/chapter-04-solution-software-design/monitoring/MonitoringDatabaseDesignDiagram.png)
+
+<p align="center">
+  <strong>Figura 71. MonitoringDatabaseLayerClassDiagram.</strong>
+</p>
+
+
+
+# 4.2.7. Bounded Context: User
+
+<p align="justify">
+El Bounded Context User es responsable de gestionar la información del perfil personal, los datos de contacto y las preferencias de las personas que interactúan con la plataforma ResQ, ya sean administradores de edificaciones, responsables de seguridad, facility managers o usuarios integradores.
+</p>
+
+<p align="justify">
+Este Bounded Context atiende las necesidades de personalización y contacto del sistema. Asegura que la plataforma disponga de la información necesaria para identificar humanamente a los usuarios, enviarles notificaciones de emergencia a través de los canales adecuados y adaptar la experiencia del sistema a sus preferencias, sin mezclar estos datos con la lógica estricta de control de acceso.
+</p>
+
+<p align="justify">
+Como se definió en la arquitectura de la solución, este contexto está estrictamente separado del Bounded Context Identity and Access Management (IAM). Mientras IAM se encarga de las credenciales, hashes, roles y tokens de sesión, el contexto User gestiona nombres, números de teléfono y configuraciones personales.
+</p>
+
+##### Responsabilidades Principales
+
+<p align="justify">
+Las principales responsabilidades de este Bounded Context son:
+</p>
+
+* **Gestión de Identidad Humana:** Almacenar y gestionar la información personal básica del usuario (nombres, apellidos).
+* **Canales de Comunicación:** Mantener actualizados los canales de contacto (correo electrónico, número de teléfono) necesarios para el envío de alertas y notificaciones del sistema.
+* **Personalización del Sistema:** Gestionar las preferencias del usuario (ej. idioma de la interfaz, preferencias de recepción de alertas, zona horaria).
+* **Integración de Datos:** Proveer información de perfil a otros contextos cuando sea necesario (por ejemplo, para que el contexto `Incident` pueda mostrar el nombre real del responsable asignado, referenciando el ID).
+* **Aislamiento de Dominio:** Mantener el modelo de dominio independiente de los mecanismos de autenticación y autorización.
+
+<p align="justify">
+Los principales conceptos identificados para el Bounded Context User son <code>UserProfile</code>, <code>UserId</code>, <code>FullName</code>, <code>ContactInformation</code> y <code>UserPreferences</code>.
+</p>
+
+##### Diccionario de clases
+
+<p align="justify">
+La siguiente tabla resume las principales clases e interfaces que conforman el Bounded Context User.
+</p>
+
+
+| Clase / Interfaz | Capa | Propósito | Atributos principales | Operaciones principales | Relaciones principales |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **UserProfile** | Domain | Representa el perfil de un usuario en ResQ. Es el Aggregate Root responsable de mantener la coherencia de la información personal y de contacto. | id: UserId, name: FullName, contactInfo: ContactInformation, preferences: UserPreferences | updateContactInfo(info), updatePreferences(prefs), changeName(name) | Compone UserId, FullName, ContactInformation, UserPreferences. |
+| **UserId** | Domain | Value Object que representa el identificador único del usuario. Coincide con el identificador utilizado en IAM para correlacionar la identidad con el perfil. | value: UUID | value() | Compuesto por UserProfile. |
+| **FullName** | Domain | Value Object que encapsula el nombre y apellido del usuario, asegurando que no estén vacíos. | firstName: String, lastName: String | formattedName() | Compuesto por UserProfile. |
+| **ContactInformation** | Domain | Value Object que centraliza los canales de comunicación del usuario para la recepción de alertas. | email: String, phoneNumber: String | hasValidPhone() | Compuesto por UserProfile. |
+| **UserPreferences** | Domain | Value Object que almacena configuraciones específicas del usuario para la plataforma. | language: String, timeZone: String, receiveSMSAlerts: Boolean | isSmsEnabled() | Compuesto por UserProfile. |
+| **UserProfileRepository** | Domain | Abstracción utilizada para recuperar y persistir agregados UserProfile sin acoplarse a una base de datos específica. | — | findById(userId), save(profile) | Persiste y recupera agregados UserProfile. |
+| **CreateUserProfileCommand** | Application | Representa la solicitud para inicializar un perfil de usuario, típicamente invocada tras un registro exitoso en IAM. | userId: UUID, firstName: String, lastName: String, email: String | — | Gestionado por CreateUserProfileCommandHandler. |
+| **CreateUserProfileCommandHandler** | Application | Coordina la creación del perfil inicial y lo persiste en el repositorio. | Dependencia de UserProfileRepository | handle(command) | Utiliza UserProfileRepository. |
+| **UpdateContactInfoCommand** | Application | Representa la solicitud para actualizar el correo o teléfono del usuario. | userId: UUID, newEmail: String, newPhone: String | — | Gestionado por UpdateContactInfoCommandHandler. |
+| **UpdateContactInfoCommandHandler** | Application | Recupera el perfil, aplica los cambios en el dominio y persiste el estado actualizado. | Dependencia de UserProfileRepository | handle(command) | Utiliza UserProfileRepository. |
+| **GetUserProfileQuery** | Application | Representa una solicitud de lectura para obtener los datos del perfil de un usuario. | userId: UUID | — | Gestionada por GetUserProfileQueryHandler. |
+| **GetUserProfileQueryHandler** | Application | Orquesta la lectura de datos del perfil para presentarlos en las interfaces cliente. | Dependencia de UserProfileRepository o DAO | handle(query) | Recupera DTOs para la vista. |
+| **UserProfileController** | Interface | Recibe solicitudes HTTP REST (GET, PUT, PATCH) para la gestión del perfil y las delega a la capa de aplicación. | Dependencias de Command/Query Handlers | getProfile(...), updateContact(...) | Delega a la Application Layer. |
+| **JpaUserProfileRepository** | Infrastructure | Implementa UserProfileRepository utilizando Spring Data JPA para la persistencia en base de datos. | Dependencia de base de datos | findById(), save() | Implementa UserProfileRepository. |
+
+---
+
+### 4.2.7.1. Domain Layer
+
+<p align="justify">
+La Domain Layer contiene la lógica centrada en la validez de la información personal. Se asegura de que los datos de contacto tengan formatos correctos y que las preferencias se mantengan dentro de los valores soportados por el sistema (ej. zonas horarias válidas). 
+</p>
+
+<p align="justify">
+El agregado principal es <code>UserProfile</code>.
+</p>
+
+<p align="justify">
+Un <code>UserProfile</code> es identificado de manera única por un <code>UserId</code>, el cual hace de puente lógico directo con la identidad gestionada en el Bounded Context de IAM.
+</p>
+
+##### UserProfile
+
+<p align="justify">
+<strong>Categoría:</strong> Aggregate Root / Entity.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar el perfil de un usuario en ResQ, responsabilizándose de mantener la coherencia y consistencia de la información personal, canales de comunicación y preferencias de configuración.
+</p>
+
+**Atributos / Elementos del Dominio:**
+
+* **Value Objects:**
+    * **`id`:** UserId — Identificador único del usuario correlacionado con IAM.
+    * **`name`:** FullName — Objeto de valor que encapsula y valida el nombre y apellido del usuario.
+    * **`contactInfo`:** ContactInformation — Centraliza y valida los canales de comunicación (correo y teléfono).
+    * **`preferences`:** UserPreferences — Almacena las configuraciones de idioma, zona horaria y alertas SMS.
+
+* **Repositories (Interfaces):**
+    * **`UserProfileRepository`:** Define la abstracción necesaria para recuperar y persistir agregados `UserProfile` sin acoplarse a tecnologías específicas.
+
+### 4.2.7.2. Interface Layer
+
+<p align="justify">
+La Interface Layer proporciona los endpoints RESTful para que las aplicaciones móviles o web de ResQ consulten y modifiquen la información del usuario logueado.
+</p>
+
+<p align="justify">
+El controlador principal es <code>UserProfileController</code>.
+</p>
+
+<p align="justify">
+Un <code>UserProfileController</code> recibe las solicitudes HTTP, extrae las identidades del contexto de seguridad y delega las operaciones hacia la Application Layer.
+</p>
+
+##### UserProfileController
+
+<p align="justify">
+<strong>Categoría:</strong> REST Controller / Interface.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Exponer los servicios HTTP para la lectura del perfil propio, actualización de datos de contacto y parametrización de preferencias.
+</p>
+
+**Endpoints Principales:**
+
+* **`GET /api/v1/users/me`:** Recupera el perfil detallado del usuario autenticado.
+* **`PUT /api/v1/users/me/contact`:** Actualiza el número de teléfono y correo electrónico del usuario.
+* **`PATCH /api/v1/users/me/preferences`:** Modifica las preferencias de notificaciones y visualización de la plataforma.
+
+### 4.2.7.3. Application Layer
+
+<p align="justify">
+La Application Layer aplica el patrón CQRS a nivel lógico para separar de forma clara la lectura del perfil de las operaciones de modificación de datos.
+</p>
+
+<p align="justify">
+Los componentes orquestadores se dividen según su responsabilidad de comandos o consultas.
+</p>
+
+##### Application Components
+
+<p align="justify">
+<strong>Categoría:</strong> Application Services / CQRS Handlers.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Coordinar los casos de uso relacionados con el perfil del usuario, gestionando las transacciones y abstrayendo los accesos de lectura.
+</p>
+
+**Componentes Principales:**
+
+* **Command Handlers (Escritura):**
+    * **`CreateUserProfileCommandHandler`:** Coordina la inicialización del perfil base tras un registro exitoso en el sistema.
+    * **`UpdateContactInfoCommandHandler`:** Valida la existencia del perfil, delega la actualización de datos (`updateContactInfo`) al agregado de dominio y persiste el estado modificado.
+
+* **Query Handlers (Lectura):**
+    * **`GetUserProfileQueryHandler`:** Proyecta la información recuperada directamente hacia DTOs limpios para optimizar la velocidad de carga en la interfaz de usuario.
+
+### 4.2.7.4. Infrastructure Layer
+
+<p align="justify">
+La Infrastructure Layer maneja la persistencia de los perfiles utilizando un ORM sobre una base de datos relacional, implementando los contratos definidos por el dominio.
+</p>
+
+##### Infrastructure Components
+
+<p align="justify">
+<strong>Categoría:</strong> Infrastructure Services / Adapters.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Proveer las herramientas técnicas concretas para el almacenamiento e integración de datos del perfil.
+</p>
+
+**Componentes de Persistencia:**
+
+* **`JpaUserProfileRepository`:** Implementación concreta de `UserProfileRepository` utilizando Spring Data JPA para abstraer las transacciones con la base de datos.
+* **`UserProfileEntity`:** Entidad de infraestructura mapeada a la tabla correspondiente en PostgreSQL. Mapea los Value Objects del dominio (como `FullName` y `ContactInformation`) a columnas de una misma tabla (patrón *Embedded*) para optimizar el rendimiento de acceso.
+
+### 4.2.7.5. Bounded Context Software Architecture Component Level Diagrams
+
+<p align="justify">
+El diagrama representa la arquitectura interna del User Bounded Context de ResQ, aplicando una separación por capas basada en Clean Architecture y DDD.
+</p>
+
+**Interface Layer**
+* User Profile Controller recibe las solicitudes HTTP relacionadas con el perfil y las preferencias del usuario.
+
+**Application Layer**
+* Profile Command Handlers gestiona operaciones de escritura.
+* Profile Query Handlers se encarga de las consultas.
+
+**Domain Layer**
+* User Profile Aggregate concentra los datos y reglas de negocio del perfil.
+* User Profile Repository Interface define el contrato que debe cumplir la persistencia.
+
+**Infrastructure Layer**
+* JPA User Profile Repository implementa el repositorio utilizando Spring Data JPA.
+
+**Base de datos**
+* User Database almacena perfiles, información de contacto y preferencias.
+
+**Flujo principal**
+* Las solicitudes llegan al controlador → pasan a la capa de aplicación → interactúan con el agregado y el repositorio → finalmente se persisten o consultan los datos en PostgreSQL.
+
+![User Component Level Diagrams](assets/images/chapter-04-solution-software-design/imagen5-user.png)
+
+<p align="center">
+  <strong>Figura 72. User Component Level Diagrams.</strong>
+</p>
+
+### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams
+<p align="justify">
+Esta sección detalla la estructura técnica e interna del Bounded Context. Se compone de dos representaciones visuales:
+</p>
+
+- Diagrama de Clases (Domain Layer): Modela la lógica de negocio orientada a objetos, ilustrando las entidades, Value Objects, sus atributos y las relaciones entre ellos.   
+
+- Diagrama de Diseño de Base de Datos: Muestra el esquema de persistencia física, detallando las tablas, columnas y llaves (Entity-Relationship) utilizadas para almacenar la información del dominio.
+
+#### 4.2.7.6.1. Bounded Context Domain Layer Class Diagrams
+
+<p align="justify">
+El diagrama representa la estructura del perfil de usuario, agrupando su identidad, nombre, información de contacto y preferencias.
+<code>UserProfile</code> actúa como elemento central y contiene los diferentes <code>Value Objects</code> que representan cada aspecto del usuario.
+Esta organización permite encapsular los datos y comportamientos del dominio, manteniendo una estructura modular y coherente.
+</p>
+
+![User Domain Layer Diagrams](assets/images/chapter-04-solution-software-design/imagen6-user.png)
+
+<p align="center">
+  <strong>Figura 73. User Domain Layer Diagrams.</strong>
+</p>
+
+#### 4.2.7.6.2. Bounded Context Database Design Diagram
+
+<p align="justify">
+Propósito: Representa el esquema físico de persistencia (modelo relacional) diseñado para almacenar el estado de los agregados del Bounded Context <code>User</code>.
+</p>
+
+- Estructura Principal: Se centra en una tabla única denominada USER_PROFILES, la cual consolida todos los datos del perfil de un usuario.
+- Estrategia de Mapeo (Embedded Pattern): Los atributos que en el dominio están encapsulados en Value Objects (FullName, ContactInformation, UserPreferences) se "aplanan" y se convierten en columnas directas dentro de la misma tabla (ej. first_name, email, pref_language). Esto optimiza las consultas al evitar joins innecesarios.
+- Punto de Integración: Destaca que la llave primaria (id) está diseñada como un UUID que coincide exactamente con el identificador de identidad gestionado en el Bounded Context IAM, estableciendo el puente lógico entre la autenticación y los datos personales sin acoplar las tablas.
+
+![User Database Desing Diagram](assets/images/chapter-04-solution-software-design/imagen7-user.png)
+
+<p align="center">
+  <strong>Figura 74. User Database Desing Diagram.</strong>
+</p>
+
+# 4.2.8. Bounded Context: Incident
+
+<p align="justify">
+El Bounded Context <strong>Incident</strong> es responsable de gestionar el ciclo de vida de los incidentes generados a partir de las situaciones de riesgo o emergencias (como sismos, fugas de gas o incendios) detectadas en las edificaciones monitoreadas por ResQ.
+Este Bounded Context atiende las necesidades operativas y de seguimiento del sistema, asegurando que cada emergencia crítica tenga un registro formal que permita conocer su estado, asignar personal responsable para su atención, registrar su resolución y proveer un historial confiable para posteriores auditorías o cálculos de métricas de seguridad.
+Sus responsabilidades se derivan principalmente de los requisitos relacionados con la trazabilidad de las emergencias y la gestión humana de las mismas una vez que la plataforma ha emitido las alertas iniciales. En particular, ResQ exige que los administradores y responsables de seguridad puedan coordinar las acciones físicas revisando y actualizando el estado de los incidentes en tiempo real.
+El Bounded Context Incident soporta principalmente US14 — Consultar el estado de un incidente, US15 — Asignar un responsable de atención, US16 — Registrar la resolución de un incidente, así como las historias de consulta histórica US17 — Consultar incidentes anteriores, US18 — Buscar incidentes históricos, US19 — Consultar la secuencia de un incidente y TS09 — Procesar información cuantitativa para indicadores.
+El Bounded Context Incident no gestiona la configuración física de los edificios, la creación de zonas, ni el inventario de dispositivos (sensores o actuadores). Estas responsabilidades pertenecen al Bounded Context Building / Infrastructure. Incident solo mantiene la referencia al identificador de la zona para saber dónde ocurrió la emergencia.
+Asimismo, Incident no se encarga de ejecutar la lógica de procesamiento local (Edge Computing) que captura mediciones y evalúa si existe un riesgo en tiempo real; esto pertenece al Bounded Context Detection o Monitoring. Incident actúa como el registro oficial y el flujo de trabajo posterior a la confirmación de la detección.
+</p>
+
+<p align="justify">
+Las principales responsabilidades de este Bounded Context son:
+</p>
+
+- Registrar automáticamente un nuevo incidente a partir de un evento de detección de riesgo.
+- Mantener el estado actual del incidente (ej. activo, en progreso, resuelto, cerrado).
+- Vincular el evento crítico con la zona específica de la edificación donde se originó.
+- Permitir la asignación de un usuario autenticado (responsable de seguridad) para la atención de la emergencia.
+- Registrar el cierre o resolución del incidente, incluyendo notas, tipificación u observaciones finales.
+- Mantener un registro cronológico de los cambios de estado (event sequence) durante la emergencia.
+- Proveer mecanismos de consulta filtrada y paginada del historial de incidentes para cálculos cuantitativos e indicadores.
+- Evitar la modificación de un incidente una vez que este ha sido cerrado formalmente.
+- Mantener el modelo de dominio independiente de los detalles de hardware de los dispositivos.
+
+<p align="justify">
+Los principales conceptos identificados para el Bounded Context Incident son <strong>Incident</strong>, <strong>IncidentId</strong>, <strong>ZoneId</strong>, <strong>RiskType RiskLevel</strong>, <strong>IncidentStatus</strong> y <strong>AttendantId</strong>.
+</p>
+
+##### Diccionario de clases
+
+<p align="justify">
+La siguiente tabla resume las principales clases e interfaces que conforman el Bounded Context Incident.
+</p>
+
+
+| Clase / Interfaz | Capa | Propósito | Atributos principales | Operaciones principales | Relaciones principales |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **Incident** | Domain | Representa una emergencia confirmada. Es el Aggregate Root responsable de mantener el estado de la incidencia, controlar sus transiciones y registrar a los responsables. | id: IncidentId, zoneId: ZoneId, type: RiskType, level: RiskLevel, status: IncidentStatus, assignedTo: AttendantId, createdAt: LocalDateTime, resolvedAt: LocalDateTime, resolutionNotes: String | assignAttendant(attendantId), resolveIncident(notes), changeRiskLevel(newLevel) | Compone IncidentId, RiskType, RiskLevel, IncidentStatus; utiliza ZoneId y AttendantId como referencias externas. |
+| **IncidentId** | Domain | Value Object que representa el identificador único de un incidente en el sistema. | value: UUID | value() | Compuesto por Incident. |
+| **ZoneId** | Domain | Value Object que referencia la zona de la infraestructura donde ocurre el incidente. | value: UUID | value() | Utilizado por Incident (referencia externa). |
+| **AttendantId** | Domain | Value Object que referencia al usuario (responsable de seguridad) asignado para atender el incidente. | value: UUID | value() | Utilizado por Incident (referencia externa). |
+| **RiskType** | Domain | Enumeración que define la naturaleza del incidente detectado. | EARTHQUAKE, FIRE, GAS_LEAK, UNKNOWN | — | Utilizada por Incident. |
+| **RiskLevel** | Domain | Enumeración que indica la severidad actual del incidente. | LOW, MEDIUM, HIGH, CRITICAL | — | Utilizada por Incident. |
+| **IncidentStatus** | Domain | Enumeración que controla el flujo de vida del incidente. | ACTIVE, IN_PROGRESS, RESOLVED, CLOSED | — | Utilizada por Incident. |
+| **IncidentRepository** | Domain | Abstracción de Repository utilizada para recuperar y persistir agregados Incident sin acoplar la Domain Layer a una tecnología específica. | — | findById(id), findAllByZoneId(zoneId), save(incident) | Persiste y recupera agregados Incident. |
+| **CreateIncidentCommand** | Application | Representa la solicitud para iniciar un nuevo incidente tras una detección del sistema. | zoneId: UUID, type: String, level: String | — | Gestionado por CreateIncidentCommandHandler. |
+| **CreateIncidentCommandHandler** | Application | Coordina la creación del incidente en base a la información de detección y lo persiste. | Dependencia de IncidentRepository y EventPublisher | handle(command) | Utiliza IncidentRepository. |
+| **AssignIncidentCommand** | Application | Representa una solicitud de un usuario autorizado para tomar o asignar la responsabilidad de un incidente activo. | incidentId: UUID, attendantId: UUID | — | Gestionado por AssignIncidentCommandHandler. |
+| **AssignIncidentCommandHandler** | Application | Recupera el incidente, invoca la asignación y persiste el cambio de estado. | Dependencia de IncidentRepository | handle(command) | Utiliza IncidentRepository. |
+| **ResolveIncidentCommand** | Application | Representa una solicitud para cerrar un incidente, aportando un reporte o resumen de las acciones tomadas. | incidentId: UUID, resolutionNotes: String | — | Gestionado por ResolveIncidentCommandHandler. |
+| **ResolveIncidentCommandHandler** | Application | Ejecuta la lógica de resolución en el dominio, validando que el incidente esté en un estado transicionable. | Dependencia de IncidentRepository | handle(command) | Utiliza IncidentRepository. |
+| **GetHistoricalIncidentsQuery** | Application | Representa una solicitud de lectura para buscar incidentes cerrados bajo ciertos filtros (zona, fecha, tipo). | zoneId: UUID, startDate: Date, endDate: Date, status: String | — | Gestionada por GetHistoricalIncidentsQueryHandler. |
+| **GetHistoricalIncidentsQueryHandler** | Application | Orquesta la lectura de datos históricos sin modificar el estado del sistema. | Dependencia de abstracciones de lectura/Data Access | handle(query) | Recupera DTOs para la vista. |
+| **IncidentController** | Interface | Recibe solicitudes HTTP REST (asignar, resolver, consultar) y las delega al Command o Query Handler correspondiente. | Dependencias de Command/Query Handlers | assign(...), resolve(...), getIncidents(...) | Delega a la Application Layer. |
+| **KafkaIncidentEventPublisher** | Infrastructure | Implementa el mecanismo de publicación de Domain Events (IncidentCreatedEvent, IncidentResolvedEvent) hacia un bus de mensajes para integración asíncrona. | Dependencia de cliente Kafka/Broker | publish(event) | Implementa la interfaz de publicación del dominio. |
+| **JpaIncidentRepository** | Infrastructure | Implementa IncidentRepository utilizando JPA/Hibernate para persistir los incidentes en una base de datos relacional. | Dependencia de persistencia (Base de Datos) | findById(), save(), findAllByZoneId() | Implementa IncidentRepository. |
+
+<p align="justify">
+Las relaciones entre estas clases preservan estrictamente los límites del Bounded Context. <code>Incident</code> mantiene únicamente el zoneId para contextualizar geográficamente la emergencia, pero no almacena detalles del edificio ni la lista de sensores.
+</p>
+
+<p align="justify">
+Del mismo modo, almacena el <code>AttendantId</code> para indicar quién está atendiendo el problema, pero delega la gestión de información personal, permisos y credenciales de ese empleado al Bounded Context correspondiente (User o IAM).
+</p>
+
+---
+
+### 4.2.8.1. Domain Layer
+
+<p align="justify">
+La Domain Layer encapsula la lógica de negocio central y las reglas para la gestión de incidentes, asegurando que las transiciones de estado sean válidas y coherentes con la realidad física de la emergencia.
+</p>
+
+**Aggregate Root**
+ * **`Incident`:**
+
+<p align="justify">
+Un <code>Incident</code> representa una emergencia detectada en una zona específica de la edificación. Controla su propio ciclo de vida y asegura la consistencia de sus datos.
+</p>
+
+<p align="justify">
+<strong>Categoría:</strong> Aggregate Root / Entity.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Representar la entidad principal de una emergencia dentro del sistema, gestionando sus estados, asignaciones y resoluciones bajo reglas estrictas de dominio.
+</p>
+
+**Atributos / Elementos del Dominio:**
+
+* **Value Objects:**
+    * **`incidentId`:** IncidentId — Identificador único del incidente.
+    * **`zoneId`:** ZoneId — Referencia a la zona donde se originó el problema (vinculación con el contexto de Infraestructura/Edificación).
+    * **`type`:** RiskType — Tipo de emergencia (e.g., EARTHQUAKE, FIRE, GAS_LEAK).
+    * **`level`:** RiskLevel — Nivel de gravedad del incidente (e.g., LOW, MEDIUM, HIGH, CRITICAL).
+    * **`status`:** IncidentStatus — Estado actual del incidente (e.g., ACTIVE, IN_PROGRESS, RESOLVED, CLOSED).
+    * **`assignedTo`:** AttendantId — Identificador del usuario responsable de seguridad asignado a la atención.
+
+* **Domain Events:**
+    * **`IncidentCreatedEvent`:** Emitido cuando el sistema registra un nuevo incidente tras una detección crítica.
+    * **`IncidentAssignedEvent`:** Emitido cuando un responsable asume o es asignado a la atención del incidente.
+    * **`IncidentResolvedEvent`:** Emitido cuando se registra la solución del evento, permitiendo a otros contextos (como notificaciones o analítica) reaccionar.
+
+* **Domain Services:**
+    * **`IncidentMetricsService`:** Servicio de dominio para calcular tiempos de respuesta y resolución en base al historial.
+
+* **Repositories (Interfaces):**
+    * **`IncidentRepository`:** Define los contratos para persistir y recuperar agregados `Incident`.
+
+### 4.2.8.2. Interface Layer
+
+<p align="justify">
+La Interface Layer define los puntos de entrada al Bounded Context, exponiendo las capacidades de ResQ hacia las aplicaciones cliente (web o móvil) mediante una API RESTful.
+</p>
+
+<p align="justify">
+El controlador principal es <code>IncidentController</code>.
+</p>
+
+<p align="justify">
+Un <code>IncidentController</code> maneja las peticiones HTTP relacionadas con la gestión de incidentes, validando los datos de entrada y delegando la ejecución hacia la Application Layer.
+</p>
+
+##### IncidentController
+
+<p align="justify">
+<strong>Categoría:</strong> REST Controller / Interface.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Exponer los endpoints HTTP para la consulta, asignación y resolución de emergencias e incidentes en el sistema.
+</p>
+
+**Endpoints Principales:**
+
+* **`GET /api/v1/incidents`:** Recupera la lista de incidentes (activos e históricos) con soporte para filtros por zona, tipo y estado.
+* **`GET /api/v1/incidents/{incidentId}`:** Obtiene los detalles y el contexto de un incidente específico.
+* **`PATCH /api/v1/incidents/{incidentId}/assign`:** Asigna un responsable de seguridad a un incidente activo.
+* **`PATCH /api/v1/incidents/{incidentId}/resolve`:** Registra la resolución de un incidente, cambiando su estado y almacenando las observaciones finales.
+
+**Data Transfer Objects (DTOs):**
+
+* **`IncidentResponseDTO`:** Representación plana del incidente para la vista.
+* **`AssignIncidentCommandDTO`:** Payload con los datos del responsable asignado.
+* **`ResolveIncidentCommandDTO`:** Payload con el resumen o tipificación de la resolución.
+
+### 4.2.8.3. Application Layer
+
+<p align="justify">
+La Application Layer orquesta los flujos de trabajo delegando la ejecución a los objetos del dominio. Se implementa utilizando el patrón CQRS (Command Query Responsibility Segregation) a nivel lógico para separar las operaciones de lectura y escritura.
+</p>
+
+<p align="justify">
+Los manejadores se dividen según su responsabilidad en comandos y consultas.
+</p>
+
+**Application Components**
+<p align="justify">
+<strong>Categoría:</strong> Application Services / CQRS Handlers.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Coordinar los casos de uso del sistema, gestionando las transacciones de escritura y abstrayendo las consultas de lectura sin alterar el estado del dominio.
+</p>
+
+**Componentes Principales:**
+
+* **Command Handlers (Escritura):**
+    * **`CreateIncidentCommandHandler`:** Orquesta la creación de un nuevo incidente (generalmente invocado por un evento asíncrono desde el contexto de Detección).
+    * **`AssignIncidentCommandHandler`:** Valida los permisos y ejecuta el método de asignación en el Aggregate Root.
+    * **`ResolveIncidentCommandHandler`:** Ejecuta la lógica de cierre del incidente y persiste el cambio.
+
+* **Query Handlers (Lectura):**
+    * **`GetIncidentByIdQueryHandler`:** Recupera los detalles de un incidente específico.
+    * **`GetHistoricalIncidentsQueryHandler`:** Ejecuta búsquedas paginadas y filtradas para la consulta de incidentes anteriores.
+
+### 4.2.8.4. Infrastructure Layer
+
+<p align="justify">
+La Infrastructure Layer implementa las interfaces definidas en las capas superiores, gestionando la persistencia en la base de datos y la comunicación externa con el bus de mensajes.
+</p>
+
+<p align="justify">
+Los componentes se dividen en mecanismos de persistencia y adaptadores dirigidos por eventos.
+</p>
+
+#### Infrastructure Components
+
+<p align="justify">
+<strong>Categoría:</strong> Infrastructure Services / Adapters.
+</p>
+
+<p align="justify">
+<strong>Propósito:</strong> Proveer las implementaciones técnicas concretas para el almacenamiento de datos y la integración asíncrona con otros sistemas.
+</p>
+
+**Componentes de Persistencia:**
+
+* **`JpaIncidentRepository`:** Implementación de `IncidentRepository` utilizando Spring Data JPA para la gestión del ciclo de vida de los datos.
+* **`IncidentEntity`:** Entidad de infraestructura mapeada directamente a las tablas de la base de datos relacional (MySQL/PostgreSQL).
+* **`IncidentMapper`:** Componente encargado de transformar los datos entre `IncidentEntity` (Infraestructura) e `Incident` (Dominio) para mantener el desacoplamiento.
+
+**Componentes de Mensajería (Event-Driven):**
+
+* **`KafkaIncidentEventPublisher`:** Implementación encargada de publicar los *Domain Events* hacia un tópico de Apache Kafka (e.g., `resq.incident.events`), facilitando la integración asíncrona con los contextos de Notificaciones o Analítica.
+* **`DetectionEventListener`:** Consumidor de Kafka que escucha activamente los eventos de riesgo crítico detectados en el Edge para instanciar automáticamente los incidentes en el sistema.
+
+### 4.2.8.5. Bounded Context Software Architecture Component Level Diagrams
+
+ ##### Flujo Principal de Interacción
+
+<p align="justify">
+El flujo principal del Incident Bounded Context se desarrolla de manera secuencial a través de las distintas capas de la arquitectura para garantizar el cumplimiento de las reglas de negocio y el desacoplamiento técnico:
+</p>
+
+1. **Solicitud del usuario:** El cliente (aplicación web o móvil) envía una solicitud HTTP para consultar, asignar o resolver un incidente.
+2. **IncidentController:** La Interface Layer recibe la petición, valida el formato del DTO de entrada y la dirige al manejador correspondiente en la capa superior.
+3. **Application Layer:** El componente de aplicación toma el control utilizando el patrón CQRS; un `IncidentCommandHandler` procesa las operaciones de escritura, mientras que un `IncidentQueryHandler` gestiona las consultas de lectura.
+4. **Incident Aggregate:** En operaciones de escritura, el agregador `Incident` ejecuta la lógica de negocio central, valida las transiciones de estado y asegura la consistencia de la emergencia.
+5. **Repository Interface:** La capa de aplicación utiliza la abstracción `IncidentRepository` para solicitar la persistencia o recuperación del agregado sin acoplarse a la tecnología de almacenamiento.
+6. **JPA Repository:** La Infrastructure Layer, a través de `JpaIncidentRepository`, implementa dicho contrato y realiza las consultas u operaciones físicas sobre la base de datos PostgreSQL.
+7. **Kafka Publisher:** Si la regla de negocio del agregador generó un cambio significativo, `KafkaIncidentEventPublisher` publica los eventos de dominio resultantes (como `IncidentCreatedEvent` o `IncidentResolvedEvent`) en el bus de mensajes.
+8. **Respuesta:** El resultado del proceso se transforma de nuevo a un DTO y retorna a través del `IncidentController` hacia el cliente con el estado HTTP correspondiente.
+
+
+![Flujo Process Diagram](assets/images/chapter-04-solution-software-design/imagen2.png)
+
+<p align="center">
+  <strong>Figura 75. Flujo Process Diagram.</strong>
+</p>
+
+**Diagrama - Incident Component Level Diagram**
+ 
+<p align="justify">
+ El siguiente diagrama C4 (Nivel 3: Componentes) detalla la estructura interna del Bounded Context de Incidentes organizada en cuatro capas:
+</p>
+
+- Interface Layer: recibe y gestiona las solicitudes mediante el Incident Controller.
+- Application Layer: coordina los casos de uso de incidentes, separando operaciones de escritura y consulta.
+- Domain Layer: contiene las reglas de negocio mediante el Incident Aggregate y define el contrato de persistencia mediante Incident Repository Interface.
+- Infrastructure Layer: implementa la persistencia con JPA Incident Repository y la comunicación mediante eventos con Kafka Event Publisher.
+- Base de datos: almacena la información de los incidentes y registros relacionados.
+
+<p align="justify">
+Las relaciones entre los componentes muestran cómo las solicitudes atraviesan las diferentes capas, manteniendo una separación de responsabilidades y facilitando el mantenimiento y evolución del sistema.
+</p>
+
+![Incident Component Level Diagram](assets/images/chapter-04-solution-software-design/imagen1.png)
+
+<p align="center">
+  <strong>Figura 76. Incident Component Level Diagram.</strong>
+</p>
+
+
+### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
+
+<p align="justify">
+Esta sección presenta los diagramas de nivel de código del Bounded Context de Incident Management de ResQ, detallando la estructura interna de sus principales elementos de software.
+</p>
+
+- Domain Layer: representa el Incident Aggregate, Value Objects, enumeraciones y reglas de negocio.
+- Application Layer: muestra los servicios encargados de coordinar los casos de uso y operaciones sobre incidentes.
+- Infrastructure Layer: representa los componentes de persistencia y publicación de eventos.
+- Interface Layer: muestra los controladores responsables de exponer las funcionalidades del contexto.
+- Relaciones: permiten visualizar las dependencias entre clases, componentes y responsabilidades, facilitando la comprensión de la implementación del Bounded Context.
+
+#### 4.2.8.6.1. Bounded Context Domain Layer Class Diagrams
+
+<p align="justify">
+El siguiente diagrama de clases ilustra el modelo de dominio rico, destacando el Aggregate Root, sus Value Objects y métodos principales:
+</p>
+
+- Aggregate Root: Incident centraliza la información y reglas de negocio relacionadas con un incidente.
+- Value Objects: IncidentId, ZoneId y AttendantId representan identificadores utilizados por el agregado.
+- Enumeraciones: RiskType, RiskLevel e IncidentStatus definen el tipo de riesgo, nivel de criticidad y estado del incidente.
+- Comportamientos: Incident encapsula operaciones como asignar un encargado, resolver el incidente y modificar su nivel de riesgo.
+- Relaciones: el agregado mantiene referencias a sus Value Objects y utiliza las enumeraciones para controlar su     comportamiento y estado.
+
+![Incident Layar Class Diagrams](assets/images/chapter-04-solution-software-design/imagen3.png)
+
+<p align="center">
+  <strong>Figura 77. Incident Layar Class Diagrams.</strong>
+</p>
+
+#### 4.2.8.6.2. Bounded Context Database Design Diagram
+
+<p align="justify">
+El diseño de la base de datos refleja la persistencia del estado de los incidentes, optimizado para almacenar el histórico y soportar las consultas de indicadores y secuencias:
+</p>
+
+- INCIDENTS: almacena la información principal de los incidentes, incluyendo su tipo, nivel de riesgo, estado, zona, responsable y fechas de creación y resolución.
+
+- INCIDENT_EVENTS_LOG: registra los eventos generados durante el ciclo de vida de cada incidente, permitiendo mantener un historial de cambios.
+
+- Relación: cada incidente puede generar múltiples eventos registrados en INCIDENT_EVENTS_LOG.
+
+<p align="justify">
+Trazabilidad: esta estructura permite conservar una secuencia histórica de acciones y cambios asociados a cada incidente.
+</p>
+
+![Incident Database Design Diagram](assets/images/chapter-04-solution-software-design/imagen4.png)
+
+<p align="center">
+  <strong>Figura 78. Incident Database Design Diagram.</strong>
+</p>
+
+### 4.2.9. Bounded Context: Connectivity Management
+
+<p align="justify">
+El Connectivity Management Bounded Context es responsable de gestionar y supervisar el estado de conexión de red de todos los sensores físicos de emergencia (sismos, fugas de gas, temperatura, etc.) en el sistema. Este contexto asegura que los dispositivos mantengan una comunicación constante mediante señales de vida (heartbeats), detectando caídas de red, gestionando reconexiones y garantizando que el sistema central sepa en tiempo real si un área está desprotegida por falta de conectividad.
+</p>
+
+#### 4.2.9.1. Domain Layer
+
+<p align="justify">
+La <strong>Domain Layer</strong> del Connectivity Management Bounded Context encapsula la lógica de negocio relacionada con la supervisión de red. En esta capa, se definen los elementos principales del dominio, como agregados, entidades, objetos de valor, comandos, consultas y eventos, que representan los conceptos clave del sistema.
+</p>
+
+**Aggregates**
+
+1. `SensorConnection`
+   * **Propósito:** Representa el estado de red y la sesión de conectividad actual de un sensor físico específico.
+   * **Atributos:**
+      * `sensorId`: Identificador del dispositivo IoT, representado como un objeto de valor `SensorId`.
+      * `macAddress`: Dirección física del sensor en la red, representado como un objeto de valor `MacAddress`.
+      * `status`: Estado operativo actual de la conexión (`ONLINE`, `OFFLINE`, `TIMEOUT`), representado como un objeto de valor `ConnectionStatus`.
+      * `lastHeartbeat`: Fecha y hora del último latido recibido exitosamente.
+   * **Características:**
+      * Extiende `AuditableAbstractAggregateRoot`, lo que permite auditar el historial de caídas de red.
+      * Gestiona la lógica para determinar si el tiempo transcurrido desde el `lastHeartbeat` excede el límite permitido, cambiando el estado a `TIMEOUT`.
+
+**Entities**
+
+1. `HeartbeatRecord`
+   * **Propósito:** Representa un latido individual enviado por el sensor para notificar que sigue vivo.
+   * **Atributos:**
+      * `timestamp`: Fecha y hora exacta en la que se recibió la señal.
+      * `signalStrength`: Nivel de intensidad de la red, representado como un objeto de valor `SignalStrength`.
+
+**Value Objects**
+
+1. `SensorId`
+   * **Propósito:** Representa el identificador único de un sensor.
+   * **Validaciones:** El identificador no puede ser nulo ni negativo.
+2. `ConnectionStatus`
+   * **Propósito:** Enumera los estados posibles de conectividad (`ONLINE`, `OFFLINE`, `TIMEOUT`).
+3. `SignalStrength`
+   * **Propósito:** Representa la calidad de la conexión inalámbrica.
+   * **Validaciones:** Debe estar dentro de rangos realistas (ej. entre -100 dBm y 0 dBm).
+
+**Commands**
+
+1. `RegisterHeartbeatCommand`
+   * **Propósito:** Representa la solicitud para registrar un nuevo latido.
+   * **Atributos:** `sensorId`, `timestamp`, `signalStrength`.
+2. `MarkSensorOfflineCommand`
+   * **Propósito:** Solicitud interna para forzar el estado de un sensor a desconectado tras superar el tiempo de espera.
+   * **Atributos:** `sensorId`.
+
+**Queries**
+
+1. `GetSensorConnectionStatusQuery`
+   * **Propósito:** Recupera el estado actual de red de un sensor específico.
+2. `GetAllOfflineSensorsQuery`
+   * **Propósito:** Recupera una lista de todos los sensores que actualmente han perdido conexión.
+
+**Events**
+
+1. `ConnectionLostEvent`
+   * **Propósito:** Evento crítico que se dispara cuando un sensor pasa a estado `OFFLINE` o `TIMEOUT`.
+   * **Atributos:** `sensorId`, `lastHeartbeat`.
+2. `HeartbeatReceivedEvent`
+   * **Propósito:** Evento que se dispara cada vez que se registra un latido exitoso.
+
+---
+
+#### 4.2.9.2. Interface Layer
+
+<p align="justify">
+La <strong>Interface Layer</strong> del Connectivity Management Bounded Context expone los puntos de entrada al sistema a través de controladores REST. Esta capa permite la interacción con los dispositivos IoT y facilita la comunicación entre los clientes y el sistema.
+</p>
+
+**Controllers**
+
+1. `ConnectivityController`
+   * **Propósito:** Gestiona las operaciones de red de los sensores.
+   * **Endpoints:**
+      * `POST /api/v1/connectivity/heartbeats`: Registra un nuevo latido proveniente del dispositivo IoT.
+      * `GET /api/v1/connectivity/sensors/{sensorId}/status`: Obtiene el estado actual de red de un sensor.
+      * `GET /api/v1/connectivity/sensors/offline`: Lista todos los sensores sin conexión.
+   * **Dependencias:**
+      * `ConnectivityCommandService`: Servicio encargado de manejar los comandos relacionados con la conectividad.
+      * `ConnectivityQueryService`: Servicio encargado de manejar las consultas de conectividad.
+
+**Resources**
+
+1. `SensorConnectionResource`
+   * **Propósito:** Representa el estado de conexión expuesto a través de la API REST.
+   * **Atributos:** `sensorId`, `status`, `lastHeartbeatTime`.
+2. `RegisterHeartbeatResource`
+   * **Propósito:** Representa los datos necesarios enviados por el dispositivo IoT para reportar su estado.
+   * **Atributos:** `sensorId`, `signalStrength`.
+
+**Transformers**
+
+1. `SensorConnectionResourceFromEntityAssembler`
+   * **Propósito:** Convierte una entidad `SensorConnection` en un recurso `SensorConnectionResource`.
+   * **Método principal:** `toResourceFromEntity(SensorConnection entity)`.
+
+---
+#### 4.2.9.3. Application Layer
+
+<p align="justify">
+La <strong>Application Layer</strong> coordina las operaciones de negocio, manejando comandos y consultas, orquestando la lógica de la aplicación y garantizando que las reglas del dominio se cumplan.
+</p>
+
+**Command Services**
+
+1. `ConnectivityCommandServiceImpl`
+   * **Propósito:** Gestiona las operaciones relacionadas con el procesamiento de señales de vida y actualización de estados.
+   * **Métodos principales:**
+      * `handle(RegisterHeartbeatCommand command)`: Actualiza el `lastHeartbeat` del sensor. Si estaba `OFFLINE`, lo devuelve a `ONLINE`.
+      * `handle(MarkSensorOfflineCommand command)`: Cambia el estado a `TIMEOUT` tras validar los tiempos de espera.
+   * **Dependencias:**
+      * `SensorConnectionRepository`: Persistencia de las conexiones.
+      * `ExternalDeviceService`: Verifica la existencia del sensor.
+
+**Query Services**
+
+1. `ConnectivityQueryServiceImpl`
+   * **Propósito:** Gestiona las consultas relacionadas con los estados de red.
+   * **Métodos principales:**
+      * `handle(GetSensorConnectionStatusQuery query)`: Recupera el estado de un sensor por su ID.
+
+**Event Handlers**
+
+1. `SensorTimeoutEventHandler`
+   * **Propósito:** Maneja el evento de evaluación de tiempos de espera para sensores que no han reportado actividad.
+   * **Método principal:** `on(EvaluateSensorTimeoutsEvent event)`: Identifica sensores desconectados y dispara el `MarkSensorOfflineCommand`.
+
+**Outbound Services (ACL)**
+
+1. `ExternalAlertService`
+   * **Propósito:** Interactúa con el Alert & Response Management Bounded Context para disparar alarmas de desconexión.
+   * **Método principal:** `triggerDisconnectionAlert(Long sensorId)`.
+
+---
+
+#### 4.2.9.4. Infrastructure Layer
+
+<p align="justify">
+La <strong>Infrastructure Layer</strong> proporciona las implementaciones técnicas necesarias para soportar las operaciones del sistema, incluyendo los repositorios para la persistencia de datos en la base de datos.
+</p>
+
+**Persistencia (JPA Repositories)**
+
+1. `SensorConnectionRepository`
+   * **Propósito:** Proporciona métodos para interactuar con la base de datos de conectividad.
+   * **Métodos principales:**
+      * `findSensorsWithLastHeartbeatBefore(LocalDateTime time)`: Recupera todos los sensores cuyo último latido fue anterior a una fecha límite, útil para detectar caídas de red.
+   * **Características:**
+      * Extiende `JpaRepository`, permitiendo realizar operaciones CRUD sobre la entidad `SensorConnection`.
+
+**Relaciones entre componentes**
+
+*   **Persistencia:** El repositorio `SensorConnectionRepository` proporciona acceso a los datos almacenados, permitiendo a las capas superiores interactuar con las entidades del dominio.
+*   **Validación:** Los servicios externos (ACL) son utilizados para validar la existencia de los sensores comunicándose con el contexto correspondiente.
+
+---
+
+#### 4.2.9.5. Bounded Context Software Architecture Component Level Diagrams
+
+<p align="justify">
+En esta sección se presenta el diagrama de componentes del <strong>Connectivity Management Bounded Context</strong>, el cual detalla los principales módulos y sus interacciones dentro del contexto delimitado. Este diagrama sigue el enfoque del C4 Model para representar los componentes clave, como servicios de aplicación, controladores, repositorios y servicios externos, junto con sus relaciones.
+</p>
+
+<p align="justify">
+El propósito de este diagrama es proporcionar una visión clara y estructurada de cómo se organizan los componentes dentro del contexto, facilitando la comprensión de su arquitectura y permitiendo identificar puntos de integración y responsabilidades.
+</p>
+
+![Connectivity Management Diagram1](assets/diagram-sources/chapter-04-solution-software-design/Connectivity/Connectivity1.png)
+
+<p align="center">
+  <strong>Figura 79. Connectivity Management Diagram1.</strong>
+</p>
+<p align="justify">
+El <strong>Connectivity Management Bounded Context</strong> está compuesto por los siguientes módulos principales:
+</p>
+
+1. **Application Layer:**
+   * Coordina las operaciones de negocio relacionadas con el monitoreo de conectividad y latidos (*heartbeats*).
+   * Incluye servicios de comandos y consultas que interactúan con la **Domain Layer** y la **Infrastructure Layer**.
+   * Maneja eventos críticos relacionados con la desconexión de sensores y evaluaciones de *timeout*.
+
+2. **Interface Layer:**
+   * Expone los puntos de entrada al sistema a través de controladores REST (ej. webhooks para los dispositivos IoT).
+   * Incluye recursos y transformadores que aseguran una representación adecuada de los datos de red y su conversión entre las capas de la aplicación.
+
+3. **Domain Layer:**
+   * Encapsula la lógica de negocio relacionada con la supervisión de red.
+   * Define los agregados, entidades y objetos de valor que representan los conceptos clave del dominio (como el estado de conexión y la intensidad de la señal).
+
+4. **Infrastructure Layer:**
+   * Proporciona las implementaciones técnicas necesarias para soportar las operaciones del sistema.
+   * Incluye repositorios para la persistencia del estado de los sensores y componentes (ACL) que conectan la lógica de negocio con otros servicios externos de alertas.
+
+#### 4.2.9.6. Bounded Context Software Architecture Code Level Diagrams
+
+<p align="justify">
+En este apartado se presentan los diagramas que ofrecen un mayor nivel de detalle sobre la implementación de los componentes del <strong>Connectivity Management Bounded Context</strong>. Estos diagramas están diseñados para ilustrar cómo se estructuran las clases, interfaces y relaciones dentro de las capas del contexto, proporcionando una visión técnica que facilita el desarrollo, mantenimiento y evolución del sistema.
+</p>
+
+##### 4.2.9.6.1. Bounded Context Domain Layer Class Diagrams
+
+<p align="justify">
+El diagrama de clases correspondiente a la <strong>Domain Layer</strong> del <strong>Connectivity Management Bounded Context</strong> incluye las clases principales, como agregados, entidades y objetos de valor, así como las interfaces y enumeraciones que definen el comportamiento del dominio. También se destacan las relaciones entre estos elementos, como asociaciones, composiciones y dependencias.
+</p>
+
+![Connectivity Management Diagram2](assets/diagram-sources/chapter-04-solution-software-design/Connectivity/Connectivity2.png)
+
+<p align="center">
+  <strong>Figura 80. Connectivity Management Diagram2.</strong>
+</p>
+
+**Elementos principales del diagrama:**
+
+1. **Aggregates:**
+   * `SensorConnection`: Agregado principal que encapsula la lógica de negocio relacionada con la sesión de red del dispositivo.
+     * **Atributos:** `sensorId`, `macAddress`, `status`, `lastHeartbeat`.
+     * **Métodos:** `registerHeartbeat()`, `markAsOffline()`, `isTimeoutExceeded()`.
+
+2. **Entities:**
+   * `HeartbeatRecord`: Entidad que representa cada señal de vida individual enviada por el sensor.
+     * **Atributos:** `timestamp`, `signalStrength`.
+
+3. **Value Objects:**
+   * `SensorId`: Representa el identificador único del hardware.
+   * `MacAddress`: Representa la dirección de red física del sensor.
+   * `ConnectionStatus`: Enumera los estados posibles de conectividad (`ONLINE`, `OFFLINE`, `TIMEOUT`).
+   * `SignalStrength`: Representa la intensidad de la red (en dBm).
+
+**Relaciones destacadas:**
+* El agregado `SensorConnection` gestiona las relaciones y el registro transaccional con la entidad `HeartbeatRecord` (relación 1 a muchos).
+* Los objetos de valor encapsulan datos inmutables y validaciones específicas de red, asegurando la consistencia en el dominio.
+
+##### 4.2.9.6.2. Bounded Context Database Design Diagram
+
+<p align="justify">
+El diseño de la base de datos para el <strong>Connectivity Management Bounded Context</strong> refleja la estructura del dominio, asegurando que las entidades y relaciones definidas en la <strong>Domain Layer</strong> se representen de manera eficiente en el modelo relacional.
+</p>
+
+![Connectivity Management Diagram3](assets/diagram-sources/chapter-04-solution-software-design/Connectivity/Connectivity3.png)
+
+<p align="center">
+  <strong>Figura 81. Connectivity Management Diagram3.</strong>
+</p>
+
+**Este diseño incluye las siguientes tablas principales:**
+
+1. **SENSOR_CONNECTIONS:**
+   * Representa la sesión operativa y el estado actual de conexión en el sistema.
+   * **Atributos principales:**
+     * `id`: Identificador único de la conexión (PK).
+     * `sensor_id`: Identificador físico del dispositivo asociado (FK).
+     * `mac_address`: Dirección de red del dispositivo.
+     * `status`: Estado actual (`ONLINE`, `OFFLINE`, `TIMEOUT`).
+     * `last_heartbeat`: Fecha y hora del último latido recibido.
+
+2. **HEARTBEAT_LOGS:**
+   * Representa el historial de latidos enviados por los dispositivos.
+   * **Atributos principales:**
+     * `id`: Identificador único del registro (PK).
+     * `sensor_connection_id`: Identificador de la conexión asociada (FK).
+     * `timestamp`: Fecha y hora exacta en la que se recibió la señal.
+     * `signal_strength`: Intensidad de la señal de red reportada.
+
+
+# Capítulo V: Solution UI/UX Design
+
+# 5.1. Style Guidelines.
+### 5.1.1. General Style Guidelines.
+
+en este sección definiremos algunos apartados en lo visual, simbolismo y interacción que rige toda la solucion de ResQ, asegurando coherencia respecto las plataformas. Establecemos una identidad visual clara por medio de paleta de colores, tipografia, espaciado, etc unificado.
+
+#### Brand Overview
+
+En varios ciudades, las emergencias dentro de los edificios/locales puede ser un problema demaciado serio sino sabes que paso seria mejor seguir. La falta de información correcta sobre las medidas o protocolos que se deberian hacer para las personas en dichos momentos llegue a generar panico o realizar acciones que ponga en peligro su bienestar dando como resultado heridas fatales o personas fallecidas. *ResQ* surge como una solución a este problema: Un dispositivo IoT afiliada a una plataforma para ayudar a las personas de una vivienda, local o empresa tener una alarma antes varias emergencias con protocolos que serviran a las personas para mantenerlos seguro
+
+A través de distintos sensores y un sistema de protocolos confiable, ResQ no solo facilita las acciones que uno debe tomar dependiendo de la emergencia sino tambien reduce la mortalidad garantizando rutas seguras para todas las personas
+
+---
+
+#### Brand Name
+
+El nombre de nuestra solución, ResQ, muestra la esencia del proyecto:"Res" represe la siglas de R: Revaluando, E: Entorno y S: Seguro y Q representa Qualified mostrando que nos es solo una solucion sino es la solucion mas capacitada, el conjunto de ambos trasmite da a conocer que el producto evalua la situacion y te da indicaciones con un indice de efectividad mas del 75% con el significado de nuestro nombre
+
+La elección de un nombre en inglés responde a su estructura sencilla pero universal que es llamativo para un gran publico, lo que permite escalar la solucion a varios casos mas complejos a futuro.
+
+---
+
+#### Logo
+
+A continuación, se presenta el Logo de ResQ:
+
+![Logo-ResQ.PNG](assets/images/chapter-02-requirements-elicitation-analysis/ResQ-logo.png)
+
+##### Color
+
+![Logo-Color-ResQ.PNG](assets/images/chapter-05-solution-ui-ux-design/colorperfil1.png)
+
+#### Body Text
+
+La elección de una tipografía adecuada influye en la facilidad con la que el usuario puede comrpender el texto. La tipografía puede transmitir emociones y establecer un tono para el texto.
+
+#### Tipografía 
+
+![Tipografia-ResQ.PNG](assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+
+#### Paleta de colores
+
+![Coloris-ResQ.PNG](assets/images/chapter-05-solution-ui-ux-design/color1.png)
+
+#### Botones
+
+![TButtum.PNG](assets/images/chapter-05-solution-ui-ux-design/buttom1.png)
+
+### 5.1.2. Web, Mobile and IoT Style Guidelines.
+Diseñamos una interfaces Web centrada principalmente en la claridad y eficiencia,  para que la experiencia del usuario en pantallas de mayores tamaños. Tambien aplicamos una estructura responsivas, patrones de navegación y un poco de grid para asegurar que la accesibilidad y rendimiento en un entrono de escritorio
+
+#### Colour Paletie
+
+##### Recomended usage
+
+![TColors.PNG](assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
+
+#### Tipografía 
+
+![Tipografia-ResQ.PNG](assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+
+#### Grid
+
+![Grid.PNG](assets/images/chapter-05-solution-ui-ux-design/Grid1.png)
+
+![Button.PNG](assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
+
+![NIO.PNG](assets/images/chapter-05-solution-ui-ux-design/NIOWeb1.png)
+
+Adaptamos lo Fundamental de ResQ para dispositivos móviles optimizamos la usabilidad en el apartado táctil, la jerarquía visual y  sin olvidad la agilidad de la navegación ya que es lo fundamental, priorizamos lo intuitivo, mayor rendimiento y pasos rápidos pero suaves entre pantallas, conociendo las limitaciones y contras del formato móvil
+
+#### Colour Paletie
+
+##### Recomended usage
+
+![TColors.PNG](assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
+
+#### Tipografía 
+
+![Tipografia-ResQ.PNG](assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+
+#### Grid
+
+![Grid.PNG](assets/images/chapter-05-solution-ui-ux-design/Grid2.png)
+
+![Button.PNG](assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
+
+![NIO.PNG](assets/images/chapter-05-solution-ui-ux-design/NIOMoviel1.png)
+
+Excedemos nuestros lineamientos respecto a los dispositivos IoT para asegurar que la interfaz sea funcional y simple. Diseñamos visuales claras y compactas con código de colores efectivos y apartados visuales que faciliten la comprensión de la información
+
+#### Colour Paletie
+
+##### Recomended usage
+
+![TColors.PNG](assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
+
+#### Tipografía 
+
+![Tipografia-ResQ.PNG](assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+
+#### Grid
+
+![Grid.PNG](assets/images/chapter-05-solution-ui-ux-design/Grid1.png)
+
+![Button.PNG](assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
+
+![NIO.PNG](assets/images/chapter-05-solution-ui-ux-design/NIOIoT1.png)
+
+ 
+### 5.2. Information Architecture.
+
+<p align="justify">
+La Information Architecture de ResQ define cómo se organizan, nombran, localizan y conectan los contenidos de la Landing Page y de la Web Application. Su propósito es que cada persona pueda reconocer el objetivo de la experiencia que utiliza, encontrar la información necesaria con el menor esfuerzo posible y comprender la relación entre las áreas de monitoreo, riesgos, alertas, dispositivos, edificaciones e incidentes. Para ello, la propuesta se estructura mediante <strong>Organization Systems</strong>, <strong>Labeling Systems</strong>, <strong>SEO Tags and Meta Tags</strong>, <strong>Searching Systems</strong> y <strong>Navigation Systems</strong>, desarrollados en las subsecciones 5.2.1–5.2.5.
+</p>
+
+<p align="justify">
+La Landing Page y la Web Application responden a necesidades distintas. La Landing Page presenta el problema que aborda ResQ, comunica su propuesta de valor y diferencia los beneficios relevantes para propietarios o administradores de edificaciones y para empresas integradoras de automatización y gestión de edificios inteligentes. En cambio, la Web Application organiza información operacional para usuarios autenticados que necesitan supervisar edificaciones, zonas y dispositivos, interpretar alertas y riesgos, y dar seguimiento a incidentes. Esta separación evita mezclar contenido informativo y comercial con tareas de operación que requieren contexto, permisos y atención sostenida.
+</p>
+
+<p align="justify">
+En un sistema de monitoreo y gestión de emergencias, la jerarquía del contenido tiene consecuencias operativas. Por esta razón, ResQ prioriza el estado general, el tipo y nivel del riesgo, la ubicación afectada, la vigencia de las mediciones y las respuestas ejecutadas o pendientes de autorización. La información secundaria se desplaza hacia vistas de detalle, de modo que una persona responsable pueda reconocer primero aquello que requiere atención. Este criterio reduce la carga cognitiva, limita la competencia visual entre datos de diferente criticidad y favorece decisiones oportunas sin ocultar la trazabilidad necesaria para revisar un incidente.
+</p>
+
+<p align="justify">
+Los sistemas de organización establecen la agrupación de contenidos; los sistemas de etiquetado mantienen términos coherentes con el Ubiquitous Language y con los Bounded Contexts; los SEO Tags and Meta Tags describen las páginas para buscadores, navegadores y vistas previas; los sistemas de búsqueda permiten localizar entidades operativas; y los sistemas de navegación conectan las tareas principales y sus vistas de detalle. En conjunto, estas decisiones permiten que visitantes y usuarios se adapten progresivamente a ResQ y comprendan cómo las áreas del producto colaboran dentro del flujo de monitoreo, detección, alerta, respuesta y seguimiento.
+</p>
+
+### 5.2.1. Organization Systems.
+
+Para ResQ, los sistemas de organización de la información se plantean de acuerdo con las tareas que realizan los usuarios dentro de la plataforma, especialmente el monitoreo de edificios, dispositivos IoT, riesgos, incidentes y alertas. Buscamos que la información crítica pueda identificarse rápidamente durante una situación de emergencia y que las funciones administrativas permanezcan agrupadas de forma clara.
+
+**Organización jerárquica:** <br>
+La mayor parte del contenido de ResQ seguirá una organización jerárquica, partiendo de información general hacia información cada vez más específica.
+
+En el caso del responsable o administrador de seguridad, después de autenticarse accederá a un panel principal desde el cual podrá consultar los distintos módulos del sistema. Desde ahí podrá ingresar a la gestión de edificios, zonas, dispositivos, monitoreo, detección de riesgos, incidentes y alertas. Por ejemplo, dentro de la gestión de infraestructura se podrá navegar desde un edificio hacia sus zonas y, posteriormente, consultar los dispositivos asociados a cada ubicación.
+
+De esta forma, el usuario podrá comprender fácilmente dónde se encuentra dentro del sistema y acceder primero a una vista general antes de revisar información detallada.
+
+**Organización secuencial:**<br>
+La organización secuencial se utilizará en aquellos procesos que requieran completar una serie de pasos en un orden determinado.
+- **Registro y configuración de un dispositivo IoT:**
+
+  1. Registrar los datos generales del dispositivo.
+  2. Definir sus características y capacidades.
+  3. Asignarlo a un edificio y, de ser necesario, a una zona.
+  4. Revisar la configuración registrada.
+  5. Habilitar administrativamente el dispositivo.
+
+<br>
+
+- **Gestión de una situación de emergencia:**
+
+  1. Recepción de mediciones desde los dispositivos.
+  2. Evaluación del riesgo detectado.
+  3. Generación de una alerta o incidente.
+  4. Ejecución de acciones de respuesta.
+  5. Seguimiento del incidente.
+  6. Consulta del historial del evento.
+
+Este tipo de organización permitirá guiar al usuario durante procesos que no deberían ejecutarse de manera desordenada.
+
+**Organización matricial:**<br>
+La organización matricial se aplicará principalmente en vistas de monitoreo y análisis, donde sea necesario comparar diferentes variables al mismo tiempo. Por ejemplo, en el dashboard de la solución se podrá relacionar la ubicación con el estado de los dispositivos o el nivel de riesgo.
+
+Este tipo de presentación permitirá al responsable de seguridad comparar rápidamente diferentes zonas y detectar dónde se requiere mayor atención.
+
+<br>
+
+**Esquemas de categorización del contenido:**
+ResQ utilizará distintos esquemas de categorización según el tipo de información presentada:
+
+- **Por tópicos:** Toda la información estará agrupada según áreas funcionales como edificios, dispositivos, monitoreo, riesgos, incidentes, alertas y perfil.
+- **Cronológico:** Se utilizará principalmente para mediciones, alertas, incidentes y registros históricos, permitiendo consultar primero los eventos más recientes y revisar posteriormente sucesos anteriores.
+- **Alfabético:** Se podrá aplicar en listados extensos de edificios, zonas o dispositivos para facilitar su localización mediante el nombre o código correspondiente.
+- **Según audiencia:** La información se organizará de acuerdo con los segmentos objetivo de ResQ. Los propietarios y administradores de edificaciones tendrán acceso principalmente a información relacionada con la gestión de edificios, zonas, dispositivos, monitoreo, riesgos, incidentes y alertas. Por otro lado, las empresas integradoras de automatización y gestión de edificios inteligentes accederán principalmente a información relacionada con la configuración, integración y estado de los dispositivos instalados en las edificaciones, así como con los datos necesarios para su gestión dentro de la plataforma.
+
+### 5.2.2. Labeling Systems.
+
+El sistema de etiquetado de ResQ utilizará palabras breves y familiares en español para representar conjuntos de información sin confundir a visitantes y usuarios. Las etiquetas conservarán el mismo significado en web y móvil; los iconos y colores complementarán el texto.
+
+**Etiquetas para visitantes**
+
+En la Landing Page se utilizarán Solución (funcionamiento de ResQ), Beneficios (valor para administradores), Integradores (compatibilidad con sistemas existentes) y Documentación (información técnica vinculada con Integradores). Las acciones se identificarán como Solicitar demostración e Iniciar sesión.
+
+**Etiquetas para usuarios**
+
+| Etiqueta | Información que representa y asociaciones |
+|---|---|
+| **Panel general** | Resumen de la edificación seleccionada, con acceso a Monitoreo, Alertas e Incidentes. |
+| **Edificaciones** | Infraestructura registrada; cada edificación contiene Zonas. |
+| **Zonas** | Áreas de una edificación; agrupan Dispositivos y permiten localizar riesgos. |
+| **Dispositivos** | Sensores y actuadores de una zona; sus mediciones se consultan en Monitoreo. |
+| **Monitoreo** | Mediciones y estado de dispositivos por edificación y zona. |
+| **Alertas** | Avisos de riesgos detectados, vinculados con su zona y el incidente correspondiente. |
+| **Incidentes** | Registros de atención que reúnen alertas, respuestas, responsable y estado. |
+| **Historial** | Incidentes anteriores y secuencia de eventos de cada caso. |
+| **Indicadores** | Frecuencia de incidentes, falsas alarmas y tiempos de atención. |
+| **Configuración** | Condiciones de detección, políticas de respuesta y usuarios y roles. |
+| **Integraciones** | Fuentes externas compatibles asociadas con dispositivos y zonas. |
+
+**Claridad de acciones y estados**
+
+Los botones indicarán acciones concretas: **Agregar zona**, **Asignar responsable** y **Autorizar acción**. El nivel de riesgo se representará como **Bajo**, **Medio**, **Alto** o **Crítico**; el estado del incidente, como **Activo**, **En atención**, **Resuelto** o **Cerrado**. Así se distinguirá la gravedad del riesgo de su atención. Se usará **Sin datos actualizados** cuando no existan mediciones vigentes, evitando interpretar esa ausencia como seguridad.
+
+### 5.2.3. SEO Tags and Meta Tags
+
+<p align="justify">
+La estrategia de SEO Tags and Meta Tags de ResQ diferencia el contenido público de la Landing Page y el contenido operacional de la Web Application. El Project Statement prescribe inglés como idioma predeterminado para mensajes e interfaces; por ello, la metadata recomendada se formula en inglés, mientras que la experiencia puede ofrecer español como idioma alternativo. La Landing Page requiere descripciones orientadas a que los dos segmentos objetivo comprendan la propuesta de monitoreo, detección y respuesta ante riesgos en edificaciones. La Web Application, aunque se encuentra protegida por autenticación y no debe depender del posicionamiento orgánico de sus vistas internas, requiere títulos y descripciones precisos para mantener orientación, accesibilidad y consistencia cuando una vista se comparte dentro de un entorno autorizado.
+</p>
+
+<p align="justify">
+La inspección del código evidencia que ambas experiencias son Single Page Applications desarrolladas con Angular. La Landing Page dispone actualmente de las rutas <code>/</code>, <code>/privacy</code> y <code>/terms</code>; su archivo <code>index.html</code> define un título y una descripción globales, además de metadatos Open Graph y Twitter, pero no cambia estos valores por ruta ni incorpora <code>keywords</code> o <code>author</code>. Su servicio de idioma inicia actualmente en español, salvo que exista una preferencia previa en inglés, lo cual representa una diferencia frente al idioma predeterminado indicado por el Project Statement. La Web Application, en cambio, inicia en inglés cuando no existe una preferencia almacenada, aunque mantiene un título global <code>ResQ</code> y tampoco implementa metadata dinámica por vista. Por tanto, las tablas siguientes constituyen la especificación recomendada en inglés para una futura gestión dinámica de metadata y no una afirmación de que todos estos valores ya estén implementados.
+</p>
+
+#### Landing Page
+
+| Página/Sección | Title | Description | Keywords | Author |
+|---|---|---|---|---|
+| Inicio (<code>/</code>) | ResQ \| Building Risk Monitoring and Emergency Response | Discover ResQ, SecurityBear's proposal for integrated risk monitoring, early detection and coordinated emergency response in buildings. | building risk monitoring, emergency detection, alert management, incident response, SecurityBear ResQ | SecurityBear |
+| Política de privacidad (<code>/privacy</code>) | Privacy Policy \| ResQ | Learn how the ResQ informational website handles visitor-submitted data, language preferences and links to external services. | ResQ privacy, contact data, website preferences, data protection | SecurityBear |
+| Términos y condiciones (<code>/terms</code>) | Terms and Conditions \| ResQ | Review the terms of use for the ResQ academic website and the informational scope of its monitoring, detection and response proposal. | ResQ terms of use, website conditions, SecurityBear academic project, responsible use | SecurityBear |
+
+#### Web Application
+
+| Página/Vista | Title | Description | Keywords | Author |
+|---|---|---|---|---|
+| Inicio de sesión (<code>/login</code>) | Sign In \| ResQ | Secure access for authorized personnel who monitor buildings, devices, alerts and incidents through ResQ. | ResQ access, authentication, building monitoring, authorized users | SecurityBear |
+| Dashboard (<code>/dashboard</code>) | Operational Overview \| ResQ | View monitored building status, active risks, recent alerts and conditions that require attention. | operational status, risk monitoring, active alerts, monitored buildings | SecurityBear |
+| Edificaciones (<code>/buildings</code>) | Monitored Buildings \| ResQ | Manage the buildings, floors and zones used to place ResQ devices and contextualize operational events. | building management, monitored zones, connected infrastructure, floor plans | SecurityBear |
+| Monitoreo (<code>/monitoring</code>) | Zone Monitoring \| ResQ | Monitor observed conditions and measurements associated with building floors, zones and devices. | zone monitoring, sensor measurements, device status, remote supervision | SecurityBear |
+| Espacios (<code>/spaces</code>) | Spaces and Zones \| ResQ | Locate operational spaces and review their context, assigned devices and monitoring conditions. | monitored spaces, building zones, device location, risk context | SecurityBear |
+| Dispositivos (<code>/devices</code>) | IoT Devices \| ResQ | Review the inventory, assignments, capabilities and operational status of IoT devices registered in ResQ. | IoT devices, building sensors, actuators, device management | SecurityBear |
+| Alertas (<code>/alerts</code>) | Alert Center \| ResQ | Review alerts generated by risk conditions, including their location, context and associated responses. | alert management, risk detection, emergency location, automated response | SecurityBear |
+| Incidentes (<code>/incidents</code>) | Incident Management \| ResQ | Track the status, assignees and resolution of incidents registered in monitored buildings. | incident management, emergency response, incident tracking, resolution | SecurityBear |
+| Configuración (<code>/settings</code>) | Settings \| ResQ | Manage the preferences and parameters available to authorized ResQ users. | ResQ settings, user preferences, monitoring parameters | SecurityBear |
+
+<p align="justify">
+La implementación futura puede utilizar el Router de Angular para actualizar <code>title</code>, <code>description</code>, <code>keywords</code> y <code>author</code> al activarse cada ruta, conservando inglés como idioma predeterminado y español como alternativa seleccionable. Las vistas parametrizadas —por ejemplo, el detalle de una edificación, dispositivo, alerta o incidente— deben construir títulos a partir de identificadores o nombres ya obtenidos por la aplicación, sin exponer información sensible en metadata pública. Debido a que el alcance actual corresponde a experiencias web y no existe evidencia de una aplicación publicada en una tienda de aplicaciones, ASO no aplica a esta entrega.
+</p>
+
+### 5.2.4. Searching Systems.
+### 5.2.5. Navigation Systems
+
+### 5.6. IoT Device Design
+
+<p align="justify">
+ResQ plantea una solución IoT escalable para monitorear condiciones de riesgo en edificaciones y coordinar respuestas aun cuando la conectividad con Cloud se encuentre limitada. Para el alcance de TB1 y Sprint 1, el equipo concentra esta propuesta en un MVP físico orientado a validar la integración base entre sensado, procesamiento local, visualización y alertamiento. Este alcance inicial no representa la totalidad de la solución futura: constituye una primera versión funcional y verificable sobre la cual podrán incorporarse progresivamente nuevos nodos, reglas e integraciones respaldadas por la arquitectura del Project Report.
+</p>
+
+<p align="justify">
+La Information Architecture del dispositivo prioriza una secuencia breve: captar la condición, procesarla, comunicar localmente el estado y activar una advertencia cuando corresponda. Esta jerarquía reduce la carga cognitiva durante una posible emergencia y mantiene coherencia con las Style Guidelines para IoT Device Physical Interfaces: información compacta en la OLED, código cromático rojo/verde y señal audible complementaria. El color no funciona como único canal, pues la pantalla y el buzzer refuerzan la interpretación del estado.
+</p>
+
+#### MVP Device Prototype
+
+<p align="justify">
+El MVP físico actual se centra en la detección de gas o humo mediante un sensor MQ-2, el procesamiento de la lectura en un ESP32 DevKit V1, la visualización local en una pantalla OLED SSD1306 y el alertamiento mediante un buzzer activo y dos LEDs. El montaje se realiza sobre protoboard, utiliza resistencias de 220 Ω para proteger los LEDs, jumpers para interconexión y un cable USB compatible con la placa para alimentación y programación.
+</p>
+
+| Componente | Cantidad para 1 MVP | Especificación del MVP | Función dentro de ResQ |
+|---|---:|---|---|
+| ESP32 DevKit V1 | 1 | 30 pines | Ejecutar la lógica local, recibir la lectura del sensor y controlar la OLED, el buzzer y los LEDs |
+| Sensor MQ-2 | 1 | Módulo sensor de gas/humo | Proporcionar la señal de sensado utilizada para validar la detección básica del MVP |
+| Pantalla OLED | 1 | SSD1306, 0.96”, I2C, 128×64 | Mostrar localmente el estado del nodo y la información breve necesaria para interpretar la condición |
+| Protoboard | 1 | MB-102, aproximadamente 830 puntos | Soportar el montaje provisional sin soldadura y facilitar ajustes durante la validación |
+| Buzzer activo | 1 | 5 V | Emitir una advertencia audible cuando la lógica local determine una condición de alerta |
+| LED rojo | 1 | 5 mm | Representar visualmente una condición de alerta |
+| LED verde | 1 | 5 mm | Representar visualmente una condición normal u operativa |
+| Resistencias | 4 | 220 Ω, 1/4 W; dos para uso y dos de repuesto | Limitar la corriente de los LEDs y disponer de repuestos para el montaje |
+| Jumpers macho-macho | 1 pack | 20 cm, idealmente 20–40 unidades | Conectar los componentes y los rieles de la protoboard |
+| Jumpers macho-hembra | 1 pack | 20 cm, idealmente 20–40 unidades | Conectar módulos cuando su disposición física requiera terminales hembra |
+| Cable USB para ESP32 | 1 | USB-C o Micro-USB según la placa adquirida | Alimentar, programar y depurar el ESP32 durante el desarrollo del MVP |
+
+##### Physical Design
+
+<p align="justify">
+La disposición física propuesta mantiene visibles la OLED y los LEDs, ubica el MQ-2 sin obstrucciones que limiten su exposición al ambiente y separa el área de señalización del microcontrolador. La protoboard organiza el cableado y evita contactos conductores expuestos fuera del área de montaje. La siguiente imagen es una ilustración técnica provisional generada para representar de forma visual el inventario real del MVP; deberá reemplazarse por una fotografía o mockup validado del montaje definitivo cuando el equipo lo complete.
+</p>
+
+![ResQ IoT Device Physical Design](assets/images/chapter-05-solution-ui-ux-design/resq-iot-device-physical-design.png)
+
+<p align="center">
+  <strong>Figura 82. Diseño físico propuesto del dispositivo IoT ResQ para el MVP.</strong>
+</p>
+
+<p align="justify">
+La representación incluye el ESP32, el MQ-2, la OLED, el buzzer, ambos LEDs, las resistencias, los jumpers, la protoboard y la alimentación USB. Su finalidad es comunicar la organización conceptual del MVP; no constituye evidencia de ensamblaje, calibración o prueba eléctrica.
+</p>
+
+##### Circuit Design
+
+<p align="justify">
+El circuito conceptual utiliza el ESP32 como controlador central, recibe la señal del MQ-2, comunica la OLED mediante I2C y controla el buzzer y los LEDs. Las resistencias de 220 Ω se colocan en serie con los LEDs. La alimentación inicial proviene del cable USB compatible con el ESP32. El equipo todavía debe verificar en el montaje real los GPIO, los niveles eléctricos, la distribución de tierra, el consumo del MQ-2 y cualquier etapa adicional de acondicionamiento o protección requerida por las hojas técnicas.
+</p>
+
+<p align="justify">
+La siguiente ilustración provisional adopta una presentación similar a una herramienta de diseño de circuitos y evita asignar números GPIO no validados. No reemplaza la captura o exportación real que deberá obtenerse de Cirkit Designer después de comprobar el circuito físico y el firmware.
+</p>
+
+![ResQ IoT Circuit Design](assets/images/chapter-05-solution-ui-ux-design/resq-iot-circuit-design.png)
+
+<p align="center">
+  <strong>Figura 83. Diseño del circuito del dispositivo IoT ResQ para el MVP.</strong>
+</p>
+
+<p align="justify">
+<strong>Validación humana requerida:</strong> antes de reemplazar la Figura 83 por la exportación definitiva de Cirkit Designer, el equipo debe verificar y documentar los GPIO reales del ESP32, los niveles de tensión, la distribución de tierra, la alimentación del MQ-2, las conexiones I2C y las protecciones del circuito.
+</p>
+
+##### MVP Interaction Flow
+
+<p align="justify">
+En el MVP, el MQ-2 produce una señal que el ESP32 captura y procesa localmente. El resultado se presenta en la OLED y se traduce a una señal visual: verde para condición normal y roja para condición de alerta. Cuando la condición configurada lo requiere, el buzzer proporciona una advertencia audible. Este flujo permite validar que sensado, procesamiento y alertamiento local pueden coordinarse en un único nodo antes de incorporar la integración distribuida prevista por ResQ.
+</p>
+
+#### Projected Evolution of the IoT Device
+
+<p align="justify">
+La evolución proyectada no consiste en presentar el MVP adquirido como la solución final, sino en incorporar este nodo dentro de la arquitectura distribuida ya definida. La Embedded Application capturará las mediciones; Monitoring las recibirá en Edge y podrá conservarlas temporalmente mediante el patrón store-and-forward; Risk Detection evaluará reglas locales; y Alert & Response Management coordinará las respuestas permitidas. Cuando exista conectividad, los servicios Cloud mantendrán el estado observable y la información histórica consumida por la Web Application.
+</p>
+
+<p align="justify">
+Device Management administrará la identidad, capacidades y asignación de cada nodo; Connectivity Management supervisará su disponibilidad; e Incident Management conservará el seguimiento posterior de situaciones confirmadas. La arquitectura también prescribe Python, Flask, Peewee ORM y SQLite para los Edge Services, pero los repositorios inspeccionados no contienen todavía una implementación Edge verificable con esa pila. Del mismo modo, el protocolo entre el ESP32 y Edge no puede afirmarse como implementado. Estas capacidades pertenecen a la evolución esperada y deberán validarse mediante firmware, servicios Edge y contratos reales antes de considerarlas parte del MVP operativo.
+</p>
+
+# Capítulo VI: Product Implementation, Validation & Deployment
+
+## 6.1. Software Configuration Management
+
+### 6.1.1. Software Development Environment Configuration
+
+<p align="justify">
+El entorno de desarrollo de ResQ combina herramientas de coordinación, diseño, implementación, pruebas, despliegue y documentación. La selección siguiente se sustenta en el Project Report y en los archivos de configuración de los repositorios. Cuando una versión o producto no puede verificarse, se mantiene un marcador pendiente en lugar de atribuir una herramienta al equipo sin evidencia.
+</p>
+
+| Categoría | Herramienta / Producto | Propósito en ResQ | Modalidad | URL oficial |
+|---|---|---|---|---|
+| Project Management | Jira | Organizar y distribuir actividades del equipo; el Project Report contiene evidencia de su uso en la entrega anterior | SaaS | https://www.atlassian.com/software/jira |
+| Requirements Management | Trello | Mantener el Product Backlog con User Stories, Technical Stories, Business Value, Story Points y Acceptance Criteria | SaaS | https://trello.com/ |
+| Requirements Management | Miro | Elaborar el Big Picture EventStorming enlazado desde el Project Report | SaaS | https://miro.com/ |
+| Product UX/UI Design | Figma | Elaborar Wireframes, Mock-ups y Prototypes para la Landing Page y las aplicaciones de ResQ | SaaS | https://www.figma.com/ |
+| IoT Design | Cirkit Designer | Diseñar, verificar y exportar el circuito definitivo del MVP IoT; la Figura 83 actual es provisional y deberá reemplazarse por la exportación validada | SaaS | https://www.cirkitdesigner.com/ |
+| Software Development | Git | Controlar versiones y conservar la trazabilidad de los cambios | Software local | https://git-scm.com/ |
+| Software Development | GitHub | Alojar los cuatro repositorios de la organización, administrar ramas y revisar Pull Requests | SaaS | https://github.com/ |
+| Software Development | Angular 22.2.0 (Web Application) / 22.2.1 (Landing Page) | Construir las dos Single Page Applications con componentes y enrutamiento | Framework web | https://angular.dev/ |
+| Software Development | TypeScript 6.0.3 | Implementar la Landing Page y la Web Application con tipado estático; versión resuelta en ambos lockfiles | Lenguaje | https://www.typescriptlang.org/ |
+| Software Development | npm 11.17.0 (Web Application) / 12.1.0 (Landing Page) | Administrar dependencias y ejecutar scripts de desarrollo, build y test | Gestor de paquetes local | https://www.npmjs.com/ |
+| Software Development | .NET 10 | Proporcionar el runtime y SDK objetivo del backend, según <code>net10.0</code> y el Dockerfile | Runtime y SDK | https://dotnet.microsoft.com/ |
+| Software Development | ASP.NET Core | Implementar la RESTful API, controladores, middleware y composición de servicios del backend | Framework web | https://learn.microsoft.com/aspnet/core/ |
+| Software Development | Entity Framework Core 10.0.9 | Implementar persistencia relacional y repositorios del backend | ORM | https://learn.microsoft.com/ef/core/ |
+| Software Development | MySQL / MySql.EntityFrameworkCore 10.0.9 | Persistir los agregados implementados por los Bounded Contexts del backend | Motor de base de datos / proveedor EF Core | https://www.mysql.com/ |
+| Software Development | [PENDIENTE: confirmar IDE utilizado por el equipo] | Editar, ejecutar y depurar los productos de software | Software local | [PENDIENTE: añadir URL oficial] |
+| Edge Services — prescrito, no implementado | Python | Implementar la lógica de los ResQ Edge Services según la pila establecida por el Project Statement y documentada en la arquitectura | Lenguaje | https://www.python.org/ |
+| Edge Services — prescrito, no implementado | Flask | Exponer las interfaces locales de los ResQ Edge Services; no se encontró una implementación verificable en los repositorios actuales | Framework web | https://flask.palletsprojects.com/ |
+| Edge Services — prescrito, no implementado | Peewee ORM | Administrar la persistencia local temporal y las réplicas requeridas por Monitoring, Risk Detection y Alert & Response Management en Edge | ORM | https://docs.peewee-orm.com/ |
+| Edge Services — prescrito, no implementado | SQLite | Conservar mediciones, reglas y eventos pendientes durante interrupciones de conectividad mediante almacenamiento local | Motor de base de datos embebido | https://www.sqlite.org/ |
+| Software Testing | Angular CLI Unit Test y Vitest 5.0.3 (Landing Page) | Ejecutar las pruebas unitarias configuradas para la Landing Page; la Web Application declara <code>ng test</code>, pero no se encontró una suite equivalente suficiente para afirmar su cobertura | Herramienta local | https://vitest.dev/ |
+| Software Testing | Archivo <code>ResQ.API.http</code> | Ejecutar solicitudes manuales contra la RESTful API durante el desarrollo; no sustituye una suite automatizada | Archivo de pruebas HTTP local | https://learn.microsoft.com/aspnet/core/test/http-files |
+| Software Deployment | GitHub Pages / angular-cli-ghpages 3.1.0 | Publicar la Landing Page; existe una rama <code>gh-pages</code> y configuración de despliegue en <code>angular.json</code> | Plataforma SaaS / herramienta de despliegue | https://pages.github.com/ |
+| Software Deployment | Docker | Construir una imagen multi-stage del backend con SDK y runtime de .NET 10 | Plataforma de contenedores | https://www.docker.com/ |
+| Software Documentation | Swagger UI / Swashbuckle.AspNetCore 9.0.6 y Microsoft.AspNetCore.OpenApi 9.0.10 | Generar y exponer documentación OpenAPI para los servicios backend | Librerías y UI local | https://swagger.io/tools/swagger-ui/ |
+| Software Documentation | Markdown en GitHub | Mantener el Project Report directamente en el README general y documentar los repositorios | Formato de documentación / plataforma SaaS | https://docs.github.com/get-started/writing-on-github |
+
+<p align="justify">
+Los manifiestos de dependencias y lockfiles fijan el conjunto ejecutable de los proyectos Angular; el <code>.csproj</code> y el Dockerfile describen el runtime y las dependencias del backend; y Git conserva cada cambio junto con su rama y commit. Esta combinación favorece un entorno reproducible porque permite instalar dependencias declaradas, construir cada producto desde su configuración versionada y revisar los cambios mediante Pull Requests. Los datos pendientes deberán completarse con evidencia del equipo antes de considerar cerrada la configuración del entorno.
+</p>
+
+<p align="justify">
+Existe una diferencia relevante entre la prescripción general del Project Statement y la implementación actual de la Landing Page. El enunciado propone HTML5, CSS3 y JavaScript, mientras que el repositorio <code>resq-landing-page</code> utiliza Angular y TypeScript. El equipo adoptó este stack para acelerar el desarrollo y mantener consistencia técnica con la Web Application; sin embargo, la diferencia debe conservarse documentada y no implica que el repositorio haya sido migrado o que la prescripción original deje de aplicar como criterio de evaluación.
+</p>
+
+#### 6.1.2. Source Code Management.
+
+El código fuente de ResQ se organiza en repositorios independientes dentro de la organización de GitHub del equipo, uno por cada componente de la solución que ya se encuentra en desarrollo. Los componentes Mobile Application, Edge Service y Embedded Application aún no cuentan con repositorio, por lo que se incorporarán a esta tabla cuando inicie su implementación.
+
+| Componente          | Repositorio         | Enlace                                                                                                                                             |
+|---------------------|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Backend**         | resq-backend        | [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend)                   |
+| **Landing Page**    | resq-landing-page   | [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-landing-page](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-landing-page)         |
+| **Web Application** | resq-frontend       | [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend)                 |
+
+**Flujo de trabajo GitFlow**
+
+El equipo adopta el modelo de ramificación propuesto por Vincent Driessen en *"A successful Git branching model"*, adaptado a las necesidades del proyecto bajo los siguientes lineamientos:
+
+- Una rama estable que contiene únicamente el código listo para entrega.
+- Una rama de integración donde se reúne el trabajo en curso antes de pasar a la rama estable.
+- Ramas independientes para el desarrollo de cada funcionalidad.
+- Cada cambio que llegue a la rama estable se identifica como una nueva versión.
+
+**Ramas definidas:**
+
+- **Main branch:** contiene el código estable y entregable. Solo recibe cambios provenientes de *develop* mediante Pull Request, y cada uno debe ser revisado y aprobado por otro integrante del equipo.
+- **Develop branch:** rama de integración donde se combinan las funcionalidades terminadas y se validan antes de publicarlas en *main*.
+- **Feature branches:** cada funcionalidad o sección de trabajo se desarrolla en su propia rama (por ejemplo, `feature/chapter-06-gonzalo`), creada a partir de *develop* y fusionada nuevamente en ella mediante Pull Request.
+
+**Nomenclatura de versiones:**
+
+Las versiones siguen el formato `MAJOR.MINOR.PATCH`:
+
+- **Major:** cambios significativos que rompen la compatibilidad con la versión anterior (ej. `1.0.0 -> 2.0.0`).
+- **Minor:** nuevas características o mejoras compatibles (ej. `1.1.0 -> 1.2.0`).
+- **Patch:** correcciones menores (ej. `1.1.3 -> 1.1.4`).
+
+**Sufijos de versión:**
+
+- `alpha`: versión inestable, en construcción.
+- `beta`: versión funcional pero todavía no lista para publicarse.
+- `rc`: versión candidata a publicación.
+
+**Convención de commits:**
+
+Los mensajes de commit siguen la especificación *Conventional Commits* (por ejemplo, `feat: add alerts endpoint`, `fix: correct zone validation`, `docs: update sprint evidence`), lo que mantiene un historial legible y vinculado al autor de cada cambio.
+
+
+#### 6.1.4. Software Deployment Configuration.
+
+La estrategia de despliegue de ResQ utiliza servicios cloud para publicar de forma independiente cada uno de los productos que componen la solución. El código fuente se mantiene en repositorios de GitHub, mientras que cada artefacto utiliza una plataforma de despliegue acorde con su función.
+
+La Landing Page se publica mediante GitHub Pages, el Frontend Web se despliega mediante Cloudflare Pages y los Web Services se ejecutan en Render utilizando Docker. Para la persistencia de información, el backend se conecta a una instancia MySQL administrada por Aiven.
+
+Esta separación permite que cada componente pueda actualizarse de manera independiente sin afectar directamente al resto de la solución.
+
+<br>
+
+**Configuración de entornos:**
+
+| Entorno | Plataforma / Tecnología | Propósito |
+|---|---|---|
+| **Desarrollo local** | Rider / .NET / Docker Desktop / MySQL | Desarrollo y validación de los componentes de la solución |
+| **Producción - Landing Page** | GitHub Pages | Publicación de la página informativa de ResQ |
+| **Producción - Web Application** | Cloudflare Pages | Publicación de la aplicación web |
+| **Producción - Web Services** | Render + Docker | Ejecución de los servicios REST de ResQ |
+| **Producción - Base de datos** | Aiven MySQL | Persistencia de la información utilizada por el backend |
+
+<br>
+
+**Despliegue de Landing Page:**
+
+La Landing Page de ResQ se encuentra almacenada en un repositorio de GitHub y se publica mediante GitHub Pages.
+
+**Configuración:**
+
+- Repositorio: resq-landing-page
+- Plataforma: GitHub Pages
+- Código fuente: GitHub
+- Entorno: Producción
+
+<br>
+
+**Proceso de despliegue:**
+
+1. Se realizan los cambios en el código de la Landing Page.
+2. Los cambios se registran en el repositorio de GitHub.
+3. La versión correspondiente se publica mediante GitHub Pages.
+4. GitHub Pages genera y sirve la página web públicamente.
+
+La Landing Page funciona como el punto de entrada informativo de ResQ y se mantiene independiente del backend y del Frontend Web.
+
+<br>
+
+**Despliegue de Web Application:**
+
+La Web Application de ResQ se encuentra almacenado en GitHub y se publica mediante Cloudflare Pages.
+
+**Configuración:**
+- Repositorio: resq-frontend
+- Plataforma: Cloudflare Pages
+- Entorno: Production
+- Código fuente: GitHub
+
+Cloudflare mantiene las versiones desplegadas del Frontend y permite administrar la versión que recibe el tráfico de producción.
+
+<br>
+
+**Proceso de despliegue:**
+
+1. Se realizan los cambios en el Frontend.
+2. El código actualizado se mantiene en el repositorio de GitHub.
+3. Se genera una nueva versión del Frontend mediante Cloudflare.
+4. Cloudflare construye y publica los archivos correspondientes.
+5. La nueva versión queda disponible en el entorno de producción.
+
+El Frontend Web consume los servicios proporcionados por el backend mediante su API REST.
+
+<br>
+
+**Despliegue del Web Services:**
+
+Los Web Services de ResQ están implementados utilizando ASP.NET Core y se ejecutan en un contenedor Docker desplegado en Render.
+
+**Configuración:**
+- Repositorio: resq-backend
+- Framework: ASP.NET Core
+- Plataforma: Render
+- Runtime: Docker
+- Entorno: Production
+- Puerto interno: 10000
+
+El backend utiliza un Dockerfile multi-stage, permitiendo separar la etapa de compilación de la imagen utilizada para ejecutar la aplicación.
+
+<br>
+
+**Construcción de la imagen:**
+
+Durante el proceso de construcción:
+1. Se utiliza la imagen `mcr.microsoft.com/dotnet/sdk:10.0` para compilar la aplicación.
+2. Se restaura el proyecto mediante `dotnet restore`.
+3. Se publica la aplicación mediante `dotnet publish`.
+4. Se genera una imagen final basada en `mcr.microsoft.com/dotnet/aspnet:10.0`.
+5. Se copian únicamente los archivos publicados a la imagen final.
+6. El contenedor ejecuta `ResQ.API.dll`.
+
+<br>
+
+**Configuración de la base de datos:**
+
+La persistencia del backend se encuentra separada del contenedor de la aplicación. ResQ utiliza MySQL administrado mediante Aiven.
+
+**Configuración:**
+- Motor: MySQL
+- Proveedor: Aiven
+- Base de datos: resq_db
+- Conexión: mediante una cadena de conexión segura
+- Comunicación: conexión SSL requerida
+
+Esta separación permite que el reinicio o actualización del contenedor del backend no implique la pérdida de la información almacenada.
+
+El backend obtiene los datos de conexión mediante variables de entorno, evitando almacenar las credenciales directamente en el código fuente.
+
+<br>
+
+**Variables de entorno:**
+
+Las configuraciones sensibles y específicas del entorno de producción se mantienen fuera del código fuente.
+
+En Render se han configurado las siguientes variables:
+
+| Variable | Propósito |
+|---|---|
+| `ConnectionStrings__DefaultConnection` | Cadena de conexión con MySQL en Aiven |
+| `DevelopmentSettings__OrganizationId` | Identificador de organización utilizado por la configuración actual del backend |
+| `TokenSettings__Secret` | Clave utilizada para la generación y validación de tokens JWT |
+
+<br>
+
+**Deployment Diagram — C4 Model:**
+
+Para complementar esta configuración, el Deployment Diagram representa dónde se ejecuta cada elemento de la solución y cómo se comunican entre sí.
+
+![DeploymentDiagramC4](./assets/images/chapter-06-product-implementation-validation-deployment/DeploymentDiagramC4.png)
+
+El repositorio de GitHub funciona como origen del código fuente de los diferentes productos. La Landing Page se publica en GitHub Pages, mientras que el Frontend Web se despliega en Cloudflare Pages.
+
+El Frontend se comunica mediante HTTPS con el Backend de ResQ, que se ejecuta como un contenedor Docker administrado por Render. Finalmente, el backend establece una conexión segura mediante SSL con la instancia MySQL de Aiven, donde se almacena la información persistente de la plataforma.
+
+
+## 6.2. Landing Page, Services & Applications Implementation
+
+### 6.2.1. Sprint 1
+
+<p align="justify">
+Sprint 1, planificado entre el 29 de septiembre y el 8 de octubre de 2026, corresponde al primer sprint formal de implementación y se centra en construir la primera versión funcional del MVP de ResQ. El incremento reúne cuatro frentes complementarios: Landing Page version 1 para comunicar la propuesta de valor; Frontend Web Application version 1 para representar flujos iniciales de monitoreo y gestión; Backend / Web Services base para soportar recursos principales; y un prototipo IoT MVP para validar sensado de gas/humo, procesamiento en ESP32, visualización local y alertamiento.
+</p>
+
+<p align="justify">
+El Sprint se documenta mediante Sprint Planning 1, Aspect Leaders and Collaborators, Sprint Backlog 1, Development Evidence for Sprint Review, Testing Suite Evidence for Sprint Review, Execution Evidence for Sprint Review, Services Documentation Evidence for Sprint Review, Software Deployment Evidence for Sprint Review y Team Collaboration Insights during Sprint. Esta sección registra el avance de los productos que integran el MVP sin presentar como concluidas las integraciones Edge o extremo a extremo que todavía no cuentan con evidencia de implementación.
+</p>
+
+#### 6.2.1.1. Sprint Planning 1
+
+<p align="justify">
+La planificación de Sprint 1 relaciona el Product Backlog con un incremento conjunto y verificable orientado al MVP. La reunión se realizó al inicio del Sprint para alinear el valor esperado de la Landing Page, la Web Application, los Web Services y el prototipo IoT. La información administrativa definida por el equipo se registra en la siguiente tabla; únicamente las métricas de Story Points permanecen pendientes porque no existe evidencia suficiente de la selección formal de historias asignadas al Sprint.
+</p>
+
+| Campo | Detalle |
+|---|---|
+| Sprint # | Sprint 1 |
+| Sprint Start Date | 2026-09-29 |
+| Sprint End Date | 2026-10-08 |
+| Date | 2026-09-29 |
+| Time | 08:00 PM |
+| Location | Virtual meeting via Discord |
+| Prepared By | Quispe Barzola, Fabricio Fabian |
+| Attendees | Quispe Barzola, Fabricio Fabian<br>Guerrero Vasquez, Jhon Danny<br>Aliaga Urbina, Wilder Gonzalo<br>Chacaliaza Minaya, Eduardo Fabian<br>Nanfuñay Liza, Pedro Jesús<br>Sánchez Guevara, Iván Fernando |
+| Sprint 0 Review Summary / Previous Iteration Review Summary | No formal previous sprint review applies because Sprint 1 corresponds to the first implementation sprint of the project. |
+| Sprint 0 Retrospective Summary / Previous Iteration Retrospective Summary | No formal previous sprint retrospective applies because Sprint 1 corresponds to the first implementation sprint of the project. |
+| Sprint 1 Goal | Entregar la primera versión funcional del MVP de ResQ, de modo que los segmentos objetivo puedan comprender la propuesta mediante la Landing Page version 1 y que el equipo pueda demostrar un flujo inicial de monitoreo y respuesta mediante la Frontend Web Application version 1, los Backend / Web Services base y el prototipo IoT de gas/humo con procesamiento y alertamiento local. |
+| Sprint 1 Velocity | 34 Story Points |
+| Sum of Story Points | 34 Story Points |
+
+<p align="justify">
+El Sprint Goal expresa un único resultado de valor: disponer de un MVP demostrable que conecte comunicación, operación digital, servicios base y validación física local. La Landing Page comunica el problema y la propuesta de ResQ; la Web Application representa los flujos iniciales de supervisión y gestión; el backend establece servicios para los recursos que ya cuentan con implementación comprobable; y el nodo IoT valida el recorrido local desde la lectura del MQ-2 hasta la OLED, los LEDs y el buzzer. Aunque el Product Backlog contiene Story Points, no existe en el README ni en los repositorios una asignación formal de historias a Sprint 1 que permita sumar puntos o calcular Velocity sin especular.
+</p>
+
+#### 6.2.1.2. Aspect Leaders and Collaborators
+
+Durante este Sprint, el equipo se enfocó en la implementación de la primera versión de los principales componentes de ResQ, considerando tanto las aplicaciones que forman parte de la solución como los servicios que permiten su funcionamiento. Para organizar el trabajo y facilitar la coordinación entre los integrantes, se elaboró la Leadership-and-Collaboration Matrix (LACX), asignando un líder y colaboradores para cada aspecto incluido dentro del alcance del Sprint.
+
+Los aspectos seleccionados se relacionan con las principales actividades de implementación y validación de ResQ: Landing Page, Frontend Web, Web Services, integración y despliegue, y pruebas de la solución. Esta organización permite establecer responsables claros para cada actividad, manteniendo la colaboración del resto del equipo cuando el desarrollo requiere conocimientos de diferentes áreas.
+
+| Team Member (Last Name, First Name) | GitHub Username | Landing Page | Web Application | Web Services | Integración y Deployment | Testing y Validación |
+|-------------------------------------|-----------------|--------------|-----------------|--------------|----------------------|-----------|
+| **Sánchez Guevara, Iván Fernando**    | DonFernando1   | C     | C     | C     | C     | C     |
+| **Nanfuñay Liza, Pedro Jesús**        | PedroJ18       | C     | C     | **L** | **L** | C     |
+| **Chacaliaza Minaya, Eduardo Fabian** | educmz         | **L** | C     | C     | C     | C     |
+| **Quispe Barzola, Fabricio Fabian**   | BrooklynKarmis | C     | **L** | C     | C     | C     |
+| **Aliaga Urbina, Wilder Gonzalo**     | gonzalo1905    | C     | C     | C     | C     | **L** |
+
+#### 6.2.1.4. Development Evidence for Sprint Review
+
+<p align="justify">
+La evidencia de desarrollo se obtuvo del historial Git de <code>resq-landing-page</code>, <code>resq-frontend</code> y <code>resq-backend</code>. El criterio de selección considera commits no merge realizados entre el inicio de Sprint 1, 2026-09-29, y su cierre definido, 2026-10-08, priorizando incrementos que evidencian la primera versión del MVP. La evidencia disponible fue revisada el 2026-10-06; por ello, la tabla no atribuye commits futuros a los dos días restantes del Sprint. Se excluyeron commits anteriores al 2026-09-29, incluso cuando proporcionaron bases técnicas relevantes. La columna Branch utiliza ramas remotas verificadas que contienen cada commit; el subject y el body se reproducen de forma literal, y se usa “—” cuando el commit no tiene body.
+</p>
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Committed on (Date) |
+|---|---|---|---|---|---|
+| resq-landing-page | main | <code>4499f2eeed8099b5c7894ae23a420a96c3571952</code> | feat: ResQ landing page | — | 2026-10-04 02:05:56 -0500 |
+| resq-landing-page | main | <code>afd01e2002fcd2949d17cf4f9b82844cf55b8426</code> | feat: rediseñar landing de ResQ, unificar estilos y optimizar el código | — | 2026-10-04 14:04:50 -0500 |
+| resq-landing-page | main | <code>7977f58519e8b0bff42835bd081e017c006d8fcb</code> | fix: corregir assets y despliegue en GitHub Pages | — | 2026-10-04 14:20:25 -0500 |
+| resq-frontend | main | <code>dc54e7ef1dba5792aa220a6f4b16039e07862223</code> | feat: build complete ResQ monitoring frontend | — | 2026-09-29 19:42:45 -0500 |
+| resq-frontend | feature/devices | <code>0d1b1b8a2a321e5ae25adfe7fce9e61f53610fee</code> | feat(devices): add hardware-aware device management views | — | 2026-09-30 03:09:19 -0500 |
+| resq-frontend | feature/devices | <code>dd9cd578aa541b90b45a6266aad081a5fe547d75</code> | chore(devices): Add WebP assets for device components | Add seven new device images under `public/assets/devices` for the buzzer, ESP32 devkit, LEDs, MQ2 sensor, OLED display, and ResQ MVP node to support UI/device visuals. | 2026-09-30 03:19:03 -0500 |
+| resq-frontend | feature/alerts | <code>e2754769684112120e76425c308231c9b1e6bc18</code> | feat(alerts): add contextual alert center and activity details | — | 2026-09-30 05:02:43 -0500 |
+| resq-frontend | refactor/frontend-backend-ready | <code>87a77548cc40cf14bf497179f655b08e3da5d487</code> | feat(frontend-backend): Add data-access facades and auth session flow | Introduces a full data-access layer across alerts, IAM/auth, users, buildings, connectivity, incidents, monitoring, and risk detection with gateway interfaces, DTOs, mappers, facades, providers, and mock/http adapters. It also wires these providers into app config, refactors login to use the new AuthSessionFacade + user profile loading, updates app shell/topbar/sidebar to consume session data (including sign-out), and adds the new sidebar brand logo asset. | 2026-09-30 10:56:13 -0500 |
+| resq-frontend | feature/buildings | <code>04935d3c684c312568e296060e17004cd13c8a4e</code> | feat: dd localization and revamp operations UI | — | 2026-09-30 17:34:42 -0500 |
+| resq-frontend | main | <code>2ec1133a588fabcd890101300652021c831f0fe5</code> | feat: Add risk lifecycle and auth projections | — | 2026-10-06 00:13:43 -0500 |
+| resq-frontend | main | <code>c03264025b814256cb9a985f9b809594aac7cbeb</code> | fix: Refine alert/incident UX and auth roles | Improves alert and incident clarity across the UI: alert details now show clear-reason explanations, system response wording was updated, incident details now separate original critical detection from current condition, and response action cards include richer authorization/execution context. Topbar notifications were redesigned to show event labels, concise titles, and resolved locations, with matching style updates. Authorization logic now prioritizes identity-based role mapping, and mock IAM data adds a dedicated viewer identity to keep admin/viewer behavior testable with the current mock user profile. | 2026-10-06 00:56:18 -0500 |
+| resq-backend | feature/buildings-management | <code>9640bd7abe9cb9f2a07c1756e8f71db19015b137</code> | feat: implement building and device management bounded contexts | — | 2026-09-30 16:50:08 -0500 |
+| resq-backend | feature/incident-management | <code>c89238230e56784ff5c44f88f40eb32884e6a467</code> | feat(incident-management): add Incident Management bounded context. | — | 2026-09-30 17:49:05 -0500 |
+| resq-backend | main | <code>34e57e037600ff83ba414cda742a6d6ed30b01af</code> | feat(main): add docker configuration for deploy. | — | 2026-09-30 20:04:50 -0500 |
+| resq-backend | feature/alerts | <code>a8e18a4129342567f58f5e750507192ea8d84024</code> | feat: implement alert management bounded context with commands, queries, and REST controllers | — | 2026-10-03 17:05:39 -0500 |
+| resq-backend | feature/alerts | <code>292e1afa294f95d490e37ee5536974cd0415af6d</code> | feat: implement core backend modules including IAM, Alert Management, Incident Management, and Building Management | — | 2026-10-05 20:13:29 -0500 |
+
+##### Landing Page
+
+<p align="justify">
+Los commits seleccionados evidencian la implementación, el rediseño y la preparación de publicación de la Landing Page version 1 durante el rango del Sprint. El código disponible presenta una experiencia Angular con secciones de propuesta de valor, beneficios, producto, segmentos, equipo, aliados y llamado a la acción, además de vistas de privacidad y términos. La existencia de la rama <code>gh-pages</code> demuestra la generación del artefacto de publicación del componente informativo del MVP, sin que esta sección afirme métricas de disponibilidad o validación con usuarios.
+</p>
+
+##### Frontend Web Application
+
+<p align="justify">
+El historial evidencia la construcción de la Frontend Web Application version 1, la incorporación de vistas de gestión de dispositivos alineadas con el hardware del MVP, el centro contextual de alertas y la evolución de edificios y planos. También registra una capa de acceso a datos con gateways, DTOs, mappers, facades, adaptadores mock/HTTP y flujo de sesión. Los commits más recientes refinan las proyecciones del ciclo de riesgo, la claridad de alertas e incidentes y el tratamiento de roles. La auditoría interna del repositorio advierte que varias operaciones continúan simuladas o dependen de contratos backend pendientes; por ello, estos avances demuestran el incremento funcional del MVP, pero no una integración extremo a extremo finalizada.
+</p>
+
+##### Backend / Web Services
+
+<p align="justify">
+Los commits comprendidos dentro del Sprint evidencian implementaciones para Building Management, Device Management, Incident Management y Alert Management, además de un commit integrador de módulos base y una configuración Docker multi-stage para compilar y ejecutar la API sobre .NET 10. Estas capacidades proporcionan servicios iniciales para el MVP digital. Aunque el Project Report diseña Monitoring, Risk Detection, Connectivity Management y servicios Edge, no se encontró en <code>resq-backend</code> una implementación equivalente de esos componentes; por ello, no se consideran concluidos en Sprint 1.
+</p>
+
+
+##### 6.2.1.5. Testing Suite Evidence for Sprint Review.
+
+En esta sección se presenta el conjunto de pruebas automatizadas desarrolladas para validar los Web Services de ResQ. Las pruebas fueron organizadas en tres niveles: Unit Tests, Integration Tests y Acceptance Tests bajo el enfoque BDD, con el objetivo de verificar tanto las reglas de negocio internas como la persistencia y el comportamiento funcional de los principales servicios del backend.
+
+Durante este sprint se desarrollaron pruebas para los bounded contexts Building Management y Subscriptions, cubriendo operaciones relacionadas con el registro y administración de edificaciones y zonas, así como el ciclo de vida de las suscripciones. Para los Acceptance Tests se utilizó Reqnroll con xUnit, empleando archivos `.feature` escritos en lenguaje Gherkin y clases Steps desarrolladas en C#.
+
+<br>
+
+**Unit Test:**
+
+Los Unit Tests permiten validar de manera aislada las reglas de negocio implementadas en las clases del dominio, sin depender de la base de datos ni de la ejecución completa de la API.
+
+Para el bounded context Building Management se desarrollaron las clases `BuildingTest`, `BuildingAddressTests`, `BuildingCodeTests` y `ZoneCodeTests`. Estas pruebas validan comportamientos relacionados con la creación y gestión de edificaciones y zonas, así como las reglas de validación de sus Value Objects. Entre los comportamientos considerados se encuentran el registro de edificaciones, actualización de información, cambio de estado administrativo, creación y actualización de zonas y las validaciones asociadas a códigos y direcciones.
+
+Para Subscriptions se desarrollaron las clases `SubscriptionTests` y `SubscriptionIdTests`. Estas pruebas validan la creación de una suscripción, las restricciones sobre las fechas, la determinación de su estado activo, la cancelación, expiración y renovación. También se valida que `SubscriptionId` no pueda crearse utilizando un `Guid.Empty`. De esta manera, se comprueban las principales reglas del ciclo de vida de una suscripción directamente sobre el dominio.
+
+<br>
+
+**Integration Test:**
+
+Los Integration Tests permiten verificar la interacción entre el dominio y la infraestructura de persistencia, utilizando Entity Framework Core y una base de datos SQLite en memoria. Esto permite comprobar que las entidades pueden almacenarse y recuperarse correctamente y que los repositorios aplican las consultas esperadas.
+
+En Building Management se implementó BuildingPersistenceIntegrationTests, donde se valida la persistencia de una edificación junto con sus datos principales, dirección y zonas. También se comprueba la relación entre una edificación y sus zonas, la persistencia conjunta de ambas entidades y las reglas de unicidad del código de edificación dentro de una organización.
+
+En Subscriptions se implementó SubscriptionPersistenceIntegrationTests, verificando la persistencia y recuperación de suscripciones, así como las operaciones principales del ISubscriptionRepository. Las pruebas comprueban la búsqueda por identificador y organización, el comportamiento cuando la organización no coincide o la suscripción no existe, la consulta por organización y la detección de suscripciones activas.
+
+<br>
+
+**Acceptance Test:**
+
+Finalmente, los Acceptance Tests se desarrollaron bajo el enfoque BDD (Behavior-Driven Development) utilizando Reqnroll, xUnit y Gherkin. Los escenarios se encuentran definidos en archivos `.feature`, mientras que las clases Steps contienen la lógica necesaria para ejecutar las peticiones HTTP contra los Web Services de ResQ.
+
+Para Building Management se implementó el archivo `BuildingManagement.feature`, relacionado con las User Stories **US21 - Registrar una edificación** y **US22 - Definir zonas de una edificación**. Los escenarios validan el registro de edificaciones con datos válidos e inválidos, la consulta y actualización de edificaciones, el cambio de estado administrativo y la creación, consulta, actualización y desactivación de zonas, verificando además que se mantenga la relación entre las zonas y su edificación.
+
+Para Subscriptions se implementó el archivo `SubscriptionManagement.feature`, que contiene escenarios para validar el ciclo de vida de una suscripción. Se comprueba la creación de una suscripción válida, el rechazo de una segunda suscripción para la misma organización, la validación de fechas inválidas, la consulta de suscripciones, la cancelación de una suscripción activa y el rechazo de operaciones de renovación o expiración cuando el estado actual no lo permite.
+
+Los archivos `.feature` utilizan Gherkin en español y las clases `BuildingManagementSteps` y `SubscriptionManagementSteps` implementan los pasos correspondientes en C#. Los Acceptance Tests utilizan autenticación real mediante JWT y ejecutan las peticiones directamente contra la API de ResQ, permitiendo validar el comportamiento del sistema desde una perspectiva cercana a la interacción real del usuario.
+
+<br>
+
+**Relación de pruebas desarrolladas:**
+
+| **Nivel de prueba** | **Bounded Context** | **Clases / archivos** | **Principal comportamiento validado** |
+|---|---|---|---|
+| Unit Test | Building Management | `BuildingTest`, `BuildingAddressTests`, `BuildingCodeTests`, `ZoneCodeTests` | Reglas de negocio de edificaciones, zonas y Value Objects |
+| Unit Test | Subscriptions | `SubscriptionTests`, `SubscriptionIdTests` | Creación, estados, cancelación, expiración, renovación y validaciones |
+| Integration Test | Building Management | `BuildingPersistenceIntegrationTests` | Persistencia de edificaciones, zonas, relaciones y unicidad |
+| Integration Test | Subscriptions | `SubscriptionPersistenceIntegrationTests` | Persistencia y consultas mediante `ISubscriptionRepository` |
+| Acceptance Test | Building Management | `BuildingManagement.feature` + `BuildingManagementSteps.cs` | Gestión funcional de edificaciones y zonas |
+| Acceptance Test | Subscriptions | `SubscriptionManagement.feature` + `SubscriptionManagementSteps.cs` | Gestión funcional del ciclo de vida de suscripciones |
+
+<br>
+
+**Tabla de commits:**
+
+| **Repository** | **Branch** | **Commit Id** | **Commit Message** | **Commit Message Body** | **Commited on (Date)** |
+|---|---|---|---|---|---|
+| resq-backend | feature/tests | a6e202e3d4da118e70d07a623c79aeb34f35076f | feat(tests): add Unit Tests for Building Management bounded context. | Implement Unit tests for Building Management | 07/10/2026 |
+| resq-backend | feature/tests | bb07a609bc551cd031d7919e0bfc0796cf112bd4 | feat(tests): add Integration Tests for Building Management bounded context. | Implement Integration tests for Building Management | 07/10/2026 |
+| resq-backend | feature/tests | 84cc884c300ee1085c8b6b3f315319de253cbfe6 | feat(tests): add Acceptance tests for Building Management bounded context. | Implement Acceptance tests for Building Management | 07/10/2026 |
+| resq-backend | feature/tests | 313d395c00fb1662dbf38eebdf523801032ba792 | feat(tests): add unit tests for Subscriptions bounded context. | Implement Unit tests for Subscriptions | 07/10/2026 |
+| resq-backend | feature/tests | a3ed1911396b4f3f54328ce1df4e8833589c7283 | feat(tests): add integration tests for Subscriptions bounded context. | Implement Integration tests for Building Management | 07/10/2026 |
+| resq-backend` | feature/tests | 6d1f896e18b14bedcb046b5b2a5bd054dd882349 | feat(tests): add acceptance tests for Subscriptions bounded context. | Implement Acceptance tests for Subscriptions | 07/10/2026 |
+
+
+##### 6.2.1.7. Services Documentation Evidence for Sprint Review.
+
+En esta sección se presentan los avances logrados en la documentación de los Web Services desarrollados durante el Sprint, evidenciando la correcta implementación y estandarización de los endpoints mediante OpenAPI (Swagger). Se detallan las acciones disponibles (GET, POST, PUT), sus parámetros, ejemplos de respuesta y la descripción de su funcionamiento, garantizando la trazabilidad, comprensión y correcta integración entre los distintos componentes del sistema. Todos los endpoints requieren un token JWT en el header `Authorization: Bearer <token>`, salvo `sign-in` y `sign-up`, que son públicos.
+
+Backend repository: [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend)
+
+| endpoint | verbo http | descripción | parámetros | request body | response body | explicación |
+|---|---|---|---|---|---|---|
+| /api/v1/authentication/sign-up | POST | Registra un nuevo usuario. | — | Objeto JSON con `firstName`, `lastName`, `email`, `username`, `password` y `role` (`citizen` o `volunteer`). | Datos del usuario creado (`id`, `username`). | Permite crear nuevas cuentas de usuario en la plataforma. Endpoint público. |
+| /api/v1/authentication/sign-in | POST | Autentica a un usuario. | — | Objeto JSON con `username` y `password`. | Datos del usuario autenticado (`id`, `username`, `role`) y token JWT. | Permite iniciar sesión y obtener el token para acceder a los recursos protegidos. Endpoint público. |
+| /api/v1/users | GET | Obtiene la lista completa de usuarios. | — | — | Lista de usuarios (`id`, `username`). | Permite visualizar todos los usuarios registrados en el sistema. |
+| /api/v1/users/{id} | GET | Obtiene un usuario específico. | `id` (path) | — | Datos del usuario (`id`, `username`). | Retorna la información del usuario identificado por su ID. |
+| /api/v1/users/role/{role} | GET | Lista los usuarios de un rol determinado. | `role` (path) | — | Lista de usuarios con el rol indicado. | Permite filtrar usuarios por rol (por ejemplo, ciudadano o voluntario). |
+| /api/v1/profiles/me | GET | Obtiene el perfil del usuario autenticado. | Token JWT (header) | — | Perfil (`id`, `fullName`, `email`, `phoneNumber`). | Permite conocer los datos de perfil del usuario actualmente logueado. |
+| /api/v1/profiles/{id} | GET | Obtiene el perfil de un usuario específico. | `id` (path) | — | Perfil (`id`, `fullName`, `email`, `phoneNumber`). | Retorna la información de contacto del perfil identificado por su ID. |
+| /api/v1/profiles/contact-info | PUT | Actualiza la información de contacto del usuario autenticado. | Token JWT (header) | Objeto JSON con `email` y/o `phoneNumber`. | Perfil actualizado. | Permite modificar el correo y el teléfono del perfil propio. |
+| /api/v1/subscriptions | POST | Crea una suscripción para la organización. | — | Objeto JSON con `startDate` y `endDate`. | Suscripción creada (`id`, `organizationId`, `status`, `startDate`, `endDate`). | Permite registrar la suscripción de una organización al servicio. |
+| /api/v1/subscriptions | GET | Lista las suscripciones. | — | — | Lista de suscripciones. | Permite consultar las suscripciones registradas. |
+| /api/v1/subscriptions/{id} | GET | Obtiene una suscripción específica. | `id` (path, GUID) | — | Datos de la suscripción. | Retorna el detalle y estado de una suscripción. |
+| /api/v1/subscriptions/{id}/renew | PUT | Renueva una suscripción. | `id` (path, GUID) | Objeto JSON con `newEndDate`. | Suscripción actualizada con la nueva fecha de fin. | Extiende la vigencia de una suscripción existente. |
+| /api/v1/subscriptions/{id}/cancel | PUT | Cancela una suscripción. | `id` (path, GUID) | — | Suscripción con estado cancelado. | Permite dar de baja una suscripción. |
+| /api/v1/subscriptions/{id}/expire | PUT | Marca una suscripción como expirada. | `id` (path, GUID) | — | Suscripción con estado expirado. | Permite registrar el vencimiento de una suscripción. |
+| /api/v1/buildings | POST | Registra una nueva edificación. | — | Objeto JSON con `buildingCode`, `name`, `description` y `address` (`streetAddress`, `district`, `city`, `countryCode`). | Edificación creada con su ID asignado. | Permite añadir edificaciones a la organización. |
+| /api/v1/buildings | GET | Lista las edificaciones de forma paginada. | `administrativeStatus` (query, opcional), `page` (query, def. 0), `size` (query, def. 20) | — | Página de edificaciones (`items`, `page`, `size`, `totalElements`, `totalPages`). | Permite visualizar y filtrar las edificaciones por estado administrativo. |
+| /api/v1/buildings/{buildingId} | GET | Obtiene una edificación específica. | `buildingId` (path, GUID) | — | Datos de la edificación, incluidas sus zonas. | Retorna el detalle completo de una edificación registrada. |
+| /api/v1/buildings/{buildingId}/details | PUT | Actualiza los datos de una edificación. | `buildingId` (path, GUID) | Objeto JSON con `name`, `description` y/o `address`. | Edificación actualizada. | Modifica nombre, descripción o dirección de la edificación. |
+| /api/v1/buildings/{buildingId}/administrative-status | PUT | Cambia el estado administrativo de una edificación. | `buildingId` (path, GUID) | Objeto JSON con `administrativeStatus`. | Edificación con el nuevo estado. | Permite activar, desactivar o archivar una edificación. |
+| /api/v1/buildings/{buildingId}/zones | POST | Agrega una zona a una edificación. | `buildingId` (path, GUID) | Objeto JSON con `zoneCode`, `name`, `description` y `floorLabel`. | Zona creada con su ID asignado. | Permite subdividir la edificación en zonas monitoreables. |
+| /api/v1/buildings/{buildingId}/zones | GET | Lista las zonas de una edificación de forma paginada. | `buildingId` (path, GUID), `administrativeStatus` (query, opcional), `page` (query, def. 0), `size` (query, def. 20) | — | Página de zonas (`items`, `page`, `size`, `totalElements`, `totalPages`). | Permite consultar y filtrar las zonas de una edificación. |
+| /api/v1/buildings/{buildingId}/zones/{zoneId} | GET | Obtiene una zona específica. | `buildingId`, `zoneId` (path, GUID) | — | Datos de la zona. | Retorna el detalle de una zona de la edificación. |
+| /api/v1/buildings/{buildingId}/zones/{zoneId}/details | PUT | Actualiza los datos de una zona. | `buildingId`, `zoneId` (path, GUID) | Objeto JSON con `name`, `description` y/o `floorLabel`. | Zona actualizada. | Modifica la información descriptiva de la zona. |
+| /api/v1/buildings/{buildingId}/zones/{zoneId}/administrative-status | PUT | Cambia el estado administrativo de una zona. | `buildingId`, `zoneId` (path, GUID) | Objeto JSON con `administrativeStatus`. | Zona con el nuevo estado. | Permite activar, desactivar o archivar una zona. |
+| /api/v1/devices | POST | Registra un nuevo dispositivo IoT. | — | Objeto JSON con `deviceCode`, `name`, `description`, `specifications`, `assignment` (`buildingId`, `zoneId`), `externalReference` y `capabilities`. | Dispositivo creado con su ID asignado. | Permite incorporar sensores y actuadores a una edificación o zona. |
+| /api/v1/devices | GET | Lista los dispositivos de forma paginada. | `buildingId`, `zoneId`, `administrativeStatus` (query, opcionales), `page` (def. 0), `size` (def. 20) | — | Página de dispositivos. | Permite consultar y filtrar los dispositivos registrados. |
+| /api/v1/devices/{deviceId} | GET | Obtiene un dispositivo específico. | `deviceId` (path, GUID) | — | Datos detallados del dispositivo y sus capacidades. | Retorna la información de un dispositivo registrado. |
+| /api/v1/devices/by-external-reference | GET | Busca un dispositivo por su referencia externa. | `sourceSystem`, `externalDeviceId` (query) | — | Datos del dispositivo encontrado. | Permite que sistemas externos (p. ej. Edge/IoT) localicen un dispositivo con su propio identificador. |
+| /api/v1/devices/{deviceId}/details | PUT | Actualiza los datos de un dispositivo. | `deviceId` (path, GUID) | Objeto JSON con `name`, `description` y/o `specifications`. | Dispositivo actualizado. | Modifica la información descriptiva y técnica del dispositivo. |
+| /api/v1/devices/{deviceId}/capabilities | PUT | Reemplaza las capacidades de un dispositivo. | `deviceId` (path, GUID) | Objeto JSON con `capabilities` (`code`, `kind`, `unit`). | Dispositivo con las capacidades actualizadas. | Define qué magnitudes mide o qué acciones ejecuta el dispositivo. |
+| /api/v1/devices/{deviceId}/assignment | PUT | Asigna el dispositivo a una edificación o zona. | `deviceId` (path, GUID) | Objeto JSON con `buildingId` y `zoneId` (opcional). | Dispositivo con la nueva asignación. | Permite reubicar un dispositivo dentro de la organización. |
+| /api/v1/devices/{deviceId}/administrative-status | PUT | Cambia el estado administrativo de un dispositivo. | `deviceId` (path, GUID) | Objeto JSON con `administrativeStatus`. | Dispositivo con el nuevo estado. | Permite activar, desactivar o dar de baja un dispositivo. |
+| /api/v1/incidents | POST | Registra un nuevo incidente. | — | Objeto JSON con `zoneId`, `type` y `level`. | Incidente creado (`id`, `zoneId`, `type`, `level`, `status`, `createdAt`). | Permite reportar un incidente ocurrido en una zona. |
+| /api/v1/incidents | GET | Lista los incidentes. | `zoneId` (query, opcional) | — | Lista de incidentes. | Permite consultar los incidentes, opcionalmente filtrados por zona. |
+| /api/v1/incidents/{id} | GET | Obtiene un incidente específico. | `id` (path, GUID) | — | Datos del incidente (`status`, `assignedTo`, `resolvedAt`, `resolutionNotes`, etc.). | Retorna el detalle y el estado actual de un incidente. |
+| /api/v1/incidents/{id}/status | PUT | Cambia el estado de un incidente. | `id` (path, GUID) | Objeto JSON con `status`. | Incidente actualizado. | Permite avanzar el incidente en su ciclo de vida. |
+| /api/v1/incidents/{id}/assign | PUT | Asigna un incidente a un responsable. | `id` (path, GUID) | Objeto JSON con `attendantId`. | Incidente con el responsable asignado. | Permite designar a quién atiende el incidente. |
+| /api/v1/incidents/{id}/resolve | PUT | Resuelve un incidente. | `id` (path, GUID) | Objeto JSON con `resolutionNotes`. | Incidente resuelto con `resolvedAt` y notas. | Cierra el incidente dejando constancia de la resolución. |
+| /api/v1/alerts | GET | Lista las alertas generadas. | `buildingId`, `zoneId`, `riskTypeCode`, `from`, `to` (query, opcionales) | — | Lista de alertas (`alertId`, `context`, `generatedAt`, `deliveries`). | Permite consultar el historial de alertas con filtros por ubicación, tipo de riesgo y rango de fechas. |
+| /api/v1/alerts/{alertId} | GET | Obtiene una alerta específica. | `alertId` (path, GUID) | — | Datos de la alerta con su contexto y notificaciones. | Retorna el detalle de una alerta y el estado de sus notificaciones (`PENDING`, `DELIVERED`, `FAILED`). |
+| /api/v1/alerts | POST | Genera una alerta a partir de una detección de riesgo. | — | Objeto JSON con `riskDetectionId`, `riskTypeCode`, `severityCode`, `buildingId`, `zoneId`, `detectedAt`, `recipients` y `responseActions`. | Alerta creada con sus notificaciones. | Notifica a los destinatarios y registra las acciones de respuesta solicitadas. |
+| /api/v1/alerts/{alertId}/response-executions | GET | Lista las ejecuciones de respuesta de una alerta. | `alertId` (path, GUID) | — | Lista de ejecuciones de respuesta (`action`, `status`, `authorization`). | Permite ver las acciones automáticas o pendientes de autorización asociadas a la alerta. |
+| /api/v1/alerts/{alertId}/response-executions/{responseExecutionId}/authorization | PUT | Aprueba o rechaza una acción de respuesta. | `alertId`, `responseExecutionId` (path, GUID) | Objeto JSON con `decision` (`APPROVED` o `REJECTED`). | Ejecución de respuesta con la autorización registrada. | Permite que una persona autorice las acciones de modo `HUMAN_REQUIRED`. |
+
+
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq1.png" alt="Swagger ResQ API - evidencia 1" width="70%">
+  <br><br>
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq2.png" alt="Swagger ResQ API - evidencia 2" width="70%">
+  <br><br>
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq3.png" alt="Swagger ResQ API - evidencia 3" width="70%">
+  <br><br>
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq4.png" alt="Swagger ResQ API - evidencia 4" width="70%">
+</p>
+
+##### 6.2.1.8. Software Deployment Evidence for Sprint Review.
+
+**Landing Page**
+
+La Landing Page fue desplegada mediante GitHub Pages. Para ello, se creó un repositorio en GitHub y se configuró un workflow con GitHub Actions, el cual automatiza la publicación del sitio cada vez que se realizan cambios en la rama principal. Finalmente, se verificó el correcto funcionamiento del despliegue accediendo a la URL pública generada por GitHub Pages.
+
+**Enlace de la Landing Page:**  
+https://upc-1asi0572-202620-16518-resq.github.io/resq-landing-page/
+
+
+**Web Application**
+
+En esta sección se presentan las evidencias relacionadas con el despliegue de la aplicación web desarrollada como parte de la solución, incluyendo la configuración de los recursos necesarios para permitir su funcionamiento y acceso desde un entorno publicado.
+
+Como parte de la validación del despliegue, se verificó el acceso a la aplicación a través de su URL pública y se comprobó el correcto funcionamiento de sus principales funcionalidades.
+
+**Enlace de la aplicación web:**  
+
+https://resq-frontend.ffaaliceht2003.workers.dev/login
+
+**Backend**
+
+Para el componente backend se realizó el despliegue del servicio en la plataforma Render, permitiendo que las funcionalidades y endpoints desarrollados puedan ser consumidos desde un entorno remoto.
+
+Como parte de la validación del despliegue, se verificó el acceso a la documentación de la API mediante Swagger UI, desde donde es posible visualizar y probar los diferentes endpoints disponibles en el backend.
+
+**Enlace del backend desplegado en Render:**
+
+https://resq-api-79xy.onrender.com/swagger/index.html
+
+
+
+
+# Conclusiones
+
+## Conclusiones y recomendaciones
+
+<p align="justify">
+A partir del trabajo realizado durante AV1, se logró profundizar en la problemática asociada con la gestión de riesgos y emergencias en edificaciones y establecer una primera definición sustentada de la propuesta de ResQ. El desarrollo de los artefactos correspondientes a los Capítulos I, II, III y IV permitió mantener una relación progresiva entre la comprensión del problema, la investigación de los segmentos objetivo, la especificación de requisitos y las principales decisiones de diseño y arquitectura de la solución.
+</p>
+
+<p align="justify">
+En relación con el Problem Statement definido durante el Lean UX Process, los resultados obtenidos durante las entrevistas proporcionaron evidencia sobre varios de los problemas inicialmente identificados. En el segmento de propietarios y administradores de edificaciones se observó que los sistemas relacionados con seguridad suelen encontrarse distribuidos entre diferentes plataformas, dispositivos y mecanismos de comunicación. Los tres participantes de este segmento indicaron que trabajan con diferentes sistemas o fuentes de información que no se encuentran completamente integrados, lo que puede requerir verificaciones físicas, llamadas, mensajes o la consulta de distintas interfaces antes de comprender completamente una situación de riesgo.
+</p>
+
+<p align="justify">
+Asimismo, los participantes de este primer segmento destacaron la importancia de conocer rápidamente qué está ocurriendo y dónde está ocurriendo. La necesidad de identificar la ubicación del incidente estuvo presente en los tres entrevistados, junto con la necesidad de disponer de información confiable antes de tomar decisiones relacionadas con la seguridad. Estos resultados son consistentes con el problema identificado inicialmente por ResQ respecto a la fragmentación de la información y la dependencia de actividades manuales para coordinar la respuesta ante una emergencia.
+</p>
+
+<p align="justify">
+La investigación también mostró que la automatización no debe entenderse como la eliminación total de la intervención humana. Los propietarios y administradores entrevistados presentaron una actitud favorable hacia la automatización de alertas, notificaciones, señalización y determinadas respuestas, pero también señalaron la necesidad de conservar mecanismos de supervisión o confirmación humana cuando una acción pueda generar consecuencias significativas sobre las personas o la infraestructura. Este hallazgo permitió reforzar la decisión de diferenciar dentro de ResQ entre respuestas automáticas previamente autorizadas y acciones de alto impacto que requieren la confirmación de un responsable autorizado.
+</p>
+
+<p align="justify">
+Respecto al segundo segmento, conformado por empresas integradoras de automatización y gestión de edificios inteligentes, las entrevistas permitieron identificar necesidades diferentes pero relacionadas con la propuesta de ResQ. Los tres representantes entrevistados señalaron la integración e interoperabilidad como factores fundamentales al evaluar nuevas tecnologías. Entre los aspectos mencionados se encuentran la compatibilidad entre fabricantes, disponibilidad de APIs y protocolos, calidad de la documentación técnica, soporte del proveedor y posibilidad de realizar pruebas antes de incorporar una tecnología dentro de un proyecto.
+</p>
+
+<p align="justify">
+Los participantes de este segmento también señalaron dificultades asociadas con tecnologías que presentan restricciones no identificadas inicialmente, documentación incompleta o comportamientos diferentes a los esperados durante la integración. Estas situaciones pueden generar horas adicionales de ingeniería, modificaciones de arquitectura, retrasos o mayor dependencia del proveedor. Como consecuencia, ResQ no debe plantearse únicamente como un producto funcional, sino también como una solución que pueda ser comprendida, evaluada, integrada y mantenida por empresas especializadas que trabajan con infraestructura perteneciente a diferentes fabricantes.
+</p>
+
+<p align="justify">
+Los resultados obtenidos permiten contrastar varios de los assumptions definidos durante el Lean UX Process con el comportamiento y las necesidades expresadas por los representantes de los segmentos objetivo. En el primer segmento se encontró evidencia favorable a los assumptions relacionados con monitoreo centralizado, identificación del tipo y ubicación del riesgo, consulta de información histórica y continuidad de las funciones críticas. Los tres entrevistados manifestaron que las funciones esenciales de seguridad deberían continuar operando localmente cuando se pierde temporalmente la conexión a Internet.
+</p>
+
+<p align="justify">
+En el segundo segmento también se encontró evidencia favorable a los assumptions relacionados con interoperabilidad, integración progresiva y evaluación técnica antes de adoptar una solución. Los tres representantes indicaron que la capacidad de integración constituye un factor fundamental y que una solución especializada puede resultar preferible frente al desarrollo interno cuando dispone de mecanismos de integración adecuados, documentación, soporte y evidencia de funcionamiento. Asimismo, parte de los entrevistados manifestó explícitamente la importancia de mantener funciones críticas localmente ante interrupciones de conectividad.
+</p>
+
+<p align="justify">
+Estos hallazgos proporcionan sustento inicial para mantener Edge Computing como una de las decisiones centrales de ResQ. El procesamiento local permite plantear que la detección de determinadas condiciones de riesgo y la ejecución de respuestas críticas no dependan permanentemente de los servicios Cloud. Al mismo tiempo, la arquitectura debe permitir conservar los eventos producidos durante una interrupción y sincronizarlos posteriormente cuando se recupere la conectividad, manteniendo la trazabilidad de lo ocurrido.
+</p>
+
+<p align="justify">
+Los resultados de investigación también permitieron transformar las necesidades identificadas en requisitos verificables. Las User Stories y Technical Stories definidas durante AV1 abarcan capacidades relacionadas con el monitoreo de edificaciones y zonas, consulta de mediciones, detección y contextualización de riesgos, generación de alertas, ejecución de respuestas, seguimiento de incidentes, administración de usuarios y permisos, continuidad operativa e integración con infraestructura existente. El Product Backlog permitió posteriormente priorizar estas capacidades de acuerdo con su aporte al MVP y al valor esperado para los segmentos objetivo.
+</p>
+
+<p align="justify">
+De manera complementaria, el Strategic-Level Domain-Driven Design permitió identificar y organizar las responsabilidades principales del dominio, mientras que el Tactical-Level Domain-Driven Design permitió profundizar en la estructura interna de los Bounded Contexts. Como resultado de este proceso se establecieron los contextos Identity and Access Management (IAM), Risk Detection, Alert & Response Management, Building Management, Device Management, Monitoring, User, Incident y Connectivity Management, separando responsabilidades relacionadas con usuarios, dispositivos, edificaciones, monitoreo, detección, respuesta, incidentes y comunicación.
+</p>
+
+<p align="justify">
+Esta separación permite plantear una arquitectura en la que la detección de riesgos, la respuesta ante emergencias y la administración de la infraestructura no dependan de un único componente monolítico. Asimismo, facilita que las capacidades relacionadas con dispositivos IoT, procesamiento Edge, servicios Cloud y aplicaciones digitales puedan evolucionar progresivamente manteniendo responsabilidades delimitadas entre los distintos elementos de la solución.
+</p>
+
+<p align="justify">
+En relación con los Hypothesis Statements definidos durante Lean UX, los resultados obtenidos en AV1 todavía no permiten considerarlos completamente validados. Las entrevistas realizadas hasta este punto corresponden principalmente a actividades de investigación orientadas a comprender problemas, necesidades, comportamientos y criterios de decisión de los segmentos objetivo. Por esta razón, si bien los hallazgos proporcionan evidencia inicial favorable para determinados assumptions, todavía será necesario comprobar mediante prototipos, implementación y sesiones de validación si las funcionalidades propuestas generan los beneficios y resultados de negocio esperados.
+</p>
+
+<p align="justify">
+Entre los aspectos que deberán validarse posteriormente se encuentran la capacidad de los usuarios para comprender rápidamente el estado de una edificación, identificar correctamente el tipo, nivel y ubicación de un riesgo, interpretar las alertas generadas, comprender las respuestas ejecutadas por el sistema y confiar en la automatización propuesta. Para el segmento de empresas integradoras también será necesario validar si los mecanismos de integración, la documentación técnica y el proceso de incorporación de ResQ resultan suficientemente claros y utilizables dentro de escenarios similares a los que enfrentan en proyectos reales.
+</p>
+
+<p align="justify">
+Respecto a los criterios de éxito, durante AV1 se definieron métricas iniciales que deberán ser contrastadas en futuras etapas de validación. El primer Business Goal establece como referencia que al menos el 80 % de los participantes del piloto pueda identificar correctamente el tipo, nivel y zona de un riesgo, además de verificar la respuesta ejecutada por ResQ durante las primeras seis semanas del piloto. El segundo Business Goal plantea que al menos el 70 % de los participantes utilice ResQ al menos dos veces por semana para actividades de monitoreo o consulta de incidentes durante un periodo continuo de ocho semanas. Finalmente, el tercer Business Goal establece como referencia que al menos el 60 % de las administraciones u organizaciones participantes manifieste intención de continuar utilizando y pagar por el servicio, con una valoración mínima de cuatro sobre cinco al finalizar las primeras doce semanas del piloto.
+</p>
+
+<p align="justify">
+Estos porcentajes deben considerarse actualmente como criterios de éxito definidos para futuras validaciones y no como resultados alcanzados. Durante AV1 todavía no se han desarrollado las Validation Interviews asociadas con los productos digitales ni existe evidencia suficiente para afirmar el cumplimiento de estas métricas. Las siguientes iteraciones deberán recopilar resultados reales y compararlos con estos valores para determinar si las hipótesis planteadas se mantienen, requieren ajustes o deben ser descartadas.
+</p>
+
+<p align="justify">
+Como recomendación para las siguientes etapas, se debe mantener la trazabilidad entre los hallazgos obtenidos durante la investigación, las User Stories, las Technical Stories, el Product Backlog y las decisiones arquitectónicas. Cada funcionalidad que avance hacia implementación debería poder relacionarse con una necesidad previamente identificada y posteriormente con evidencia obtenida durante las pruebas y validaciones.
+</p>
+
+<p align="justify">
+También será necesario comprobar técnicamente las decisiones relacionadas con la arquitectura IoT de ResQ. Entre las prioridades se encuentra validar la captura de información desde los sensores, el procesamiento local mediante Edge Computing, la clasificación de situaciones de riesgo, la ejecución de respuestas mediante actuadores, la conservación de eventos durante interrupciones de conectividad y la posterior sincronización con los servicios Cloud. Estas pruebas permitirán determinar si las decisiones planteadas durante el diseño pueden mantenerse bajo condiciones cercanas al funcionamiento esperado del producto.
+</p>
+
+<p align="justify">
+Para las acciones que puedan producir un impacto significativo sobre personas o infraestructura, se recomienda mantener una estrategia de control humano acorde con los resultados obtenidos durante la investigación. Las respuestas automáticas deberían limitarse a acciones previamente autorizadas y técnicamente validadas, mientras que aquellas consideradas de alto impacto deberían conservar mecanismos de confirmación por parte de responsables con permisos adecuados.
+</p>
+
+<p align="justify">
+En el caso del segmento de empresas integradoras, las siguientes iteraciones deben considerar no solamente el funcionamiento interno de ResQ, sino también su capacidad de integración. Será necesario validar los mecanismos y contratos de comunicación soportados, documentar adecuadamente APIs, protocolos, autenticación, estructura de datos y manejo de errores, y realizar pruebas que permitan demostrar que una fuente externa puede incorporarse sin exigir una sustitución completa de la infraestructura existente.
+</p>
+
+<p align="justify">
+En relación con el Roadmap de los productos digitales, los siguientes pasos deberán concentrarse en transformar los requisitos y decisiones arquitectónicas definidos durante AV1 en experiencias e implementaciones que puedan ser evaluadas. Esto implica avanzar progresivamente en el diseño UI/UX del Landing Page y de las aplicaciones, desarrollar las capacidades priorizadas dentro del Product Backlog e implementar la comunicación entre Embedded Systems, Edge Computing, servicios Cloud y productos digitales.
+</p>
+
+<p align="justify">
+A medida que se disponga de prototipos y primeras versiones funcionales, estos productos deberán presentarse a representantes de los segmentos objetivo mediante sesiones de validación. Los resultados obtenidos deberán utilizarse para revisar los Hypothesis Statements, contrastar los criterios de éxito, identificar problemas de usabilidad o comprensión, repriorizar el Product Backlog y actualizar el Roadmap según la evidencia recopilada.
+</p>
+
+<p align="justify">
+Asimismo, la estrategia de evolución del producto debe considerar que el alcance de ResQ podrá ajustarse conforme se obtenga nueva información. Las funcionalidades que no demuestren aportar el beneficio esperado deberán ser revisadas, mientras que aquellas que presenten mayor valor para los segmentos podrán recibir una mayor prioridad dentro de las siguientes iteraciones. De esta manera, el Roadmap no debe considerarse una planificación inmutable, sino una guía evolutiva sustentada en evidencia obtenida durante el desarrollo y la validación.
+</p>
+
+<p align="justify">
+Finalmente, el trabajo realizado durante AV1 permitió transformar una problemática inicialmente planteada a nivel conceptual en una propuesta progresivamente sustentada mediante investigación, requisitos y decisiones de diseño. Las entrevistas permitieron comprender con mayor precisión las dificultades de los propietarios y administradores de edificaciones y las condiciones bajo las cuales una empresa integradora evaluaría una solución como ResQ. A partir de estos hallazgos se establecieron requisitos, prioridades, Bounded Contexts y una arquitectura inicial que servirán como base para las siguientes etapas del proyecto.
+</p>
+
+<p align="justify">
+Por tanto, AV1 no representa la validación definitiva de ResQ, sino el establecimiento de una base de conocimiento y diseño que deberá ser puesta a prueba durante las siguientes iteraciones. La implementación del MVP, las pruebas técnicas y las posteriores Validation Interviews permitirán determinar en qué medida las decisiones tomadas responden efectivamente a las necesidades identificadas y proporcionarán la evidencia necesaria para continuar, modificar o replantear las hipótesis y prioridades del producto.
+</p>
+
+<div style="page-break-before: always; break-before: page;"></div>
+
+# Bibliografía
+
+# Anexos
+
+## Anexo A. Videos de Exposiciones
+
+### Anexo A — AV1 — Sprint Review
+
+![Video de exposición AV1](assets/images/general/collaboration/av1-sprint-review.png)
+
+<p align="center">
+  <strong>Figura 84. Video de exposición correspondiente a la entrega AV1.</strong>
+</p>
+
+**URL:** [Video exposición AV1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQCm8NIQa-7hSJu5uKB_dQbpAf0R6cugKBeBCTA1hMliXKs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3OfZUl)
+
+<p align="justify">
+<strong>Duración:</strong> 29:19
+</p>
