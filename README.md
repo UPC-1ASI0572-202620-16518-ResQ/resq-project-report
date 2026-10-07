@@ -12293,6 +12293,70 @@ Los commits comprendidos dentro del Sprint evidencian implementaciones para Buil
 </p>
 
 
+##### 6.2.1.5. Testing Suite Evidence for Sprint Review.
+
+En esta sección se presenta el conjunto de pruebas automatizadas desarrolladas para validar los Web Services de ResQ. Las pruebas fueron organizadas en tres niveles: Unit Tests, Integration Tests y Acceptance Tests bajo el enfoque BDD, con el objetivo de verificar tanto las reglas de negocio internas como la persistencia y el comportamiento funcional de los principales servicios del backend.
+
+Durante este sprint se desarrollaron pruebas para los bounded contexts Building Management y Subscriptions, cubriendo operaciones relacionadas con el registro y administración de edificaciones y zonas, así como el ciclo de vida de las suscripciones. Para los Acceptance Tests se utilizó Reqnroll con xUnit, empleando archivos `.feature` escritos en lenguaje Gherkin y clases Steps desarrolladas en C#.
+
+<br>
+
+**Unit Test:**
+
+Los Unit Tests permiten validar de manera aislada las reglas de negocio implementadas en las clases del dominio, sin depender de la base de datos ni de la ejecución completa de la API.
+
+Para el bounded context Building Management se desarrollaron las clases `BuildingTest`, `BuildingAddressTests`, `BuildingCodeTests` y `ZoneCodeTests`. Estas pruebas validan comportamientos relacionados con la creación y gestión de edificaciones y zonas, así como las reglas de validación de sus Value Objects. Entre los comportamientos considerados se encuentran el registro de edificaciones, actualización de información, cambio de estado administrativo, creación y actualización de zonas y las validaciones asociadas a códigos y direcciones.
+
+Para Subscriptions se desarrollaron las clases `SubscriptionTests` y `SubscriptionIdTests`. Estas pruebas validan la creación de una suscripción, las restricciones sobre las fechas, la determinación de su estado activo, la cancelación, expiración y renovación. También se valida que `SubscriptionId` no pueda crearse utilizando un `Guid.Empty`. De esta manera, se comprueban las principales reglas del ciclo de vida de una suscripción directamente sobre el dominio.
+
+<br>
+
+**Integration Test:**
+
+Los Integration Tests permiten verificar la interacción entre el dominio y la infraestructura de persistencia, utilizando Entity Framework Core y una base de datos SQLite en memoria. Esto permite comprobar que las entidades pueden almacenarse y recuperarse correctamente y que los repositorios aplican las consultas esperadas.
+
+En Building Management se implementó BuildingPersistenceIntegrationTests, donde se valida la persistencia de una edificación junto con sus datos principales, dirección y zonas. También se comprueba la relación entre una edificación y sus zonas, la persistencia conjunta de ambas entidades y las reglas de unicidad del código de edificación dentro de una organización.
+
+En Subscriptions se implementó SubscriptionPersistenceIntegrationTests, verificando la persistencia y recuperación de suscripciones, así como las operaciones principales del ISubscriptionRepository. Las pruebas comprueban la búsqueda por identificador y organización, el comportamiento cuando la organización no coincide o la suscripción no existe, la consulta por organización y la detección de suscripciones activas.
+
+<br>
+
+**Acceptance Test:**
+
+Finalmente, los Acceptance Tests se desarrollaron bajo el enfoque BDD (Behavior-Driven Development) utilizando Reqnroll, xUnit y Gherkin. Los escenarios se encuentran definidos en archivos `.feature`, mientras que las clases Steps contienen la lógica necesaria para ejecutar las peticiones HTTP contra los Web Services de ResQ.
+
+Para Building Management se implementó el archivo `BuildingManagement.feature`, relacionado con las User Stories **US21 - Registrar una edificación** y **US22 - Definir zonas de una edificación**. Los escenarios validan el registro de edificaciones con datos válidos e inválidos, la consulta y actualización de edificaciones, el cambio de estado administrativo y la creación, consulta, actualización y desactivación de zonas, verificando además que se mantenga la relación entre las zonas y su edificación.
+
+Para Subscriptions se implementó el archivo `SubscriptionManagement.feature`, que contiene escenarios para validar el ciclo de vida de una suscripción. Se comprueba la creación de una suscripción válida, el rechazo de una segunda suscripción para la misma organización, la validación de fechas inválidas, la consulta de suscripciones, la cancelación de una suscripción activa y el rechazo de operaciones de renovación o expiración cuando el estado actual no lo permite.
+
+Los archivos `.feature` utilizan Gherkin en español y las clases `BuildingManagementSteps` y `SubscriptionManagementSteps` implementan los pasos correspondientes en C#. Los Acceptance Tests utilizan autenticación real mediante JWT y ejecutan las peticiones directamente contra la API de ResQ, permitiendo validar el comportamiento del sistema desde una perspectiva cercana a la interacción real del usuario.
+
+<br>
+
+**Relación de pruebas desarrolladas:**
+
+| **Nivel de prueba** | **Bounded Context** | **Clases / archivos** | **Principal comportamiento validado** |
+|---|---|---|---|
+| Unit Test | Building Management | `BuildingTest`, `BuildingAddressTests`, `BuildingCodeTests`, `ZoneCodeTests` | Reglas de negocio de edificaciones, zonas y Value Objects |
+| Unit Test | Subscriptions | `SubscriptionTests`, `SubscriptionIdTests` | Creación, estados, cancelación, expiración, renovación y validaciones |
+| Integration Test | Building Management | `BuildingPersistenceIntegrationTests` | Persistencia de edificaciones, zonas, relaciones y unicidad |
+| Integration Test | Subscriptions | `SubscriptionPersistenceIntegrationTests` | Persistencia y consultas mediante `ISubscriptionRepository` |
+| Acceptance Test | Building Management | `BuildingManagement.feature` + `BuildingManagementSteps.cs` | Gestión funcional de edificaciones y zonas |
+| Acceptance Test | Subscriptions | `SubscriptionManagement.feature` + `SubscriptionManagementSteps.cs` | Gestión funcional del ciclo de vida de suscripciones |
+
+<br>
+
+**Tabla de commits:**
+
+| **Repository** | **Branch** | **Commit Id** | **Commit Message** | **Commit Message Body** | **Commited on (Date)** |
+|---|---|---|---|---|---|
+| resq-backend | feature/tests | a6e202e3d4da118e70d07a623c79aeb34f35076f | feat(tests): add Unit Tests for Building Management bounded context. | Implement Unit tests for Building Management | 07/10/2026 |
+| resq-backend | feature/tests | bb07a609bc551cd031d7919e0bfc0796cf112bd4 | feat(tests): add Integration Tests for Building Management bounded context. | Implement Integration tests for Building Management | 07/10/2026 |
+| resq-backend | feature/tests | 84cc884c300ee1085c8b6b3f315319de253cbfe6 | feat(tests): add Acceptance tests for Building Management bounded context. | Implement Acceptance tests for Building Management | 07/10/2026 |
+| resq-backend | feature/tests | 313d395c00fb1662dbf38eebdf523801032ba792 | feat(tests): add unit tests for Subscriptions bounded context. | Implement Unit tests for Subscriptions | 07/10/2026 |
+| resq-backend | feature/tests | a3ed1911396b4f3f54328ce1df4e8833589c7283 | feat(tests): add integration tests for Subscriptions bounded context. | Implement Integration tests for Building Management | 07/10/2026 |
+| resq-backend` | feature/tests | 6d1f896e18b14bedcb046b5b2a5bd054dd882349 | feat(tests): add acceptance tests for Subscriptions bounded context. | Implement Acceptance tests for Subscriptions | 07/10/2026 |
+
 
 ##### 6.2.1.7. Services Documentation Evidence for Sprint Review.
 
