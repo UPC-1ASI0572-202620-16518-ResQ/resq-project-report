@@ -1,0 +1,154 @@
+@startuml
+!pragma layout smetana
+title Alert & Response Management\nDomain Layer Class Diagram
+
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+
+package "Alert & Response Management - Domain Layer" {
+  class Alert <<Aggregate Root>> {
+    -id: Guid
+    -organizationId: Guid
+    -context: AlertContext
+    -generatedAt: DateTimeOffset
+    -deliveries: List<NotificationDelivery>
+    -status: AlertStatus
+    -clearedAt: DateTimeOffset?
+    -clearReason: AlertClearReason?
+    +{static} Generate(organizationId: Guid, context: AlertContext, recipients: IEnumerable<NotificationRecipient>): Alert
+  }
+
+  class NotificationDelivery <<Entity>> {
+    -id: Guid
+    -recipientUserId: string
+    -channel: string
+    -destination: string
+    -status: ENotificationDeliveryStatus
+    -requestedAt: DateTimeOffset
+    -completedAt: DateTimeOffset?
+    -failureReason: string?
+  }
+
+  class AlertContext <<Value Object>> {
+    +riskDetectionId: string
+    +riskTypeCode: string
+    +severityCode: string
+    +buildingId: Guid?
+    +zoneId: Guid?
+    +detectedAt: DateTimeOffset
+    +{static} Create(riskDetectionId, riskTypeCode, severityCode, buildingId, zoneId, detectedAt): AlertContext
+  }
+
+  class NotificationRecipient <<Value Object>> {
+    +recipientUserId: string
+    +channel: string
+    +destination: string
+  }
+
+  class ResponseExecution <<Aggregate Root>> {
+    -id: Guid
+    -organizationId: Guid
+    -alertId: Guid
+    -riskDetectionId: string
+    -action: ResponseActionSnapshot
+    -status: EResponseExecutionStatus
+    -requestedAt: DateTimeOffset
+    -authorization: ResponseAuthorization?
+    -executionRequestedAt: DateTimeOffset?
+    -result: ExecutionResult?
+    +{static} Request(organizationId: Guid, alertId: Guid, riskDetectionId: string, action: ResponseActionSnapshot): ResponseExecution
+    +DecideAuthorization(decision: EAuthorizationDecision, decidedByUserId: string): void
+  }
+
+  class ResponseActionSnapshot <<Value Object>> {
+    +actionId: Guid
+    +actionCode: string
+    +targetDeviceId: Guid
+    +targetCapabilityCode: string
+    +authorizationMode: EAuthorizationMode
+    +critical: bool
+  }
+
+  class ResponseAuthorization <<Value Object>> {
+    +authorizationId: Guid
+    +decision: EAuthorizationDecision
+    +decidedByUserId: string
+    +decidedAt: DateTimeOffset
+  }
+
+  class ExecutionResult <<Value Object>> {
+    +successful: bool
+    +resultCode: string
+    +message: string?
+    +completedAt: DateTimeOffset
+  }
+
+  enum AlertStatus <<Enumeration>> {
+    ACTIVE
+    CLEARED
+  }
+
+  enum AlertClearReason <<Enumeration>> {
+    RETURNED_TO_NORMAL
+    CRITICAL_THRESHOLD_REACHED
+  }
+
+  enum ENotificationDeliveryStatus <<Enumeration>> {
+    PENDING
+    DELIVERED
+    FAILED
+  }
+
+  enum EAuthorizationMode <<Enumeration>> {
+    AUTOMATIC
+    HUMAN_REQUIRED
+  }
+
+  enum EAuthorizationDecision <<Enumeration>> {
+    APPROVED
+    REJECTED
+  }
+
+  enum EResponseExecutionStatus <<Enumeration>> {
+    PENDING
+    PENDING_AUTHORIZATION
+    AUTHORIZED
+    EXECUTION_REQUESTED
+    SUCCEEDED
+    FAILED
+    REJECTED
+  }
+
+  interface IAlertRepository <<Repository>> {
+    +FindByIdAndOrganizationIdAsync(alertId: Guid, organizationId: Guid): Alert?
+    +FindAllAsync(organizationId: Guid, buildingId: Guid?, zoneId: Guid?, riskTypeCode: string?, from: DateTimeOffset?, to: DateTimeOffset?): IEnumerable<Alert>
+  }
+
+  interface IResponseExecutionRepository <<Repository>> {
+    +FindByIdAndAlertIdAsync(responseExecutionId: Guid, alertId: Guid, organizationId: Guid): ResponseExecution?
+    +FindAllByAlertIdAsync(alertId: Guid, organizationId: Guid): IEnumerable<ResponseExecution>
+  }
+
+  Alert "1" *-- "1" AlertContext
+  Alert "1" *-- "0..*" NotificationDelivery
+  Alert --> AlertStatus
+  Alert --> AlertClearReason
+  Alert ..> NotificationRecipient : creates deliveries from
+  NotificationDelivery --> ENotificationDeliveryStatus
+  ResponseExecution "1" *-- "1" ResponseActionSnapshot
+  ResponseExecution "1" *-- "0..1" ResponseAuthorization
+  ResponseExecution "1" *-- "0..1" ExecutionResult
+  ResponseExecution --> EResponseExecutionStatus
+  ResponseExecution "0..*" ..> "1" Alert : references by alertId
+  ResponseActionSnapshot --> EAuthorizationMode
+  ResponseAuthorization --> EAuthorizationDecision
+  IAlertRepository ..> Alert : persists
+  IResponseExecutionRepository ..> ResponseExecution : persists
+}
+
+legend bottom left
+  status, clearedAt and clearReason (Alert) and executionRequestedAt and result (ResponseExecution)
+  are handled by the web application only; the backend does not persist them yet.
+  External references: riskDetectionId, buildingId, zoneId, targetDeviceId, recipientUserId, decidedByUserId.
+endlegend
+@enduml
