@@ -54,9 +54,7 @@ INGENIERÍA DE SOFTWARE
 
 <p align="center" class="cover-date" style="font-weight: bold;">Septiembre 2026</p>
 
-
 <div style="page-break-after: always; break-after: page;"></div>
-
 
 # Registro de Versiones del Informe
 
@@ -8371,7 +8369,7 @@ Estos conceptos continúan perteneciendo a sus respectivos Bounded Contexts.
 
 
 
-# 4.2.7. Bounded Context: User
+### 4.2.7. Bounded Context: User
 
 <p align="justify">
 El Bounded Context User es responsable de gestionar la información del perfil personal, los datos de contacto y las preferencias de las personas que interactúan con la plataforma ResQ, ya sean administradores de edificaciones, responsables de seguridad, facility managers o usuarios integradores.
@@ -8613,7 +8611,7 @@ Propósito: Representa el esquema físico de persistencia (modelo relacional) di
   <strong>Figura 74. User Database Desing Diagram.</strong>
 </p>
 
-# 4.2.8. Bounded Context: Incident
+### 4.2.8. Bounded Context: Incident
 
 <p align="justify">
 El Bounded Context <strong>Incident</strong> es responsable de gestionar el ciclo de vida de los incidentes generados a partir de las situaciones de riesgo o emergencias (como sismos, fugas de gas o incendios) detectadas en las edificaciones monitoreadas por ResQ.
@@ -9193,7 +9191,8 @@ El diseño de la base de datos para el <strong>Connectivity Management Bounded C
 
 # Capítulo V: Solution UI/UX Design
 
-# 5.1. Style Guidelines.
+## 5.1. Style Guidelines.
+
 ### 5.1.1. General Style Guidelines.
 
 en este sección definiremos algunos apartados en lo visual, simbolismo y interacción que rige toda la solucion de ResQ, asegurando coherencia respecto las plataformas. Establecemos una identidad visual clara por medio de paleta de colores, tipografia, espaciado, etc unificado.
@@ -9761,7 +9760,8 @@ Los diagramas de flujo de usuario (implementados con mockups de alta fidelidad) 
 
 
 figma general: https://www.figma.com/board/6hSDnnG4ZYpIm93EouQQ26/Untitled?node-id=0-1&p=f&t=O17tbcBxcn3rT7Tr-0
-# 5.5 Applications Prototyping
+
+## 5.5 Applications Prototyping
 
 Pruebas del prototipo funcionable para el apartado web y mobiel
 
@@ -9929,7 +9929,7 @@ Los manifiestos de dependencias y lockfiles fijan el conjunto ejecutable de los 
 Existe una diferencia relevante entre la prescripción general del Project Statement y la implementación actual de la Landing Page. El enunciado propone HTML5, CSS3 y JavaScript, mientras que el repositorio <code>resq-landing-page</code> utiliza Angular y TypeScript. El equipo adoptó este stack para acelerar el desarrollo y mantener consistencia técnica con la Web Application; sin embargo, la diferencia debe conservarse documentada y no implica que el repositorio haya sido migrado o que la prescripción original deje de aplicar como criterio de evaluación.
 </p>
 
-#### 6.1.2. Source Code Management.
+### 6.1.2. Source Code Management.
 
 El código fuente de ResQ se organiza en repositorios independientes dentro de la organización de GitHub del equipo, uno por cada componente de la solución que ya se encuentra en desarrollo. Los componentes Mobile Application, Edge Service y Embedded Application aún no cuentan con repositorio, por lo que se incorporarán a esta tabla cuando inicie su implementación.
 
@@ -9972,8 +9972,7 @@ Las versiones siguen el formato `MAJOR.MINOR.PATCH`:
 
 Los mensajes de commit siguen la especificación *Conventional Commits* (por ejemplo, `feat: add alerts endpoint`, `fix: correct zone validation`, `docs: update sprint evidence`), lo que mantiene un historial legible y vinculado al autor de cada cambio.
 
-
-
+### 6.1.3. Source Code Style Guide & Conventions
 
 ## 6.2. Landing Page, Services & Applications Implementation
 
@@ -10012,6 +10011,8 @@ La planificación de Sprint 1 relaciona el Product Backlog con un incremento con
 <p align="justify">
 El Sprint Goal expresa un único resultado de valor: disponer de un MVP demostrable que conecte comunicación, operación digital, servicios base y validación física local. La Landing Page comunica el problema y la propuesta de ResQ; la Web Application representa los flujos iniciales de supervisión y gestión; el backend establece servicios para los recursos que ya cuentan con implementación comprobable; y el nodo IoT valida el recorrido local desde la lectura del MQ-2 hasta la OLED, los LEDs y el buzzer. Aunque el Product Backlog contiene Story Points, no existe en el README ni en los repositorios una asignación formal de historias a Sprint 1 que permita sumar puntos o calcular Velocity sin especular.
 </p>
+
+#### 6.2.1.3. Sprint Backlog 1
 
 #### 6.2.1.4. Development Evidence for Sprint Review
 
@@ -10056,9 +10057,9 @@ El historial evidencia la construcción de la Frontend Web Application version 1
 Los commits comprendidos dentro del Sprint evidencian implementaciones para Building Management, Device Management, Incident Management y Alert Management, además de un commit integrador de módulos base y una configuración Docker multi-stage para compilar y ejecutar la API sobre .NET 10. Estas capacidades proporcionan servicios iniciales para el MVP digital. Aunque el Project Report diseña Monitoring, Risk Detection, Connectivity Management y servicios Edge, no se encontró en <code>resq-backend</code> una implementación equivalente de esos componentes; por ello, no se consideran concluidos en Sprint 1.
 </p>
 
+#### 6.2.1.6. Execution Evidence for Sprint Review
 
-
-##### 6.2.1.7. Services Documentation Evidence for Sprint Review.
+#### 6.2.1.7. Services Documentation Evidence for Sprint Review.
 
 En esta sección se presentan los avances logrados en la documentación de los Web Services desarrollados durante el Sprint, evidenciando la correcta implementación y estandarización de los endpoints mediante OpenAPI (Swagger). Se detallan las acciones disponibles (GET, POST, PUT), sus parámetros, ejemplos de respuesta y la descripción de su funcionamiento, garantizando la trazabilidad, comprensión y correcta integración entre los distintos componentes del sistema. Todos los endpoints requieren un token JWT en el header `Authorization: Bearer <token>`, salvo `sign-in` y `sign-up`, que son públicos.
 
@@ -10122,7 +10123,7 @@ Backend repository: [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-back
   <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq4.png" alt="Swagger ResQ API - evidencia 4" width="70%">
 </p>
 
-##### 6.2.1.8. Software Deployment Evidence for Sprint Review.
+#### 6.2.1.8. Software Deployment Evidence for Sprint Review.
 
 **Landing Page**
 
@@ -10152,10 +10153,91 @@ Como parte de la validación del despliegue, se verificó el acceso a la documen
 
 https://resq-api-79xy.onrender.com/swagger/index.html
 
+#### 6.2.1.9. Team Collaboration Insights during Sprint
 
+<div align="justify">
 
+Durante el Sprint 1, el equipo desarrolló las actividades de implementación de manera colaborativa mediante GitHub, utilizando repositorios independientes para gestionar el desarrollo de los productos correspondientes al Sprint. La colaboración se realizó sobre el Landing Page, la aplicación Frontend y los Web Services, de acuerdo con las actividades de implementación desarrolladas por el equipo.
 
-# Conclusiones
+En el repositorio correspondiente al Landing Page, la información registrada en GitHub permite observar la participación de los integrantes del equipo mediante el analítico de contribuciones y el historial de commits realizados durante el desarrollo.
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/01-landing-page-contributors.png" alt="Contributors del Landing Page" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Analítica de contribuciones de los integrantes en el repositorio del Landing Page durante el Sprint 1.</em>
+</p>
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/02-landing-page-commits.png" alt="Commits del Landing Page" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Historial de commits realizados en el repositorio del Landing Page durante el Sprint 1.</em>
+</p>
+
+En el repositorio de la aplicación Frontend también se registran las contribuciones realizadas por los integrantes y la evolución de los cambios incorporados durante el Sprint.
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/03-frontend-contributors.png" alt="Contributors del Frontend" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Analítica de contribuciones de los integrantes en el repositorio de la aplicación Frontend durante el Sprint 1.</em>
+</p>
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/04-frontend-commits.png" alt="Commits del Frontend" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Historial de commits realizados en el repositorio de la aplicación Frontend durante el Sprint 1.</em>
+</p>
+
+De manera similar, el repositorio correspondiente a los Web Services registra la actividad de los integrantes mediante sus contribuciones y commits, permitiendo realizar seguimiento al desarrollo realizado durante el Sprint.
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/05-backend-contributors.png" alt="Contributors del Backend" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Analítica de contribuciones de los integrantes en el repositorio de Web Services durante el Sprint 1.</em>
+</p>
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/06-backend-commits.png" alt="Commits del Backend" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Historial de commits realizados en el repositorio de Web Services durante el Sprint 1.</em>
+</p>
+
+Adicionalmente, el repositorio utilizado para la elaboración del informe mantiene su propio historial de colaboración, permitiendo observar la participación de los integrantes en la construcción y actualización de la documentación del proyecto.
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/07-report-contributors.png" alt="Contributors del Report" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Analítica de contribuciones de los integrantes en el repositorio del Report.</em>
+</p>
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/08-report-commits.png" alt="Commits del Report" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Historial de commits realizados en el repositorio del Report.</em>
+</p>
+
+A partir de los analíticos de colaboración y del historial de commits, se evidencia la participación de los integrantes del equipo en las actividades desarrolladas durante el Sprint 1. Los registros de GitHub permiten realizar seguimiento a las contribuciones realizadas sobre los diferentes repositorios y observar la evolución incremental de los cambios incorporados durante el desarrollo.
+
+El uso de repositorios independientes para el Landing Page, la aplicación Frontend y los Web Services permitió organizar el trabajo de implementación de cada producto y mantener trazabilidad sobre las modificaciones realizadas. Asimismo, el repositorio del Report permitió gestionar de manera independiente la elaboración y actualización de la documentación del proyecto.
+
+En conjunto, estas evidencias permiten sustentar el trabajo colaborativo realizado por el equipo durante el Sprint 1 y la participación de sus integrantes en las actividades de implementación correspondientes.
+
+</div>
 
 ## Conclusiones y recomendaciones
 
