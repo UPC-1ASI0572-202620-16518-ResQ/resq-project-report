@@ -11932,6 +11932,20 @@ La planificación de Sprint 1 relaciona el Product Backlog con un incremento con
 El Sprint Goal expresa un único resultado de valor: disponer de un MVP demostrable que conecte comunicación, operación digital, servicios base y validación física local. La Landing Page comunica el problema y la propuesta de ResQ; la Web Application representa los flujos iniciales de supervisión y gestión; el backend establece servicios para los recursos que ya cuentan con implementación comprobable; y el nodo IoT valida el recorrido local desde la lectura del MQ-2 hasta la OLED, los LEDs y el buzzer. Aunque el Product Backlog contiene Story Points, no existe en el README ni en los repositorios una asignación formal de historias a Sprint 1 que permita sumar puntos o calcular Velocity sin especular.
 </p>
 
+#### 6.2.1.2. Aspect Leaders and Collaborators
+
+Durante este Sprint, el equipo se enfocó en la implementación de la primera versión de los principales componentes de ResQ, considerando tanto las aplicaciones que forman parte de la solución como los servicios que permiten su funcionamiento. Para organizar el trabajo y facilitar la coordinación entre los integrantes, se elaboró la Leadership-and-Collaboration Matrix (LACX), asignando un líder y colaboradores para cada aspecto incluido dentro del alcance del Sprint.
+
+Los aspectos seleccionados se relacionan con las principales actividades de implementación y validación de ResQ: Landing Page, Frontend Web, Web Services, integración y despliegue, y pruebas de la solución. Esta organización permite establecer responsables claros para cada actividad, manteniendo la colaboración del resto del equipo cuando el desarrollo requiere conocimientos de diferentes áreas.
+
+| Team Member (Last Name, First Name) | GitHub Username | Landing Page | Web Application | Web Services | Integración y Deployment | Testing y Validación |
+|-------------------------------------|-----------------|--------------|-----------------|--------------|----------------------|-----------|
+| **Sánchez Guevara, Iván Fernando**    | DonFernando1   | C     | C     | C     | C     | C     |
+| **Nanfuñay Liza, Pedro Jesús**        | PedroJ18       | C     | C     | **L** | **L** | C     |
+| **Chacaliaza Minaya, Eduardo Fabian** | educmz         | **L** | C     | C     | C     | C     |
+| **Quispe Barzola, Fabricio Fabian**   | BrooklynKarmis | C     | **L** | C     | C     | C     |
+| **Aliaga Urbina, Wilder Gonzalo**     | gonzalo1905    | C     | C     | C     | C     | **L** |
+
 #### 6.2.1.3. Sprint Backlog 1
 
 <p align="justify">
