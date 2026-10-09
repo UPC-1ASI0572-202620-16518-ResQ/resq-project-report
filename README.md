@@ -9813,6 +9813,610 @@ El diseño de la base de datos para el <strong>Connectivity Management Bounded C
      * `timestamp`: Fecha y hora exacta en la que se recibió la señal.
      * `signal_strength`: Intensidad de la señal de red reportada.
 
+### 4.2.10. Bounded Context: Subscriptions
+
+El Bounded Context Subscriptions es responsable de gestionar el ciclo de vida de las suscripciones asociadas a las organizaciones que utilizan ResQ. Su principal propósito es mantener el estado de vigencia de una suscripción y proporcionar las operaciones necesarias para crearla, consultarla, cancelarla, expirar su vigencia y renovarla.
+
+La suscripción se encuentra asociada a una organización mediante un organizationId, utilizado como referencia externa. De esta manera, el contexto mantiene aislado su modelo de dominio y no incorpora dentro de su propio modelo la información correspondiente a la organización, cuya gestión pertenece a otros componentes de la solución.
+
+El Bounded Context Subscriptions utiliza el contexto de autenticación para identificar la organización que realiza una operación. Las operaciones expuestas por el Web Service requieren autenticación y las consultas por identificador validan que la suscripción pertenezca a la organización autenticada.  
+
+El contexto soporta las siguientes operaciones principales:
+- Crear una suscripción para una organización.
+- Consultar la suscripción de una organización.
+- Consultar una suscripción mediante su identificador.
+- Cancelar una suscripción activa.
+- Expirar una suscripción cuando alcanza su fecha de finalización.
+- Renovar una suscripción que ya se encuentra expirada.
+
+El ciclo de vida de una suscripción se encuentra representado mediante los estados Active, Cancelled y Expired. La creación genera inicialmente una suscripción Active, mientras que las operaciones de cancelación, expiración y renovación producen las transiciones correspondientes.
+
+Subscriptions no administra la autenticación, los datos personales de los usuarios, la información de las organizaciones ni otros conceptos externos. Estos elementos son utilizados mediante identificadores o información obtenida desde el contexto de autenticación.
+
+Los principales conceptos identificados para este Bounded Context son Subscription, SubscriptionId, ESubscriptionStatus, OrganizationId, StartDate y EndDate.
+
+<br>
+
+**Responsabilidades principales:**
+
+Las principales responsabilidades del Bounded Context Subscriptions son:
+- Crear suscripciones asociadas a una organización.
+- Validar las fechas de inicio y finalización de una suscripción.
+- Mantener el estado actual de cada suscripción.
+- Determinar si una suscripción se encuentra actualmente activa.
+- Evitar la creación de una nueva suscripción cuando la organización ya posee una suscripción activa.
+- Cancelar una suscripción que se encuentra activa.
+- Expirar una suscripción únicamente cuando ha alcanzado su fecha de finalización.
+- Renovar una suscripción que se encuentra expirada.
+- Mantener la fecha de inicio y finalización correspondiente al período de vigencia.
+- Consultar una suscripción utilizando su identificador y organización.
+- Mantener el aislamiento entre organizaciones durante las operaciones de consulta y modificación.
+- Persistir el estado de las suscripciones mediante el repositorio correspondiente.
+
+<br>
+
+**Diccionario de clases:**
+
+| Clase / Interfaz | Capa | Propósito | Atributos principales | Operaciones principales |
+|---|---|---|---|---|
+| `Subscription` | Domain | Aggregate Root que representa una suscripción de una organización y controla su ciclo de vida. | `Id`, `OrganizationId`, `Status`, `StartDate`, `EndDate` | `Create()`, `IsActive()`, `Cancel()`, `Expire()`, `Renew()` |
+| `SubscriptionId` | Domain | Value Object que representa el identificador único de una suscripción. | `Value: Guid` | Validación del identificador |
+| `ESubscriptionStatus` | Domain | Enumeración que representa el estado de la suscripción. | `Active`, `Cancelled`, `Expired` | — |
+| `ISubscriptionRepository` | Domain | Contrato para la persistencia y recuperación de suscripciones. | — | `FindByIdAsync()`, `FindByOrganizationIdAsync()`, `ExistsByOrganizationIdAsync()`, `AddAsync()`, `Update()` |
+| `SubscriptionCommandService` | Application | Coordina las operaciones que modifican el estado de una suscripción. | Repositorio, Unit of Work | Crear, cancelar, renovar y expirar |
+| `SubscriptionQueryService` | Application | Coordina las operaciones de consulta. | Repositorio | Consultar por organización e identificador |
+| `CreateSubscriptionCommand` | Application | Representa la intención de crear una suscripción. | `OrganizationId`, `StartDate`, `EndDate` | — |
+| `CancelSubscriptionCommand` | Application | Representa la intención de cancelar una suscripción. | `OrganizationId`, `SubscriptionId` | — |
+| `RenewSubscriptionCommand` | Application | Representa la intención de renovar una suscripción. | `OrganizationId`, `SubscriptionId`, `NewEndDate` | — |
+| `ExpireSubscriptionCommand` | Application | Representa la intención de expirar una suscripción. | `OrganizationId`, `SubscriptionId` | — |
+| `GetSubscriptionByOrganizationQuery` | Application | Solicita la suscripción asociada a una organización. | `OrganizationId` | — |
+| `GetSubscriptionByIdQuery` | Application | Solicita una suscripción específica dentro del ámbito de una organización. | `OrganizationId`, `SubscriptionId` | — |
+| `SubscriptionsController` | Interface | Expone las operaciones del contexto mediante Web Services REST. | Command/Query Services | Crear, consultar, renovar, cancelar y expirar |
+| `SubscriptionResource` | Interface | Representa la suscripción en la comunicación HTTP. | Identificador, organización, estado y fechas | — |
+| `SubscriptionRepository` | Infrastructure | Implementa `ISubscriptionRepository` utilizando Entity Framework Core. | `AppDbContext` | Consultar y persistir suscripciones |
+| `AppDbContext` | Infrastructure | Gestiona la persistencia de las entidades mediante Entity Framework Core. | DbSet / configuración EF | Acceso a base de datos |
+
+#### 4.2.10.1. Domain Layer
+
+La Domain Layer contiene el modelo y las reglas de negocio relacionadas con el ciclo de vida de las suscripciones. Esta capa es independiente de HTTP, Entity Framework Core y del motor de base de datos.
+
+El principal Aggregate Root es `Subscription`.
+
+##### Subscription
+
+**Categoría:** Aggregate Root / Entity.
+
+Subscription representa la suscripción perteneciente a una organización y concentra las reglas necesarias para controlar su vigencia y sus transiciones de estado.
+
+**Atributos:**
+- `Id: SubscriptionId`
+- `OrganizationId: Guid`
+- `Status: ESubscriptionStatus`
+- `StartDate: DateTime`
+- `EndDate: DateTime`
+
+`OrganizationId` constituye una referencia externa. El agregado no contiene ni administra la información de la organización.
+
+**Operaciones principales:**
+- `Create(organizationId, startDate, endDate)`
+- `IsActive()`
+- `Cancel()`
+- `Expire()`
+- `Renew(newEndDate)`
+
+La operación `Create` valida que exista una organización válida, que la fecha de finalización sea posterior a la fecha de inicio y que la fecha de finalización se encuentre en el futuro. Cuando la creación es válida, la suscripción inicia con estado `Active`.
+
+`IsActive()` determina si la suscripción se encuentra actualmente activa considerando tanto su estado como su período de vigencia. Una suscripción es activa cuando su estado es `Active`, la fecha actual es igual o posterior a StartDate y todavía es anterior a `EndDate`.
+
+`Cancel()` permite realizar la transición:
+
+`Active → Cancelled`
+
+`Expire()` permite realizar la transición:
+
+`Active → Expired`
+
+pero únicamente cuando la fecha de finalización ya ha sido alcanzada.
+
+Finalmente, Renew(newEndDate) permite renovar una suscripción que se encuentra Expired. La renovación requiere una nueva fecha de finalización válida y devuelve la suscripción al estado Active, actualizando también su fecha de inicio al momento de la renovación.
+
+
+##### SubscriptionId
+
+**Categoría:** Value Object.
+
+`SubscriptionId` encapsula el identificador único de la suscripción. Su valor interno es un Guid y no permite utilizar un identificador vacío.
+
+Esto permite que el dominio trabaje con un identificador propio en lugar de utilizar directamente un Guid en todas sus operaciones.
+
+
+##### ESubscriptionStatus
+
+**Categoría:** Enumeration.
+
+Representa los estados posibles del ciclo de vida de una suscripción:
+
+```text
+Active
+Cancelled
+Expired
+```
+
+Las principales transiciones son:
+
+```text
+                 ┌──────────────┐
+                 │    Active    │
+                 └──────┬───────┘
+                        │
+              ┌─────────┴─────────┐
+              │                   │
+          Cancel()            Expire()
+              │                   │
+              v                   v
+       ┌────────────┐      ┌────────────┐
+       │  Cancelled │      │  Expired   │
+       └────────────┘      └──────┬─────┘
+                                  │
+                              Renew()
+                                  │
+                                  v
+                            ┌────────────┐
+                            │   Active   │
+                            └────────────┘
+```
+
+
+##### ISubscriptionRepository
+
+**Categoría:** Repository Interface.
+Define el contrato que necesita el dominio para recuperar y persistir suscripciones sin depender directamente de Entity Framework Core.
+
+Las principales operaciones son:
+- FindByIdAsync(subscriptionId, organizationId)
+- FindByOrganizationIdAsync(organizationId)
+- ExistsByOrganizationIdAsync(organizationId)
+- AddAsync(subscription)
+- Update(subscription)
+
+La utilización de organizationId en las consultas permite mantener el aislamiento entre las diferentes organizaciones.
+
+**Reglas de negocio:**
+
+El dominio Subscriptions aplica las siguientes reglas:
+1. Una suscripción debe estar asociada a una organización válida.
+2. SubscriptionId no puede contener un Guid.Empty.
+3. La fecha de finalización debe ser posterior a la fecha de inicio.
+4. Una suscripción nueva debe tener una fecha de finalización futura.
+5. Una suscripción creada correctamente inicia en estado Active.
+6. Una suscripción es considerada activa únicamente cuando su estado es Active y la fecha actual se encuentra dentro de su período de vigencia.
+7. Una suscripción Active puede pasar a Cancelled mediante Cancel().
+8. Una suscripción solo puede expirar cuando su fecha de finalización ya ha sido alcanzada.
+9. Una suscripción expirada puede renovarse mediante Renew().
+10. Una renovación requiere una nueva fecha de finalización futura.
+11. Una renovación devuelve la suscripción al estado Active.
+12. Una suscripción Active no puede renovarse directamente.
+13. Una suscripción Active no puede expirar antes de alcanzar su fecha de finalización.
+14. Las operaciones sobre una suscripción deben realizarse dentro del ámbito de la organización correspondiente.
+
+
+#### 4.2.10.2. Interface Layer
+
+La Interface Layer expone las capacidades de Subscriptions mediante Web Services REST. Su responsabilidad consiste en recibir las solicitudes HTTP, obtener la organización desde el contexto de autenticación, transformar los recursos en Commands o Queries y delegar la ejecución a la Application Layer.
+
+El controlador principal es:
+
+`SubscriptionsController`
+
+y se encuentra expuesto mediante:
+
+`/api/v1/subscriptions`
+
+El controlador requiere autenticación y utiliza el OrganizationId disponible en el contexto de la solicitud. 
+
+**Endpoints principales:**
+
+| Método | Endpoint | Operación |
+|---|---|---|
+| `POST` | `/api/v1/subscriptions` | Crear suscripción |
+| `GET` | `/api/v1/subscriptions` | Consultar suscripción de la organización |
+| `GET` | `/api/v1/subscriptions/{id}` | Consultar suscripción por ID |
+| `PUT` | `/api/v1/subscriptions/{id}/renew` | Renovar suscripción |
+| `PUT` | `/api/v1/subscriptions/{id}/cancel` | Cancelar suscripción |
+| `PUT` | `/api/v1/subscriptions/{id}/expire` | Expirar suscripción |
+
+La creación utiliza `CreateSubscriptionResource` y transforma la información recibida mediante `CreateSubscriptionCommandFromResourceAssembler`. Una creación exitosa retorna `201 Created`, mientras que una organización que ya posee una suscripción genera `409 Conflict`.
+
+La consulta general utiliza `GetSubscriptionByOrganizationQuery`, mientras que la consulta específica utiliza `GetSubscriptionByIdQuery`, incluyendo siempre el organizationId para limitar el acceso a la organización autenticada.
+
+Las operaciones de renovación, cancelación y expiración reciben el identificador de la suscripción y delegan la operación a `ISubscriptionCommandService`. Los estados que no permiten una determinada transición se traducen en respuestas `409 Conflict`.
+
+**Resources y Assemblers:**
+
+La Interface Layer utiliza recursos para separar el modelo HTTP del modelo de dominio.
+
+Entre los principales elementos se encuentran:
+- `CreateSubscriptionResource`
+- `RenewSubscriptionResource`
+- `SubscriptionResource`
+- `CreateSubscriptionCommandFromResourceAssembler`
+- `RenewSubscriptionCommandFromResourceAssembler`
+- `SubscriptionResourceFromEntityAssembler`
+
+Los Assemblers permiten transformar:
+
+```text
+HTTP Resource
+      ↓
+Command / Query
+      ↓
+Application Layer
+```
+
+y posteriormente:
+
+```text
+Domain Entity
+      ↓
+Resource
+      ↓
+HTTP Response
+```
+
+De esta manera, `SubscriptionsController` no contiene las reglas de negocio del agregado.
+
+
+#### 4.2.10.3. Application Layer
+
+La Application Layer coordina los casos de uso del Bounded Context. Su función es conectar las solicitudes provenientes de la Interface Layer con el dominio y la persistencia, sin trasladar las reglas de negocio fuera de Subscription.
+
+En la implementación actual se utilizan dos servicios principales:
+- `SubscriptionCommandService`
+- `SubscriptionQueryService`
+
+
+##### SubscriptionCommandService
+
+SubscriptionCommandService coordina las operaciones que modifican el estado de una suscripción.
+
+**Crear suscripción**
+
+El flujo principal es:
+1. Recibir `CreateSubscriptionCommand`.
+2. Verificar si la organización ya posee una suscripción activa.
+3. Crear el Aggregate `Subscription`.
+4. Persistirlo mediante `ISubscriptionRepository`.
+5. Confirmar la operación mediante `IUnitOfWork`.
+6. Retornar la suscripción creada.
+
+<br>
+
+**Cancelar suscripción**
+
+El flujo es:
+1. Recibir CancelSubscriptionCommand.
+2. Buscar la suscripción mediante `SubscriptionId` y `OrganizationId`.
+3. Ejecutar `Cancel()` sobre el Aggregate.
+4. Persistir el nuevo estado.
+5. Confirmar la transacción.
+6. Retornar la suscripción actualizada.
+
+<br>
+
+**Expirar suscripción**
+
+El servicio:
+1. Recupera la suscripción correspondiente.
+2. Ejecuta `Expire()`.
+3. El propio dominio valida que se haya alcanzado `EndDate`.
+4. Persiste el cambio.
+5. Confirma la operación.
+
+<br>
+
+**Renovar suscripción**
+
+El servicio:
+1. Recupera la suscripción.
+2. Ejecuta `Renew(newEndDate)`.
+3. El dominio valida que la suscripción se encuentre `Expired`.
+4. Actualiza el período de vigencia.
+5. Cambia el estado nuevamente a `Active`.
+6. Persiste la suscripción.
+7. Confirma la operación.
+
+
+##### SubscriptionQueryService
+
+`SubscriptionQueryService` gestiona las operaciones de consulta.
+
+Sus principales casos de uso son:
+- Obtener una suscripción por organización.
+- Obtener una suscripción por identificador y organización.
+
+El uso combinado de SubscriptionId y OrganizationId evita que una organización pueda consultar una suscripción perteneciente a otra.
+
+#### 4.2.10.4. Infrastructure Layer
+
+La Infrastructure Layer proporciona la implementación concreta de persistencia requerida por Subscriptions.
+
+El repositorio principal es:
+
+`SubscriptionRepository`
+
+que implementa:
+
+`ISubscriptionRepository`
+
+y utiliza `Entity Framework Core` junto con `AppDbContext`.
+
+<br>
+
+**SubscriptionRepository:**
+
+`SubscriptionRepository` implementa las operaciones de recuperación y persistencia de Subscription.
+
+Entre sus operaciones se encuentran:
+- `FindByIdAsync(subscriptionId, organizationId)`
+- `FindByOrganizationIdAsync(organizationId)`
+- `ExistsByOrganizationIdAsync(organizationId)`
+- `AddAsync(subscription)`
+- `Update(subscription)`
+
+Una característica importante de esta implementación es que las consultas utilizan `OrganizationId` como criterio de aislamiento. De esta manera, una suscripción solo puede recuperarse dentro del contexto organizacional correspondiente.
+
+<br>
+
+**Persistencia mediante Entity Framework Core:**
+El Aggregate `Subscription` se persiste mediante `AppDbContext`.
+
+La entidad se mapea hacia la tabla:
+
+`Subscriptions`
+
+El identificador `SubscriptionId` se convierte a su valor Guid para su almacenamiento. Además, se utiliza `ValueGeneratedNever()` debido a que el identificador es generado por el propio dominio.
+
+El estado `ESubscriptionStatus` se almacena mediante una conversión a texto.
+
+La estructura persistente principal está compuesta por:
+
+| Campo | Tipo conceptual | Restricción |
+|---|---|---|
+| `id` | UUID / GUID | Primary Key |
+| `organization_id` | UUID / GUID | Required |
+| `status` | String | Required |
+| `start_date` | DateTime | Required |
+| `end_date` | DateTime | Required |
+
+`organization_id` representa una referencia externa y no una relación de navegación hacia un Aggregate perteneciente a otro Bounded Context.
+
+El `AppDbContext` utiliza además la convención de nombres `snake_case`, por lo que los nombres persistidos siguen una representación como `organization_id`, `start_date` y `end_date`.
+
+La regla de una suscripción activa por organización se controla desde el dominio/Application Layer mediante `ExistsByOrganizationIdAsync`; en el mapping actual no se configura una restricción única adicional sobre `organization_id`.
+
+#### 4.2.10.5. Bounded Context Software Architecture Component Level Diagrams
+
+El Bounded Context Subscriptions se encuentra concentrado en el ResQ Cloud RESTful API, por lo que, a diferencia de Monitoring, no es necesario dividir el Component Diagram entre Edge y Cloud.
+
+El diagrama debe representar los siguientes componentes:
+- Subscriptions REST API
+- Subscription Application
+- Subscription Domain
+- Subscription Persistence
+- AppDbContext
+- Subscriptions Database
+- Authentication / Organization Context como dependencia externa.
+
+El flujo principal puede representarse de la siguiente manera:
+
+```text
+                 Client Application
+                        |
+                        v
+             Subscriptions REST API
+             (SubscriptionsController)
+                        |
+             +----------+----------+
+             |                     |
+             v                     v
+   Subscription Command     Subscription Query
+        Service                  Service
+             |                     |
+             +----------+----------+
+                        |
+                        v
+               Subscription Domain
+                        |
+                        v
+             ISubscriptionRepository
+                        |
+                        v
+             SubscriptionRepository
+                        |
+                        v
+                   AppDbContext
+                        |
+                        v
+              Subscriptions Table
+```
+
+El contexto de autenticación participa transversalmente para proporcionar el `OrganizationId` utilizado por las operaciones protegidas:
+
+```text
+Authentication Context
+        |
+        | OrganizationId
+        v
+SubscriptionsController
+```
+
+Las operaciones de escritura atraviesan `SubscriptionCommandService`, mientras que las operaciones de lectura atraviesan `SubscriptionQueryService`. Ambos servicios utilizan el mismo modelo de dominio y repositorio, manteniendo separadas las responsabilidades de comandos y consultas.
+
+<br>
+
+**DIAGRAM — Subscriptions Component Level Diagram:**
+
+![SubscriptionsComponentLevelDiagram](./assets/images/chapter-04-solution-software-design/subscriptions/SubscriptionsComponentLevelDiagram.png)
+
+#### 4.2.10.6. Bounded Context Software Architecture Code Level Diagrams
+
+Los Code Level Diagrams representan con mayor detalle la estructura interna del Bounded Context Subscriptions.
+
+Para este contexto se elaboran dos diagramas principales:
+
+- Domain Layer Class Diagram, que representa el Aggregate Root, Value Object, enumeración y Repository Interface.
+- Database Design Diagram, que representa la estructura física utilizada para almacenar las suscripciones.
+
+A diferencia de otros Bounded Contexts, Subscriptions posee un modelo de dominio pequeño y concentrado en un único Aggregate Root.
+
+##### 4.2.10.6.1 Bounded Context Domain Layer Class Diagrams
+
+El Domain Layer Class Diagram debe representar los siguientes elementos.
+
+**Aggregate Root / Entity:**
+- Subscription
+
+**Value Object:**
+- SubscriptionId
+
+**Enumeration:**
+- ESubscriptionStatus
+
+**Repository Interface:**
+- ISubscriptionRepository
+
+Las principales relaciones son:
+
+```text
+Subscription "1" *-- "1" SubscriptionId
+
+Subscription "1" --> "1" ESubscriptionStatus
+
+ISubscriptionRepository ..> Subscription : persists
+```
+
+Subscription mantiene como referencia externa:
+
+`OrganizationId : Guid`
+
+<br>
+
+Por lo tanto, Organization no debe modelarse como un Aggregate perteneciente a Subscriptions.
+
+El diagrama también debe mostrar los principales atributos y comportamientos:
+
+```text
+Subscription
+--------------------------------
+- Id : SubscriptionId
+- OrganizationId : Guid
+- Status : ESubscriptionStatus
+- StartDate : DateTime
+- EndDate : DateTime
+--------------------------------
++ Create(...)
++ IsActive()
++ Cancel()
++ Expire()
++ Renew(...)
+```
+
+`SubscriptionId:`
+
+```text
+SubscriptionId
+-------------------------
+- Value : Guid
+-------------------------
++ Value
+```
+
+`ESubscriptionStatus:`
+
+```text
+ESubscriptionStatus
+-------------------------
+Active
+Cancelled
+Expired
+```
+
+<br>
+
+El diagrama debe representar:
+
+- Atributos.
+- Métodos.
+- Visibilidad UML.
+- Composición entre Subscription y SubscriptionId.
+- Dependencia con ESubscriptionStatus.
+- Dependencia de ISubscriptionRepository.
+- Referencia externa mediante OrganizationId.
+
+<br>
+
+**DIAGRAM — Subscriptions Domain Layer Class Diagram:**
+
+![SubscriptionsDomainLayerClassDiagram](./assets/images/chapter-04-solution-software-design/subscriptions/SubscriptionsDomainLayerClassDiagram.png)
+
+##### 4.2.10.6.2 Bounded Context Database Diagram
+
+La persistencia de Subscriptions se concentra en una única estructura principal:
+
+`Subscriptions`
+
+La tabla almacena el estado persistente del Aggregate Subscription.
+
+| Column | Type | Constraint | Description |
+|---|---|---|---|
+| `id` | UUID / GUID | PRIMARY KEY | Identificador único de la suscripción. |
+| `organization_id` | UUID / GUID | NOT NULL | Identificador externo de la organización propietaria. |
+| `status` | VARCHAR | NOT NULL | Estado actual: `Active`, `Cancelled` o `Expired`. |
+| `start_date` | DATETIME | NOT NULL | Inicio del período de vigencia. |
+| `end_date` | DATETIME | NOT NULL | Finalización del período de vigencia. |
+
+Conceptualmente, la persistencia puede representarse como:
+
+```text
+             SUBSCRIPTIONS DATABASE
+                       |
+                       v
+               ┌───────────────────┐
+               │   Subscriptions   │
+               ├───────────────────┤
+               │ id                │ PK
+               │ organization_id   │
+               │ status            │
+               │ start_date        │
+               │ end_date          │
+               └───────────────────┘
+```
+
+`organization_id` no debe representarse como una Foreign Key hacia una tabla de organizaciones perteneciente a otro Bounded Context. Se mantiene como identificador externo para conservar el aislamiento entre contextos.
+
+La relación conceptual entre el modelo de dominio y la persistencia es:
+
+```text
+Subscription
+     |
+     | EF Core Mapping
+     v
+Subscriptions
+     |
+     +-- id
+     +-- organization_id
+     +-- status
+     +-- start_date
+     +-- end_date
+```
+
+El identificador `SubscriptionId` se convierte a Guid para su almacenamiento, mientras que `ESubscriptionStatus` se convierte a una representación textual.
+
+<br>
+
+**DIAGRAM — Subscriptions Database Design Diagram:**
+
+![SubscriptionsDatabaseDesignDiagram](./assets/images/chapter-04-solution-software-design/subscriptions/SubscriptionsDatabaseDesignDiagram.png)
 
 # Capítulo V: Solution UI/UX Design
 
