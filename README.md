@@ -158,7 +158,6 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
 # Contenido
 
 - [Student Outcome](#student-outcome)
-
 - [Capítulo I: Introducción](#capítulo-i-introducción)
   - [1.1. Startup Profile](#11-startup-profile)
     - [1.1.1. Descripción de la Startup](#111-descripción-de-la-startup)
@@ -171,7 +170,6 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
       - [1.2.2.3. Lean UX Hypothesis Statements](#1223-lean-ux-hypothesis-statements)
       - [1.2.2.4. Lean UX Canvas](#1224-lean-ux-canvas)
   - [1.3. Segmentos objetivo](#13-segmentos-objetivo)
-
 - [Capítulo II: Requirements Elicitation & Analysis](#capítulo-ii-requirements-elicitation--analysis)
   - [2.1. Competidores](#21-competidores)
     - [2.1.1. Análisis competitivo](#211-análisis-competitivo)
@@ -187,12 +185,10 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
     - [2.3.4. Empathy Mapping](#234-empathy-mapping)
   - [2.4. Big Picture EventStorming](#24-big-picture-eventstorming)
   - [2.5. Ubiquitous Language](#25-ubiquitous-language)
-
 - [Capítulo III: Requirements Specification](#capítulo-iii-requirements-specification)
   - [3.1. User Stories](#31-user-stories)
   - [3.2. Impact Mapping](#32-impact-mapping)
   - [3.3. Product Backlog](#33-product-backlog)
-
 - [Capítulo IV: Solution Software Design](#capítulo-iv-solution-software-design)
   - [4.1. Strategic-Level Domain-Driven Design](#41-strategic-level-domain-driven-design)
     - [4.1.1. Design-Level EventStorming](#411-design-level-eventstorming)
@@ -287,11 +283,19 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
       - [4.2.9.6. Bounded Context Software Architecture Code Level Diagrams](#4296-bounded-context-software-architecture-code-level-diagrams)
         - [4.2.9.6.1. Bounded Context Domain Layer Class Diagrams](#42961-bounded-context-domain-layer-class-diagrams)
         - [4.2.9.6.2. Bounded Context Database Design Diagram](#42962-bounded-context-database-design-diagram)
-
+    - [4.2.10. Bounded Context: Subscriptions](#4210-bounded-context-subscriptions)
+      - [4.2.10.1. Domain Layer](#42101-domain-layer)
+      - [4.2.10.2. Interface Layer](#42102-interface-layer)
+      - [4.2.10.3. Application Layer](#42103-application-layer)
+      - [4.2.10.4. Infrastructure Layer](#42104-infrastructure-layer)
+      - [4.2.10.5. Bounded Context Software Architecture Component Level Diagrams](#42105-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.10.6. Bounded Context Software Architecture Code Level Diagrams](#42106-bounded-context-software-architecture-code-level-diagrams)
+        - [4.2.10.6.1. Bounded Context Domain Layer Class Diagrams](#421061-bounded-context-domain-layer-class-diagrams)
+        - [4.2.10.6.2. Bounded Context Database Diagram](#421062-bounded-context-database-diagram)
 - [Capítulo V: Solution UI/UX Design](#capítulo-v-solution-uiux-design)
-  - [5.1. Style Guidelines](#51-style-guidelines)
-    - [5.1.1. General Style Guidelines](#511-general-style-guidelines)
-    - [5.1.2. Web, Mobile and IoT Style Guidelines](#512-web-mobile-and-iot-style-guidelines)
+  - [5.1. Style Guidelines.](#51-style-guidelines)
+    - [5.1.1. General Style Guidelines.](#511-general-style-guidelines)
+    - [5.1.2. Web, Mobile and IoT Style Guidelines.](#512-web-mobile-and-iot-style-guidelines)
   - [5.2. Information Architecture](#52-information-architecture)
     - [5.2.1. Organization Systems](#521-organization-systems)
     - [5.2.2. Labeling Systems](#522-labeling-systems)
@@ -308,20 +312,24 @@ El historial de commits permite relacionar las modificaciones realizadas sobre e
     - [5.4.4. Applications User Flow Diagrams](#544-applications-user-flow-diagrams)
   - [5.5. Applications Prototyping](#55-applications-prototyping)
   - [5.6. IoT Device Design](#56-iot-device-design)
-
 - [Capítulo VI: Product Implementation, Validation & Deployment](#capítulo-vi-product-implementation-validation--deployment)
   - [6.1. Software Configuration Management](#61-software-configuration-management)
     - [6.1.1. Software Development Environment Configuration](#611-software-development-environment-configuration)
+    - [6.1.2. Source Code Management](#612-source-code-management)
+    - [6.1.3. Source Code Style Guide & Conventions](#613-source-code-style-guide--conventions)
   - [6.2. Landing Page, Services & Applications Implementation](#62-landing-page-services--applications-implementation)
     - [6.2.1. Sprint 1](#621-sprint-1)
       - [6.2.1.1. Sprint Planning 1](#6211-sprint-planning-1)
+      - [6.2.1.2. Aspect Leaders and Collaborators](#6212-aspect-leaders-and-collaborators)
+      - [6.2.1.3. Sprint Backlog 1](#6213-sprint-backlog-1)
       - [6.2.1.4. Development Evidence for Sprint Review](#6214-development-evidence-for-sprint-review)
-
-- [Conclusiones](#conclusiones)
-  - [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
-
+      - [6.2.1.5. Testing Suite Evidence for Sprint Review.](#6215-testing-suite-evidence-for-sprint-review)
+      - [6.2.1.6. Execution Evidence for Sprint Review](#6216-execution-evidence-for-sprint-review)
+      - [6.2.1.7. Services Documentation Evidence for Sprint Review.](#6217-services-documentation-evidence-for-sprint-review)
+      - [6.2.1.8. Software Deployment Evidence for Sprint Review.](#6218-software-deployment-evidence-for-sprint-review)
+      - [6.2.1.9. Team Collaboration Insights during Sprint](#6219-team-collaboration-insights-during-sprint)
+- [Conclusiones y recomendaciones](#conclusiones-y-recomendaciones)
 - [Bibliografía](#bibliografía)
-
 - [Anexos](#anexos)
   - [Anexo A. Videos de Exposiciones](#anexo-a-videos-de-exposiciones)
     - [Anexo A — AV1 — Sprint Review](#anexo-a--av1--sprint-review)
@@ -390,7 +398,11 @@ Nuestra visión es posicionar a SecurityBear como una startup reconocida por el 
 | Pedro Jesús Nanfuñay Liza | U202215462 | Mi nombre es Pedro Jesús Nanfuñay Liza, tengo 21 años y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona creativa, responsable, perseverante y siempre dispuesto a trabajar en equipo. Espero aportar de manera positiva al equipo y cumplir con los objetivos establecidos en el proyecto. | ![foto3](assets/images/chapter-01-introduction/Pedro.jpeg) |
 | Wilder Gonzalo Aliaga Urbina | U202222001 | Mi nombre es Gonzalo Aliaga Urbina y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y comprometida con el cumplimiento de los objetivos establecidos en cada proyecto. Tengo especial interés en el desarrollo de soluciones tecnológicas, la programación y la aplicación de nuevas tecnologías para resolver problemas de manera eficiente. Durante los trabajos grupales procuro mantener una comunicación constante con mis compañeros, aportar ideas, apoyar en la resolución de dificultades y colaborar en la integración de las diferentes partes del proyecto. Asimismo, busco cumplir con las tareas asignadas dentro de los plazos establecidos y contribuir de manera activa para que el equipo mantenga una buena organización y logre resultados consistentes y funcionales. | ![foto4](assets/images/chapter-01-introduction/Gonzalo.jpg) |
 
-## 1.2. Solution Profile<p align="justify">
+## 1.2. Solution Profile
+
+### 1.2.1. Antecedentes y problemática
+
+<p align="justify">
 
 La seguridad y gestión de emergencias en edificaciones constituye un desafío para propietarios, administradores y empresas encargadas de implementar soluciones de automatización. Las instalaciones residenciales, comerciales e institucionales pueden encontrarse expuestas a situaciones de riesgo, como fugas de gas, incendios y movimientos sísmicos, que requieren mecanismos de detección, supervisión y respuesta adecuados. Sin embargo, la coexistencia de dispositivos independientes, las dificultades de integración tecnológica y la dependencia de procedimientos manuales pueden limitar la capacidad de identificar oportunamente una amenaza, conocer su ubicación y coordinar las acciones correspondientes.
 
@@ -2967,6 +2979,10 @@ La integración con infraestructura existente permite que nuevas fuentes o dispo
 ![Vista general de procesos del Big Picture EventStorming](assets/images/chapter-02-requirements-elicitation-analysis/big-picture-eventstorming-process-map.png)
 
 <p align="center">
+  <strong>Figura 22. Vista general de procesos del Big Picture EventStorming.</strong>
+</p>
+
+<p align="center">
   <strong>Vista general de los procesos identificados en el Big Picture EventStorming de ResQ.</strong>
 </p>
 
@@ -2993,6 +3009,10 @@ Posteriormente, el riesgo puede ser contextualizado mediante <code>Risk Classifi
 </p>
 
 ![Preparación, monitoreo y detección del riesgo](assets/images/chapter-02-requirements-elicitation-analysis/big-picture-eventstorming-processes-a-b-c.png)
+
+<p align="center">
+  <strong>Figura 23. Preparación, monitoreo y detección del riesgo.</strong>
+</p>
 
 <p align="center">
   <strong>Procesos A, B y C: preparación del entorno, monitoreo y detección y contextualización del riesgo.</strong>
@@ -3025,6 +3045,10 @@ Durante la atención pueden generarse uno o varios <code>Incident Updated</code>
 </p>
 
 ![Alertas, respuesta, incidentes y continuidad](assets/images/chapter-02-requirements-elicitation-analysis/big-picture-eventstorming-processes-d-e-f.png)
+
+<p align="center">
+  <strong>Figura 24. Alertas, respuesta, incidentes y continuidad.</strong>
+</p>
 
 <p align="center">
   <strong>Procesos D, E y F: alertas y respuesta, gestión del incidente y continuidad operativa.</strong>
@@ -3073,6 +3097,10 @@ Una integración activada permite que la fuente externa participe posteriormente
 ![Integración con infraestructura existente](assets/images/chapter-02-requirements-elicitation-analysis/big-picture-eventstorming-process-g-integration.png)
 
 <p align="center">
+  <strong>Figura 25. Integración con infraestructura existente.</strong>
+</p>
+
+<p align="center">
   <strong>Proceso G: integración de ResQ con infraestructura tecnológica existente.</strong>
 </p>
 
@@ -3097,6 +3125,10 @@ Estos Hotspots permanecerán como puntos de discusión que deberán resolverse c
 ![Hotspots del Big Picture EventStorming](assets/images/chapter-02-requirements-elicitation-analysis/big-picture-eventstorming-hotspots.png)
 
 <p align="center">
+  <strong>Figura 26. Hotspots del Big Picture EventStorming.</strong>
+</p>
+
+<p align="center">
   <strong>Hotspots identificados durante el Big Picture EventStorming de ResQ.</strong>
 </p>
 
@@ -3115,6 +3147,10 @@ Las definiciones acordadas permiten distinguir, por ejemplo, una condición anó
 </p>
 
 ![Definiciones del Big Picture EventStorming](assets/images/chapter-02-requirements-elicitation-analysis/big-picture-eventstorming-definitions.png)
+
+<p align="center">
+  <strong>Figura 27. Definiciones del Big Picture EventStorming.</strong>
+</p>
 
 <p align="center">
   <strong>Definiciones obtenidas durante la exploración del dominio mediante Big Picture EventStorming.</strong>
@@ -3316,7 +3352,7 @@ La Figura 23 representa la relación entre los Business Goals, los User Personas
 
 <p align="center">
 
-<strong>Figura 23. Impact Mapping - ResQ.</strong>
+<strong>Figura 28. Impact Mapping - ResQ.</strong>
 
 </p>
 
@@ -3432,7 +3468,7 @@ La Figura 24 corresponde a la evidencia del Product Backlog en Trello. Antes de 
 
 <p align="center">
 
-<strong>Figura 24. Product Backlog - ResQ.</strong>
+<strong>Figura 29. Product Backlog - ResQ.</strong>
 
 </p>
 
@@ -3499,7 +3535,7 @@ La Figura 25 presenta el Design-Level EventStorming de ResQ, mostrando los proce
 
 <p align="center">
 
-<strong>Figura 25. Design-Level EventStorming de ResQ.</strong>
+<strong>Figura 30. Design-Level EventStorming de ResQ.</strong>
 
 </p>
 
@@ -3526,7 +3562,7 @@ En la primera etapa se agruparon los comandos y eventos relacionados con autenti
 ![Candidate Context Discovery - Initial EventStorm](assets/images/chapter-04-solution-software-design/CandidateContextDiscovery_Initial.png)
 
 <p align="center">
-<strong>Figura 26. Candidate Context Discovery - Initial EventStorm.</strong>
+<strong>Figura 31. Candidate Context Discovery - Initial EventStorm.</strong>
 </p>
 
 <p align="justify">
@@ -3538,7 +3574,7 @@ Mediante <strong>start-with-value</strong> se identificaron <code>Risk Detection
 ![Candidate Context Discovery - Core and Pivotal Events](assets/images/chapter-04-solution-software-design/CandidateContextDiscovery_Core.png)
 
 <p align="center">
-<strong>Figura 27. Candidate Context Discovery - Core and Pivotal Events.</strong>
+<strong>Figura 32. Candidate Context Discovery - Core and Pivotal Events.</strong>
 </p>
 
 <p align="justify">
@@ -3569,7 +3605,7 @@ La Figura 28 presenta la delimitación resultante: <strong>Risk Detection</stron
 ![Candidate Context Discovery - Final Bounded Contexts](assets/images/chapter-04-solution-software-design/CandidateContextDiscovery_Final.png)
 
 <p align="center">
-<strong>Figura 28. Candidate Context Discovery - Final Bounded Contexts.</strong>
+<strong>Figura 33. Candidate Context Discovery - Final Bounded Contexts.</strong>
 </p>
 
 <p align="justify">
@@ -3604,7 +3640,7 @@ La Figura 29 representa los mensajes intercambiados entre el administrador, el i
 
 <p align="center">
 
-<strong>Figura 29. Domain Message Flows Modeling - Configuración de una edificación monitoreada.</strong>
+<strong>Figura 34. Domain Message Flows Modeling - Configuración de una edificación monitoreada.</strong>
 
 </p>
 
@@ -3626,7 +3662,7 @@ La Figura 30 muestra la colaboración entre los contextos de conectividad, monit
 
 <p align="center">
 
-<strong>Figura 30. Domain Message Flows Modeling - Detección y respuesta ante un riesgo.</strong>
+<strong>Figura 35. Domain Message Flows Modeling - Detección y respuesta ante un riesgo.</strong>
 
 </p>
 
@@ -3648,7 +3684,7 @@ La Figura 31 representa los mensajes de solicitud, validación de identidad y de
 
 <p align="center">
 
-<strong>Figura 31. Domain Message Flows Modeling - Confirmación de una acción de alto impacto.</strong>
+<strong>Figura 36. Domain Message Flows Modeling - Confirmación de una acción de alto impacto.</strong>
 
 </p>
 
@@ -3670,7 +3706,7 @@ La Figura 32 representa las consultas, asignaciones y transiciones del incidente
 
 <p align="center">
 
-<strong>Figura 32. Domain Message Flows Modeling - Seguimiento y cierre de un incidente.</strong>
+<strong>Figura 37. Domain Message Flows Modeling - Seguimiento y cierre de un incidente.</strong>
 
 </p>
 
@@ -3712,7 +3748,7 @@ Clasificado como <strong>Core Domain</strong>, se encarga de evaluar mediciones 
 
 <p align="center">
 
-<strong>Figura 33. Bounded Context Canvas de Risk Detection.</strong>
+<strong>Figura 38. Bounded Context Canvas de Risk Detection.</strong>
 
 </p>
 
@@ -3728,7 +3764,7 @@ Clasificado como <strong>Core Domain</strong>, gestiona la generación de alerta
 
 <p align="center">
 
-<strong>Figura 34. Bounded Context Canvas de Alert & Response Management.</strong>
+<strong>Figura 39. Bounded Context Canvas de Alert & Response Management.</strong>
 
 </p>
 
@@ -3744,7 +3780,7 @@ Clasificado como <strong>Supporting Domain</strong>, administra el ciclo de vida
 
 <p align="center">
 
-<strong>Figura 35. Bounded Context Canvas de Incident Management.</strong>
+<strong>Figura 40. Bounded Context Canvas de Incident Management.</strong>
 
 </p>
 
@@ -3760,7 +3796,7 @@ Clasificado como <strong>Supporting Domain</strong>, proporciona información so
 
 <p align="center">
 
-<strong>Figura 36. Bounded Context Canvas de Monitoring.</strong>
+<strong>Figura 41. Bounded Context Canvas de Monitoring.</strong>
 
 </p>
 
@@ -3776,7 +3812,7 @@ Clasificado como <strong>Supporting Domain</strong>, contempla la supervisión d
 
 <p align="center">
 
-<strong>Figura 37. Bounded Context Canvas de Connectivity Management.</strong>
+<strong>Figura 42. Bounded Context Canvas de Connectivity Management.</strong>
 
 </p>
 
@@ -3792,7 +3828,7 @@ Clasificado como <strong>Supporting Domain</strong>, gestiona el inventario de d
 
 <p align="center">
 
-<strong>Figura 38. Bounded Context Canvas de Device Management.</strong>
+<strong>Figura 43. Bounded Context Canvas de Device Management.</strong>
 
 </p>
 
@@ -3808,7 +3844,7 @@ Clasificado como <strong>Supporting Domain</strong>, administra las edificacione
 
 <p align="center">
 
-<strong>Figura 39. Bounded Context Canvas de Building Management.</strong>
+<strong>Figura 44. Bounded Context Canvas de Building Management.</strong>
 
 </p>
 
@@ -3824,7 +3860,7 @@ Clasificado como <strong>Supporting Domain</strong>, administra la información 
 
 <p align="center">
 
-<strong>Figura 40. Bounded Context Canvas de User Management.</strong>
+<strong>Figura 45. Bounded Context Canvas de User Management.</strong>
 
 </p>
 
@@ -3840,7 +3876,7 @@ Clasificado como <strong>Supporting Domain</strong>, gestiona las suscripciones 
 
 <p align="center">
 
-<strong>Figura 41. Bounded Context Canvas de Subscriptions.</strong>
+<strong>Figura 46. Bounded Context Canvas de Subscriptions.</strong>
 
 </p>
 
@@ -3856,7 +3892,7 @@ Clasificado como <strong>Generic Domain</strong>, gestiona la identidad, autenti
 
 <p align="center">
 
-<strong>Figura 42. Bounded Context Canvas de Identity and Access Management.</strong>
+<strong>Figura 47. Bounded Context Canvas de Identity and Access Management.</strong>
 
 </p>
 
@@ -3886,7 +3922,7 @@ Esta alternativa mantiene los diez contextos independientes, con intercambios di
 
 <p align="center">
 
-<strong>Figura 43. Context Mapping - Opción 1: Separación de los Bounded Contexts.</strong>
+<strong>Figura 48. Context Mapping - Opción 1: Separación de los Bounded Contexts.</strong>
 
 </p>
 
@@ -3902,7 +3938,7 @@ Esta alternativa agrupa <strong>Device Management</strong> y <strong>Connectivit
 
 <p align="center">
 
-<strong>Figura 44. Context Mapping - Opción 2: Consolidación de Device y Connectivity Management.</strong>
+<strong>Figura 49. Context Mapping - Opción 2: Consolidación de Device y Connectivity Management.</strong>
 
 </p>
 
@@ -3924,7 +3960,7 @@ Las colaboraciones previstas entre <strong>Connectivity Management</strong>, <st
 
 <p align="center">
 
-<strong>Figura 45. Context Mapping - Opción 3: Bounded Contexts con contratos explícitos.</strong>
+<strong>Figura 50. Context Mapping - Opción 3: Bounded Contexts con contratos explícitos.</strong>
 
 </p>
 
@@ -3954,7 +3990,7 @@ El System Landscape Diagram muestra el ecosistema de software en el que particip
 ![ResQ Software Architecture System Landscape Diagram](assets/images/chapter-04-solution-software-design/resq-software-architecture-system-landscape-diagram.png)
 
 <p align="center">
-  <strong>Figura 45. ResQ Software Architecture System Landscape Diagram.</strong>
+  <strong>Figura 51. ResQ Software Architecture System Landscape Diagram.</strong>
 </p>
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
@@ -3966,7 +4002,7 @@ El diagrama de contexto ubica a ResQ como un único sistema y muestra con quién
 ![ResQ System Context Diagram](assets/images/chapter-04-solution-software-design/c4/resq-system-context-diagram.png)
 
 <p align="center">
-  <strong>Figura 46. ResQ System Context Diagram.</strong>
+  <strong>Figura 52. ResQ System Context Diagram.</strong>
 </p>
 
 #### 4.1.3.3. Software Architecture Container Level Diagrams
@@ -3978,7 +4014,7 @@ El diagrama de contenedores descompone ResQ en sus unidades desplegables, agrupa
 ![ResQ Container Diagram por capas](assets/images/chapter-04-solution-software-design/c4/resq-container-diagram.png)
 
 <p align="center">
-  <strong>Figura 47. ResQ Container Diagram organizado por capas.</strong>
+  <strong>Figura 53. ResQ Container Diagram organizado por capas.</strong>
 </p>
 
 | Capa | Contenedor | Tecnología | Responsabilidad |
@@ -4003,7 +4039,7 @@ La vista dinámica recorre, sobre los mismos contenedores, el escenario principa
 ![ResQ Container Dynamic Diagram](assets/images/chapter-04-solution-software-design/c4/resq-container-dynamic-diagram-alert.png)
 
 <p align="center">
-  <strong>Figura 48. ResQ Container Dynamic Diagram: detección de un riesgo y notificación de la alerta.</strong>
+  <strong>Figura 54. ResQ Container Dynamic Diagram: detección de un riesgo y notificación de la alerta.</strong>
 </p>
 
 ##### Sequence Diagram: detección de gas, alerta y autorización de la respuesta
@@ -4015,7 +4051,7 @@ El diagrama de secuencia detalla el mismo escenario con los mensajes y endpoints
 ![ResQ Sequence Diagram](assets/images/chapter-04-solution-software-design/c4/resq-sequence-gas-alert.png)
 
 <p align="center">
-  <strong>Figura 49. ResQ Sequence Diagram: detección de gas, alerta y autorización de la respuesta.</strong>
+  <strong>Figura 55. ResQ Sequence Diagram: detección de gas, alerta y autorización de la respuesta.</strong>
 </p>
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
@@ -4027,7 +4063,7 @@ El diagrama de despliegue ubica cada contenedor en su nodo de ejecución en el e
 ![ResQ Deployment Diagram](assets/images/chapter-04-solution-software-design/c4/resq-deployment-diagram.png)
 
 <p align="center">
-  <strong>Figura 50. ResQ Deployment Diagram.</strong>
+  <strong>Figura 56. ResQ Deployment Diagram.</strong>
 </p>
 
 <p align="justify">
@@ -4865,7 +4901,7 @@ Las solicitudes de asignación de roles también se procesan mediante la Applica
 ![Identity and Access Management Component Level Diagram](assets/images/chapter-04-solution-software-design/iam/iam-component-level-diagram.png)
 
 <p align="center">
-  <strong>Figura 49. Identity and Access Management Component Level Diagram.</strong>
+  <strong>Figura 57. Identity and Access Management Component Level Diagram.</strong>
 </p>
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
@@ -4971,7 +5007,7 @@ organizationId y userId se representan como identificadores externos en lugar de
 ![Identity and Access Management Domain Layer Class Diagram](assets/images/chapter-04-solution-software-design/iam/iam-domain-layer-class-diagram.png)
 
 <p align="center">
-  <strong>Figura 50. Identity and Access Management Domain Layer Class Diagram.</strong>
+  <strong>Figura 58. Identity and Access Management Domain Layer Class Diagram.</strong>
 </p>
 
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
@@ -5115,7 +5151,7 @@ El Database Design Diagram final debe identificar:
 ![Identity and Access Management Database Design Diagram](assets/images/chapter-04-solution-software-design/iam/iam-database-design-diagram.png)
 
 <p align="center">
-  <strong>Figura 51. Identity and Access Management Database Design Diagram.</strong>
+  <strong>Figura 59. Identity and Access Management Database Design Diagram.</strong>
 </p>
 
 ### 4.2.2. Bounded Context: Risk Detection
@@ -6277,7 +6313,7 @@ El diagrama C4 final debe mostrar la tecnología Cloud concreta una vez que el e
 ![Risk Detection Cloud Component Level Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-cloud-component-level-diagram.png)
 
 <p align="center">
-  <strong>Figura 52. Risk Detection Cloud Component Level Diagram.</strong>
+  <strong>Figura 60. Risk Detection Cloud Component Level Diagram.</strong>
 </p>
 
 ##### Risk Detection — ResQ Edge Service Component Diagram
@@ -6354,7 +6390,7 @@ La implementación Edge debe utilizar la tecnología establecida por el enunciad
 ![Risk Detection Edge Component Level Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-edge-component-level-diagram.png)
 
 <p align="center">
-  <strong>Figura 53. Risk Detection Edge Component Level Diagram.</strong>
+  <strong>Figura 61. Risk Detection Edge Component Level Diagram.</strong>
 </p>
 
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
@@ -6502,7 +6538,7 @@ Sus identificadores pueden aparecer como referencias externas cuando el proceso 
  ![Risk Detection Domain Layer Class Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-domain-layer-class-diagram.png)
 
 <p align="center">
-  <strong>Figura 54. Risk Detection Domain Layer Class Diagram.</strong>
+  <strong>Figura 62. Risk Detection Domain Layer Class Diagram.</strong>
 </p>
 
 ##### 4.2.2.6.2. Bounded Context Database Design Diagram
@@ -6696,7 +6732,7 @@ No debe introducirse ninguna tabla de base de datos para Alert, Incident, Device
 ![Risk Detection Database Design Diagram](assets/images/chapter-04-solution-software-design/risk-detection/risk-detection-database-design-diagram.png)
 
 <p align="center">
-  <strong>Figura 55. Risk Detection Database Design Diagram.</strong>
+  <strong>Figura 63. Risk Detection Database Design Diagram.</strong>
 </p>
 
 ### 4.2.3. Bounded Context: Alert & Response Management
@@ -7081,6 +7117,10 @@ El diagrama muestra los componentes de Alert & Response Management dentro de la 
 
 ![Alert & Response Management Cloud Component Level Diagram](assets/images/chapter-04-solution-software-design/alert-response-management/alert-response-management-cloud-component-level-diagram.png)
 
+<p align="center">
+  <strong>Figura 64. Alert & Response Management Cloud Component Level Diagram.</strong>
+</p>
+
 
 
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
@@ -7093,6 +7133,10 @@ El diagrama muestra los dos agregados del contexto. <code>Alert</code> compone u
 
 ![Alert & Response Management Domain Layer Class Diagram](assets/images/chapter-04-solution-software-design/alert-response-management/alert-response-management-domain-layer-class-diagram.png)
 
+<p align="center">
+  <strong>Figura 65. Alert & Response Management Domain Layer Class Diagram.</strong>
+</p>
+
 
 
 ##### 4.2.3.6.2. Bounded Context Database Design Diagram
@@ -7103,6 +7147,10 @@ La persistencia usa tres tablas en la base de datos MySQL de la ResQ Cloud RESTf
 
 
 ![Alert & Response Management Database Design Diagram](assets/images/chapter-04-solution-software-design/alert-response-management/alert-response-management-database-design-diagram.png)
+
+<p align="center">
+  <strong>Figura 66. Alert & Response Management Database Design Diagram.</strong>
+</p>
 
 
 ### 4.2.4. Bounded Context: Building Management
@@ -7422,7 +7470,7 @@ La unicidad del código de zona se verifica dentro del agregado y mediante UNIQU
 ![Diagrama de componentes de Building Management](assets/images/chapter-04-solution-software-design/buildings-components.png)
 
 <p align="center">
-  <strong>Figura 60. Diagrama de componentes de Building Management.</strong>
+  <strong>Figura 67. Diagrama de componentes de Building Management.</strong>
 </p>
 
 <p align="justify">
@@ -7436,13 +7484,13 @@ Web y Mobile son contenedores separados y consumen BuildingsController. Los serv
 ![Diagrama UML del agregado Building](assets/images/chapter-04-solution-software-design/buildings-domain-model.png)
 
 <p align="center">
-  <strong>Figura 61. Diagrama UML del agregado Building.</strong>
+  <strong>Figura 68. Diagrama UML del agregado Building.</strong>
 </p>
 
 ![Diagrama UML de contratos de Building Management](assets/images/chapter-04-solution-software-design/buildings-domain-contracts.png)
 
 <p align="center">
-  <strong>Figura 62. Diagrama UML de contratos de Building Management.</strong>
+  <strong>Figura 69. Diagrama UML de contratos de Building Management.</strong>
 </p>
 
 <p align="justify">
@@ -7454,7 +7502,7 @@ Building es la raíz y contiene cero o más zonas, cada una perteneciente a una 
 ![Diagrama relacional de Building Management](assets/images/chapter-04-solution-software-design/buildings-database.png)
 
 <p align="center">
-  <strong>Figura 63. Diagrama relacional de Building Management.</strong>
+  <strong>Figura 70. Diagrama relacional de Building Management.</strong>
 </p>
 
 <p align="justify">
@@ -7761,7 +7809,7 @@ El repositorio no publica un método de eliminación física del agregado. Las c
 ![Diagrama de componentes de Devices](assets/images/chapter-04-solution-software-design/DevicesComponents.png)
 
 <p align="center">
-  <strong>Figura 64. Diagrama de componentes de Devices.</strong>
+  <strong>Figura 71. Diagrama de componentes de Devices.</strong>
 </p>
 
 #### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
@@ -7771,14 +7819,14 @@ El repositorio no publica un método de eliminación física del agregado. Las c
 ![Diagrama UML del agregado Device](assets/images/chapter-04-solution-software-design/devices-domain-model.png)
 
 <p align="center">
-  <strong>Figura 65. Diagrama UML del agregado Device.</strong>
+  <strong>Figura 72. Diagrama UML del agregado Device.</strong>
 </p>
 
 
 ![Diagrama UML de contratos de Devices](assets/images/chapter-04-solution-software-design/devices-domain-contracts.png)
 
 <p align="center">
-  <strong>Figura 66. Diagrama UML de contratos de Devices.</strong>
+  <strong>Figura 73. Diagrama UML de contratos de Devices.</strong>
 </p>
 
 ##### 4.2.5.6.2. Bounded Context Database Design Diagram
@@ -7786,7 +7834,7 @@ El repositorio no publica un método de eliminación física del agregado. Las c
 ![Diagrama relacional de Devices](assets/images/chapter-04-solution-software-design/devices-database.png)
 
 <p align="center">
-  <strong>Figura 67. Diagrama relacional de Devices.</strong>
+  <strong>Figura 74. Diagrama relacional de Devices.</strong>
 </p>
 
 <div style="page-break-before: always; break-before: page;"></div>
@@ -8666,7 +8714,7 @@ ResQ Cloud
 ![MonitoringEdgeComponentLevelDiagram](assets/images/chapter-04-solution-software-design/monitoring/MonitoringEdgeComponentLevelDiagram.png)
 
 <p align="center">
-  <strong>Figura 68. MonitoringEdgeComponentLevelDiagram.</strong>
+  <strong>Figura 75. MonitoringEdgeComponentLevelDiagram.</strong>
 </p>
 
 ##### Monitoring — ResQ Cloud RESTful API Component Diagram
@@ -8725,7 +8773,7 @@ Los eventos relevantes provenientes de Risk Detection ingresan mediante <code>Ri
 ![MonitoringCloudComponentLevelDiagram](assets/images/chapter-04-solution-software-design/monitoring/MonitoringCloudComponentLevelDiagrampng.png)
 
 <p align="center">
-  <strong>Figura 69. MonitoringCloudComponentLevelDiagram.</strong>
+  <strong>Figura 76. MonitoringCloudComponentLevelDiagram.</strong>
 </p>
 
 ---
@@ -8842,7 +8890,7 @@ El diagrama debe mostrar:
 ![MonitoringDomainLayerClassDiagram](assets/images/chapter-04-solution-software-design/monitoring/MonitoringDomainLayerClassDiagram.png)
 
 <p align="center">
-  <strong>Figura 70. MonitoringDomainLayerClassDiagram.</strong>
+  <strong>Figura 77. MonitoringDomainLayerClassDiagram.</strong>
 </p>
 
 ---
@@ -8989,7 +9037,7 @@ Estos conceptos continúan perteneciendo a sus respectivos Bounded Contexts.
 ![MonitoringDatabaseLayerClassDiagram](assets/images/chapter-04-solution-software-design/monitoring/MonitoringDatabaseDesignDiagram.png)
 
 <p align="center">
-  <strong>Figura 71. MonitoringDatabaseLayerClassDiagram.</strong>
+  <strong>Figura 78. MonitoringDatabaseLayerClassDiagram.</strong>
 </p>
 
 
@@ -9008,7 +9056,7 @@ Este Bounded Context atiende las necesidades de personalización y contacto del 
 Como se definió en la arquitectura de la solución, este contexto está estrictamente separado del Bounded Context Identity and Access Management (IAM). Mientras IAM se encarga de las credenciales, hashes, roles y tokens de sesión, el contexto User gestiona nombres, números de teléfono y configuraciones personales.
 </p>
 
-##### Responsabilidades Principales
+#### Responsabilidades Principales
 
 <p align="justify">
 Las principales responsabilidades de este Bounded Context son:
@@ -9024,7 +9072,7 @@ Las principales responsabilidades de este Bounded Context son:
 Los principales conceptos identificados para el Bounded Context User son <code>UserProfile</code>, <code>UserId</code>, <code>FullName</code>, <code>ContactInformation</code> y <code>UserPreferences</code>.
 </p>
 
-##### Diccionario de clases
+#### Diccionario de clases
 
 <p align="justify">
 La siguiente tabla resume las principales clases e interfaces que conforman el Bounded Context User.
@@ -9050,7 +9098,7 @@ La siguiente tabla resume las principales clases e interfaces que conforman el B
 
 ---
 
-### 4.2.7.1. Domain Layer
+#### 4.2.7.1. Domain Layer
 
 <p align="justify">
 La Domain Layer contiene la lógica centrada en la validez de la información personal. Se asegura de que los datos de contacto tengan formatos correctos y que las preferencias se mantengan dentro de los valores soportados por el sistema (ej. zonas horarias válidas). 
@@ -9085,7 +9133,7 @@ Un <code>UserProfile</code> es identificado de manera única por un <code>UserId
 * **Repositories (Interfaces):**
     * **`UserProfileRepository`:** Define la abstracción necesaria para recuperar y persistir agregados `UserProfile` sin acoplarse a tecnologías específicas.
 
-### 4.2.7.2. Interface Layer
+#### 4.2.7.2. Interface Layer
 
 <p align="justify">
 La Interface Layer proporciona los endpoints RESTful para que las aplicaciones móviles o web de ResQ consulten y modifiquen la información del usuario logueado.
@@ -9115,7 +9163,7 @@ Un <code>UserProfileController</code> recibe las solicitudes HTTP, extrae las id
 * **`PUT /api/v1/users/me/contact`:** Actualiza el número de teléfono y correo electrónico del usuario.
 * **`PATCH /api/v1/users/me/preferences`:** Modifica las preferencias de notificaciones y visualización de la plataforma.
 
-### 4.2.7.3. Application Layer
+#### 4.2.7.3. Application Layer
 
 <p align="justify">
 La Application Layer aplica el patrón CQRS a nivel lógico para separar de forma clara la lectura del perfil de las operaciones de modificación de datos.
@@ -9144,7 +9192,7 @@ Los componentes orquestadores se dividen según su responsabilidad de comandos o
 * **Query Handlers (Lectura):**
     * **`GetUserProfileQueryHandler`:** Proyecta la información recuperada directamente hacia DTOs limpios para optimizar la velocidad de carga en la interfaz de usuario.
 
-### 4.2.7.4. Infrastructure Layer
+#### 4.2.7.4. Infrastructure Layer
 
 <p align="justify">
 La Infrastructure Layer maneja la persistencia de los perfiles utilizando un ORM sobre una base de datos relacional, implementando los contratos definidos por el dominio.
@@ -9165,7 +9213,7 @@ La Infrastructure Layer maneja la persistencia de los perfiles utilizando un ORM
 * **`JpaUserProfileRepository`:** Implementación concreta de `UserProfileRepository` utilizando Spring Data JPA para abstraer las transacciones con la base de datos.
 * **`UserProfileEntity`:** Entidad de infraestructura mapeada a la tabla correspondiente en PostgreSQL. Mapea los Value Objects del dominio (como `FullName` y `ContactInformation`) a columnas de una misma tabla (patrón *Embedded*) para optimizar el rendimiento de acceso.
 
-### 4.2.7.5. Bounded Context Software Architecture Component Level Diagrams
+#### 4.2.7.5. Bounded Context Software Architecture Component Level Diagrams
 
 <p align="justify">
 El diagrama representa la arquitectura interna del User Bounded Context de ResQ, aplicando una separación por capas basada en Clean Architecture y DDD.
@@ -9194,10 +9242,10 @@ El diagrama representa la arquitectura interna del User Bounded Context de ResQ,
 ![User Component Level Diagrams](assets/images/chapter-04-solution-software-design/imagen5-user.png)
 
 <p align="center">
-  <strong>Figura 72. User Component Level Diagrams.</strong>
+  <strong>Figura 79. User Component Level Diagrams.</strong>
 </p>
 
-### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams
+#### 4.2.7.6. Bounded Context Software Architecture Code Level Diagrams
 <p align="justify">
 Esta sección detalla la estructura técnica e interna del Bounded Context. Se compone de dos representaciones visuales:
 </p>
@@ -9206,7 +9254,7 @@ Esta sección detalla la estructura técnica e interna del Bounded Context. Se c
 
 - Diagrama de Diseño de Base de Datos: Muestra el esquema de persistencia física, detallando las tablas, columnas y llaves (Entity-Relationship) utilizadas para almacenar la información del dominio.
 
-#### 4.2.7.6.1. Bounded Context Domain Layer Class Diagrams
+##### 4.2.7.6.1. Bounded Context Domain Layer Class Diagrams
 
 <p align="justify">
 El diagrama representa la estructura del perfil de usuario, agrupando su identidad, nombre, información de contacto y preferencias.
@@ -9217,10 +9265,10 @@ Esta organización permite encapsular los datos y comportamientos del dominio, m
 ![User Domain Layer Diagrams](assets/images/chapter-04-solution-software-design/imagen6-user.png)
 
 <p align="center">
-  <strong>Figura 73. User Domain Layer Diagrams.</strong>
+  <strong>Figura 80. User Domain Layer Diagrams.</strong>
 </p>
 
-#### 4.2.7.6.2. Bounded Context Database Design Diagram
+##### 4.2.7.6.2. Bounded Context Database Design Diagram
 
 <p align="justify">
 Propósito: Representa el esquema físico de persistencia (modelo relacional) diseñado para almacenar el estado de los agregados del Bounded Context <code>User</code>.
@@ -9233,7 +9281,7 @@ Propósito: Representa el esquema físico de persistencia (modelo relacional) di
 ![User Database Desing Diagram](assets/images/chapter-04-solution-software-design/imagen7-user.png)
 
 <p align="center">
-  <strong>Figura 74. User Database Desing Diagram.</strong>
+  <strong>Figura 81. User Database Desing Diagram.</strong>
 </p>
 
 ### 4.2.8. Bounded Context: Incident
@@ -9265,7 +9313,7 @@ Las principales responsabilidades de este Bounded Context son:
 Los principales conceptos identificados para el Bounded Context Incident son <strong>Incident</strong>, <strong>IncidentId</strong>, <strong>ZoneId</strong>, <strong>RiskType RiskLevel</strong>, <strong>IncidentStatus</strong> y <strong>AttendantId</strong>.
 </p>
 
-##### Diccionario de clases
+#### Diccionario de clases
 
 <p align="justify">
 La siguiente tabla resume las principales clases e interfaces que conforman el Bounded Context Incident.
@@ -9304,7 +9352,7 @@ Del mismo modo, almacena el <code>AttendantId</code> para indicar quién está a
 
 ---
 
-### 4.2.8.1. Domain Layer
+#### 4.2.8.1. Domain Layer
 
 <p align="justify">
 La Domain Layer encapsula la lógica de negocio central y las reglas para la gestión de incidentes, asegurando que las transiciones de estado sean válidas y coherentes con la realidad física de la emergencia.
@@ -9346,7 +9394,7 @@ Un <code>Incident</code> representa una emergencia detectada en una zona especí
 * **Repositories (Interfaces):**
     * **`IncidentRepository`:** Define los contratos para persistir y recuperar agregados `Incident`.
 
-### 4.2.8.2. Interface Layer
+#### 4.2.8.2. Interface Layer
 
 <p align="justify">
 La Interface Layer define los puntos de entrada al Bounded Context, exponiendo las capacidades de ResQ hacia las aplicaciones cliente (web o móvil) mediante una API RESTful.
@@ -9383,7 +9431,7 @@ Un <code>IncidentController</code> maneja las peticiones HTTP relacionadas con l
 * **`AssignIncidentCommandDTO`:** Payload con los datos del responsable asignado.
 * **`ResolveIncidentCommandDTO`:** Payload con el resumen o tipificación de la resolución.
 
-### 4.2.8.3. Application Layer
+#### 4.2.8.3. Application Layer
 
 <p align="justify">
 La Application Layer orquesta los flujos de trabajo delegando la ejecución a los objetos del dominio. Se implementa utilizando el patrón CQRS (Command Query Responsibility Segregation) a nivel lógico para separar las operaciones de lectura y escritura.
@@ -9413,7 +9461,7 @@ Los manejadores se dividen según su responsabilidad en comandos y consultas.
     * **`GetIncidentByIdQueryHandler`:** Recupera los detalles de un incidente específico.
     * **`GetHistoricalIncidentsQueryHandler`:** Ejecuta búsquedas paginadas y filtradas para la consulta de incidentes anteriores.
 
-### 4.2.8.4. Infrastructure Layer
+#### 4.2.8.4. Infrastructure Layer
 
 <p align="justify">
 La Infrastructure Layer implementa las interfaces definidas en las capas superiores, gestionando la persistencia en la base de datos y la comunicación externa con el bus de mensajes.
@@ -9423,7 +9471,7 @@ La Infrastructure Layer implementa las interfaces definidas en las capas superio
 Los componentes se dividen en mecanismos de persistencia y adaptadores dirigidos por eventos.
 </p>
 
-#### Infrastructure Components
+##### Infrastructure Components
 
 <p align="justify">
 <strong>Categoría:</strong> Infrastructure Services / Adapters.
@@ -9444,7 +9492,7 @@ Los componentes se dividen en mecanismos de persistencia y adaptadores dirigidos
 * **`KafkaIncidentEventPublisher`:** Implementación encargada de publicar los *Domain Events* hacia un tópico de Apache Kafka (e.g., `resq.incident.events`), facilitando la integración asíncrona con los contextos de Notificaciones o Analítica.
 * **`DetectionEventListener`:** Consumidor de Kafka que escucha activamente los eventos de riesgo crítico detectados en el Edge para instanciar automáticamente los incidentes en el sistema.
 
-### 4.2.8.5. Bounded Context Software Architecture Component Level Diagrams
+#### 4.2.8.5. Bounded Context Software Architecture Component Level Diagrams
 
  ##### Flujo Principal de Interacción
 
@@ -9465,7 +9513,7 @@ El flujo principal del Incident Bounded Context se desarrolla de manera secuenci
 ![Flujo Process Diagram](assets/images/chapter-04-solution-software-design/imagen2.png)
 
 <p align="center">
-  <strong>Figura 75. Flujo Process Diagram.</strong>
+  <strong>Figura 82. Flujo Process Diagram.</strong>
 </p>
 
 **Diagrama - Incident Component Level Diagram**
@@ -9487,11 +9535,11 @@ Las relaciones entre los componentes muestran cómo las solicitudes atraviesan l
 ![Incident Component Level Diagram](assets/images/chapter-04-solution-software-design/imagen1.png)
 
 <p align="center">
-  <strong>Figura 76. Incident Component Level Diagram.</strong>
+  <strong>Figura 83. Incident Component Level Diagram.</strong>
 </p>
 
 
-### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
+#### 4.2.8.6. Bounded Context Software Architecture Code Level Diagrams
 
 <p align="justify">
 Esta sección presenta los diagramas de nivel de código del Bounded Context de Incident Management de ResQ, detallando la estructura interna de sus principales elementos de software.
@@ -9503,7 +9551,7 @@ Esta sección presenta los diagramas de nivel de código del Bounded Context de 
 - Interface Layer: muestra los controladores responsables de exponer las funcionalidades del contexto.
 - Relaciones: permiten visualizar las dependencias entre clases, componentes y responsabilidades, facilitando la comprensión de la implementación del Bounded Context.
 
-#### 4.2.8.6.1. Bounded Context Domain Layer Class Diagrams
+##### 4.2.8.6.1. Bounded Context Domain Layer Class Diagrams
 
 <p align="justify">
 El siguiente diagrama de clases ilustra el modelo de dominio rico, destacando el Aggregate Root, sus Value Objects y métodos principales:
@@ -9518,10 +9566,10 @@ El siguiente diagrama de clases ilustra el modelo de dominio rico, destacando el
 ![Incident Layar Class Diagrams](assets/images/chapter-04-solution-software-design/imagen3.png)
 
 <p align="center">
-  <strong>Figura 77. Incident Layar Class Diagrams.</strong>
+  <strong>Figura 84. Incident Layar Class Diagrams.</strong>
 </p>
 
-#### 4.2.8.6.2. Bounded Context Database Design Diagram
+##### 4.2.8.6.2. Bounded Context Database Design Diagram
 
 <p align="justify">
 El diseño de la base de datos refleja la persistencia del estado de los incidentes, optimizado para almacenar el histórico y soportar las consultas de indicadores y secuencias:
@@ -9540,7 +9588,7 @@ Trazabilidad: esta estructura permite conservar una secuencia histórica de acci
 ![Incident Database Design Diagram](assets/images/chapter-04-solution-software-design/imagen4.png)
 
 <p align="center">
-  <strong>Figura 78. Incident Database Design Diagram.</strong>
+  <strong>Figura 85. Incident Database Design Diagram.</strong>
 </p>
 
 ### 4.2.9. Bounded Context: Connectivity Management
@@ -9720,7 +9768,7 @@ El propósito de este diagrama es proporcionar una visión clara y estructurada 
 ![Connectivity Management Diagram1](assets/diagram-sources/chapter-04-solution-software-design/Connectivity/Connectivity1.png)
 
 <p align="center">
-  <strong>Figura 79. Connectivity Management Diagram1.</strong>
+  <strong>Figura 86. Connectivity Management Diagram1.</strong>
 </p>
 <p align="justify">
 El <strong>Connectivity Management Bounded Context</strong> está compuesto por los siguientes módulos principales:
@@ -9758,7 +9806,7 @@ El diagrama de clases correspondiente a la <strong>Domain Layer</strong> del <st
 ![Connectivity Management Diagram2](assets/diagram-sources/chapter-04-solution-software-design/Connectivity/Connectivity2.png)
 
 <p align="center">
-  <strong>Figura 80. Connectivity Management Diagram2.</strong>
+  <strong>Figura 87. Connectivity Management Diagram2.</strong>
 </p>
 
 **Elementos principales del diagrama:**
@@ -9791,7 +9839,7 @@ El diseño de la base de datos para el <strong>Connectivity Management Bounded C
 ![Connectivity Management Diagram3](assets/diagram-sources/chapter-04-solution-software-design/Connectivity/Connectivity3.png)
 
 <p align="center">
-  <strong>Figura 81. Connectivity Management Diagram3.</strong>
+  <strong>Figura 88. Connectivity Management Diagram3.</strong>
 </p>
 
 **Este diseño incluye las siguientes tablas principales:**
@@ -10258,6 +10306,10 @@ Las operaciones de escritura atraviesan `SubscriptionCommandService`, mientras q
 
 ![SubscriptionsComponentLevelDiagram](./assets/images/chapter-04-solution-software-design/subscriptions/SubscriptionsComponentLevelDiagram.png)
 
+<p align="center">
+  <strong>Figura 89. SubscriptionsComponentLevelDiagram.</strong>
+</p>
+
 #### 4.2.10.6. Bounded Context Software Architecture Code Level Diagrams
 
 Los Code Level Diagrams representan con mayor detalle la estructura interna del Bounded Context Subscriptions.
@@ -10269,7 +10321,7 @@ Para este contexto se elaboran dos diagramas principales:
 
 A diferencia de otros Bounded Contexts, Subscriptions posee un modelo de dominio pequeño y concentrado en un único Aggregate Root.
 
-##### 4.2.10.6.1 Bounded Context Domain Layer Class Diagrams
+##### 4.2.10.6.1. Bounded Context Domain Layer Class Diagrams
 
 El Domain Layer Class Diagram debe representar los siguientes elementos.
 
@@ -10359,7 +10411,11 @@ El diagrama debe representar:
 
 ![SubscriptionsDomainLayerClassDiagram](./assets/images/chapter-04-solution-software-design/subscriptions/SubscriptionsDomainLayerClassDiagram.png)
 
-##### 4.2.10.6.2 Bounded Context Database Diagram
+<p align="center">
+  <strong>Figura 90. SubscriptionsDomainLayerClassDiagram.</strong>
+</p>
+
+##### 4.2.10.6.2. Bounded Context Database Diagram
 
 La persistencia de Subscriptions se concentra en una única estructura principal:
 
@@ -10418,6 +10474,10 @@ El identificador `SubscriptionId` se convierte a Guid para su almacenamiento, mi
 
 ![SubscriptionsDatabaseDesignDiagram](./assets/images/chapter-04-solution-software-design/subscriptions/SubscriptionsDatabaseDesignDiagram.png)
 
+<p align="center">
+  <strong>Figura 91. SubscriptionsDatabaseDesignDiagram.</strong>
+</p>
+
 # Capítulo V: Solution UI/UX Design
 
 ## 5.1. Style Guidelines.
@@ -10437,7 +10497,7 @@ Los valores documentados provienen de la implementación real. La Web Applicatio
 ![Mapa del sistema de diseño de ResQ](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-01-mapa-del-sistema.png)
 
 <p align="center">
-  <strong>Figura 80. Mapa del sistema de diseño de ResQ.</strong>
+  <strong>Figura 92. Mapa del sistema de diseño de ResQ.</strong>
 </p>
 
 ### 5.1.1. General Style Guidelines.
@@ -10488,7 +10548,7 @@ El logo combina un <strong>escudo</strong>, que representa protección, con tres
 ![Logo de ResQ: versiones, zona de protección y tamaños](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-02-logo.png)
 
 <p align="center">
-  <strong>Figura 81. Logo de ResQ: versiones, zona de protección y tamaños mínimos.</strong>
+  <strong>Figura 93. Logo de ResQ: versiones, zona de protección y tamaños mínimos.</strong>
 </p>
 
 | Versión | Composición | Uso |
@@ -10504,7 +10564,7 @@ La <strong>zona de protección</strong> equivale a la altura de la letra «Q» e
 ![Usos incorrectos del logo de ResQ](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-03-logo-usos-incorrectos.png)
 
 <p align="center">
-  <strong>Figura 82. Usos incorrectos del logo.</strong>
+  <strong>Figura 94. Usos incorrectos del logo.</strong>
 </p>
 
 <p align="justify">
@@ -10520,7 +10580,7 @@ La paleta tiene tres grupos con funciones distintas: los <strong>colores de marc
 ![Color de marca y neutros de ResQ](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-04-color.png)
 
 <p align="center">
-  <strong>Figura 83. Color de marca y neutros.</strong>
+  <strong>Figura 95. Color de marca y neutros.</strong>
 </p>
 
 | Token | Hex | Rol |
@@ -10564,7 +10624,7 @@ El lenguaje de severidad es la pieza que conecta todas las superficies. Cada niv
 ![Lenguaje de severidad de ResQ](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-05-lenguaje-de-severidad.png)
 
 <p align="center">
-  <strong>Figura 84. Lenguaje de severidad.</strong>
+  <strong>Figura 96. Lenguaje de severidad.</strong>
 </p>
 
 | Nivel | Sólido | Fondo | Texto | Ícono | Cuándo se usa |
@@ -10584,7 +10644,7 @@ ResQ usa una sola familia, <strong>Inter</strong>, en la Landing Page y en la We
 ![Tipografía de ResQ](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-06-tipografia.png)
 
 <p align="center">
-  <strong>Figura 85. Tipografía y escala tipográfica.</strong>
+  <strong>Figura 97. Tipografía y escala tipográfica.</strong>
 </p>
 
 | Estilo | Tamaño / interlínea | Peso | Uso |
@@ -10608,7 +10668,7 @@ La interfaz operativa es densa porque un responsable de seguridad necesita ver m
 ![Espacio, forma y elevación](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-07-espacio-forma-elevacion.png)
 
 <p align="center">
-  <strong>Figura 86. Espacio, forma y elevación.</strong>
+  <strong>Figura 98. Espacio, forma y elevación.</strong>
 </p>
 
 <p align="justify">
@@ -10631,7 +10691,7 @@ El espaciado parte de una <strong>base de 4 px</strong> (4, 8, 10, 12, 16, 20, 2
 ![Iconografía de ResQ](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-08-iconografia.png)
 
 <p align="center">
-  <strong>Figura 87. Iconografía.</strong>
+  <strong>Figura 99. Iconografía.</strong>
 </p>
 
 <p align="justify">
@@ -10674,7 +10734,7 @@ Esta sección corresponde a la capa de Superficies. Para mostrar cómo se conect
 ![Una alerta en el dispositivo, el SMS, la aplicación móvil y la aplicación web](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-09-una-alerta-cuatro-superficies.png)
 
 <p align="center">
-  <strong>Figura 88. Una alerta crítica en las cuatro superficies de ResQ.</strong>
+  <strong>Figura 100. Una alerta crítica en las cuatro superficies de ResQ.</strong>
 </p>
 
 <p align="justify">
@@ -10686,7 +10746,7 @@ Escenario: el sensor MQ-2 del Laboratorio 2 mide 1250 ppm de gas con un umbral d
 ![Estructura y comportamiento responsive de la Web Application](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-10-web-layout-responsive.png)
 
 <p align="center">
-  <strong>Figura 89. Web: estructura y puntos de quiebre.</strong>
+  <strong>Figura 101. Web: estructura y puntos de quiebre.</strong>
 </p>
 
 <p align="justify">
@@ -10703,7 +10763,7 @@ La Web Application se organiza en un <strong>shell</strong> fijo: barra lateral 
 ![Componentes y estados de la Web Application](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-11-web-componentes.png)
 
 <p align="center">
-  <strong>Figura 90. Web: componentes y estados.</strong>
+  <strong>Figura 102. Web: componentes y estados.</strong>
 </p>
 
 <p align="justify">
@@ -10715,7 +10775,7 @@ Los componentes comparten estados explícitos. El botón principal es azul `#157
 ![Disposición e interacción en Mobile](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-12-mobile.png)
 
 <p align="center">
-  <strong>Figura 91. Mobile: disposición e interacción.</strong>
+  <strong>Figura 103. Mobile: disposición e interacción.</strong>
 </p>
 
 <p align="justify">
@@ -10737,7 +10797,7 @@ La Mobile Application conserva la identidad, los tokens y el lenguaje de severid
 ![Interfaz OLED del dispositivo ResQ](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-13-iot-pantalla-oled.png)
 
 <p align="center">
-  <strong>Figura 92. IoT: interfaz de la pantalla OLED.</strong>
+  <strong>Figura 104. IoT: interfaz de la pantalla OLED.</strong>
 </p>
 
 <p align="justify">
@@ -10749,7 +10809,7 @@ El nodo del MVP usa una pantalla OLED SSD1306 de 0.96" (128 × 64 px, monocroma)
 ![Interfaz física del dispositivo ResQ](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-14-iot-interfaz-fisica.png)
 
 <p align="center">
-  <strong>Figura 93. IoT: patrones de luz y sonido y panel frontal.</strong>
+  <strong>Figura 105. IoT: patrones de luz y sonido y panel frontal.</strong>
 </p>
 
 <p align="justify">
@@ -10779,7 +10839,7 @@ En el panel frontal, la OLED queda a la altura de los ojos con el dispositivo mo
 | Idioma | La Web Application ofrece español e inglés mediante <code>LanguageService</code>; la preferencia se guarda para futuras sesiones y el dispositivo la recibe desde Device Management. |
 | Movimiento | Transiciones de 150 ms en hover y foco. Con `prefers-reduced-motion: reduce`, las animaciones se desactivan. En la interfaz, ninguna luz o animación parpadea más de tres veces por segundo. |
 
-### 5.2. Information Architecture
+## 5.2. Information Architecture
 
 <p align="justify">
 
@@ -11090,13 +11150,45 @@ La interfaz de suscripciones está integrada en Configuración y no dispone de u
 En esta sección representamos una estructura funcional preliminar que organiza los principales bloques de contenido sin detalles visuales para la plataforma ResQ. Su objetivo es definir la jerarquía informativa y el flujo de navegación del visitante, estructurando la propuesta de valor, beneficios, funcionamiento y opciones de contacto sin aplicar aún la línea gráfica final.
 
 ![LandingWireframe1](/assets/styles/LandingPage/LandingWireframe1.png)
+
+<p align="center">
+  <strong>Figura 106. LandingWireframe1.</strong>
+</p>
 ![LandingWireframe2](/assets/styles/LandingPage/LandingWireframe2.png)
+
+<p align="center">
+  <strong>Figura 107. LandingWireframe2.</strong>
+</p>
 ![LandingWireframe3](/assets/styles/LandingPage/LandingWireframe3.png)
+
+<p align="center">
+  <strong>Figura 108. LandingWireframe3.</strong>
+</p>
 ![LandingWireframe4](/assets/styles/LandingPage/LandingWireframe4.png)
+
+<p align="center">
+  <strong>Figura 109. LandingWireframe4.</strong>
+</p>
 ![LandingWireframe5](/assets/styles/LandingPage/LandingWireframe5.png)
+
+<p align="center">
+  <strong>Figura 110. LandingWireframe5.</strong>
+</p>
 ![LandingWireframe6](/assets/styles/LandingPage/LandingWireframe6.png)
+
+<p align="center">
+  <strong>Figura 111. LandingWireframe6.</strong>
+</p>
 ![LandingWireframe7](/assets/styles/LandingPage/LandingWireframe7.png)
+
+<p align="center">
+  <strong>Figura 112. LandingWireframe7.</strong>
+</p>
 ![LandingWireframe8](/assets/styles/LandingPage/LandingWireframe8.png)
+
+<p align="center">
+  <strong>Figura 113. LandingWireframe8.</strong>
+</p>
 
 
 ### 5.3.2. Landing Page Mock-up
@@ -11104,13 +11196,45 @@ En esta sección representamos una estructura funcional preliminar que organiza 
 El mockup de la landing page de ResQ muestra la versión visual refinada y final del diseño. El contenido está organizado de manera clara y profesional, destacando el valor principal de ResQ: permitir a los usuarios gestionar infraestructuras, detectar riesgos con sensores IoT y responder con confianza. Las secciones detallan el funcionamiento de la plataforma en la detección y respuesta, los beneficios centrados en la seguridad y el control, las características para edificios inteligentes, y los planes adaptados para administradores o empresas integradoras. Este mockup transmite una experiencia tecnológica, segura y confiable.
 
 ![LandingMockup1](/assets/styles/LandingPage/LandingMockup1.png)
+
+<p align="center">
+  <strong>Figura 114. LandingMockup1.</strong>
+</p>
 ![LandingMockup2](/assets/styles/LandingPage/LandingMockup2.png)
+
+<p align="center">
+  <strong>Figura 115. LandingMockup2.</strong>
+</p>
 ![LandingMockup3](/assets/styles/LandingPage/LandingMockup3.png)
+
+<p align="center">
+  <strong>Figura 116. LandingMockup3.</strong>
+</p>
 ![LandingMockup4](/assets/styles/LandingPage/LandingMockup4.png)
+
+<p align="center">
+  <strong>Figura 117. LandingMockup4.</strong>
+</p>
 ![LandingMockup5](/assets/styles/LandingPage/LandingMockup5.png)
+
+<p align="center">
+  <strong>Figura 118. LandingMockup5.</strong>
+</p>
 ![LandingMockup6](/assets/styles/LandingPage/LandingMockup6.png)
+
+<p align="center">
+  <strong>Figura 119. LandingMockup6.</strong>
+</p>
 ![LandingMockup7](/assets/styles/LandingPage/LandingMockup7.png)
+
+<p align="center">
+  <strong>Figura 120. LandingMockup7.</strong>
+</p>
 ![LandingMockup8](/assets/styles/LandingPage/LandingMockup8.png)
+
+<p align="center">
+  <strong>Figura 121. LandingMockup8.</strong>
+</p>
 
 
 ## 5.4. Applications UX/UI Design
@@ -11124,61 +11248,217 @@ Esta sección presenta los wireframes de la aplicación web y móvil de ResQ, or
 * **Iniciar Sesión**
 ![WireframeWeb1](/assets/styles/Web/WireframeWeb1.png)
 
+<p align="center">
+  <strong>Figura 122. WireframeWeb1.</strong>
+</p>
+
 * **Panel Principal**
 ![WireframeWeb21](/assets/styles/Web/WireframeWeb21.png)
+
+<p align="center">
+  <strong>Figura 123. WireframeWeb21.</strong>
+</p>
 ![WireframeWeb22](/assets/styles/Web/WireframeWeb22.png)
+
+<p align="center">
+  <strong>Figura 124. WireframeWeb22.</strong>
+</p>
 
 * **Edificios**
 ![WireframeWeb31](/assets/styles/Web/WireframeWeb31.png)
+
+<p align="center">
+  <strong>Figura 125. WireframeWeb31.</strong>
+</p>
 ![WireframeWeb32](/assets/styles/Web/WireframeWeb32.png)
+
+<p align="center">
+  <strong>Figura 126. WireframeWeb32.</strong>
+</p>
 ![WireframeWeb33](/assets/styles/Web/WireframeWeb33.png)
+
+<p align="center">
+  <strong>Figura 127. WireframeWeb33.</strong>
+</p>
 ![WireframeWeb34](/assets/styles/Web/WireframeWeb34.png)
+
+<p align="center">
+  <strong>Figura 128. WireframeWeb34.</strong>
+</p>
 ![WireframeWeb35](/assets/styles/Web/WireframeWeb35.png)
+
+<p align="center">
+  <strong>Figura 129. WireframeWeb35.</strong>
+</p>
 ![WireframeWeb36](/assets/styles/Web/WireframeWeb36.png)
+
+<p align="center">
+  <strong>Figura 130. WireframeWeb36.</strong>
+</p>
 ![WireframeWeb37](/assets/styles/Web/WireframeWeb37.png)
+
+<p align="center">
+  <strong>Figura 131. WireframeWeb37.</strong>
+</p>
 ![WireframeWeb38](/assets/styles/Web/WireframeWeb38.png)
+
+<p align="center">
+  <strong>Figura 132. WireframeWeb38.</strong>
+</p>
 ![WireframeWeb39](/assets/styles/Web/WireframeWeb39.png)
+
+<p align="center">
+  <strong>Figura 133. WireframeWeb39.</strong>
+</p>
 
 * **Monitoreo de Pisos**
 ![WireframeWeb41](/assets/styles/Web/WireframeWeb41.png)
+
+<p align="center">
+  <strong>Figura 134. WireframeWeb41.</strong>
+</p>
 ![WireframeWeb42](/assets/styles/Web/WireframeWeb42.png)
+
+<p align="center">
+  <strong>Figura 135. WireframeWeb42.</strong>
+</p>
 
 * **Espacios**
 ![WireframeWeb51](/assets/styles/Web/WireframeWeb51.png)
+
+<p align="center">
+  <strong>Figura 136. WireframeWeb51.</strong>
+</p>
 ![WireframeWeb52](/assets/styles/Web/WireframeWeb52.png)
+
+<p align="center">
+  <strong>Figura 137. WireframeWeb52.</strong>
+</p>
 ![WireframeWeb53](/assets/styles/Web/WireframeWeb53.png)
+
+<p align="center">
+  <strong>Figura 138. WireframeWeb53.</strong>
+</p>
 ![WireframeWeb54](/assets/styles/Web/WireframeWeb54.png)
+
+<p align="center">
+  <strong>Figura 139. WireframeWeb54.</strong>
+</p>
 ![WireframeWeb55](/assets/styles/Web/WireframeWeb55.png)
+
+<p align="center">
+  <strong>Figura 140. WireframeWeb55.</strong>
+</p>
 ![WireframeWeb56](/assets/styles/Web/WireframeWeb56.png)
+
+<p align="center">
+  <strong>Figura 141. WireframeWeb56.</strong>
+</p>
 ![WireframeWeb57](/assets/styles/Web/WireframeWeb57.png)
+
+<p align="center">
+  <strong>Figura 142. WireframeWeb57.</strong>
+</p>
 
 * **Dispositivos**
 ![WireframeWeb61](/assets/styles/Web/WireframeWeb61.png)
+
+<p align="center">
+  <strong>Figura 143. WireframeWeb61.</strong>
+</p>
 ![WireframeWeb62](/assets/styles/Web/WireframeWeb62.png)
+
+<p align="center">
+  <strong>Figura 144. WireframeWeb62.</strong>
+</p>
 ![WireframeWeb63](/assets/styles/Web/WireframeWeb63.png)
+
+<p align="center">
+  <strong>Figura 145. WireframeWeb63.</strong>
+</p>
 ![WireframeWeb64](/assets/styles/Web/WireframeWeb64.png)
+
+<p align="center">
+  <strong>Figura 146. WireframeWeb64.</strong>
+</p>
 ![WireframeWeb65](/assets/styles/Web/WireframeWeb65.png)
+
+<p align="center">
+  <strong>Figura 147. WireframeWeb65.</strong>
+</p>
 ![WireframeWeb66](/assets/styles/Web/WireframeWeb66.png)
+
+<p align="center">
+  <strong>Figura 148. WireframeWeb66.</strong>
+</p>
 
 * **Alertas**
 ![WireframeWeb71](/assets/styles/Web/WireframeWeb71.png)
+
+<p align="center">
+  <strong>Figura 149. WireframeWeb71.</strong>
+</p>
 ![WireframeWeb72](/assets/styles/Web/WireframeWeb72.png)
+
+<p align="center">
+  <strong>Figura 150. WireframeWeb72.</strong>
+</p>
 
 * **Incidentes**
 ![WireframeWeb81](/assets/styles/Web/WireframeWeb81.png)
+
+<p align="center">
+  <strong>Figura 151. WireframeWeb81.</strong>
+</p>
 ![WireframeWeb82](/assets/styles/Web/WireframeWeb82.png)
+
+<p align="center">
+  <strong>Figura 152. WireframeWeb82.</strong>
+</p>
 ![WireframeWeb83](/assets/styles/Web/WireframeWeb83.png)
+
+<p align="center">
+  <strong>Figura 153. WireframeWeb83.</strong>
+</p>
 ![WireframeWeb84](/assets/styles/Web/WireframeWeb84.png)
+
+<p align="center">
+  <strong>Figura 154. WireframeWeb84.</strong>
+</p>
 ![WireframeWeb85](/assets/styles/Web/WireframeWeb85.png)
+
+<p align="center">
+  <strong>Figura 155. WireframeWeb85.</strong>
+</p>
 ![WireframeWeb86](/assets/styles/Web/WireframeWeb86.png)
+
+<p align="center">
+  <strong>Figura 156. WireframeWeb86.</strong>
+</p>
 
 * **Configuración y Perfil**
 ![WireframeWeb91](/assets/styles/Web/WireframeWeb91.png)
+
+<p align="center">
+  <strong>Figura 157. WireframeWeb91.</strong>
+</p>
 ![WireframeWeb92](/assets/styles/Web/WireframeWeb92.png)
+
+<p align="center">
+  <strong>Figura 158. WireframeWeb92.</strong>
+</p>
 ![WireframeWeb93](/assets/styles/Web/WireframeWeb93.png)
+
+<p align="center">
+  <strong>Figura 159. WireframeWeb93.</strong>
+</p>
 
 * **Notificaciones**
 ![WireframeWebNotificaciones](/assets/styles/Web/WireframeWebNotificaciones.png)
+
+<p align="center">
+  <strong>Figura 160. WireframeWebNotificaciones.</strong>
+</p>
 
 
 **Versión Móvil**
@@ -11186,38 +11466,102 @@ Esta sección presenta los wireframes de la aplicación web y móvil de ResQ, or
 * **Iniciar Sesión**
 ![WireframeMobiel1](/assets/styles/Mobiel/WireframeMobiel1.png)
 
+<p align="center">
+  <strong>Figura 161. WireframeMobiel1.</strong>
+</p>
+
 * **Panel Principal**
 ![WireframeMobiel2](/assets/styles/Mobiel/WireframeMobiel2.png)
 
+<p align="center">
+  <strong>Figura 162. WireframeMobiel2.</strong>
+</p>
+
 * **Edificios**
 ![WireframeMobiel31](/assets/styles/Mobiel/WireframeMobiel31.png)
+
+<p align="center">
+  <strong>Figura 163. WireframeMobiel31.</strong>
+</p>
 ![WireframeMobiel32](/assets/styles/Mobiel/WireframeMobiel32.png)
+
+<p align="center">
+  <strong>Figura 164. WireframeMobiel32.</strong>
+</p>
 ![WireframeMobiel33](/assets/styles/Mobiel/WireframeMobiel33.png)
+
+<p align="center">
+  <strong>Figura 165. WireframeMobiel33.</strong>
+</p>
 
 * **Monitoreo de Pisos**
 ![WireframeMobiel4](/assets/styles/Mobiel/WireframeMobiel4.png)
 
+<p align="center">
+  <strong>Figura 166. WireframeMobiel4.</strong>
+</p>
+
 * **Espacios**
 ![WireframeMobiel51](/assets/styles/Mobiel/WireframeMobiel51.png)
+
+<p align="center">
+  <strong>Figura 167. WireframeMobiel51.</strong>
+</p>
 ![WireframeMobiel52](/assets/styles/Mobiel/WireframeMobiel52.png)
+
+<p align="center">
+  <strong>Figura 168. WireframeMobiel52.</strong>
+</p>
 
 * **Dispositivos**
 ![WireframeMobiel61](/assets/styles/Mobiel/WireframeMobiel61.png)
+
+<p align="center">
+  <strong>Figura 169. WireframeMobiel61.</strong>
+</p>
 ![WireframeMobiel62](/assets/styles/Mobiel/WireframeMobiel62.png)
+
+<p align="center">
+  <strong>Figura 170. WireframeMobiel62.</strong>
+</p>
 ![WireframeMobiel63](/assets/styles/Mobiel/WireframeMobiel63.png)
+
+<p align="center">
+  <strong>Figura 171. WireframeMobiel63.</strong>
+</p>
 
 * **Alertas**
 ![WireframeMobiel7](/assets/styles/Mobiel/WireframeMobiel7.png)
 
+<p align="center">
+  <strong>Figura 172. WireframeMobiel7.</strong>
+</p>
+
 * **Incidentes**
 ![WireframeMobiel81](/assets/styles/Mobiel/WireframeMobiel81.png)
+
+<p align="center">
+  <strong>Figura 173. WireframeMobiel81.</strong>
+</p>
 ![WireframeMobiel82](/assets/styles/Mobiel/WireframeMobiel82.png)
+
+<p align="center">
+  <strong>Figura 174. WireframeMobiel82.</strong>
+</p>
 
 * **Configuración y Perfil**
 ![WireframeMobiel9](/assets/styles/Mobiel/WireframeMobiel9.png)
 
+<p align="center">
+  <strong>Figura 175. WireframeMobiel9.</strong>
+</p>
+
 * **Notificaciones**
 ![WireframeMobielNotificaciones](/assets/styles/Mobiel/WireframeMobielNotificaciones.png)
+
+<p align="center">
+  <strong>Figura 176. WireframeMobielNotificaciones.</strong>
+</p>
 
 
 ### 5.4.2. Applications Wireflow Diagrams
@@ -11227,12 +11571,28 @@ Los diagramas de Wireflow desarrollados para ResQ permiten visualizar de manera 
 **Wireflows Web**
 
 ![WebbWireFlow1](/assets/styles/Flow/WebbWireFlow1.png)
+
+<p align="center">
+  <strong>Figura 177. WebbWireFlow1.</strong>
+</p>
 ![WebbWireFlow2](/assets/styles/Flow/WebbWireFlow2.png)
+
+<p align="center">
+  <strong>Figura 178. WebbWireFlow2.</strong>
+</p>
 
 **Wireflows Móvil**
 
 ![MobielWireFlow1](/assets/styles/Flow/MobielWireFlow1.png)
+
+<p align="center">
+  <strong>Figura 179. MobielWireFlow1.</strong>
+</p>
 ![MobielWireFlow2](/assets/styles/Flow/MobielWireFlow2.png)
+
+<p align="center">
+  <strong>Figura 180. MobielWireFlow2.</strong>
+</p>
 
 
 ### 5.4.3. Applications Mock-ups
@@ -11244,66 +11604,242 @@ Esta subsección presenta las pantallas a todo color y con alto nivel de fidelid
 * **Iniciar Sesión**
 ![MockupWeb1](/assets/styles/Web/MockupWeb1.png)
 
+<p align="center">
+  <strong>Figura 181. MockupWeb1.</strong>
+</p>
+
 * **Panel Principal**
 ![MockupWeb21](/assets/styles/Web/MockupWeb21.png)
+
+<p align="center">
+  <strong>Figura 182. MockupWeb21.</strong>
+</p>
 ![MockupWeb22](/assets/styles/Web/MockupWeb22.png)
+
+<p align="center">
+  <strong>Figura 183. MockupWeb22.</strong>
+</p>
 
 * **Edificios**
 ![MockupWeb31](/assets/styles/Web/MockupWeb31.png)
+
+<p align="center">
+  <strong>Figura 184. MockupWeb31.</strong>
+</p>
 ![MockupWeb32](/assets/styles/Web/MockupWeb32.png)
+
+<p align="center">
+  <strong>Figura 185. MockupWeb32.</strong>
+</p>
 ![MockupWeb33](/assets/styles/Web/MockupWeb33.png)
+
+<p align="center">
+  <strong>Figura 186. MockupWeb33.</strong>
+</p>
 ![MockupWeb34](/assets/styles/Web/MockupWeb34.png)
+
+<p align="center">
+  <strong>Figura 187. MockupWeb34.</strong>
+</p>
 ![MockupWeb35](/assets/styles/Web/MockupWeb35.png)
+
+<p align="center">
+  <strong>Figura 188. MockupWeb35.</strong>
+</p>
 ![MockupWeb36](/assets/styles/Web/MockupWeb36.png)
+
+<p align="center">
+  <strong>Figura 189. MockupWeb36.</strong>
+</p>
 ![MockupWeb37](/assets/styles/Web/MockupWeb37.png)
+
+<p align="center">
+  <strong>Figura 190. MockupWeb37.</strong>
+</p>
 ![MockupWeb38](/assets/styles/Web/MockupWeb38.png)
+
+<p align="center">
+  <strong>Figura 191. MockupWeb38.</strong>
+</p>
 ![MockupWeb39](/assets/styles/Web/MockupWeb39.png)
+
+<p align="center">
+  <strong>Figura 192. MockupWeb39.</strong>
+</p>
 ![MockupWeb310](/assets/styles/Web/MockupWeb310.png)
+
+<p align="center">
+  <strong>Figura 193. MockupWeb310.</strong>
+</p>
 
 * **Monitoreo de Pisos**
 ![MockupWeb41](/assets/styles/Web/MockupWeb41.png)
+
+<p align="center">
+  <strong>Figura 194. MockupWeb41.</strong>
+</p>
 ![MockupWeb42](/assets/styles/Web/MockupWeb42.png)
+
+<p align="center">
+  <strong>Figura 195. MockupWeb42.</strong>
+</p>
 
 * **Espacios**
 ![MockupWeb51](/assets/styles/Web/MockupWeb51.png)
+
+<p align="center">
+  <strong>Figura 196. MockupWeb51.</strong>
+</p>
 ![MockupWeb52](/assets/styles/Web/MockupWeb52.png)
+
+<p align="center">
+  <strong>Figura 197. MockupWeb52.</strong>
+</p>
 ![MockupWeb53](/assets/styles/Web/MockupWeb53.png)
+
+<p align="center">
+  <strong>Figura 198. MockupWeb53.</strong>
+</p>
 ![MockupWeb54](/assets/styles/Web/MockupWeb54.png)
+
+<p align="center">
+  <strong>Figura 199. MockupWeb54.</strong>
+</p>
 ![MockupWeb55](/assets/styles/Web/MockupWeb55.png)
+
+<p align="center">
+  <strong>Figura 200. MockupWeb55.</strong>
+</p>
 ![MockupWeb56](/assets/styles/Web/MockupWeb56.png)
+
+<p align="center">
+  <strong>Figura 201. MockupWeb56.</strong>
+</p>
 ![MockupWeb57](/assets/styles/Web/MockupWeb57.png)
+
+<p align="center">
+  <strong>Figura 202. MockupWeb57.</strong>
+</p>
 
 * **Dispositivos**
 ![MockupWeb61](/assets/styles/Web/MockupWeb61.png)
+
+<p align="center">
+  <strong>Figura 203. MockupWeb61.</strong>
+</p>
 ![MockupWeb62](/assets/styles/Web/MockupWeb62.png)
+
+<p align="center">
+  <strong>Figura 204. MockupWeb62.</strong>
+</p>
 ![MockupWeb63](/assets/styles/Web/MockupWeb63.png)
+
+<p align="center">
+  <strong>Figura 205. MockupWeb63.</strong>
+</p>
 ![MockupWeb64](/assets/styles/Web/MockupWeb64.png)
+
+<p align="center">
+  <strong>Figura 206. MockupWeb64.</strong>
+</p>
 ![MockupWeb65](/assets/styles/Web/MockupWeb65.png)
+
+<p align="center">
+  <strong>Figura 207. MockupWeb65.</strong>
+</p>
 ![MockupWeb66](/assets/styles/Web/MockupWeb66.png)
+
+<p align="center">
+  <strong>Figura 208. MockupWeb66.</strong>
+</p>
 ![MockupWeb67](/assets/styles/Web/MockupWeb67.png)
+
+<p align="center">
+  <strong>Figura 209. MockupWeb67.</strong>
+</p>
 ![MockupWeb68](/assets/styles/Web/MockupWeb68.png)
+
+<p align="center">
+  <strong>Figura 210. MockupWeb68.</strong>
+</p>
 ![MockupWeb69](/assets/styles/Web/MockupWeb69.png)
+
+<p align="center">
+  <strong>Figura 211. MockupWeb69.</strong>
+</p>
 
 * **Alertas**
 ![MockupWeb71](/assets/styles/Web/MockupWeb71.png)
+
+<p align="center">
+  <strong>Figura 212. MockupWeb71.</strong>
+</p>
 ![MockupWeb72](/assets/styles/Web/MockupWeb72.png)
+
+<p align="center">
+  <strong>Figura 213. MockupWeb72.</strong>
+</p>
 ![MockupWeb73](/assets/styles/Web/MockupWeb73.png)
+
+<p align="center">
+  <strong>Figura 214. MockupWeb73.</strong>
+</p>
 
 * **Incidentes**
 ![MockupWeb81](/assets/styles/Web/MockupWeb81.png)
+
+<p align="center">
+  <strong>Figura 215. MockupWeb81.</strong>
+</p>
 ![MockupWeb82](/assets/styles/Web/MockupWeb82.png)
+
+<p align="center">
+  <strong>Figura 216. MockupWeb82.</strong>
+</p>
 ![MockupWeb83](/assets/styles/Web/MockupWeb83.png)
+
+<p align="center">
+  <strong>Figura 217. MockupWeb83.</strong>
+</p>
 ![MockupWeb84](/assets/styles/Web/MockupWeb84.png)
+
+<p align="center">
+  <strong>Figura 218. MockupWeb84.</strong>
+</p>
 ![MockupWeb85](/assets/styles/Web/MockupWeb85.png)
+
+<p align="center">
+  <strong>Figura 219. MockupWeb85.</strong>
+</p>
 ![MockupWeb86](/assets/styles/Web/MockupWeb86.png)
+
+<p align="center">
+  <strong>Figura 220. MockupWeb86.</strong>
+</p>
 
 * **Configuración y Perfil**
 ![MockupWeb91](/assets/styles/Web/MockupWeb91.png)
+
+<p align="center">
+  <strong>Figura 221. MockupWeb91.</strong>
+</p>
 ![MockupWeb92](/assets/styles/Web/MockupWeb92.png)
+
+<p align="center">
+  <strong>Figura 222. MockupWeb92.</strong>
+</p>
 ![MockupWeb93](/assets/styles/Web/MockupWeb93.png)
+
+<p align="center">
+  <strong>Figura 223. MockupWeb93.</strong>
+</p>
 
 * **Notificaciones**
 ![MockupWebNotificaciones](/assets/styles/Web/MockupWebNotificaciones.png)
+
+<p align="center">
+  <strong>Figura 224. MockupWebNotificaciones.</strong>
+</p>
 
 
 **Versión Móvil**
@@ -11311,40 +11847,112 @@ Esta subsección presenta las pantallas a todo color y con alto nivel de fidelid
 * **Iniciar Sesión**
 ![MockupMobiel1](/assets/styles/Mobiel/MockupMobiel1.png)
 
+<p align="center">
+  <strong>Figura 225. MockupMobiel1.</strong>
+</p>
+
 * **Panel Principal**
 ![MockupMobiel2](/assets/styles/Mobiel/MockupMobiel2.png)
 
+<p align="center">
+  <strong>Figura 226. MockupMobiel2.</strong>
+</p>
+
 * **Edificios**
 ![MockupMobiel31](/assets/styles/Mobiel/MockupMobiel31.png)
+
+<p align="center">
+  <strong>Figura 227. MockupMobiel31.</strong>
+</p>
 ![MockupMobiel32](/assets/styles/Mobiel/MockupMobiel32.png)
+
+<p align="center">
+  <strong>Figura 228. MockupMobiel32.</strong>
+</p>
 ![MockupMobiel33](/assets/styles/Mobiel/MockupMobiel33.png)
+
+<p align="center">
+  <strong>Figura 229. MockupMobiel33.</strong>
+</p>
 ![MockupMobiel34](/assets/styles/Mobiel/MockupMobiel34.png)
+
+<p align="center">
+  <strong>Figura 230. MockupMobiel34.</strong>
+</p>
 
 * **Monitoreo de Pisos**
 ![MockupMobiel41](/assets/styles/Mobiel/MockupMobiel41.png)
+
+<p align="center">
+  <strong>Figura 231. MockupMobiel41.</strong>
+</p>
 ![MockupMobiel42](/assets/styles/Mobiel/MockupMobiel42.png)
+
+<p align="center">
+  <strong>Figura 232. MockupMobiel42.</strong>
+</p>
 
 * **Espacios**
 ![MockupMobiel51](/assets/styles/Mobiel/MockupMobiel51.png)
+
+<p align="center">
+  <strong>Figura 233. MockupMobiel51.</strong>
+</p>
 ![MockupMobiel52](/assets/styles/Mobiel/MockupMobiel52.png)
+
+<p align="center">
+  <strong>Figura 234. MockupMobiel52.</strong>
+</p>
 
 * **Dispositivos**
 ![MockupMobiel61](/assets/styles/Mobiel/MockupMobiel61.png)
+
+<p align="center">
+  <strong>Figura 235. MockupMobiel61.</strong>
+</p>
 ![MockupMobiel62](/assets/styles/Mobiel/MockupMobiel62.png)
+
+<p align="center">
+  <strong>Figura 236. MockupMobiel62.</strong>
+</p>
 ![MockupMobiel63](/assets/styles/Mobiel/MockupMobiel63.png)
+
+<p align="center">
+  <strong>Figura 237. MockupMobiel63.</strong>
+</p>
 
 * **Alertas**
 ![MockupMobiel7](/assets/styles/Mobiel/MockupMobiel7.png)
 
+<p align="center">
+  <strong>Figura 238. MockupMobiel7.</strong>
+</p>
+
 * **Incidentes**
 ![MockupMobiel81](/assets/styles/Mobiel/MockupMobiel81.png)
+
+<p align="center">
+  <strong>Figura 239. MockupMobiel81.</strong>
+</p>
 ![MockupMobiel82](/assets/styles/Mobiel/MockupMobiel82.png)
+
+<p align="center">
+  <strong>Figura 240. MockupMobiel82.</strong>
+</p>
 
 * **Configuración y Perfil**
 ![MockupMobiel9](/assets/styles/Mobiel/MockupMobiel9.png)
 
+<p align="center">
+  <strong>Figura 241. MockupMobiel9.</strong>
+</p>
+
 * **Notificaciones**
 ![MockupMobielNotificaciones](/assets/styles/Mobiel/MockupMobielNotificaciones.png)
+
+<p align="center">
+  <strong>Figura 242. MockupMobielNotificaciones.</strong>
+</p>
 
 
 ### 5.4.4. Applications User Flow Diagrams
@@ -11354,17 +11962,33 @@ Los diagramas de flujo de usuario (implementados con mockups de alta fidelidad) 
 **User Flows Web**
 
 ![WebbMockup1](/assets/styles/Flow/WebbMockup1.png)
+
+<p align="center">
+  <strong>Figura 243. WebbMockup1.</strong>
+</p>
 ![WebbMockup2](/assets/styles/Flow/WebbMockup2.png)
+
+<p align="center">
+  <strong>Figura 244. WebbMockup2.</strong>
+</p>
 
 **User Flows Móvil**
 
 ![MobielMockup1](/assets/styles/Flow/MobielMockup1.png)
+
+<p align="center">
+  <strong>Figura 245. MobielMockup1.</strong>
+</p>
 ![MobielMockup2](/assets/styles/Flow/MobielMockup2.png)
+
+<p align="center">
+  <strong>Figura 246. MobielMockup2.</strong>
+</p>
 
 
 figma general: https://www.figma.com/board/6hSDnnG4ZYpIm93EouQQ26/Untitled?node-id=0-1&p=f&t=O17tbcBxcn3rT7Tr-0
 
-## 5.5 Applications Prototyping
+## 5.5. Applications Prototyping
 
 Pruebas del prototipo funcionable para el apartado web y mobiel
 
@@ -11378,7 +12002,7 @@ La estrategia de SEO Tags and Meta Tags de ResQ diferencia el contenido público
 La inspección del código evidencia que ambas experiencias son Single Page Applications desarrolladas con Angular. La Landing Page dispone actualmente de las rutas <code>/</code>, <code>/privacy</code> y <code>/terms</code>; su archivo <code>index.html</code> define un título y una descripción globales, además de metadatos Open Graph y Twitter, pero no cambia estos valores por ruta ni incorpora <code>keywords</code> o <code>author</code>. Su servicio de idioma inicia actualmente en español, salvo que exista una preferencia previa en inglés, lo cual representa una diferencia frente al idioma predeterminado indicado por el Project Statement. La Web Application, en cambio, inicia en inglés cuando no existe una preferencia almacenada, aunque mantiene un título global <code>ResQ</code> y tampoco implementa metadata dinámica por vista. Por tanto, las tablas siguientes constituyen la especificación recomendada en inglés para una futura gestión dinámica de metadata y no una afirmación de que todos estos valores ya estén implementados.
 </p>
 
-#### Landing Page
+### Landing Page
 
 | Página/Sección | Title | Description | Keywords | Author |
 |---|---|---|---|---|
@@ -11386,7 +12010,7 @@ La inspección del código evidencia que ambas experiencias son Single Page Appl
 | Política de privacidad (<code>/privacy</code>) | Privacy Policy \| ResQ | Learn how the ResQ informational website handles visitor-submitted data, language preferences and links to external services. | ResQ privacy, contact data, website preferences, data protection | SecurityBear |
 | Términos y condiciones (<code>/terms</code>) | Terms and Conditions \| ResQ | Review the terms of use for the ResQ academic website and the informational scope of its monitoring, detection and response proposal. | ResQ terms of use, website conditions, SecurityBear academic project, responsible use | SecurityBear |
 
-#### Web Application
+### Web Application
 
 | Página/Vista | Title | Description | Keywords | Author |
 |---|---|---|---|---|
@@ -11404,7 +12028,7 @@ La inspección del código evidencia que ambas experiencias son Single Page Appl
 La implementación futura puede utilizar el Router de Angular para actualizar <code>title</code>, <code>description</code>, <code>keywords</code> y <code>author</code> al activarse cada ruta, conservando inglés como idioma predeterminado y español como alternativa seleccionable. Las vistas parametrizadas —por ejemplo, el detalle de una edificación, dispositivo, alerta o incidente— deben construir títulos a partir de identificadores o nombres ya obtenidos por la aplicación, sin exponer información sensible en metadata pública. Debido a que el alcance actual corresponde a experiencias web y no existe evidencia de una aplicación publicada en una tienda de aplicaciones, ASO no aplica a esta entrega.
 </p>
 
-### 5.6. IoT Device Design
+## 5.6. IoT Device Design
 
 <p align="justify">
 ResQ plantea una solución IoT escalable para monitorear condiciones de riesgo en edificaciones y coordinar respuestas aun cuando la conectividad con Cloud se encuentre limitada. Para el alcance de TB1 y Sprint 1, el equipo concentra esta propuesta en un MVP físico orientado a validar la integración base entre sensado, procesamiento local, visualización y alertamiento. Este alcance inicial no representa la totalidad de la solución futura: constituye una primera versión funcional y verificable sobre la cual podrán incorporarse progresivamente nuevos nodos, reglas e integraciones respaldadas por la arquitectura del Project Report.
@@ -11414,7 +12038,7 @@ ResQ plantea una solución IoT escalable para monitorear condiciones de riesgo e
 La Information Architecture del dispositivo prioriza una secuencia breve: captar la condición, procesarla, comunicar localmente el estado y activar una advertencia cuando corresponda. Esta jerarquía reduce la carga cognitiva durante una posible emergencia y mantiene coherencia con las Style Guidelines para IoT Device Physical Interfaces: información compacta en la OLED, código cromático rojo/verde y señal audible complementaria. El color no funciona como único canal, pues la pantalla y el buzzer refuerzan la interpretación del estado.
 </p>
 
-#### MVP Device Prototype
+### MVP Device Prototype
 
 <p align="justify">
 El MVP físico actual se centra en la detección de gas o humo mediante un sensor MQ-2, el procesamiento de la lectura en un ESP32 DevKit V1, la visualización local en una pantalla OLED SSD1306 y el alertamiento mediante un buzzer activo y dos LEDs. El montaje se realiza sobre protoboard, utiliza resistencias de 220 Ω para proteger los LEDs, jumpers para interconexión y un cable USB compatible con la placa para alimentación y programación.
@@ -11434,7 +12058,7 @@ El MVP físico actual se centra en la detección de gas o humo mediante un senso
 | Jumpers macho-hembra | 1 pack | 20 cm, idealmente 20–40 unidades | Conectar módulos cuando su disposición física requiera terminales hembra |
 | Cable USB para ESP32 | 1 | USB-C o Micro-USB según la placa adquirida | Alimentar, programar y depurar el ESP32 durante el desarrollo del MVP |
 
-##### Physical Design
+#### Physical Design
 
 <p align="justify">
 La disposición física propuesta mantiene visibles la OLED y los LEDs, ubica el MQ-2 sin obstrucciones que limiten su exposición al ambiente y separa el área de señalización del microcontrolador. La protoboard organiza el cableado y evita contactos conductores expuestos fuera del área de montaje. La siguiente imagen es una ilustración técnica provisional generada para representar de forma visual el inventario real del MVP; deberá reemplazarse por una fotografía o mockup validado del montaje definitivo cuando el equipo lo complete.
@@ -11443,14 +12067,14 @@ La disposición física propuesta mantiene visibles la OLED y los LEDs, ubica el
 ![ResQ IoT Device Physical Design](assets/images/chapter-05-solution-ui-ux-design/resq-iot-device-physical-design.png)
 
 <p align="center">
-  <strong>Figura 82. Diseño físico propuesto del dispositivo IoT ResQ para el MVP.</strong>
+  <strong>Figura 247. Diseño físico propuesto del dispositivo IoT ResQ para el MVP.</strong>
 </p>
 
 <p align="justify">
 La representación incluye el ESP32, el MQ-2, la OLED, el buzzer, ambos LEDs, las resistencias, los jumpers, la protoboard y la alimentación USB. Su finalidad es comunicar la organización conceptual del MVP; no constituye evidencia de ensamblaje, calibración o prueba eléctrica.
 </p>
 
-##### Circuit Design
+#### Circuit Design
 
 <p align="justify">
 El circuito conceptual utiliza el ESP32 como controlador central, recibe la señal del MQ-2, comunica la OLED mediante I2C y controla el buzzer y los LEDs. Las resistencias de 220 Ω se colocan en serie con los LEDs. La alimentación inicial proviene del cable USB compatible con el ESP32. El equipo todavía debe verificar en el montaje real los GPIO, los niveles eléctricos, la distribución de tierra, el consumo del MQ-2 y cualquier etapa adicional de acondicionamiento o protección requerida por las hojas técnicas.
@@ -11463,20 +12087,20 @@ La siguiente ilustración provisional adopta una presentación similar a una her
 ![ResQ IoT Circuit Design](assets/images/chapter-05-solution-ui-ux-design/resq-iot-circuit-design.png)
 
 <p align="center">
-  <strong>Figura 83. Diseño del circuito del dispositivo IoT ResQ para el MVP.</strong>
+  <strong>Figura 248. Diseño del circuito del dispositivo IoT ResQ para el MVP.</strong>
 </p>
 
 <p align="justify">
 <strong>Validación humana requerida:</strong> antes de reemplazar la Figura 83 por la exportación definitiva de Cirkit Designer, el equipo debe verificar y documentar los GPIO reales del ESP32, los niveles de tensión, la distribución de tierra, la alimentación del MQ-2, las conexiones I2C y las protecciones del circuito.
 </p>
 
-##### MVP Interaction Flow
+#### MVP Interaction Flow
 
 <p align="justify">
 En el MVP, el MQ-2 produce una señal que el ESP32 captura y procesa localmente. El resultado se presenta en la OLED y se traduce a una señal visual: verde para condición normal y roja para condición de alerta. Cuando la condición configurada lo requiere, el buzzer proporciona una advertencia audible. Este flujo permite validar que sensado, procesamiento y alertamiento local pueden coordinarse en un único nodo antes de incorporar la integración distribuida prevista por ResQ.
 </p>
 
-#### Projected Evolution of the IoT Device
+### Projected Evolution of the IoT Device
 
 <p align="justify">
 La evolución proyectada no consiste en presentar el MVP adquirido como la solución final, sino en incorporar este nodo dentro de la arquitectura distribuida ya definida. La Embedded Application capturará las mediciones; Monitoring las recibirá en Edge y podrá conservarlas temporalmente mediante el patrón store-and-forward; Risk Detection evaluará reglas locales; y Alert & Response Management coordinará las respuestas permitidas. Cuando exista conectividad, los servicios Cloud mantendrán el estado observable y la información histórica consumida por la Web Application.
@@ -11962,7 +12586,7 @@ Para gestionar el avance del Sprint se utiliza Trello, mediante las listas Produ
 <strong>Sprint 1 - Trello Board:</strong> <a href="https://trello.com/b/BYxUsTcA/resq-product-backlog">ResQ - Product Backlog</a>
 </p>
 
-**Figura 84. Sprint Backlog 1 de ResQ en Trello**
+**Figura 249. Sprint Backlog 1 de ResQ en Trello**
 
 ![Sprint Backlog 1](assets/images/chapter-06-product-implementation-validation-deployment/sprint-backlog-1.png)
 
@@ -12155,7 +12779,7 @@ El historial evidencia la construcción de la Frontend Web Application version 1
 Los commits comprendidos dentro del Sprint evidencian implementaciones para Building Management, Device Management, Incident Management y Alert Management, además de un commit integrador de módulos base y una configuración Docker multi-stage para compilar y ejecutar la API sobre .NET 10. Estas capacidades proporcionan servicios iniciales para el MVP digital. Aunque el Project Report diseña Monitoring, Risk Detection, Connectivity Management y servicios Edge, no se encontró en <code>resq-backend</code> una implementación equivalente de esos componentes; por ello, no se consideran concluidos en Sprint 1.
 </p>
 
-##### 6.2.1.5. Testing Suite Evidence for Sprint Review.
+#### 6.2.1.5. Testing Suite Evidence for Sprint Review.
 
 En esta sección se presenta el conjunto de pruebas automatizadas desarrolladas para validar los Web Services de ResQ. Las pruebas fueron organizadas en tres niveles: Unit Tests, Integration Tests y Acceptance Tests bajo el enfoque BDD, con el objetivo de verificar tanto las reglas de negocio internas como la persistencia y el comportamiento funcional de los principales servicios del backend.
 
@@ -12220,7 +12844,7 @@ Los archivos `.feature` utilizan Gherkin en español y las clases `BuildingManag
 | resq-backend` | feature/tests | 6d1f896e18b14bedcb046b5b2a5bd054dd882349 | feat(tests): add acceptance tests for Subscriptions bounded context. | Implement Acceptance tests for Subscriptions | 07/10/2026 |
 
 
-### 6.2.1.6. Execution Evidence for Sprint Review
+#### 6.2.1.6. Execution Evidence for Sprint Review
 
 <p align="justify">
 Durante el Sprint 1 de ResQ se desarrollaron y desplegaron las primeras versiones de los productos digitales que conforman el MVP de la solución. Las actividades de implementación estuvieron orientadas a proporcionar una experiencia inicial de interacción mediante el Landing Page, la Frontend Web Application y los Backend Web Services, así como avanzar en el diseño e integración del prototipo IoT para la detección de gas y humo.
@@ -12230,7 +12854,7 @@ Durante el Sprint 1 de ResQ se desarrollaron y desplegaron las primeras versione
 En esta sección se presentan las evidencias de ejecución correspondientes a los componentes desarrollados durante el Sprint, considerando las principales interfaces, funcionalidades y mecanismos de interacción disponibles. Estas evidencias permiten visualizar los resultados obtenidos y contrastarlos con el Sprint Goal establecido durante la planificación.
 </p>
 
-#### Landing Page
+##### Landing Page
 
 <p align="justify">
 Durante el Sprint 1 se implementó la primera versión del Landing Page de ResQ utilizando Angular, TypeScript, HTML y SCSS. Este producto digital tiene como propósito comunicar la propuesta de valor de la solución y presentar sus principales beneficios a los segmentos objetivo.
@@ -12259,11 +12883,11 @@ La implementación también considera una experiencia visual consistente con la 
 <strong>Landing Page desplegado:</strong> <a href="https://upc-1asi0572-202620-16518-resq.github.io/resq-landing-page/">ResQ - Landing Page</a>
 </p>
 
-**Figura 85. Vista principal del Landing Page de ResQ**
+**Figura 250. Vista principal del Landing Page de ResQ**
 
 ![Landing Page - Main View](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/landing-main.png)
 
-**Figura 86. Sección de beneficios del Landing Page**
+**Figura 251. Sección de beneficios del Landing Page**
 
 ![Landing Page - Benefits](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/landing-benefits.png)
 
@@ -12271,7 +12895,7 @@ La implementación también considera una experiencia visual consistente con la 
 Las vistas del Landing Page evidencian la implementación de una experiencia orientada a comunicar la propuesta del producto y facilitar que los visitantes conozcan las funcionalidades ofrecidas por ResQ.
 </p>
 
-#### Frontend Web Application
+##### Frontend Web Application
 
 <p align="justify">
 La primera versión de la Frontend Web Application fue desarrollada utilizando Angular, TypeScript, Angular Material y SCSS. Su implementación permite representar los principales procesos relacionados con el monitoreo de edificaciones, la administración de dispositivos, la visualización de condiciones de riesgo y la gestión de alertas.
@@ -12304,7 +12928,7 @@ Por ello, las evidencias de visualización representan las capacidades implement
 <strong>Frontend Web Application desplegada:</strong> <a href="https://resq-frontend.ffaaliceht2003.workers.dev/login">ResQ - Web Application</a>
 </p>
 
-**Figura 87. Vista de inicio de sesión de ResQ**
+**Figura 252. Vista de inicio de sesión de ResQ**
 
 ![Frontend - Login](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/frontend-login.png)
 
@@ -12312,7 +12936,7 @@ Por ello, las evidencias de visualización representan las capacidades implement
 La interfaz de autenticación permite presentar el punto de acceso a las funcionalidades de la aplicación y forma parte de las capacidades relacionadas con Identity and Access Management.
 </p>
 
-**Figura 88. Dashboard principal de monitoreo**
+**Figura 253. Dashboard principal de monitoreo**
 
 ![Frontend - Dashboard](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/frontend-dashboard.png)
 
@@ -12320,7 +12944,7 @@ La interfaz de autenticación permite presentar el punto de acceso a las funcion
 El Dashboard permite visualizar información general relacionada con las edificaciones y sus condiciones de supervisión, proporcionando una vista centralizada de los datos presentados por el sistema.
 </p>
 
-**Figura 89. Administración de edificaciones**
+**Figura 254. Administración de edificaciones**
 
 ![Frontend - Buildings](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/frontend-buildings.png)
 
@@ -12328,7 +12952,7 @@ El Dashboard permite visualizar información general relacionada con las edifica
 Las interfaces de Building Management permiten representar las funcionalidades relacionadas con la consulta y administración de edificaciones, así como la organización de sus zonas.
 </p>
 
-**Figura 90. Administración de dispositivos**
+**Figura 255. Administración de dispositivos**
 
 ![Frontend - Devices](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/frontend-devices.png)
 
@@ -12336,7 +12960,7 @@ Las interfaces de Building Management permiten representar las funcionalidades r
 La sección de Device Management proporciona una interfaz para consultar y administrar los dispositivos considerados dentro de la solución, incluyendo su relación con las edificaciones y zonas correspondientes.
 </p>
 
-**Figura 91. Centro de alertas de ResQ**
+**Figura 256. Centro de alertas de ResQ**
 
 ![Frontend - Alerts](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/frontend-alerts.png)
 
@@ -12348,7 +12972,7 @@ El centro de alertas permite visualizar información contextual sobre eventos y 
 En conjunto, las interfaces desarrolladas permiten demostrar los principales recorridos de navegación del MVP y proporcionan una base para continuar con la integración de servicios, el procesamiento de información IoT y la validación de las funcionalidades durante los siguientes Sprints.
 </p>
 
-#### Backend Web Services
+##### Backend Web Services
 
 <p align="justify">
 Durante el Sprint 1 se implementaron servicios RESTful utilizando C#, ASP.NET Core y Entity Framework Core, considerando MySQL como tecnología de persistencia.
@@ -12376,7 +13000,7 @@ Los servicios desarrollados utilizan endpoints RESTful y mecanismos de documenta
 <strong>Backend Web Services:</strong> <a href="https://resq-api-79xy.onrender.com/swagger/index.html">ResQ - Swagger UI</a>
 </p>
 
-**Figura 92. Documentación de servicios RESTful mediante Swagger**
+**Figura 257. Documentación de servicios RESTful mediante Swagger**
 
 ![Backend - Swagger](assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq1.png)
 
@@ -12392,7 +13016,7 @@ Esta evidencia complementa las interfaces de la Web Application al mostrar los s
 La disponibilidad de estos endpoints constituye un avance en la implementación de la arquitectura de ResQ. Sin embargo, la ejecución individual de los servicios no implica necesariamente que todos los flujos de integración entre Frontend, Backend y dispositivos IoT hayan sido completados.
 </p>
 
-#### IoT Prototype
+##### IoT Prototype
 
 <p align="justify">
 Como parte del Sprint 1 de ResQ, se contempla el diseño y desarrollo de un prototipo IoT orientado a la detección local de condiciones de riesgo relacionadas con la presencia de gas y humo en edificaciones. Para ello, se propone utilizar un ESP32 como unidad principal de procesamiento, un sensor MQ-2 para la adquisición de mediciones y diferentes componentes de visualización y señalización.
@@ -12412,7 +13036,7 @@ El prototipo considera los siguientes componentes:
 Para representar la integración de estos componentes, se utiliza la herramienta Cirkit Designer, que permite elaborar el esquema electrónico del prototipo y visualizar las conexiones entre el ESP32, el sensor MQ-2 y los dispositivos de salida.
 </p>
 
-**Figura 93. Diseño del circuito electrónico del prototipo IoT de ResQ en Cirkit Designer**
+**Figura 258. Diseño del circuito electrónico del prototipo IoT de ResQ en Cirkit Designer**
 
 ![Diseño del circuito IoT de ResQ](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/iot-circuit.png)
 
@@ -12432,7 +13056,7 @@ Estas actividades se encuentran alineadas con las Technical Stories TS01 - Captu
 El diseño elaborado en Cirkit Designer constituye una evidencia del avance del prototipo IoT durante el Sprint 1, al representar la integración propuesta entre el sensor MQ-2, el ESP32 y los dispositivos de visualización y alerta. Este entregable establece una base para las siguientes actividades de implementación, integración y validación del sistema, permitiendo continuar con el desarrollo progresivo de las capacidades de detección y respuesta de ResQ.
 </p>
 
-#### Video de ejecución del Sprint 1
+##### Video de ejecución del Sprint 1
 
 <p align="justify">
 Como complemento de las capturas presentadas, se contempla una demostración de ejecución del Sprint 1 que permita visualizar los principales recorridos de navegación y las funcionalidades implementadas en los productos digitales de ResQ.
@@ -12450,7 +13074,7 @@ La demostración comprende los siguientes aspectos:
 6. Revisión de los endpoints disponibles mediante Swagger/OpenAPI.
 7. Presentación del diseño y avance del prototipo IoT, diferenciando los componentes diseñados de aquellos cuya ejecución física ha sido verificada.
 
-**Figura 94. Vista de presentación del video de ejecución del Sprint 1**
+**Figura 259. Vista de presentación del video de ejecución del Sprint 1**
 
 ![Video de ejecución del Sprint 1 de ResQ](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/sprint1-video.png)
 
@@ -12523,12 +13147,24 @@ Backend repository: [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-back
 
 <p align="center">
   <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq1.png" alt="Swagger ResQ API - evidencia 1" width="70%">
+  <br>
+  <strong>Figura 260. Swagger ResQ API - evidencia 1.</strong>
+  <br>
   <br><br>
   <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq2.png" alt="Swagger ResQ API - evidencia 2" width="70%">
+  <br>
+  <strong>Figura 261. Swagger ResQ API - evidencia 2.</strong>
+  <br>
   <br><br>
   <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq3.png" alt="Swagger ResQ API - evidencia 3" width="70%">
+  <br>
+  <strong>Figura 262. Swagger ResQ API - evidencia 3.</strong>
+  <br>
   <br><br>
   <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq4.png" alt="Swagger ResQ API - evidencia 4" width="70%">
+  <br>
+  <strong>Figura 263. Swagger ResQ API - evidencia 4.</strong>
+  <br>
 </p>
 
 #### 6.2.1.8. Software Deployment Evidence for Sprint Review.
@@ -12574,7 +13210,7 @@ En el repositorio correspondiente al Landing Page, la información registrada en
 </p>
 
 <p align="center">
-  <em>Figura. Analítica de contribuciones de los integrantes en el repositorio del Landing Page durante el Sprint 1.</em>
+  <em>Figura 264. Analítica de contribuciones de los integrantes en el repositorio del Landing Page durante el Sprint 1.</em>
 </p>
 
 <p align="center">
@@ -12582,7 +13218,7 @@ En el repositorio correspondiente al Landing Page, la información registrada en
 </p>
 
 <p align="center">
-  <em>Figura. Historial de commits realizados en el repositorio del Landing Page durante el Sprint 1.</em>
+  <em>Figura 265. Historial de commits realizados en el repositorio del Landing Page durante el Sprint 1.</em>
 </p>
 
 En el repositorio de la aplicación Frontend también se registran las contribuciones realizadas por los integrantes y la evolución de los cambios incorporados durante el Sprint.
@@ -12592,7 +13228,7 @@ En el repositorio de la aplicación Frontend también se registran las contribuc
 </p>
 
 <p align="center">
-  <em>Figura. Analítica de contribuciones de los integrantes en el repositorio de la aplicación Frontend durante el Sprint 1.</em>
+  <em>Figura 266. Analítica de contribuciones de los integrantes en el repositorio de la aplicación Frontend durante el Sprint 1.</em>
 </p>
 
 <p align="center">
@@ -12600,7 +13236,7 @@ En el repositorio de la aplicación Frontend también se registran las contribuc
 </p>
 
 <p align="center">
-  <em>Figura. Historial de commits realizados en el repositorio de la aplicación Frontend durante el Sprint 1.</em>
+  <em>Figura 267. Historial de commits realizados en el repositorio de la aplicación Frontend durante el Sprint 1.</em>
 </p>
 
 De manera similar, el repositorio correspondiente a los Web Services registra la actividad de los integrantes mediante sus contribuciones y commits, permitiendo realizar seguimiento al desarrollo realizado durante el Sprint.
@@ -12610,7 +13246,7 @@ De manera similar, el repositorio correspondiente a los Web Services registra la
 </p>
 
 <p align="center">
-  <em>Figura. Analítica de contribuciones de los integrantes en el repositorio de Web Services durante el Sprint 1.</em>
+  <em>Figura 268. Analítica de contribuciones de los integrantes en el repositorio de Web Services durante el Sprint 1.</em>
 </p>
 
 <p align="center">
@@ -12618,7 +13254,7 @@ De manera similar, el repositorio correspondiente a los Web Services registra la
 </p>
 
 <p align="center">
-  <em>Figura. Historial de commits realizados en el repositorio de Web Services durante el Sprint 1.</em>
+  <em>Figura 269. Historial de commits realizados en el repositorio de Web Services durante el Sprint 1.</em>
 </p>
 
 Adicionalmente, el repositorio utilizado para la elaboración del informe mantiene su propio historial de colaboración, permitiendo observar la participación de los integrantes en la construcción y actualización de la documentación del proyecto.
@@ -12628,7 +13264,7 @@ Adicionalmente, el repositorio utilizado para la elaboración del informe mantie
 </p>
 
 <p align="center">
-  <em>Figura. Analítica de contribuciones de los integrantes en el repositorio del Report.</em>
+  <em>Figura 270. Analítica de contribuciones de los integrantes en el repositorio del Report.</em>
 </p>
 
 <p align="center">
@@ -12636,7 +13272,7 @@ Adicionalmente, el repositorio utilizado para la elaboración del informe mantie
 </p>
 
 <p align="center">
-  <em>Figura. Historial de commits realizados en el repositorio del Report.</em>
+  <em>Figura 271. Historial de commits realizados en el repositorio del Report.</em>
 </p>
 
 A partir de los analíticos de colaboración y del historial de commits, se evidencia la participación de los integrantes del equipo en las actividades desarrolladas durante el Sprint 1. Los registros de GitHub permiten realizar seguimiento a las contribuciones realizadas sobre los diferentes repositorios y observar la evolución incremental de los cambios incorporados durante el desarrollo.
@@ -12647,7 +13283,7 @@ En conjunto, estas evidencias permiten sustentar el trabajo colaborativo realiza
 
 </div>
 
-## Conclusiones y recomendaciones
+# Conclusiones y recomendaciones
 
 <p align="justify">
 A partir del trabajo realizado durante AV1, se logró profundizar en la problemática asociada con la gestión de riesgos y emergencias en edificaciones y establecer una primera definición sustentada de la propuesta de ResQ. El desarrollo de los artefactos correspondientes a los Capítulos I, II, III y IV permitió mantener una relación progresiva entre la comprensión del problema, la investigación de los segmentos objetivo, la especificación de requisitos y las principales decisiones de diseño y arquitectura de la solución.
@@ -12764,7 +13400,7 @@ Instituto Nacional de Defensa Civil (INDECI). (2024). <em>Compendio Estadístico
 ![Video de exposición AV1](assets/images/general/collaboration/av1-sprint-review.png)
 
 <p align="center">
-  <strong>Figura 95. Video de exposición correspondiente a la entrega AV1.</strong>
+  <strong>Figura 272. Video de exposición correspondiente a la entrega AV1.</strong>
 </p>
 
 **URL:** [Video exposición AV1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQCm8NIQa-7hSJu5uKB_dQbpAf0R6cugKBeBCTA1hMliXKs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3OfZUl)
