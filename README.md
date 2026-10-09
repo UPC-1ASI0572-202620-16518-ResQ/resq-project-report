@@ -10779,186 +10779,309 @@ En el panel frontal, la OLED queda a la altura de los ojos con el dispositivo mo
 | Idioma | La Web Application ofrece español e inglés mediante <code>LanguageService</code>; la preferencia se guarda para futuras sesiones y el dispositivo la recibe desde Device Management. |
 | Movimiento | Transiciones de 150 ms en hover y foco. Con `prefers-reduced-motion: reduce`, las animaciones se desactivan. En la interfaz, ninguna luz o animación parpadea más de tres veces por segundo. |
 
-
- 
-### 5.2. Information Architecture.
+### 5.2. Information Architecture
 
 <p align="justify">
-La Information Architecture de ResQ define cómo se organizan, nombran, localizan y conectan los contenidos de la Landing Page y de la Web Application. Su propósito es que cada persona pueda reconocer el objetivo de la experiencia que utiliza, encontrar la información necesaria con el menor esfuerzo posible y comprender la relación entre las áreas de monitoreo, riesgos, alertas, dispositivos, edificaciones e incidentes. Para ello, la propuesta se estructura mediante <strong>Organization Systems</strong>, <strong>Labeling Systems</strong>, <strong>SEO Tags and Meta Tags</strong>, <strong>Searching Systems</strong> y <strong>Navigation Systems</strong>, desarrollados en las subsecciones 5.2.1–5.2.5.
+
+La arquitectura de información de ResQ define la organización, las etiquetas, las búsquedas y los recorridos de navegación de la Landing Page y la Web Application. La Landing Page comunica la propuesta de valor a propietarios y administradores de edificaciones y a empresas integradoras de automatización y gestión de edificios inteligentes. La Web Application organiza las funciones de consulta y gestión de edificios, pisos, espacios, dispositivos, monitoreo, alertas, incidentes y configuración de cuenta. Las decisiones se detallan mediante los Organization Systems, Labeling Systems, SEO Tags and Meta Tags, Searching Systems y Navigation Systems.
+
 </p>
 
 <p align="justify">
-La Landing Page y la Web Application responden a necesidades distintas. La Landing Page presenta el problema que aborda ResQ, comunica su propuesta de valor y diferencia los beneficios relevantes para propietarios o administradores de edificaciones y para empresas integradoras de automatización y gestión de edificios inteligentes. En cambio, la Web Application organiza información operacional para usuarios autenticados que necesitan supervisar edificaciones, zonas y dispositivos, interpretar alertas y riesgos, y dar seguimiento a incidentes. Esta separación evita mezclar contenido informativo y comercial con tareas de operación que requieren contexto, permisos y atención sostenida.
+
+En las vistas operativas se priorizan la ubicación, el estado de los dispositivos, las condiciones de riesgo y el seguimiento de alertas e incidentes. Los datos de monitoreo y conectividad se distinguen de los estados administrativos de los dispositivos, y las solicitudes de respuesta se diferencian de las acciones confirmadas. Esta organización mantiene la correspondencia entre la información presentada y las tareas disponibles en ResQ.
+
+</p>
+
+### 5.2.1. Organization Systems
+
+<p align="justify">
+
+ResQ utiliza organización jerárquica, secuencial y matricial según las tareas de consulta y gestión. Complementariamente, clasifica la información por tópicos, cronología, orden alfabético y audiencia.
+
+</p>
+
+#### Organización jerárquica
+
+<p align="justify">
+
+La Landing Page organiza su contenido en Valor, Beneficios, Cómo funciona, Planes, Sobre nosotros y Aliados, con información de Contacto y enlaces legales en el pie de página. La sección Planes diferencia las propuestas dirigidas a propietarios y administradores de edificaciones y a empresas integradoras, sin constituir un catálogo de precios dentro de esa página.
+
 </p>
 
 <p align="justify">
-En un sistema de monitoreo y gestión de emergencias, la jerarquía del contenido tiene consecuencias operativas. Por esta razón, ResQ prioriza el estado general, el tipo y nivel del riesgo, la ubicación afectada, la vigencia de las mediciones y las respuestas ejecutadas o pendientes de autorización. La información secundaria se desplaza hacia vistas de detalle, de modo que una persona responsable pueda reconocer primero aquello que requiere atención. Este criterio reduce la carga cognitiva, limita la competencia visual entre datos de diferente criticidad y favorece decisiones oportunas sin ocultar la trazabilidad necesaria para revisar un incidente.
+
+En la Web Application, el Dashboard presenta el resumen operacional y la navegación lateral permite acceder a Edificios, Monitoreo de pisos, Espacios, Dispositivos, Alertas, Incidentes y Configuración. Las pantallas de detalle amplían la información de cada elemento: desde Edificios se consultan sus pisos y el editor de planos; desde Dispositivos se accede a sus características, ubicación, lecturas y estado; y desde Incidentes se consulta el caso seleccionado. Configuración agrupa Perfil, Preferencias, Seguridad y Acceso, y Suscripción.
+
 </p>
+
+#### Organización secuencial
 
 <p align="justify">
-Los sistemas de organización establecen la agrupación de contenidos; los sistemas de etiquetado mantienen términos coherentes con el Ubiquitous Language y con los Bounded Contexts; los SEO Tags and Meta Tags describen las páginas para buscadores, navegadores y vistas previas; los sistemas de búsqueda permiten localizar entidades operativas; y los sistemas de navegación conectan las tareas principales y sus vistas de detalle. En conjunto, estas decisiones permiten que visitantes y usuarios se adapten progresivamente a ResQ y comprendan cómo las áreas del producto colaboran dentro del flujo de monitoreo, detección, alerta, respuesta y seguimiento.
+
+La organización secuencial se utiliza cuando el usuario debe completar tareas en un orden determinado. Los principales recorridos identificados en la Web Application son los siguientes:
+
 </p>
 
-### 5.2.1. Organization Systems.
+**Registro de una edificación y configuración de sus espacios:**
 
-Para ResQ, los sistemas de organización de la información se plantean de acuerdo con las tareas que realizan los usuarios dentro de la plataforma, especialmente el monitoreo de edificios, dispositivos IoT, riesgos, incidentes y alertas. Buscamos que la información crítica pueda identificarse rápidamente durante una situación de emergencia y que las funciones administrativas permanezcan agrupadas de forma clara.
+1. Acceder a Edificios y seleccionar Agregar edificio.
+2. Registrar los datos del edificio y definir sus pisos.
+3. Guardar la edificación.
+4. Acceder al editor del plano de un piso.
+5. Configurar los espacios y ubicar los dispositivos correspondientes.
 
-**Organización jerárquica:** <br>
-La mayor parte del contenido de ResQ seguirá una organización jerárquica, partiendo de información general hacia información cada vez más específica.
+**Atención de un incidente:**
 
-En el caso del responsable o administrador de seguridad, después de autenticarse accederá a un panel principal desde el cual podrá consultar los distintos módulos del sistema. Desde ahí podrá ingresar a la gestión de edificios, zonas, dispositivos, monitoreo, detección de riesgos, incidentes y alertas. Por ejemplo, dentro de la gestión de infraestructura se podrá navegar desde un edificio hacia sus zonas y, posteriormente, consultar los dispositivos asociados a cada ubicación.
+1. Acceder a Incidentes y localizar el caso mediante la búsqueda o los filtros.
+2. Abrir su detalle para consultar el tipo, nivel de riesgo, ubicación y estado.
+3. Asignar un responsable cuando la operación esté permitida.
+4. Registrar las observaciones de resolución cuando se cumplan las condiciones establecidas.
+5. Consultar el estado actualizado y la información registrada.
 
-De esta forma, el usuario podrá comprender fácilmente dónde se encuentra dentro del sistema y acceder primero a una vista general antes de revisar información detallada.
+**Consulta y administración de una suscripción:**
 
-**Organización secuencial:**<br>
-La organización secuencial se utilizará en aquellos procesos que requieran completar una serie de pasos en un orden determinado.
-- **Registro y configuración de un dispositivo IoT:**
+1. Abrir Configuración.
+2. Seleccionar Suscripción.
+3. Consultar el estado y las fechas de inicio y finalización, si existe una suscripción registrada.
+4. Utilizar la acción disponible de activación, renovación o cancelación según el estado mostrado y las reglas aplicables.
 
-  1. Registrar los datos generales del dispositivo.
-  2. Definir sus características y capacidades.
-  3. Asignarlo a un edificio y, de ser necesario, a una zona.
-  4. Revisar la configuración registrada.
-  5. Habilitar administrativamente el dispositivo.
+#### Organización matricial
 
-<br>
+<p align="justify">
 
-- **Gestión de una situación de emergencia:**
+Las tablas y los gráficos permiten comparar varios atributos. El Dashboard presenta métricas ambientales, distribución de riesgos, estado de dispositivos y tendencias de alertas e incidentes. El listado de Dispositivos muestra código, modelo, ubicación, capacidades, estado administrativo, conectividad, última lectura y última comunicación; además, permite ordenar columnas. Alertas y Espacios ofrecen también vistas tabulares para comparar registros sin abrir cada detalle.
 
-  1. Recepción de mediciones desde los dispositivos.
-  2. Evaluación del riesgo detectado.
-  3. Generación de una alerta o incidente.
-  4. Ejecución de acciones de respuesta.
-  5. Seguimiento del incidente.
-  6. Consulta del historial del evento.
+</p>
 
-Este tipo de organización permitirá guiar al usuario durante procesos que no deberían ejecutarse de manera desordenada.
+#### Esquemas de categorización del contenido
 
-**Organización matricial:**<br>
-La organización matricial se aplicará principalmente en vistas de monitoreo y análisis, donde sea necesario comparar diferentes variables al mismo tiempo. Por ejemplo, en el dashboard de la solución se podrá relacionar la ubicación con el estado de los dispositivos o el nivel de riesgo.
-
-Este tipo de presentación permitirá al responsable de seguridad comparar rápidamente diferentes zonas y detectar dónde se requiere mayor atención.
-
-<br>
-
-**Esquemas de categorización del contenido:**
-ResQ utilizará distintos esquemas de categorización según el tipo de información presentada:
-
-- **Por tópicos:** Toda la información estará agrupada según áreas funcionales como edificios, dispositivos, monitoreo, riesgos, incidentes, alertas y perfil.
-- **Cronológico:** Se utilizará principalmente para mediciones, alertas, incidentes y registros históricos, permitiendo consultar primero los eventos más recientes y revisar posteriormente sucesos anteriores.
-- **Alfabético:** Se podrá aplicar en listados extensos de edificios, zonas o dispositivos para facilitar su localización mediante el nombre o código correspondiente.
-- **Según audiencia:** La información se organizará de acuerdo con los segmentos objetivo de ResQ. Los propietarios y administradores de edificaciones tendrán acceso principalmente a información relacionada con la gestión de edificios, zonas, dispositivos, monitoreo, riesgos, incidentes y alertas. Por otro lado, las empresas integradoras de automatización y gestión de edificios inteligentes accederán principalmente a información relacionada con la configuración, integración y estado de los dispositivos instalados en las edificaciones, así como con los datos necesarios para su gestión dentro de la plataforma.
-
-### 5.2.2. Labeling Systems.
-
-El sistema de etiquetado de ResQ utilizará palabras breves y familiares en español para representar conjuntos de información sin confundir a visitantes y usuarios. Las etiquetas conservarán el mismo significado en web y móvil; los iconos y colores complementarán el texto.
-
-**Etiquetas para visitantes**
-
-En la Landing Page se utilizarán Solución (funcionamiento de ResQ), Beneficios (valor para administradores), Integradores (compatibilidad con sistemas existentes) y Documentación (información técnica vinculada con Integradores). Las acciones se identificarán como Solicitar demostración e Iniciar sesión.
-
-**Etiquetas para usuarios**
-
-| Etiqueta | Información que representa y asociaciones |
+| Esquema | Aplicación en ResQ |
 |---|---|
-| **Panel general** | Resumen de la edificación seleccionada, con acceso a Monitoreo, Alertas e Incidentes. |
-| **Edificaciones** | Infraestructura registrada; cada edificación contiene Zonas. |
-| **Zonas** | Áreas de una edificación; agrupan Dispositivos y permiten localizar riesgos. |
-| **Dispositivos** | Sensores y actuadores de una zona; sus mediciones se consultan en Monitoreo. |
-| **Monitoreo** | Mediciones y estado de dispositivos por edificación y zona. |
-| **Alertas** | Avisos de riesgos detectados, vinculados con su zona y el incidente correspondiente. |
-| **Incidentes** | Registros de atención que reúnen alertas, respuestas, responsable y estado. |
-| **Historial** | Incidentes anteriores y secuencia de eventos de cada caso. |
-| **Indicadores** | Frecuencia de incidentes, falsas alarmas y tiempos de atención. |
-| **Configuración** | Condiciones de detección, políticas de respuesta y usuarios y roles. |
-| **Integraciones** | Fuentes externas compatibles asociadas con dispositivos y zonas. |
+| **Por tópicos** | Agrupación en los módulos Edificios, Monitoreo de pisos, Espacios, Dispositivos, Alertas, Incidentes y Configuración. |
+| **Cronológico** | Presentación de fechas de incidentes y alertas, lecturas y tendencias del Dashboard por períodos de 24 horas, 7 días y 30 días. |
+| **Alfabético** | Búsqueda y ordenamiento por nombre en los listados que ofrecen esa opción, como Edificios y Dispositivos. |
+| **Según audiencia** | Contenido diferenciado en la Landing Page para propietarios y administradores de edificaciones y para empresas integradoras. En la Web Application se mantiene una navegación operacional compartida, con acciones sujetas a los permisos del usuario. |
 
-**Claridad de acciones y estados**
+### 5.2.2. Labeling Systems
 
-Los botones indicarán acciones concretas: **Agregar zona**, **Asignar responsable** y **Autorizar acción**. El nivel de riesgo se representará como **Bajo**, **Medio**, **Alto** o **Crítico**; el estado del incidente, como **Activo**, **En atención**, **Resuelto** o **Cerrado**. Así se distinguirá la gravedad del riesgo de su atención. Se usará **Sin datos actualizados** cuando no existan mediciones vigentes, evitando interpretar esa ausencia como seguridad.
+<p align="justify">
 
+El etiquetado de ResQ utiliza términos breves para identificar secciones, entidades, acciones y estados. Se establecen etiquetas en inglés y sus equivalentes en español latinoamericano, siguiendo el requisito de inglés predeterminado del Project Statement. Los nombres de las opciones de navegación corresponden a los utilizados por las aplicaciones; las etiquetas de estado conservan el significado de los valores representados en sus modelos.
+
+</p>
+
+#### Etiquetas de la Landing Page
+
+| Inglés | Español | Contenido asociado |
+|---|---|---|
+| Value | Valor | Presentación de la solución y su propuesta de valor. |
+| Benefits | Beneficios | Beneficios del monitoreo, la detección y la respuesta ante riesgos. |
+| How it works | Cómo funciona | Explicación del producto y su funcionamiento. |
+| Plans | Planes | Presentación de soluciones para los dos segmentos objetivo. |
+| About us | Sobre nosotros | Información del equipo. |
+| Allies | Aliados | Sección de aliados mostrada en el sitio. |
+| Contact | Contacto | Correo electrónico y teléfono disponibles en el pie de página. |
+
+<p align="justify">
+
+Las llamadas a la acción incluyen Explore ResQ (Explora ResQ), See how it works (Conoce cómo funciona), Become a partner (Conviértete en aliado), Request implementation (Solicitar implementación) y Talk to ResQ (Hablar con ResQ). Los botones implementados conducen a secciones de la página o a medios de contacto; no se presentan como accesos directos a una aplicación independiente por segmento.
+
+</p>
+
+#### Etiquetas de la Web Application
+
+| Inglés | Español | Información asociada |
+|---|---|---|
+| Dashboard | Panel principal | Resumen operacional, gráficos y eventos recientes. |
+| Buildings | Edificios | Edificaciones, pisos, datos generales y acceso al editor de planos. |
+| Floor Monitoring | Monitoreo de pisos | Vista de condiciones, espacios y dispositivos asociados al piso seleccionado. |
+| Spaces | Espacios | Áreas monitoreadas, información contextual y dispositivos relacionados. |
+| Devices | Dispositivos | Inventario, asignación, capacidades, conectividad y lecturas de dispositivos. |
+| Alerts | Alertas | Alertas registradas, ubicación, estado y detalle de detección o respuesta. |
+| Incidents | Incidentes | Incidentes, responsable asignado, estado y resolución. |
+| Settings | Configuración | Perfil, Preferencias, Seguridad y Acceso, y Suscripción. |
+
+<p align="justify">
+
+Dentro de Configuración se utilizan Profile (Perfil), Preferences (Preferencias), Security & Access (Seguridad y Acceso) y Subscription (Suscripción). Esta última sección muestra Start Date (Fecha de inicio), End Date (Fecha de fin) y Status (Estado), junto con las acciones Activate (Activar), Renew (Renovar) y Cancel (Cancelar), según lo que presenta la interfaz.
+
+</p>
+
+#### Etiquetas de acciones y estados
+
+<p align="justify">
+
+Las acciones principales se expresan mediante verbos que indican el resultado esperado: Add Building (Agregar edificio), Edit Plan (Editar plano), Assign to me (Asignarme), Confirm resolution (Confirmar resolución), Approve (Aprobar), Reject (Rechazar) y Save preferences (Guardar preferencias). Las operaciones disponibles dependen del contexto y del estado del registro.
+
+</p>
+
+**Niveles de riesgo**
+
+| Código | Inglés | Español |
+|---|---|---|
+| LOW | Low | Bajo |
+| MEDIUM | Medium | Medio |
+| HIGH | High | Alto |
+| CRITICAL | Critical | Crítico |
+
+**Estados de incidentes**
+
+| Código | Inglés | Español |
+|---|---|---|
+| ACTIVE | Active | Activo |
+| IN_PROGRESS | In Progress | En progreso |
+| RESOLVED | Resolved | Resuelto |
+| CLOSED | Closed | Cerrado |
+
+**Estados de suscripción**
+
+| Código | Inglés | Español |
+|---|---|---|
+| ACTIVE | Active | Activa |
+| CANCELLED | Cancelled | Cancelada |
+| EXPIRED | Expired | Expirada |
+
+<p align="justify">
+
+En Dispositivos se distinguen estados administrativos (Active, Inactive y Retired) de estados de conectividad (Online, Offline y Timeout). En Alertas se utilizan Active y Cleared para las etiquetas de la interfaz. Las respuestas asociadas a riesgos diferencian, entre otros, Pending Authorization, Authorized, Execution Requested, Succeeded, Failed y Rejected, evitando confundir la autorización o solicitud de una respuesta con su ejecución confirmada.
+
+</p>
 
 ### 5.2.3. SEO Tags and Meta Tags
 
 <p align="justify">
-La estrategia de SEO Tags and Meta Tags de ResQ diferencia el contenido público de la Landing Page y el contenido operacional de la Web Application. El Project Statement prescribe inglés como idioma predeterminado para mensajes e interfaces; por ello, la metadata recomendada se formula en inglés, mientras que la experiencia puede ofrecer español como idioma alternativo. La Landing Page requiere descripciones orientadas a que los dos segmentos objetivo comprendan la propuesta de monitoreo, detección y respuesta ante riesgos en edificaciones. La Web Application, aunque se encuentra protegida por autenticación y no debe depender del posicionamiento orgánico de sus vistas internas, requiere títulos y descripciones precisos para mantener orientación, accesibilidad y consistencia cuando una vista se comparte dentro de un entorno autorizado.
-</p>
 
-<p align="justify">
-La inspección del código evidencia que ambas experiencias son Single Page Applications desarrolladas con Angular. La Landing Page dispone actualmente de las rutas <code>/</code>, <code>/privacy</code> y <code>/terms</code>; su archivo <code>index.html</code> define un título y una descripción globales, además de metadatos Open Graph y Twitter, pero no cambia estos valores por ruta ni incorpora <code>keywords</code> o <code>author</code>. Su servicio de idioma inicia actualmente en español, salvo que exista una preferencia previa en inglés, lo cual representa una diferencia frente al idioma predeterminado indicado por el Project Statement. La Web Application, en cambio, inicia en inglés cuando no existe una preferencia almacenada, aunque mantiene un título global <code>ResQ</code> y tampoco implementa metadata dinámica por vista. Por tanto, las tablas siguientes constituyen la especificación recomendada en inglés para una futura gestión dinámica de metadata y no una afirmación de que todos estos valores ya estén implementados.
+ResQ define Title, Description, Keywords y Author para las principales páginas de la Landing Page y la Web Application, conforme al Project Statement. La Landing Page contiene información pública sobre el producto; las vistas operativas de la Web Application requieren autenticación y sus metadatos se orientan a identificar la página, no a publicar información privada en buscadores. Los valores siguientes constituyen la especificación de metadatos por ruta y se redactan en inglés, el idioma predeterminado requerido para los productos.
+
 </p>
 
 #### Landing Page
 
-| Página/Sección | Title | Description | Keywords | Author |
+| Página | Title | Description | Keywords | Author |
 |---|---|---|---|---|
-| Inicio (<code>/</code>) | ResQ \| Building Risk Monitoring and Emergency Response | Discover ResQ, SecurityBear's proposal for integrated risk monitoring, early detection and coordinated emergency response in buildings. | building risk monitoring, emergency detection, alert management, incident response, SecurityBear ResQ | SecurityBear |
-| Política de privacidad (<code>/privacy</code>) | Privacy Policy \| ResQ | Learn how the ResQ informational website handles visitor-submitted data, language preferences and links to external services. | ResQ privacy, contact data, website preferences, data protection | SecurityBear |
-| Términos y condiciones (<code>/terms</code>) | Terms and Conditions \| ResQ | Review the terms of use for the ResQ academic website and the informational scope of its monitoring, detection and response proposal. | ResQ terms of use, website conditions, SecurityBear academic project, responsible use | SecurityBear |
+| Inicio (`/`) | ResQ \| Building Risk Monitoring and Emergency Response | Explore ResQ for building monitoring, risk detection, alerts and coordinated emergency response. | ResQ, building monitoring, IoT risk detection, emergency alerts | SecurityBear |
+| Política de privacidad (`/privacy`) | Privacy Policy \| ResQ | Review how the ResQ website describes the handling of visitor information and language preferences. | ResQ privacy, data protection, privacy policy | SecurityBear |
+| Términos y condiciones (`/terms`) | Terms and Conditions \| ResQ | Read the terms of use and limitations of the ResQ academic website. | ResQ terms, terms of use, academic project | SecurityBear |
 
 #### Web Application
 
-| Página/Vista | Title | Description | Keywords | Author |
+| Página | Title | Description | Keywords | Author |
 |---|---|---|---|---|
-| Inicio de sesión (<code>/login</code>) | Sign In \| ResQ | Secure access for authorized personnel who monitor buildings, devices, alerts and incidents through ResQ. | ResQ access, authentication, building monitoring, authorized users | SecurityBear |
-| Dashboard (<code>/dashboard</code>) | Operational Overview \| ResQ | View monitored building status, active risks, recent alerts and conditions that require attention. | operational status, risk monitoring, active alerts, monitored buildings | SecurityBear |
-| Edificaciones (<code>/buildings</code>) | Monitored Buildings \| ResQ | Manage the buildings, floors and zones used to place ResQ devices and contextualize operational events. | building management, monitored zones, connected infrastructure, floor plans | SecurityBear |
-| Monitoreo (<code>/monitoring</code>) | Zone Monitoring \| ResQ | Monitor observed conditions and measurements associated with building floors, zones and devices. | zone monitoring, sensor measurements, device status, remote supervision | SecurityBear |
-| Espacios (<code>/spaces</code>) | Spaces and Zones \| ResQ | Locate operational spaces and review their context, assigned devices and monitoring conditions. | monitored spaces, building zones, device location, risk context | SecurityBear |
-| Dispositivos (<code>/devices</code>) | IoT Devices \| ResQ | Review the inventory, assignments, capabilities and operational status of IoT devices registered in ResQ. | IoT devices, building sensors, actuators, device management | SecurityBear |
-| Alertas (<code>/alerts</code>) | Alert Center \| ResQ | Review alerts generated by risk conditions, including their location, context and associated responses. | alert management, risk detection, emergency location, automated response | SecurityBear |
-| Incidentes (<code>/incidents</code>) | Incident Management \| ResQ | Track the status, assignees and resolution of incidents registered in monitored buildings. | incident management, emergency response, incident tracking, resolution | SecurityBear |
-| Configuración (<code>/settings</code>) | Settings \| ResQ | Manage the preferences and parameters available to authorized ResQ users. | ResQ settings, user preferences, monitoring parameters | SecurityBear |
+| Inicio de sesión (`/login`) | Sign In \| ResQ | Access the ResQ building monitoring and incident management platform. | ResQ login, authentication, monitoring | SecurityBear |
+| Panel principal (`/dashboard`) | Dashboard \| ResQ | Review operational indicators, environmental readings, alerts and incidents. | ResQ dashboard, operational analytics, building monitoring | SecurityBear |
+| Edificios (`/buildings`) | Buildings \| ResQ | Manage buildings, floors and access to floor plan configuration. | building management, floors, building plans | SecurityBear |
+| Monitoreo de pisos (`/monitoring`) | Floor Monitoring \| ResQ | Explore floor monitoring information and devices associated with monitored spaces. | floor monitoring, monitored spaces, devices | SecurityBear |
+| Espacios (`/spaces`) | Spaces \| ResQ | Review spaces, their locations, conditions and associated devices. | monitored spaces, building zones, risk conditions | SecurityBear |
+| Dispositivos (`/devices`) | Devices \| ResQ | Review device inventory, capabilities, assignments and connectivity status. | IoT devices, device inventory, connectivity | SecurityBear |
+| Alertas (`/alerts`) | Alerts \| ResQ | Review risk alerts, locations, notification status and response information. | alert management, risk alerts, notifications | SecurityBear |
+| Incidentes (`/incidents`) | Incidents \| ResQ | Review incidents, assigned personnel, status and resolution information. | incident management, incident tracking, resolution | SecurityBear |
+| Configuración (`/settings`) | Settings \| ResQ | Manage profile information, preferences, session details and subscription status. | ResQ settings, user profile, subscription status | SecurityBear |
+
+#### Estado de implementación
 
 <p align="justify">
-La implementación futura puede utilizar el Router de Angular para actualizar <code>title</code>, <code>description</code>, <code>keywords</code> y <code>author</code> al activarse cada ruta, conservando inglés como idioma predeterminado y español como alternativa seleccionable. Las vistas parametrizadas —por ejemplo, el detalle de una edificación, dispositivo, alerta o incidente— deben construir títulos a partir de identificadores o nombres ya obtenidos por la aplicación, sin exponer información sensible en metadata pública. Debido a que el alcance actual corresponde a experiencias web y no existe evidencia de una aplicación publicada en una tienda de aplicaciones, ASO no aplica a esta entrega.
+
+La Landing Page dispone de las rutas `/`, `/privacy` y `/terms` y utiliza metadatos generales para título, descripción, Open Graph y Twitter. La Web Application conserva actualmente el título global `ResQ`. Ninguna de las dos experiencias aplica todavía todos los valores Title, Description, Keywords y Author de estas tablas de forma diferenciada por ruta; estos valores corresponden a la especificación que deberá configurarse en Angular.
+
 </p>
 
+<p align="justify">
+
+La Web Application utiliza inglés de manera predeterminada, mientras que la Landing Page inicia en español cuando no existe una preferencia previa de inglés. Para cumplir la convención de internacionalización del Project Statement, la Landing Page debe establecer inglés como idioma inicial y conservar español latinoamericano como alternativa. Los elementos de App Store Optimization (ASO), como App Title, App Keywords, App Subtitle y App Description, corresponderán a la documentación de una aplicación móvil cuando se prepare su distribución mediante una tienda; no describen las rutas web actuales.
+
+</p>
 
 ### 5.2.4. Searching Systems
 
-El sistema de búsqueda de ResQ está diseñado para que los administradores de edificios y los integradores técnicos puedan localizar rápidamente información crítica, como el historial de incidentes, el estado de las zonas y la conectividad de los dispositivos IoT. Esta herramienta es vital para el seguimiento post-emergencia y el mantenimiento del sistema.
+<p align="justify">
 
-**Sistema de búsqueda para Propietarios y Administradores (Segmento 1)**
-| Nombre del filtro | Descripción |
-| :--- | :--- |
-| **Búsqueda por ID / Zona** | Permite ingresar el código de un incidente específico o el nombre de una zona (ej. "Sótano 1") para ver su estado actual o historial. |
-| **Filtro por Tipo de Riesgo** | Despliega opciones para buscar emergencias específicas (ej. fuga de gas, incendio, sismo). |
-| **Filtro por Estado del Incidente** | Permite visualizar los incidentes según su ciclo de vida: Abierto, Asignado, Resuelto o Cerrado. |
-| **Rango de Fechas** | Facilita la localización de incidentes históricos ocurridos en un periodo de tiempo determinado para generar reportes. |
+La Web Application de ResQ dispone de una búsqueda general y de filtros específicos en sus listados. Estas funciones permiten localizar edificios, espacios, dispositivos, alertas e incidentes por los atributos que presenta cada vista. Los resultados se muestran mediante enlaces, tarjetas o tablas, según la información consultada.
 
-**Sistema de búsqueda para Integradores y Soporte Técnico (Segmento 2)**
-| Nombre del filtro | Descripción |
-| :--- | :--- |
-| **Búsqueda de Dispositivos (MAC/ID)** | Localiza rápidamente un sensor o actuador específico dentro de la red del edificio. |
-| **Estado de Conexión (Heartbeats)** | Filtra los dispositivos por su estado de red actual: *Online* u *Offline*. |
+</p>
 
-**Características adicionales del sistema de búsqueda**
-*   **Búsqueda combinada:** El usuario puede combinar múltiples filtros a la vez (ej. incidentes de "Fuga de gas" en el "Sótano" durante el "Último mes") tal como se especifica en los criterios de aceptación (US18).
+#### Búsqueda general
 
----
+<p align="justify">
+
+La barra superior ofrece una búsqueda textual de edificios, espacios y dispositivos. A partir de dos caracteres, presenta resultados agrupados por tipo con su nombre, información complementaria y acceso al detalle correspondiente. Esta búsqueda utiliza los registros disponibles en el estado local de la aplicación.
+
+</p>
+
+#### Búsquedas y filtros por módulo
+
+| Módulo | Búsqueda y filtros disponibles | Presentación de resultados |
+|---|---|---|
+| **Edificios** | Búsqueda por nombre o dirección; filtro por estado (Critical, Warning, Normal, Offline); orden por criticidad, nombre, número de dispositivos o alertas. | Tarjetas con datos del edificio, pisos, estado y acceso a sus vistas. |
+| **Espacios** | Búsqueda por nombre o número de ambiente; filtros por edificio, tipo y condición mostrada (Normal, Warning, Critical, Offline). | Tarjetas o tabla, con ubicación, estado y enlace al detalle. |
+| **Dispositivos** | Búsqueda por nombre, código, modelo o número de serie; filtros por edificio, piso, zona, estado administrativo, conectividad y capacidad. | Tabla ordenable y paginada con ubicación, estados, última lectura y última comunicación. |
+| **Alertas** | Búsqueda por identificador, descripción del riesgo, edificio o zona; filtros por edificio, tipo de riesgo, estado (Active, Cleared) y período (24 horas, 7 días, 30 días o todo el historial disponible). | Tabla ordenable y paginada con gravedad, estado, ubicación, fecha y entrega de notificaciones. |
+| **Incidentes** | Búsqueda por identificador, título, tipo o ubicación; filtros por tipo (Gas Leak, Fire, Earthquake, Other) y estado (Active, In Progress, Resolved, Closed). | Tarjetas con gravedad, estado, edificio, zona, fecha y enlace al detalle. |
+
+<p align="justify">
+
+Los filtros de una misma vista pueden aplicarse conjuntamente sobre los registros cargados. Cuando no existen coincidencias, los módulos de Dispositivos, Alertas e Incidentes muestran un mensaje de resultados vacíos que permite al usuario modificar sus criterios de búsqueda. La página de Configuración presenta el estado de la suscripción asociada a la cuenta, pero no dispone de un buscador de suscripciones ni requiere incorporarlo al sistema de búsqueda.
+
+</p>
+
+<p align="justify">
+
+La User Story US18 contempla la consulta histórica de incidentes mediante fecha, zona, tipo y estado. La vista actual permite búsquedas textuales y filtros combinados de tipo y estado, pero aún no incorpora un selector de rango de fechas. En el backend, el endpoint de consulta de incidentes admite `zoneId` como filtro explícito. Por tanto, el filtrado histórico completo de US18 permanece como parte de la funcionalidad por completar, sin atribuir a la API filtros que todavía no expone.
+
+</p>
 
 ### 5.2.5. Navigation Systems
 
-El sistema de navegación de la plataforma ResQ guiará a los usuarios a través de las distintas pantallas de monitoreo, gestión de infraestructura y atención de emergencias, proporcionando un acceso rápido en situaciones de alto estrés.
+<p align="justify">
 
-**Navegación Global**
-| Nombre | Descripción |
-| :--- | :--- |
-| **Dashboard (Inicio)** | Panel principal que ofrece una vista general y centralizada del estado de la edificación y alertas activas en tiempo real. |
-| **Perfil y Accesos** | Gestión de la cuenta del usuario y sus permisos dentro de la organización. |
+La navegación de ResQ permite recorrer el contenido público de la Landing Page y acceder a las funciones operativas de la Web Application mediante menús, enlaces contextuales y pantallas de detalle. Las dos experiencias disponen de navegación adaptable a pantallas de menor tamaño.
 
-**Navegación Operativa (Administradores y Seguridad)**
-| Nombre | Descripción |
-| :--- | :--- |
-| **Monitoreo por Zonas** | Visualización en vivo de las mediciones de los sensores distribuidos en las diferentes áreas del edificio. |
-| **Gestión de Incidentes** | Acceso a la lista de emergencias activas y al historial para asignar responsables, ver la evolución y cerrar casos. |
-| **Reportes e Indicadores** | Sección dedicada al análisis cuantitativo: frecuencia de incidentes, falsas alarmas y tiempos de atención. |
+</p>
 
-**Navegación de Infraestructura (Integradores)**
-| Nombre | Descripción |
-| :--- | :--- |
-| **Edificios y Zonas** | Módulo para registrar nuevas edificaciones y subdividirlas en áreas lógicas o físicas. |
-| **Dispositivos IoT** | Sección para dar de alta nuevos sensores/actuadores y asociarlos a una zona específica. |
+#### Navegación de la Landing Page
+
+<p align="justify">
+
+El encabezado incluye el logotipo con retorno a Inicio, el menú Valor, Beneficios, Cómo funciona, Planes, Sobre nosotros y Aliados, el selector de idioma y la acción Explora ResQ. Cada opción del menú conduce a su sección dentro de la página principal. En Planes, el visitante encuentra las presentaciones dirigidas a propietarios y administradores de edificaciones y a empresas integradoras; las acciones de estas tarjetas utilizan el contacto telefónico. El pie de página proporciona contacto por correo y teléfono, redes sociales y enlaces a Política de privacidad y Términos y condiciones.
+
+</p>
+
+#### Navegación principal de la Web Application
+
+| Opción | Ruta | Función de navegación |
+|---|---|---|
+| **Dashboard** | `/dashboard` | Presenta el resumen general y enlaces hacia alertas, incidentes y espacios. Incluye los gráficos de análisis operacional. |
+| **Buildings** | `/buildings` | Permite consultar edificios, crear una edificación, acceder al detalle y abrir el editor de planos de sus pisos. |
+| **Floor Monitoring** | `/monitoring` | Permite seleccionar edificios y pisos y revisar espacios, dispositivos y mediciones representadas. |
+| **Spaces** | `/spaces` | Muestra los espacios y permite abrir el detalle de uno de ellos. |
+| **Devices** | `/devices` | Presenta el inventario y permite consultar la ficha de un dispositivo. La creación y ubicación visual se realiza desde el editor de planos. |
+| **Alerts** | `/alerts` | Presenta el listado de alertas y permite acceder a su detalle. |
+| **Incidents** | `/incidents` | Presenta la lista de incidentes y permite abrir el detalle para consultar y realizar acciones disponibles. |
+| **Settings** | `/settings` | Reúne Perfil, Preferencias, Seguridad y Acceso, y Suscripción. |
+
+<p align="justify">
+
+La navegación principal utiliza una barra lateral y una barra superior con búsqueda general, acceso a notificaciones y menú de usuario. En pantallas pequeñas, el menú lateral puede abrirse y cerrarse mediante un control de navegación. Los enlaces de regreso, las tarjetas y las filas seleccionables facilitan el desplazamiento entre listados y detalles. Los gráficos de análisis se encuentran integrados en Dashboard; la ruta `/analytics` redirige a esa misma página.
+
+</p>
+
+#### Recorridos de navegación principales
+
+| Objetivo del usuario | Recorrido disponible |
+|---|---|
+| **Consultar una alerta** | Dashboard o Alertas → listado de alertas → detalle de alerta. |
+| **Atender un incidente** | Incidentes → búsqueda o filtros → detalle → asignación o registro de resolución, cuando corresponda. |
+| **Configurar una edificación** | Edificios → Agregar edificio o seleccionar edificio → piso → editor de planos → espacios y dispositivos. |
+| **Supervisar un piso** | Monitoreo de pisos → seleccionar edificio → seleccionar piso → consultar espacios y dispositivos. |
+| **Revisar un dispositivo** | Dispositivos → búsqueda o filtros → ficha del dispositivo y datos asociados. |
+| **Gestionar una suscripción** | Configuración → Suscripción → consultar estado y fechas → activar, renovar o cancelar cuando esté permitido. |
+
+<p align="justify">
+
+La interfaz de suscripciones está integrada en Configuración y no dispone de una ruta independiente. El backend ofrece servicios para consultar, crear, renovar y cancelar suscripciones; sin embargo, en la configuración actual del frontend esta sección utiliza un adaptador de datos de demostración. Por ello, el recorrido descrito corresponde a la interfaz disponible y no implica que sus operaciones ya estén integradas de extremo a extremo con el backend.
+
+</p>
+
 
 ## 5.3. Landing Page UI Design
 
