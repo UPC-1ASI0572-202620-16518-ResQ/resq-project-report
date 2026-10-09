@@ -9974,6 +9974,215 @@ Los mensajes de commit siguen la especificación *Conventional Commits* (por eje
 
 ### 6.1.3. Source Code Style Guide & Conventions
 
+Para garantizar la calidad, consistencia y mantenibilidad del código fuente de ResQ, se establecen convenciones de nomenclatura y programación aplicables a los distintos componentes de la solución. Estas convenciones permiten mantener una estructura uniforme, facilitar la comprensión del código y promover el desarrollo colaborativo entre los integrantes del equipo.
+
+Las convenciones se basan en las tecnologías empleadas en los productos digitales de ResQ, principalmente Angular, TypeScript, HTML y SCSS para el Landing Page y la Web Application, así como C#, ASP.NET Core y Entity Framework Core para los servicios RESTful. Como referencia se consideran las guías de estilo oficiales de Angular, Google y Microsoft, junto con las configuraciones existentes en los repositorios.
+
+#### Convenciones generales
+
+Los componentes de ResQ seguirán las siguientes convenciones generales:
+
+- **Idioma:** Los nombres de clases, interfaces, métodos, funciones, variables, propiedades, archivos y otros identificadores se redactarán en inglés.
+- **Nombres descriptivos:** Los identificadores deberán expresar claramente la responsabilidad o el propósito del elemento, evitando abreviaturas ambiguas.
+- **Consistencia:** Se respetarán las convenciones de nomenclatura correspondientes a cada lenguaje de programación.
+- **Indentación:** Se utilizarán dos espacios en los proyectos Angular y cuatro espacios en el código C#, siguiendo las convenciones de formato adoptadas para cada entorno.
+- **Organización:** El código se organizará de acuerdo con las responsabilidades de cada componente, promoviendo la separación de funcionalidades y la reutilización.
+- **Comentarios:** Se utilizarán comentarios para explicar reglas de negocio o decisiones técnicas que no resulten evidentes a partir del código.
+- **Manejo de errores:** Se implementarán mecanismos de validación y tratamiento de excepciones para mantener un comportamiento controlado frente a situaciones inesperadas.
+- **Seguridad:** Se evitará incorporar credenciales y otros datos sensibles directamente en el código fuente.
+
+La siguiente tabla resume las convenciones de nomenclatura consideradas para las tecnologías de ResQ.
+
+| Elemento | TypeScript / Angular | C# / ASP.NET Core |
+|---|---|---|
+| Clases | `PascalCase` | `PascalCase` |
+| Interfaces | `PascalCase` | `I` + `PascalCase` |
+| Métodos | `camelCase` | `PascalCase` |
+| Variables | `camelCase` | `camelCase` |
+| Propiedades | `camelCase` | `PascalCase` |
+| Constantes | `camelCase` o `UPPER_SNAKE_CASE`, según el propósito | `PascalCase` para constantes idiomáticas de C# |
+| Archivos | `kebab-case` | Nombres descriptivos en `PascalCase` |
+| Carpetas | `kebab-case` | Nombres de módulos y capas según la arquitectura |
+| Campos privados | Según la convención del proyecto | `_camelCase` |
+
+#### HTML y SCSS
+
+Para la estructura y presentación de las interfaces web se toman como referencia las recomendaciones de Google HTML/CSS Style Guide y las convenciones establecidas por Angular.
+
+En HTML se prioriza el uso de elementos semánticos y atributos que contribuyan a la accesibilidad. Las plantillas utilizan elementos como `section`, `header`, `nav` y `footer`, así como atributos ARIA para describir componentes interactivos.
+
+En SCSS se emplea principalmente `kebab-case` para las clases y variables CSS personalizadas. Los estilos se organizan en archivos asociados a componentes, facilitando su mantenimiento y evitando concentrar las reglas visuales en un único archivo.
+
+Entre las convenciones consideradas se encuentran:
+
+- Utilizar etiquetas HTML semánticas según la responsabilidad del contenido.
+- Escribir los nombres de elementos y atributos HTML en minúsculas.
+- Mantener nombres descriptivos para clases y selectores.
+- Emplear `kebab-case` para clases CSS.
+- Utilizar variables CSS para centralizar valores reutilizables.
+- Organizar los estilos según los componentes de la aplicación.
+- Incorporar atributos de accesibilidad cuando corresponda.
+
+Por ejemplo, en el Landing Page se utilizan clases como `hero-slide`, `benefit-card` y `site-header`. Asimismo, se emplean atributos como `aria-label`, `aria-roledescription` y `tabindex` para mejorar la interacción con los elementos de la interfaz.
+
+#### TypeScript y Angular
+
+Para el desarrollo del Landing Page y la Web Application se adoptan convenciones basadas en Google TypeScript Style Guide y Angular Style Guide.
+
+Las clases, interfaces y tipos utilizan `PascalCase`, mientras que las variables, funciones, métodos y propiedades emplean `camelCase`. Los nombres de archivos y carpetas utilizan principalmente `kebab-case`, facilitando su identificación dentro del proyecto.
+
+Entre las principales convenciones se consideran:
+
+- Utilizar `PascalCase` para clases, interfaces y tipos.
+- Utilizar `camelCase` para variables, funciones, métodos y propiedades.
+- Utilizar nombres descriptivos para componentes y servicios.
+- Mantener tipos definidos mediante las capacidades de TypeScript.
+- Separar los componentes de presentación de la lógica de acceso a datos.
+- Utilizar Dependency Injection para gestionar dependencias.
+- Organizar las funcionalidades en módulos o directorios independientes.
+- Emplear mecanismos reactivos de Angular, como Signals y RxJS, según las necesidades del componente.
+
+En ResQ, la Web Application presenta una organización basada en funcionalidades mediante directorios como `alerts`, `auth`, `buildings`, `devices`, `monitoring` y `risk-detection`.
+
+Además, se utilizan patrones como Gateway, Facade y Mapper para separar la comunicación con servicios externos de los modelos y componentes de presentación.
+
+El siguiente ejemplo corresponde a la definición de configuración de la API en TypeScript:
+
+```typescript
+export interface ApiConfig {
+  baseUrl: string;
+  requestTimeoutMs: number;
+}
+
+export const API_CONFIG =
+  new InjectionToken<ApiConfig>('RESQ_API_CONFIG');
+```
+
+Este fragmento evidencia el uso de `PascalCase` para interfaces, `camelCase` para propiedades y `UPPER_SNAKE_CASE` para tokens de configuración.
+
+#### C# y ASP.NET Core
+
+Para el desarrollo del Backend RESTful API se toman como referencia las convenciones oficiales de nomenclatura de Microsoft para C# y .NET.
+
+Las clases, métodos y propiedades utilizan `PascalCase`, mientras que las variables locales y los parámetros utilizan `camelCase`. Las interfaces incorporan el prefijo `I`, seguido de un nombre en `PascalCase`.
+
+Las principales convenciones son:
+
+- Utilizar `PascalCase` para clases, métodos y propiedades.
+- Utilizar `I` + `PascalCase` para interfaces.
+- Utilizar `camelCase` para variables locales y parámetros.
+- Utilizar `_camelCase` para campos privados cuando corresponda.
+- Incorporar el sufijo `Async` en los métodos asíncronos.
+- Utilizar nombres descriptivos para Controllers, Repositories, Services y entidades.
+- Emplear tipos anulables cuando el modelo permita la ausencia de un valor.
+- Mantener encapsuladas las propiedades y colecciones que representan el estado de las entidades del dominio.
+
+El siguiente ejemplo corresponde a una interfaz Repository del Bounded Context Building Management:
+
+```csharp
+public interface IBuildingRepository : IBaseRepository<Building>
+{
+    Task<Building?> FindByIdAndOrganizationIdAsync(
+        Guid buildingId,
+        Guid organizationId
+    );
+}
+```
+
+Este ejemplo evidencia el uso del prefijo `I` para interfaces, `PascalCase` para métodos, `camelCase` para parámetros y el sufijo `Async` para operaciones asíncronas.
+
+#### Organización del Backend mediante Domain-Driven Design
+
+La organización del Backend de ResQ considera los principios de Domain-Driven Design, separando las responsabilidades mediante Bounded Contexts y capas arquitectónicas.
+
+Entre los módulos identificados se encuentran Identity and Access Management, Building Management, Device Management, Alert Management e Incident Management.
+
+Dentro de los módulos se utilizan las siguientes capas:
+
+- **Domain:** Contiene entidades, Aggregates, Value Objects, interfaces Repository y reglas de negocio.
+- **Application:** Coordina los casos de uso mediante Command Services, Query Services y otros servicios de aplicación.
+- **Interfaces:** Expone las capacidades del sistema mediante Controllers, recursos REST y transformaciones de datos.
+- **Infrastructure:** Contiene las implementaciones relacionadas con persistencia, acceso a datos y servicios externos.
+
+Esta separación facilita el mantenimiento de los componentes y permite que las reglas de negocio se mantengan independientes de los detalles específicos de infraestructura.
+
+#### Convenciones para RESTful API
+
+Para los endpoints de ResQ se aplican convenciones relacionadas con el estilo arquitectónico REST, utilizando nombres de recursos en inglés y rutas que permitan identificar claramente las operaciones disponibles.
+
+Las principales convenciones consideradas son:
+
+- Utilizar sustantivos para representar recursos.
+- Preferir nombres de recursos en plural.
+- Utilizar minúsculas y `kebab-case` para los segmentos de las rutas.
+- Incorporar versionamiento mediante el prefijo `/api/v1/`.
+- Utilizar los métodos HTTP de acuerdo con la operación realizada.
+- Emplear códigos de estado HTTP apropiados para representar los resultados.
+- Documentar las operaciones mediante Swagger/OpenAPI.
+
+Ejemplos de rutas utilizadas en el Backend:
+
+```text
+GET    /api/v1/buildings
+POST   /api/v1/buildings
+```
+
+Asimismo, los Controllers utilizan atributos de ASP.NET Core como `ApiController`, `Route`, `Authorize` y `HttpPost`, junto con anotaciones de Swagger para documentar las operaciones disponibles.
+
+#### Herramientas de formato y calidad del código
+
+Para mantener consistencia en los proyectos Angular, ResQ utiliza archivos de configuración como `.editorconfig`, `.prettierrc` y `tsconfig.json`.
+
+La configuración de EditorConfig establece el uso de UTF-8, indentación mediante espacios, tamaño de indentación de dos espacios y eliminación de espacios innecesarios al final de las líneas.
+
+Por su parte, Prettier establece un ancho objetivo de 100 caracteres, preferencia por comillas simples y un parser específico para las plantillas HTML de Angular.
+
+La siguiente tabla resume las principales herramientas y configuraciones identificadas.
+
+| Herramienta | Aplicación en ResQ |
+|---|---|
+| EditorConfig | Define convenciones de indentación, codificación y espacios en los proyectos Angular. |
+| Prettier | Establece reglas de formato para TypeScript, HTML y otros archivos compatibles. |
+| TypeScript Compiler | Permite detectar determinados errores mediante opciones de compilación. |
+| Angular CLI | Proporciona herramientas para la estructura, compilación y mantenimiento de los proyectos Angular. |
+| .NET Compiler | Permite validar el código C# y aplicar las configuraciones establecidas en el proyecto. |
+| Swagger/OpenAPI | Facilita la documentación de los endpoints RESTful. |
+
+Estas herramientas contribuyen a mantener una base de código consistente. No obstante, la aplicación uniforme de las reglas requiere que los integrantes del equipo utilicen las configuraciones establecidas durante el desarrollo.
+
+#### Convenciones de pruebas
+
+Para la implementación de pruebas se consideran nombres descriptivos en inglés y una organización que permita relacionar las comprobaciones con las funcionalidades del sistema.
+
+En el Landing Page se utiliza Vitest junto con las herramientas de pruebas de Angular. Los archivos de prueba emplean la extensión `.spec.ts` y estructuras como `describe`, `it` y `expect`.
+
+En la Web Application se han identificado scripts personalizados de verificación mediante Node.js, mientras que el Backend dispone de scripts PowerShell para comprobar operaciones HTTP e interacciones entre componentes.
+
+Como parte de las convenciones de pruebas se consideran:
+
+- Utilizar nombres descriptivos para los casos de prueba.
+- Redactar las descripciones de las pruebas en inglés.
+- Mantener separados los archivos de pruebas y las responsabilidades del código evaluado.
+- Verificar los resultados esperados mediante aserciones.
+- Considerar escenarios positivos y negativos.
+- Relacionar las pruebas con las funcionalidades y criterios de aceptación correspondientes.
+
+Para futuras pruebas de aceptación basadas en Behavior-Driven Development se considera adoptar Gherkin, utilizando archivos `.feature` y las palabras clave `Feature`, `Scenario`, `Given`, `When` y `Then`. Esta convención todavía no se encuentra implementada en los repositorios examinados.
+
+#### Documentación y mantenimiento
+
+La documentación técnica de ResQ utiliza nombres descriptivos y comentarios que permiten comprender las responsabilidades de los componentes.
+
+En el Backend se emplean comentarios XML mediante etiquetas como `summary`, `param` y `returns`, además de anotaciones Swagger/OpenAPI para documentar los servicios RESTful.
+
+En los proyectos Angular se utilizan archivos README y documentación técnica complementaria para describir configuraciones e integraciones.
+
+Como criterio de mantenimiento, se busca que los comentarios y la documentación técnica de código mantengan una nomenclatura consistente en inglés, mientras que las explicaciones académicas del informe se desarrollan en español, conservando los términos técnicos originales.
+
+Asimismo, se considera la revisión continua de las convenciones de formato, organización y seguridad para identificar oportunidades de mejora durante los siguientes Sprints.
+
+En conjunto, estas convenciones contribuyen a mantener una estructura coherente entre los componentes de ResQ, facilitan la colaboración de los integrantes del equipo y proporcionan una base para la evolución y mantenimiento de la solución IoT.
+
 ## 6.2. Landing Page, Services & Applications Implementation
 
 ### 6.2.1. Sprint 1
@@ -10013,6 +10222,134 @@ El Sprint Goal expresa un único resultado de valor: disponer de un MVP demostra
 </p>
 
 #### 6.2.1.3. Sprint Backlog 1
+
+El Sprint Backlog 1 de ResQ organiza las User Stories, Technical Stories y Work-items relacionados con el desarrollo de la primera versión del MVP. El Sprint comprende el período del 29 de septiembre al 8 de octubre de 2026 y tiene como objetivo proporcionar una primera experiencia funcional mediante el Landing Page, la Frontend Web Application, los Backend Web Services y el prototipo IoT orientado a la detección local de gas y humo.
+
+La organización de las actividades toma como referencia el Sprint Goal establecido en Sprint Planning 1 y las historias identificadas en el Product Backlog. Estas se descomponen en tareas de desarrollo, integración, configuración, documentación y validación, considerando las responsabilidades de los integrantes del equipo y las necesidades técnicas de cada componente.
+
+Para gestionar el avance del Sprint se utiliza Trello, mediante las listas Product Backlog, Sprint Backlog, In Progress, Review y Done. Esta organización permite visualizar las historias seleccionadas, las actividades en desarrollo, las funcionalidades que requieren revisión y aquellas que han completado su proceso de implementación y validación.
+
+**Sprint 1 - Trello Board:** [ResQ - Product Backlog](https://trello.com/b/BYxUsTcA/resq-product-backlog)
+
+**Figura X. Sprint Backlog 1 de ResQ en Trello**
+
+![Sprint Backlog 1](assets/images/chapter-06-product-implementation-validation-deployment/sprint-backlog-1.png)
+
+##### User Stories y Technical Stories del Sprint 1
+
+La siguiente tabla presenta las historias relacionadas con el desarrollo del MVP durante el Sprint 1. La distribución de estados corresponde a la clasificación propuesta para el cierre de las actividades de software y la continuidad de las actividades de integración del prototipo IoT.
+
+| Story ID | Story Title | Story Points | Status |
+|---|---|---:|---|
+| US34 | Comprender la propuesta de ResQ | 2 | Done |
+| US35 | Conocer los beneficios para administradores | 2 | Done |
+| US36 | Conocer los beneficios para empresas integradoras | 2 | Done |
+| US39 | Acceder a los productos digitales de ResQ | 2 | Done |
+| US01 | Consultar el estado general de una edificación | 5 | Done |
+| US21 | Registrar una edificación | 3 | Done |
+| US22 | Definir zonas de una edificación | 3 | Done |
+| US23 | Asociar un dispositivo con una zona | 5 | Done |
+| TS06 | Proveer servicios mediante RESTful API | 8 | Done |
+| US10 | Recibir una alerta de riesgo | 5 | Done |
+| US27 | Acceder de forma autenticada | 3 | Done |
+| TS01 | Capturar mediciones desde los Embedded Systems | 5 | In Progress |
+| TS03 | Procesar reglas de detección localmente | 8 | In Progress |
+| **Total** | **13 historias** | **53** | **Distribución propuesta** |
+
+Las historias relacionadas con el Landing Page comprenden las funcionalidades necesarias para comunicar la propuesta de valor de ResQ y facilitar el acceso a sus productos digitales. Las historias de la Frontend Web Application y los Backend Web Services abarcan capacidades iniciales de monitoreo, administración de edificaciones, gestión de dispositivos, autenticación y alertas.
+
+Las Technical Stories TS01 y TS03 están relacionadas con la adquisición de mediciones del sensor MQ-2 y el procesamiento local de condiciones de riesgo. Estas actividades continúan en desarrollo y requieren completar la integración y validación física del prototipo IoT.
+
+Las 13 historias representan 53 Story Points asociados provisionalmente al alcance identificado. Esta cifra difiere de los 34 Story Points registrados en Sprint Planning 1, por lo que deberá conciliarse con la selección formal de historias realizada por el equipo. El total de Story Points asociados no equivale automáticamente a la Sprint Velocity.
+
+##### Work-items del Sprint 1
+
+Los Work-items permiten descomponer las historias en actividades específicas de implementación, integración, documentación y validación. Para su organización se establece una distribución de tareas entre los cinco integrantes del equipo, buscando un equilibrio en las estimaciones de esfuerzo y considerando sus áreas de participación.
+
+Las estimaciones se expresan en horas y representan el esfuerzo previsto para cada actividad. Los identificadores T01-T29 y las asignaciones detalladas corresponden a la planificación propuesta para su registro en Trello.
+
+**Sprint #:** Sprint 1
+
+**Landing Page**
+
+| Story ID | Story Title | Task ID | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---:|---|---|
+| US34 | Comprender la propuesta de ResQ | T01 | Implement landing page structure | Desarrollar la estructura principal y las secciones de presentación de ResQ mediante Angular. | 5 | Eduardo Chacaliaza | Done |
+| US34 | Comprender la propuesta de ResQ | T02 | Implement responsive visual design | Implementar estilos SCSS, identidad visual y adaptación responsive del Landing Page. | 4 | Eduardo Chacaliaza | Done |
+| US35 | Conocer los beneficios para administradores | T03 | Implement administrator benefits | Desarrollar componentes para presentar los beneficios de ResQ a administradores de edificaciones. | 4 | Eduardo Chacaliaza | Done |
+| US36 | Conocer los beneficios para empresas integradoras | T04 | Implement integrator benefits | Incorporar las secciones informativas y beneficios dirigidos a empresas integradoras. | 4 | Eduardo Chacaliaza | Done |
+| US39 | Acceder a los productos digitales de ResQ | T05 | Implement landing page navigation | Configurar navegación, enlaces y llamadas a la acción hacia los productos digitales. | 3 | Eduardo Chacaliaza | Done |
+
+**Frontend Web Application**
+
+| Story ID | Story Title | Task ID | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---:|---|---|
+| US01 | Consultar el estado general de una edificación | T06 | Implement monitoring dashboard | Desarrollar la interfaz principal para visualizar el estado general de las edificaciones. | 6 | Fabricio Quispe | Done |
+| US01 | Consultar el estado general de una edificación | T07 | Implement monitoring visualizations | Incorporar componentes visuales para representar información de monitoreo y estados de riesgo. | 5 | Fabricio Quispe | Done |
+| US10 | Recibir una alerta de riesgo | T08 | Implement alert center | Desarrollar la interfaz para consultar y visualizar alertas de riesgo. | 5 | Fabricio Quispe | Done |
+| US10 | Recibir una alerta de riesgo | T09 | Integrate alert data access | Implementar servicios y adaptadores para consultar información de alertas. | 5 | Fabricio Quispe | Done |
+| US27 | Acceder de forma autenticada | T10 | Implement authentication interface | Desarrollar formularios y componentes de interfaz para el acceso de usuarios. | 7 | Eduardo Chacaliaza | Done |
+| US27 | Acceder de forma autenticada | T11 | Implement session management | Incorporar mecanismos de gestión de sesión y protección de rutas. | 5 | Fabricio Quispe | Done |
+
+**Backend RESTful API**
+
+| Story ID | Story Title | Task ID | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---:|---|---|
+| US21 | Registrar una edificación | T12 | Implement building domain model | Implementar entidades, Aggregates y Value Objects del módulo Building Management. | 6 | Gonzalo Aliaga | Done |
+| US21 | Registrar una edificación | T13 | Implement building registration endpoints | Desarrollar servicios y endpoints RESTful para el registro de edificaciones. | 6 | Gonzalo Aliaga | Done |
+| US22 | Definir zonas de una edificación | T14 | Implement zone management | Implementar entidades y operaciones para administrar zonas dentro de edificaciones. | 6 | Pedro Nanfuñay | Done |
+| US23 | Asociar un dispositivo con una zona | T15 | Implement device management | Desarrollar servicios para administrar dispositivos y asociarlos con edificaciones o zonas. | 7 | Gonzalo Aliaga | Done |
+| TS06 | Proveer servicios mediante RESTful API | T16 | Configure backend architecture | Organizar el Backend mediante Bounded Contexts y capas Domain, Application, Interfaces e Infrastructure. | 7 | Gonzalo Aliaga | Done |
+| TS06 | Proveer servicios mediante RESTful API | T17 | Implement incident management services | Desarrollar los servicios RESTful relacionados con Incident Management. | 6 | Pedro Nanfuñay | Done |
+| TS06 | Proveer servicios mediante RESTful API | T18 | Configure backend deployment | Preparar la configuración de despliegue del Backend mediante Docker. | 5 | Pedro Nanfuñay | Done |
+| TS06 | Proveer servicios mediante RESTful API | T19 | Document RESTful endpoints | Configurar Swagger/OpenAPI para documentar las operaciones disponibles de los servicios. | 5 | Pedro Nanfuñay | Done |
+| TS06 | Proveer servicios mediante RESTful API | T27 | Validate backend API operations | Ejecutar comprobaciones de integración sobre las operaciones RESTful de los principales módulos del Backend. | 5 | Pedro Nanfuñay | Done |
+
+**IoT Prototype**
+
+Las actividades del prototipo IoT están relacionadas con las Technical Stories TS01 y TS03, las cuales contemplan la adquisición de mediciones desde los Embedded Systems y el procesamiento local de condiciones de riesgo.
+
+El desarrollo del prototipo considera la participación colaborativa de los cinco integrantes del equipo. Iván Fernando Sánchez asume la responsabilidad principal de la integración del dispositivo, mientras que los demás integrantes colaboran en las actividades de configuración, procesamiento, integración y validación.
+
+Las actividades permanecen en In Progress hasta completar y verificar la implementación física del prototipo.
+
+| Story ID | Story Title | Task ID | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---:|---|---|
+| TS01 | Capturar mediciones desde los Embedded Systems | T20 | Configure IoT prototype | Preparar el entorno de desarrollo y configurar los componentes del prototipo IoT. | 3 | Iván Fernando Sánchez / Eduardo Chacaliaza | In Progress |
+| TS01 | Capturar mediciones desde los Embedded Systems | T21 | Integrate MQ-2 sensor | Configurar la adquisición de mediciones del sensor MQ-2 mediante ESP32. | 3 | Iván Fernando Sánchez | In Progress |
+| TS01 | Capturar mediciones desde los Embedded Systems | T22 | Validate sensor measurements | Comprobar la adquisición y consistencia de las mediciones obtenidas desde el sensor. | 3 | Iván Fernando Sánchez / Fabricio Quispe | In Progress |
+| TS03 | Procesar reglas de detección localmente | T23 | Implement local risk detection | Desarrollar la lógica de evaluación de mediciones y detección local de condiciones de riesgo. | 3 | Iván Fernando Sánchez / Gonzalo Aliaga | In Progress |
+| TS03 | Procesar reglas de detección localmente | T24 | Integrate OLED display | Implementar la visualización de mediciones y estados del sistema mediante una pantalla OLED. | 3 | Iván Fernando Sánchez | In Progress |
+| TS03 | Procesar reglas de detección localmente | T25 | Integrate LED and buzzer alerts | Implementar la señalización visual y sonora de condiciones de riesgo mediante LEDs y buzzer. | 3 | Iván Fernando Sánchez / Pedro Nanfuñay | In Progress |
+| TS03 | Procesar reglas de detección localmente | T26 | Validate local alert response | Diseñar y ejecutar pruebas para comprobar el procesamiento local y la activación de alertas. | 2 | Iván Fernando Sánchez | In Progress |
+
+**Actividades complementarias de diseño y documentación**
+
+Adicionalmente, el Sprint considera actividades de diseño y documentación que brindan soporte a la implementación de los diferentes componentes de ResQ. Estas tareas se registran como actividades transversales, sin atribuirlas a una User Story específica.
+
+| Story ID | Story Title | Task ID | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---:|---|---|
+| Sprint 1 | UX/UI Design | T28 | Develop Figma designs | Elaborar y mejorar los diseños de interfaces y prototipos de ResQ mediante Figma, manteniendo coherencia con las funcionalidades propuestas. | 3 | Iván Fernando Sánchez | Done |
+| Sprint 1 | Technical Documentation | T29 | Prepare project documentation | Elaborar y actualizar documentación técnica y artefactos del proyecto relacionados con las funcionalidades del Sprint. | 3 | Iván Fernando Sánchez | Done |
+
+##### Resumen de distribución de actividades
+
+La distribución de Work-items considera las responsabilidades técnicas de los cinco integrantes del equipo y busca mantener un equilibrio en las estimaciones de esfuerzo.
+
+| Team Member | Main Responsibility | Assigned Tasks | Estimated Hours |
+|---|---|---:|---:|
+| Chacaliaza Minaya, Eduardo Fabian | Landing Page, Frontend Web Application e IoT | 6 | 27 |
+| Quispe Barzola, Fabricio Fabian | Frontend Web Application e IoT | 5 | 26 |
+| Aliaga Urbina, Wilder Gonzalo | Backend, Web Services e IoT | 4 | 26 |
+| Nanfuñay Liza, Pedro Jesús | Backend, pruebas, despliegue e IoT | 5 | 27 |
+| Sánchez Guevara, Iván Fernando | IoT Prototype, UX/UI Design y documentación | 9 | 26 |
+| **Total** | **Sprint 1** | **29** | **132** |
+
+La participación de Eduardo Chacaliaza comprende el desarrollo del Landing Page y la Frontend Web Application, mientras que Fabricio Quispe contribuye a las funcionalidades de monitoreo, alertas y gestión de sesiones. Wilder Gonzalo Aliaga y Pedro Nanfuñay participan en los servicios Backend, la administración de recursos, las pruebas y el despliegue. Por su parte, Iván Fernando Sánchez participa en la elaboración de diseños mediante Figma, la documentación del proyecto y las actividades de implementación del prototipo IoT.
+
+Adicionalmente, los cinco integrantes colaboran en las actividades relacionadas con el dispositivo IoT, incluyendo su configuración, adquisición de mediciones, procesamiento local, señalización y validación. Esta organización busca promover la participación conjunta, el intercambio de conocimientos y la distribución de responsabilidades para alcanzar el Sprint Goal establecido.
+
+Finalmente, la organización del Sprint Backlog mediante Trello y su relación con las evidencias disponibles en GitHub permiten realizar el seguimiento de las actividades asociadas al Sprint 1. Las funcionalidades de software clasificadas como Done deberán contar con la validación correspondiente de sus Acceptance Criteria, mientras que las actividades del prototipo IoT continúan en desarrollo hasta completar su integración y comprobación física.
 
 #### 6.2.1.4. Development Evidence for Sprint Review
 
