@@ -3932,76 +3932,100 @@ Se seleccionó la <strong>opción 3</strong> porque mantiene separados los conte
 
 ### 4.1.3. Software Architecture
 <p align="justify">
-La arquitectura de software de ResQ se representa mediante el modelo C4, con el propósito de describir la solución desde distintos niveles de abstracción y mostrar cómo se distribuyen sus principales responsabilidades.
+La arquitectura de software de ResQ se representa con el modelo C4, que describe la solución en niveles de abstracción sucesivos: el ecosistema en el que participa (System Landscape), sus límites con personas y sistemas externos (Context), los contenedores desplegables que la componen (Container) y la infraestructura sobre la que se ejecutan (Deployment). Los diagramas de contexto, contenedores, la vista dinámica y el despliegue se generan desde un único modelo en Structurizr DSL (<code>assets/diagram-sources/chapter-04-solution-software-design/c4/resq-c4-model.dsl</code>), de modo que los nombres, tecnologías y relaciones son consistentes entre vistas. El diagrama de secuencia se mantiene en PlantUML en la misma carpeta.
 </p>
 
 <p align="justify">
-Estas vistas permiten representar la relación de ResQ con sus usuarios y sistemas externos, así como los principales componentes desplegables que conforman la solución y la forma en que se comunican entre sí.
-</p>
-
-<p align="justify">
-La arquitectura considera la naturaleza distribuida de ResQ, integrando aplicaciones cliente, servicios Cloud, servicios Edge y componentes IoT que colaboran para soportar las capacidades definidas para la solución.
+La solución se organiza en <strong>cuatro capas</strong>, que todos los diagramas respetan con el mismo orden y nombre: <strong>1. Capa de Presentación</strong> (Landing Page, Web Application y Mobile Application), <strong>2. Capa de Servicios Cloud</strong> (RESTful API y bases de datos), <strong>3. Capa Edge</strong> (Edge Service, broker MQTT y base de datos local) y <strong>4. Capa de Dispositivos</strong> (aplicación embebida del nodo ESP32). Esta separación permite que la detección y la alarma local sigan funcionando aunque se pierda la conexión con Cloud.
 </p>
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
-![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_1.png)
-
-<p align="center">
-  <strong>Figura 45. Diagram C4 - ResQ.</strong>
-</p>
-
-
 <p align="justify">
-El System Landscape Diagram presenta una vista general del ecosistema de software en el que participa ResQ, mostrando las principales personas, sistemas involucrados y las relaciones existentes entre ellos.
+El System Landscape Diagram muestra el ecosistema de software en el que participa ResQ: la Landing Page, dirigida a visitantes; la plataforma ResQ, utilizada por los usuarios de la organización; y el servicio externo de notificaciones del que depende la entrega de alertas.
 </p>
-
-
-<p align="justify">
-Este diagrama permite identificar el alcance de la solución y comprender cómo los diferentes elementos del ecosistema de ResQ interactúan entre sí.
-</p>
-
-**DIAGRAM — ResQ Software Architecture System Landscape Diagram**
 
 ![ResQ Software Architecture System Landscape Diagram](assets/images/chapter-04-solution-software-design/resq-software-architecture-system-landscape-diagram.png)
 
 <p align="center">
-  <strong>Figura 46. ResQ Software Architecture System Landscape Diagram.</strong>
+  <strong>Figura 45. ResQ Software Architecture System Landscape Diagram.</strong>
 </p>
 
-### 4.1.3.2. Software Architecture Container Level Diagrams.
+#### 4.1.3.2. Software Architecture Context Level Diagrams
 
 <p align="justify">
-Este diagrama muestra que la Plataforma IoT de Emergencias está compuesta por cinco contenedores principales: una <strong>Aplicación Web (SPA)</strong> accesible desde navegadores para la gestión administrativa; una <strong>Aplicación Móvil</strong> para que clientes y técnicos reciban alertas y configuren equipos; una <strong>Cloud API</strong> que gestiona toda la lógica de negocio (usuarios, zonas, reportes); y una <strong>Edge/IoT API</strong> respaldada por un <strong>Broker MQTT</strong> encargado exclusivamente de procesar el alto volumen de datos (telemetría y <em>heartbeats</em>) provenientes de los sensores. Finalmente, el sistema utiliza bases de datos separadas: una base de datos relacional en la nube para almacenar la información estructural del sistema y una base de datos optimizada (ej. Time-Series) para el registro histórico de latidos y conectividad.
+El diagrama de contexto ubica a ResQ como un único sistema y muestra con quién interactúa. Del lado de las personas, el <strong>Propietario / Administrador de Edificación</strong> supervisa edificaciones, zonas y dispositivos; el <strong>Responsable de Seguridad / Operaciones</strong> gestiona alertas, autoriza respuestas y da seguimiento a incidentes; y la <strong>Empresa Integradora</strong> integra ResQ con proyectos de automatización existentes. Del lado de los sistemas externos, ResQ solicita la entrega de SMS y correos al <strong>Proveedor Externo de Notificaciones</strong> e intercambia eventos y estados con los <strong>Sistemas Existentes de Automatización / BMS</strong>. Todas las relaciones apuntan en el sentido de quien inicia la interacción.
 </p>
 
-![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_2.png)
+![ResQ System Context Diagram](assets/images/chapter-04-solution-software-design/c4/resq-system-context-diagram.png)
 
 <p align="center">
-  <strong>Figura 47. Diagram C4 - ResQ.</strong>
+  <strong>Figura 46. ResQ System Context Diagram.</strong>
 </p>
 
-### 4.1.3.3. Software Architecture Deployment Diagrams.
+#### 4.1.3.3. Software Architecture Container Level Diagrams
 
 <p align="justify">
-Este diagrama muestra que el sistema se despliega en tres entornos principales: <strong>Microsoft Azure Cloud</strong>, <strong>Dispositivos Cliente</strong> y <strong>Edificios/Zonas Físicas</strong>. En Azure, el sistema utiliza <em>App Service</em> para alojar las aplicaciones web y la Cloud API (Spring Boot/Java o Node.js), <em>Azure Database for PostgreSQL</em> para los datos relacionales, y <em>Azure IoT Hub</em> para gestionar las comunicaciones MQTT de alto rendimiento con los dispositivos físicos. Los usuarios acceden al sistema a través de navegadores web o dispositivos Android/iOS. En cada edificio del cliente, se instalan <strong>Sensores de Emergencia</strong> (ej. detectores de gas/sismo basados en ESP32/Arduino) que envían datos de estado a un <strong>Gateway IoT</strong> local vía WiFi o Serial, el cual transmite esta información al IoT Hub en Azure. Todas las comunicaciones entre componentes utilizan protocolos seguros como HTTPS, MQTT sobre TLS y conexiones cifradas a la base de datos.
+El diagrama de contenedores descompone ResQ en sus unidades desplegables, agrupadas por capa y ordenadas de arriba hacia abajo: los usuarios acceden por la Capa de Presentación, que consume la Capa de Servicios Cloud. Esta distribuye reglas hacia la Capa Edge, que se comunica por MQTT con la Capa de Dispositivos. Para que el orden por capas sea legible, el diagrama muestra cada relación una sola vez, en el sentido de quien la inicia; los flujos de retorno (sincronización desde el Edge, telemetría hacia el broker) se detallan en la vista dinámica y en el diagrama de secuencia.
 </p>
 
-![Diagram C4 - ResQ](assets/diagram-sources/chapter-04-solution-software-design/C4_3.png)
+![ResQ Container Diagram por capas](assets/images/chapter-04-solution-software-design/c4/resq-container-diagram.png)
 
 <p align="center">
-  <strong>Figura 48. Diagram C4 - ResQ.</strong>
+  <strong>Figura 47. ResQ Container Diagram organizado por capas.</strong>
 </p>
+
+| Capa | Contenedor | Tecnología | Responsabilidad |
+|---|---|---|---|
+| 1. Presentación | ResQ Landing Page | Angular 22 · GitHub Pages | Presentar el problema, la propuesta de valor y los segmentos; dirigir a los usuarios hacia la aplicación. |
+| 1. Presentación | ResQ Web Application | Angular 22 · TypeScript · Cloudflare Workers | Gestionar edificaciones, zonas, dispositivos, alertas e incidentes. |
+| 1. Presentación | ResQ Mobile Application | Aplicación móvil | Recibir alertas, consultar el estado y confirmar respuestas desde cualquier lugar. |
+| 2. Servicios Cloud | ResQ Cloud RESTful API | ASP.NET Core (.NET 10) · Render | Exponer los Bounded Contexts IAM, Building, Device, Monitoring, Risk Detection, Alert & Response, Incident y Connectivity. |
+| 2. Servicios Cloud | ResQ Cloud Database | MySQL | Persistir la información estructurada y operacional. |
+| 2. Servicios Cloud | ResQ Time-Series Database | InfluxDB | Conservar el histórico de mediciones. |
+| 3. Edge | ResQ Edge Service | Python · Flask | Recibir mediciones, evaluar reglas locales y ejecutar respuestas sin depender de Cloud. |
+| 3. Edge | ResQ Edge Database | SQLite · Peewee ORM | Buffer store-and-forward, reglas replicadas y estado local de las respuestas. |
+| 3. Edge | ResQ MQTT Broker | Eclipse Mosquitto | Canal de telemetría, heartbeats y comandos entre nodos y Edge. |
+| 4. Dispositivos | ResQ Embedded Application | C++ · ESP32 DevKit V1 | Leer el sensor MQ-2 y controlar la OLED, los LEDs y el buzzer. |
+
+##### Container Dynamic Diagram: detección de un riesgo y notificación
+
 <p align="justify">
-La arquitectura de software de ResQ se representa mediante el modelo C4, con el propósito de describir la solución desde distintos niveles de abstracción y mostrar cómo se distribuyen sus principales responsabilidades.
+La vista dinámica recorre, sobre los mismos contenedores, el escenario principal de ResQ: un nodo publica una medición de gas sobre el umbral (1), el broker la entrega al Edge Service (2), que la guarda y evalúa la regla local (3). Luego publica el comando de alarma (4) y el nodo activa LED rojo, buzzer y mensaje en la OLED (5). Después, el Edge sincroniza el riesgo con la Cloud RESTful API (6), que registra la alerta y la respuesta pendiente (7) y solicita SMS y correo (8). El proveedor notifica al Responsable de Seguridad (9), quien revisa la alerta en la Web Application y autoriza la respuesta (10–11).
+</p>
+
+![ResQ Container Dynamic Diagram](assets/images/chapter-04-solution-software-design/c4/resq-container-dynamic-diagram-alert.png)
+
+<p align="center">
+  <strong>Figura 48. ResQ Container Dynamic Diagram: detección de un riesgo y notificación de la alerta.</strong>
+</p>
+
+##### Sequence Diagram: detección de gas, alerta y autorización de la respuesta
+
+<p align="justify">
+El diagrama de secuencia detalla el mismo escenario con los mensajes y endpoints que intervienen, agrupando los participantes por capa. Incluye un fragmento <code>alt</code> que muestra el comportamiento sin conexión con Cloud: la alarma local ya se activó y el Edge conserva la medición y el riesgo para reenviarlos en orden al reconectar (store-and-forward). Los endpoints de la Web Application hacia la API (<code>GET /api/v1/alerts/{alertId}/response-executions</code> y <code>PUT /api/v1/alerts/{alertId}/response-executions/{id}/authorization</code>) corresponden a los expuestos por <code>AlertsController</code> en el backend.
+</p>
+
+![ResQ Sequence Diagram](assets/images/chapter-04-solution-software-design/c4/resq-sequence-gas-alert.png)
+
+<p align="center">
+  <strong>Figura 49. ResQ Sequence Diagram: detección de gas, alerta y autorización de la respuesta.</strong>
+</p>
+
+#### 4.1.3.4. Software Architecture Deployment Diagrams
+
+<p align="justify">
+El diagrama de despliegue ubica cada contenedor en su nodo de ejecución en el entorno de producción. La Landing Page se publica en <strong>GitHub Pages</strong> mediante GitHub Actions y la Web Application en <strong>Cloudflare Workers</strong>; ambas se ejecutan en el navegador del usuario. La Mobile Application se instala en smartphones Android o iOS. La Cloud RESTful API se ejecuta en un contenedor Docker (imagen <code>mcr.microsoft.com/dotnet/aspnet:10.0</code>) en <strong>Render</strong> y se conecta a un servidor <strong>MySQL 8</strong> y a <strong>InfluxDB Cloud</strong>. En cada edificación del cliente, un <strong>Gateway Edge</strong> (Raspberry Pi 4) aloja el Edge Service, su base SQLite y el broker MQTT, y se comunica por la red Wi-Fi local con los <strong>nodos IoT</strong> (ESP32 DevKit V1 con MQ-2, OLED SSD1306, LEDs y buzzer), de los que el diagrama muestra tres instancias.
+</p>
+
+![ResQ Deployment Diagram](assets/images/chapter-04-solution-software-design/c4/resq-deployment-diagram.png)
+
+<p align="center">
+  <strong>Figura 50. ResQ Deployment Diagram.</strong>
 </p>
 
 <p align="justify">
-Estas vistas permiten representar la relación de ResQ con sus usuarios y sistemas externos, así como los principales componentes desplegables que conforman la solución y la forma en que se comunican entre sí.
-</p>
-
-<p align="justify">
-La arquitectura considera la naturaleza distribuida de ResQ, integrando aplicaciones cliente, servicios Cloud, servicios Edge y componentes IoT que colaboran para soportar las capacidades definidas para la solución.
+La Landing Page, la Web Application y la Cloud RESTful API ya están desplegadas (sección 6.2.1.8). El Gateway Edge, el broker MQTT, InfluxDB y la Mobile Application forman parte de la arquitectura objetivo y se incorporarán en los siguientes sprints, como se indica en la sección 5.6.
 </p>
 
 
@@ -9788,112 +9812,363 @@ El diseño de la base de datos para el <strong>Connectivity Management Bounded C
 
 ## 5.1. Style Guidelines.
 
+<p align="justify">
+Las Style Guidelines de ResQ se organizan como un <strong>sistema de diseño en tres capas</strong>. La primera capa, <strong>Fundamentos</strong>, reúne las decisiones que no cambian entre productos: color, tipografía, espacio y forma, iconografía y voz. La segunda capa, el <strong>Lenguaje de severidad</strong>, es el eje propio de ResQ: define cómo se ve, se lee y se escucha cada nivel de riesgo (Normal, Advertencia, Crítico, Sin conexión e Informativo). La tercera capa, <strong>Superficies</strong>, traduce las dos anteriores a cada medio: Landing Page, Web Application, Mobile Application y dispositivo IoT.
+</p>
+
+<p align="justify">
+Esta organización responde a la naturaleza del producto. En un sistema de monitoreo y respuesta ante emergencias, la misma alerta de gas debe reconocerse igual en la pantalla OLED del nodo instalado en el laboratorio, en el SMS que recibe el responsable de seguridad, en la aplicación móvil y en el panel web. Por eso la regla de conexión del sistema es que <strong>ninguna superficie inventa un color o una palabra de estado</strong>: todas consumen la capa de severidad.
+</p>
+
+<p align="justify">
+Los valores documentados provienen de la implementación real. La Web Application declara los tokens en <code>src/styles.scss</code> (<code>--resq-primary</code>, <code>--resq-sidebar</code>, <code>--status-normal</code>, <code>--status-warning</code>, <code>--status-critical</code>, <code>--status-offline</code>) y la Landing Page en su propio <code>styles.scss</code>. Las láminas de esta sección se identifican con un código (SG-01 a SG-14) y una barra de tres segmentos que indica a qué capa pertenecen.
+</p>
+
+![Mapa del sistema de diseño de ResQ](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-01-mapa-del-sistema.png)
+
+<p align="center">
+  <strong>Figura 80. Mapa del sistema de diseño de ResQ.</strong>
+</p>
+
 ### 5.1.1. General Style Guidelines.
 
-en este sección definiremos algunos apartados en lo visual, simbolismo y interacción que rige toda la solucion de ResQ, asegurando coherencia respecto las plataformas. Establecemos una identidad visual clara por medio de paleta de colores, tipografia, espaciado, etc unificado.
+<p align="justify">
+Esta sección define la capa de Fundamentos y la capa de Severidad. Parte de los principios que guían cada decisión y continúa con la marca, el color, el lenguaje de severidad, la tipografía, el espacio, la iconografía y la voz.
+</p>
+
+#### Principios de diseño
+
+<p align="justify">
+Los segmentos de ResQ son propietarios o administradores de edificaciones y responsables de seguridad, que necesitan entender una situación de riesgo en segundos, y empresas integradoras, que evalúan la solución con criterio técnico (sección 1.3). A partir de las entrevistas (sección 2.2.3) se fijaron cuatro principios.
+</p>
+
+| Principio | Qué significa en ResQ | Cómo se aplica |
+|---|---|---|
+| **Calma bajo presión** | La interfaz no amplifica el pánico: muestra el hecho, el lugar y la acción. | Fondo neutro dominante; el rojo aparece solo en el nivel Crítico y en acciones destructivas. |
+| **El estado primero** | Lo primero que se ve en cualquier pantalla es si algo requiere atención. | KPI de alertas activas y espacios críticos en la primera fila; badge de severidad al inicio de cada fila. |
+| **Redundancia de señales** | Ningún estado depende de un solo canal. | Color + ícono + palabra en las apps; color + ritmo + sonido + texto en el dispositivo. |
+| **Trazabilidad visible** | Cada alerta muestra de dónde viene y qué se hizo con ella. | Evidencia, hora y responsable visibles en el detalle de alerta e incidente. |
 
 #### Brand Overview
 
-En varios ciudades, las emergencias dentro de los edificios/locales puede ser un problema demaciado serio sino sabes que paso seria mejor seguir. La falta de información correcta sobre las medidas o protocolos que se deberian hacer para las personas en dichos momentos llegue a generar panico o realizar acciones que ponga en peligro su bienestar dando como resultado heridas fatales o personas fallecidas. *ResQ* surge como una solución a este problema: Un dispositivo IoT afiliada a una plataforma para ayudar a las personas de una vivienda, local o empresa tener una alarma antes varias emergencias con protocolos que serviran a las personas para mantenerlos seguro
+<p align="justify">
+En muchas edificaciones, una emergencia como una fuga de gas, un conato de incendio o un sismo se enfrenta con alarmas aisladas que no indican qué ocurre, dónde ocurre ni qué hacer. La falta de información clara en esos minutos genera confusión, retrasa la evacuación y expone a las personas a daños evitables. <em>ResQ</em> surge como respuesta a ese problema: una plataforma IoT que conecta sensores instalados en cada zona de la edificación con un servicio que detecta el riesgo, lo clasifica por severidad, activa señales locales y notifica a los responsables para coordinar la respuesta.
+</p>
 
-A través de distintos sensores y un sistema de protocolos confiable, ResQ no solo facilita las acciones que uno debe tomar dependiendo de la emergencia sino tambien reduce la mortalidad garantizando rutas seguras para todas las personas
-
----
+<p align="justify">
+La marca debe transmitir <strong>protección, control y serenidad</strong>. ResQ no busca alarmar: busca que el responsable sepa exactamente qué hacer. Por eso su identidad combina un azul profundo, asociado a la confianza y a la seguridad, con una interfaz limpia en la que los colores de alerta solo aparecen cuando hay algo que comunicar.
+</p>
 
 #### Brand Name
 
-El nombre de nuestra solución, ResQ, muestra la esencia del proyecto:"Res" represe la siglas de R: Revaluando, E: Entorno y S: Seguro y Q representa Qualified mostrando que nos es solo una solucion sino es la solucion mas capacitada, el conjunto de ambos trasmite da a conocer que el producto evalua la situacion y te da indicaciones con un indice de efectividad mas del 75% con el significado de nuestro nombre
+<p align="justify">
+<strong>ResQ</strong> se lee como la palabra inglesa <em>rescue</em> («rescate»). La forma abreviada conserva la pronunciación y la convierte en un nombre corto, fácil de recordar y de escribir, que funciona igual en español y en inglés. La letra <strong>Q</strong> final, con su trazo inferior prolongado, evoca una lupa: la idea de observar el entorno de forma permanente para detectar el riesgo antes de que se convierta en una emergencia. El nombre resume la propuesta de valor: <strong>vigilar para rescatar a tiempo</strong>.
+</p>
 
-La elección de un nombre en inglés responde a su estructura sencilla pero universal que es llamativo para un gran publico, lo que permite escalar la solucion a varios casos mas complejos a futuro.
-
----
+<p align="justify">
+Se eligió un nombre en inglés porque los segmentos de integradores y administradores de edificios trabajan con plataformas BMS y documentación técnica en ese idioma, y porque un nombre neutro permite llevar la solución a otros mercados sin cambiar la marca.
+</p>
 
 #### Logo
 
-A continuación, se presenta el Logo de ResQ:
+<p align="justify">
+El logo combina un <strong>escudo</strong>, que representa protección, con tres <strong>edificios</strong> de distinta altura, que representan las edificaciones monitoreadas, y una <strong>curva</strong> en la base que sugiere el terreno y la ruta segura. El escudo usa un degradado del azul profundo al azul de marca. Existen tres versiones, mostradas en la siguiente figura.
+</p>
 
-![Logo-ResQ.PNG](assets/images/chapter-02-requirements-elicitation-analysis/ResQ-logo.png)
+![Logo de ResQ: versiones, zona de protección y tamaños](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-02-logo.png)
 
-##### Color
+<p align="center">
+  <strong>Figura 81. Logo de ResQ: versiones, zona de protección y tamaños mínimos.</strong>
+</p>
 
-![Logo-Color-ResQ.PNG](assets/images/chapter-05-solution-ui-ux-design/colorperfil1.png)
+| Versión | Composición | Uso |
+|---|---|---|
+| Imagotipo principal | Escudo + wordmark «ResQ» con contorno blanco | Barra lateral de la Web Application, pantalla de login, encabezado de la Landing Page y portada del informe. Siempre sobre navy `#071C35`. |
+| Isotipo | Solo el escudo | Favicon, ícono de la aplicación móvil, avatar de las notificaciones push y espacios cuadrados. |
+| Variante clara | Escudo + «ResQ» en Inter ExtraBold `#071C35` | Documentos y fondos claros (`#FFFFFF`, `#F3F6FA`), donde el wordmark con contorno blanco pierde legibilidad. |
 
-#### Body Text
+<p align="justify">
+La <strong>zona de protección</strong> equivale a la altura de la letra «Q» en los cuatro lados. El imagotipo completo no se usa por debajo de 120 px de ancho; para tamaños menores se usa el isotipo, cuyo mínimo legible en pantalla es de 24 px y que solo se reduce a 16 px como favicon.
+</p>
 
-La elección de una tipografía adecuada influye en la facilidad con la que el usuario puede comrpender el texto. La tipografía puede transmitir emociones y establecer un tono para el texto.
+![Usos incorrectos del logo de ResQ](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-03-logo-usos-incorrectos.png)
 
-#### Tipografía 
+<p align="center">
+  <strong>Figura 82. Usos incorrectos del logo.</strong>
+</p>
 
-![Tipografia-ResQ.PNG](assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+<p align="justify">
+No se permite deformar el escudo, recolorearlo fuera de la paleta, rotarlo o añadirle sombras, colocarlo sobre un fondo azul de su mismo tono, ubicarlo sobre fondos o fotografías que compitan con él, ni reescribir el nombre con otra tipografía, otro color o en cursiva.
+</p>
 
-#### Paleta de colores
+#### Colors
 
-![Coloris-ResQ.PNG](assets/images/chapter-05-solution-ui-ux-design/color1.png)
+<p align="justify">
+La paleta tiene tres grupos con funciones distintas: los <strong>colores de marca</strong>, que dan identidad; los <strong>neutros</strong>, que ocupan la mayor parte de cada pantalla; y los <strong>colores de severidad</strong>, que se documentan aparte porque comunican riesgo.
+</p>
 
-#### Botones
+![Color de marca y neutros de ResQ](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-04-color.png)
 
-![TButtum.PNG](assets/images/chapter-05-solution-ui-ux-design/buttom1.png)
+<p align="center">
+  <strong>Figura 83. Color de marca y neutros.</strong>
+</p>
+
+| Token | Hex | Rol |
+|---|---|---|
+| `--resq-sidebar` (Navy) | `#071C35` | Barra lateral, panel izquierdo del login, fondo del imagotipo. |
+| `--resq-primary` (Blue) | `#1570EF` | Acción principal, enlaces, foco de teclado, pestaña activa, serie principal de gráficos. |
+| Blue 700 | `#175CD3` | Hover y presionado del botón principal; texto azul sobre fondos claros. |
+| `--resq-background` | `#F3F6FA` | Fondo general de la aplicación. |
+| `--resq-surface` | `#FFFFFF` | Tarjetas, tablas, barra superior y diálogos. |
+| `--resq-border` | `#E4E9F0` | Bordes de tarjetas, campos y divisores. |
+| Gray 700 | `#344054` | Texto de filas y etiquetas de formularios. |
+| `--resq-muted` | `#667085` | Texto secundario, subtítulos de tarjeta y marcas de tiempo. |
+| `--resq-text` | `#101828` | Títulos y texto principal. |
+
+<p align="justify">
+La Landing Page usa una variante de mayor saturación (`#2563EB` y un acento cian `#06B6D4` sobre fondo `#08111F`) para el contenido persuasivo. Estos colores no se usan dentro de la Web Application. En una pantalla operativa, el fondo y las superficies ocupan alrededor del 62 % del área, el navy un 22 %, el azul de acción un 10 % y los colores de estado el resto. Así, una alerta roja nunca compite con elementos decorativos.
+</p>
+
+<p align="justify">
+Los contrastes se calcularon con la fórmula de luminancia relativa de WCAG 2.1 (mínimo 4.5 : 1 para texto normal y 3 : 1 para texto grande y componentes):
+</p>
+
+| Texto sobre fondo | Ratio | Resultado | Decisión |
+|---|---|---|---|
+| `#101828` sobre `#FFFFFF` | 17.75 : 1 | AAA | Texto principal. |
+| `#FFFFFF` sobre `#071C35` | 17.12 : 1 | AAA | Navegación lateral. |
+| `#344054` sobre `#FFFFFF` | 10.46 : 1 | AAA | Texto de tablas. |
+| `#667085` sobre `#FFFFFF` | 4.97 : 1 | AA | Texto secundario; no se usa por debajo de 11 px. |
+| `#FFFFFF` sobre `#1570EF` | 4.57 : 1 | AA | Botón principal. |
+| `#FFFFFF` sobre `#D92D20` | 4.83 : 1 | AA | Botón destructivo o de autorización crítica. |
+| `#FFFFFF` sobre `#F04438` | 3.76 : 1 | Solo texto grande | El rojo de estado `#F04438` se usa en íconos, puntos y LED, **nunca** como fondo de un botón con texto. |
+| `#FFFFFF` sobre `#12B76A` | 2.62 : 1 | No cumple | El verde de estado solo se usa como punto o ícono; el texto «Normal» va en `#027A48`. |
+| `#98A2B3` sobre `#FFFFFF` | 2.58 : 1 | No cumple | El gris de «Sin conexión» no se usa como texto; el texto va en `#475467`. |
+
+#### Lenguaje de severidad
+
+<p align="justify">
+El lenguaje de severidad es la pieza que conecta todas las superficies. Cada nivel es un contrato con siete atributos: color sólido, fondo, color de texto, ícono, palabra, señal del LED y patrón del buzzer. Los niveles corresponden al tipo <code>AlertSeverity</code> del dominio (<code>Info</code>, <code>Warning</code>, <code>Critical</code>) y a los estados de conectividad que gestiona Connectivity Management.
+</p>
+
+![Lenguaje de severidad de ResQ](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-05-lenguaje-de-severidad.png)
+
+<p align="center">
+  <strong>Figura 84. Lenguaje de severidad.</strong>
+</p>
+
+| Nivel | Sólido | Fondo | Texto | Ícono | Cuándo se usa |
+|---|---|---|---|---|---|
+| Normal | `#12B76A` | `#ECFDF3` | `#027A48` | `check_circle` | Las mediciones están dentro del rango configurado para la zona. |
+| Advertencia | `#FDB022` | `#FFFAEB` | `#B54708` | `warning_amber` | Una medición se acerca al umbral o lo supera de forma breve; requiere observación. |
+| Crítico | `#F04438` | `#FEF3F2` | `#B42318` | `error_outline` | Riesgo confirmado; puede requerir evacuación o una respuesta autorizada. |
+| Sin conexión | `#98A2B3` | `#F2F4F7` | `#475467` | `cloud_off` | El dispositivo dejó de enviar heartbeats o el Edge perdió conexión con Cloud. |
+| Informativo | `#1570EF` | `#EFF6FF` | `#175CD3` | `info` | Eventos sin riesgo: respuesta ejecutada, dispositivo registrado, regla actualizada. |
+
+#### Typography
+
+<p align="justify">
+ResQ usa una sola familia, <strong>Inter</strong>, en la Landing Page y en la Web Application (declarada como <code>Inter, Roboto, "Segoe UI", Arial, sans-serif</code>). Inter fue diseñada para pantallas, mantiene la legibilidad en tamaños pequeños, diferencia bien las cifras (lo que importa al leer 1250 ppm o 24.2 °C) y cubre por completo el español. Como apoyo se usa una fuente monoespaciada para identificadores de dispositivos, lecturas y marcas de tiempo, donde la alineación de caracteres facilita la comparación.
+</p>
+
+![Tipografía de ResQ](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-06-tipografia.png)
+
+<p align="center">
+  <strong>Figura 85. Tipografía y escala tipográfica.</strong>
+</p>
+
+| Estilo | Tamaño / interlínea | Peso | Uso |
+|---|---|---|---|
+| Display hero | 48 / 56 px (fluido con `clamp`) | ExtraBold 800 | Titular de la Landing Page y del panel de login. |
+| Page title | 22 / 28 px | Bold 700 | Título de cada vista en la barra superior. |
+| KPI value | 24 / 28 px | Bold 700 | Valores de las tarjetas KPI y del anillo de distribución de riesgos. |
+| Section title | 18 / 24 px | Bold 700 | Títulos de secciones de configuración. |
+| Card title | 15–16 / 22 px | Bold 700 | Título de tarjetas y paneles. |
+| Body | 13 / 20 px | Regular 400 | Texto base de la interfaz operativa. |
+| Support | 12 / 18 px | Regular 400 | Subtítulos, etiquetas de campos y metadatos. |
+| Table head | 11 / 16 px | SemiBold 600, mayúsculas | Encabezados de tablas y marcas de tiempo. |
+| Mono data | 12 / 16 px | Regular 400 | IDs de dispositivo, lecturas y horas. |
+
+<p align="justify">
+La interfaz operativa es densa porque un responsable de seguridad necesita ver muchos espacios y dispositivos a la vez; por eso el cuerpo es de 13 px. En el detalle de una alerta, que se lee bajo presión, el texto sube a 15 px. Los textos de botones y etiquetas reservan un 30 % de ancho adicional, porque la aplicación cambia entre español e inglés.
+</p>
+
+#### Spacing
+
+![Espacio, forma y elevación](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-07-espacio-forma-elevacion.png)
+
+<p align="center">
+  <strong>Figura 86. Espacio, forma y elevación.</strong>
+</p>
+
+<p align="justify">
+El espaciado parte de una <strong>base de 4 px</strong> (4, 8, 10, 12, 16, 20, 24, 32 y 48 px). En la Web Application las tarjetas se separan 10 px y tienen 17 px de relleno, lo que permite ver los cuatro KPI, el gráfico ambiental y la distribución de riesgos sin desplazamiento en una pantalla de 1366 px. La Landing Page, en cambio, separa sus secciones con 110 px (72 px en tablet y 52 px en móvil) para dar ritmo a la lectura.
+</p>
+
+| Elemento | Radio | Elevación |
+|---|---|---|
+| Campos y selectores | 6 px | Nivel 0: borde `#E4E9F0`. |
+| Botones | 7 px | Nivel 0. |
+| Chips y pestañas | 8 px | Nivel 0. |
+| Tarjetas | 11 px | Nivel 1: `0 1px 2px #10182808`. |
+| Menús y panel de notificaciones | 10 px | Nivel 2: `0 8px 20px #10182810`. |
+| Diálogos de autorización | 16 px | Nivel 3: `0 24px 60px rgb(15 23 42 / 28%)`. |
+| Badges y contador de alertas | 999 px | Nivel 0. |
+| Elemento activo | — | Indicador `inset 3px 0 #1570EF`. |
+
+#### Iconography
+
+![Iconografía de ResQ](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-08-iconografia.png)
+
+<p align="center">
+  <strong>Figura 87. Iconografía.</strong>
+</p>
+
+<p align="justify">
+ResQ usa <strong>Material Icons en variante Outlined</strong>, el set que ya integra la Web Application mediante <code>mat-icon</code> de Angular Material. El trazo de línea es coherente con una interfaz técnica y no compite con los colores de estado. Los íconos miden 20 px en navegación y botones y 16 px dentro de badges. Cada ícono con función lleva texto visible o <code>aria-label</code>, y los íconos de estado siempre van acompañados de la palabra del nivel.
+</p>
+
+#### Tone of voice
+
+<p align="justify">
+El tono de ResQ se define en las cuatro dimensiones propuestas por Nielsen Norman Group. A diferencia de otros productos, en ResQ el tono <strong>se ajusta según la severidad</strong>: cuanto más grave es la situación, más corto y directo es el mensaje.
+</p>
+
+| Dimensión | Posición | Justificación |
+|---|---|---|
+| Divertido / Serio | **Serio** | Se comunican riesgos para la vida y el patrimonio. No hay humor ni exclamaciones decorativas. |
+| Formal / Casual | **Formal cercano** | Trato de «usted» en SMS y correos, que llegan a administradores y gerentes; «tú» en la interfaz, que se usa a diario. Sin jerga técnica salvo en vistas de integración. |
+| Respetuoso / Irreverente | **Respetuoso** | Nunca se culpa al usuario; los errores explican cómo corregir. |
+| Entusiasta / Sereno | **Sereno** | Una alerta crítica informa y orienta; no transmite pánico. |
+
+| Nivel | Tono | Estructura | Ejemplo |
+|---|---|---|---|
+| Normal | Informativo | Estado + dato | «Todo en orden. 166 dispositivos reportando.» |
+| Advertencia | Preventivo | Qué pasa + dónde + qué observar | «El gas en Server Room llegó a 820 ppm. Ventila la zona y revisa en 10 minutos.» |
+| Crítico | Imperativo y breve | Nivel + qué + dónde + qué hacer | «CRÍTICO: gas 1250 ppm en Laboratorio 2, piso 3. Evacúe la zona y autorice el corte de gas.» |
+| Sin conexión | Transparente | Qué se perdió + qué hace el sistema | «ESP32-REC-02 dejó de reportar hace 2 h. El Edge guarda sus lecturas y las enviará al reconectar.» |
+| Informativo | Confirmatorio | Acción + resultado | «Respuesta autorizada. La válvula del piso 3 se cerró a las 20:43.» |
+
+<p align="justify">
+El producto usa <strong>una sola palabra por concepto</strong>: <em>edificio</em>, <em>piso</em>, <em>espacio</em> o <em>zona</em> según el modelo de Building Management; <em>dispositivo</em> (no «nodo» ni «equipo») en la interfaz; <em>alerta</em> para la señal generada e <em>incidente</em> para su seguimiento; y los niveles <em>Normal, Advertencia, Crítico y Sin conexión</em>. Los botones empiezan con un verbo («Autorizar respuesta», «Crear dispositivo») y las unidades se separan de la cifra con un espacio (1250 ppm, 24.2 °C).
+</p>
 
 ### 5.1.2. Web, Mobile and IoT Style Guidelines.
-Diseñamos una interfaces Web centrada principalmente en la claridad y eficiencia,  para que la experiencia del usuario en pantallas de mayores tamaños. Tambien aplicamos una estructura responsivas, patrones de navegación y un poco de grid para asegurar que la accesibilidad y rendimiento en un entrono de escritorio
 
-#### Colour Paletie
+<p align="justify">
+Esta sección corresponde a la capa de Superficies. Para mostrar cómo se conectan las plataformas, primero se sigue <strong>una misma alerta</strong> a través de todas ellas y después se detallan los estándares de cada una.
+</p>
 
-##### Recomended usage
+#### Una alerta, cuatro superficies
 
-![TColors.PNG](assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
+![Una alerta en el dispositivo, el SMS, la aplicación móvil y la aplicación web](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-09-una-alerta-cuatro-superficies.png)
 
-#### Tipografía 
+<p align="center">
+  <strong>Figura 88. Una alerta crítica en las cuatro superficies de ResQ.</strong>
+</p>
 
-![Tipografia-ResQ.PNG](assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+<p align="justify">
+Escenario: el sensor MQ-2 del Laboratorio 2 mide 1250 ppm de gas con un umbral de 1000 ppm. En el <strong>segundo 0</strong>, el Edge Service evalúa la regla y el nodo responde de forma local: OLED con «PELIGRO», LED rojo a 4 Hz y buzzer intermitente. Hacia el <strong>segundo 3</strong>, la Cloud RESTful API registra la alerta y la notifica: el responsable recibe un SMS, la Mobile Application muestra la notificación y el detalle con la acción fija al pie, y la Web Application presenta un banner crítico sobre la lista de alertas activas. En las cuatro superficies se mantiene el mismo orden de lectura: <strong>nivel → qué pasó → dónde → qué decidir</strong>. Este recorrido es el mismo que modelan el diagrama dinámico y el diagrama de secuencia de la sección 4.1.3.3.
+</p>
 
-#### Grid
+#### Web Application
 
-![Grid.PNG](assets/images/chapter-05-solution-ui-ux-design/Grid1.png)
+![Estructura y comportamiento responsive de la Web Application](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-10-web-layout-responsive.png)
 
-![Button.PNG](assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
+<p align="center">
+  <strong>Figura 89. Web: estructura y puntos de quiebre.</strong>
+</p>
 
-![NIO.PNG](assets/images/chapter-05-solution-ui-ux-design/NIOWeb1.png)
+<p align="justify">
+La Web Application se organiza en un <strong>shell</strong> fijo: barra lateral navy de 198 px con el imagotipo y los ocho destinos principales (Panel principal, Edificios, Monitoreo de pisos, Espacios, Dispositivos, Alertas, Incidentes y Configuración), barra superior blanca con búsqueda global, campana de notificaciones y usuario, y un área de contenido sobre `#F3F6FA`. El panel principal sigue siempre el mismo orden: una fila de cuatro KPI, una fila de análisis (gráfico ambiental en 2fr y distribución de riesgos en 1fr) y una fila de listas (alertas activas, estado de dispositivos e incidentes recientes).
+</p>
 
-Adaptamos lo Fundamental de ResQ para dispositivos móviles optimizamos la usabilidad en el apartado táctil, la jerarquía visual y  sin olvidad la agilidad de la navegación ya que es lo fundamental, priorizamos lo intuitivo, mayor rendimiento y pasos rápidos pero suaves entre pantallas, conociendo las limitaciones y contras del formato móvil
+| Ancho | Comportamiento |
+|---|---|
+| ≥ 1100 px | Barra lateral fija, cuatro KPI en una fila, grid 2fr/1fr y tres tarjetas en la fila inferior. |
+| 800–1099 px | KPI en 2 × 2 y fila inferior en dos columnas. |
+| 480–799 px | La barra lateral se convierte en un cajón con el isotipo de 76 px; el contenido pasa a una columna y las pestañas de métricas ocultan sus totales. |
+| < 480 px | KPI apilados; las tablas se presentan como listas con el badge de severidad visible. |
 
-#### Colour Paletie
+![Componentes y estados de la Web Application](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-11-web-componentes.png)
 
-##### Recomended usage
+<p align="center">
+  <strong>Figura 90. Web: componentes y estados.</strong>
+</p>
 
-![TColors.PNG](assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
+<p align="justify">
+Los componentes comparten estados explícitos. El botón principal es azul `#1570EF` en reposo, `#175CD3` en hover y presionado, muestra un contorno de foco de 2 px con 2 px de separación al navegar con teclado y pasa a gris en estado deshabilitado. Solo hay un botón principal por bloque. Las acciones que afectan el mundo físico, como cortar el gas o activar un actuador, usan el botón destructivo `#D92D20` y siempre abren un diálogo de confirmación. Los campos muestran la etiqueta visible arriba, el foco con borde azul y halo `#EFF6FF`, y los errores con borde rojo y un mensaje que explica cómo corregir. Las tarjetas KPI colocan el ícono en un contenedor tintado del color del dominio (azul para edificios, verde para dispositivos y rojo para alertas y espacios críticos).
+</p>
 
-#### Tipografía 
+#### Mobile Application
 
-![Tipografia-ResQ.PNG](assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+![Disposición e interacción en Mobile](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-12-mobile.png)
 
-#### Grid
+<p align="center">
+  <strong>Figura 91. Mobile: disposición e interacción.</strong>
+</p>
 
-![Grid.PNG](assets/images/chapter-05-solution-ui-ux-design/Grid2.png)
+<p align="justify">
+La Mobile Application conserva la identidad, los tokens y el lenguaje de severidad de la Web Application. Lo que cambia es la disposición, pensada para el responsable que recibe la alerta fuera de su escritorio:
+</p>
 
-![Button.PNG](assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
+| Aspecto | Estándar |
+|---|---|
+| Estructura | Una columna. Los KPI en cuadrícula 2 × 2 para ver el estado general sin desplazamiento. |
+| Navegación | Cajón lateral navy con el isotipo de 76 px; el contador rojo de alertas se mantiene visible en la barra superior y en el cajón. |
+| Objetivo táctil | Mínimo 44 × 44 px y 8 px de separación entre objetivos. |
+| Acción crítica | En el detalle de una alerta, el botón de autorización va fijo al pie, al alcance del pulgar, y siempre pide confirmación. |
+| Notificaciones | Push y SMS con el formato «Nivel · qué pasó · dónde · qué hacer», en menos de 160 caracteres; el avatar es el isotipo. |
+| Gráficos | Una métrica a la vez con pestañas (Temperatura, Humo, Gas, Humedad) y rangos de 24 h, 7 días y 30 días. |
+| Texto | 13 px en vistas de lista y 15 px en el detalle de alerta. |
 
-![NIO.PNG](assets/images/chapter-05-solution-ui-ux-design/NIOMoviel1.png)
+#### IoT Device: interfaz de pantalla
 
-Excedemos nuestros lineamientos respecto a los dispositivos IoT para asegurar que la interfaz sea funcional y simple. Diseñamos visuales claras y compactas con código de colores efectivos y apartados visuales que faciliten la comprensión de la información
+![Interfaz OLED del dispositivo ResQ](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-13-iot-pantalla-oled.png)
 
-#### Colour Paletie
+<p align="center">
+  <strong>Figura 92. IoT: interfaz de la pantalla OLED.</strong>
+</p>
 
-##### Recomended usage
+<p align="justify">
+El nodo del MVP usa una pantalla OLED SSD1306 de 0.96" (128 × 64 px, monocroma) con fuente bitmap de 6 × 8 px. Esto permite cuatro líneas de hasta 21 caracteres. Cada pantalla sigue una <strong>jerarquía fija de cuatro líneas</strong>: (1) estado y ubicación corta, (2) magnitud principal, (3) contexto (umbral, temperatura o ubicación) y (4) instrucción o conectividad. El estado se muestra en video inverso para leerse a un metro de distancia, y en el nivel Crítico parpadea una vez por segundo. No se usan tildes, porque la fuente del controlador no las incluye, ni textos en desplazamiento: la información debe entenderse de un vistazo.
+</p>
 
-![TColors.PNG](assets/images/chapter-05-solution-ui-ux-design/WebColor1.png)
+#### IoT Device: interfaz física
 
-#### Tipografía 
+![Interfaz física del dispositivo ResQ](assets/images/chapter-05-solution-ui-ux-design/style-guidelines/sg-14-iot-interfaz-fisica.png)
 
-![Tipografia-ResQ.PNG](assets/images/chapter-05-solution-ui-ux-design/tipografia1.png)
+<p align="center">
+  <strong>Figura 93. IoT: patrones de luz y sonido y panel frontal.</strong>
+</p>
 
-#### Grid
+<p align="justify">
+El nodo comunica su estado con dos LEDs (rojo y verde) y un buzzer activo. Como Advertencia y Crítico usan el mismo LED rojo, se distinguen por el <strong>ritmo</strong> y por el <strong>sonido</strong>, de modo que el estado se reconoce aun con daltonismo o sin mirar el dispositivo:
+</p>
 
-![Grid.PNG](assets/images/chapter-05-solution-ui-ux-design/Grid1.png)
+| Estado | LED | Buzzer | OLED |
+|---|---|---|---|
+| Normal | Verde fijo | Silencio | `OK` |
+| Advertencia | Rojo, 1 Hz | Un pitido cada 10 s | `ALERTA` |
+| Crítico | Rojo, 4 Hz | Intermitente 250 ms / 250 ms | `!! PELIGRO !!` |
+| Sin conexión | Verde, un destello cada 2 s | Silencio | `SIN RED` |
+| Prueba (botón 3 s) | Rojo, 2 Hz durante 10 s | Pitido de 1 s | `PRUEBA` |
 
-![Button.PNG](assets/images/chapter-05-solution-ui-ux-design/Webbutton1.png)
+<p align="justify">
+En el panel frontal, la OLED queda a la altura de los ojos con el dispositivo montado a 1.5 m; los LEDs se ubican junto a la pantalla y el buzzer detrás de una rejilla. El sensor MQ-2 queda expuesto al aire a través de una ventilación inferior, ya que nunca debe quedar encerrado. La carcasa proyectada para la evolución del MVP mide 120 × 85 × 40 mm en ABS blanco con frente gris claro. El logo se graba en una cara lateral para no competir con las señales, y el botón de prueba va empotrado y requiere 3 s de pulsación para evitar activaciones accidentales.
+</p>
 
-![NIO.PNG](assets/images/chapter-05-solution-ui-ux-design/NIOIoT1.png)
+#### Accesibilidad, idioma y movimiento
+
+| Criterio | Regla en ResQ |
+|---|---|
+| Contraste | Mínimo 4.5 : 1 para texto y 3 : 1 para componentes (ver tabla de contrastes). |
+| Color | Ningún estado se comunica solo con color: siempre con ícono y palabra en las apps, y con ritmo y sonido en el dispositivo. |
+| Teclado | Todo elemento interactivo muestra `outline: 2px solid #1570EF` con `outline-offset: 2px` al recibir el foco. |
+| Lectores de pantalla | Banners de alerta con `role="alert"`; avisos de respuesta autorizada con `role="status"`; íconos decorativos con `aria-hidden="true"`. |
+| Idioma | La Web Application ofrece español e inglés mediante <code>LanguageService</code>; la preferencia se guarda para futuras sesiones y el dispositivo la recibe desde Device Management. |
+| Movimiento | Transiciones de 150 ms en hover y foco. Con `prefers-reduced-motion: reduce`, las animaciones se desactivan. En la interfaz, ninguna luz o animación parpadea más de tres veces por segundo. |
+
 
  
 ### 5.2. Information Architecture.
