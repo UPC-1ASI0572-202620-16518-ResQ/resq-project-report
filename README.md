@@ -3861,72 +3861,74 @@ Durante el <strong>Design Critique</strong> se revisó la separación entre dete
 </p>
 
 ### 4.1.2. Context Mapping
-<p align="justify">
-En esta sección desarrollamos un conjunto de context maps para visualizar las relaciones entre los bounded contexts del sistema de sensores de emergencia. A partir de la información recolectada, exploramos distintas alternativas de diseño, cuestionando cómo cambiaría la estructura si reubicamos, dividimos o agrupamos capabilities. Finalmente, evaluamos cada propuesta considerando patrones como Anti-corruption Layer, Conformist, Customer/Supplier y Shared Kernel, con el fin de definir la mejor aproximación para la arquitectura del dominio. A continuación presentaremos las opciones que contemplamos y la estructura final.
-</p>
-
-**opcion 1**
 
 <p align="justify">
-En esta estructura mantenemos los cinco bounded contexts separados con relaciones claramente definidas. Las ventajas de este tipo de contexto son por un lado la clara separación de responsabilidades y por otro lado, se especifica que cada contexto se enfoca en una funcionalidad específica. Una de las principales desventajas es que hay una mayor complejidad en la sincronización entre contextos, especialmente con el alto volumen de datos de conectividad.
+
+A partir de los diez Bounded Contexts identificados en ResQ, se elaboraron tres alternativas de <strong>Context Mapping</strong> para evaluar sus límites, dependencias y mecanismos de colaboración. Se analizaron las ventajas y desventajas de mantener responsabilidades separadas, agrupar capacidades y establecer contratos de integración, considerando los patrones de Domain-Driven Design.
+
 </p>
 
-![Mapping1 - ResQ](assets/images/chapter-04-solution-software-design/mapping1.png)
+**Opción 1: Separación de los diez Bounded Contexts**
+
+<p align="justify">
+
+Esta alternativa mantiene los diez contextos independientes, con intercambios directos de información entre ellos. Su ventaja es la separación de responsabilidades; sin embargo, la ausencia de contratos de integración claramente definidos puede generar acoplamiento entre modelos y dificultar su evolución.
+
+</p>
+
+![Context Mapping - Opción 1](assets/images/chapter-04-solution-software-design/mapping1.png)
 
 <p align="center">
-  <strong>Figura 42. Mapping1 - ResQ.</strong>
+
+<strong>Figura 43. Context Mapping - Opción 1: Separación de los Bounded Contexts.</strong>
+
 </p>
 
-
-**opcion 2**
+**Opción 2: Consolidación de Device Management y Connectivity Management**
 
 <p align="justify">
-Esta alternativa propone unir los contextos de Connectivity Management y Device Management en un solo bounded context. Al hacerlo, se elimina la necesidad de sincronización externa entre el inventario físico de sensores y su estado de red, manteniendo relaciones similares con los demás contextos del sistema.
+
+Esta alternativa agrupa <strong>Device Management</strong> y <strong>Connectivity Management</strong> en un único contexto, reduciendo la descomposición a nueve Bounded Contexts. Simplifica la coordinación entre el inventario y el estado de conexión de los dispositivos, pero combina reglas administrativas con responsabilidades de comunicación, detección de desconexiones y recuperación de enlaces.
+
 </p>
 
-<p align="justify">
-Esta combinación presenta ventajas como la simplificación de la arquitectura al disminuir la cantidad de bounded contexts, permitiendo una comunicación más directa entre el alta de un dispositivo y su monitoreo de latidos.
-</p>
-
-<p align="justify">
-No obstante, una desventaja es la combinación de responsabilidades distintas, ya que una parte se enfoca en transacciones de alto rendimiento (recibir miles de heartbeats por segundo) y la otra en procesos administrativos (registrar MAC addresses y zonas). Esto podría generar cuellos de botella en el servidor y el riesgo de que un solo contexto asuma demasiadas funciones.
-</p>
-
-![Mapping2 - ResQ](assets/images/chapter-04-solution-software-design/mapping2.png)
+![Context Mapping - Opción 2](assets/images/chapter-04-solution-software-design/mapping2.png)
 
 <p align="center">
-  <strong>Figura 43. Mapping2 - ResQ.</strong>
+
+<strong>Figura 44. Context Mapping - Opción 2: Consolidación de Device y Connectivity Management.</strong>
+
 </p>
 
-**opcion 3**
+**Opción 3: Separación de responsabilidades con contratos explícitos**
 
 <p align="justify">
-Esta alternativa propone una arquitectura compuesta por cinco bounded contexts bien definidos, con relaciones claras entre ellos. La estructura busca equilibrar la separación de responsabilidades, para permitir que el sistema escale (vital para el procesamiento de redes IoT) y se mantenga con facilidad. Además, asegura tiempos de respuesta críticos ante emergencias.
+
+Esta alternativa mantiene los diez Bounded Contexts y define relaciones según sus responsabilidades. <strong>Building Management</strong> proporciona información para validar ubicaciones utilizadas por <strong>Device Management</strong>, <strong>Alert &amp; Response Management</strong> e <strong>Incident Management</strong>. Asimismo, Alert &amp; Response Management consulta información del catálogo de dispositivos mediante una fachada de integración. Estas colaboraciones tienen respaldo en el backend actual y pueden modelarse mediante relaciones <strong>Customer/Supplier</strong> y mecanismos de adaptación de modelos.
+
 </p>
 
-* Building Management se comunica con Risk Detection y Device Management, proporcionando la información de la ubicación y zonas físicas (edificios, pisos). En ambos casos, la relación es del tipo Customer/Supplier, donde Building es el proveedor.  
+<p align="justify">
 
-* Device Management y Alert & Response Management comparten el modelo del "Sensor" y su criticidad. Por eso, tienen una relación de tipo Shared Kernel, lo que asegura que ambos usen los mismos conceptos al reportar qué aparato falló.  
+Las colaboraciones previstas entre <strong>Connectivity Management</strong>, <strong>Monitoring</strong>, <strong>Risk Detection</strong>, <strong>Alert &amp; Response Management</strong> e <strong>Incident Management</strong> se representan mediante contratos y eventos de dominio. Para incorporar sistemas externos, se contempla el patrón <strong>Anti-corruption Layer (ACL)</strong>, evitando trasladar sus modelos directamente al dominio de ResQ. Estas integraciones deberán validarse durante su implementación.
 
-* Alert & Response Management también se relaciona con Risk Detection, pero en este caso la relación es Conformist. El sistema de alertas utiliza la información del riesgo (sismo, gas), adaptándose a su estructura sin modificarla.
+</p>
 
-* Connectivity Management se conecta con Device Management mediante una Anti-corruption Layer (ACL). Esta capa traduce los miles de datos técnicos de red y latidos a un formato simple de estados operativos que Device Management pueda entender. Así, se protege el sistema central de la inmensa carga de datos técnicos de IoT.
-
-![Mapping3 - ResQ](assets/images/chapter-04-solution-software-design/mapping3.png)
+![Context Mapping - Opción 3](assets/images/chapter-04-solution-software-design/mapping3.png)
 
 <p align="center">
-  <strong>Figura 44. Mapping3 - ResQ.</strong>
+
+<strong>Figura 45. Context Mapping - Opción 3: Bounded Contexts con contratos explícitos.</strong>
+
 </p>
 
 **Elección**
-<p align="justify">
-Elegimos la opción 3, ya que proporciona el mejor equilibrio entre la separación de responsabilidades, la capacidad de procesamiento de alto rendimiento y el cumplimiento de los requisitos críticos de un sistema de emergencias.
-</p>
 
 <p align="justify">
-Al definir cinco bounded contexts con relaciones claras, se facilita la evolución independiente de cada parte del sistema. Al separar la gestión de tráfico de red (Connectivity Management) mediante una Anti-corruption Layer, se aísla la carga técnica de los heartbeats constantes, evitando saturar la base de datos de los dispositivos. Asimismo, esta estructura garantiza tiempos de respuesta rápidos al procesar alertas reales de sismos o gas, brindando una plataforma robusta y confiable para la seguridad de los usuarios.
-</p>
 
+Se seleccionó la <strong>opción 3</strong> porque mantiene separados los contextos Core, Supporting y Generic, permite conservar las responsabilidades del dominio y reduce la dependencia directa entre modelos mediante contratos de integración. Esta alternativa también es coherente con las fachadas existentes en el backend y permite incorporar progresivamente las capacidades IoT y Edge previstas, sin requerir un Shared Kernel entre Device Management y Alert &amp; Response Management.
+
+</p>
 
 ### 4.1.3. Software Architecture
 <p align="justify">
