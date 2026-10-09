@@ -10057,7 +10057,173 @@ El historial evidencia la construcción de la Frontend Web Application version 1
 Los commits comprendidos dentro del Sprint evidencian implementaciones para Building Management, Device Management, Incident Management y Alert Management, además de un commit integrador de módulos base y una configuración Docker multi-stage para compilar y ejecutar la API sobre .NET 10. Estas capacidades proporcionan servicios iniciales para el MVP digital. Aunque el Project Report diseña Monitoring, Risk Detection, Connectivity Management y servicios Edge, no se encontró en <code>resq-backend</code> una implementación equivalente de esos componentes; por ello, no se consideran concluidos en Sprint 1.
 </p>
 
-#### 6.2.1.6. Execution Evidence for Sprint Review
+
+### 6.2.1.6. Execution Evidence for Sprint Review
+
+Durante el Sprint 1 de ResQ se desarrollaron y desplegaron las primeras versiones de los productos digitales que conforman el MVP de la solución. Las actividades de implementación estuvieron orientadas a proporcionar una experiencia inicial de interacción mediante el Landing Page, la Frontend Web Application y los Backend Web Services, así como avanzar en el diseño e integración del prototipo IoT para la detección de gas y humo.
+
+En esta sección se presentan las evidencias de ejecución correspondientes a los componentes desarrollados durante el Sprint, considerando las principales interfaces, funcionalidades y mecanismos de interacción disponibles. Estas evidencias permiten visualizar los resultados obtenidos y contrastarlos con el Sprint Goal establecido durante la planificación.
+
+#### Landing Page
+
+Durante el Sprint 1 se implementó la primera versión del Landing Page de ResQ utilizando Angular, TypeScript, HTML y SCSS. Este producto digital tiene como propósito comunicar la propuesta de valor de la solución y presentar sus principales beneficios a los segmentos objetivo.
+
+La implementación comprende una estructura de navegación que permite acceder a las distintas secciones informativas del sitio, conocer las características de ResQ y utilizar los enlaces disponibles hacia sus productos digitales.
+
+Entre las principales características desarrolladas se encuentran:
+
+- Presentación de la propuesta de valor de ResQ.
+- Secciones informativas sobre las funcionalidades y beneficios de la solución.
+- Contenido dirigido a administradores de edificaciones y empresas integradoras.
+- Navegación entre las diferentes secciones del Landing Page.
+- Diseño responsive para su visualización en diferentes dispositivos.
+- Elementos visuales interactivos para presentar las características de la solución.
+
+La implementación también considera una experiencia visual consistente con la identidad de ResQ, utilizando componentes reutilizables y estilos organizados mediante SCSS.
+
+**Landing Page desplegado:** [ResQ - Landing Page](https://upc-1asi0572-202620-16518-resq.github.io/resq-landing-page/)
+
+**Figura X. Vista principal del Landing Page de ResQ**
+
+![Landing Page - Main View](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/landing-main.png)
+
+**Figura X. Sección de beneficios del Landing Page**
+
+![Landing Page - Benefits](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/landing-benefits.png)
+
+Las vistas del Landing Page evidencian la implementación de una experiencia orientada a comunicar la propuesta del producto y facilitar que los visitantes conozcan las funcionalidades ofrecidas por ResQ.
+
+#### Frontend Web Application
+
+La primera versión de la Frontend Web Application fue desarrollada utilizando Angular, TypeScript, Angular Material y SCSS. Su implementación permite representar los principales procesos relacionados con el monitoreo de edificaciones, la administración de dispositivos, la visualización de condiciones de riesgo y la gestión de alertas.
+
+Durante el Sprint 1 se desarrollaron interfaces y componentes correspondientes a las funcionalidades principales del MVP, organizados mediante una arquitectura basada en features.
+
+Entre los módulos y funcionalidades implementados se encuentran:
+
+- **Authentication:** Interfaces para el inicio de sesión y mecanismos de gestión de sesión.
+- **Dashboard:** Visualización general de información y estados asociados al monitoreo de edificaciones.
+- **Building Management:** Interfaces relacionadas con la administración de edificaciones y sus zonas.
+- **Device Management:** Vistas para consultar y administrar dispositivos asociados a la solución.
+- **Monitoring:** Componentes destinados a representar información de supervisión y mediciones.
+- **Alert Management:** Interfaz para visualizar alertas, consultar información contextual y revisar eventos de riesgo.
+
+La aplicación utiliza componentes reutilizables y mecanismos de navegación que permiten recorrer las funcionalidades disponibles. Asimismo, incorpora abstracciones de acceso a datos mediante Facades y Gateways, contemplando adaptadores HTTP y adaptadores basados en datos simulados.
+
+Por ello, las evidencias de visualización representan las capacidades implementadas en la interfaz, sin asumir que todas las funcionalidades se encuentran integradas completamente con dispositivos físicos o servicios externos.
+
+**Frontend Web Application desplegada:** [ResQ - Web Application](https://resq-frontend.ffaaliceht2003.workers.dev/login)
+
+**Figura X. Vista de inicio de sesión de ResQ**
+
+![Frontend - Login](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/frontend-login.png)
+
+La interfaz de autenticación permite presentar el punto de acceso a las funcionalidades de la aplicación y forma parte de las capacidades relacionadas con Identity and Access Management.
+
+**Figura X. Dashboard principal de monitoreo**
+
+![Frontend - Dashboard](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/frontend-dashboard.png)
+
+El Dashboard permite visualizar información general relacionada con las edificaciones y sus condiciones de supervisión, proporcionando una vista centralizada de los datos presentados por el sistema.
+
+**Figura X. Administración de edificaciones**
+
+![Frontend - Buildings](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/frontend-buildings.png)
+
+Las interfaces de Building Management permiten representar las funcionalidades relacionadas con la consulta y administración de edificaciones, así como la organización de sus zonas.
+
+**Figura X. Administración de dispositivos**
+
+![Frontend - Devices](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/frontend-devices.png)
+
+La sección de Device Management proporciona una interfaz para consultar y administrar los dispositivos considerados dentro de la solución, incluyendo su relación con las edificaciones y zonas correspondientes.
+
+**Figura X. Centro de alertas de ResQ**
+
+![Frontend - Alerts](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/frontend-alerts.png)
+
+El centro de alertas permite visualizar información contextual sobre eventos y condiciones de riesgo. Esta funcionalidad constituye una de las principales capacidades de ResQ para facilitar la supervisión y el seguimiento de situaciones que requieren atención.
+
+En conjunto, las interfaces desarrolladas permiten demostrar los principales recorridos de navegación del MVP y proporcionan una base para continuar con la integración de servicios, el procesamiento de información IoT y la validación de las funcionalidades durante los siguientes Sprints.
+
+#### Backend Web Services
+
+Durante el Sprint 1 se implementaron servicios RESTful utilizando C#, ASP.NET Core y Entity Framework Core, considerando MySQL como tecnología de persistencia.
+
+El Backend se organiza mediante Bounded Contexts y capas arquitectónicas basadas en Domain-Driven Design, separando las responsabilidades de Domain, Application, Interfaces e Infrastructure.
+
+Entre los componentes con avances de implementación se encuentran:
+
+- **Identity and Access Management:** Servicios relacionados con autenticación, autorización y gestión de acceso.
+- **Building Management:** Operaciones para registrar, consultar y administrar edificaciones y zonas.
+- **Device Management:** Servicios relacionados con la administración y asociación de dispositivos.
+- **Incident Management:** Operaciones relacionadas con la gestión de incidentes.
+- **Alert Management:** Servicios para administrar y consultar información de alertas.
+
+Los servicios desarrollados utilizan endpoints RESTful y mecanismos de documentación mediante Swagger/OpenAPI, facilitando la consulta de las operaciones disponibles y sus contratos de interacción.
+
+**Backend Web Services:** [ResQ - Swagger UI](https://resq-api-79xy.onrender.com/swagger/index.html)
+
+**Figura X. Documentación de servicios RESTful mediante Swagger**
+
+![Backend - Swagger](assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq1.png)
+
+La documentación Swagger permite visualizar los endpoints expuestos por el Backend, sus métodos HTTP y las estructuras de solicitud y respuesta correspondientes.
+
+Esta evidencia complementa las interfaces de la Web Application al mostrar los servicios disponibles para soportar las principales funcionalidades del MVP.
+
+La disponibilidad de estos endpoints constituye un avance en la implementación de la arquitectura de ResQ. Sin embargo, la ejecución individual de los servicios no implica necesariamente que todos los flujos de integración entre Frontend, Backend y dispositivos IoT hayan sido completados.
+
+#### IoT Prototype
+
+Como parte del Sprint 1 de ResQ, se contempla el diseño y desarrollo de un prototipo IoT orientado a la detección local de condiciones de riesgo relacionadas con la presencia de gas y humo en edificaciones. Para ello, se propone utilizar un ESP32 como unidad principal de procesamiento, un sensor MQ-2 para la adquisición de mediciones y diferentes componentes de visualización y señalización.
+
+El prototipo considera los siguientes componentes:
+
+- **ESP32:** Microcontrolador encargado de recibir y procesar las mediciones del sensor, evaluar las condiciones de riesgo y controlar los dispositivos de salida.
+- **Sensor MQ-2:** Componente utilizado para detectar la presencia de determinados gases combustibles y humo mediante variaciones en su señal de salida.
+- **Pantalla OLED:** Dispositivo destinado a mostrar las mediciones del sensor y el estado de riesgo identificado.
+- **LEDs:** Indicadores visuales que permiten diferenciar condiciones normales de situaciones de alerta.
+- **Buzzer:** Actuador encargado de emitir una señal sonora cuando se identifica una condición de riesgo.
+
+Para representar la integración de estos componentes, se utiliza la herramienta Cirkit Designer, que permite elaborar el esquema electrónico del prototipo y visualizar las conexiones entre el ESP32, el sensor MQ-2 y los dispositivos de salida.
+
+**Figura X. Diseño del circuito electrónico del prototipo IoT de ResQ en Cirkit Designer**
+
+![Diseño del circuito IoT de ResQ](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/iot-circuit.png)
+
+La figura presenta el diseño propuesto del circuito electrónico, mostrando la disposición de los componentes y sus conexiones. Este esquema sirve como referencia para la implementación del prototipo y la posterior comprobación de su funcionamiento.
+
+El comportamiento esperado del sistema consiste en adquirir las mediciones del sensor MQ-2, procesarlas localmente mediante el ESP32 y determinar el estado de riesgo de acuerdo con los umbrales establecidos. En condiciones normales, el sistema deberá mostrar el estado correspondiente mediante la pantalla OLED y los indicadores visuales. Cuando se identifique una condición de riesgo, se deberá activar la señalización mediante los LEDs y el buzzer.
+
+Estas actividades se encuentran alineadas con las Technical Stories TS01 - Capturar mediciones desde los Embedded Systems y TS03 - Procesar reglas de detección localmente, contribuyendo al cumplimiento del Sprint Goal mediante el diseño de los componentes necesarios para la detección y señalización de condiciones de riesgo.
+
+El diseño elaborado en Cirkit Designer constituye una evidencia del avance del prototipo IoT durante el Sprint 1, al representar la integración propuesta entre el sensor MQ-2, el ESP32 y los dispositivos de visualización y alerta. Este entregable establece una base para las siguientes actividades de implementación, integración y validación del sistema, permitiendo continuar con el desarrollo progresivo de las capacidades de detección y respuesta de ResQ.
+
+#### Video de ejecución del Sprint 1
+
+Como complemento de las capturas presentadas, se contempla una demostración de ejecución del Sprint 1 que permita visualizar los principales recorridos de navegación y las funcionalidades implementadas en los productos digitales de ResQ.
+
+La demostración comprende los siguientes aspectos:
+
+1. Presentación y navegación del Landing Page.
+2. Acceso a la Frontend Web Application.
+3. Visualización del Dashboard de monitoreo.
+4. Consulta de las interfaces de administración de edificaciones y dispositivos.
+5. Visualización del centro de alertas.
+6. Revisión de los endpoints disponibles mediante Swagger/OpenAPI.
+7. Presentación del diseño y avance del prototipo IoT, diferenciando los componentes diseñados de aquellos cuya ejecución física ha sido verificada.
+
+**Figura X. Vista de presentación del video de ejecución del Sprint 1**
+
+![Video de ejecución del Sprint 1 de ResQ](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/sprint1-video.png)
+
+**Video de ejecución del Sprint 1:** [Execution Evidence - Sprint 1](URL_DEL_VIDEO)
+
+El video complementa las evidencias visuales presentadas en esta sección y permite revisar los resultados de implementación del Landing Page, la Frontend Web Application y los Backend Web Services, así como el avance del diseño del prototipo IoT.
+
+En conjunto, las evidencias del Sprint 1 muestran los avances realizados en los productos digitales de ResQ y en la definición de los componentes necesarios para la detección local de condiciones de riesgo. Asimismo, permiten identificar las actividades de integración y validación que continuarán desarrollándose para completar el MVP.
+
 
 #### 6.2.1.7. Services Documentation Evidence for Sprint Review.
 
