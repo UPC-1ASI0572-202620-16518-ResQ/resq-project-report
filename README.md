@@ -351,11 +351,27 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 
 ### 1.1.1. Descripción de la Startup
 <p align="justify">
-En una ciudad como Lima, caracterizada por su alta densidad de edificios y su constante vulnerabilidad ante emergencias como fugas de gas o movimientos sísmicos, la seguridad preventiva es un desafío crítico. Actualmente, la gestión de estos riesgos presenta grandes deficiencias: un simple error en la detección o el uso de múltiples alarmas desconectadas (que en el mejor de los casos solo emiten un aviso sonoro y dependen por completo de la rápida intervención humana) puede poner vidas en riesgo. Frente a esta realidad surge SecurityBear, una startup creada por estudiantes de la Facultad de Ingeniería de la Universidad Peruana de Ciencias Aplicadas (UPC). Reconocemos que, muchas veces, cuando las familias, trabajadores o empresas buscan estar verdaderamente preparados para cualquier eventualidad, se enfrentan a un mercado confuso y fragmentado. Surgen constantes dudas sobre cuántos dispositivos distintos se deben adquirir, su nivel de integración tecnológica y, sobre todo, si serán capaces de reportar un siniestro de manera automática y sin demoras.
+
+En el contexto de las edificaciones residenciales, comerciales y empresariales, la seguridad y la gestión de emergencias constituyen aspectos fundamentales para proteger a las personas y reducir los daños en la infraestructura. Sin embargo, la coexistencia de dispositivos de detección independientes, la limitada integración entre sistemas y la necesidad de intervención humana para coordinar determinadas respuestas pueden dificultar la supervisión de riesgos y la actuación oportuna ante situaciones críticas. Frente a esta problemática surge <strong>SecurityBear</strong>, una startup fundada por estudiantes de Ingeniería de Software de la Universidad Peruana de Ciencias Aplicadas (UPC), con el propósito de desarrollar soluciones tecnológicas innovadoras que contribuyan a mejorar el monitoreo, la detección de riesgos y la gestión coordinada de emergencias en edificaciones.
+
 </p>
 
 <p align="justify">
-Con nuestro sistema inteligente e integrado, centralizamos la detección de múltiples amenazas en un solo dispositivo automatizada. Utilizamos tecnología de sensores avanzados para identificar riesgos al instante, notificando a los usuarios en tiempo real y eliminando los retrasos propios de la intervención manual. Nuestro enfoque se centra en brindar tranquilidad y eficiencia, transformando la prevención de emergencias en algo accesible, seguro y capaz de actuar cuando cada segundo cuenta.
+
+Como parte de su propuesta de valor, SecurityBear desarrolla <strong>ResQ</strong>, una plataforma basada en Internet of Things (IoT) que busca integrar el monitoreo de condiciones ambientales y físicas, la identificación de situaciones de riesgo, la generación de alertas y la coordinación de mecanismos de respuesta dentro de un mismo ecosistema tecnológico. La solución propone combinar dispositivos IoT, procesamiento local mediante Edge Computing y servicios digitales para facilitar la supervisión de edificaciones, identificar las zonas afectadas y proporcionar información relevante para la toma de decisiones. Asimismo, contempla la automatización de determinadas acciones de seguridad y la continuidad de funciones críticas locales ante interrupciones de conectividad, con una arquitectura modular que permita incorporar progresivamente nuevas capacidades conforme evolucionen las necesidades de los usuarios.
+
+</p>
+
+<p align="justify">
+
+SecurityBear orienta su propuesta a dos segmentos estratégicos: los propietarios y administradores de edificaciones, quienes requieren herramientas para supervisar las condiciones de seguridad de sus instalaciones, y las empresas integradoras de automatización y gestión de edificios inteligentes, que buscan complementar sus proyectos mediante tecnologías de monitoreo, detección y respuesta ante emergencias. La startup plantea un enfoque de negocio orientado a ofrecer soluciones y servicios tecnológicos adaptables a las características de cada edificación, promoviendo alianzas estratégicas con empresas especializadas en automatización e integración IoT. Este modelo busca facilitar la incorporación de ResQ a infraestructuras existentes, ampliar progresivamente su alcance comercial y establecer oportunidades de crecimiento sostenible sin depender exclusivamente de la comercialización directa de dispositivos.
+
+</p>
+
+<p align="justify">
+
+Nuestra visión es posicionar a SecurityBear como una startup reconocida por el desarrollo de soluciones IoT orientadas a la seguridad y automatización de edificaciones, diferenciándose mediante la integración tecnológica, la capacidad de respuesta local y la adaptabilidad de sus soluciones. A través de la innovación continua, la colaboración con actores especializados y el desarrollo de una plataforma escalable, buscamos contribuir a la transformación digital de la gestión de emergencias, ofreciendo herramientas que permitan a las organizaciones fortalecer sus capacidades de supervisión, mejorar la coordinación de respuestas y avanzar hacia entornos más seguros y preparados.
+
 </p>
 
 ### 1.1.2. Perfiles de integrantes del equipo
@@ -368,108 +384,186 @@ Con nuestro sistema inteligente e integrado, centralizamos la detección de múl
 | Pedro Jesús Nanfuñay Liza | U202215462 | Mi nombre es Pedro Jesús Nanfuñay Liza, tengo 21 años y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona creativa, responsable, perseverante y siempre dispuesto a trabajar en equipo. Espero aportar de manera positiva al equipo y cumplir con los objetivos establecidos en el proyecto. | ![foto3](assets/images/chapter-01-introduction/Pedro.jpeg) |
 | Wilder Gonzalo Aliaga Urbina | U202222001 | Mi nombre es Gonzalo Aliaga Urbina y actualmente estudio la carrera de Ingeniería de Software. Me considero una persona responsable, organizada y comprometida con el cumplimiento de los objetivos establecidos en cada proyecto. Tengo especial interés en el desarrollo de soluciones tecnológicas, la programación y la aplicación de nuevas tecnologías para resolver problemas de manera eficiente. Durante los trabajos grupales procuro mantener una comunicación constante con mis compañeros, aportar ideas, apoyar en la resolución de dificultades y colaborar en la integración de las diferentes partes del proyecto. Asimismo, busco cumplir con las tareas asignadas dentro de los plazos establecidos y contribuir de manera activa para que el equipo mantenga una buena organización y logre resultados consistentes y funcionales. | ![foto4](assets/images/chapter-01-introduction/Gonzalo.jpg) |
 
-## 1.2. Solution Profile
+## 1.2. Solution Profile<p align="justify">
 
-### 1.2.1. Antecedentes y problemática
-#### What (¿Qué?)
-- **¿Cuál es el problema?** <br>
+La seguridad y gestión de emergencias en edificaciones constituye un desafío para propietarios, administradores y empresas encargadas de implementar soluciones de automatización. Las instalaciones residenciales, comerciales e institucionales pueden encontrarse expuestas a situaciones de riesgo, como fugas de gas, incendios y movimientos sísmicos, que requieren mecanismos de detección, supervisión y respuesta adecuados. Sin embargo, la coexistencia de dispositivos independientes, las dificultades de integración tecnológica y la dependencia de procedimientos manuales pueden limitar la capacidad de identificar oportunamente una amenaza, conocer su ubicación y coordinar las acciones correspondientes.
 
-<p align="justify">
-La dificultad de gestionar múltiples alarmas durante emergencias, lo que ocasiona que las personas no cuenten con información clara ni oportuna sobre los protocolos y rutas de evacuación a seguir. Esto resulta en desorientación y pánico, aumentando el riesgo de que los usuarios sufran lesiones o queden atrapados al no saber cómo actuar ni adónde dirigirse durante un desastre.
 </p>
 
-- **¿Cuál es la relación con la persona en cuestión?** <br>
-
 <p align="justify">
-La relación con los usuarios se basa en ofrecerles una herramienta centralizada que simplifica la gestión de sensores y alertas en un solo ecosistema. Esto reduce la complejidad y proporciona información detallada, automatizada y fácil de comprender para actuar correctamente en casos de emergencia.
+
+Frente a esta problemática, SecurityBear propone, una plataforma basada en Internet of Things (IoT), Edge Computing y servicios digitales, orientada a integrar el monitoreo de condiciones ambientales y físicas, la detección de situaciones de riesgo y la coordinación de mecanismos de alerta y respuesta. La propuesta considera las necesidades de propietarios y administradores de edificaciones, así como de empresas integradoras de automatización y gestión de edificios inteligentes, buscando facilitar la supervisión centralizada y la incorporación progresiva de tecnologías de seguridad en diferentes tipos de infraestructura.
+
 </p>
 
-#### When (¿Cuándo?)
-- **¿Cuándo sucede el problema?** <br>
-
 <p align="justify">
-El problema ocurre de imprevisto antes y durante la emergencia. Principalmente al momento de intentar identificar la amenaza y seguir un protocolo de evacuación, donde la confusión y falta de indicaciones claras pueden ocasionar accidentes, obstrucción de vías de escape o el riesgo de quedar atrapado bajo los escombros.
+
+Para comprender el problema desde una perspectiva integral, se aplica la técnica The 5 W's and 2 H's (What, When, Where, Who, Why, How y How Much), que permite identificar la naturaleza de la problemática, las personas y organizaciones involucradas, las circunstancias en las que se presenta, sus principales causas y la magnitud de sus posibles consecuencias.
+
 </p>
 
-- **¿Cuándo utiliza el cliente el producto?** <br>
+What (¿Qué?)
+
+¿Cuál es el problema?
 
 <p align="justify">
-El usuario utilizaría el sistema (SecurityBear / ResQ) en dos momentos clave: 1) En el instante crítico, para recibir una alerta temprana que identifique qué tipo de emergencia está ocurriendo (sismo, fuga de gas, incendio), y 2) Durante la evacuación, para recibir instrucciones y protocolos específicos que debe aplicar para ese caso en particular.
+
+El problema principal es la fragmentación de los sistemas de detección, monitoreo y respuesta ante emergencias en edificaciones, lo que dificulta centralizar la información sobre condiciones de riesgo y coordinar oportunamente las acciones de seguridad. En determinadas instalaciones, los sensores, alarmas y sistemas de automatización funcionan de manera independiente o presentan limitaciones de interoperabilidad, dificultando la identificación de la amenaza, su nivel de gravedad, la ubicación afectada y las acciones ejecutadas. Esta situación representa una dificultad para los propietarios y administradores que necesitan supervisar sus edificios, así como para las empresas integradoras que buscan incorporar capacidades de seguridad a infraestructuras con diferentes dispositivos y tecnologías.
+
 </p>
 
-#### Where (¿Dónde?)
-- **¿Dónde está el cliente cuando utiliza el producto?** <br>
+¿Cuál es la relación con la persona en cuestión?
 
 <p align="justify">
-Desde cualquier lugar dentro de una infraestructura monitoreada, ya sea su hogar, su centro de trabajo, un centro comercial o un local.
+
+La problemática se relaciona directamente con las responsabilidades de quienes administran, supervisan o implementan sistemas tecnológicos en edificaciones. Los propietarios y administradores necesitan conocer las condiciones de seguridad de sus instalaciones, identificar situaciones de riesgo y coordinar acciones que contribuyan a proteger a los ocupantes. Por su parte, las empresas integradoras de automatización requieren soluciones compatibles y adaptables que puedan incorporar a los proyectos desarrollados para sus clientes. En ambos casos, la falta de información centralizada y de mecanismos de respuesta coordinados puede incrementar la complejidad operativa y dificultar la toma de decisiones durante una emergencia.
+
 </p>
 
-- **¿A dónde se dirige?** <br>
+When (¿Cuándo?)
+
+¿Cuándo sucede el problema?
 
 <p align="justify">
-El usuario se dirige hacia las zonas de seguridad establecidas, ya sean áreas de evacuación externas (zonas amplias y despejadas) o zonas de seguridad internas (como columnas o pilares estructurales antisísmicos).
+
+La problemática puede manifestarse durante la operación cotidiana de una edificación y agravarse cuando ocurre una situación de emergencia. En condiciones normales, las dificultades aparecen al supervisar distintos sensores, verificar el funcionamiento de dispositivos o consultar información distribuida entre sistemas independientes. Durante un evento crítico, estas limitaciones pueden afectar la identificación del riesgo, la localización de la zona comprometida y la coordinación de respuestas. Asimismo, después de una emergencia, la ausencia de registros centralizados puede dificultar el análisis de lo ocurrido, la evaluación de las acciones ejecutadas y la identificación de oportunidades de mejora en los procedimientos de seguridad.
+
 </p>
 
-- **¿Dónde surge el problema?** <br>
+¿Cuándo utiliza el cliente el producto?
 
 <p align="justify">
-El problema se origina en el entorno físico afectado justo en el momento de la emergencia, agravado por la falta de un sistema unificado que guíe las decisiones en tiempo real. Surge en la brecha entre la activación de una alarma tradicional (que a lo mucho solo emite ruido) y la necesidad vital de conocer las acciones y rutas exactas que se deben tomar.
+
+Se plantea que ResQ sea utilizado principalmente en tres momentos. Primero, durante la operación habitual de la edificación, cuando los responsables necesitan supervisar dispositivos IoT, consultar mediciones y verificar las condiciones de seguridad de diferentes zonas. Segundo, cuando se detecta una situación de riesgo, para identificar la amenaza, reconocer su nivel de gravedad, localizar la zona afectada y conocer las acciones de alerta o respuesta correspondientes. Finalmente, después de un incidente, para consultar registros históricos, revisar las respuestas ejecutadas y realizar actividades de seguimiento. En el caso de las empresas integradoras, la plataforma también podrá utilizarse durante los procesos de configuración, integración y mantenimiento de los sistemas instalados para sus clientes.
+
 </p>
 
-#### Who (¿Quiénes?)
-- **¿Quiénes están involucrados?** <br>
+Where (¿Dónde?)
+
+¿Dónde está el cliente cuando utiliza el producto?
 
 <p align="justify">
-Los principales involucrados son todas las personas que se encuentren dentro de una estructura o edificio (residentes, trabajadores, visitantes), los administradores del recinto y los equipos de seguridad o brigadistas encargados de gestionar la emergencia.
+
+Los propietarios, administradores y responsables de seguridad pueden encontrarse dentro de la edificación, en oficinas administrativas, centros de control o ubicaciones externas desde las cuales necesiten supervisar las instalaciones bajo su responsabilidad. Por otro lado, los profesionales de empresas integradoras pueden interactuar con la solución durante actividades de instalación, configuración, mantenimiento o supervisión técnica, tanto en las instalaciones de sus clientes como desde sus propios centros de operaciones. La propuesta de ResQ contempla el acceso a información mediante aplicaciones digitales, de acuerdo con los permisos asignados y la disponibilidad de conectividad, mientras que determinadas funciones críticas de detección y respuesta se proyectan para operar localmente.
+
 </p>
 
-- **¿A quiénes les sucede el problema?** <br>
+¿A dónde se dirige?
 
 <p align="justify">
-El problema afecta principalmente a las personas que ocupan la edificación en el momento del siniestro, quienes sufren desorientación y exposición al peligro. También impacta a los responsables de seguridad y administradores de edificios, quienes enfrentan la dificultad de coordinar evacuaciones sin herramientas tecnológicas automatizadas.
+
+Ante una situación de riesgo, los administradores y responsables de seguridad necesitan acceder a la información de la edificación afectada para identificar la ubicación del evento y coordinar las acciones establecidas en los protocolos correspondientes. Cuando la situación requiere presencia física, el personal autorizado puede dirigirse hacia los puntos de control o áreas de intervención definidas por los procedimientos de seguridad, siempre que las condiciones permitan hacerlo. Los ocupantes, por su parte, deben seguir los protocolos de protección y evacuación establecidos para cada tipo de emergencia y las indicaciones de los responsables competentes. ResQ busca apoyar este proceso mediante información sobre la ubicación del riesgo y los mecanismos de alerta y respuesta, sin sustituir los procedimientos oficiales de seguridad.
+
 </p>
 
-- **¿Quién lo utiliza?** <br>
+¿Dónde surge el problema?
 
 <p align="justify">
-El sistema será utilizado por familias en edificios residenciales, trabajadores en oficinas y corporativos, así como administradores de instalaciones. Principalmente, está dirigido a personas e instituciones que valoran la prevención de riesgos y buscan una respuesta rápida, segura y guiada ante desastres.
+
+El problema surge principalmente en edificaciones residenciales, comerciales, empresariales e institucionales donde existen dispositivos de detección o sistemas de automatización que no cuentan con una integración suficiente para compartir información y coordinar respuestas. Puede manifestarse en zonas específicas, como áreas de servicios, espacios comunes, ambientes técnicos o instalaciones donde se supervisan condiciones ambientales y físicas. Asimismo, se presenta en el ámbito de la integración tecnológica, cuando las empresas especializadas necesitan conectar dispositivos y plataformas de diferentes fabricantes o adaptar sus soluciones a las características particulares de cada infraestructura.
+
 </p>
 
-#### Why (¿Por qué?)
-- **¿Cuál es la causa del problema?** <br>
+Who (¿Quiénes?)
+
+¿Quiénes están involucrados?
 
 <p align="justify">
-La falta de un sistema centralizado, automatizado e inteligente para la gestión de riesgos. Actualmente, los edificios dependen de alarmas independientes y no interconectadas que solo generan ruido, dejando a los usuarios sin instrucciones claras, dependientes de la memoria humana y propensos a cometer errores fatales debido al estrés y el pánico del momento.
+
+Los principales involucrados son los propietarios y administradores de edificaciones, los responsables de seguridad y mantenimiento, y las empresas integradoras de automatización y gestión de edificios inteligentes. Estas últimas incluyen profesionales dedicados al diseño, instalación, integración y mantenimiento de sistemas IoT y Building Management Systems (BMS). También participan los equipos de seguridad, brigadistas y personal operativo encargado de aplicar los procedimientos de respuesta. Finalmente, los residentes, trabajadores y visitantes constituyen beneficiarios indirectos de los mecanismos de monitoreo, alerta y seguridad implementados en las instalaciones.
+
 </p>
 
-#### How (¿Cómo?)
-- **¿En qué condiciones nuestros clientes usan el producto?** <br>
+¿A quiénes les sucede el problema?
 
 <p align="justify">
-Los clientes utilizan el sistema en condiciones de alto estrés, urgencia y posible pánico, con un tiempo de reacción muy limitado. Por ello, el producto funciona de manera automática, emitiendo alertas claras, directas y visuales/auditivas que no requieren interpretación compleja por parte del usuario.
+
+La problemática afecta directamente a los propietarios y administradores de edificaciones que necesitan supervisar las condiciones de seguridad de sus instalaciones y coordinar respuestas ante posibles emergencias. También afecta a las empresas integradoras de automatización, que enfrentan desafíos al incorporar tecnologías de detección y respuesta en infraestructuras donde conviven distintos sensores, sistemas y protocolos de comunicación. De manera indirecta, los ocupantes de las edificaciones pueden verse afectados cuando las limitaciones de monitoreo, detección o coordinación dificultan una respuesta adecuada frente a situaciones de riesgo.
+
 </p>
 
-- **¿Cómo nos conocieron nuestros compradores?** <br>
+¿Quién lo utiliza?
 
 <p align="justify">
-A través de alianzas estratégicas con constructoras y juntas de propietarios, ferias de seguridad y prevención de riesgos (Defensa Civil), marketing digital enfocado en la protección familiar y empresarial, y recomendaciones de consultores de seguridad laboral e infraestructura.
+
+ResQ está orientado principalmente a dos segmentos objetivo. El primero está conformado por <strong>propietarios y administradores de edificaciones</strong>, incluyendo facility managers y responsables de seguridad, mantenimiento y operaciones que requieren supervisar edificios, zonas, dispositivos, alertas e incidentes. El segundo corresponde a <strong>empresas integradoras de automatización y gestión de edificios inteligentes</strong>, cuyos profesionales necesitan configurar dispositivos, incorporar soluciones IoT y gestionar su integración con las infraestructuras de sus clientes. Ambos segmentos interactuarán con las funcionalidades de la plataforma de acuerdo con sus responsabilidades y permisos, mientras que los ocupantes de las edificaciones serán beneficiarios de los mecanismos de advertencia y respuesta establecidos.
+
 </p>
 
-- **¿Cómo prefieren nuestros consumidores acceder a nuestro producto?** <br>
+Why (¿Por qué?)
+
+¿Cuál es la causa del problema?
 
 <p align="justify">
-Mediante un sistema de hardware instalado en puntos clave del edificio (sensores inteligentes) que se sincroniza directamente con una aplicación móvil (ResQ) o un panel de control, permitiendo a los usuarios recibir notificaciones en tiempo real, conocer el estado de su entorno y revisar los protocolos preventivos desde sus smartphones.
+
+Una de las principales causas es la utilización de sistemas de detección y seguridad que funcionan de manera independiente o que presentan dificultades para intercambiar información con otras plataformas tecnológicas. La diversidad de fabricantes, protocolos de comunicación y configuraciones puede dificultar la interoperabilidad, especialmente en edificaciones que incorporan progresivamente nuevos dispositivos. Asimismo, la dependencia de procedimientos manuales para interpretar alertas, identificar zonas afectadas y activar determinadas respuestas puede incrementar el tiempo y esfuerzo necesarios para gestionar una situación crítica. A esto se suman las posibles interrupciones de conectividad y las limitaciones para consultar registros históricos centralizados, condiciones que evidencian la necesidad de soluciones capaces de integrar monitoreo, procesamiento local y mecanismos coordinados de respuesta.
+
 </p>
 
-- **¿Qué llevó a la persona a esa situación?** <br>
+How (¿Cómo?)
+
+¿En qué condiciones nuestros clientes usan el producto?
 
 <p align="justify">
-La vulnerabilidad inherente de vivir o trabajar en una ciudad con alto riesgo sísmico y fallas en infraestructuras (como fugas de gas o incendios). El profundo deseo de proteger su vida, la de su familia o la de sus empleados, sumado a la frustración de saber que los sistemas tradicionales son insuficientes para guiar a las personas cuando realmente importa.
+
+Los clientes utilizarían ResQ tanto en condiciones operativas habituales como durante situaciones de riesgo que requieren atención prioritaria. En el funcionamiento cotidiano, los responsables necesitan consultar información organizada, verificar el estado de los dispositivos y realizar actividades de supervisión sin procedimientos innecesariamente complejos. Durante una emergencia, las condiciones pueden incluir presión de tiempo, necesidad de coordinación y posibles interrupciones de conectividad, por lo que resulta importante disponer de alertas comprensibles, información sobre la zona afectada y mecanismos locales de respuesta. Por su parte, las empresas integradoras utilizarían la plataforma en contextos técnicos de instalación, configuración y mantenimiento, donde se requiere compatibilidad con la infraestructura existente y capacidad para adaptar la solución a diferentes proyectos.
+
 </p>
 
-#### How much (¿Cuánto?)
+¿Cómo nos conocieron nuestros compradores?
+
 <p align="justify">
-El Perú se encuentra en el Cinturón de Fuego del Pacífico, lo que hace que ciudades como Lima sean altamente vulnerables a sismos de gran magnitud. Según proyecciones de Defensa Civil (INDECI), un terremoto severo en la capital podría dejar cientos de miles de damnificados debido a la alta densidad poblacional y la falta de preparación. Sumado a esto, el Cuerpo General de Bomberos atiende anualmente miles de emergencias por fugas de gas e incendios urbanos, donde una detección tardía suele escalar a tragedias irreparables. La desorientación durante los primeros minutos de un siniestro incrementa exponencialmente el riesgo de mortalidad y lesiones. SecurityBear busca reducir este impacto crítico al centralizar la detección de amenazas y eliminar la dependencia exclusiva del factor humano para dar aviso. Al optimizar los tiempos de respuesta y brindar directrices claras de evacuación a través de la tecnología, nuestra plataforma contribuye directamente a salvar vidas, mitigar daños personales y reducir las pérdidas materiales ocasionadas por la falta de una alerta temprana y coordinada.
+
+SecurityBear plantea establecer contacto con potenciales clientes mediante canales comerciales y alianzas estratégicas orientadas al sector de automatización y seguridad de edificaciones. Para los propietarios y administradores, se consideran la presentación de demostraciones, el contacto con administradoras de inmuebles, las recomendaciones de especialistas y los canales digitales de la startup. Para las empresas integradoras, se propone establecer relaciones comerciales mediante reuniones técnicas, alianzas de colaboración, participación en espacios especializados en IoT y automatización, y presentación de las capacidades de integración de ResQ. Estos mecanismos constituyen canales propuestos de captación y posicionamiento que deberán validarse durante la evolución del modelo de negocio.
+
+</p>
+
+¿Cómo prefieren nuestros consumidores acceder a nuestro producto?
+
+<p align="justify">
+
+De acuerdo con las necesidades identificadas para ambos segmentos, ResQ plantea una experiencia digital que facilite el acceso a información de monitoreo, gestión de dispositivos y seguimiento de incidentes. Los propietarios y administradores podrán utilizar una aplicación web para supervisar edificaciones y zonas, consultar alertas y revisar eventos registrados, con una experiencia adaptable a diferentes dimensiones de pantalla. Por su parte, las empresas integradoras requerirán herramientas que faciliten la configuración y administración de los dispositivos IoT incorporados a sus proyectos. La propuesta contempla también experiencias móviles como parte de la evolución del producto, mientras que los dispositivos físicos proporcionarán información de sensado y mecanismos locales de advertencia. La integración de estos componentes deberá permitir una experiencia coherente, considerando las funcionalidades disponibles en cada etapa de implementación.
+
+</p>
+
+¿Qué llevó a la persona a esa situación?
+
+<p align="justify">
+
+La necesidad de mejorar la seguridad de las edificaciones y gestionar de manera más eficiente los riesgos asociados a su operación motiva a propietarios y administradores a buscar herramientas de monitoreo y respuesta. Esta necesidad puede intensificarse cuando deben supervisar múltiples zonas, coordinar equipos de seguridad o trabajar con dispositivos que no comparten información de manera integrada. En el caso de las empresas integradoras, la situación surge de la necesidad de ofrecer soluciones tecnológicas adaptables a los requerimientos de sus clientes, incorporar nuevas capacidades de automatización y facilitar la interoperabilidad entre diferentes sistemas. Estas condiciones generan oportunidades para propuestas que complementen la infraestructura existente y permitan evolucionar progresivamente las capacidades de supervisión y respuesta.
+
+</p>
+
+How Much (¿Cuánto?)
+
+<p align="justify">
+
+La magnitud de los riesgos asociados a emergencias en edificaciones puede dimensionarse mediante información estadística sobre eventos registrados, personas afectadas y daños ocasionados a la infraestructura. De acuerdo con el Compendio Estadístico de la Gestión Reactiva 2024 del Instituto Nacional de Defensa Civil (INDECI), durante el periodo 2012-2023 se registraron 3,005 incendios urbanos en el departamento de Lima, asociados con 20,797 personas afectadas y damnificadas y 4,564 viviendas afectadas o destruidas. Estas cifras evidencian la relevancia de los riesgos urbanos y la necesidad de fortalecer las capacidades de prevención, preparación y respuesta ante emergencias, aunque no permiten determinar por sí solas cuántos incidentes podrían evitarse mediante una plataforma IoT.
+
+</p>
+
+<p align="justify">
+
+Desde la perspectiva de los propietarios y administradores, las consecuencias de una emergencia pueden comprender daños materiales, interrupciones operativas, costos de recuperación y exposición de los ocupantes a situaciones peligrosas. Para las empresas integradoras, la fragmentación tecnológica puede representar un mayor esfuerzo de configuración, mantenimiento e integración de los diferentes componentes de una instalación. En este contexto, SecurityBear plantea que ResQ contribuya a mejorar la visibilidad de las condiciones de riesgo y la coordinación de respuestas. Su impacto deberá evaluarse mediante indicadores cuantificables, como el tiempo transcurrido entre la detección y la generación de una alerta, la disponibilidad de información de los dispositivos, la frecuencia de eventos detectados, la proporción de falsas alertas y los tiempos de atención de incidentes. Estos indicadores permitirán valorar progresivamente la efectividad de la solución sin atribuirle reducciones de daños o costos que todavía no hayan sido demostradas.
+
+</p>
+
+<p align="justify">
+
+</p>
+
+Objetivos y restricciones del alcance
+
+<p align="justify">
+
+A partir de la problemática identificada, el objetivo general de ResQ es proponer una solución IoT que permita integrar el monitoreo de condiciones de riesgo en edificaciones y facilitar la coordinación de mecanismos de alerta y respuesta. Para ello, se plantea centralizar la información proveniente de dispositivos instalados en diferentes zonas, identificar situaciones de riesgo según las capacidades de los sensores, proporcionar información relevante a los responsables de seguridad y registrar eventos que permitan realizar actividades posteriores de seguimiento y análisis. Asimismo, la propuesta busca ofrecer capacidades de integración y configuración que respondan a las necesidades de empresas especializadas en automatización de edificios.
+
+</p>
+
+<p align="justify">
+
+El alcance de la solución se encuentra condicionado por la compatibilidad y las características técnicas de los sensores y actuadores utilizados, la infraestructura de comunicación disponible, las capacidades de procesamiento local y las restricciones de integración con sistemas existentes. La respuesta autónoma ante interrupciones de Internet dependerá de las funciones implementadas localmente y de la disponibilidad de energía y comunicación entre los componentes correspondientes. De igual manera, las acciones automatizadas deberán estar delimitadas por criterios de seguridad, condiciones de operación y mecanismos de autorización cuando corresponda. ResQ se plantea como un complemento tecnológico para la supervisión y coordinación de emergencias, sin sustituir los sistemas de protección obligatorios, las inspecciones técnicas ni los protocolos establecidos por las autoridades competentes.
+
 </p>
 
 ### 1.2.2. Lean UX Process
@@ -1747,7 +1841,7 @@ Entre sus principales preocupaciones se encuentran la detección tardía, la fra
 |---|---|
 | Nombres | Sebastián Abel |
 | Apellidos | Cosquillo Yglesias |
-| Edad | 28 años |
+| Edad | 30 años |
 | Género | Masculino |
 | Distrito de residencia | San Borja |
 | Ocupación / Cargo | Facility Manager de edificio corporativo |
@@ -1826,12 +1920,12 @@ Reconoce marcas como Honeywell, Bosch, Siemens e Hikvision. Sus decisiones son i
 </p>
 
 <p align="justify">
-Sus principales dificultades son los sistemas separados, las falsas alarmas y la dependencia de los operadores para correlacionar información. Resume su perspectiva mediante la frase: <strong>“En seguridad, automatizar es útil solamente cuando también puedes confiar en lo que estás automatizando.”</strong>
+Sus principales dificultades son los sistemas separados, las falsas alarmas y la dependencia de los operadores para correlacionar información. Resume su perspectiva mediante la frase: “En seguridad, automatizar es útil solamente cuando también puedes confiar en lo que estás automatizando.”
 </p>
 
 ---
 
-#### Segmento objetivo #2: Empresas e instituciones con infraestructura propia
+#### Segmento objetivo #2: Empresas integradoras de automatización y gestión de edificios inteligentes
 
 ##### Entrevista 4 — Luis Herrera Campos
 
@@ -1925,7 +2019,7 @@ Su principal objetivo profesional es implementar sistemas confiables que posteri
 | Edad | 26 años |
 | Género | Masculino |
 | Distrito de residencia | Jesús María |
-| Ocupación / Cargo | Ingeniera de proyectos e integración IoT |
+| Ocupación / Cargo | Ingeniero de proyectos e integración IoT |
 | Tipo de organización | Empresa integradora pequeña especializada en IoT, sensores, dashboards y modernización de infraestructura |
 | Segmento objetivo | Empresas integradoras de automatización y gestión de edificios inteligentes |
 | Fecha de entrevista | 17/09/2026 |
@@ -1970,7 +2064,7 @@ Aunque el fabricante declaraba soporte para MQTT, la estructura de los mensajes 
 </p>
 
 <p align="justify">
-Andrea trabaja habitualmente con MQTT, Modbus, HTTP, APIs REST y algunas integraciones BACnet. Cuando un sistema no cuenta con una API o protocolo adecuado, puede ser necesario utilizar un gateway o incluso descartar la integración si el esfuerzo requerido resulta demasiado elevado.
+Mateo trabaja habitualmente con MQTT, Modbus, HTTP, APIs REST y algunas integraciones BACnet. Cuando un sistema no cuenta con una API o protocolo adecuado, puede ser necesario utilizar un gateway o incluso descartar la integración si el esfuerzo requerido resulta demasiado elevado.
 </p>
 
 <p align="justify">
@@ -2035,70 +2129,100 @@ Finalmente, considera que el ecosistema actual debería utilizar estándares rea
 ![Entrevista 6 - Juan Diego Ramírez Torres](assets/images/chapter-02-requirements-elicitation-analysis/interview-06-juan-diego.png)
 
 <p align="center">
-  <strong>Figura 11. Entrevista 6 - Ricardo Núñez Valdivia.</strong>
+  <strong>Figura 11. Entrevista 6 - Juan Diego Ramírez Torres</strong>
 </p>
 
 **Resumen de la entrevista**
 <p align="justify">
-Juan Diego tiene 32 años, reside en Lima, es soltero y vive con su familia. Es ingeniero de sistemas con especialización en gestión de proyectos y cuenta con ocho años de experiencia en el sector de integración y seguridad electrónica.
+
+Juan Diego Ramírez Torres tiene 32 años, reside en Santiago de Surco, Lima, es soltero y vive con su familia. Es ingeniero de sistemas con especialización en gestión de proyectos y cuenta con aproximadamente ocho años de experiencia profesional en el sector de integración tecnológica y seguridad electrónica. Actualmente se desempeña como jefe de proyecto de integración en una empresa especializada en seguridad electrónica y automatización, donde participa en procesos de evaluación, selección, implementación y seguimiento de soluciones tecnológicas para diferentes clientes.
+
 </p>
 
 <p align="justify">
-Actualmente se desempeña como jefe de proyecto de integración, participando en actividades que abarcan desde la preventa hasta la implementación de las soluciones. Entre las habilidades que considera fundamentales para desempeñar su puesto menciona la organización, el criterio técnico y comercial, así como la comunicación con el cliente.
+
+Dentro de sus principales responsabilidades se encuentran la coordinación de reuniones con clientes, la elaboración de cotizaciones, la validación de propuestas técnicas y el seguimiento de proyectos. Su participación comprende distintas etapas, desde la preventa y el levantamiento de necesidades hasta la implementación y el soporte posterior. Considera que las habilidades más importantes para desempeñar su cargo son la organización, el criterio técnico y comercial, la comunicación con los clientes y la capacidad para coordinar adecuadamente con los especialistas involucrados en cada proyecto.
+
 </p>
 
 <p align="justify">
-Se describe como una persona analítica. Para tomar decisiones suele consultar con el equipo técnico, aunque procura decidir rápidamente una vez que cuenta con la información necesaria.
+
+En cuanto a su personalidad y forma de trabajo, se considera una persona analítica, que procura comprender las características de un problema antes de tomar decisiones. Cuando debe evaluar alternativas tecnológicas, suele consultar con su equipo técnico para reunir información relevante y contrastar diferentes posibilidades. Sin embargo, una vez que dispone de los elementos necesarios, busca tomar decisiones con rapidez para evitar retrasos en el desarrollo de los proyectos. Esta manera de trabajar refleja la importancia que otorga a la colaboración profesional, la evaluación técnica y la eficiencia en los procesos de implementación.
+
 </p>
 
 <p align="justify">
-Entre sus principales actividades se encuentran las reuniones con clientes, elaboración de cotizaciones, validación de soluciones y seguimiento de proyectos. Considera especialmente importantes las reuniones con clientes y la evaluación de nuevas tecnologías.
+
+Durante la entrevista, describió como experiencia reciente un proyecto en el que un cliente requería incorporar una solución de control de acceso mediante reconocimiento facial. El proceso comenzó con el levantamiento de requisitos y la identificación de las necesidades de la organización. Posteriormente, su equipo investigó las alternativas disponibles y solicitó demostraciones a distintos proveedores. Inicialmente evaluaron cuatro soluciones, considerando aspectos como compatibilidad con la infraestructura existente, costo de adquisición y disponibilidad de soporte técnico local. Después de comparar las alternativas, seleccionaron dos opciones para continuar con una evaluación más detallada.
+
 </p>
 
 <p align="justify">
-Como ejemplo de un proceso reciente, explicó el caso de un cliente que necesitaba una solución de control de acceso con reconocimiento facial. El proceso comenzó con el levantamiento de los requisitos, seguido por la búsqueda de alternativas disponibles y la solicitud de demostraciones a distintos proveedores.
+
+Como parte del proceso de selección, el equipo realizó un piloto en laboratorio para comprobar el funcionamiento de las tecnologías y su integración con los sistemas existentes. Durante esta etapa evaluaron la estabilidad, el tiempo de respuesta y las posibilidades de soporte ofrecidas por cada proveedor. Juan Diego destacó que estas pruebas permiten identificar posibles dificultades antes de comprometer una implementación definitiva frente al cliente. Asimismo, explicó que la selección de una tecnología no depende únicamente de sus características técnicas, sino también de su viabilidad económica y de la confianza que puede ofrecer el proveedor durante todo el ciclo del proyecto.
+
 </p>
 
 <p align="justify">
-Las soluciones fueron evaluadas considerando principalmente su compatibilidad, costo y disponibilidad de soporte local. A partir de cuatro alternativas iniciales, el equipo redujo la selección a dos opciones.
+
+Respecto al proceso de adquisición e incorporación de tecnologías, señaló que participan tanto especialistas técnicos como responsables comerciales. Una vez que una alternativa supera las pruebas correspondientes, se prepara una propuesta económica para presentarla al cliente. Para él, una empresa integradora no debe limitarse a comercializar dispositivos o plataformas, sino que debe analizar las necesidades de cada organización, evaluar la compatibilidad de las soluciones disponibles y reducir los riesgos asociados a su implementación. Esta perspectiva resalta la importancia de contar con proveedores capaces de ofrecer información técnica suficiente, demostraciones funcionales y acompañamiento durante las distintas etapas del proyecto.
+
 </p>
 
 <p align="justify">
-Posteriormente se realizó un piloto en laboratorio para comprobar la integración de las soluciones con el sistema existente. Esta prueba permitió evaluar aspectos como la estabilidad de la tecnología, el tiempo de respuesta y la capacidad de soporte del proveedor.
+
+Entre sus principales criterios de evaluación se encuentran la compatibilidad, el costo, la estabilidad de funcionamiento y la disponibilidad de soporte local. Asimismo, considera importante que las tecnologías puedan validarse mediante pruebas antes de su incorporación a un proyecto real. Su preocupación principal se relaciona con evitar que una solución presente dificultades técnicas o de integración después de haber sido seleccionada y ofrecida al cliente. Por ello, valora especialmente los mecanismos que permitan comprobar su funcionamiento y disminuir la incertidumbre durante la implementación.
+
 </p>
 
 <p align="justify">
-En el proceso de decisión participaron perfiles técnicos y comerciales. Una vez que una alternativa superaba satisfactoriamente el piloto, se elaboraba la propuesta económica correspondiente para presentarla al cliente.
+
+En relación con sus objetivos profesionales, busca desarrollar proyectos que respondan adecuadamente a los requerimientos de los clientes y que permitan incorporar tecnologías confiables y sostenibles durante su operación. Destaca que la responsabilidad de una empresa integradora no termina con la selección o venta de un producto, puesto que también comprende la implementación, la atención de dificultades y el servicio de posventa. En consecuencia, considera que la calidad del soporte y la continuidad de la relación con los proveedores son factores relevantes para garantizar resultados satisfactorios.
+
 </p>
 
 <p align="justify">
-Juan Diego destaca que el proceso no termina con la selección o venta de la tecnología, ya que posteriormente continúan las etapas de implementación y posventa. Por ello, la capacidad de un proveedor para brindar soporte durante todo el ciclo del proyecto también influye en su evaluación.
+
+Finalmente, su experiencia evidencia que las empresas integradoras necesitan soluciones tecnológicas que puedan evaluarse, probarse e incorporarse a sistemas existentes sin asumir riesgos innecesarios. Los aspectos que destacó durante la entrevista, particularmente la compatibilidad, las pruebas de integración, el soporte técnico y la evaluación de alternativas, resultan relevantes para comprender las necesidades del segundo segmento objetivo de SecurityBear. Estos hallazgos permiten identificar criterios que deberán considerarse al desarrollar y validar la propuesta de ResQ como una solución orientada a complementar proyectos de automatización y gestión tecnológica de edificaciones.
+
 </p>
 
 <p align="justify">
-Desde su perspectiva, una empresa integradora aporta valor al cliente al analizar diferentes alternativas, verificar su compatibilidad y reducir el riesgo antes de implementar una nueva tecnología. En lugar de limitarse a comercializar productos, la empresa integradora participa en la selección, validación e incorporación de las soluciones más adecuadas para cada proyecto.
+
+En cuanto al uso de herramientas tecnológicas, Juan Diego utiliza habitualmente una laptop Lenovo ThinkPad con Windows 11 para desarrollar propuestas técnicas, revisar documentación, elaborar cotizaciones y coordinar proyectos. Asimismo, utiliza un smartphone Samsung Galaxy con sistema operativo Android para mantener comunicación con clientes, proveedores y miembros de su equipo cuando se encuentra fuera de la oficina. Su navegador principal es Google Chrome, aunque también utiliza Microsoft Edge para acceder a determinadas plataformas empresariales. Entre sus herramientas de trabajo se encuentran Microsoft Excel, Microsoft Teams, Outlook, WhatsApp y Google Drive, además de aplicaciones técnicas como Postman y plataformas de administración de dispositivos de seguridad electrónica. Prefiere utilizar una computadora para actividades de evaluación técnica y gestión documental, mientras que considera el smartphone una herramienta fundamental para la coordinación y atención de consultas durante las implementaciones.
+
 </p>
 
 <p align="justify">
-También señala que los pilotos son importantes porque permiten validar el comportamiento real de una tecnología antes de comprometer su implementación frente al cliente. Esto resulta especialmente relevante cuando se trabaja con proveedores o soluciones nuevas.
-</p>
 
-<p align="justify">
-Finalmente, considera que el trabajo de integración tecnológica permite encontrar soluciones innovadoras y sencillas para resolver necesidades complejas, combinando criterios técnicos, comerciales y las necesidades específicas del cliente.
+Respecto a marcas, proveedores e influencias profesionales, Juan Diego conoce soluciones de fabricantes como Hikvision, Dahua, Bosch y Honeywell, principalmente por su presencia en proyectos de seguridad electrónica, control de acceso y automatización. Sin embargo, al evaluar nuevas alternativas, prioriza la compatibilidad con los sistemas existentes, la documentación técnica, el costo total, la garantía y la disponibilidad de soporte local por encima del reconocimiento comercial de una marca. Para informarse sobre nuevas tecnologías consulta documentación oficial de fabricantes, catálogos técnicos, demostraciones comerciales, recomendaciones de otros ingenieros y experiencias de proveedores especializados. También utiliza LinkedIn y YouTube como fuentes complementarias para conocer productos y tendencias del sector. Considera especialmente valiosas las recomendaciones de profesionales con experiencia en implementaciones reales, debido a que estas permiten identificar posibles dificultades que no siempre aparecen en las especificaciones comerciales de una solución.
+
 </p>
 
 ### 2.2.3. Análisis de entrevistas
 
 <p align="justify">
-A partir de las entrevistas realizadas se analizaron de manera independiente los resultados correspondientes a cada segmento objetivo. Para cada segmento se consideraron tres participantes, por lo que cada entrevistado representa aproximadamente el 33.3 % de la muestra correspondiente.
+
+A partir de las seis entrevistas realizadas durante el proceso de investigación, se desarrolló un análisis de las características objetivas y subjetivas de los participantes, con el propósito de identificar patrones relacionados con sus perfiles profesionales, comportamientos, necesidades, objetivos, frustraciones y criterios de decisión. Este análisis permite comprender las principales dificultades que enfrentan los segmentos objetivo de SecurityBear en relación con la seguridad de edificaciones y la integración de soluciones tecnológicas, proporcionando información relevante para orientar el diseño y desarrollo de ResQ.
+
 </p>
 
 <p align="justify">
-El análisis considera características objetivas, como edad, género, ubicación, formación profesional, rol, experiencia, dispositivos, navegadores y canales digitales; así como características subjetivas relacionadas con personalidad, comportamiento, objetivos, necesidades, frustraciones, criterios de decisión y actitudes frente a la tecnología.
+
+La investigación consideró dos segmentos objetivo: propietarios y administradores de edificaciones, y empresas integradoras de automatización y gestión de edificios inteligentes. Para cada segmento se realizaron tres entrevistas semiestructuradas, obteniendo una muestra total de seis participantes. Debido a que cada segmento cuenta con tres entrevistados, un participante representa aproximadamente el 33.3 % de su muestra, dos participantes representan el 66.7 % y tres participantes representan el 100 %. Los resultados se presentan mediante porcentajes descriptivos y gráficos estadísticos de barras para facilitar la identificación de las características más representativas.
+
 </p>
 
 <p align="justify">
-Los porcentajes presentados corresponden exclusivamente a los participantes entrevistados y tienen un propósito descriptivo dentro de la muestra estudiada. Estos resultados no buscan generalizar estadísticamente a toda la población, sino identificar los patrones predominantes que servirán como sustento para la construcción de los User Personas y los demás artefactos de Needfinding.
+
+Las características objetivas comprenden variables demográficas y profesionales, como edad, género, distrito de residencia, formación académica, experiencia laboral, ocupación, responsabilidades, dispositivos tecnológicos, sistemas operativos, navegadores, marcas y herramientas digitales utilizadas. Por otro lado, las características subjetivas incluyen aspectos relacionados con personalidad, habilidades, comportamientos, motivaciones, objetivos, frustraciones, necesidades, influencias, criterios de adquisición y percepciones sobre la seguridad, automatización e integración tecnológica.
+
+</p>
+
+<p align="justify">
+
+La información utilizada proviene de los registros y resúmenes de entrevistas presentados en el apartado 2.2.2. Para determinar los porcentajes se contabilizó la cantidad de participantes que presentaron o mencionaron cada característica respecto del total de entrevistados de su segmento. Cuando una variable no se encontraba suficientemente documentada, se consideró como información pendiente de verificación, evitando interpretarla como una respuesta negativa. Los porcentajes tienen un propósito descriptivo dentro de la muestra investigada y no pretenden representar estadísticamente a toda la población. Su principal utilidad consiste en identificar hallazgos que servirán como fundamento para la elaboración de los User Personas y demás artefactos del proceso de Needfinding.
+
 </p>
 
 ---
@@ -2108,83 +2232,155 @@ Los porcentajes presentados corresponden exclusivamente a los participantes entr
 ##### Características objetivas
 
 <p align="justify">
-El análisis de las características objetivas permite identificar el perfil demográfico, profesional y tecnológico predominante entre los propietarios y administradores entrevistados.
+
+El análisis de las características objetivas del primer segmento se realizó considerando las entrevistas de Juan Jose Meza Huanacune, Camila Torres Vega y Sebastián Abel Cosquillo Yglesias. Los tres participantes desempeñan funciones relacionadas con la administración, operación, mantenimiento y supervisión de edificaciones, aunque poseen diferentes formaciones profesionales y responsabilidades. La muestra comprende un administrador de edificio residencial, una copropietaria y administradora de edificio de uso mixto y un Facility Manager de edificio corporativo, permitiendo observar distintos escenarios de gestión de infraestructura.
+
+</p>
+
+<p align="justify">
+
+En cuanto a la edad, el 100 % de los entrevistados se encuentra dentro del rango de 30 a 39 años, con edades de 37, 32 y 30 años. Respecto al género, el 66.7 % corresponde al masculino y el 33.3 % al femenino. Asimismo, el 100 % reside en Lima Metropolitana, específicamente el 66.7 % en San Borja y el 33.3 % en Santiago de Surco. Estos resultados permiten identificar una muestra conformada por profesionales adultos que desarrollan responsabilidades de gestión y supervisión en diferentes distritos de la ciudad.
+
+</p>
+
+<p align="justify">
+
+En relación con la formación académica, el 33.3 % posee estudios en Administración de Empresas, el 33.3 % en Arquitectura y el 33.3 % en Ingeniería Industrial. Esta distribución demuestra que la administración y supervisión de edificaciones puede involucrar profesionales de diferentes especialidades. Respecto a la experiencia laboral, dos participantes reportaron aproximadamente seis y nueve años de trayectoria, mientras que el tercer registro no especifica una cantidad exacta de años. En consecuencia, el 66.7 % cuenta con una trayectoria documentada de al menos seis años en actividades relacionadas con su función profesional.
+
+</p>
+
+<p align="justify">
+
+Con respecto al tipo de edificación administrada, el 33.3 % corresponde a una infraestructura residencial, el 33.3 % a una edificación de uso mixto y el 33.3 % a un edificio corporativo. Aunque las características de estas instalaciones son diferentes, los tres participantes realizan actividades relacionadas con la coordinación de mantenimiento, supervisión de equipos de seguridad, revisión de incidencias, comunicación con proveedores y seguimiento de procedimientos operativos. Esta diversidad permite identificar necesidades compartidas en distintos contextos de administración de infraestructura.
+
+</p>
+
+<p align="justify">
+
+Desde la perspectiva tecnológica, el 100 % utiliza habitualmente una laptop y un smartphone para desarrollar sus actividades profesionales. En cuanto al sistema operativo de sus computadoras, el 66.7 % utiliza Windows y el 33.3 % macOS. Respecto a los dispositivos móviles, el 66.7 % utiliza iPhone, mientras que el 33.3 % utiliza un smartphone Samsung Galaxy con Android. Estos resultados reflejan la utilización de diferentes ecosistemas tecnológicos para actividades administrativas, comunicación y supervisión.
+
+</p>
+
+<p align="justify">
+
+En relación con los navegadores web principales, el 33.3 % utiliza Google Chrome, el 33.3 % Microsoft Edge y el 33.3 % Safari. Esta distribución equivalente indica que no existe un navegador predominante dentro de la muestra estudiada. Asimismo, el 100 % utiliza correo electrónico y Microsoft Excel como parte de sus actividades laborales, mientras que el 66.7 % menciona WhatsApp como una herramienta habitual de comunicación y coordinación. También se identificó el uso de Google Drive, Microsoft Teams, plataformas de mantenimiento, sistemas CCTV y aplicaciones proporcionadas por proveedores de seguridad.
+
+</p>
+
+<p align="justify">
+
+Respecto a las marcas e influencias profesionales, el 100 % menciona Hikvision entre los fabricantes conocidos o utilizados en el entorno de seguridad de sus edificaciones. También aparecen referencias a Dahua, Yale, Bosch, Honeywell y Siemens. Sin embargo, los participantes destacan que sus decisiones tecnológicas no dependen exclusivamente de una marca, sino también de factores como confiabilidad, compatibilidad, mantenimiento, soporte técnico, recomendaciones de especialistas y costo total. Entre las principales influencias se encuentran proveedores tecnológicos, consultores especializados, profesionales de seguridad y responsables administrativos.
+
+</p>
+
+<p align="justify">
+
+Para representar visualmente las características objetivas del primer segmento, se elaboró un gráfico estadístico de barras que presenta la distribución porcentual de las principales variables demográficas, profesionales y tecnológicas identificadas durante las entrevistas. La representación incluye rangos de edad, género, lugar de residencia, formación académica, tipos de edificaciones, dispositivos utilizados, sistemas operativos y navegadores principales. El objetivo es facilitar la comparación de los resultados y reconocer las características más frecuentes que servirán como referencia para la construcción del User Persona correspondiente.
+
 </p>
 
 ![Cuadro estadístico de características objetivas - Segmento 1](assets/images/chapter-02-requirements-elicitation-analysis/interview-analysis-segment-01-objective.png)
 
 <p align="center">
-  <strong>Figura 12. Cuadro estadístico de características objetivas - Segmento 1.</strong>
+
+<strong>Figura 12. Cuadro estadístico de características objetivas - Segmento 1.</strong>
+
 </p>
 
 <p align="justify">
-En relación con la edad, el 66.7 % de los entrevistados se encuentra entre los 30 y 39 años, mientras que el 33.3 % se encuentra entre los 20 y 29 años. Respecto al género, el 66.7 % corresponde al género masculino y el 33.3 % al femenino.
-</p>
 
-<p align="justify">
-El 100 % reside en Lima Metropolitana. Específicamente, el 66.7 % reside en San Borja y el 33.3 % en Santiago de Surco. Asimismo, el 100 % cuenta con formación profesional y desarrolla actividades directamente vinculadas con la administración, operación, mantenimiento o gestión de infraestructura de edificaciones.
-</p>
+Los resultados presentados en la Figura 12 evidencian que las características más comunes del primer segmento son la formación profesional, las responsabilidades de administración y el uso habitual de herramientas digitales. El 100 % utiliza computadoras y smartphones, aunque se observa diversidad en los sistemas operativos y navegadores. Estos hallazgos permiten reconocer la importancia de considerar una experiencia digital adaptable a diferentes dispositivos y entornos tecnológicos. Asimismo, la utilización de múltiples herramientas de comunicación y supervisión refleja la necesidad de acceder a información procedente de distintas fuentes durante las actividades de gestión de edificaciones.
 
-<p align="justify">
-Las edificaciones representadas en la muestra corresponden a tres contextos distintos: residencial, uso mixto y corporativo, lo que permite observar necesidades compartidas en diferentes tipos de infraestructura.
-</p>
-
-<p align="justify">
-Desde la perspectiva tecnológica, el 100 % utiliza una laptop y un smartphone como herramientas habituales de trabajo. En computadoras, el 66.7 % utiliza Windows y el 33.3 % macOS. Respecto al navegador principal, existe una distribución equivalente: 33.3 % utiliza Google Chrome, 33.3 % Microsoft Edge y 33.3 % Safari.
-</p>
-
-<p align="justify">
-El 100 % utiliza correo electrónico y Excel dentro de sus actividades laborales, mientras que el 66.7 % utiliza WhatsApp como mecanismo frecuente de comunicación y coordinación.
 </p>
 
 ##### Características subjetivas
 
 <p align="justify">
-El análisis subjetivo permite identificar comportamientos, necesidades, frustraciones, objetivos y criterios de decisión compartidos por los representantes del segmento.
+
+El análisis de las características subjetivas del primer segmento permitió identificar coincidencias relacionadas con la personalidad, los comportamientos profesionales, las dificultades experimentadas y las expectativas frente a nuevas tecnologías. El 100 % de los entrevistados presenta una forma de trabajo orientada a la prevención, el análisis o el cumplimiento de procedimientos estructurados. Aunque existen diferencias individuales en sus estilos de gestión, los tres consideran fundamental disponer de información confiable antes de tomar decisiones que puedan afectar la seguridad de las personas o el funcionamiento de una edificación.
+
+</p>
+
+<p align="justify">
+
+Una de las principales problemáticas compartidas corresponde a la fragmentación de los sistemas tecnológicos. El 100 % de los entrevistados describe instalaciones donde las cámaras, alarmas, detectores u otras plataformas de supervisión no se encuentran completamente integrados. Esta situación obliga a consultar diferentes interfaces, realizar llamadas, coordinar con otros trabajadores o efectuar verificaciones presenciales para comprender una situación. En consecuencia, la centralización de información representa una necesidad recurrente para facilitar las actividades de supervisión.
+
+</p>
+
+<p align="justify">
+
+En cuanto a la detección y gestión de incidentes, el 100 % considera importante identificar oportunamente la ubicación o zona afectada. También se mencionan como datos relevantes el tipo de emergencia, la gravedad, el dispositivo que produjo la alerta, el estado de los equipos y las acciones ejecutadas por los responsables. Estas necesidades se encuentran relacionadas con las experiencias descritas durante las entrevistas, que incluyen la detección de humo en un sótano, una fuga de gas identificada inicialmente por una residente y una falsa alarma ocasionada por el funcionamiento incorrecto de un detector.
+
+</p>
+
+<p align="justify">
+
+Respecto a las principales frustraciones, los tres participantes describen dificultades vinculadas con la fragmentación tecnológica, las verificaciones manuales o la incertidumbre durante situaciones críticas. Asimismo, el 66.7 % menciona explícitamente problemas para consultar información histórica debido a la dispersión de registros entre documentos, correos electrónicos, hojas de cálculo y conversaciones. Estos hallazgos evidencian que las dificultades relacionadas con la seguridad no se limitan al momento de una emergencia, sino que también se presentan durante las actividades de seguimiento y evaluación posterior.
+
+</p>
+
+<p align="justify">
+
+En relación con la automatización, el 100 % mantiene una actitud favorable hacia la ejecución automática de determinadas acciones, como generación de alarmas, notificaciones, señalización y registro de eventos. Sin embargo, los tres participantes consideran necesario mantener condiciones adecuadas de confiabilidad y mecanismos de supervisión humana para aquellas acciones que puedan ocasionar consecuencias importantes sobre personas o infraestructura. Por tanto, la automatización es percibida como un mecanismo de apoyo a la gestión de emergencias, siempre que existan reglas claras y controles apropiados.
+
+</p>
+
+<p align="justify">
+
+El 100 % considera importante que determinadas funciones críticas de seguridad puedan continuar operando localmente cuando se pierde la conexión a Internet. Esta coincidencia evidencia una preocupación compartida por la continuidad operativa de los sistemas, especialmente durante eventos que requieren atención prioritaria. Esta necesidad guarda relación con el enfoque de ResQ, que contempla capacidades de procesamiento local mediante Edge Computing para funciones específicas de detección y respuesta.
+
+</p>
+
+<p align="justify">
+
+Respecto al seguimiento de incidentes, el 100 % utiliza o considera relevante disponer de registros e indicadores relacionados con la seguridad. Entre los datos identificados se encuentran la cantidad de incidentes por zona, los tiempos de respuesta, las falsas alarmas, las fallas de dispositivos, la disponibilidad de equipos y los mantenimientos pendientes. Estos resultados permiten reconocer oportunidades para mejorar la organización, visualización y consulta de información sobre las condiciones de seguridad de una edificación.
+
+</p>
+
+<p align="justify">
+
+En cuanto a los objetivos y criterios de confianza, el 100 % busca desarrollar sus responsabilidades con información suficiente, reducir la incertidumbre frente a situaciones críticas y mantener condiciones adecuadas de seguridad. Asimismo, los tres participantes consideran relevantes la confiabilidad de las tecnologías, la integración con sistemas existentes y la disponibilidad de soporte o mantenimiento al evaluar nuevas soluciones. Sus decisiones también pueden estar influenciadas por juntas de propietarios, especialistas técnicos, proveedores y responsables administrativos.
+
+</p>
+
+<p align="justify">
+
+Con la finalidad de visualizar las características subjetivas predominantes entre los propietarios y administradores de edificaciones, se elaboró un gráfico estadístico de barras que presenta los porcentajes correspondientes a los principales comportamientos, necesidades, dificultades y criterios de decisión identificados. Se consideran aspectos como la orientación preventiva, la necesidad de información confiable, la utilización de sistemas no integrados, la identificación de zonas afectadas, la aceptación de automatización supervisada, la continuidad operativa y las dificultades para consultar información histórica. Esta representación permite reconocer los factores más recurrentes dentro de la muestra y establecer las prioridades que deberán considerarse durante el diseño de ResQ.
+
 </p>
 
 ![Cuadro estadístico de características subjetivas - Segmento 1](assets/images/chapter-02-requirements-elicitation-analysis/interview-analysis-segment-01-subjective.png)
 
 <p align="center">
-  <strong>Figura 13. Cuadro estadístico de características subjetivas - Segmento 1.</strong>
+
+<strong>Figura 13. Cuadro estadístico de características subjetivas - Segmento 1.</strong>
+
 </p>
 
 <p align="justify">
-El 100 % de los entrevistados presenta una forma de trabajo orientada a la prevención, el análisis o el seguimiento estructurado de sus responsabilidades. Aunque existen diferencias individuales, los tres participantes consideran fundamental disponer de información confiable antes de tomar decisiones relacionadas con la seguridad.
-</p>
 
-<p align="justify">
-El 100 % trabaja actualmente con diferentes sistemas o fuentes de información relacionadas con seguridad que no se encuentran completamente integrados. Esta fragmentación obliga a consultar diferentes plataformas, comunicarse con otras personas o realizar verificaciones adicionales para comprender una situación.
-</p>
+Los resultados de la Figura 13 muestran que la integración tecnológica, la disponibilidad de información confiable, la identificación de zonas afectadas, la continuidad de funciones críticas y la automatización supervisada constituyen necesidades compartidas por el 100 % de los entrevistados. Asimismo, las dificultades para consultar información histórica, documentadas explícitamente en el 66.7 % de los casos, evidencian oportunidades para mejorar los mecanismos de registro y seguimiento de incidentes. Estos hallazgos permiten identificar características relevantes para orientar las funcionalidades de monitoreo, alerta y gestión de información propuestas para ResQ.
 
-<p align="justify">
-La necesidad de identificar rápidamente la ubicación del incidente aparece en el 100 % de los entrevistados. Asimismo, el 100 % manifestó que durante determinadas alertas existe algún nivel de verificación humana antes de confirmar el evento o ejecutar acciones de mayor impacto.
-</p>
-
-<p align="justify">
-El 100 % considera que las funciones críticas deberían continuar operando localmente cuando se pierde la conexión a Internet. También el 100 % mantiene una actitud favorable hacia la automatización de alertas, notificaciones, señalización o registro de eventos, pero considera necesaria la supervisión o validación humana cuando una acción pueda generar consecuencias importantes sobre personas o infraestructura.
-</p>
-
-<p align="justify">
-La integración y el soporte aparecen como criterios relevantes para la adopción de nuevas tecnologías en el 100 % de los casos. Además, el 100 % manifestó interés en contar con información histórica o indicadores que permitan realizar seguimiento de los incidentes.
-</p>
-
-<p align="justify">
-En el 66.7 % de los casos existen dificultades para consultar información histórica debido a que los registros se encuentran distribuidos entre documentos, correos, hojas de cálculo o conversaciones. De forma relacionada, el 66.7 % utiliza WhatsApp como mecanismo complementario de coordinación.
 </p>
 
 ##### Perfil predominante del segmento
 
 <p align="justify">
-Los resultados permiten identificar como perfil predominante a un profesional responsable de administrar u operar una edificación, acostumbrado a coordinar con personal de seguridad, mantenimiento, propietarios y proveedores.
+
+A partir de los resultados obtenidos, el perfil predominante del primer segmento corresponde a un profesional adulto con formación académica y responsabilidades de administración, mantenimiento u operación de edificaciones. Desarrolla actividades relacionadas con la supervisión de sistemas de seguridad, coordinación de personal, revisión de incidencias y comunicación con proveedores. Utiliza habitualmente una laptop y un smartphone, complementando sus actividades mediante herramientas de comunicación, hojas de cálculo y plataformas especializadas.
+
 </p>
 
 <p align="justify">
-Utiliza habitualmente una computadora y un smartphone, consulta diferentes sistemas y necesita disponer de información confiable antes de tomar decisiones. Su principal objetivo es mantener la seguridad de los ocupantes y reaccionar oportunamente ante situaciones de riesgo.
+
+Desde la perspectiva personal y profesional, presenta una orientación preventiva y analítica, procura tomar decisiones respaldadas por información confiable y considera importante mantener el control de las operaciones críticas. Sus principales objetivos son proteger a los ocupantes, supervisar las condiciones de seguridad, identificar oportunamente situaciones de riesgo y coordinar respuestas adecuadas. Entre sus frustraciones se encuentran la fragmentación de sistemas, la dependencia de verificaciones manuales, las falsas alarmas y la dificultad para acceder a información completa durante una emergencia.
+
 </p>
 
 <p align="justify">
-Sus principales frustraciones se relacionan con la fragmentación de los sistemas, la necesidad de realizar verificaciones manuales y la dificultad para conocer inmediatamente qué ocurre y dónde ocurre. El segmento presenta una actitud favorable hacia la automatización, siempre que esta sea confiable y mantenga mecanismos adecuados de control humano.
+
+Estos hallazgos servirán como fundamento para la elaboración del User Persona del primer segmento. Las características identificadas permitirán representar sus responsabilidades, conocimientos, necesidades, motivaciones, frustraciones y comportamientos tecnológicos, manteniendo coherencia con las experiencias recopiladas. Asimismo, proporcionan criterios para orientar la experiencia de usuario de ResQ hacia una supervisión clara, organizada y adaptable a distintos tipos de edificaciones.
+
 </p>
 
 ---
@@ -2194,103 +2390,173 @@ Sus principales frustraciones se relacionan con la fragmentación de los sistema
 ##### Características objetivas
 
 <p align="justify">
-El análisis de las características objetivas permite identificar el perfil demográfico, profesional y tecnológico de los representantes de empresas dedicadas a automatización de edificios, integración IoT y Building Management Systems.
+
+El análisis de las características objetivas del segundo segmento se desarrolló considerando las entrevistas de Luis Herrera Campos, Mateo Loechle Arias y Juan Diego Ramírez Torres. Los participantes trabajan en organizaciones relacionadas con automatización, integración IoT, Building Management Systems (BMS) y seguridad electrónica. La muestra incorpora profesionales que desempeñan funciones de gerencia técnica, ingeniería de proyectos e integración, y jefatura de proyectos, permitiendo analizar diferentes responsabilidades involucradas en la selección e implementación de soluciones tecnológicas para clientes.
+
+</p>
+
+<p align="justify">
+
+Respecto a la edad, el 33.3 % se encuentra entre los 20 y 29 años, el 33.3 % entre los 30 y 39 años y el 33.3 % entre los 40 y 49 años. Las edades registradas son 26, 32 y 42 años, respectivamente. En cuanto al género, los tres registros identifican a los participantes como masculinos, equivalente al 100 % de la muestra. Asimismo, el 100 % reside en Lima Metropolitana, con una distribución equivalente entre San Borja, Jesús María y Santiago de Surco, representando cada distrito el 33.3 % de los entrevistados.
+
+</p>
+
+<p align="justify">
+
+En cuanto al estado civil, el 66.7 % se encuentra soltero y el 33.3 % casado. Los registros también muestran diferentes configuraciones familiares: un participante vive con su esposa e hijos, otro comparte vivienda con su hermano y el tercero reside con su familia. Estas características contribuyen a describir el contexto personal de los entrevistados, aunque las necesidades profesionales del segmento se encuentran principalmente relacionadas con sus responsabilidades técnicas y comerciales.
+
+</p>
+
+<p align="justify">
+
+Respecto a la formación académica, el 66.7 % posee formación en Ingeniería Electrónica y el 33.3 % en Ingeniería de Sistemas. El 100 % cuenta con experiencia profesional vinculada con automatización, seguridad electrónica o integración tecnológica, con trayectorias de seis, ocho y quince años. Por consiguiente, los tres participantes poseen al menos seis años de experiencia y el 33.3 % supera los diez años de trayectoria profesional. Estos resultados reflejan la participación de profesionales familiarizados con procesos de evaluación técnica, implementación y gestión de proyectos.
+
+</p>
+
+<p align="justify">
+
+En relación con los cargos, el 33.3 % corresponde a gerencia técnica, el 33.3 % a ingeniería de proyectos e integración IoT y el 33.3 % a jefatura de proyectos de integración. Las responsabilidades descritas incluyen levantamiento de requisitos, evaluación de alternativas tecnológicas, diseño de soluciones, selección de equipos, configuración de sistemas, programación, pruebas de integración, elaboración de cotizaciones, coordinación con clientes y seguimiento posterior a la implementación.
+
+</p>
+
+<p align="justify">
+
+Desde la perspectiva tecnológica, el 66.7 % cuenta con información original documentada sobre el uso habitual de una laptop y un smartphone dentro de sus actividades profesionales. En estos mismos registros, Google Chrome aparece como navegador utilizado habitualmente. Para el 33.3 % restante no se dispone de información original suficientemente verificada sobre dispositivos y preferencias de navegación, por lo que estas características permanecen pendientes de confirmación. En consecuencia, los porcentajes reflejan la información documentada y no necesariamente las preferencias reales de todos los participantes.
+
+</p>
+
+<p align="justify">
+
+En relación con las herramientas y canales de comunicación, el 66.7 % menciona explícitamente Microsoft Teams, WhatsApp y correo electrónico como medios utilizados para coordinar actividades profesionales. También se identifican herramientas técnicas como Postman, Visual Studio Code, plataformas BMS, utilidades MQTT y programas relacionados con protocolos BACnet y Modbus. Estas aplicaciones se encuentran asociadas con actividades de configuración, integración de sistemas, diagnóstico técnico y coordinación de proyectos.
+
+</p>
+
+<p align="justify">
+
+Respecto a marcas e influencias profesionales, el 66.7 % menciona Schneider Electric y Siemens entre los fabricantes conocidos o utilizados. También aparecen referencias a Honeywell y Johnson Controls. Los entrevistados destacan la importancia de consultar documentación oficial, experiencias de otros integradores, recomendaciones de proveedores y demostraciones técnicas. Asimismo, el uso de LinkedIn se encuentra documentado explícitamente en uno de los registros originales, equivalente al 33.3 % de la muestra. También se identifican fuentes como GitHub, Stack Overflow, YouTube y foros técnicos especializados.
+
+</p>
+
+<p align="justify">
+
+Para representar las características objetivas del segundo segmento, se elaboró un gráfico estadístico de barras que presenta la distribución porcentual de las principales variables demográficas, académicas, profesionales y tecnológicas identificadas en los registros de entrevistas. Se consideran aspectos como edad, género, distrito de residencia, formación profesional, años de experiencia, cargos desempeñados y utilización documentada de dispositivos, navegadores y canales digitales. Esta representación permite reconocer los perfiles de los participantes y establecer las características objetivas relevantes para la construcción del User Persona correspondiente a las empresas integradoras.
+
 </p>
 
 ![Cuadro estadístico de características objetivas - Segmento 2](assets/images/chapter-02-requirements-elicitation-analysis/interview-analysis-segment-02-objective.png)
 
 <p align="center">
-  <strong>Figura 14. Cuadro estadístico de características objetivas - Segmento 2.</strong>
+
+<strong>Figura 14. Cuadro estadístico de características objetivas - Segmento 2.</strong>
+
 </p>
 
 <p align="justify">
-En relación con la edad, el 33.3 % de los entrevistados se encuentra entre los 30 y 39 años, mientras que el 66.7 % se encuentra entre los 40 y 49 años. Respecto al género, el 66.7 % corresponde al género masculino y el 33.3 % al femenino.
-</p>
 
-<p align="justify">
-El 100 % reside en Lima Metropolitana, con participantes ubicados en San Borja, Jesús María y La Molina. Cada distrito representa el 33.3 % de la muestra.
-</p>
+Los resultados de la Figura 14 permiten identificar que el segundo segmento está representado por profesionales con formación en ingeniería y experiencia relacionada con automatización e integración tecnológica. Aunque existen diferencias en edad, trayectoria y cargo, el 100 % participa en actividades que requieren conocimientos técnicos o gestión de proyectos tecnológicos. La diversidad de responsabilidades demuestra que la evaluación e incorporación de nuevas soluciones involucra diferentes perfiles dentro de las organizaciones. Asimismo, la información tecnológica documentada destaca la importancia de proporcionar herramientas y recursos técnicos adecuados para los entornos profesionales de estas empresas.
 
-<p align="justify">
-El 100 % cuenta con formación en Ingeniería Electrónica y posee experiencia profesional directamente relacionada con tecnología, automatización o integración. El 100 % posee seis o más años de experiencia en el sector, mientras que el 66.7 % cuenta con más de diez años de trayectoria profesional.
-</p>
-
-<p align="justify">
-Los perfiles profesionales representan distintas etapas del proceso de integración: el 33.3 % corresponde a dirección técnica, el 33.3 % a ingeniería de proyectos e integración IoT y el 33.3 % a gestión comercial e innovación. De esta manera, la muestra incorpora perspectivas técnicas, operativas y comerciales.
-</p>
-
-<p align="justify">
-El 100 % utiliza una laptop y un smartphone como herramientas habituales. Respecto al navegador utilizado principalmente desde la computadora, el 66.7 % utiliza Google Chrome y el 33.3 % Microsoft Edge.
-</p>
-
-<p align="justify">
-Microsoft Teams, WhatsApp y correo electrónico son utilizados por el 100 % de los entrevistados como canales de comunicación profesional. Además, el 66.7 % mencionó LinkedIn como una fuente utilizada para conocer empresas, tecnologías o proveedores.
 </p>
 
 ##### Características subjetivas
 
 <p align="justify">
-El análisis subjetivo del segmento permite identificar los criterios mediante los cuales las empresas integradoras evalúan tecnologías, afrontan problemas de interoperabilidad y deciden incorporar soluciones externas dentro de los proyectos que desarrollan para sus clientes.
+
+El análisis de las características subjetivas del segundo segmento permitió identificar coincidencias relacionadas con la evaluación de tecnologías, los criterios de confianza, las dificultades de interoperabilidad y la relación con proveedores. Los tres participantes presentan una forma de trabajo analítica y orientada a reducir riesgos técnicos o comerciales antes de incorporar una solución a los proyectos desarrollados para sus clientes. Aunque sus responsabilidades son diferentes, coinciden en la importancia de realizar evaluaciones fundamentadas y comprobar el funcionamiento de las tecnologías.
+
+</p>
+
+<p align="justify">
+
+La compatibilidad e integración tecnológica constituyen criterios relevantes para el 100 % de los entrevistados. Los participantes consideran fundamental verificar que una solución pueda incorporarse a la infraestructura existente y funcionar correctamente junto con los sistemas instalados. El 66.7 % describe experiencias concretas relacionadas con incompatibilidades, restricciones de protocolos o dificultades de comunicación entre dispositivos de diferentes fabricantes. Estos problemas pueden ocasionar trabajo adicional de ingeniería, modificaciones técnicas y retrasos durante los procesos de implementación.
+
+</p>
+
+<p align="justify">
+
+Respecto a los mecanismos de validación, el 100 % considera importante realizar pruebas, demostraciones o pilotos antes de adoptar definitivamente una nueva tecnología. Los tres participantes describen experiencias donde la evaluación práctica permitió comprobar el comportamiento de dispositivos y sistemas. Para ellos, estas actividades ayudan a identificar posibles incompatibilidades, evaluar la estabilidad y reducir la incertidumbre antes de asumir compromisos de implementación frente a sus clientes.
+
+</p>
+
+<p align="justify">
+
+En relación con la documentación técnica, el 66.7 % menciona explícitamente su importancia para facilitar la integración de soluciones. Entre los aspectos relevantes se encuentran protocolos de comunicación, APIs, ejemplos de solicitudes y respuestas, estructuras de mensajes y herramientas de diagnóstico. La ausencia de documentación suficiente o las restricciones no especificadas pueden generar dificultades durante la configuración y ejecución de pruebas, incrementando el esfuerzo requerido para integrar componentes de diferentes fabricantes.
+
+</p>
+
+<p align="justify">
+
+El soporte técnico y el mantenimiento posterior representan criterios relevantes para el 100 % de los entrevistados. Los participantes destacan que las responsabilidades de una empresa integradora continúan después de seleccionar o instalar una tecnología. Por ello, consideran importante evaluar la disponibilidad de asistencia técnica, la estabilidad de funcionamiento, las posibilidades de mantenimiento y el respaldo ofrecido por el proveedor durante el ciclo de vida de la solución.
+
+</p>
+
+<p align="justify">
+
+Respecto a las frustraciones profesionales, el 66.7 % describe experiencias directas relacionadas con incompatibilidades técnicas, limitaciones de fabricantes o comportamientos diferentes a los esperados. Entre las situaciones mencionadas se encuentran restricciones de integración en sistemas que utilizan BACnet, dificultades asociadas con estructuras de mensajes MQTT y la necesidad de implementar capas intermedias de transformación. Estas experiencias reflejan la importancia de contar con información técnica completa y mecanismos de validación antes de realizar una instalación definitiva.
+
+</p>
+
+<p align="justify">
+
+En cuanto a la continuidad operativa, el 66.7 % menciona explícitamente que determinadas funciones críticas deberían continuar funcionando localmente cuando se pierde la conexión a Internet. Los participantes que abordaron este tema consideran importante mantener disponibles las operaciones relacionadas con detección, procesamiento local y control de determinados dispositivos, mientras que funciones de acceso remoto, reportes e históricos pueden depender de la conectividad. Esta necesidad guarda relación con la propuesta tecnológica de ResQ de incorporar capacidades de Edge Computing.
+
+</p>
+
+<p align="justify">
+
+En relación con la incorporación de soluciones de terceros, el 100 % participa en actividades relacionadas con evaluación, selección o integración de tecnologías externas. Sin embargo, solamente el 33.3 % expresa explícitamente una preferencia por integrar una solución especializada existente en lugar de desarrollarla internamente, siempre que resulte compatible y económicamente conveniente. Este hallazgo permite reconocer una oportunidad para establecer relaciones de colaboración entre SecurityBear y empresas integradoras, aunque las condiciones comerciales deberán validarse posteriormente.
+
+</p>
+
+<p align="justify">
+
+Respecto a las marcas e influencias, el 66.7 % señala explícitamente que el reconocimiento de un fabricante no resulta suficiente por sí solo para seleccionar una tecnología. Los participantes valoran factores adicionales como documentación, compatibilidad, resultados de pruebas, soporte y experiencia de otros profesionales. El tercer entrevistado también prioriza criterios técnicos y comerciales, aunque su registro original no permite establecer una opinión equivalente sobre la influencia de las marcas. Estos resultados evidencian que la confianza hacia una nueva solución requiere argumentos técnicos y pruebas de funcionamiento.
+
+</p>
+
+<p align="justify">
+
+Finalmente, el 100 % presenta objetivos profesionales relacionados con la entrega de soluciones confiables, el cumplimiento de los requerimientos de los clientes y la reducción de riesgos de implementación. Los participantes también consideran relevante que las tecnologías puedan mantenerse después de su instalación. Sus principales motivaciones se encuentran vinculadas con la calidad del trabajo realizado, la satisfacción de los clientes, el cumplimiento de los proyectos y la capacidad de resolver problemas mediante alternativas tecnológicas adecuadas.
+
+</p>
+
+<p align="justify">
+
+Con la finalidad de visualizar las características subjetivas del segundo segmento, se elaboró un gráfico estadístico de barras que presenta los porcentajes correspondientes a las principales necesidades, motivaciones, preocupaciones y criterios de decisión identificados. Se incluyen aspectos relacionados con interoperabilidad, compatibilidad, realización de pruebas, soporte técnico, mantenimiento, documentación, dificultades de integración y continuidad de funciones críticas sin conexión a Internet. El gráfico permite reconocer los factores que influyen en la evaluación y adopción de tecnologías por parte de las empresas integradoras, así como las oportunidades que debe considerar SecurityBear para presentar una propuesta tecnológica confiable y adaptable.
+
 </p>
 
 ![Cuadro estadístico de características subjetivas - Segmento 2](assets/images/chapter-02-requirements-elicitation-analysis/interview-analysis-segment-02-subjective.png)
 
 <p align="center">
-  <strong>Figura 15. Cuadro estadístico de características subjetivas - Segmento 2.</strong>
+
+<strong>Figura 15. Cuadro estadístico de características subjetivas - Segmento 2.</strong>
+
 </p>
 
 <p align="justify">
-El 100 % de los entrevistados considera la capacidad de integración e interoperabilidad como un factor fundamental al evaluar una nueva tecnología. Los tres participantes mencionaron dificultades relacionadas con compatibilidad, protocolos, APIs, documentación o integración entre productos de diferentes fabricantes.
-</p>
 
-<p align="justify">
-El 100 % considera necesario disponer de documentación técnica, soporte y mecanismos adecuados de integración antes de incorporar una solución externa. APIs, protocolos abiertos, documentación comprensible y capacidad de soporte aparecen como factores recurrentes en la evaluación.
-</p>
+Los resultados presentados en la Figura 15 evidencian que la compatibilidad tecnológica, las pruebas de validación, la disponibilidad de soporte y el mantenimiento posterior constituyen criterios compartidos por el 100 % de los entrevistados. Asimismo, el 66.7 % describe dificultades concretas de interoperabilidad, destaca la importancia de la documentación técnica y considera necesario mantener determinadas funciones críticas localmente. Estos hallazgos permiten reconocer que la incorporación de nuevas soluciones depende de factores técnicos, operativos y comerciales que deben considerarse durante el diseño y posicionamiento de ResQ.
 
-<p align="justify">
-Asimismo, el 100 % considera importante realizar una prueba, demostración técnica o piloto antes de confiar plenamente en una tecnología nueva. Esto evidencia que la adopción no depende solamente de una presentación comercial, sino de comprobar que la solución puede integrarse y funcionar en condiciones reales.
-</p>
-
-<p align="justify">
-El 100 % indicó que, cuando existe una solución especializada adecuada, puede resultar preferible integrarla antes que desarrollar internamente toda la funcionalidad. Esta decisión busca evitar asumir innecesariamente actividades adicionales de desarrollo, mantenimiento, pruebas y soporte.
-</p>
-
-<p align="justify">
-En los tres participantes aparece también una preocupación relacionada con el mantenimiento posterior a la implementación. El 100 % considera importante que una tecnología continúe siendo estable, mantenible y respaldada por el proveedor después de su instalación inicial.
-</p>
-
-<p align="justify">
-El 100 % manifestó frustraciones relacionadas con soluciones cuya compatibilidad, documentación o facilidad de integración no corresponde con lo esperado inicialmente. Estas situaciones pueden generar horas adicionales de ingeniería, retrasos, modificaciones de arquitectura o dificultades para mantener posteriormente la solución.
-</p>
-
-<p align="justify">
-La reputación de una marca puede influir en el proceso, pero el 100 % considera que esta no es suficiente por sí sola para determinar una decisión. La documentación, las pruebas, el soporte, las recomendaciones y los casos reales también influyen en la confianza hacia una tecnología.
-</p>
-
-<p align="justify">
-Respecto a la continuidad ante pérdida de conectividad, el 66.7 % mencionó explícitamente que las funciones críticas deberían continuar operando localmente sin depender permanentemente de Internet.
-</p>
-
-<p align="justify">
-La escalabilidad fue mencionada explícitamente por el 33.3 % como un criterio necesario para determinar si una tecnología puede utilizarse no solamente en un edificio, sino también en múltiples edificios y clientes.
 </p>
 
 ##### Perfil predominante del segmento
 
 <p align="justify">
-Los resultados permiten identificar como perfil predominante a un profesional con formación técnica y experiencia en automatización, IoT o integración de sistemas, que participa en la evaluación, implementación o incorporación comercial de nuevas tecnologías.
+
+Los resultados permiten identificar como perfil predominante del segundo segmento a un profesional con formación en ingeniería y experiencia en automatización, integración IoT o seguridad electrónica. Participa en procesos de evaluación, selección, configuración, implementación o supervisión de tecnologías que deben incorporarse a proyectos desarrollados para clientes. Sus actividades requieren conocimientos técnicos, capacidad de análisis, resolución de problemas, gestión de proyectos y comunicación con profesionales de diferentes especialidades.
+
 </p>
 
 <p align="justify">
-Su trabajo exige conectar soluciones pertenecientes a distintos fabricantes y adaptarlas a la infraestructura disponible en los proyectos de sus clientes. Por esta razón, valora especialmente la interoperabilidad, documentación, estabilidad, soporte, pruebas y facilidad de mantenimiento.
+
+Desde una perspectiva profesional, presenta una orientación analítica y valora la posibilidad de comprobar el comportamiento de una tecnología antes de incorporarla a una infraestructura existente. Sus principales objetivos son desarrollar integraciones confiables, cumplir los requerimientos de los clientes, reducir riesgos de implementación y facilitar el mantenimiento posterior. Entre sus frustraciones se encuentran las incompatibilidades no previstas, la documentación incompleta, las restricciones tecnológicas, las dificultades detectadas tardíamente y la dependencia de proveedores con soporte insuficiente.
+
 </p>
 
 <p align="justify">
-Su principal objetivo es incorporar tecnologías confiables que puedan integrarse con sistemas existentes sin generar un esfuerzo desproporcionado de implementación o mantenimiento. Sus principales frustraciones aparecen cuando una solución presenta incompatibilidades no documentadas, ecosistemas cerrados o requerimientos técnicos que solo se descubren durante las etapas de prueba o puesta en marcha.
-</p>
 
-<p align="justify">
-Este segmento no evalúa únicamente el producto. También evalúa la capacidad del proveedor para actuar como un socio tecnológico, responder ante problemas y sostener la solución durante su ciclo de vida.
+Estos hallazgos permitirán elaborar el User Persona correspondiente al segundo segmento, incorporando sus actividades profesionales, conocimientos tecnológicos, objetivos, motivaciones, frustraciones y criterios de adopción. Asimismo, orientarán la propuesta de ResQ hacia capacidades claramente documentadas, mecanismos de integración comprensibles, posibilidades de validación técnica y condiciones de operación apropiadas para diferentes infraestructuras.
+
 </p>
 
 ---
@@ -2298,96 +2564,287 @@ Este segmento no evalúa únicamente el producto. También evalúa la capacidad 
 #### Síntesis de los resultados
 
 <p align="justify">
-Los resultados muestran diferencias claras entre ambos segmentos.
+
+El análisis de las entrevistas permitió identificar diferencias y coincidencias entre los dos segmentos objetivo de SecurityBear. Los propietarios y administradores de edificaciones se concentran principalmente en las actividades de supervisión, prevención, detección de incidentes y coordinación de respuestas. Para este segmento, la fragmentación de sistemas representa una dificultad porque obliga a consultar diferentes plataformas, realizar verificaciones manuales y coordinar la obtención de información necesaria para tomar decisiones.
+
 </p>
 
 <p align="justify">
-Los propietarios y administradores de edificaciones se concentran principalmente en la operación cotidiana de una infraestructura y en la necesidad de comprender y responder rápidamente ante situaciones de riesgo. Para este segmento, la fragmentación de sistemas genera dificultades al momento de localizar un incidente, reunir información y coordinar la respuesta.
+
+En contraste, las empresas integradoras de automatización y gestión de edificios inteligentes analizan el problema desde la perspectiva de la implementación tecnológica. Sus principales preocupaciones se relacionan con la compatibilidad, los protocolos de comunicación, la documentación técnica, la estabilidad de funcionamiento, las pruebas y la disponibilidad de soporte. Estas organizaciones necesitan incorporar soluciones a proyectos existentes sin generar dificultades técnicas innecesarias o comprometer la confiabilidad de las instalaciones.
+
 </p>
 
 <p align="justify">
-Las empresas integradoras, en cambio, analizan el problema desde la implementación tecnológica. Su principal preocupación se relaciona con la capacidad de incorporar una nueva solución dentro de infraestructuras que ya poseen dispositivos, plataformas y sistemas pertenecientes a diferentes fabricantes.
+
+En el primer segmento, el 100 % reportó utilizar sistemas de seguridad no completamente integrados y consideró importante identificar oportunamente las zonas afectadas durante incidentes. Asimismo, el 100 % valoró la continuidad de determinadas funciones críticas y manifestó una actitud favorable hacia la automatización bajo condiciones adecuadas de supervisión. Estos hallazgos reflejan necesidades relacionadas con monitoreo centralizado, alertas contextualizadas, registro de eventos y coordinación de acciones.
+
 </p>
 
 <p align="justify">
-En ambos segmentos la integración constituye un aspecto relevante, aunque desde perspectivas diferentes. Para los administradores significa disponer de una visión más clara y centralizada de la infraestructura; para los integradores significa contar con protocolos, APIs, documentación y mecanismos que permitan incorporar nuevas capacidades dentro de proyectos existentes.
+
+En el segundo segmento, el 100 % consideró importantes la compatibilidad tecnológica, las pruebas y el soporte de proveedores. Asimismo, el 66.7 % describió dificultades concretas relacionadas con interoperabilidad y documentación técnica. Estos resultados reflejan la necesidad de ofrecer una solución que pueda comprenderse, evaluarse e integrarse mediante procedimientos adecuados, considerando las características de la infraestructura existente y las responsabilidades que asumen las empresas integradoras frente a sus clientes.
+
 </p>
 
 <p align="justify">
-Los resultados del análisis servirán como base para actualizar los User Personas y los demás artefactos de Needfinding, manteniendo trazabilidad entre las características representadas y la evidencia recopilada durante las entrevistas.
+
+Una coincidencia fundamental entre ambos segmentos es la importancia de la integración tecnológica, aunque sus objetivos son diferentes. Para los propietarios y administradores, la integración representa la posibilidad de acceder a información organizada y disponer de una visión más clara del estado de sus edificaciones. Para las empresas integradoras, representa la capacidad de incorporar nuevas funciones mediante protocolos, interfaces y mecanismos de configuración que permitan trabajar con diferentes dispositivos y plataformas tecnológicas.
+
+</p>
+
+<p align="justify">
+
+Los resultados permiten establecer una relación entre las necesidades identificadas y la propuesta de valor de ResQ. La plataforma busca integrar el monitoreo de condiciones de riesgo, facilitar la identificación y seguimiento de alertas y coordinar mecanismos de respuesta mediante tecnologías IoT y procesamiento local. Desde la perspectiva empresarial, estas capacidades deberán responder tanto a las necesidades operativas de los propietarios y administradores como a los criterios técnicos de las organizaciones especializadas en automatización e integración tecnológica.
+
+</p>
+
+#### Implicaciones para el proceso de Needfinding
+
+<p align="justify">
+
+Los hallazgos obtenidos constituirán la base para elaborar los User Personas correspondientes a los dos segmentos objetivo. Para los propietarios y administradores se considerarán características relacionadas con supervisión de infraestructura, coordinación de personal, gestión de incidentes, necesidad de información confiable y utilización de herramientas digitales. Para las empresas integradoras se priorizarán características vinculadas con evaluación de tecnologías, interoperabilidad, documentación, realización de pruebas, relación con proveedores y mantenimiento de soluciones.
+
+</p>
+
+<p align="justify">
+
+Asimismo, los resultados permitirán elaborar el User Task Matrix mediante la identificación de las tareas que cada segmento realiza actualmente, independientemente de la existencia de ResQ. Entre estas actividades se encuentran supervisar sistemas de seguridad, verificar alertas, coordinar personal, consultar registros, evaluar dispositivos, comprobar compatibilidad y realizar pruebas de integración. La frecuencia e importancia de estas tareas deberán establecerse a partir de la información recopilada durante el proceso de investigación.
+
+</p>
+
+<p align="justify">
+
+Los User Journey Maps representarán los procesos actuales (As-Is) que siguen los participantes al desarrollar estas actividades, identificando sus principales dificultades, necesidades de información y oportunidades de mejora. Complementariamente, los Empathy Maps permitirán organizar los comportamientos, motivaciones, preocupaciones, percepciones y frustraciones asociadas con los User Personas, manteniendo una relación directa con los hallazgos objetivos y subjetivos obtenidos en las entrevistas.
+
+</p>
+
+<p align="justify">
+
+En conclusión, el análisis de entrevistas evidencia que los propietarios y administradores de edificaciones necesitan mejorar la visibilidad de las condiciones de seguridad, la localización de incidentes y la coordinación de respuestas, mientras que las empresas integradoras requieren tecnologías confiables, interoperables y respaldadas por mecanismos adecuados de validación y soporte. Estas perspectivas complementarias proporcionan una base para orientar las decisiones de diseño de ResQ y sustentar posteriormente la definición de requisitos funcionales, experiencias de usuario y capacidades de integración, manteniendo trazabilidad entre las necesidades investigadas y los artefactos del proyecto.
+
 </p>
 
 ## 2.3. Needfinding
 
+<p align="justify">
+
+El proceso de Needfinding de ResQ permite identificar las necesidades, objetivos y dificultades de sus dos segmentos objetivo. A partir de las entrevistas y el análisis competitivo se elaboran los User Personas, User Task Matrix, User Journey Maps y Empathy Maps, que servirán de base para definir los requisitos y orientar el diseño de la solución.
+
+</p>
+
 ### 2.3.1. User Personas
 
 <p align="justify">
-Los User Personas representan los dos segmentos objetivo de ResQ: propietarios y administradores de edificaciones, y empresas integradoras de automatización y gestión de edificios inteligentes. Permiten relacionar las responsabilidades de cada perfil con sus objetivos, dificultades y condiciones de uso de una solución IoT.
+
+Los User Personas de ResQ se construyeron a partir de las seis entrevistas y los resultados del análisis estadístico del apartado 2.2.3, complementados con los hallazgos del análisis competitivo. Se definió un arquetipo por segmento objetivo, considerando características demográficas, trayectoria profesional, personalidad, habilidades, tecnologías utilizadas, objetivos, motivaciones y frustraciones. Ambos perfiles sintetizan características de los entrevistados y no representan a una persona real específica.
+
 </p>
 
-**Segmento objetivo #1: Propietarios y administradores de edificaciones — Carlos Mendoza**
+#### Segmento objetivo #1: Propietarios y administradores de edificaciones — Carlos Mendoza
 
 <p align="justify">
-Carlos Mendoza, de 37 años, representa al administrador de un edificio residencial que coordina seguridad y mantenimiento tanto desde la oficina como fuera de la instalación. Es organizado y preventivo, pero depende de llamadas, mensajes y sistemas separados para comprender una alerta. Su necesidad principal consiste en conocer el tipo de riesgo, su ubicación y evolución, y quién está atendiendo el evento. Para ResQ, este perfil orienta el monitoreo remoto por zonas, las alertas comprensibles y la consulta de las respuestas ejecutadas por el sistema.
+
+Carlos Mendoza, de 37 años, es administrador de un edificio residencial y cuenta con experiencia en gestión de infraestructura, seguridad y mantenimiento. Es organizado, preventivo y utiliza herramientas digitales para supervisar sus responsabilidades. Entre sus actividades habituales se encuentran revisar incidencias, coordinar personal, supervisar equipos y gestionar proveedores. Sus decisiones están influenciadas por especialistas técnicos, costos, confiabilidad y disponibilidad de soporte.
+
 </p>
 
+<p align="justify">
 
+Su principal objetivo es garantizar la seguridad de los ocupantes mediante la identificación oportuna de riesgos y la coordinación de respuestas. Sin embargo, enfrenta dificultades porque las cámaras, alarmas y registros funcionan mediante sistemas independientes, obligándolo a realizar llamadas y verificaciones manuales. Necesita conocer el tipo de amenaza, la zona afectada, su gravedad y las acciones realizadas. Estas necesidades orientan las capacidades de monitoreo, alertas y gestión de incidentes propuestas para ResQ.
+
+</p>
+
+<p align="justify">
+
+La Figura 16 presenta el User Persona de Carlos Mendoza, incluyendo sus características profesionales, motivaciones, objetivos, frustraciones y preferencias tecnológicas.
+
+</p>
 
 ![User Persona de Carlos Mendoza](assets/images/chapter-02-requirements-elicitation-analysis/CarlosMendozaUserPerson.png)
 
 <p align="center">
-  <strong>Figura 16. User Persona de Carlos Mendoza.</strong>
+
+<strong>Figura 16. User Persona de Carlos Mendoza.</strong>
+
 </p>
 
-**Segmento objetivo #2: Empresas integradoras de automatización y gestión de edificios inteligentes — Alex Rivera**
+#### Segmento objetivo #2: Empresas integradoras de automatización y gestión de edificios inteligentes — Alex Rivera
 
 <p align="justify">
-Alex Rivera es un profesional que evalúa e integra tecnologías de automatización, IoT y BMS en proyectos de clientes. 
+
+Alex Rivera, de 42 años, es un gerente técnico con experiencia en automatización, IoT y Building Management Systems (BMS). Es analítico, organizado y participa en la evaluación de proveedores, diseño de arquitecturas, integración de dispositivos y supervisión de proyectos. Utiliza herramientas técnicas y documentación de fabricantes, y valora los protocolos abiertos, la confiabilidad, las pruebas y el soporte especializado.
+
 </p>
 
+<p align="justify">
+
+Su principal objetivo es incorporar soluciones tecnológicas compatibles, estables y fáciles de mantener en los proyectos de sus clientes. Sus mayores frustraciones son la documentación incompleta, las incompatibilidades entre fabricantes, los sistemas cerrados y la falta de soporte. Necesita comprobar el funcionamiento de nuevas tecnologías antes de implementarlas. Estas necesidades orientan la propuesta de ResQ hacia la interoperabilidad, configuración de dispositivos y validación técnica, capacidades que deberán desarrollarse y comprobarse progresivamente.
+
+</p>
+
+<p align="justify">
+
+La Figura 17 presenta el User Persona de Alex Rivera, sintetizando sus responsabilidades, habilidades, objetivos, frustraciones y criterios de evaluación tecnológica.
+
+</p>
 
 ![User Persona de Alex Rivera, arquetipo del integrador](assets/images/chapter-02-requirements-elicitation-analysis/segmento-2-user-persona.png)
 
 <p align="center">
-  <strong>Figura 17. User Persona de Alex Rivera, arquetipo del integrador.</strong>
+
+<strong>Figura 17. User Persona de Alex Rivera, arquetipo del integrador.</strong>
+
 </p>
-
-
 
 ### 2.3.2. User Task Matrix
 
 <p align="justify">
-La User Task Matrix organiza tareas que cada User Persona realiza independientemente de que ResQ exista. La frecuencia indica qué tan seguido se realiza una actividad y la importancia expresa su relevancia para cumplir las responsabilidades del perfil. Ambas dimensiones se clasifican como alta, media o baja. Las valoraciones son una interpretación cualitativa de los relatos; no representan frecuencias medidas ni porcentajes de la población.
+
+La User Task Matrix compara las tareas que Carlos Mendoza y Alex Rivera realizan actualmente, independientemente de ResQ. Se evalúa su frecuencia e importancia mediante niveles Alto, Medio y Bajo, utilizando No aplica cuando una actividad no corresponde al perfil. Las valoraciones son estimaciones cualitativas basadas en las entrevistas y permiten identificar las actividades prioritarias de cada segmento.
+
 </p>
 
-**Segmento objetivo #1: Carlos Mendoza — Propietarios y administradores de edificaciones**
+<table>
+<thead>
+<tr>
+<th rowspan="2">Tarea</th>
+<th colspan="2">Carlos Mendoza</th>
+<th colspan="2">Alex Rivera</th>
+</tr>
+<tr>
+<th>Frecuencia</th>
+<th>Importancia</th>
+<th>Frecuencia</th>
+<th>Importancia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Revisar las condiciones de seguridad de una edificación</td>
+<td>Alta</td>
+<td>Alta</td>
+<td>No aplica</td>
+<td>No aplica</td>
+</tr>
+<tr>
+<td>Verificar el funcionamiento de equipos de seguridad</td>
+<td>Alta</td>
+<td>Alta</td>
+<td>Media</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>Identificar la ubicación y gravedad de una alerta</td>
+<td>Media</td>
+<td>Alta</td>
+<td>No aplica</td>
+<td>No aplica</td>
+</tr>
+<tr>
+<td>Coordinar la atención de incidentes con el personal responsable</td>
+<td>Media</td>
+<td>Alta</td>
+<td>No aplica</td>
+<td>No aplica</td>
+</tr>
+<tr>
+<td>Registrar y consultar incidentes anteriores</td>
+<td>Media</td>
+<td>Alta</td>
+<td>No aplica</td>
+<td>No aplica</td>
+</tr>
+<tr>
+<td>Coordinar mantenimiento y soporte de sistemas instalados</td>
+<td>Media</td>
+<td>Alta</td>
+<td>Alta</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>Evaluar tecnologías y proveedores</td>
+<td>Baja</td>
+<td>Media</td>
+<td>Media</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>Identificar necesidades y requisitos de un cliente</td>
+<td>No aplica</td>
+<td>No aplica</td>
+<td>Alta</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>Realizar levantamientos de infraestructura y conectividad</td>
+<td>No aplica</td>
+<td>No aplica</td>
+<td>Media</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>Revisar documentación, protocolos y compatibilidad</td>
+<td>No aplica</td>
+<td>No aplica</td>
+<td>Alta</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>Diseñar arquitecturas de integración</td>
+<td>No aplica</td>
+<td>No aplica</td>
+<td>Alta</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>Realizar pruebas de concepto y pilotos</td>
+<td>No aplica</td>
+<td>No aplica</td>
+<td>Media</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>Configurar dispositivos e integrar sistemas</td>
+<td>No aplica</td>
+<td>No aplica</td>
+<td>Alta</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>Validar el funcionamiento de sistemas en campo</td>
+<td>No aplica</td>
+<td>No aplica</td>
+<td>Media</td>
+<td>Alta</td>
+</tr>
+<tr>
+<td>Documentar implementaciones y capacitar clientes</td>
+<td>No aplica</td>
+<td>No aplica</td>
+<td>Media</td>
+<td>Alta</td>
+</tr>
+</tbody>
+</table>
 
-| Tarea | Frecuencia | Importancia |
-|---|---|---|
-| Revisar novedades y condiciones de seguridad del edificio | Alta | Alta |
-| Identificar el tipo de alerta, su ubicación y gravedad | Media | Alta |
-| Coordinar la verificación y respuesta con vigilancia y mantenimiento | Media | Alta |
-| Dar seguimiento a incidentes cuando se encuentra fuera del edificio | Media | Alta |
-| Verificar el funcionamiento de los equipos de seguridad | Alta | Alta |
-| Coordinar el mantenimiento preventivo de los equipos | Media | Alta |
-| Registrar los incidentes y las acciones ejecutadas | Media | Alta |
-| Consultar antecedentes de incidentes por fecha, tipo o zona | Media | Media |
-| Evaluar nuevas alternativas de seguridad y presentarlas a la junta | Baja | Media |
+<p align="justify">
 
-**Segmento objetivo #2: Alex Rivera — Empresas integradoras de automatización y gestión de edificios inteligentes**
+Para Carlos Mendoza, las tareas más frecuentes e importantes son revisar las condiciones de seguridad, verificar equipos y coordinar el mantenimiento. Aunque las emergencias ocurren con menor frecuencia, identificar y atender alertas mantiene una importancia alta por sus posibles consecuencias. Sus principales dificultades se relacionan con la fragmentación de información y la necesidad de verificaciones manuales.
 
-| Tarea | Frecuencia | Importancia |
-|---|---|---|
-| Comprender las necesidades del cliente y definir el alcance del proyecto | Alta | Alta |
-| Levantar equipos, zonas, planos y condiciones de conectividad | Media | Alta |
-| Revisar documentación, protocolos y compatibilidad de los sistemas | Alta | Alta |
-| Diseñar y revisar la arquitectura de integración | Alta | Alta |
-| Evaluar proveedores y realizar pruebas de concepto o pilotos | Media | Alta |
-| Configurar dispositivos e integrar sistemas de distintos fabricantes | Alta | Alta |
-| Validar en campo mediciones, comandos y funcionamiento sin Internet | Media | Alta |
-| Documentar la solución, capacitar al cliente y coordinar la entrega | Media | Alta |
-| Dar soporte, mantener la compatibilidad y evaluar ampliaciones | Alta | Alta |
+</p>
 
+<p align="justify">
+
+Para Alex Rivera, las actividades prioritarias son revisar compatibilidad, diseñar integraciones, configurar dispositivos y evaluar tecnologías. Las pruebas y validaciones se realizan en etapas específicas de cada proyecto, pero tienen importancia alta porque permiten prevenir fallas y reducir riesgos de implementación.
+
+</p>
+
+<p align="justify">
+
+Ambos perfiles coinciden en la importancia del mantenimiento y la evaluación de tecnologías, pero tienen responsabilidades diferentes. Carlos se enfoca en la operación y seguridad de las edificaciones, mientras que Alex se concentra en la integración y confiabilidad de los sistemas. Estos resultados servirán de base para los User Journey Maps As-Is, que representarán la atención de alertas y el proceso de integración tecnológica, respectivamente.
+
+</p>
 
 ### 2.3.3. User Journey Mapping
 
@@ -2419,40 +2876,62 @@ El Journey combina el levantamiento y modernización relatados por Luis, las pru
   <strong>Figura 19. User Journey Map As-Is de Alex Rivera.</strong>
 </p>
 
-
 ### 2.3.4. Empathy Mapping
 
 <p align="justify">
-Los mapas de empatía complementan los perfiles y recorridos al relacionar lo que cada persona necesita hacer con lo que ve, escucha, dice, piensa y siente. Su contenido sintetiza los guiones y explicita interpretaciones de diseño; no representa observaciones de campo realizadas por el equipo. Los bloques de dificultades y beneficios esperados permiten traducir esas perspectivas en necesidades que deberán validarse.
+
+Los Empathy Maps de ResQ fueron elaborados en UXPressia a partir de los User Personas y los hallazgos de las entrevistas. Para cada arquetipo, el equipo organizó sus necesidades, comportamientos, percepciones y emociones en las dimensiones de qué ve, escucha, dice, hace, piensa y siente. Asimismo, se identificaron sus principales dificultades (Pains) y beneficios esperados (Gains), con el propósito de comprender sus necesidades y orientar las decisiones de diseño de la solución.
+
 </p>
 
-**Segmento objetivo #1: Carlos Mendoza — Propietarios y administradores de edificaciones**
+#### Segmento objetivo #1: Carlos Mendoza — Propietarios y administradores de edificaciones
 
 <p align="justify">
-El mapa de Carlos refleja la tensión entre su intención de prevenir incidentes y la dependencia de otras personas para reunir información durante una alerta. Aunque dispone de cámaras y alarmas, necesita comprender lo que ocurre cuando no está presente. La oportunidad para ResQ consiste en ofrecer información contextualizada y trazable que le permita coordinar con mayor claridad y conocer qué respuesta ha ejecutado el sistema.
+
+El mapa de empatía de Carlos Mendoza refleja a un administrador que necesita supervisar la seguridad de su edificio, aun cuando no se encuentra físicamente en él. Carlos ve sistemas separados, reportes dispersos y dependencia del personal para confirmar lo que ocurre. Escucha alertas, reportes de vigilancia, quejas de residentes y recomendaciones de proveedores. Dice que necesita saber qué pasó, dónde ocurrió y quién ya está atendiendo el incidente. Piensa en prevenir problemas, mantener el control y evitar decisiones apresuradas con información incompleta. Siente preocupación cuando una alerta no es clara o depende de verificaciones manuales. Sus principales dolores se relacionan con la fragmentación de información, la falta de contexto y la dificultad para consultar antecedentes. En consecuencia, espera una solución que le permita conocer el tipo de riesgo, su ubicación y el estado de la respuesta de manera clara y trazable.
+
+</p>
+
+<p align="justify">
+
+La Figura 20 presenta el mapa de empatía de Carlos Mendoza, sintetizando sus percepciones, preocupaciones y expectativas como representante del primer segmento objetivo.
+
 </p>
 
 ![Mapa de empatía de Carlos Mendoza](assets/images/chapter-02-requirements-elicitation-analysis/CarlosMendozaEmpathy.png)
 
 <p align="center">
-  <strong>Figura 20. Mapa de empatía de Carlos Mendoza.</strong>
+
+<strong>Figura 20. Mapa de empatía de Carlos Mendoza.</strong>
+
 </p>
 
-**Segmento objetivo #2: Alex Rivera — Empresas integradoras de automatización y gestión de edificios inteligentes**
+#### Segmento objetivo #2: Alex Rivera — Empresas integradoras de automatización y gestión de edificios inteligentes
 
 <p align="justify">
-El mapa sintetiza la necesidad de comprobar la interoperabilidad antes de comprometer el proyecto, reducir trabajo adicional y mantener el respaldo del proveedor después de la entrega. Integra las perspectivas técnica, de implementación y comercial presentes en los relatos de los entrevistados.
+
+El mapa de empatía de Alex Rivera representa a un integrador que debe evaluar si una tecnología realmente puede incorporarse a la infraestructura existente de sus clientes. Alex ve proyectos con distintos fabricantes, protocolos y restricciones técnicas. Escucha requerimientos de clientes, observaciones del equipo técnico y promesas comerciales de proveedores. Dice que necesita validar compatibilidad, documentación y soporte antes de comprometer una solución. Piensa en reducir riesgos, evitar retrabajos y asegurar que la implementación sea sostenible. Siente presión cuando una tecnología parece adecuada en teoría, pero no está suficientemente validada en la práctica. Sus principales dolores son la documentación incompleta, las incompatibilidades, el trabajo adicional de integración y la falta de respaldo del proveedor. Por ello, espera una solución que ofrezca interoperabilidad, claridad técnica, pruebas de validación y condiciones de soporte adecuadas.
+
+</p>
+
+<p align="justify">
+
+La Figura 21 presenta el mapa de empatía de Alex Rivera, reuniendo sus percepciones, criterios técnicos y expectativas como representante del segundo segmento objetivo.
+
 </p>
 
 ![Mapa de empatía de Alex Rivera](assets/images/chapter-02-requirements-elicitation-analysis/segmento-2-empathy-map.png)
 
 <p align="center">
-  <strong>Figura 21. Mapa de empatía de Alex Rivera.</strong>
+
+<strong>Figura 21. Mapa de empatía de Alex Rivera.</strong>
+
 </p>
 
-
 <p align="justify">
-Ambos mapas muestran que la interoperabilidad importa por motivos diferentes. Carlos necesita comprender el riesgo y la respuesta en su edificio; Alex necesita evaluar si la tecnología puede integrarse y mantenerse en proyectos de clientes. Por ello, la evidencia de pruebas, la operación local de funciones críticas y la claridad sobre los límites de integración son esenciales para que una empresa integradora considere incorporar ResQ.
+
+En conjunto, ambos mapas muestran que la integración tecnológica y la confiabilidad son importantes para los dos segmentos, pero por razones distintas. Carlos necesita comprender lo que ocurre en su edificio y coordinar mejor la respuesta ante un riesgo. Alex necesita determinar si una tecnología puede integrarse, mantenerse y respaldarse adecuadamente dentro de un proyecto. Por ello, la claridad de la información, la validación técnica, la operación local de funciones críticas y la disponibilidad de soporte se convierten en aspectos relevantes para la propuesta de valor de ResQ.
+
 </p>
 
 ## 2.4. Big Picture EventStorming
@@ -2675,214 +3154,198 @@ El Lenguaje Ubicuo (Ubiquitous Language) es un pilar fundamental en el Diseño G
 
 # Capítulo III: Requirements Specification
 
-
 ## 3.1. User Stories
-
 <p align="justify">
-A partir de los hallazgos obtenidos durante el proceso de Requirements Elicitation & Analysis, se identificaron las principales necesidades de los dos segmentos objetivo de ResQ: <strong>propietarios y administradores de edificaciones</strong> y <strong>empresas integradoras de automatización y gestión de edificios inteligentes</strong>.
+
+A partir de las entrevistas, el análisis competitivo y el proceso de Needfinding, se definieron las Epics, User Stories y Technical Stories de ResQ, considerando las necesidades de los propietarios y administradores de edificaciones y las empresas integradoras de automatización y gestión de edificios inteligentes. Los requisitos abarcan el monitoreo, la detección de riesgos, la gestión de alertas e incidentes, la administración de edificaciones y dispositivos, la integración tecnológica y la gestión de suscripciones.
+
 </p>
 
 <p align="justify">
-Las <strong>Epics</strong> representan capacidades amplias del producto asociadas con resultados que los usuarios necesitan alcanzar y que, debido a su alcance, requieren ser descompuestas en múltiples User Stories. Por esta razón, las Epics no representan módulos técnicos ni equivalen directamente a los Bounded Contexts definidos para la arquitectura.
+
+Las Epics agrupan funcionalidades relacionadas con los objetivos de los usuarios, mientras que las User Stories describen necesidades específicas y las Technical Stories establecen requisitos técnicos utilizando el rol Developer. Todas se presentan en una única tabla, siguiendo el formato establecido en el Project Statement. Cada historia incluye tres escenarios de aceptación mediante la estructura Given–When–Then, redactados en presente, verificables y sin depender de elementos específicos de la interfaz.
+
 </p>
 
-<p align="justify">
-Las <strong>User Stories</strong> expresan objetivos concretos de los usuarios mediante la estructura <strong>“Como [rol], deseo [objetivo], para [beneficio]”</strong>, priorizando el valor que el usuario espera obtener y evitando describir directamente pantallas, componentes tecnológicos o decisiones de implementación.
-</p>
-
-<p align="justify">
-Las funcionalidades necesarias para soportar la arquitectura distribuida IoT de ResQ que no representan una interacción directa con usuarios finales se especifican mediante <strong>Technical Stories</strong>, utilizando el rol <strong>Developer</strong>.
-</p>
-
-<p align="justify">
-La definición considera los Bounded Contexts previamente establecidos para ResQ: <strong>IAM, User, Building, Device, Monitoring, Risk Detection, Alert & Response Management, Incident y Connectividad</strong>. Estos Bounded Contexts no se utilizan como criterio para definir las Epics. Una Epic o User Story puede requerir la colaboración de uno o varios Bounded Contexts para satisfacer el objetivo del usuario.
-</p>
-
-<p align="justify">
-Los criterios de aceptación se plantean mediante escenarios verificables utilizando la estructura <strong>Given-When-Then</strong>. Estos describen el comportamiento esperado del producto sin establecer detalles específicos de interfaz de usuario.
-</p>
-
-| Epic / Story ID | Título                                                   | Descripción                                                                                                                                                                                                                       | Criterios de Aceptación                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | Relacionado con (Epic ID) |
-| --------------- | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
-| **EP01**        | **Visibilidad operativa de la edificación**              | Agrupa las capacidades necesarias para que los responsables comprendan el estado actual de una edificación, sus zonas y dispositivos sin depender de múltiples fuentes de información.                                            | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | —                         |
-| **US01**        | Consultar el estado general de una edificación           | Como responsable de una edificación, deseo conocer el estado general de la infraestructura, para identificar oportunamente si existe alguna condición que requiera atención.                                                      | **AC1:** Given el usuario está autorizado para consultar una edificación, When consulta su estado actual, Then el sistema proporciona el estado vigente de la edificación e informa si existe algún riesgo activo.<br><br>**AC2:** Given no existen riesgos activos en la edificación, When se consulta su estado, Then el sistema informa que no existen condiciones de riesgo activas y proporciona la última actualización disponible.                                                                           | EP01                      |
-| **US02**        | Consultar el estado de una zona                          | Como responsable de una edificación, deseo conocer el estado de cada zona monitoreada, para identificar rápidamente dónde existe una condición anómala.                                                                           | **AC1:** Given una edificación posee zonas monitoreadas, When el usuario consulta el estado de una zona, Then el sistema proporciona su condición actual utilizando la información disponible.<br><br>**AC2:** Given una zona presenta una condición de riesgo activa, When se consulta su estado, Then el sistema identifica dicha condición y la relaciona con la zona correspondiente.                                                                                                                           | EP01                      |
-| **US03**        | Consultar mediciones actuales                            | Como responsable de una edificación, deseo consultar las mediciones actuales de los dispositivos, para comprender las condiciones de las zonas supervisadas.                                                                      | **AC1:** Given un dispositivo registra una medición válida, When el responsable consulta la información disponible, Then el sistema proporciona el valor más reciente junto con su tipo de variable y momento de registro.<br><br>**AC2:** Given no existe una medición vigente para un dispositivo, When se consulta su información, Then el sistema identifica que no dispone de un valor actualizado sin presentar datos antiguos como actuales.                                                                 | EP01                      |
-| **US04**        | Conocer el estado operativo de un dispositivo            | Como responsable de una edificación, deseo conocer si un dispositivo se encuentra operativo, para distinguir una condición real de una posible falla del equipo.                                                                  | **AC1:** Given un dispositivo registrado mantiene comunicación dentro del periodo esperado, When se consulta su estado, Then el sistema lo identifica como disponible.<br><br>**AC2:** Given un dispositivo deja de comunicar información durante el periodo establecido, When se evalúa su estado, Then el sistema identifica su falta de disponibilidad.                                                                                                                                                          | EP01                      |
-| **US05**        | Supervisar remotamente una edificación                   | Como administrador o facility manager, deseo supervisar remotamente la infraestructura, para mantener visibilidad aun cuando no me encuentre físicamente en el edificio.                                                          | **AC1:** Given el responsable posee autorización sobre una edificación, When consulta remotamente su información, Then puede conocer sus zonas, riesgos activos y estado general.<br><br>**AC2:** Given ocurre un cambio relevante en la edificación, When la información actualizada se encuentra disponible, Then el estado consultable refleja el cambio registrado.                                                                                                                                             | EP01                      |
-| **EP02**        | **Comprensión y contextualización del riesgo**           | Agrupa las capacidades destinadas a determinar qué situación de riesgo existe, dónde ocurre, qué nivel presenta y qué evidencia originó su detección.                                                                             | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | —                         |
-| **US06**        | Conocer el tipo de riesgo detectado                      | Como responsable de seguridad, deseo conocer el tipo de riesgo detectado, para comprender qué situación está ocurriendo.                                                                                                          | **AC1:** Given las mediciones cumplen las condiciones correspondientes a un tipo de riesgo definido, When se identifica el riesgo, Then el sistema lo clasifica utilizando el tipo correspondiente.<br><br>**AC2:** Given las mediciones no satisfacen ninguna condición definida, When son evaluadas, Then el sistema no registra un tipo de riesgo sin evidencia suficiente.                                                                                                                                      | EP02                      |
-| **US07**        | Conocer el nivel de riesgo                               | Como responsable de seguridad, deseo conocer el nivel del riesgo detectado, para determinar la urgencia con la que debe atenderse.                                                                                                | **AC1:** Given se detecta un riesgo, When las condiciones permiten determinar su severidad, Then el sistema asigna el nivel correspondiente.<br><br>**AC2:** Given la condición del riesgo cambia, When la nueva información modifica su nivel, Then el sistema actualiza la severidad conservando trazabilidad del cambio.                                                                                                                                                                                         | EP02                      |
-| **US08**        | Conocer la ubicación del riesgo                          | Como responsable de seguridad, deseo conocer la zona donde se originó el riesgo, para dirigir la respuesta hacia el lugar correcto.                                                                                               | **AC1:** Given un dispositivo asociado con una zona origina una detección, When el riesgo es registrado, Then el sistema lo relaciona con la edificación y zona correspondientes.<br><br>**AC2:** Given el dispositivo no posee una ubicación válida, When genera información asociada con un posible riesgo, Then el sistema identifica que la localización no puede determinarse correctamente.                                                                                                                   | EP02                      |
-| **US09**        | Consultar el contexto de una detección                   | Como responsable de seguridad, deseo conocer qué dispositivo y mediciones originaron la detección, para contar con contexto antes de tomar una decisión.                                                                          | **AC1:** Given existe un riesgo detectado, When el responsable consulta su información, Then puede conocer los dispositivos y valores relevantes utilizados para determinarlo.<br><br>**AC2:** Given distintas mediciones intervienen en la detección, When se consulta el contexto, Then el sistema conserva su relación con el mismo evento de riesgo.                                                                                                                                                            | EP02                      |
-| **EP03**        | **Coordinación de alertas y respuesta**                  | Agrupa las capacidades destinadas a comunicar situaciones de riesgo y coordinar o ejecutar las respuestas correspondientes de acuerdo con las políticas establecidas.                                                             | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | —                         |
-| **US10**        | Recibir una alerta de riesgo                             | Como responsable de una edificación, deseo recibir una alerta cuando se detecte una situación de riesgo, para conocer oportunamente lo ocurrido.                                                                                  | **AC1:** Given se detecta un riesgo que requiere comunicación, When se genera la alerta, Then esta contiene como mínimo el tipo de riesgo, nivel, zona y momento del evento.<br><br>**AC2:** Given existen responsables autorizados para recibir la alerta, When esta es generada, Then el sistema inicia su comunicación a los responsables correspondientes.                                                                                                                                                      | EP03                      |
-| **US11**        | Ejecutar una respuesta automática autorizada             | Como responsable de una edificación, deseo que determinadas respuestas se ejecuten automáticamente cuando se cumplan condiciones previamente autorizadas, para reducir el tiempo de reacción.                                     | **AC1:** Given existe una política de respuesta automática habilitada, When ocurre el riesgo asociado y se cumplen sus condiciones, Then el sistema ejecuta la respuesta definida.<br><br>**AC2:** Given una política no autoriza ejecución automática para una condición, When se detecta dicha condición, Then el sistema no ejecuta la acción automáticamente.                                                                                                                                                   | EP03                      |
-| **US12**        | Confirmar una acción de alto impacto                     | Como responsable autorizado, deseo confirmar las respuestas que puedan generar un impacto significativo, para mantener control humano sobre acciones sensibles.                                                                   | **AC1:** Given una respuesta requiere autorización humana, When se solicita su ejecución, Then la acción permanece pendiente hasta recibir una decisión de un usuario autorizado.<br><br>**AC2:** Given el usuario autorizado rechaza la acción, When la decisión es registrada, Then la respuesta no se ejecuta y la decisión queda asociada con el incidente.                                                                                                                                                     | EP03                      |
-| **US13**        | Conocer las respuestas ejecutadas                        | Como responsable de seguridad, deseo conocer qué respuestas fueron ejecutadas, para verificar cómo actuó el sistema durante el evento.                                                                                            | **AC1:** Given una respuesta se ejecuta durante un incidente, When su resultado es registrado, Then el sistema conserva el tipo de acción, momento y resultado obtenido.<br><br>**AC2:** Given una respuesta solicitada no puede completarse, When se registra el resultado, Then el sistema diferencia la acción fallida de una ejecución satisfactoria.                                                                                                                                                           | EP03                      |
-| **EP04**        | **Trazabilidad y seguimiento de incidentes**             | Agrupa las capacidades necesarias para conocer el ciclo de vida de una situación de riesgo, las decisiones adoptadas, las respuestas ejecutadas y la información histórica resultante.                                            | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | —                         |
-| **US14**        | Consultar el estado de un incidente                      | Como responsable de seguridad, deseo conocer el estado actual de un incidente, para saber si todavía requiere atención.                                                                                                           | **AC1:** Given existe un incidente activo, When el responsable consulta su estado, Then el sistema proporciona su estado vigente y la última actualización registrada.<br><br>**AC2:** Given el incidente cambia de estado, When el cambio es registrado, Then el nuevo estado queda disponible sin eliminar la trazabilidad de estados anteriores.                                                                                                                                                                 | EP04                      |
-| **US15**        | Asignar un responsable de atención                       | Como responsable de seguridad, deseo identificar quién se encuentra atendiendo un incidente, para coordinar las acciones y evitar responsabilidades ambiguas.                                                                     | **AC1:** Given existe un incidente que requiere atención, When un usuario autorizado asigna un responsable, Then el incidente queda asociado con dicho responsable.<br><br>**AC2:** Given cambia la persona responsable del incidente, When se registra la nueva asignación, Then el sistema conserva evidencia de la modificación realizada.                                                                                                                                                                       | EP04                      |
-| **US16**        | Registrar la resolución de un incidente                  | Como responsable de seguridad, deseo registrar la resolución y cierre de un incidente, para conservar evidencia de cómo terminó la situación.                                                                                     | **AC1:** Given un incidente ha sido atendido, When un usuario autorizado registra su resolución, Then el sistema conserva el resultado y momento de resolución.<br><br>**AC2:** Given el incidente no cumple las condiciones necesarias para su cierre, When se intenta cerrarlo, Then el sistema mantiene su estado sin registrarlo como finalizado.                                                                                                                                                               | EP04                      |
-| **US17**        | Consultar incidentes anteriores                          | Como responsable de una edificación, deseo consultar incidentes anteriores, para revisar situaciones ocurridas en la infraestructura.                                                                                             | **AC1:** Given existen incidentes registrados, When el responsable consulta el historial autorizado, Then el sistema proporciona los incidentes correspondientes a su ámbito de acceso.<br><br>**AC2:** Given no existen incidentes para el periodo consultado, When se realiza la consulta, Then el sistema informa que no existen resultados correspondientes.                                                                                                                                                    | EP04                      |
-| **US18**        | Buscar incidentes históricos                             | Como responsable de una edificación, deseo localizar incidentes mediante fecha, zona, tipo o estado, para encontrar rápidamente información histórica relevante.                                                                  | **AC1:** Given existen incidentes con diferentes características, When el responsable aplica criterios de búsqueda válidos, Then el sistema devuelve únicamente los incidentes que cumplen dichos criterios.<br><br>**AC2:** Given se utilizan varios criterios simultáneamente, When se realiza la búsqueda, Then los resultados satisfacen conjuntamente las condiciones proporcionadas.                                                                                                                          | EP04                      |
-| **US19**        | Consultar la secuencia de un incidente                   | Como responsable de una edificación, deseo consultar la secuencia de mediciones, alertas y respuestas asociadas con un incidente, para comprender cómo evolucionó.                                                                | **AC1:** Given existe información trazable asociada con un incidente, When se consulta su evolución, Then el sistema proporciona los eventos relevantes en orden temporal.<br><br>**AC2:** Given una acción o cambio se encuentra relacionado con el incidente, When se consulta su trazabilidad, Then la información conserva el momento y relación correspondientes.                                                                                                                                              | EP04                      |
-| **US20**        | Consultar indicadores de incidentes                      | Como facility manager, deseo consultar indicadores como frecuencia de incidentes, falsas alarmas y tiempos de atención, para identificar tendencias que requieran acciones preventivas.                                           | **AC1:** Given existen incidentes con información suficiente, When se calculan indicadores para un periodo determinado, Then el sistema utiliza únicamente datos correspondientes al periodo seleccionado.<br><br>**AC2:** Given no existe información suficiente para calcular un indicador, When se solicita dicho indicador, Then el sistema no presenta un resultado cuantitativo sin sustento.                                                                                                                 | EP04                      |
-| **EP05**        | **Preparación y gobierno del entorno monitoreado**       | Agrupa las capacidades necesarias para preparar las edificaciones, zonas, dispositivos, reglas, usuarios y responsabilidades requeridas antes y durante la operación de ResQ.                                                     | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | —                         |
-| **US21**        | Registrar una edificación                                | Como administrador, deseo registrar una edificación que será monitoreada, para organizar la infraestructura gestionada por ResQ.                                                                                                  | **AC1:** Given el administrador proporciona los datos obligatorios de una nueva edificación, When confirma su registro, Then la edificación queda disponible dentro de la organización correspondiente.<br><br>**AC2:** Given faltan datos obligatorios o estos son inválidos, When se solicita el registro, Then el sistema no crea una edificación incompleta.                                                                                                                                                    | EP05                      |
-| **US22**        | Definir zonas de una edificación                         | Como administrador, deseo definir las zonas de una edificación, para localizar correctamente dispositivos y eventos.                                                                                                              | **AC1:** Given existe una edificación registrada, When el administrador registra una zona válida, Then esta queda asociada con la edificación correspondiente.<br><br>**AC2:** Given una zona posee dispositivos o incidentes relacionados, When se modifica su información, Then sus relaciones se mantienen consistentes.                                                                                                                                                                                         | EP05                      |
-| **US23**        | Asociar un dispositivo con una zona                      | Como administrador, deseo asociar cada dispositivo con su zona correspondiente, para identificar el origen de mediciones y alertas.                                                                                               | **AC1:** Given existe un dispositivo registrado y una zona válida, When el administrador realiza la asociación, Then las nuevas mediciones del dispositivo pueden relacionarse con dicha zona.<br><br>**AC2:** Given el dispositivo cambia de ubicación, When su asociación es actualizada, Then las nuevas mediciones utilizan la nueva ubicación sin alterar la trazabilidad histórica previa.                                                                                                                    | EP05                      |
-| **US24**        | Configurar una condición de detección                    | Como responsable autorizado, deseo configurar condiciones de detección, para adaptar la identificación de riesgos a las características de la instalación.                                                                        | **AC1:** Given existe una variable monitoreada compatible, When el responsable registra una condición válida, Then esta puede utilizarse para evaluar mediciones posteriores.<br><br>**AC2:** Given una condición posee parámetros inválidos, When se intenta habilitarla, Then el sistema impide utilizarla para clasificar riesgos.                                                                                                                                                                               | EP05                      |
-| **US25**        | Configurar una política de respuesta                     | Como responsable autorizado, deseo configurar las respuestas permitidas para cada tipo de riesgo, para establecer previamente cómo deberá actuar el sistema.                                                                      | **AC1:** Given existe un tipo de riesgo configurado, When el responsable define una política válida, Then esta establece las respuestas permitidas para dicho riesgo.<br><br>**AC2:** Given una respuesta requiere autorización humana, When se configura la política, Then dicha condición se conserva antes de permitir su ejecución.                                                                                                                                                                             | EP05                      |
-| **US26**        | Asignar roles y responsabilidades                        | Como administrador, deseo asignar roles y responsabilidades a los usuarios, para limitar el acceso a información y acciones sensibles.                                                                                            | **AC1:** Given existe un usuario perteneciente a la organización, When el administrador le asigna un rol válido, Then sus operaciones permitidas corresponden a los permisos del rol.<br><br>**AC2:** Given un usuario carece del permiso requerido, When intenta ejecutar una operación protegida, Then el sistema rechaza la operación.                                                                                                                                                                           | EP05                      |
-| **US27**        | Acceder de forma autenticada                             | Como usuario autorizado, deseo autenticarme antes de acceder a ResQ, para utilizar únicamente las funciones correspondientes a mis responsabilidades.                                                                             | **AC1:** Given el usuario proporciona credenciales válidas, When solicita autenticarse, Then el sistema establece una identidad autenticada correspondiente al usuario.<br><br>**AC2:** Given las credenciales proporcionadas son inválidas, When se solicita autenticación, Then el sistema rechaza el acceso sin establecer una sesión autorizada.                                                                                                                                                                | EP05                      |
-| **EP06**        | **Continuidad operativa ante pérdida de conectividad**   | Agrupa las capacidades necesarias para mantener las funciones críticas de ResQ durante interrupciones de conectividad y conservar posteriormente la trazabilidad de los eventos producidos.                                       | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | —                         |
-| **US28**        | Mantener funciones críticas sin Internet                 | Como responsable de una edificación, deseo que la detección y las respuestas críticas continúen funcionando cuando se pierde Internet, para mantener la capacidad de reacción ante una emergencia.                                | **AC1:** Given la edificación se encuentra siendo monitoreada y se pierde temporalmente la conexión a Internet, When ocurre una condición que cumple una regla de detección crítica, Then el sistema continúa detectando localmente la situación de riesgo.<br><br>**AC2:** Given existe una respuesta crítica previamente autorizada y no existe conexión a Internet, When se detecta la condición asociada con dicha respuesta, Then el sistema ejecuta la respuesta sin depender de la recuperación de Internet. | EP06                      |
-| **US29**        | Recuperar eventos producidos durante una interrupción    | Como responsable de una edificación, deseo que los eventos producidos durante una interrupción de conectividad estén disponibles posteriormente, para conservar la trazabilidad de lo ocurrido.                                   | **AC1:** Given se producen eventos durante una interrupción de conectividad, When el sistema recupera la comunicación necesaria, Then los eventos ocurridos durante la interrupción pueden incorporarse al historial correspondiente.<br><br>**AC2:** Given un evento ocurrió durante la interrupción, When posteriormente se encuentra disponible para consulta, Then conserva el momento original en el que se produjo.                                                                                           | EP06                      |
-| **EP07**        | **Integración de ResQ con infraestructuras existentes**  | Agrupa las capacidades necesarias para que una empresa integradora pueda evaluar, probar e incorporar ResQ en proyectos que utilizan dispositivos o sistemas existentes mediante mecanismos oficialmente soportados.              | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | —                         |
-| **US30**        | Conocer los mecanismos de integración compatibles        | Como ingeniero de integración, deseo conocer qué mecanismos de integración soporta ResQ, para determinar si puede incorporarse a la infraestructura de mi cliente.                                                                | **AC1:** Given el integrador consulta las capacidades técnicas de ResQ, When revisa los mecanismos oficialmente soportados, Then puede identificar los protocolos o interfaces disponibles.<br><br>**AC2:** Given una tecnología no se encuentra soportada, When se consulta su compatibilidad, Then esta no se presenta como un mecanismo disponible.                                                                                                                                                              | EP07                      |
-| **US31**        | Integrar una fuente externa compatible                   | Como ingeniero de integración, deseo conectar a ResQ un dispositivo o sistema externo mediante un mecanismo de integración soportado, para incorporar sus mediciones sin sustituir innecesariamente la infraestructura instalada. | **AC1:** Given una fuente externa utiliza un mecanismo oficialmente soportado, When proporciona datos válidos de acuerdo con el contrato definido, Then ResQ puede recibirlos para su procesamiento.<br><br>**AC2:** Given la fuente proporciona información incompatible con el contrato definido, When ResQ la recibe, Then los datos inválidos no se consideran mediciones válidas.                                                                                                                              | EP07                      |
-| **US32**        | Validar una integración antes de activarla               | Como ingeniero de integración, deseo comprobar que una fuente externa entrega información compatible antes de utilizarla operativamente, para detectar incompatibilidades antes de su implementación definitiva.                  | **AC1:** Given una integración se encuentra configurada pero todavía no está habilitada para operación, When el integrador realiza una prueba con información válida, Then el sistema permite determinar si los datos pueden interpretarse correctamente.<br><br>**AC2:** Given la prueba detecta datos incompatibles o un problema de comunicación, When se obtiene el resultado, Then la integración permanece sin habilitarse para operación normal.                                                             | EP07                      |
-| **US33**        | Asociar dispositivos externos con su contexto            | Como ingeniero de integración, deseo relacionar los dispositivos externos con el edificio y zona correspondientes, para conservar el contexto de las mediciones y eventos integrados.                                             | **AC1:** Given existe un dispositivo externo reconocido, When el integrador lo relaciona con una zona válida, Then sus nuevas mediciones pueden vincularse con dicha ubicación.<br><br>**AC2:** Given un dispositivo externo no posee una asociación válida, When genera información, Then el sistema evita atribuirle una ubicación no confirmada.                                                                                                                                                                 | EP07                      |
-| **EP08**        | **Evaluación y adopción de ResQ**                        | Agrupa las capacidades del Landing Page y de la experiencia inicial destinadas a comunicar la propuesta de valor de ResQ a los segmentos objetivo y facilitar el inicio de una relación con la solución.                          | —                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | —                         |
-| **US34**        | Comprender la propuesta de ResQ                          | Como visitante, deseo comprender el problema que aborda ResQ y su propuesta de solución, para determinar si resulta relevante para mis necesidades.                                                                               | **AC1:** Given un visitante accede al contenido informativo de ResQ, When consulta la propuesta, Then dispone de información sobre el problema abordado, las capacidades principales y la forma general de funcionamiento.<br><br>**AC2:** Given el visitante todavía no conoce ResQ, When revisa la propuesta, Then puede distinguir el propósito de la solución frente a una alarma o sensor aislado.                                                                                                             | EP08                      |
-| **US35**        | Conocer los beneficios para administradores              | Como propietario o administrador de una edificación, deseo conocer los beneficios de ResQ aplicables a una edificación, para evaluar su utilidad dentro de mi infraestructura.                                                    | **AC1:** Given un visitante pertenece al segmento de propietarios o administradores, When consulta la información dirigida a dicho segmento, Then encuentra beneficios relacionados con monitoreo, detección, respuesta y trazabilidad.<br><br>**AC2:** Given el visitante evalúa la aplicación de ResQ, When revisa la información disponible, Then puede identificar las principales capacidades relevantes para la gestión de una edificación.                                                                   | EP08                      |
-| **US36**        | Conocer los beneficios para empresas integradoras        | Como representante de una empresa integradora, deseo conocer cómo puede incorporarse ResQ a sistemas existentes, para evaluar si puede formar parte de nuestros proyectos.                                                        | **AC1:** Given el visitante pertenece a una empresa integradora, When consulta la propuesta orientada a su segmento, Then dispone de información sobre interoperabilidad, integración y aplicación de ResQ en proyectos existentes.<br><br>**AC2:** Given el integrador evalúa una posible incorporación, When revisa la propuesta, Then puede identificar a ResQ como una solución complementaria que no exige sustituir toda la infraestructura existente.                                                        | EP08                      |
-| **US37**        | Acceder a documentación técnica de integración           | Como representante técnico de una empresa integradora, deseo acceder desde el sitio web a la documentación técnica disponible, para realizar una evaluación preliminar antes de iniciar un proyecto.                              | **AC1:** Given existe documentación técnica publicada para integradores, When el representante accede a ella desde los recursos disponibles, Then puede consultar información sobre mecanismos soportados y requisitos principales.<br><br>**AC2:** Given una capacidad se encuentra fuera del alcance soportado, When se consulta la documentación, Then esta no se presenta como característica disponible.                                                                                                       | EP08                      |
-| **US38**        | Solicitar una demostración o contacto                    | Como representante de una empresa integradora, deseo solicitar una demostración, piloto o contacto con ResQ, para evaluar una posible colaboración.                                                                               | **AC1:** Given el representante proporciona la información obligatoria de contacto, When registra una solicitud válida, Then la solicitud queda registrada para su posterior atención.<br><br>**AC2:** Given faltan datos indispensables para atender la solicitud, When se intenta registrarla, Then el sistema identifica que la información requerida se encuentra incompleta.                                                                                                                                   | EP08                      |
-| **US39**        | Acceder a los productos digitales de ResQ                | Como visitante, deseo acceder desde el Landing Page a los productos digitales disponibles, para continuar mi experiencia con la solución.                                                                                         | **AC1:** Given existe un producto digital público disponible, When el visitante selecciona su acceso desde el Landing Page, Then es dirigido al producto correspondiente.<br><br>**AC2:** Given un producto todavía no se encuentra disponible públicamente, When el visitante consulta las opciones existentes, Then no se presenta como un acceso funcional disponible.                                                                                                                                           | EP08                      |
-| **TS01**        | Capturar mediciones desde los Embedded Systems           | Como Developer, deseo que la Embedded Application capture las mediciones de los sensores conectados, para proporcionar al procesamiento local la información necesaria para monitoreo y detección.                                | **AC1:** Given un sensor compatible produce una lectura válida, When la Embedded Application la captura, Then genera una medición con identificación del dispositivo, tipo de variable, valor y momento correspondiente.<br><br>**AC2:** Given la lectura obtenida es inválida, When la aplicación la procesa, Then no la comunica como una medición válida.                                                                                                                                                        | EP01                      |
-| **TS02**        | Recibir mediciones mediante un Edge API                  | Como Developer, deseo disponer de un Edge API para recibir mediciones provenientes de los dispositivos, para desacoplar la captura física del procesamiento local.                                                                | **AC1:** Given un dispositivo autorizado envía una solicitud válida, When el Edge API recibe la medición, Then responde satisfactoriamente y entrega la información al procesamiento local.<br><br>**AC2:** Given la solicitud contiene información inválida, When el Edge API la recibe, Then responde con un resultado de error y no procesa la información como medición válida.                                                                                                                                 | EP01                      |
-| **TS03**        | Procesar reglas de detección localmente                  | Como Developer, deseo evaluar las condiciones de riesgo en el Edge, para que la detección crítica no dependa permanentemente de servicios Cloud.                                                                                  | **AC1:** Given existe una regla activa y una nueva medición válida, When la medición es procesada localmente, Then la condición correspondiente es evaluada sin requerir comunicación Cloud.<br><br>**AC2:** Given la condición de riesgo se cumple, When finaliza la evaluación, Then se genera el evento local necesario para continuar el flujo de detección.                                                                                                                                                    | EP02                      |
-| **TS04**        | Ejecutar comandos de actuadores localmente               | Como Developer, deseo que el Edge pueda coordinar comandos con los actuadores conectados, para ejecutar respuestas críticas sin depender permanentemente de Cloud.                                                                | **AC1:** Given una respuesta local autorizada requiere un actuador disponible, When el Edge solicita la acción, Then el comando correspondiente es enviado al dispositivo.<br><br>**AC2:** Given el actuador no confirma la ejecución esperada, When finaliza el intento, Then el resultado fallido queda disponible para la trazabilidad del evento.                                                                                                                                                               | EP03                      |
-| **TS05**        | Integrar un servicio externo de notificaciones           | Como Developer, deseo disponer de un mecanismo para entregar notificaciones externas, para complementar la comunicación de alertas generadas por ResQ.                                                                            | **AC1:** Given existe una alerta y un destinatario válido, When el servicio recibe la solicitud de notificación, Then intenta entregar el mensaje utilizando el canal configurado.<br><br>**AC2:** Given el proveedor externo rechaza o no puede entregar la solicitud, When se recibe el resultado, Then el sistema registra el fallo sin considerar la notificación como entregada.                                                                                                                               | EP03                      |
-| **TS06**        | Proveer servicios mediante RESTful API                   | Como Developer, deseo disponer de una RESTful API para los recursos Cloud de ResQ, para permitir que las aplicaciones digitales consuman los servicios de la plataforma.                                                          | **AC1:** Given un cliente autorizado envía una solicitud válida a un recurso disponible, When la API la procesa, Then responde utilizando el código HTTP y representación correspondientes al resultado.<br><br>**AC2:** Given una solicitud no está autorizada o contiene información inválida, When la API la procesa, Then responde mediante el resultado de error correspondiente sin ejecutar una operación no permitida.                                                                                      | EP01                      |
-| **TS07**        | Conservar y sincronizar eventos durante una interrupción | Como Developer, deseo conservar temporalmente los eventos que no pueden enviarse a los servicios remotos, para sincronizarlos cuando la comunicación sea restablecida.                                                            | **AC1:** Given no existe comunicación disponible con los servicios remotos, When se genera un evento que requiere sincronización, Then este queda almacenado temporalmente como pendiente.<br><br>**AC2:** Given vuelve a existir conectividad, When inicia la sincronización, Then los eventos pendientes se transmiten conservando su momento original y evitando duplicar los ya confirmados.                                                                                                                    | EP06                      |
-| **TS08**        | Proveer un mecanismo de integración externa              | Como Developer, deseo exponer un mecanismo de integración basado en tecnologías soportadas, para permitir el intercambio de información con dispositivos o plataformas externas.                                                  | **AC1:** Given una fuente externa autorizada utiliza un contrato soportado, When transmite información válida, Then ResQ puede interpretarla y procesarla.<br><br>**AC2:** Given una fuente transmite información que no satisface el contrato, When el mecanismo la recibe, Then registra o devuelve el error correspondiente sin incorporar información inconsistente.                                                                                                                                            | EP07                      |
-| **TS09**        | Procesar información cuantitativa para indicadores       | Como Developer, deseo calcular indicadores a partir de los incidentes registrados, para proporcionar información cuantitativa sustentada a las aplicaciones de ResQ.                                                              | **AC1:** Given existen datos válidos para un periodo determinado, When se solicita el cálculo de un indicador soportado, Then el resultado se obtiene utilizando únicamente la información aplicable.<br><br>**AC2:** Given no existen datos suficientes para realizar el cálculo, When se solicita el indicador, Then el servicio informa la ausencia de información suficiente y no genera un valor ficticio.                                                                                                     | EP04                      |
-
-
-
-
+| Epic / Story ID | Título | Descripción | Criterios de Aceptación | Relacionado con (Epic ID) |
+|---|---|---|---|---|
+| **EP01** | **Visibilidad operativa de la edificación** | Agrupa las capacidades necesarias para que los responsables comprendan el estado actual de una edificación, sus zonas y dispositivos sin depender de múltiples fuentes de información. | — | — |
+| **US01** | Consultar el estado general de una edificación | Como responsable de una edificación, deseo conocer el estado general de la infraestructura, para identificar oportunamente si existe alguna condición que requiera atención. | **AC1:** Given el usuario está autorizado para consultar una edificación, When consulta su estado actual, Then el sistema proporciona el estado vigente de la edificación e informa si existe algún riesgo activo.<br><br>**AC2:** Given no existen riesgos activos en la edificación, When se consulta su estado, Then el sistema informa que no existen condiciones de riesgo activas y proporciona la última actualización disponible.<br><br>**AC3:** Given el usuario no pertenece a la organización propietaria de la edificación, When intenta consultar su estado, Then el sistema deniega el acceso a su información. | EP01 |
+| **US02** | Consultar el estado de una zona | Como responsable de una edificación, deseo conocer el estado de cada zona monitoreada, para identificar rápidamente dónde existe una condición anómala. | **AC1:** Given una edificación posee zonas monitoreadas, When el usuario consulta el estado de una zona, Then el sistema proporciona su condición actual utilizando la información disponible.<br><br>**AC2:** Given una zona presenta una condición de riesgo activa, When se consulta su estado, Then el sistema identifica dicha condición y la relaciona con la zona correspondiente.<br><br>**AC3:** Given una edificación no dispone de zonas monitoreadas, When se consulta su distribución, Then el sistema informa que todavía no existen zonas registradas. | EP01 |
+| **US03** | Consultar mediciones actuales | Como responsable de una edificación, deseo consultar las mediciones actuales de los dispositivos, para comprender las condiciones de las zonas supervisadas. | **AC1:** Given un dispositivo registra una medición válida, When el responsable consulta la información disponible, Then el sistema proporciona el valor más reciente junto con su tipo de variable y momento de registro.<br><br>**AC2:** Given no existe una medición vigente para un dispositivo, When se consulta su información, Then el sistema identifica que no dispone de un valor actualizado sin presentar datos antiguos como actuales.<br><br>**AC3:** Given la última lectura del sensor es inválida o carece de unidad confiable, When el sistema presenta las mediciones, Then no muestra esa lectura como un valor actual validado. | EP01 |
+| **US04** | Conocer el estado operativo de un dispositivo | Como responsable de una edificación, deseo conocer si un dispositivo se encuentra operativo, para distinguir una condición real de una posible falla del equipo. | **AC1:** Given un dispositivo registrado mantiene comunicación dentro del periodo esperado, When se consulta su estado, Then el sistema lo identifica como disponible.<br><br>**AC2:** Given un dispositivo deja de comunicar información durante el periodo establecido, When se evalúa su estado, Then el sistema identifica su falta de disponibilidad.<br><br>**AC3:** Given un dispositivo está administrativamente inactivo, When se consulta su estado, Then el sistema lo diferencia de un equipo activo con una falla de comunicación. | EP01 |
+| **US05** | Supervisar remotamente una edificación | Como administrador o facility manager, deseo supervisar remotamente la infraestructura, para mantener visibilidad aun cuando no me encuentre físicamente en el edificio. | **AC1:** Given el responsable posee autorización sobre una edificación, When consulta remotamente su información, Then puede conocer sus zonas, riesgos activos y estado general.<br><br>**AC2:** Given ocurre un cambio relevante en la edificación, When la información actualizada se encuentra disponible, Then el estado consultable refleja el cambio registrado.<br><br>**AC3:** Given se pierde la comunicación del usuario con la plataforma, When solicita supervisión remota, Then el sistema no presenta información en caché como si fuera una actualización confirmada. | EP01 |
+| **EP02** | **Comprensión y contextualización del riesgo** | Agrupa las capacidades destinadas a determinar qué situación de riesgo existe, dónde ocurre, qué nivel presenta y qué evidencia originó su detección. | — | — |
+| **US06** | Conocer el tipo de riesgo detectado | Como responsable de seguridad, deseo conocer el tipo de riesgo detectado, para comprender qué situación está ocurriendo. | **AC1:** Given existe una condición documentada para un tipo de riesgo detectable por un sensor compatible, When se recibe una medición válida que cumple esa condición, Then el sistema clasifica la situación conforme a la capacidad verificada del sensor.<br><br>**AC2:** Given una medición no cumple ninguna regla de detección válida, When se procesa, Then el sistema no genera un riesgo clasificado sin evidencia.<br><br>**AC3:** Given el sensor no permite identificar un gas específico, When se clasifica una lectura anómala, Then el sistema informa una condición compatible con la capacidad del sensor sin afirmar una sustancia no verificada. | EP02 |
+| **US07** | Conocer el nivel de riesgo | Como responsable de seguridad, deseo conocer el nivel del riesgo detectado, para determinar la urgencia con la que debe atenderse. | **AC1:** Given se detecta un riesgo, When las condiciones permiten determinar su severidad, Then el sistema asigna el nivel correspondiente.<br><br>**AC2:** Given la condición del riesgo cambia, When la nueva información modifica su nivel, Then el sistema actualiza la severidad conservando trazabilidad del cambio.<br><br>**AC3:** Given no existe una regla válida de severidad para la condición detectada, When se evalúa el evento, Then el sistema indica que el nivel no puede determinarse en lugar de asignar uno arbitrario. | EP02 |
+| **US08** | Conocer la ubicación del riesgo | Como responsable de seguridad, deseo conocer la zona donde se originó el riesgo, para dirigir la respuesta hacia el lugar correcto. | **AC1:** Given un dispositivo asociado con una zona origina una detección, When el riesgo es registrado, Then el sistema lo relaciona con la edificación y zona correspondientes.<br><br>**AC2:** Given el dispositivo no posee una ubicación válida, When genera información asociada con un posible riesgo, Then el sistema identifica que la localización no puede determinarse correctamente.<br><br>**AC3:** Given el dispositivo se reasigna después de un evento, When se consulta el evento histórico, Then conserva la zona asociada en el momento de su ocurrencia. | EP02 |
+| **US09** | Consultar el contexto de una detección | Como responsable de seguridad, deseo conocer qué dispositivo y mediciones originaron la detección, para contar con contexto antes de tomar una decisión. | **AC1:** Given existe un riesgo detectado, When el responsable consulta su información, Then puede conocer los dispositivos y valores relevantes utilizados para determinarlo.<br><br>**AC2:** Given distintas mediciones intervienen en la detección, When se consulta el contexto, Then el sistema conserva su relación con el mismo evento de riesgo.<br><br>**AC3:** Given no está disponible la medición que fundamentó una detección, When se consulta su contexto, Then el sistema señala la ausencia de evidencia sin inventar valores. | EP02 |
+| **EP03** | **Coordinación de alertas y respuesta** | Agrupa las capacidades destinadas a comunicar situaciones de riesgo y coordinar o ejecutar las respuestas correspondientes de acuerdo con las políticas establecidas. | — | — |
+| **US10** | Recibir una alerta de riesgo | Como responsable de una edificación, deseo recibir una alerta cuando se detecte una situación de riesgo, para conocer oportunamente lo ocurrido. | **AC1:** Given se detecta una condición que requiere generar una alerta, When se registra la alerta, Then esta conserva como mínimo tipo de riesgo, severidad, zona y momento de detección.<br><br>**AC2:** Given existe un responsable y un canal de notificación configurados, When se genera una alerta comunicable, Then el sistema registra o inicia su notificación sin afirmar que fue entregada hasta recibir confirmación.<br><br>**AC3:** Given no existe un destinatario válido o el canal de comunicación no está disponible, When se intenta notificar una alerta, Then el sistema registra el intento o su falla sin indicar entrega confirmada. | EP03 |
+| **US11** | Ejecutar una respuesta automática autorizada | Como responsable de una edificación, deseo que determinadas respuestas se ejecuten automáticamente cuando se cumplan condiciones previamente autorizadas, para reducir el tiempo de reacción. | **AC1:** Given existe una política automática activa y una respuesta local permitida, When se cumple la condición de riesgo, Then el sistema solicita la acción al actuador correspondiente conforme a la política.<br><br>**AC2:** Given una respuesta requiere autorización humana y esta no se ha otorgado, When se detecta la condición, Then el sistema no ejecuta automáticamente esa respuesta.<br><br>**AC3:** Given el actuador asociado no está disponible, When una política ordena una respuesta, Then el sistema registra el intento y no informa una ejecución física satisfactoria sin confirmación. | EP03 |
+| **US12** | Confirmar una acción de alto impacto | Como responsable autorizado, deseo confirmar las respuestas que puedan generar un impacto significativo, para mantener control humano sobre acciones sensibles. | **AC1:** Given una respuesta requiere autorización humana, When se solicita su ejecución, Then la acción permanece pendiente hasta recibir una decisión de un usuario autorizado.<br><br>**AC2:** Given el usuario autorizado rechaza la acción, When la decisión es registrada, Then la respuesta no se ejecuta y la decisión queda asociada con el incidente.<br><br>**AC3:** Given un usuario autorizado aprueba una respuesta pendiente, When registra la autorización, Then el sistema conserva la decisión y permite continuar el flujo de ejecución según la política aplicable. | EP03 |
+| **US13** | Conocer las respuestas ejecutadas | Como responsable de seguridad, deseo conocer qué respuestas fueron ejecutadas, para verificar cómo actuó el sistema durante el evento. | **AC1:** Given una respuesta dispone de confirmación de ejecución, When el responsable consulta su registro, Then conoce la acción, momento y resultado confirmado.<br><br>**AC2:** Given una respuesta fue rechazada o falló, When se consulta su seguimiento, Then el sistema conserva ese estado sin presentarla como satisfactoria.<br><br>**AC3:** Given una respuesta solo fue solicitada pero no confirmada por el dispositivo, When se consulta su trazabilidad, Then el sistema informa su estado pendiente o no confirmado en lugar de declararla ejecutada. | EP03 |
+| **EP04** | **Trazabilidad y seguimiento de incidentes** | Agrupa las capacidades necesarias para conocer el ciclo de vida de una situación de riesgo, las decisiones adoptadas, las respuestas ejecutadas y la información histórica resultante. | — | — |
+| **US14** | Consultar el estado de un incidente | Como responsable de seguridad, deseo conocer el estado actual de un incidente, para saber si todavía requiere atención. | **AC1:** Given existe un incidente activo, When el responsable consulta su estado, Then el sistema proporciona su estado vigente y la última actualización registrada.<br><br>**AC2:** Given el incidente cambia de estado, When el cambio es registrado, Then el nuevo estado queda disponible sin eliminar la trazabilidad de estados anteriores.<br><br>**AC3:** Given el identificador consultado no corresponde a un incidente accesible, When se solicita su estado, Then el sistema indica que el incidente no está disponible. | EP04 |
+| **US15** | Asignar un responsable de atención | Como responsable de seguridad, deseo identificar quién se encuentra atendiendo un incidente, para coordinar las acciones y evitar responsabilidades ambiguas. | **AC1:** Given existe un incidente que requiere atención, When un usuario autorizado asigna un responsable, Then el incidente queda asociado con dicho responsable.<br><br>**AC2:** Given cambia la persona responsable del incidente, When se registra la nueva asignación, Then el sistema conserva evidencia de la modificación realizada.<br><br>**AC3:** Given el usuario intenta asignar como responsable a una identidad no autorizada, When solicita la asignación, Then el sistema rechaza el cambio y conserva al responsable anterior. | EP04 |
+| **US16** | Registrar la resolución de un incidente | Como responsable de seguridad, deseo registrar la resolución y cierre de un incidente, para conservar evidencia de cómo terminó la situación. | **AC1:** Given un incidente cumple las condiciones para resolverse, When un usuario autorizado registra su resolución, Then se conserva el resultado y momento correspondiente.<br><br>**AC2:** Given un incidente no cumple las condiciones establecidas para su cierre, When se intenta finalizarlo, Then el sistema conserva su estado y rechaza la transición inválida.<br><br>**AC3:** Given el usuario no tiene permisos para resolver o cerrar incidentes, When intenta cambiar su estado, Then el sistema no aplica el cambio ni lo registra como una resolución válida. | EP04 |
+| **US17** | Consultar incidentes anteriores | Como responsable de una edificación, deseo consultar incidentes anteriores, para revisar situaciones ocurridas en la infraestructura. | **AC1:** Given existen incidentes registrados, When el responsable consulta el historial autorizado, Then el sistema proporciona los incidentes correspondientes a su ámbito de acceso.<br><br>**AC2:** Given no existen incidentes para el periodo consultado, When se realiza la consulta, Then el sistema informa que no existen resultados correspondientes.<br><br>**AC3:** Given existen incidentes en otras organizaciones, When el responsable consulta su historial, Then solo recibe los pertenecientes a su ámbito autorizado. | EP04 |
+| **US18** | Buscar incidentes históricos | Como responsable de una edificación, deseo localizar incidentes mediante fecha, zona, tipo o estado, para encontrar rápidamente información histórica relevante. | **AC1:** Given existen incidentes de distintas fechas, zonas, tipos y estados, When se aplica uno de estos filtros, Then se obtienen únicamente los incidentes coincidentes.<br><br>**AC2:** Given se combinan dos o más filtros válidos, When se ejecuta la búsqueda, Then los resultados satisfacen conjuntamente los criterios seleccionados.<br><br>**AC3:** Given ningún incidente coincide con la combinación de filtros, When se completa la búsqueda, Then el sistema devuelve un resultado vacío sin incorporar incidentes que incumplan los criterios. | EP04 |
+| **US19** | Consultar la secuencia de un incidente | Como responsable de una edificación, deseo consultar la secuencia de mediciones, alertas y respuestas asociadas con un incidente, para comprender cómo evolucionó. | **AC1:** Given existe información trazable asociada con un incidente, When se consulta su evolución, Then el sistema proporciona los eventos relevantes en orden temporal.<br><br>**AC2:** Given una acción o cambio se encuentra relacionado con el incidente, When se consulta su trazabilidad, Then la información conserva el momento y relación correspondientes.<br><br>**AC3:** Given un incidente contiene eventos con fechas distintas, When se consulta la secuencia, Then la información se ordena por su momento de ocurrencia y distingue los eventos con datos incompletos. | EP04 |
+| **US20** | Consultar indicadores de incidentes | Como facility manager, deseo consultar indicadores como frecuencia de incidentes, falsas alarmas y tiempos de atención, para identificar tendencias que requieran acciones preventivas. | **AC1:** Given existen incidentes con información suficiente, When se calculan indicadores para un periodo determinado, Then el sistema utiliza únicamente datos correspondientes al periodo seleccionado.<br><br>**AC2:** Given no existe información suficiente para calcular un indicador, When se solicita dicho indicador, Then el sistema no presenta un resultado cuantitativo sin sustento.<br><br>**AC3:** Given un indicador necesita tiempos que no están registrados, When se solicita el reporte, Then el sistema lo identifica como no calculable en lugar de mostrar un promedio ficticio. | EP04 |
+| **EP05** | **Preparación y gobierno del entorno monitoreado** | Agrupa las capacidades necesarias para preparar las edificaciones, zonas, dispositivos, reglas, usuarios y responsabilidades requeridas antes y durante la operación de ResQ. | — | — |
+| **US21** | Registrar una edificación | Como administrador, deseo registrar una edificación que será monitoreada, para organizar la infraestructura gestionada por ResQ. | **AC1:** Given el administrador proporciona los datos obligatorios de una nueva edificación, When confirma su registro, Then la edificación queda disponible dentro de la organización correspondiente.<br><br>**AC2:** Given faltan datos obligatorios o estos son inválidos, When se solicita el registro, Then el sistema no crea una edificación incompleta.<br><br>**AC3:** Given ya existe una edificación con el mismo identificador único dentro de la organización, When se intenta registrarla de nuevo, Then el sistema rechaza la duplicidad. | EP05 |
+| **US22** | Definir zonas de una edificación | Como administrador, deseo definir las zonas de una edificación, para localizar correctamente dispositivos y eventos. | **AC1:** Given existe una edificación registrada, When el administrador registra una zona válida, Then esta queda asociada con la edificación correspondiente.<br><br>**AC2:** Given una zona posee dispositivos o incidentes relacionados, When se modifica su información, Then sus relaciones se mantienen consistentes.<br><br>**AC3:** Given se intenta registrar una zona para una edificación inexistente o no autorizada, When se confirma la solicitud, Then el sistema rechaza la creación sin asociarla a otra edificación. | EP05 |
+| **US23** | Asociar un dispositivo con una zona | Como administrador, deseo asociar cada dispositivo con su zona correspondiente, para identificar el origen de mediciones y alertas. | **AC1:** Given existe un dispositivo y una zona activa pertenecientes a la misma organización, When un administrador realiza la asignación, Then las nuevas mediciones pueden relacionarse con esa zona.<br><br>**AC2:** Given un dispositivo cambia de zona, When se registra la nueva asignación, Then las ubicaciones asociadas a eventos anteriores se mantienen como parte de su trazabilidad histórica.<br><br>**AC3:** Given una zona pertenece a otra edificación o no está activa, When se intenta asignar el dispositivo, Then el sistema rechaza la ubicación inconsistente. | EP05 |
+| **US24** | Configurar una condición de detección | Como responsable autorizado, deseo configurar condiciones de detección, para adaptar la identificación de riesgos a las características de la instalación. | **AC1:** Given existe una variable monitoreada compatible, When el responsable registra una condición válida, Then esta puede utilizarse para evaluar mediciones posteriores.<br><br>**AC2:** Given una condición posee parámetros inválidos, When se intenta habilitarla, Then el sistema impide utilizarla para clasificar riesgos.<br><br>**AC3:** Given una regla utiliza unidades o umbrales incompatibles con las capacidades del sensor, When se intenta activarla, Then el sistema impide su evaluación como una condición válida. | EP05 |
+| **US25** | Configurar una política de respuesta | Como responsable autorizado, deseo configurar las respuestas permitidas para cada tipo de riesgo, para establecer previamente cómo deberá actuar el sistema. | **AC1:** Given existe un tipo de riesgo configurado, When el responsable define una política válida, Then esta establece las respuestas permitidas para dicho riesgo.<br><br>**AC2:** Given una respuesta requiere autorización humana, When se configura la política, Then dicha condición se conserva antes de permitir su ejecución.<br><br>**AC3:** Given una política está deshabilitada, When ocurre una condición asociada, Then el sistema no utiliza esa política para ordenar una respuesta. | EP05 |
+| **US26** | Asignar roles y responsabilidades | Como administrador, deseo asignar roles y responsabilidades a los usuarios, para limitar el acceso a información y acciones sensibles. | **AC1:** Given existe un usuario perteneciente a la organización, When el administrador le asigna un rol válido, Then sus operaciones permitidas corresponden a los permisos del rol.<br><br>**AC2:** Given un usuario carece del permiso requerido, When intenta ejecutar una operación protegida, Then el sistema rechaza la operación.<br><br>**AC3:** Given un usuario intenta otorgar permisos superiores a su propia autorización, When solicita el cambio de rol, Then el sistema rechaza una asignación no permitida. | EP05 |
+| **US27** | Acceder de forma autenticada | Como usuario autorizado, deseo autenticarme antes de acceder a ResQ, para utilizar únicamente las funciones correspondientes a mis responsabilidades. | **AC1:** Given el usuario proporciona credenciales válidas, When solicita autenticarse, Then el sistema establece una identidad autenticada correspondiente al usuario.<br><br>**AC2:** Given las credenciales proporcionadas son inválidas, When se solicita autenticación, Then el sistema rechaza el acceso sin establecer una sesión autorizada.<br><br>**AC3:** Given un usuario autenticado solicita un recurso para el cual no tiene permisos, When realiza la operación, Then el sistema deniega el recurso aunque su identidad sea válida. | EP05 |
+| **US44** | Actualizar información de edificaciones y zonas | Como administrador de una organización, deseo modificar la información administrativa de edificios y zonas existentes, para mantener actualizado el inventario de infraestructura. | **AC1:** Given una edificación pertenece a la organización y el usuario está autorizado, When actualiza sus datos válidos, Then se conservan los cambios sin alterar su identificador.<br><br>**AC2:** Given una zona existente tiene datos por corregir, When un administrador autorizado modifica su nombre o descripción, Then la zona conserva su relación con la edificación y los dispositivos asociados.<br><br>**AC3:** Given los datos son inválidos o pertenecen a recursos de otra organización, When se solicita la modificación, Then se rechaza el cambio y se mantiene la información previa. | EP05 |
+| **US45** | Gestionar el inventario de dispositivos | Como administrador técnico, deseo registrar y actualizar los dispositivos de una organización y su estado administrativo, para mantener un inventario confiable. | **AC1:** Given existe una edificación activa y el dispositivo cumple los datos requeridos, When el administrador lo registra, Then queda identificado en el inventario de su organización.<br><br>**AC2:** Given un dispositivo registrado cambia de información o estado administrativo, When un usuario autorizado actualiza el registro, Then el sistema conserva su identificador y refleja el nuevo estado.<br><br>**AC3:** Given se intenta registrar un código duplicado o asignar el dispositivo a una ubicación no válida, When se procesa la solicitud, Then el sistema la rechaza sin crear datos inconsistentes. | EP05 |
+| **US46** | Organizar espacios y dispositivos sobre un plano | Como administrador o integrador autorizado, deseo organizar espacios y ubicar dispositivos sobre el plano de un piso, para representar la distribución del entorno monitoreado. | **AC1:** Given existe un piso y el usuario tiene permisos de edición, When define un espacio válido en su plano, Then la distribución registra su ubicación dentro del piso.<br><br>**AC2:** Given un dispositivo registrado es compatible con una ubicación del piso, When el usuario lo asigna a un espacio, Then su representación mantiene correspondencia con el dispositivo y la zona definidos.<br><br>**AC3:** Given una modificación produce solapamientos inválidos o referencias inexistentes, When se intenta guardar la distribución, Then se rechaza o solicita corregir el cambio sin alterar una configuración válida. | EP05 |
+| **US47** | Consultar y actualizar mi información de contacto | Como usuario autenticado, deseo consultar mi perfil y actualizar mi información de contacto, para mantener correctos los datos asociados a mi cuenta. | **AC1:** Given el usuario dispone de una sesión autorizada, When consulta su perfil, Then el sistema proporciona sus datos correspondientes sin mostrar información de otra cuenta.<br><br>**AC2:** Given el usuario proporciona correo electrónico y teléfono con formatos válidos, When solicita actualizar su información de contacto, Then se guardan los cambios en su propio perfil.<br><br>**AC3:** Given la información es inválida o un usuario intenta modificar el perfil ajeno, When realiza la solicitud, Then el sistema rechaza la operación y mantiene los datos anteriores. | EP05 |
+| **EP06** | **Continuidad operativa ante pérdida de conectividad** | Agrupa las capacidades necesarias para mantener las funciones críticas de ResQ durante interrupciones de conectividad y conservar posteriormente la trazabilidad de los eventos producidos. | — | — |
+| **US28** | Mantener funciones críticas sin Internet | Como responsable de una edificación, deseo que la detección y las respuestas críticas continúen funcionando cuando se pierde Internet, para mantener la capacidad de reacción ante una emergencia. | **AC1:** Given la edificación se encuentra siendo monitoreada y se pierde temporalmente la conexión a Internet, When ocurre una condición que cumple una regla de detección crítica, Then el sistema continúa detectando localmente la situación de riesgo.<br><br>**AC2:** Given existe una respuesta crítica previamente autorizada y no existe conexión a Internet, When se detecta la condición asociada con dicha respuesta, Then el sistema ejecuta la respuesta sin depender de la recuperación de Internet.<br><br>**AC3:** Given una respuesta crítica depende de un dispositivo sin energía ni respaldo, When se pierde también su alimentación, Then el sistema no informa disponibilidad local que no puede garantizarse. | EP06 |
+| **US29** | Recuperar eventos producidos durante una interrupción | Como responsable de una edificación, deseo que los eventos producidos durante una interrupción de conectividad estén disponibles posteriormente, para conservar la trazabilidad de lo ocurrido. | **AC1:** Given se producen eventos durante una interrupción de conectividad, When el sistema recupera la comunicación necesaria, Then los eventos ocurridos durante la interrupción pueden incorporarse al historial correspondiente.<br><br>**AC2:** Given un evento ocurrió durante la interrupción, When posteriormente se encuentra disponible para consulta, Then conserva el momento original en el que se produjo.<br><br>**AC3:** Given un evento pendiente se transmite nuevamente después de un fallo, When el servicio receptor lo reconoce por su identificador, Then evita incorporarlo duplicado. | EP06 |
+| **EP07** | **Integración de ResQ con infraestructuras existentes** | Agrupa las capacidades necesarias para que una empresa integradora pueda evaluar, probar e incorporar ResQ en proyectos que utilizan dispositivos o sistemas existentes mediante mecanismos oficialmente soportados. | — | — |
+| **US30** | Conocer los mecanismos de integración compatibles | Como ingeniero de integración, deseo conocer qué mecanismos de integración soporta ResQ, para determinar si puede incorporarse a la infraestructura de mi cliente. | **AC1:** Given el integrador consulta las capacidades técnicas de ResQ, When revisa los mecanismos oficialmente soportados, Then puede identificar los protocolos o interfaces disponibles.<br><br>**AC2:** Given una tecnología no se encuentra soportada, When se consulta su compatibilidad, Then esta no se presenta como un mecanismo disponible.<br><br>**AC3:** Given la documentación enumera limitaciones o versiones específicas de integración, When el integrador revisa un mecanismo, Then puede distinguir sus condiciones de uso y compatibilidad real. | EP07 |
+| **US31** | Integrar una fuente externa compatible | Como ingeniero de integración, deseo conectar a ResQ un dispositivo o sistema externo mediante un mecanismo de integración soportado, para incorporar sus mediciones sin sustituir innecesariamente la infraestructura instalada. | **AC1:** Given una fuente externa utiliza un mecanismo oficialmente soportado, When proporciona datos válidos de acuerdo con el contrato definido, Then ResQ puede recibirlos para su procesamiento.<br><br>**AC2:** Given la fuente proporciona información incompatible con el contrato definido, When ResQ la recibe, Then los datos inválidos no se consideran mediciones válidas.<br><br>**AC3:** Given una fuente externa no está autorizada para la organización, When intenta transmitir mediciones, Then ResQ rechaza su incorporación aunque el formato sea válido. | EP07 |
+| **US32** | Validar una integración antes de activarla | Como ingeniero de integración, deseo comprobar que una fuente externa entrega información compatible antes de utilizarla operativamente, para detectar incompatibilidades antes de su implementación definitiva. | **AC1:** Given una integración se encuentra configurada pero todavía no está habilitada para operación, When el integrador realiza una prueba con información válida, Then el sistema permite determinar si los datos pueden interpretarse correctamente.<br><br>**AC2:** Given la prueba detecta datos incompatibles o un problema de comunicación, When se obtiene el resultado, Then la integración permanece sin habilitarse para operación normal.<br><br>**AC3:** Given una prueba de integración finaliza correctamente, When un integrador autorizado solicita su habilitación, Then se registra el resultado que respalda su activación. | EP07 |
+| **US33** | Asociar dispositivos externos con su contexto | Como ingeniero de integración, deseo relacionar los dispositivos externos con el edificio y zona correspondientes, para conservar el contexto de las mediciones y eventos integrados. | **AC1:** Given existe un dispositivo externo reconocido, When el integrador lo relaciona con una zona válida, Then sus nuevas mediciones pueden vincularse con dicha ubicación.<br><br>**AC2:** Given un dispositivo externo no posee una asociación válida, When genera información, Then el sistema evita atribuirle una ubicación no confirmada.<br><br>**AC3:** Given el integrador intenta asociar un dispositivo externo a una zona ajena a su organización, When solicita el cambio, Then el sistema rechaza la asociación. | EP07 |
+| **EP08** | **Evaluación y adopción de ResQ** | Agrupa las capacidades del Landing Page y de la experiencia inicial destinadas a comunicar la propuesta de valor de ResQ a los segmentos objetivo y facilitar el inicio de una relación con la solución. | — | — |
+| **US34** | Comprender la propuesta de ResQ | Como visitante, deseo comprender el problema que aborda ResQ y su propuesta de solución, para determinar si resulta relevante para mis necesidades. | **AC1:** Given un visitante accede al contenido informativo de ResQ, When consulta la propuesta, Then dispone de información sobre el problema abordado, las capacidades principales y la forma general de funcionamiento.<br><br>**AC2:** Given el visitante todavía no conoce ResQ, When revisa la propuesta, Then puede distinguir el propósito de la solución frente a una alarma o sensor aislado.<br><br>**AC3:** Given una capacidad está todavía en desarrollo o simulación, When el visitante revisa la solución, Then la comunicación no la presenta como integración productiva verificada. | EP08 |
+| **US35** | Conocer los beneficios para administradores | Como propietario o administrador de una edificación, deseo conocer los beneficios de ResQ aplicables a una edificación, para evaluar su utilidad dentro de mi infraestructura. | **AC1:** Given un visitante pertenece al segmento de propietarios o administradores, When consulta la información dirigida a dicho segmento, Then encuentra beneficios relacionados con monitoreo, detección, respuesta y trazabilidad.<br><br>**AC2:** Given el visitante evalúa la aplicación de ResQ, When revisa la información disponible, Then puede identificar las principales capacidades relevantes para la gestión de una edificación.<br><br>**AC3:** Given un administrador necesita evaluar la adopción, When consulta los beneficios, Then puede distinguir las funciones disponibles de las capacidades previstas para etapas futuras. | EP08 |
+| **US36** | Conocer los beneficios para empresas integradoras | Como representante de una empresa integradora, deseo conocer cómo puede incorporarse ResQ a sistemas existentes, para evaluar si puede formar parte de nuestros proyectos. | **AC1:** Given el visitante pertenece a una empresa integradora, When consulta la propuesta orientada a su segmento, Then dispone de información sobre interoperabilidad, integración y aplicación de ResQ en proyectos existentes.<br><br>**AC2:** Given el integrador evalúa una posible incorporación, When revisa la propuesta, Then puede identificar a ResQ como una solución complementaria que no exige sustituir toda la infraestructura existente.<br><br>**AC3:** Given una integración depende de una versión o protocolo aún no verificado, When la empresa consulta la propuesta, Then esta no promete compatibilidad universal. | EP08 |
+| **US37** | Acceder a documentación técnica de integración | Como representante técnico de una empresa integradora, deseo acceder desde el sitio web a la documentación técnica disponible, para realizar una evaluación preliminar antes de iniciar un proyecto. | **AC1:** Given existe documentación técnica publicada para integradores, When el representante accede a ella desde los recursos disponibles, Then puede consultar información sobre mecanismos soportados y requisitos principales.<br><br>**AC2:** Given una capacidad se encuentra fuera del alcance soportado, When se consulta la documentación, Then esta no se presenta como característica disponible.<br><br>**AC3:** Given la documentación de un mecanismo todavía no ha sido publicada, When el visitante busca sus detalles, Then el sitio no ofrece un enlace roto ni presenta el mecanismo como oficialmente documentado. | EP08 |
+| **US38** | Solicitar una demostración o contacto | Como representante de una empresa integradora, deseo solicitar una demostración, piloto o contacto con ResQ, para evaluar una posible colaboración. | **AC1:** Given un visitante introduce datos obligatorios válidos para solicitar una demostración o contacto, When envía la solicitud, Then esta se registra y queda disponible para su atención.<br><br>**AC2:** Given la solicitud omite datos obligatorios o contiene información inválida, When se intenta enviarla, Then no se registra y se informa la necesidad de corregirla.<br><br>**AC3:** Given una solicitud válida ya fue registrada, When el representante recibe la confirmación, Then puede reconocer que la solicitud está pendiente de atención sin que esto implique una demostración ya programada. | EP08 |
+| **US39** | Acceder a los productos digitales de ResQ | Como visitante, deseo acceder desde el Landing Page a los productos digitales disponibles, para continuar mi experiencia con la solución. | **AC1:** Given existe un producto digital público disponible, When el visitante selecciona su acceso desde el Landing Page, Then es dirigido al producto correspondiente.<br><br>**AC2:** Given un producto todavía no se encuentra disponible públicamente, When el visitante consulta las opciones existentes, Then no se presenta como un acceso funcional disponible.<br><br>**AC3:** Given un producto digital requiere autenticación, When el visitante selecciona un acceso disponible, Then es dirigido al mecanismo de inicio de sesión correspondiente. | EP08 |
+| **EP09** | **Vigencia y administración del servicio contratado** | Agrupa las capacidades que permiten gestionar la suscripción de cada organización, consultar su vigencia, renovarla cuando corresponde y registrar su cancelación o vencimiento. | — | — |
+| **US40** | Consultar el estado de la suscripción | Como administrador de una organización, deseo consultar el estado y las fechas de vigencia de la suscripción de mi organización, para conocer la situación actual de nuestro servicio ResQ. | **AC1:** Given la organización autenticada posee una suscripción, When un responsable autorizado solicita consultarla, Then el sistema proporciona estado, fecha inicial y fecha de vencimiento.<br><br>**AC2:** Given la organización no tiene una suscripción registrada, When se solicita su consulta, Then el sistema informa que no existe una suscripción para esa organización.<br><br>**AC3:** Given una persona intenta consultar la suscripción de otra organización, When realiza la solicitud, Then el sistema impide el acceso a la información ajena. | EP09 |
+| **US41** | Registrar una suscripción organizacional | Como administrador de una organización, deseo registrar una suscripción para mi organización, para formalizar su vigencia dentro de ResQ. | **AC1:** Given la organización autenticada no tiene una suscripción activa y las fechas de inicio y fin son válidas, When se confirma su registro, Then el sistema crea una suscripción vinculada a la organización con estado activo.<br><br>**AC2:** Given la organización ya posee una suscripción activa, When se intenta registrar otra suscripción activa, Then el sistema rechaza la duplicación.<br><br>**AC3:** Given la fecha final no es posterior a la inicial o no está en el futuro, When se intenta crear la suscripción, Then el sistema rechaza los datos sin registrar una suscripción inválida. | EP09 |
+| **US42** | Renovar una suscripción vencida | Como administrador de una organización, deseo renovar una suscripción que ha vencido, para restablecer su vigencia bajo las condiciones permitidas por ResQ. | **AC1:** Given la suscripción de la organización se encuentra en estado vencido, When un administrador autorizado proporciona una nueva fecha de fin válida, Then la suscripción recupera el estado activo y actualiza su periodo de vigencia.<br><br>**AC2:** Given la suscripción aún está activa o fue cancelada, When se solicita su renovación, Then el sistema rechaza la transición no permitida según las reglas vigentes.<br><br>**AC3:** Given la fecha de vencimiento propuesta no es futura, When se intenta renovar la suscripción, Then el sistema rechaza la solicitud sin modificar su estado. | EP09 |
+| **US43** | Cancelar una suscripción activa | Como administrador de una organización, deseo cancelar la suscripción activa de mi organización, para registrar formalmente la decisión de darla de baja. | **AC1:** Given la suscripción pertenece a la organización autenticada y está activa, When un responsable autorizado solicita cancelarla, Then su estado cambia a cancelado.<br><br>**AC2:** Given la suscripción ya fue cancelada o se encuentra vencida, When se solicita cancelarla nuevamente, Then el sistema rechaza la transición de estado no permitida.<br><br>**AC3:** Given la suscripción corresponde a otra organización o no existe, When se solicita su cancelación, Then el sistema no modifica ningún registro ajeno. | EP09 |
+| **TS01** | Capturar mediciones desde los Embedded Systems | Como Developer, deseo que la Embedded Application capture las mediciones de los sensores conectados, para proporcionar al procesamiento local la información necesaria para monitoreo y detección. | **AC1:** Given un sensor compatible produce una lectura válida, When la Embedded Application la captura, Then genera una medición con identificación del dispositivo, tipo de variable, valor y momento correspondiente.<br><br>**AC2:** Given la lectura obtenida es inválida, When la aplicación la procesa, Then no la comunica como una medición válida.<br><br>**AC3:** Given un sensor entrega una lectura en unidades sin calibración suficiente, When la aplicación la procesa, Then conserva la unidad de origen y no la presenta como concentración calibrada sin conversión validada. | EP01 |
+| **TS02** | Recibir mediciones mediante un Edge API | Como Developer, deseo disponer de un Edge API para recibir mediciones provenientes de los dispositivos, para desacoplar la captura física del procesamiento local. | **AC1:** Given un dispositivo autorizado envía una solicitud válida, When el Edge API recibe la medición, Then responde satisfactoriamente y entrega la información al procesamiento local.<br><br>**AC2:** Given la solicitud contiene información inválida, When el Edge API la recibe, Then responde con un resultado de error y no procesa la información como medición válida.<br><br>**AC3:** Given un dispositivo no está autorizado para enviar mediciones, When realiza una solicitud al Edge API, Then el servicio la rechaza sin incorporarla al procesamiento local. | EP01 |
+| **TS03** | Procesar reglas de detección localmente | Como Developer, deseo evaluar las condiciones de riesgo en el Edge, para que la detección crítica no dependa permanentemente de servicios Cloud. | **AC1:** Given existe una regla activa y una nueva medición válida, When la medición es procesada localmente, Then la condición correspondiente es evaluada sin requerir comunicación Cloud.<br><br>**AC2:** Given la condición de riesgo se cumple, When finaliza la evaluación, Then se genera el evento local necesario para continuar el flujo de detección.<br><br>**AC3:** Given una regla está desactivada o no corresponde al tipo de medición, When llega la lectura, Then el motor no genera una detección mediante esa regla. | EP02 |
+| **TS04** | Ejecutar comandos de actuadores localmente | Como Developer, deseo que el Edge pueda coordinar comandos con los actuadores conectados, para ejecutar respuestas críticas sin depender permanentemente de Cloud. | **AC1:** Given una respuesta local autorizada requiere un actuador disponible, When el Edge inicia el procedimiento, Then envía el comando correspondiente y registra el intento.<br><br>**AC2:** Given el actuador comunica un fallo o no responde dentro del tiempo definido, When se verifica el intento, Then la respuesta queda registrada como fallida o no confirmada.<br><br>**AC3:** Given se emite un comando pero no existe confirmación física verificable, When se registra la respuesta, Then el sistema diferencia comando enviado de acción físicamente confirmada. | EP03 |
+| **TS05** | Integrar un servicio externo de notificaciones | Como Developer, deseo disponer de un mecanismo para entregar notificaciones externas, para complementar la comunicación de alertas generadas por ResQ. | **AC1:** Given existe una alerta y un destinatario válido, When el servicio recibe la solicitud de notificación, Then intenta entregar el mensaje utilizando el canal configurado.<br><br>**AC2:** Given el proveedor externo rechaza o no puede entregar la solicitud, When se recibe el resultado, Then el sistema registra el fallo sin considerar la notificación como entregada.<br><br>**AC3:** Given una notificación ya fue aceptada por el proveedor externo, When se ejecuta un reintento por un fallo previo, Then se evita duplicar la entrega cuando exista un identificador de idempotencia disponible. | EP03 |
+| **TS06** | Proveer servicios mediante RESTful API | Como Developer, deseo disponer de una RESTful API para los recursos Cloud de ResQ, para permitir que las aplicaciones digitales consuman los servicios de la plataforma. | **AC1:** Given un cliente autorizado envía una solicitud válida a un recurso disponible, When la API la procesa, Then responde utilizando el código HTTP y representación correspondientes al resultado.<br><br>**AC2:** Given una solicitud no está autorizada o contiene información inválida, When la API la procesa, Then responde mediante el resultado de error correspondiente sin ejecutar una operación no permitida.<br><br>**AC3:** Given un cliente consulta un recurso perteneciente a otra organización, When se procesa la solicitud, Then la API rechaza la divulgación de datos ajenos aunque la autenticación sea válida. | EP01 |
+| **TS07** | Conservar y sincronizar eventos durante una interrupción | Como Developer, deseo conservar temporalmente los eventos que no pueden enviarse a los servicios remotos, para sincronizarlos cuando la comunicación sea restablecida. | **AC1:** Given no existe comunicación disponible con los servicios remotos, When se genera un evento que requiere sincronización, Then este queda almacenado temporalmente como pendiente.<br><br>**AC2:** Given vuelve a existir conectividad, When inicia la sincronización, Then los eventos pendientes se transmiten conservando su momento original y evitando duplicar los ya confirmados.<br><br>**AC3:** Given una interrupción produce reintentos del mismo evento, When el receptor confirma la sincronización, Then el emisor registra el evento como confirmado y evita nuevas duplicaciones. | EP06 |
+| **TS08** | Proveer un mecanismo de integración externa | Como Developer, deseo exponer un mecanismo de integración basado en tecnologías soportadas, para permitir el intercambio de información con dispositivos o plataformas externas. | **AC1:** Given una fuente externa autorizada utiliza un contrato soportado, When transmite información válida, Then ResQ puede interpretarla y procesarla.<br><br>**AC2:** Given una fuente transmite información que no satisface el contrato, When el mecanismo la recibe, Then registra o devuelve el error correspondiente sin incorporar información inconsistente.<br><br>**AC3:** Given una fuente transmite datos de una organización distinta de la autorizada, When se valida el mensaje, Then el mecanismo impide atribuirlos a otra organización. | EP07 |
+| **TS09** | Procesar información cuantitativa para indicadores | Como Developer, deseo calcular indicadores a partir de los incidentes registrados, para proporcionar información cuantitativa sustentada a las aplicaciones de ResQ. | **AC1:** Given existen datos válidos para un periodo determinado, When se solicita el cálculo de un indicador soportado, Then el resultado se obtiene utilizando únicamente la información aplicable.<br><br>**AC2:** Given no existen datos suficientes para realizar el cálculo, When se solicita el indicador, Then el servicio informa la ausencia de información suficiente y no genera un valor ficticio.<br><br>**AC3:** Given un indicador requiere un denominador que es cero o desconocido, When se solicita su cálculo, Then el servicio señala que no puede determinarse en vez de producir un valor inválido. | EP04 |
+| **TS10** | Registrar vencimiento de suscripciones | Como Developer, deseo ofrecer una operación de vencimiento controlada por las reglas del dominio, para mantener consistente el estado de las suscripciones de ResQ. | **AC1:** Given una suscripción activa ya alcanzó su fecha final, When una operación autorizada solicita su vencimiento, Then el dominio cambia su estado a vencido.<br><br>**AC2:** Given una suscripción activa aún no alcanzó su fecha final, When se intenta marcarla como vencida, Then el dominio rechaza la operación y conserva el estado activo.<br><br>**AC3:** Given una suscripción pertenece a otra organización o no está activa, When se solicita su vencimiento, Then la API no efectúa una transición de estado no autorizada. | EP09 |
 ## 3.2. Impact Mapping
 
 <p align="justify">
-El Impact Mapping de ResQ permite relacionar los objetivos de negocio definidos para la solución con los comportamientos que se espera promover en los representantes de los segmentos objetivo y con las funcionalidades necesarias para conseguir dichos resultados.
-</p>
 
-<p align="justify">
-Para su elaboración se consideraron dos User Personas: el <strong>Administrador de edificaciones (UP01)</strong>, representante del segmento de propietarios y administradores de edificaciones, y el <strong>Responsable institucional de seguridad y operaciones (UP02)</strong>, representante de empresas e instituciones con infraestructura propia.
-</p>
+El Impact Mapping de ResQ relaciona los objetivos de negocio con los comportamientos esperados de sus dos User Personas: <strong>Carlos Mendoza</strong>, representante de propietarios y administradores de edificaciones, y <strong>Alex Rivera</strong>, representante de empresas integradoras de automatización y gestión de edificios inteligentes. Los Deliverables se vinculan con las User Stories definidas en el apartado 3.1, considerando las necesidades identificadas durante las entrevistas y el proceso de Needfinding.
 
-<p align="justify">
-A partir de los resultados obtenidos durante el proceso de investigación y de las hipótesis planteadas durante el Lean UX Process, se establecieron tres Business Goals medibles relacionados con la validación de la utilidad operativa de ResQ, el uso recurrente de la plataforma y la validación de su valor comercial.
 </p>
 
 ### Business Goals
 
-**BG01 — Validar la utilidad operativa del MVP**
+**BG01 — Validar la utilidad operativa de ResQ**
 
 <p align="justify">
-Lograr que al menos el <strong>80 % de los usuarios participantes del piloto</strong> pueda identificar correctamente el tipo, nivel y zona de un riesgo, así como verificar la respuesta ejecutada por ResQ en escenarios de prueba, durante las <strong>primeras 6 semanas del piloto</strong>.
+
+Lograr que al menos el <strong>80 % de los administradores participantes</strong> identifique correctamente el tipo, nivel y zona de un riesgo, así como el estado de la respuesta asociada, en pruebas realizadas durante las <strong>primeras 6 semanas del piloto</strong>.
+
 </p>
 
-**BG02 — Promover el uso recurrente de ResQ**
+**BG02 — Fomentar el uso recurrente de la plataforma**
 
 <p align="justify">
-Lograr que al menos el <strong>70 % de los usuarios participantes del piloto</strong> utilice ResQ al menos <strong>dos veces por semana</strong> para actividades de monitoreo o consulta de incidentes durante un periodo continuo de <strong>8 semanas</strong>.
+
+Lograr que al menos el <strong>70 % de los administradores participantes</strong> realice actividades de supervisión o consulta de incidentes en ResQ <strong>dos o más veces por semana durante 8 semanas consecutivas</strong>, según los registros de uso del piloto.
+
 </p>
 
-**BG03 — Validar el valor comercial de la solución**
+**BG03 — Validar el interés de adopción y colaboración comercial**
 
 <p align="justify">
-Lograr que al menos el <strong>60 % de las administraciones u organizaciones participantes del piloto</strong> manifieste una intención de continuar utilizando y pagar por el servicio, con una valoración mínima de <strong>4 sobre 5</strong>, al finalizar las <strong>primeras 12 semanas del piloto</strong>.
+
+Lograr que al menos el <strong>60 % de las organizaciones participantes que completen la evaluación</strong> otorgue a ResQ una valoración de <strong>4 sobre 5 o superior</strong> y manifieste interés en continuar utilizándolo o integrarlo en sus proyectos, al finalizar las <strong>primeras 12 semanas del piloto</strong>.
+
 </p>
 
 ### Estructura del Impact Mapping
 
-#### BG01 — Validar la utilidad operativa del MVP
+#### BG01 — Validar la utilidad operativa de ResQ
 
 | Actor / Persona | Impact | Deliverable | User Stories |
 |---|---|---|---|
-| **UP01 — Administrador de edificaciones** | Consulta el estado de la edificación y sus zonas para reconocer rápidamente una condición anómala sin depender de diferentes fuentes de información. | Monitoreo centralizado del estado de la edificación, zonas y dispositivos IoT. | **US01:** Como propietario, administrador o responsable institucional, quiero conocer el estado general de la edificación, para identificar oportunamente si existe alguna situación que requiera atención.<br><br>**US02:** Como responsable de una edificación, quiero conocer el estado individual de cada zona monitoreada, para identificar rápidamente dónde existe una condición anómala.<br><br>**US03:** Como responsable de una edificación, quiero conocer las mediciones obtenidas y el estado de los dispositivos IoT, para verificar las condiciones monitoreadas y detectar posibles fallas de los equipos. |
-| **UP01 — Administrador de edificaciones** | Identifica el tipo, nivel y ubicación del riesgo antes de tomar decisiones relacionadas con la emergencia. | Detección, clasificación y localización de riesgos. | **US04:** Como responsable de seguridad o administración, quiero conocer el tipo y nivel de riesgo detectado, para evaluar la situación y tomar decisiones con mayor rapidez.<br><br>**US05:** Como responsable de una edificación, quiero conocer la ubicación del riesgo detectado, para dirigir la respuesta hacia la zona correcta sin perder tiempo en localizar el incidente. |
-| **UP01 — Administrador de edificaciones** | Comprueba qué acciones fueron realizadas por el sistema durante la emergencia y mantiene visibilidad sobre su resultado. | Seguimiento de respuestas ejecutadas mediante actuadores. | **US09:** Como responsable de una edificación, quiero que determinadas acciones de seguridad se ejecuten automáticamente según el riesgo detectado, para reducir el tiempo de respuesta durante los primeros momentos de una emergencia.<br><br>**US10:** Como responsable de una edificación, quiero conocer qué acciones se ejecutaron durante una emergencia, para tener visibilidad sobre la respuesta realizada por el sistema. |
-| **UP02 — Responsable institucional de seguridad y operaciones** | Supervisa diferentes zonas utilizando información centralizada para comprender con rapidez el alcance de una emergencia. | Monitoreo por zonas y detección localizada de incidentes. | **US02:** Como responsable de una edificación, quiero conocer el estado individual de cada zona monitoreada, para identificar rápidamente dónde existe una condición anómala.<br><br>**US04:** Como responsable de seguridad o administración, quiero conocer el tipo y nivel de riesgo detectado, para evaluar la situación y tomar decisiones con mayor rapidez.<br><br>**US05:** Como responsable de una edificación, quiero conocer la ubicación del riesgo detectado, para dirigir la respuesta hacia la zona correcta sin perder tiempo en localizar el incidente. |
-| **UP02 — Responsable institucional de seguridad y operaciones** | Recibe información oportuna sobre los incidentes y coordina su atención hasta el cierre. | Alertas de emergencia y seguimiento del estado del incidente. | **US07:** Como responsable de una edificación, quiero recibir alertas cuando se detecte una situación de riesgo, para conocer oportunamente qué ocurre y poder realizar el seguimiento correspondiente.<br><br>**US12:** Como responsable de seguridad u operaciones, quiero conocer el estado actual y el responsable de atención de un incidente, para coordinar las acciones hasta su cierre. |
-| **UP02 — Responsable institucional de seguridad y operaciones** | Mantiene control humano sobre las acciones que pueden producir un impacto significativo sobre personas u operaciones. | Confirmación de acciones de alto impacto. | **US11:** Como responsable autorizado, quiero confirmar determinadas acciones antes de su ejecución cuando requieran intervención humana, para evitar respuestas automáticas que puedan generar un riesgo adicional. |
+| **UP01 — Carlos Mendoza** | Consulta el estado de la edificación y localiza la zona afectada antes de coordinar la atención. | Monitoreo del estado de edificios y zonas, con ubicación de riesgos. | **US01:** Como responsable de una edificación, deseo conocer el estado general de la infraestructura, para identificar oportunamente si existe alguna condición que requiera atención.<br><br>**US02:** Como responsable de una edificación, deseo conocer el estado de cada zona monitoreada, para identificar rápidamente dónde existe una condición anómala.<br><br>**US08:** Como responsable de seguridad, deseo conocer la zona donde se originó el riesgo, para dirigir la respuesta hacia el lugar correcto. |
+| **UP01 — Carlos Mendoza** | Identifica el tipo y nivel de un riesgo y verifica qué alerta se produjo. | Detección contextualizada y alertas vinculadas a la zona. | **US06:** Como responsable de seguridad, deseo conocer el tipo de riesgo detectado, para comprender qué situación está ocurriendo.<br><br>**US07:** Como responsable de seguridad, deseo conocer el nivel del riesgo detectado, para determinar la urgencia con la que debe atenderse.<br><br>**US10:** Como responsable de una edificación, deseo recibir una alerta cuando se detecte una situación de riesgo, para conocer oportunamente lo ocurrido. |
+| **UP01 — Carlos Mendoza** | Comprueba si una respuesta está autorizada y conoce su resultado. | Gestión de autorizaciones y trazabilidad de respuestas. | **US12:** Como responsable autorizado, deseo confirmar las respuestas que puedan generar un impacto significativo, para mantener control humano sobre acciones sensibles.<br><br>**US13:** Como responsable de seguridad, deseo conocer qué respuestas fueron ejecutadas, para verificar cómo actuó el sistema durante el evento. |
+| **UP01 — Carlos Mendoza** | Verifica la continuidad de las funciones críticas durante interrupciones de Internet y consulta posteriormente los eventos registrados. | Continuidad operativa y sincronización posterior de eventos. | **US28:** Como responsable de una edificación, deseo que la detección y las respuestas críticas continúen funcionando cuando se pierde Internet, para mantener la capacidad de reacción ante una emergencia.<br><br>**US29:** Como responsable de una edificación, deseo que los eventos producidos durante una interrupción de conectividad estén disponibles posteriormente, para conservar la trazabilidad de lo ocurrido. |
+| **UP02 — Alex Rivera** | Prepara la distribución de dispositivos y comprueba una integración antes de habilitarla. | Planos por piso y validación técnica de integraciones. | **US32:** Como ingeniero de integración, deseo comprobar que una fuente externa entrega información compatible antes de utilizarla operativamente, para detectar incompatibilidades antes de su implementación definitiva.<br><br>**US46:** Como administrador o integrador autorizado, deseo organizar espacios y ubicar dispositivos sobre el plano de un piso, para representar la distribución del entorno monitoreado. |
 
-#### BG02 — Promover el uso recurrente de ResQ
-
-| Actor / Persona | Impact | Deliverable | User Stories |
-|---|---|---|---|
-| **UP01 — Administrador de edificaciones** | Supervisa periódicamente sus instalaciones incluso cuando no se encuentra físicamente en el edificio. | Supervisión remota de la edificación. | **US06:** Como propietario, administrador o responsable institucional, quiero consultar remotamente el estado de las zonas y eventos de la edificación, para mantener la supervisión aunque no me encuentre físicamente en las instalaciones. |
-| **UP01 — Administrador de edificaciones** | Consulta eventos anteriores para revisar lo ocurrido y realizar seguimiento de la seguridad de la edificación. | Historial y detalle de incidentes. | **US13:** Como propietario, administrador o responsable institucional, quiero consultar los incidentes registrados anteriormente, para realizar seguimiento y analizar situaciones ocurridas en la edificación.<br><br>**US15:** Como responsable de una edificación, quiero revisar las mediciones y acciones asociadas con un incidente, para comprender cómo evolucionó y cómo respondió el sistema. |
-| **UP01 — Administrador de edificaciones** | Localiza información histórica sin tener que revisar manualmente correos, documentos o registros separados. | Búsqueda y filtrado de incidentes históricos. | **US14:** Como responsable de una edificación, quiero localizar incidentes utilizando diferentes criterios, para encontrar información histórica sin revisar manualmente múltiples registros. |
-| **UP02 — Responsable institucional de seguridad y operaciones** | Utiliza información histórica y cuantitativa para realizar seguimiento de incidentes y detectar patrones entre zonas. | Indicadores y análisis de información de seguridad. | **US16:** Como propietario, administrador o responsable institucional, quiero consultar indicadores obtenidos de los eventos registrados, para identificar tendencias y evaluar la gestión de seguridad de las instalaciones.<br><br>**US13:** Como propietario, administrador o responsable institucional, quiero consultar los incidentes registrados anteriormente, para realizar seguimiento y analizar situaciones ocurridas en la edificación. |
-| **UP02 — Responsable institucional de seguridad y operaciones** | Integra ResQ a sus actividades habituales de seguimiento manteniendo responsabilidades diferenciadas entre las áreas participantes. | Acceso y permisos de acuerdo con responsabilidades. | **US17:** Como responsable autorizado, quiero acceder a la plataforma mediante una identidad válida, para consultar únicamente la información asociada con mis responsabilidades.<br><br>**US18:** Como responsable de una organización, quiero que las capacidades de acceso estén diferenciadas según el rol del usuario, para proteger información y acciones sensibles. |
-| **UP02 — Responsable institucional de seguridad y operaciones** | Continúa confiando en el sistema durante interrupciones de conectividad al mantenerse disponibles las funciones críticas locales. | Continuidad de detección y respuesta sin dependencia permanente de Internet. | **US19:** Como responsable de una edificación, quiero que las funciones críticas de detección y respuesta continúen localmente cuando se pierde Internet, para mantener la capacidad de reacción durante una emergencia. |
-
-#### BG03 — Validar el valor comercial de la solución
+#### BG02 — Fomentar el uso recurrente de la plataforma
 
 | Actor / Persona | Impact | Deliverable | User Stories |
 |---|---|---|---|
-| **UP01 — Administrador de edificaciones** | Reconoce que ResQ disminuye la necesidad de consultar diferentes sistemas y coordinar manualmente las primeras acciones ante una emergencia. | Monitoreo centralizado, alertas y respuestas automáticas. | **US01:** Como propietario, administrador o responsable institucional, quiero conocer el estado general de la edificación, para identificar oportunamente si existe alguna situación que requiera atención.<br><br>**US07:** Como responsable de una edificación, quiero recibir alertas cuando se detecte una situación de riesgo, para conocer oportunamente qué ocurre y poder realizar el seguimiento correspondiente.<br><br>**US09:** Como responsable de una edificación, quiero que determinadas acciones de seguridad se ejecuten automáticamente según el riesgo detectado, para reducir el tiempo de respuesta durante los primeros momentos de una emergencia. |
-| **UP01 — Administrador de edificaciones** | Comprende la propuesta de valor de ResQ y reconoce su aplicación en la administración de edificaciones. | Landing Page orientado a propietarios y administradores. | **US20:** Como visitante, quiero comprender qué problema aborda ResQ y cómo funciona la propuesta, para determinar si resulta relevante para mis necesidades de seguridad y gestión de emergencias.<br><br>**US21:** Como visitante del segmento de propietarios y administradores de edificaciones, quiero conocer los beneficios de ResQ aplicables a la gestión de un edificio, para evaluar si la solución responde a mis necesidades.<br><br>**US23:** Como visitante, quiero acceder desde el Landing Page al producto digital correspondiente, para continuar mi experiencia con ResQ según mi segmento y dispositivo. |
-| **UP01 — Administrador de edificaciones** | Percibe confianza en la continuidad del servicio al comprobar que la respuesta crítica no depende permanentemente de Internet. | Procesamiento y respuesta local ante pérdida de conectividad. | **US19:** Como responsable de una edificación, quiero que las funciones críticas de detección y respuesta continúen localmente cuando se pierde Internet, para mantener la capacidad de reacción durante una emergencia. |
-| **UP02 — Responsable institucional de seguridad y operaciones** | Reconoce valor en una plataforma capaz de centralizar información y coordinar el seguimiento de incidentes entre distintas áreas. | Monitoreo, alertas y seguimiento centralizado de incidentes. | **US02:** Como responsable de una edificación, quiero conocer el estado individual de cada zona monitoreada, para identificar rápidamente dónde existe una condición anómala.<br><br>**US07:** Como responsable de una edificación, quiero recibir alertas cuando se detecte una situación de riesgo, para conocer oportunamente qué ocurre y poder realizar el seguimiento correspondiente.<br><br>**US12:** Como responsable de seguridad u operaciones, quiero conocer el estado actual y el responsable de atención de un incidente, para coordinar las acciones hasta su cierre. |
-| **UP02 — Responsable institucional de seguridad y operaciones** | Percibe que la plataforma puede adaptarse a una organización con diferentes responsabilidades y necesidades de seguimiento. | Gestión de roles, historial e indicadores de seguridad. | **US18:** Como responsable de una organización, quiero que las capacidades de acceso estén diferenciadas según el rol del usuario, para proteger información y acciones sensibles.<br><br>**US13:** Como propietario, administrador o responsable institucional, quiero consultar los incidentes registrados anteriormente, para realizar seguimiento y analizar situaciones ocurridas en la edificación.<br><br>**US16:** Como propietario, administrador o responsable institucional, quiero consultar indicadores obtenidos de los eventos registrados, para identificar tendencias y evaluar la gestión de seguridad de las instalaciones. |
-| **UP02 — Responsable institucional de seguridad y operaciones** | Comprende los beneficios de ResQ para instalaciones con múltiples zonas y evalúa la solución como una alternativa aplicable a su organización. | Landing Page orientado a empresas e instituciones. | **US20:** Como visitante, quiero comprender qué problema aborda ResQ y cómo funciona la propuesta, para determinar si resulta relevante para mis necesidades de seguridad y gestión de emergencias.<br><br>**US22:** Como visitante del segmento de empresas e instituciones con infraestructura propia, quiero conocer los beneficios de ResQ para instalaciones con múltiples zonas, para evaluar su aporte a la seguridad y coordinación operativa.<br><br>**US23:** Como visitante, quiero acceder desde el Landing Page al producto digital correspondiente, para continuar mi experiencia con ResQ según mi segmento y dispositivo. |
+| **UP01 — Carlos Mendoza** | Supervisa remotamente sus instalaciones y distingue mediciones actuales de dispositivos sin comunicación. | Supervisión remota, mediciones y estado de dispositivos. | **US03:** Como responsable de una edificación, deseo consultar las mediciones actuales de los dispositivos, para comprender las condiciones de las zonas supervisadas.<br><br>**US04:** Como responsable de una edificación, deseo conocer si un dispositivo se encuentra operativo, para distinguir una condición real de una posible falla del equipo.<br><br>**US05:** Como administrador o facility manager, deseo supervisar remotamente la infraestructura, para mantener visibilidad aun cuando no me encuentre físicamente en el edificio. |
+| **UP01 — Carlos Mendoza** | Consulta incidentes anteriores, realiza búsquedas y revisa indicadores para identificar situaciones recurrentes. | Historial, búsqueda e indicadores de incidentes. | **US17:** Como responsable de una edificación, deseo consultar incidentes anteriores, para revisar situaciones ocurridas en la infraestructura.<br><br>**US18:** Como responsable de una edificación, deseo localizar incidentes mediante fecha, zona, tipo o estado, para encontrar rápidamente información histórica relevante.<br><br>**US20:** Como facility manager, deseo consultar indicadores como frecuencia de incidentes, falsas alarmas y tiempos de atención, para identificar tendencias que requieran acciones preventivas. |
+| **UP01 — Carlos Mendoza** | Mantiene actualizada la información de sus edificios, dispositivos y perfil de contacto. | Administración de infraestructura, inventario y perfil. | **US44:** Como administrador de una organización, deseo modificar la información administrativa de edificios y zonas existentes, para mantener actualizado el inventario de infraestructura.<br><br>**US45:** Como administrador técnico, deseo registrar y actualizar los dispositivos de una organización y su estado administrativo, para mantener un inventario confiable.<br><br>**US47:** Como usuario autenticado, deseo consultar mi perfil y actualizar mi información de contacto, para mantener correctos los datos asociados a mi cuenta. |
+| **UP02 — Alex Rivera** | Verifica la incorporación de dispositivos externos y mantiene su asociación con la infraestructura correspondiente. | Integración de fuentes y asociación de dispositivos externos con zonas. | **US31:** Como ingeniero de integración, deseo conectar a ResQ un dispositivo o sistema externo mediante un mecanismo de integración soportado, para incorporar sus mediciones sin sustituir innecesariamente la infraestructura instalada.<br><br>**US33:** Como ingeniero de integración, deseo relacionar los dispositivos externos con el edificio y zona correspondientes, para conservar el contexto de las mediciones y eventos integrados. |
+
+#### BG03 — Validar el interés de adopción y colaboración comercial
+
+| Actor / Persona | Impact | Deliverable | User Stories |
+|---|---|---|---|
+| **UP01 — Carlos Mendoza** | Reconoce los beneficios de ResQ y accede a sus productos digitales para evaluar su utilidad. | Landing Page orientada a administradores y acceso a los productos disponibles. | **US34:** Como visitante, deseo comprender el problema que aborda ResQ y su propuesta de solución, para determinar si resulta relevante para mis necesidades.<br><br>**US35:** Como propietario o administrador de una edificación, deseo conocer los beneficios de ResQ aplicables a una edificación, para evaluar su utilidad dentro de mi infraestructura.<br><br>**US39:** Como visitante, deseo acceder desde el Landing Page a los productos digitales disponibles, para continuar mi experiencia con la solución. |
+| **UP01 — Carlos Mendoza** | Consulta la vigencia del servicio de su organización y gestiona su continuidad según las condiciones establecidas. | Registro, consulta, renovación y cancelación de suscripciones organizacionales. | **US40:** Como administrador de una organización, deseo consultar el estado y las fechas de vigencia de la suscripción de mi organización, para conocer la situación actual de nuestro servicio ResQ.<br><br>**US41:** Como administrador de una organización, deseo registrar una suscripción para mi organización, para formalizar su vigencia dentro de ResQ.<br><br>**US42:** Como administrador de una organización, deseo renovar una suscripción que ha vencido, para restablecer su vigencia bajo las condiciones permitidas por ResQ.<br><br>**US43:** Como administrador de una organización, deseo cancelar la suscripción activa de mi organización, para registrar formalmente la decisión de darla de baja. |
+| **UP02 — Alex Rivera** | Evalúa la compatibilidad, documentación y beneficios de ResQ antes de solicitar una demostración o piloto. | Información técnica, propuesta para empresas integradoras y solicitud de contacto. | **US30:** Como ingeniero de integración, deseo conocer qué mecanismos de integración soporta ResQ, para determinar si puede incorporarse a la infraestructura de mi cliente.<br><br>**US36:** Como representante de una empresa integradora, deseo conocer cómo puede incorporarse ResQ a sistemas existentes, para evaluar si puede formar parte de nuestros proyectos.<br><br>**US37:** Como representante técnico de una empresa integradora, deseo acceder desde el sitio web a la documentación técnica disponible, para realizar una evaluación preliminar antes de iniciar un proyecto.<br><br>**US38:** Como representante de una empresa integradora, deseo solicitar una demostración, piloto o contacto con ResQ, para evaluar una posible colaboración. |
 
 ### Impact Mapping de ResQ
 
 <p align="justify">
-El siguiente artefacto representa visualmente la relación entre los Business Goals, los User Personas, los cambios de comportamiento esperados, los Deliverables y las User Stories identificadas para ResQ.
+
+La Figura 23 representa la relación entre los Business Goals, los User Personas, los Impacts, los Deliverables y las User Stories. El mapa debe actualizarse en UXPressia con los actores y las historias vigentes antes de reemplazar la imagen del informe.
+
 </p>
 
 ![Impact Mapping - ResQ](assets/images/chapter-03-requirements-specification/Impact-Mapping-ResQ.png)
 
 <p align="center">
-  <strong>Figura 23. Impact Mapping - ResQ.</strong>
+
+<strong>Figura 23. Impact Mapping - ResQ.</strong>
+
 </p>
 
 ### Análisis del Impact Mapping
 
 <p align="justify">
-El primer Business Goal se encuentra orientado a comprobar que las principales capacidades operativas de ResQ aportan valor durante una situación de riesgo. Para ambos User Personas resulta fundamental poder reconocer el estado de la infraestructura, identificar la zona afectada, conocer el tipo y nivel del riesgo y disponer de visibilidad sobre las acciones ejecutadas. Por ello, sus principales Deliverables se concentran en el monitoreo, la detección, la localización, las alertas y el seguimiento de las respuestas.
+
+El <strong>BG01</strong> busca validar que los administradores puedan identificar riesgos y comprender las respuestas asociadas. Carlos requiere información clara sobre el estado de la edificación y los incidentes, mientras que Alex contribuye mediante la configuración y validación técnica de las integraciones necesarias. Estas capacidades deberán comprobarse mediante pruebas controladas.
+
 </p>
 
 <p align="justify">
-El segundo Business Goal busca incorporar ResQ en las actividades habituales de supervisión y seguimiento. Para el Administrador de edificaciones, esto implica poder revisar remotamente el estado de sus instalaciones y consultar fácilmente incidentes anteriores. Para el Responsable institucional, implica además utilizar indicadores, gestionar responsabilidades diferenciadas y mantener continuidad operativa cuando existe una pérdida temporal de conectividad.
+
+El <strong>BG02</strong> busca incorporar ResQ a las actividades habituales de supervisión y seguimiento. Carlos necesita consultar mediciones, dispositivos, incidentes e indicadores, mientras que Alex participa en la integración y mantenimiento de la información de los equipos. Estos resultados orientan las funcionalidades de monitoreo, administración y trazabilidad.
+
 </p>
 
 <p align="justify">
-El tercer Business Goal permite relacionar las capacidades funcionales de ResQ con la validación de su propuesta de valor. En el caso de los propietarios y administradores, el valor se concentra en reducir la fragmentación de información y la dependencia de coordinación manual. Para las empresas e instituciones, se complementa con la necesidad de coordinar diferentes áreas, administrar accesos, analizar información histórica y mantener funciones críticas disponibles. El Landing Page participa en este objetivo comunicando de forma diferenciada los beneficios de la solución a cada segmento y facilitando el acceso al producto digital correspondiente.
-</p>
 
-<p align="justify">
-En conjunto, el Impact Mapping mantiene trazabilidad desde los objetivos de negocio hasta las User Stories definidas en la sección anterior. De esta manera, cada funcionalidad considerada para ResQ se encuentra relacionada con un cambio de comportamiento esperado en alguno de los User Personas y con un resultado que contribuye a los objetivos establecidos para el modelo de negocio.
+El <strong>BG03</strong> relaciona la propuesta de valor con la adopción del servicio. Carlos evalúa sus beneficios y gestiona la vigencia de la suscripción organizacional, mientras que Alex requiere información técnica y demostraciones para considerar una colaboración. La gestión de suscripciones contempla estados y vigencia, sin implicar funcionalidades de pago o facturación.
+
 </p>
 
 ## 3.3. Product Backlog
 
 <p align="justify">
-El Product Backlog de ResQ organiza y prioriza las User Stories y Technical Stories definidas para la solución. La priorización considera principalmente el valor que cada historia aporta a los segmentos objetivo y al funcionamiento de las capacidades principales de monitoreo, detección, contextualización, respuesta, continuidad operativa e integración.
+
+El Product Backlog de ResQ prioriza las User Stories y Technical Stories definidas en el apartado 3.1, considerando el valor que aportan a propietarios y administradores de edificaciones y a empresas integradoras de automatización. Las historias del Landing Page se incluyen entre las primeras prioridades para considerar su desarrollo desde el primer Sprint.
+
 </p>
 
 <p align="justify">
-Las historias relacionadas con la detección y contextualización de riesgos, la generación de alertas, la ejecución de respuestas y la continuidad de las funciones críticas se encuentran entre los elementos de mayor prioridad debido a que representan parte central de la propuesta de valor de ResQ. Asimismo, las User Stories correspondientes al Landing Page se consideran dentro del primer bloque del backlog para permitir su desarrollo desde los primeros Sprints y apoyar la comunicación temprana de la propuesta de valor hacia los segmentos objetivo.
-</p>
 
-<p align="justify">
-Para complementar la priorización se utiliza la columna Business Value, definida en una escala de 1 a 10, donde un valor mayor representa una mayor contribución al valor de negocio, al MVP y a las necesidades de los segmentos objetivo. Esta valoración es definida desde la perspectiva del Product Owner.
-</p>
+El Business Value utiliza una escala de 1 a 10 y orienta el orden según el valor para el negocio. Los Story Points representan el esfuerzo relativo mediante los valores 1, 2, 3, 5 y 8. Se conservan las valoraciones previamente registradas; las asignadas a US40–US47 y TS10 son propuestas pendientes de validación por el Product Owner y el equipo. La planificación de cada Sprint también considera dependencias técnicas.
 
-<p align="justify">
-Las estimaciones de esfuerzo se expresan mediante Story Points, utilizando los valores 1, 2, 3, 5 y 8. Los Story Points son estimados por el equipo de desarrollo y representan el esfuerzo relativo necesario para implementar cada historia considerando su complejidad, incertidumbre e integración con los diferentes componentes de la solución.
-</p>
-
-<p align="justify">
-El orden del Product Backlog se establece principalmente según el valor aportado al negocio. Cuando dos o más historias poseen un Business Value similar, se consideran también sus dependencias y la necesidad de habilitar capacidades posteriores del producto.
 </p>
 
 | Order | User Story ID | Title | Description | Business Value | Story Points |
@@ -2899,65 +3362,72 @@ El orden del Product Backlog se establece principalmente según el valor aportad
 | 10 | US39 | Acceder a los productos digitales de ResQ | Como visitante, deseo acceder desde el Landing Page a los productos digitales disponibles, para continuar mi experiencia con la solución. | 9 | 2 |
 | 11 | US21 | Registrar una edificación | Como administrador, deseo registrar una edificación que será monitoreada, para organizar la infraestructura gestionada por ResQ. | 9 | 3 |
 | 12 | US22 | Definir zonas de una edificación | Como administrador, deseo definir las zonas de una edificación, para localizar correctamente dispositivos y eventos. | 9 | 3 |
-| 13 | US23 | Asociar un dispositivo con una zona | Como administrador, deseo asociar cada dispositivo con su zona correspondiente, para identificar el origen de mediciones y alertas. | 9 | 5 |
-| 14 | US24 | Configurar una condición de detección | Como responsable autorizado, deseo configurar condiciones de detección, para adaptar la identificación de riesgos a las características de la instalación. | 9 | 5 |
-| 15 | US25 | Configurar una política de respuesta | Como responsable autorizado, deseo configurar las respuestas permitidas para cada tipo de riesgo, para establecer previamente cómo deberá actuar el sistema. | 9 | 8 |
-| 16 | US07 | Conocer el nivel de riesgo | Como responsable de seguridad, deseo conocer el nivel del riesgo detectado, para determinar la urgencia con la que debe atenderse. | 9 | 3 |
-| 17 | US02 | Consultar el estado de una zona | Como responsable de una edificación, deseo conocer el estado de cada zona monitoreada, para identificar rápidamente dónde existe una condición anómala. | 9 | 3 |
-| 18 | US03 | Consultar mediciones actuales | Como responsable de una edificación, deseo consultar las mediciones actuales de los dispositivos, para comprender las condiciones de las zonas supervisadas. | 9 | 3 |
-| 19 | TS01 | Capturar mediciones desde los Embedded Systems | Como Developer, deseo que la Embedded Application capture las mediciones de los sensores conectados, para proporcionar al procesamiento local la información necesaria para monitoreo y detección. | 9 | 5 |
-| 20 | TS03 | Procesar reglas de detección localmente | Como Developer, deseo evaluar las condiciones de riesgo en el Edge, para que la detección crítica no dependa permanentemente de servicios Cloud. | 9 | 8 |
-| 21 | TS04 | Ejecutar comandos de actuadores localmente | Como Developer, deseo que el Edge pueda coordinar comandos con los actuadores conectados, para ejecutar respuestas críticas sin depender permanentemente de Cloud. | 9 | 8 |
-| 22 | US04 | Conocer el estado operativo de un dispositivo | Como responsable de una edificación, deseo conocer si un dispositivo se encuentra operativo, para distinguir una condición real de una posible falla del equipo. | 8 | 3 |
-| 23 | US05 | Supervisar remotamente una edificación | Como administrador o facility manager, deseo supervisar remotamente la infraestructura, para mantener visibilidad aun cuando no me encuentre físicamente en el edificio. | 8 | 3 |
-| 24 | US09 | Consultar el contexto de una detección | Como responsable de seguridad, deseo conocer qué dispositivo y mediciones originaron la detección, para contar con contexto antes de tomar una decisión. | 8 | 5 |
-| 25 | US12 | Confirmar una acción de alto impacto | Como responsable autorizado, deseo confirmar las respuestas que puedan generar un impacto significativo, para mantener control humano sobre acciones sensibles. | 8 | 5 |
-| 26 | US13 | Conocer las respuestas ejecutadas | Como responsable de seguridad, deseo conocer qué respuestas fueron ejecutadas, para verificar cómo actuó el sistema durante el evento. | 8 | 3 |
-| 27 | US26 | Asignar roles y responsabilidades | Como administrador, deseo asignar roles y responsabilidades a los usuarios, para limitar el acceso a información y acciones sensibles. | 8 | 5 |
-| 28 | US27 | Acceder de forma autenticada | Como usuario autorizado, deseo autenticarme antes de acceder a ResQ, para utilizar únicamente las funciones correspondientes a mis responsabilidades. | 8 | 3 |
-| 29 | US29 | Recuperar eventos producidos durante una interrupción | Como responsable de una edificación, deseo que los eventos producidos durante una interrupción de conectividad estén disponibles posteriormente, para conservar la trazabilidad de lo ocurrido. | 8 | 8 |
-| 30 | US30 | Conocer los mecanismos de integración compatibles | Como ingeniero de integración, deseo conocer qué mecanismos de integración soporta ResQ, para determinar si puede incorporarse a la infraestructura de mi cliente. | 8 | 3 |
-| 31 | US31 | Integrar una fuente externa compatible | Como ingeniero de integración, deseo conectar a ResQ un dispositivo o sistema externo mediante un mecanismo de integración soportado, para incorporar sus mediciones sin sustituir innecesariamente la infraestructura instalada. | 8 | 8 |
-| 32 | US32 | Validar una integración antes de activarla | Como ingeniero de integración, deseo comprobar que una fuente externa entrega información compatible antes de utilizarla operativamente, para detectar incompatibilidades antes de su implementación definitiva. | 8 | 5 |
-| 33 | US33 | Asociar dispositivos externos con su contexto | Como ingeniero de integración, deseo relacionar los dispositivos externos con el edificio y zona correspondientes, para conservar el contexto de las mediciones y eventos integrados. | 8 | 5 |
-| 34 | US37 | Acceder a documentación técnica de integración | Como representante técnico de una empresa integradora, deseo acceder desde el sitio web a la documentación técnica disponible, para realizar una evaluación preliminar antes de iniciar un proyecto. | 8 | 3 |
-| 35 | US38 | Solicitar una demostración o contacto | Como representante de una empresa integradora, deseo solicitar una demostración, piloto o contacto con ResQ, para evaluar una posible colaboración. | 8 | 3 |
-| 36 | TS02 | Recibir mediciones mediante un Edge API | Como Developer, deseo disponer de un Edge API para recibir mediciones provenientes de los dispositivos, para desacoplar la captura física del procesamiento local. | 8 | 8 |
-| 37 | TS05 | Integrar un servicio externo de notificaciones | Como Developer, deseo disponer de un mecanismo para entregar notificaciones externas, para complementar la comunicación de alertas generadas por ResQ. | 8 | 5 |
-| 38 | TS06 | Proveer servicios mediante RESTful API | Como Developer, deseo disponer de una RESTful API para los recursos Cloud de ResQ, para permitir que las aplicaciones digitales consuman los servicios de la plataforma. | 8 | 8 |
-| 39 | TS07 | Conservar y sincronizar eventos durante una interrupción | Como Developer, deseo conservar temporalmente los eventos que no pueden enviarse a los servicios remotos, para sincronizarlos cuando la comunicación sea restablecida. | 8 | 8 |
-| 40 | TS08 | Proveer un mecanismo de integración externa | Como Developer, deseo exponer un mecanismo de integración basado en tecnologías soportadas, para permitir el intercambio de información con dispositivos o plataformas externas. | 8 | 8 |
-| 41 | US14 | Consultar el estado de un incidente | Como responsable de seguridad, deseo conocer el estado actual de un incidente, para saber si todavía requiere atención. | 7 | 3 |
-| 42 | US15 | Asignar un responsable de atención | Como responsable de seguridad, deseo identificar quién se encuentra atendiendo un incidente, para coordinar las acciones y evitar responsabilidades ambiguas. | 7 | 3 |
-| 43 | US16 | Registrar la resolución de un incidente | Como responsable de seguridad, deseo registrar la resolución y cierre de un incidente, para conservar evidencia de cómo terminó la situación. | 7 | 3 |
-| 44 | US17 | Consultar incidentes anteriores | Como responsable de una edificación, deseo consultar incidentes anteriores, para revisar situaciones ocurridas en la infraestructura. | 7 | 3 |
-| 45 | US18 | Buscar incidentes históricos | Como responsable de una edificación, deseo localizar incidentes mediante fecha, zona, tipo o estado, para encontrar rápidamente información histórica relevante. | 6 | 5 |
-| 46 | US19 | Consultar la secuencia de un incidente | Como responsable de una edificación, deseo consultar la secuencia de mediciones, alertas y respuestas asociadas con un incidente, para comprender cómo evolucionó. | 6 | 5 |
-| 47 | US20 | Consultar indicadores de incidentes | Como facility manager, deseo consultar indicadores como frecuencia de incidentes, falsas alarmas y tiempos de atención, para identificar tendencias que requieran acciones preventivas. | 5 | 8 |
-| 48 | TS09 | Procesar información cuantitativa para indicadores | Como Developer, deseo calcular indicadores a partir de los incidentes registrados, para proporcionar información cuantitativa sustentada a las aplicaciones de ResQ. | 5 | 8 |
+| 13 | US44 | Actualizar información de edificaciones y zonas | Como administrador de una organización, deseo modificar la información administrativa de edificios y zonas existentes, para mantener actualizado el inventario de infraestructura. | 9 | 3 |
+| 14 | US23 | Asociar un dispositivo con una zona | Como administrador, deseo asociar cada dispositivo con su zona correspondiente, para identificar el origen de mediciones y alertas. | 9 | 5 |
+| 15 | US45 | Gestionar el inventario de dispositivos | Como administrador técnico, deseo registrar y actualizar los dispositivos de una organización y su estado administrativo, para mantener un inventario confiable. | 9 | 5 |
+| 16 | US24 | Configurar una condición de detección | Como responsable autorizado, deseo configurar condiciones de detección, para adaptar la identificación de riesgos a las características de la instalación. | 9 | 5 |
+| 17 | US25 | Configurar una política de respuesta | Como responsable autorizado, deseo configurar las respuestas permitidas para cada tipo de riesgo, para establecer previamente cómo deberá actuar el sistema. | 9 | 8 |
+| 18 | US07 | Conocer el nivel de riesgo | Como responsable de seguridad, deseo conocer el nivel del riesgo detectado, para determinar la urgencia con la que debe atenderse. | 9 | 3 |
+| 19 | US02 | Consultar el estado de una zona | Como responsable de una edificación, deseo conocer el estado de cada zona monitoreada, para identificar rápidamente dónde existe una condición anómala. | 9 | 3 |
+| 20 | US03 | Consultar mediciones actuales | Como responsable de una edificación, deseo consultar las mediciones actuales de los dispositivos, para comprender las condiciones de las zonas supervisadas. | 9 | 3 |
+| 21 | TS01 | Capturar mediciones desde los Embedded Systems | Como Developer, deseo que la Embedded Application capture las mediciones de los sensores conectados, para proporcionar al procesamiento local la información necesaria para monitoreo y detección. | 9 | 5 |
+| 22 | TS03 | Procesar reglas de detección localmente | Como Developer, deseo evaluar las condiciones de riesgo en el Edge, para que la detección crítica no dependa permanentemente de servicios Cloud. | 9 | 8 |
+| 23 | TS04 | Ejecutar comandos de actuadores localmente | Como Developer, deseo que el Edge pueda coordinar comandos con los actuadores conectados, para ejecutar respuestas críticas sin depender permanentemente de Cloud. | 9 | 8 |
+| 24 | US04 | Conocer el estado operativo de un dispositivo | Como responsable de una edificación, deseo conocer si un dispositivo se encuentra operativo, para distinguir una condición real de una posible falla del equipo. | 8 | 3 |
+| 25 | US46 | Organizar espacios y dispositivos sobre un plano | Como administrador o integrador autorizado, deseo organizar espacios y ubicar dispositivos sobre el plano de un piso, para representar la distribución del entorno monitoreado. | 8 | 8 |
+| 26 | US05 | Supervisar remotamente una edificación | Como administrador o facility manager, deseo supervisar remotamente la infraestructura, para mantener visibilidad aun cuando no me encuentre físicamente en el edificio. | 8 | 3 |
+| 27 | US09 | Consultar el contexto de una detección | Como responsable de seguridad, deseo conocer qué dispositivo y mediciones originaron la detección, para contar con contexto antes de tomar una decisión. | 8 | 5 |
+| 28 | US12 | Confirmar una acción de alto impacto | Como responsable autorizado, deseo confirmar las respuestas que puedan generar un impacto significativo, para mantener control humano sobre acciones sensibles. | 8 | 5 |
+| 29 | US13 | Conocer las respuestas ejecutadas | Como responsable de seguridad, deseo conocer qué respuestas fueron ejecutadas, para verificar cómo actuó el sistema durante el evento. | 8 | 3 |
+| 30 | US26 | Asignar roles y responsabilidades | Como administrador, deseo asignar roles y responsabilidades a los usuarios, para limitar el acceso a información y acciones sensibles. | 8 | 5 |
+| 31 | US27 | Acceder de forma autenticada | Como usuario autorizado, deseo autenticarme antes de acceder a ResQ, para utilizar únicamente las funciones correspondientes a mis responsabilidades. | 8 | 3 |
+| 32 | US29 | Recuperar eventos producidos durante una interrupción | Como responsable de una edificación, deseo que los eventos producidos durante una interrupción de conectividad estén disponibles posteriormente, para conservar la trazabilidad de lo ocurrido. | 8 | 8 |
+| 33 | US30 | Conocer los mecanismos de integración compatibles | Como ingeniero de integración, deseo conocer qué mecanismos de integración soporta ResQ, para determinar si puede incorporarse a la infraestructura de mi cliente. | 8 | 3 |
+| 34 | US31 | Integrar una fuente externa compatible | Como ingeniero de integración, deseo conectar a ResQ un dispositivo o sistema externo mediante un mecanismo de integración soportado, para incorporar sus mediciones sin sustituir innecesariamente la infraestructura instalada. | 8 | 8 |
+| 35 | US32 | Validar una integración antes de activarla | Como ingeniero de integración, deseo comprobar que una fuente externa entrega información compatible antes de utilizarla operativamente, para detectar incompatibilidades antes de su implementación definitiva. | 8 | 5 |
+| 36 | US33 | Asociar dispositivos externos con su contexto | Como ingeniero de integración, deseo relacionar los dispositivos externos con el edificio y zona correspondientes, para conservar el contexto de las mediciones y eventos integrados. | 8 | 5 |
+| 37 | US37 | Acceder a documentación técnica de integración | Como representante técnico de una empresa integradora, deseo acceder desde el sitio web a la documentación técnica disponible, para realizar una evaluación preliminar antes de iniciar un proyecto. | 8 | 3 |
+| 38 | US38 | Solicitar una demostración o contacto | Como representante de una empresa integradora, deseo solicitar una demostración, piloto o contacto con ResQ, para evaluar una posible colaboración. | 8 | 3 |
+| 39 | US40 | Consultar el estado de la suscripción | Como administrador de una organización, deseo consultar el estado y las fechas de vigencia de la suscripción de mi organización, para conocer la situación actual de nuestro servicio ResQ. | 8 | 3 |
+| 40 | US41 | Registrar una suscripción organizacional | Como administrador de una organización, deseo registrar una suscripción para mi organización, para formalizar su vigencia dentro de ResQ. | 8 | 5 |
+| 41 | TS02 | Recibir mediciones mediante un Edge API | Como Developer, deseo disponer de un Edge API para recibir mediciones provenientes de los dispositivos, para desacoplar la captura física del procesamiento local. | 8 | 8 |
+| 42 | TS05 | Integrar un servicio externo de notificaciones | Como Developer, deseo disponer de un mecanismo para entregar notificaciones externas, para complementar la comunicación de alertas generadas por ResQ. | 8 | 5 |
+| 43 | TS06 | Proveer servicios mediante RESTful API | Como Developer, deseo disponer de una RESTful API para los recursos Cloud de ResQ, para permitir que las aplicaciones digitales consuman los servicios de la plataforma. | 8 | 8 |
+| 44 | TS07 | Conservar y sincronizar eventos durante una interrupción | Como Developer, deseo conservar temporalmente los eventos que no pueden enviarse a los servicios remotos, para sincronizarlos cuando la comunicación sea restablecida. | 8 | 8 |
+| 45 | TS08 | Proveer un mecanismo de integración externa | Como Developer, deseo exponer un mecanismo de integración basado en tecnologías soportadas, para permitir el intercambio de información con dispositivos o plataformas externas. | 8 | 8 |
+| 46 | US14 | Consultar el estado de un incidente | Como responsable de seguridad, deseo conocer el estado actual de un incidente, para saber si todavía requiere atención. | 7 | 3 |
+| 47 | US15 | Asignar un responsable de atención | Como responsable de seguridad, deseo identificar quién se encuentra atendiendo un incidente, para coordinar las acciones y evitar responsabilidades ambiguas. | 7 | 3 |
+| 48 | US16 | Registrar la resolución de un incidente | Como responsable de seguridad, deseo registrar la resolución y cierre de un incidente, para conservar evidencia de cómo terminó la situación. | 7 | 3 |
+| 49 | US17 | Consultar incidentes anteriores | Como responsable de una edificación, deseo consultar incidentes anteriores, para revisar situaciones ocurridas en la infraestructura. | 7 | 3 |
+| 50 | US42 | Renovar una suscripción vencida | Como administrador de una organización, deseo renovar una suscripción que ha vencido, para restablecer su vigencia bajo las condiciones permitidas por ResQ. | 7 | 3 |
+| 51 | TS10 | Registrar vencimiento de suscripciones | Como Developer, deseo ofrecer una operación de vencimiento controlada por las reglas del dominio, para mantener consistente el estado de las suscripciones de ResQ. | 7 | 3 |
+| 52 | US47 | Consultar y actualizar mi información de contacto | Como usuario autenticado, deseo consultar mi perfil y actualizar mi información de contacto, para mantener correctos los datos asociados a mi cuenta. | 7 | 3 |
+| 53 | US18 | Buscar incidentes históricos | Como responsable de una edificación, deseo localizar incidentes mediante fecha, zona, tipo o estado, para encontrar rápidamente información histórica relevante. | 6 | 5 |
+| 54 | US43 | Cancelar una suscripción activa | Como administrador de una organización, deseo cancelar la suscripción activa de mi organización, para registrar formalmente la decisión de darla de baja. | 6 | 3 |
+| 55 | US19 | Consultar la secuencia de un incidente | Como responsable de una edificación, deseo consultar la secuencia de mediciones, alertas y respuestas asociadas con un incidente, para comprender cómo evolucionó. | 6 | 5 |
+| 56 | US20 | Consultar indicadores de incidentes | Como facility manager, deseo consultar indicadores como frecuencia de incidentes, falsas alarmas y tiempos de atención, para identificar tendencias que requieran acciones preventivas. | 5 | 8 |
+| 57 | TS09 | Procesar información cuantitativa para indicadores | Como Developer, deseo calcular indicadores a partir de los incidentes registrados, para proporcionar información cuantitativa sustentada a las aplicaciones de ResQ. | 5 | 8 |
 
 ### Product Backlog en Trello
 
 <p align="justify">
-El Product Backlog de ResQ se mantiene también en Trello, donde las User Stories y Technical Stories se encuentran organizadas y ordenadas de acuerdo con la prioridad definida para la solución. El tablero permite visualizar y gestionar los elementos del backlog, seleccionar posteriormente las historias correspondientes a cada Sprint y realizar el seguimiento de su avance durante el proceso de desarrollo.
+
+El Product Backlog se gestiona en Trello. Cada tarjeta debe reflejar el ID, título, Epic, Business Value, Story Points y los tres escenarios de aceptación definidos en el apartado 3.1. El tablero y la captura deben actualizarse para incluir las 57 historias y respetar el orden priorizado.
+
 </p>
 
 <p align="justify">
-La priorización registrada en Trello mantiene coherencia con el Business Value definido por el Product Owner y las estimaciones de Story Points realizadas por el equipo de desarrollo. El Business Value representa la importancia relativa de cada historia para los objetivos del producto y las necesidades de los segmentos objetivo, mientras que los Story Points representan el esfuerzo relativo requerido para su implementación.
-</p>
 
-<p align="justify">
-Cada tarjeta del tablero contiene el identificador y título de la User Story o Technical Story, la Epic relacionada, su tipo de historia, Business Value, Story Points y sus respectivos Acceptance Criteria. Asimismo, las tarjetas se encuentran agrupadas visualmente mediante etiquetas correspondientes a las Epics definidas para ResQ.
-</p>
+La Figura 24 corresponde a la evidencia del Product Backlog en Trello. Antes de la entrega deberá reemplazarse por una captura del tablero actualizado y comprobar que el enlace permita su consulta pública.
 
-<p align="justify">
-La siguiente imagen muestra el Product Backlog de ResQ registrado en Trello:
 </p>
 
 ![Product Backlog - ResQ](assets/images/chapter-03-requirements-specification/Product-Backlog-ResQ.png)
 
 <p align="center">
-  <strong>Figura 24. Product Backlog - ResQ.</strong>
+
+<strong>Figura 24. Product Backlog - ResQ.</strong>
+
 </p>
 
 **Link del Product Backlog:** [ResQ - Product Backlog](https://trello.com/invite/b/6aab49b781accd44e61a7276/ATTI008620e96295fff92c9f73aa53404faf8E74AD19/resq-product-backlog)
@@ -11055,6 +11525,8 @@ Por tanto, AV1 no representa la validación definitiva de ResQ, sino el establec
 <div style="page-break-before: always; break-before: page;"></div>
 
 # Bibliografía
+
+Instituto Nacional de Defensa Civil (INDECI). (2024). <em>Compendio Estadístico de la Gestión Reactiva 2024</em>. https://cdn.www.gob.pe/uploads/document/file/7186480/6158260-compendio-estadistico-2024.pdf
 
 # Anexos
 
