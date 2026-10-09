@@ -54,9 +54,7 @@ INGENIERÍA DE SOFTWARE
 
 <p align="center" class="cover-date" style="font-weight: bold;">Septiembre 2026</p>
 
-
 <div style="page-break-after: always; break-after: page;"></div>
-
 
 # Registro de Versiones del Informe
 
@@ -8841,7 +8839,7 @@ Estos conceptos continúan perteneciendo a sus respectivos Bounded Contexts.
 
 
 
-# 4.2.7. Bounded Context: User
+### 4.2.7. Bounded Context: User
 
 <p align="justify">
 El Bounded Context User es responsable de gestionar la información del perfil personal, los datos de contacto y las preferencias de las personas que interactúan con la plataforma ResQ, ya sean administradores de edificaciones, responsables de seguridad, facility managers o usuarios integradores.
@@ -9083,7 +9081,7 @@ Propósito: Representa el esquema físico de persistencia (modelo relacional) di
   <strong>Figura 74. User Database Desing Diagram.</strong>
 </p>
 
-# 4.2.8. Bounded Context: Incident
+### 4.2.8. Bounded Context: Incident
 
 <p align="justify">
 El Bounded Context <strong>Incident</strong> es responsable de gestionar el ciclo de vida de los incidentes generados a partir de las situaciones de riesgo o emergencias (como sismos, fugas de gas o incendios) detectadas en las edificaciones monitoreadas por ResQ.
@@ -9663,7 +9661,8 @@ El diseño de la base de datos para el <strong>Connectivity Management Bounded C
 
 # Capítulo V: Solution UI/UX Design
 
-# 5.1. Style Guidelines.
+## 5.1. Style Guidelines.
+
 ### 5.1.1. General Style Guidelines.
 
 en este sección definiremos algunos apartados en lo visual, simbolismo y interacción que rige toda la solucion de ResQ, asegurando coherencia respecto las plataformas. Establecemos una identidad visual clara por medio de paleta de colores, tipografia, espaciado, etc unificado.
@@ -10231,7 +10230,8 @@ Los diagramas de flujo de usuario (implementados con mockups de alta fidelidad) 
 
 
 figma general: https://www.figma.com/board/6hSDnnG4ZYpIm93EouQQ26/Untitled?node-id=0-1&p=f&t=O17tbcBxcn3rT7Tr-0
-# 5.5 Applications Prototyping
+
+## 5.5 Applications Prototyping
 
 Pruebas del prototipo funcionable para el apartado web y mobiel
 
@@ -10399,7 +10399,7 @@ Los manifiestos de dependencias y lockfiles fijan el conjunto ejecutable de los 
 Existe una diferencia relevante entre la prescripción general del Project Statement y la implementación actual de la Landing Page. El enunciado propone HTML5, CSS3 y JavaScript, mientras que el repositorio <code>resq-landing-page</code> utiliza Angular y TypeScript. El equipo adoptó este stack para acelerar el desarrollo y mantener consistencia técnica con la Web Application; sin embargo, la diferencia debe conservarse documentada y no implica que el repositorio haya sido migrado o que la prescripción original deje de aplicar como criterio de evaluación.
 </p>
 
-#### 6.1.2. Source Code Management.
+### 6.1.2. Source Code Management.
 
 El código fuente de ResQ se organiza en repositorios independientes dentro de la organización de GitHub del equipo, uno por cada componente de la solución que ya se encuentra en desarrollo. Los componentes Mobile Application, Edge Service y Embedded Application aún no cuentan con repositorio, por lo que se incorporarán a esta tabla cuando inicie su implementación.
 
@@ -10442,8 +10442,216 @@ Las versiones siguen el formato `MAJOR.MINOR.PATCH`:
 
 Los mensajes de commit siguen la especificación *Conventional Commits* (por ejemplo, `feat: add alerts endpoint`, `fix: correct zone validation`, `docs: update sprint evidence`), lo que mantiene un historial legible y vinculado al autor de cada cambio.
 
+### 6.1.3. Source Code Style Guide & Conventions
 
+Para garantizar la calidad, consistencia y mantenibilidad del código fuente de ResQ, se establecen convenciones de nomenclatura y programación aplicables a los distintos componentes de la solución. Estas convenciones permiten mantener una estructura uniforme, facilitar la comprensión del código y promover el desarrollo colaborativo entre los integrantes del equipo.
 
+Las convenciones se basan en las tecnologías empleadas en los productos digitales de ResQ, principalmente Angular, TypeScript, HTML y SCSS para el Landing Page y la Web Application, así como C#, ASP.NET Core y Entity Framework Core para los servicios RESTful. Como referencia se consideran las guías de estilo oficiales de Angular, Google y Microsoft, junto con las configuraciones existentes en los repositorios.
+
+#### Convenciones generales
+
+Los componentes de ResQ seguirán las siguientes convenciones generales:
+
+- **Idioma:** Los nombres de clases, interfaces, métodos, funciones, variables, propiedades, archivos y otros identificadores se redactarán en inglés.
+- **Nombres descriptivos:** Los identificadores deberán expresar claramente la responsabilidad o el propósito del elemento, evitando abreviaturas ambiguas.
+- **Consistencia:** Se respetarán las convenciones de nomenclatura correspondientes a cada lenguaje de programación.
+- **Indentación:** Se utilizarán dos espacios en los proyectos Angular y cuatro espacios en el código C#, siguiendo las convenciones de formato adoptadas para cada entorno.
+- **Organización:** El código se organizará de acuerdo con las responsabilidades de cada componente, promoviendo la separación de funcionalidades y la reutilización.
+- **Comentarios:** Se utilizarán comentarios para explicar reglas de negocio o decisiones técnicas que no resulten evidentes a partir del código.
+- **Manejo de errores:** Se implementarán mecanismos de validación y tratamiento de excepciones para mantener un comportamiento controlado frente a situaciones inesperadas.
+- **Seguridad:** Se evitará incorporar credenciales y otros datos sensibles directamente en el código fuente.
+
+La siguiente tabla resume las convenciones de nomenclatura consideradas para las tecnologías de ResQ.
+
+| Elemento | TypeScript / Angular | C# / ASP.NET Core |
+|---|---|---|
+| Clases | `PascalCase` | `PascalCase` |
+| Interfaces | `PascalCase` | `I` + `PascalCase` |
+| Métodos | `camelCase` | `PascalCase` |
+| Variables | `camelCase` | `camelCase` |
+| Propiedades | `camelCase` | `PascalCase` |
+| Constantes | `camelCase` o `UPPER_SNAKE_CASE`, según el propósito | `PascalCase` para constantes idiomáticas de C# |
+| Archivos | `kebab-case` | Nombres descriptivos en `PascalCase` |
+| Carpetas | `kebab-case` | Nombres de módulos y capas según la arquitectura |
+| Campos privados | Según la convención del proyecto | `_camelCase` |
+
+#### HTML y SCSS
+
+Para la estructura y presentación de las interfaces web se toman como referencia las recomendaciones de Google HTML/CSS Style Guide y las convenciones establecidas por Angular.
+
+En HTML se prioriza el uso de elementos semánticos y atributos que contribuyan a la accesibilidad. Las plantillas utilizan elementos como `section`, `header`, `nav` y `footer`, así como atributos ARIA para describir componentes interactivos.
+
+En SCSS se emplea principalmente `kebab-case` para las clases y variables CSS personalizadas. Los estilos se organizan en archivos asociados a componentes, facilitando su mantenimiento y evitando concentrar las reglas visuales en un único archivo.
+
+Entre las convenciones consideradas se encuentran:
+
+- Utilizar etiquetas HTML semánticas según la responsabilidad del contenido.
+- Escribir los nombres de elementos y atributos HTML en minúsculas.
+- Mantener nombres descriptivos para clases y selectores.
+- Emplear `kebab-case` para clases CSS.
+- Utilizar variables CSS para centralizar valores reutilizables.
+- Organizar los estilos según los componentes de la aplicación.
+- Incorporar atributos de accesibilidad cuando corresponda.
+
+Por ejemplo, en el Landing Page se utilizan clases como `hero-slide`, `benefit-card` y `site-header`. Asimismo, se emplean atributos como `aria-label`, `aria-roledescription` y `tabindex` para mejorar la interacción con los elementos de la interfaz.
+
+#### TypeScript y Angular
+
+Para el desarrollo del Landing Page y la Web Application se adoptan convenciones basadas en Google TypeScript Style Guide y Angular Style Guide.
+
+Las clases, interfaces y tipos utilizan `PascalCase`, mientras que las variables, funciones, métodos y propiedades emplean `camelCase`. Los nombres de archivos y carpetas utilizan principalmente `kebab-case`, facilitando su identificación dentro del proyecto.
+
+Entre las principales convenciones se consideran:
+
+- Utilizar `PascalCase` para clases, interfaces y tipos.
+- Utilizar `camelCase` para variables, funciones, métodos y propiedades.
+- Utilizar nombres descriptivos para componentes y servicios.
+- Mantener tipos definidos mediante las capacidades de TypeScript.
+- Separar los componentes de presentación de la lógica de acceso a datos.
+- Utilizar Dependency Injection para gestionar dependencias.
+- Organizar las funcionalidades en módulos o directorios independientes.
+- Emplear mecanismos reactivos de Angular, como Signals y RxJS, según las necesidades del componente.
+
+En ResQ, la Web Application presenta una organización basada en funcionalidades mediante directorios como `alerts`, `auth`, `buildings`, `devices`, `monitoring` y `risk-detection`.
+
+Además, se utilizan patrones como Gateway, Facade y Mapper para separar la comunicación con servicios externos de los modelos y componentes de presentación.
+
+El siguiente ejemplo corresponde a la definición de configuración de la API en TypeScript:
+
+```typescript
+export interface ApiConfig {
+  baseUrl: string;
+  requestTimeoutMs: number;
+}
+
+export const API_CONFIG =
+  new InjectionToken<ApiConfig>('RESQ_API_CONFIG');
+```
+
+Este fragmento evidencia el uso de `PascalCase` para interfaces, `camelCase` para propiedades y `UPPER_SNAKE_CASE` para tokens de configuración.
+
+#### C# y ASP.NET Core
+
+Para el desarrollo del Backend RESTful API se toman como referencia las convenciones oficiales de nomenclatura de Microsoft para C# y .NET.
+
+Las clases, métodos y propiedades utilizan `PascalCase`, mientras que las variables locales y los parámetros utilizan `camelCase`. Las interfaces incorporan el prefijo `I`, seguido de un nombre en `PascalCase`.
+
+Las principales convenciones son:
+
+- Utilizar `PascalCase` para clases, métodos y propiedades.
+- Utilizar `I` + `PascalCase` para interfaces.
+- Utilizar `camelCase` para variables locales y parámetros.
+- Utilizar `_camelCase` para campos privados cuando corresponda.
+- Incorporar el sufijo `Async` en los métodos asíncronos.
+- Utilizar nombres descriptivos para Controllers, Repositories, Services y entidades.
+- Emplear tipos anulables cuando el modelo permita la ausencia de un valor.
+- Mantener encapsuladas las propiedades y colecciones que representan el estado de las entidades del dominio.
+
+El siguiente ejemplo corresponde a una interfaz Repository del Bounded Context Building Management:
+
+```csharp
+public interface IBuildingRepository : IBaseRepository<Building>
+{
+    Task<Building?> FindByIdAndOrganizationIdAsync(
+        Guid buildingId,
+        Guid organizationId
+    );
+}
+```
+
+Este ejemplo evidencia el uso del prefijo `I` para interfaces, `PascalCase` para métodos, `camelCase` para parámetros y el sufijo `Async` para operaciones asíncronas.
+
+#### Organización del Backend mediante Domain-Driven Design
+
+La organización del Backend de ResQ considera los principios de Domain-Driven Design, separando las responsabilidades mediante Bounded Contexts y capas arquitectónicas.
+
+Entre los módulos identificados se encuentran Identity and Access Management, Building Management, Device Management, Alert Management e Incident Management.
+
+Dentro de los módulos se utilizan las siguientes capas:
+
+- **Domain:** Contiene entidades, Aggregates, Value Objects, interfaces Repository y reglas de negocio.
+- **Application:** Coordina los casos de uso mediante Command Services, Query Services y otros servicios de aplicación.
+- **Interfaces:** Expone las capacidades del sistema mediante Controllers, recursos REST y transformaciones de datos.
+- **Infrastructure:** Contiene las implementaciones relacionadas con persistencia, acceso a datos y servicios externos.
+
+Esta separación facilita el mantenimiento de los componentes y permite que las reglas de negocio se mantengan independientes de los detalles específicos de infraestructura.
+
+#### Convenciones para RESTful API
+
+Para los endpoints de ResQ se aplican convenciones relacionadas con el estilo arquitectónico REST, utilizando nombres de recursos en inglés y rutas que permitan identificar claramente las operaciones disponibles.
+
+Las principales convenciones consideradas son:
+
+- Utilizar sustantivos para representar recursos.
+- Preferir nombres de recursos en plural.
+- Utilizar minúsculas y `kebab-case` para los segmentos de las rutas.
+- Incorporar versionamiento mediante el prefijo `/api/v1/`.
+- Utilizar los métodos HTTP de acuerdo con la operación realizada.
+- Emplear códigos de estado HTTP apropiados para representar los resultados.
+- Documentar las operaciones mediante Swagger/OpenAPI.
+
+Ejemplos de rutas utilizadas en el Backend:
+
+```text
+GET    /api/v1/buildings
+POST   /api/v1/buildings
+```
+
+Asimismo, los Controllers utilizan atributos de ASP.NET Core como `ApiController`, `Route`, `Authorize` y `HttpPost`, junto con anotaciones de Swagger para documentar las operaciones disponibles.
+
+#### Herramientas de formato y calidad del código
+
+Para mantener consistencia en los proyectos Angular, ResQ utiliza archivos de configuración como `.editorconfig`, `.prettierrc` y `tsconfig.json`.
+
+La configuración de EditorConfig establece el uso de UTF-8, indentación mediante espacios, tamaño de indentación de dos espacios y eliminación de espacios innecesarios al final de las líneas.
+
+Por su parte, Prettier establece un ancho objetivo de 100 caracteres, preferencia por comillas simples y un parser específico para las plantillas HTML de Angular.
+
+La siguiente tabla resume las principales herramientas y configuraciones identificadas.
+
+| Herramienta | Aplicación en ResQ |
+|---|---|
+| EditorConfig | Define convenciones de indentación, codificación y espacios en los proyectos Angular. |
+| Prettier | Establece reglas de formato para TypeScript, HTML y otros archivos compatibles. |
+| TypeScript Compiler | Permite detectar determinados errores mediante opciones de compilación. |
+| Angular CLI | Proporciona herramientas para la estructura, compilación y mantenimiento de los proyectos Angular. |
+| .NET Compiler | Permite validar el código C# y aplicar las configuraciones establecidas en el proyecto. |
+| Swagger/OpenAPI | Facilita la documentación de los endpoints RESTful. |
+
+Estas herramientas contribuyen a mantener una base de código consistente. No obstante, la aplicación uniforme de las reglas requiere que los integrantes del equipo utilicen las configuraciones establecidas durante el desarrollo.
+
+#### Convenciones de pruebas
+
+Para la implementación de pruebas se consideran nombres descriptivos en inglés y una organización que permita relacionar las comprobaciones con las funcionalidades del sistema.
+
+En el Landing Page se utiliza Vitest junto con las herramientas de pruebas de Angular. Los archivos de prueba emplean la extensión `.spec.ts` y estructuras como `describe`, `it` y `expect`.
+
+En la Web Application se han identificado scripts personalizados de verificación mediante Node.js, mientras que el Backend dispone de scripts PowerShell para comprobar operaciones HTTP e interacciones entre componentes.
+
+Como parte de las convenciones de pruebas se consideran:
+
+- Utilizar nombres descriptivos para los casos de prueba.
+- Redactar las descripciones de las pruebas en inglés.
+- Mantener separados los archivos de pruebas y las responsabilidades del código evaluado.
+- Verificar los resultados esperados mediante aserciones.
+- Considerar escenarios positivos y negativos.
+- Relacionar las pruebas con las funcionalidades y criterios de aceptación correspondientes.
+
+Para futuras pruebas de aceptación basadas en Behavior-Driven Development se considera adoptar Gherkin, utilizando archivos `.feature` y las palabras clave `Feature`, `Scenario`, `Given`, `When` y `Then`. Esta convención todavía no se encuentra implementada en los repositorios examinados.
+
+#### Documentación y mantenimiento
+
+La documentación técnica de ResQ utiliza nombres descriptivos y comentarios que permiten comprender las responsabilidades de los componentes.
+
+En el Backend se emplean comentarios XML mediante etiquetas como `summary`, `param` y `returns`, además de anotaciones Swagger/OpenAPI para documentar los servicios RESTful.
+
+En los proyectos Angular se utilizan archivos README y documentación técnica complementaria para describir configuraciones e integraciones.
+
+Como criterio de mantenimiento, se busca que los comentarios y la documentación técnica de código mantengan una nomenclatura consistente en inglés, mientras que las explicaciones académicas del informe se desarrollan en español, conservando los términos técnicos originales.
+
+Asimismo, se considera la revisión continua de las convenciones de formato, organización y seguridad para identificar oportunidades de mejora durante los siguientes Sprints.
+
+En conjunto, estas convenciones contribuyen a mantener una estructura coherente entre los componentes de ResQ, facilitan la colaboración de los integrantes del equipo y proporcionan una base para la evolución y mantenimiento de la solución IoT.
 
 ## 6.2. Landing Page, Services & Applications Implementation
 
@@ -10482,6 +10690,136 @@ La planificación de Sprint 1 relaciona el Product Backlog con un incremento con
 <p align="justify">
 El Sprint Goal expresa un único resultado de valor: disponer de un MVP demostrable que conecte comunicación, operación digital, servicios base y validación física local. La Landing Page comunica el problema y la propuesta de ResQ; la Web Application representa los flujos iniciales de supervisión y gestión; el backend establece servicios para los recursos que ya cuentan con implementación comprobable; y el nodo IoT valida el recorrido local desde la lectura del MQ-2 hasta la OLED, los LEDs y el buzzer. Aunque el Product Backlog contiene Story Points, no existe en el README ni en los repositorios una asignación formal de historias a Sprint 1 que permita sumar puntos o calcular Velocity sin especular.
 </p>
+
+#### 6.2.1.3. Sprint Backlog 1
+
+El Sprint Backlog 1 de ResQ organiza las User Stories, Technical Stories y Work-items relacionados con el desarrollo de la primera versión del MVP. El Sprint comprende el período del 29 de septiembre al 8 de octubre de 2026 y tiene como objetivo proporcionar una primera experiencia funcional mediante el Landing Page, la Frontend Web Application, los Backend Web Services y el prototipo IoT orientado a la detección local de gas y humo.
+
+La organización de las actividades toma como referencia el Sprint Goal establecido en Sprint Planning 1 y las historias identificadas en el Product Backlog. Estas se descomponen en tareas de desarrollo, integración, configuración, documentación y validación, considerando las responsabilidades de los integrantes del equipo y las necesidades técnicas de cada componente.
+
+Para gestionar el avance del Sprint se utiliza Trello, mediante las listas Product Backlog, Sprint Backlog, In Progress, Review y Done. Esta organización permite visualizar las historias seleccionadas, las actividades en desarrollo, las funcionalidades que requieren revisión y aquellas que han completado su proceso de implementación y validación.
+
+**Sprint 1 - Trello Board:** [ResQ - Product Backlog](https://trello.com/b/BYxUsTcA/resq-product-backlog)
+
+**Figura X. Sprint Backlog 1 de ResQ en Trello**
+
+![Sprint Backlog 1](assets/images/chapter-06-product-implementation-validation-deployment/sprint-backlog-1.png)
+
+##### User Stories y Technical Stories del Sprint 1
+
+La siguiente tabla presenta las historias relacionadas con el desarrollo del MVP durante el Sprint 1. La distribución de estados corresponde a la clasificación propuesta para el cierre de las actividades de software y la continuidad de las actividades de integración del prototipo IoT.
+
+| Story ID | Story Title | Story Points | Status |
+|---|---|---:|---|
+| US34 | Comprender la propuesta de ResQ | 2 | Done |
+| US35 | Conocer los beneficios para administradores | 2 | Done |
+| US36 | Conocer los beneficios para empresas integradoras | 2 | Done |
+| US39 | Acceder a los productos digitales de ResQ | 2 | Done |
+| US01 | Consultar el estado general de una edificación | 5 | Done |
+| US21 | Registrar una edificación | 3 | Done |
+| US22 | Definir zonas de una edificación | 3 | Done |
+| US23 | Asociar un dispositivo con una zona | 5 | Done |
+| TS06 | Proveer servicios mediante RESTful API | 8 | Done |
+| US10 | Recibir una alerta de riesgo | 5 | Done |
+| US27 | Acceder de forma autenticada | 3 | Done |
+| TS01 | Capturar mediciones desde los Embedded Systems | 5 | In Progress |
+| TS03 | Procesar reglas de detección localmente | 8 | In Progress |
+| **Total** | **13 historias** | **53** | **Distribución propuesta** |
+
+Las historias relacionadas con el Landing Page comprenden las funcionalidades necesarias para comunicar la propuesta de valor de ResQ y facilitar el acceso a sus productos digitales. Las historias de la Frontend Web Application y los Backend Web Services abarcan capacidades iniciales de monitoreo, administración de edificaciones, gestión de dispositivos, autenticación y alertas.
+
+Las Technical Stories TS01 y TS03 están relacionadas con la adquisición de mediciones del sensor MQ-2 y el procesamiento local de condiciones de riesgo. Estas actividades continúan en desarrollo y requieren completar la integración y validación física del prototipo IoT.
+
+Las 13 historias representan 53 Story Points asociados provisionalmente al alcance identificado. Esta cifra difiere de los 34 Story Points registrados en Sprint Planning 1, por lo que deberá conciliarse con la selección formal de historias realizada por el equipo. El total de Story Points asociados no equivale automáticamente a la Sprint Velocity.
+
+##### Work-items del Sprint 1
+
+Los Work-items permiten descomponer las historias en actividades específicas de implementación, integración, documentación y validación. Para su organización se establece una distribución de tareas entre los cinco integrantes del equipo, buscando un equilibrio en las estimaciones de esfuerzo y considerando sus áreas de participación.
+
+Las estimaciones se expresan en horas y representan el esfuerzo previsto para cada actividad. Los identificadores T01-T29 y las asignaciones detalladas corresponden a la planificación propuesta para su registro en Trello.
+
+**Sprint #:** Sprint 1
+
+**Landing Page**
+
+| Story ID | Story Title | Task ID | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---:|---|---|
+| US34 | Comprender la propuesta de ResQ | T01 | Implement landing page structure | Desarrollar la estructura principal y las secciones de presentación de ResQ mediante Angular. | 5 | Eduardo Chacaliaza | Done |
+| US34 | Comprender la propuesta de ResQ | T02 | Implement responsive visual design | Implementar estilos SCSS, identidad visual y adaptación responsive del Landing Page. | 4 | Eduardo Chacaliaza | Done |
+| US35 | Conocer los beneficios para administradores | T03 | Implement administrator benefits | Desarrollar componentes para presentar los beneficios de ResQ a administradores de edificaciones. | 4 | Eduardo Chacaliaza | Done |
+| US36 | Conocer los beneficios para empresas integradoras | T04 | Implement integrator benefits | Incorporar las secciones informativas y beneficios dirigidos a empresas integradoras. | 4 | Eduardo Chacaliaza | Done |
+| US39 | Acceder a los productos digitales de ResQ | T05 | Implement landing page navigation | Configurar navegación, enlaces y llamadas a la acción hacia los productos digitales. | 3 | Eduardo Chacaliaza | Done |
+
+**Frontend Web Application**
+
+| Story ID | Story Title | Task ID | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---:|---|---|
+| US01 | Consultar el estado general de una edificación | T06 | Implement monitoring dashboard | Desarrollar la interfaz principal para visualizar el estado general de las edificaciones. | 6 | Fabricio Quispe | Done |
+| US01 | Consultar el estado general de una edificación | T07 | Implement monitoring visualizations | Incorporar componentes visuales para representar información de monitoreo y estados de riesgo. | 5 | Fabricio Quispe | Done |
+| US10 | Recibir una alerta de riesgo | T08 | Implement alert center | Desarrollar la interfaz para consultar y visualizar alertas de riesgo. | 5 | Fabricio Quispe | Done |
+| US10 | Recibir una alerta de riesgo | T09 | Integrate alert data access | Implementar servicios y adaptadores para consultar información de alertas. | 5 | Fabricio Quispe | Done |
+| US27 | Acceder de forma autenticada | T10 | Implement authentication interface | Desarrollar formularios y componentes de interfaz para el acceso de usuarios. | 7 | Eduardo Chacaliaza | Done |
+| US27 | Acceder de forma autenticada | T11 | Implement session management | Incorporar mecanismos de gestión de sesión y protección de rutas. | 5 | Fabricio Quispe | Done |
+
+**Backend RESTful API**
+
+| Story ID | Story Title | Task ID | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---:|---|---|
+| US21 | Registrar una edificación | T12 | Implement building domain model | Implementar entidades, Aggregates y Value Objects del módulo Building Management. | 6 | Gonzalo Aliaga | Done |
+| US21 | Registrar una edificación | T13 | Implement building registration endpoints | Desarrollar servicios y endpoints RESTful para el registro de edificaciones. | 6 | Gonzalo Aliaga | Done |
+| US22 | Definir zonas de una edificación | T14 | Implement zone management | Implementar entidades y operaciones para administrar zonas dentro de edificaciones. | 6 | Pedro Nanfuñay | Done |
+| US23 | Asociar un dispositivo con una zona | T15 | Implement device management | Desarrollar servicios para administrar dispositivos y asociarlos con edificaciones o zonas. | 7 | Gonzalo Aliaga | Done |
+| TS06 | Proveer servicios mediante RESTful API | T16 | Configure backend architecture | Organizar el Backend mediante Bounded Contexts y capas Domain, Application, Interfaces e Infrastructure. | 7 | Gonzalo Aliaga | Done |
+| TS06 | Proveer servicios mediante RESTful API | T17 | Implement incident management services | Desarrollar los servicios RESTful relacionados con Incident Management. | 6 | Pedro Nanfuñay | Done |
+| TS06 | Proveer servicios mediante RESTful API | T18 | Configure backend deployment | Preparar la configuración de despliegue del Backend mediante Docker. | 5 | Pedro Nanfuñay | Done |
+| TS06 | Proveer servicios mediante RESTful API | T19 | Document RESTful endpoints | Configurar Swagger/OpenAPI para documentar las operaciones disponibles de los servicios. | 5 | Pedro Nanfuñay | Done |
+| TS06 | Proveer servicios mediante RESTful API | T27 | Validate backend API operations | Ejecutar comprobaciones de integración sobre las operaciones RESTful de los principales módulos del Backend. | 5 | Pedro Nanfuñay | Done |
+
+**IoT Prototype**
+
+Las actividades del prototipo IoT están relacionadas con las Technical Stories TS01 y TS03, las cuales contemplan la adquisición de mediciones desde los Embedded Systems y el procesamiento local de condiciones de riesgo.
+
+El desarrollo del prototipo considera la participación colaborativa de los cinco integrantes del equipo. Iván Fernando Sánchez asume la responsabilidad principal de la integración del dispositivo, mientras que los demás integrantes colaboran en las actividades de configuración, procesamiento, integración y validación.
+
+Las actividades permanecen en In Progress hasta completar y verificar la implementación física del prototipo.
+
+| Story ID | Story Title | Task ID | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---:|---|---|
+| TS01 | Capturar mediciones desde los Embedded Systems | T20 | Configure IoT prototype | Preparar el entorno de desarrollo y configurar los componentes del prototipo IoT. | 3 | Iván Fernando Sánchez / Eduardo Chacaliaza | In Progress |
+| TS01 | Capturar mediciones desde los Embedded Systems | T21 | Integrate MQ-2 sensor | Configurar la adquisición de mediciones del sensor MQ-2 mediante ESP32. | 3 | Iván Fernando Sánchez | In Progress |
+| TS01 | Capturar mediciones desde los Embedded Systems | T22 | Validate sensor measurements | Comprobar la adquisición y consistencia de las mediciones obtenidas desde el sensor. | 3 | Iván Fernando Sánchez / Fabricio Quispe | In Progress |
+| TS03 | Procesar reglas de detección localmente | T23 | Implement local risk detection | Desarrollar la lógica de evaluación de mediciones y detección local de condiciones de riesgo. | 3 | Iván Fernando Sánchez / Gonzalo Aliaga | In Progress |
+| TS03 | Procesar reglas de detección localmente | T24 | Integrate OLED display | Implementar la visualización de mediciones y estados del sistema mediante una pantalla OLED. | 3 | Iván Fernando Sánchez | In Progress |
+| TS03 | Procesar reglas de detección localmente | T25 | Integrate LED and buzzer alerts | Implementar la señalización visual y sonora de condiciones de riesgo mediante LEDs y buzzer. | 3 | Iván Fernando Sánchez / Pedro Nanfuñay | In Progress |
+| TS03 | Procesar reglas de detección localmente | T26 | Validate local alert response | Diseñar y ejecutar pruebas para comprobar el procesamiento local y la activación de alertas. | 2 | Iván Fernando Sánchez | In Progress |
+
+**Actividades complementarias de diseño y documentación**
+
+Adicionalmente, el Sprint considera actividades de diseño y documentación que brindan soporte a la implementación de los diferentes componentes de ResQ. Estas tareas se registran como actividades transversales, sin atribuirlas a una User Story específica.
+
+| Story ID | Story Title | Task ID | Task Title | Task Description | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---:|---|---|
+| Sprint 1 | UX/UI Design | T28 | Develop Figma designs | Elaborar y mejorar los diseños de interfaces y prototipos de ResQ mediante Figma, manteniendo coherencia con las funcionalidades propuestas. | 3 | Iván Fernando Sánchez | Done |
+| Sprint 1 | Technical Documentation | T29 | Prepare project documentation | Elaborar y actualizar documentación técnica y artefactos del proyecto relacionados con las funcionalidades del Sprint. | 3 | Iván Fernando Sánchez | Done |
+
+##### Resumen de distribución de actividades
+
+La distribución de Work-items considera las responsabilidades técnicas de los cinco integrantes del equipo y busca mantener un equilibrio en las estimaciones de esfuerzo.
+
+| Team Member | Main Responsibility | Assigned Tasks | Estimated Hours |
+|---|---|---:|---:|
+| Chacaliaza Minaya, Eduardo Fabian | Landing Page, Frontend Web Application e IoT | 6 | 27 |
+| Quispe Barzola, Fabricio Fabian | Frontend Web Application e IoT | 5 | 26 |
+| Aliaga Urbina, Wilder Gonzalo | Backend, Web Services e IoT | 4 | 26 |
+| Nanfuñay Liza, Pedro Jesús | Backend, pruebas, despliegue e IoT | 5 | 27 |
+| Sánchez Guevara, Iván Fernando | IoT Prototype, UX/UI Design y documentación | 9 | 26 |
+| **Total** | **Sprint 1** | **29** | **132** |
+
+La participación de Eduardo Chacaliaza comprende el desarrollo del Landing Page y la Frontend Web Application, mientras que Fabricio Quispe contribuye a las funcionalidades de monitoreo, alertas y gestión de sesiones. Wilder Gonzalo Aliaga y Pedro Nanfuñay participan en los servicios Backend, la administración de recursos, las pruebas y el despliegue. Por su parte, Iván Fernando Sánchez participa en la elaboración de diseños mediante Figma, la documentación del proyecto y las actividades de implementación del prototipo IoT.
+
+Adicionalmente, los cinco integrantes colaboran en las actividades relacionadas con el dispositivo IoT, incluyendo su configuración, adquisición de mediciones, procesamiento local, señalización y validación. Esta organización busca promover la participación conjunta, el intercambio de conocimientos y la distribución de responsabilidades para alcanzar el Sprint Goal establecido.
+
+Finalmente, la organización del Sprint Backlog mediante Trello y su relación con las evidencias disponibles en GitHub permiten realizar el seguimiento de las actividades asociadas al Sprint 1. Las funcionalidades de software clasificadas como Done deberán contar con la validación correspondiente de sus Acceptance Criteria, mientras que las actividades del prototipo IoT continúan en desarrollo hasta completar su integración y comprobación física.
 
 #### 6.2.1.4. Development Evidence for Sprint Review
 
@@ -10527,8 +10865,174 @@ Los commits comprendidos dentro del Sprint evidencian implementaciones para Buil
 </p>
 
 
+### 6.2.1.6. Execution Evidence for Sprint Review
 
-##### 6.2.1.7. Services Documentation Evidence for Sprint Review.
+Durante el Sprint 1 de ResQ se desarrollaron y desplegaron las primeras versiones de los productos digitales que conforman el MVP de la solución. Las actividades de implementación estuvieron orientadas a proporcionar una experiencia inicial de interacción mediante el Landing Page, la Frontend Web Application y los Backend Web Services, así como avanzar en el diseño e integración del prototipo IoT para la detección de gas y humo.
+
+En esta sección se presentan las evidencias de ejecución correspondientes a los componentes desarrollados durante el Sprint, considerando las principales interfaces, funcionalidades y mecanismos de interacción disponibles. Estas evidencias permiten visualizar los resultados obtenidos y contrastarlos con el Sprint Goal establecido durante la planificación.
+
+#### Landing Page
+
+Durante el Sprint 1 se implementó la primera versión del Landing Page de ResQ utilizando Angular, TypeScript, HTML y SCSS. Este producto digital tiene como propósito comunicar la propuesta de valor de la solución y presentar sus principales beneficios a los segmentos objetivo.
+
+La implementación comprende una estructura de navegación que permite acceder a las distintas secciones informativas del sitio, conocer las características de ResQ y utilizar los enlaces disponibles hacia sus productos digitales.
+
+Entre las principales características desarrolladas se encuentran:
+
+- Presentación de la propuesta de valor de ResQ.
+- Secciones informativas sobre las funcionalidades y beneficios de la solución.
+- Contenido dirigido a administradores de edificaciones y empresas integradoras.
+- Navegación entre las diferentes secciones del Landing Page.
+- Diseño responsive para su visualización en diferentes dispositivos.
+- Elementos visuales interactivos para presentar las características de la solución.
+
+La implementación también considera una experiencia visual consistente con la identidad de ResQ, utilizando componentes reutilizables y estilos organizados mediante SCSS.
+
+**Landing Page desplegado:** [ResQ - Landing Page](https://upc-1asi0572-202620-16518-resq.github.io/resq-landing-page/)
+
+**Figura X. Vista principal del Landing Page de ResQ**
+
+![Landing Page - Main View](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/landing-main.png)
+
+**Figura X. Sección de beneficios del Landing Page**
+
+![Landing Page - Benefits](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/landing-benefits.png)
+
+Las vistas del Landing Page evidencian la implementación de una experiencia orientada a comunicar la propuesta del producto y facilitar que los visitantes conozcan las funcionalidades ofrecidas por ResQ.
+
+#### Frontend Web Application
+
+La primera versión de la Frontend Web Application fue desarrollada utilizando Angular, TypeScript, Angular Material y SCSS. Su implementación permite representar los principales procesos relacionados con el monitoreo de edificaciones, la administración de dispositivos, la visualización de condiciones de riesgo y la gestión de alertas.
+
+Durante el Sprint 1 se desarrollaron interfaces y componentes correspondientes a las funcionalidades principales del MVP, organizados mediante una arquitectura basada en features.
+
+Entre los módulos y funcionalidades implementados se encuentran:
+
+- **Authentication:** Interfaces para el inicio de sesión y mecanismos de gestión de sesión.
+- **Dashboard:** Visualización general de información y estados asociados al monitoreo de edificaciones.
+- **Building Management:** Interfaces relacionadas con la administración de edificaciones y sus zonas.
+- **Device Management:** Vistas para consultar y administrar dispositivos asociados a la solución.
+- **Monitoring:** Componentes destinados a representar información de supervisión y mediciones.
+- **Alert Management:** Interfaz para visualizar alertas, consultar información contextual y revisar eventos de riesgo.
+
+La aplicación utiliza componentes reutilizables y mecanismos de navegación que permiten recorrer las funcionalidades disponibles. Asimismo, incorpora abstracciones de acceso a datos mediante Facades y Gateways, contemplando adaptadores HTTP y adaptadores basados en datos simulados.
+
+Por ello, las evidencias de visualización representan las capacidades implementadas en la interfaz, sin asumir que todas las funcionalidades se encuentran integradas completamente con dispositivos físicos o servicios externos.
+
+**Frontend Web Application desplegada:** [ResQ - Web Application](https://resq-frontend.ffaaliceht2003.workers.dev/login)
+
+**Figura X. Vista de inicio de sesión de ResQ**
+
+![Frontend - Login](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/frontend-login.png)
+
+La interfaz de autenticación permite presentar el punto de acceso a las funcionalidades de la aplicación y forma parte de las capacidades relacionadas con Identity and Access Management.
+
+**Figura X. Dashboard principal de monitoreo**
+
+![Frontend - Dashboard](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/frontend-dashboard.png)
+
+El Dashboard permite visualizar información general relacionada con las edificaciones y sus condiciones de supervisión, proporcionando una vista centralizada de los datos presentados por el sistema.
+
+**Figura X. Administración de edificaciones**
+
+![Frontend - Buildings](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/frontend-buildings.png)
+
+Las interfaces de Building Management permiten representar las funcionalidades relacionadas con la consulta y administración de edificaciones, así como la organización de sus zonas.
+
+**Figura X. Administración de dispositivos**
+
+![Frontend - Devices](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/frontend-devices.png)
+
+La sección de Device Management proporciona una interfaz para consultar y administrar los dispositivos considerados dentro de la solución, incluyendo su relación con las edificaciones y zonas correspondientes.
+
+**Figura X. Centro de alertas de ResQ**
+
+![Frontend - Alerts](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/frontend-alerts.png)
+
+El centro de alertas permite visualizar información contextual sobre eventos y condiciones de riesgo. Esta funcionalidad constituye una de las principales capacidades de ResQ para facilitar la supervisión y el seguimiento de situaciones que requieren atención.
+
+En conjunto, las interfaces desarrolladas permiten demostrar los principales recorridos de navegación del MVP y proporcionan una base para continuar con la integración de servicios, el procesamiento de información IoT y la validación de las funcionalidades durante los siguientes Sprints.
+
+#### Backend Web Services
+
+Durante el Sprint 1 se implementaron servicios RESTful utilizando C#, ASP.NET Core y Entity Framework Core, considerando MySQL como tecnología de persistencia.
+
+El Backend se organiza mediante Bounded Contexts y capas arquitectónicas basadas en Domain-Driven Design, separando las responsabilidades de Domain, Application, Interfaces e Infrastructure.
+
+Entre los componentes con avances de implementación se encuentran:
+
+- **Identity and Access Management:** Servicios relacionados con autenticación, autorización y gestión de acceso.
+- **Building Management:** Operaciones para registrar, consultar y administrar edificaciones y zonas.
+- **Device Management:** Servicios relacionados con la administración y asociación de dispositivos.
+- **Incident Management:** Operaciones relacionadas con la gestión de incidentes.
+- **Alert Management:** Servicios para administrar y consultar información de alertas.
+
+Los servicios desarrollados utilizan endpoints RESTful y mecanismos de documentación mediante Swagger/OpenAPI, facilitando la consulta de las operaciones disponibles y sus contratos de interacción.
+
+**Backend Web Services:** [ResQ - Swagger UI](https://resq-api-79xy.onrender.com/swagger/index.html)
+
+**Figura X. Documentación de servicios RESTful mediante Swagger**
+
+![Backend - Swagger](assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq1.png)
+
+La documentación Swagger permite visualizar los endpoints expuestos por el Backend, sus métodos HTTP y las estructuras de solicitud y respuesta correspondientes.
+
+Esta evidencia complementa las interfaces de la Web Application al mostrar los servicios disponibles para soportar las principales funcionalidades del MVP.
+
+La disponibilidad de estos endpoints constituye un avance en la implementación de la arquitectura de ResQ. Sin embargo, la ejecución individual de los servicios no implica necesariamente que todos los flujos de integración entre Frontend, Backend y dispositivos IoT hayan sido completados.
+
+#### IoT Prototype
+
+Como parte del Sprint 1 de ResQ, se contempla el diseño y desarrollo de un prototipo IoT orientado a la detección local de condiciones de riesgo relacionadas con la presencia de gas y humo en edificaciones. Para ello, se propone utilizar un ESP32 como unidad principal de procesamiento, un sensor MQ-2 para la adquisición de mediciones y diferentes componentes de visualización y señalización.
+
+El prototipo considera los siguientes componentes:
+
+- **ESP32:** Microcontrolador encargado de recibir y procesar las mediciones del sensor, evaluar las condiciones de riesgo y controlar los dispositivos de salida.
+- **Sensor MQ-2:** Componente utilizado para detectar la presencia de determinados gases combustibles y humo mediante variaciones en su señal de salida.
+- **Pantalla OLED:** Dispositivo destinado a mostrar las mediciones del sensor y el estado de riesgo identificado.
+- **LEDs:** Indicadores visuales que permiten diferenciar condiciones normales de situaciones de alerta.
+- **Buzzer:** Actuador encargado de emitir una señal sonora cuando se identifica una condición de riesgo.
+
+Para representar la integración de estos componentes, se utiliza la herramienta Cirkit Designer, que permite elaborar el esquema electrónico del prototipo y visualizar las conexiones entre el ESP32, el sensor MQ-2 y los dispositivos de salida.
+
+**Figura X. Diseño del circuito electrónico del prototipo IoT de ResQ en Cirkit Designer**
+
+![Diseño del circuito IoT de ResQ](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/iot-circuit.png)
+
+La figura presenta el diseño propuesto del circuito electrónico, mostrando la disposición de los componentes y sus conexiones. Este esquema sirve como referencia para la implementación del prototipo y la posterior comprobación de su funcionamiento.
+
+El comportamiento esperado del sistema consiste en adquirir las mediciones del sensor MQ-2, procesarlas localmente mediante el ESP32 y determinar el estado de riesgo de acuerdo con los umbrales establecidos. En condiciones normales, el sistema deberá mostrar el estado correspondiente mediante la pantalla OLED y los indicadores visuales. Cuando se identifique una condición de riesgo, se deberá activar la señalización mediante los LEDs y el buzzer.
+
+Estas actividades se encuentran alineadas con las Technical Stories TS01 - Capturar mediciones desde los Embedded Systems y TS03 - Procesar reglas de detección localmente, contribuyendo al cumplimiento del Sprint Goal mediante el diseño de los componentes necesarios para la detección y señalización de condiciones de riesgo.
+
+El diseño elaborado en Cirkit Designer constituye una evidencia del avance del prototipo IoT durante el Sprint 1, al representar la integración propuesta entre el sensor MQ-2, el ESP32 y los dispositivos de visualización y alerta. Este entregable establece una base para las siguientes actividades de implementación, integración y validación del sistema, permitiendo continuar con el desarrollo progresivo de las capacidades de detección y respuesta de ResQ.
+
+#### Video de ejecución del Sprint 1
+
+Como complemento de las capturas presentadas, se contempla una demostración de ejecución del Sprint 1 que permita visualizar los principales recorridos de navegación y las funcionalidades implementadas en los productos digitales de ResQ.
+
+La demostración comprende los siguientes aspectos:
+
+1. Presentación y navegación del Landing Page.
+2. Acceso a la Frontend Web Application.
+3. Visualización del Dashboard de monitoreo.
+4. Consulta de las interfaces de administración de edificaciones y dispositivos.
+5. Visualización del centro de alertas.
+6. Revisión de los endpoints disponibles mediante Swagger/OpenAPI.
+7. Presentación del diseño y avance del prototipo IoT, diferenciando los componentes diseñados de aquellos cuya ejecución física ha sido verificada.
+
+**Figura X. Vista de presentación del video de ejecución del Sprint 1**
+
+![Video de ejecución del Sprint 1 de ResQ](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/sprint1-video.png)
+
+**Video de ejecución del Sprint 1:** [Execution Evidence - Sprint 1](URL_DEL_VIDEO)
+
+El video complementa las evidencias visuales presentadas en esta sección y permite revisar los resultados de implementación del Landing Page, la Frontend Web Application y los Backend Web Services, así como el avance del diseño del prototipo IoT.
+
+En conjunto, las evidencias del Sprint 1 muestran los avances realizados en los productos digitales de ResQ y en la definición de los componentes necesarios para la detección local de condiciones de riesgo. Asimismo, permiten identificar las actividades de integración y validación que continuarán desarrollándose para completar el MVP.
+
+
+#### 6.2.1.7. Services Documentation Evidence for Sprint Review.
 
 En esta sección se presentan los avances logrados en la documentación de los Web Services desarrollados durante el Sprint, evidenciando la correcta implementación y estandarización de los endpoints mediante OpenAPI (Swagger). Se detallan las acciones disponibles (GET, POST, PUT), sus parámetros, ejemplos de respuesta y la descripción de su funcionamiento, garantizando la trazabilidad, comprensión y correcta integración entre los distintos componentes del sistema. Todos los endpoints requieren un token JWT en el header `Authorization: Bearer <token>`, salvo `sign-in` y `sign-up`, que son públicos.
 
@@ -10592,7 +11096,7 @@ Backend repository: [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-back
   <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint1/resq4.png" alt="Swagger ResQ API - evidencia 4" width="70%">
 </p>
 
-##### 6.2.1.8. Software Deployment Evidence for Sprint Review.
+#### 6.2.1.8. Software Deployment Evidence for Sprint Review.
 
 **Landing Page**
 
@@ -10622,10 +11126,91 @@ Como parte de la validación del despliegue, se verificó el acceso a la documen
 
 https://resq-api-79xy.onrender.com/swagger/index.html
 
+#### 6.2.1.9. Team Collaboration Insights during Sprint
 
+<div align="justify">
 
+Durante el Sprint 1, el equipo desarrolló las actividades de implementación de manera colaborativa mediante GitHub, utilizando repositorios independientes para gestionar el desarrollo de los productos correspondientes al Sprint. La colaboración se realizó sobre el Landing Page, la aplicación Frontend y los Web Services, de acuerdo con las actividades de implementación desarrolladas por el equipo.
 
-# Conclusiones
+En el repositorio correspondiente al Landing Page, la información registrada en GitHub permite observar la participación de los integrantes del equipo mediante el analítico de contribuciones y el historial de commits realizados durante el desarrollo.
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/01-landing-page-contributors.png" alt="Contributors del Landing Page" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Analítica de contribuciones de los integrantes en el repositorio del Landing Page durante el Sprint 1.</em>
+</p>
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/02-landing-page-commits.png" alt="Commits del Landing Page" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Historial de commits realizados en el repositorio del Landing Page durante el Sprint 1.</em>
+</p>
+
+En el repositorio de la aplicación Frontend también se registran las contribuciones realizadas por los integrantes y la evolución de los cambios incorporados durante el Sprint.
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/03-frontend-contributors.png" alt="Contributors del Frontend" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Analítica de contribuciones de los integrantes en el repositorio de la aplicación Frontend durante el Sprint 1.</em>
+</p>
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/04-frontend-commits.png" alt="Commits del Frontend" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Historial de commits realizados en el repositorio de la aplicación Frontend durante el Sprint 1.</em>
+</p>
+
+De manera similar, el repositorio correspondiente a los Web Services registra la actividad de los integrantes mediante sus contribuciones y commits, permitiendo realizar seguimiento al desarrollo realizado durante el Sprint.
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/05-backend-contributors.png" alt="Contributors del Backend" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Analítica de contribuciones de los integrantes en el repositorio de Web Services durante el Sprint 1.</em>
+</p>
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/06-backend-commits.png" alt="Commits del Backend" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Historial de commits realizados en el repositorio de Web Services durante el Sprint 1.</em>
+</p>
+
+Adicionalmente, el repositorio utilizado para la elaboración del informe mantiene su propio historial de colaboración, permitiendo observar la participación de los integrantes en la construcción y actualización de la documentación del proyecto.
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/07-report-contributors.png" alt="Contributors del Report" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Analítica de contribuciones de los integrantes en el repositorio del Report.</em>
+</p>
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/08-report-commits.png" alt="Commits del Report" width="850">
+</p>
+
+<p align="center">
+  <em>Figura. Historial de commits realizados en el repositorio del Report.</em>
+</p>
+
+A partir de los analíticos de colaboración y del historial de commits, se evidencia la participación de los integrantes del equipo en las actividades desarrolladas durante el Sprint 1. Los registros de GitHub permiten realizar seguimiento a las contribuciones realizadas sobre los diferentes repositorios y observar la evolución incremental de los cambios incorporados durante el desarrollo.
+
+El uso de repositorios independientes para el Landing Page, la aplicación Frontend y los Web Services permitió organizar el trabajo de implementación de cada producto y mantener trazabilidad sobre las modificaciones realizadas. Asimismo, el repositorio del Report permitió gestionar de manera independiente la elaboración y actualización de la documentación del proyecto.
+
+En conjunto, estas evidencias permiten sustentar el trabajo colaborativo realizado por el equipo durante el Sprint 1 y la participación de sus integrantes en las actividades de implementación correspondientes.
+
+</div>
 
 ## Conclusiones y recomendaciones
 
