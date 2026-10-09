@@ -64,7 +64,7 @@ INGENIERÍA DE SOFTWARE
 | 1.2 | 15/09/2026 | Chacaliaza Minaya, Eduardo Fabian | Elaboración de las secciones 1.3 Segmentos objetivo, 2.1 Competidores, 2.1.1 Análisis competitivo, 2.1.2 Estrategias y tácticas frente a competidores, 3.3 Product Backlog, 4.1 Strategic-Level Domain-Driven Design, 4.1.3 Software Architecture, 4.1.3.1 Software Architecture System Landscape Diagram, 4.2 Tactical-Level Domain-Driven Design y 4.2.3 Bounded Context: Alert & Response Management, incluyendo sus capas y diagramas técnicos. |
 | 1.3 | 16/09/2026 | Quispe Barzola, Fabricio Fabian | Elaboración de las secciones 2.2 Entrevistas, 2.2.1 Diseño de entrevistas, 2.2.2 Registro de entrevistas, 2.2.3 Análisis de entrevistas, 3.1 User Stories, 3.2 Impact Mapping, 4.2.1 Bounded Context: Identity and Access Management (IAM) y 4.2.2 Bounded Context: Risk Detection, incluyendo Domain, Interface, Application e Infrastructure Layers, Component Level Diagrams, Domain Layer Class Diagrams y Database Design Diagrams. |
 | 1.4 | 17/09/2026 | Aliaga Urbina, Wilder Gonzalo | Elaboración de las secciones 2.3.1 User Personas, 2.3.2 User Task Matrix, 2.3.3 User Journey Mapping, 2.3.4 Empathy Mapping, 4.2.4 Bounded Context: Building Management y 4.2.5 Bounded Context: Device Management, incluyendo sus capas y diagramas técnicos correspondientes. |
-| 1.5 | 17/09/2026 | Guerrero Vasquez, Jhon Danny | Elaboración de las secciones 2.3 Needfinding, 2.4 Big Picture EventStorming, 2.5 Ubiquitous Language, 4.2.7 Bounded Context: User y 4.2.8 Bounded Context: Incident, incluyendo sus capas, componentes, diagramas de clases y diseño de persistencia correspondientes. |
+| 1.5 | 17/09/2026 | Quispe Barzola, Fabricio Fabian | Elaboración de las secciones 2.3 Needfinding, 2.4 Big Picture EventStorming, 2.5 Ubiquitous Language, 4.2.7 Bounded Context: User y 4.2.8 Bounded Context: Incident, incluyendo sus capas, componentes, diagramas de clases y diseño de persistencia correspondientes. |
 | 1.6 | 09/10/2026 | Sánchez Guevara, Iván Fernando | Elaboración de las secciones 5.1. Style Guidelines, 5.1.1. General Style Guidelines, 5.1.2. Web, Mobile and IoT Style Guidelines, 5.2.4. Searching Systems, 5.2.5. Navigation Systems, 5.3. Landing Page UI Design, 5.3.1. Landing Page Wireframe, 5.3.2. Landing Page Mock-up, 5.4. Applications UX/UI Design, 5.4.1. Applications Wireframes, 5.4.2. Applications Wireflow Diagrams, 5.4.3. Applications Mock-ups, 5.4.4. Applications User Flow Diagrams, 5.5. Applications Prototyping. |
 | 1.7 | 09/10/2026 | Nanfuñay Liza, Pedro Jesús | Elaboración de las secciones 4.2.10. Bounded Context: Subscriptions, 5.2.1. Organization Systems, 6.1.4. Software Deployment Configuration, 6.2.1.2. Aspect Leaders and Collaborators, 6.2.1.5. Testing Suite Evidence for Sprint Review. |
 | 1.8 | 09/10/2026 | Chacaliaza Minaya, Eduardo Fabian | Elaboración de las secciones 6.1.3. Source Code Style Guide & Conventions, 6.2.1.3. Sprint Backlog 1, 6.2.1.6. Execution Evidence for Sprint Review, 6.2.1.9. Team Collaboration Insights during Sprint. |
@@ -172,7 +172,7 @@ GitHub permitió mantener repositorios independientes para el Project Report, la
 Para evidenciar la participación de los integrantes durante TB1, se presentan los analíticos de contribuciones registrados en GitHub para el repositorio del Project Report. Estos permiten identificar la actividad desarrollada y relacionarla con las responsabilidades asumidas durante la elaboración y actualización del informe. La captura correspondiente queda pendiente de incorporación en la ruta preparada a continuación.
 </p>
 
-![TB1 Project Report Contributions](assets/project-report-collaboration/tb1-project-report-contributions.png)
+![TB1 Project Report Contributions](assets/images/general/collaboration/tb1-project-report-contributions.png)
 
 <p align="center">
   <strong>Figura 5. Analíticas de contribuciones de los integrantes en el Project Report durante TB1.</strong>
@@ -182,7 +182,7 @@ Para evidenciar la participación de los integrantes durante TB1, se presentan l
 El historial de commits permite observar la evolución del Project Report durante TB1 y proporciona evidencia de las modificaciones realizadas sobre el documento. Los registros permiten contrastar los aportes de los integrantes con las actividades documentadas en el Registro de Versiones del Informe. La captura correspondiente queda pendiente de incorporación en la ruta preparada a continuación.
 </p>
 
-![TB1 Project Report Commits](assets/project-report-collaboration/tb1-project-report-commits.png)
+![TB1 Project Report Commits](assets/images/general/collaboration/tb1-project-report-commits.png)
 
 <p align="center">
   <strong>Figura 6. Historial de commits del repositorio del Project Report correspondiente a TB1.</strong>
@@ -190,11 +190,7 @@ El historial de commits permite observar la evolución del Project Report durant
 
 ### Organización de actividades de TB1
 
-<p align="justify">
-La siguiente referencia queda preparada para incorporar una captura real del tablero Jira o Trello utilizado durante TB1. Mientras dicha evidencia no sea añadida y verificada, este espacio se mantiene como pendiente y no se considera demostración de la distribución de actividades.
-</p>
-
-![TB1 Project Report Task Management](assets/project-report-collaboration/tb1-project-report-tasks.png)
+![TB1 Project Report Task Management](assets/images/general/collaboration/tb1-project-report-tasks.png)
 
 <p align="center">
   <strong>Figura 7. Organización y distribución de actividades del Project Report durante TB1.</strong>
@@ -12088,83 +12084,252 @@ La implementación futura puede utilizar el Router de Angular para actualizar <c
 ## 5.6. IoT Device Design
 
 <p align="justify">
-ResQ plantea una solución IoT escalable para monitorear condiciones de riesgo en edificaciones y coordinar respuestas aun cuando la conectividad con Cloud se encuentre limitada. Para el alcance de TB1 y Sprint 1, el equipo concentra esta propuesta en un MVP físico orientado a validar la integración base entre sensado, procesamiento local, visualización y alertamiento. Este alcance inicial no representa la totalidad de la solución futura: constituye una primera versión funcional y verificable sobre la cual podrán incorporarse progresivamente nuevos nodos, reglas e integraciones respaldadas por la arquitectura del Project Report.
+
+ResQ propone una solución IoT orientada al monitoreo de condiciones de riesgo y la respuesta coordinada ante emergencias en edificaciones mediante la integración de dispositivos físicos, procesamiento local y servicios distribuidos. Como parte de la propuesta de diseño, el equipo desarrolló en Cirkit Designer un circuito electrónico basado en ESP32 que contempla sensores ambientales y de movimiento, elementos de visualización y señalización, y actuadores destinados a representar posibles mecanismos físicos de respuesta ante situaciones de riesgo.
+
 </p>
 
 <p align="justify">
-La Information Architecture del dispositivo prioriza una secuencia breve: captar la condición, procesarla, comunicar localmente el estado y activar una advertencia cuando corresponda. Esta jerarquía reduce la carga cognitiva durante una posible emergencia y mantiene coherencia con las Style Guidelines para IoT Device Physical Interfaces: información compacta en la OLED, código cromático rojo/verde y señal audible complementaria. El color no funciona como único canal, pues la pantalla y el buzzer refuerzan la interpretación del estado.
+
+Para el alcance de TB1 y Sprint 1, el diseño parte de un MVP básico de detección de gas o humo mediante un sensor MQ-2, una pantalla OLED, indicadores LED y un buzzer. Adicionalmente, el esquema elaborado en Cirkit Designer contempla la integración de un sensor DHT22 para medir temperatura y humedad, un sensor PIR para detectar movimiento, un servomotor y un motor de corriente continua. Estos elementos amplían las posibilidades de sensado y actuación del dispositivo, pero su representación en el circuito no implica que todas sus funcionalidades hayan sido implementadas o probadas físicamente durante el Sprint.
+
+</p>
+
+<p align="justify">
+
+Las decisiones de diseño se relacionan con la Information Architecture y las Style Guidelines para IoT Device Physical Interfaces de ResQ. La interacción propuesta se organiza mediante una secuencia de adquisición de mediciones, procesamiento de información, presentación del estado y activación de respuestas permitidas. La pantalla OLED se plantea como el medio principal para comunicar información breve y contextualizada; los LEDs rojo y verde permiten diferenciar visualmente estados de alerta y normalidad; y el buzzer complementa la comunicación mediante una señal audible. Esta combinación evita depender exclusivamente del color para identificar situaciones que requieren atención.
+
+</p>
+
+<p align="justify">
+
+Asimismo, el diseño considera la separación funcional entre dispositivos de entrada, procesamiento y salida. Esta organización permite relacionar las capacidades del nodo IoT con los Bounded Contexts Monitoring, Risk Detection, Alert & Response Management y Device Management definidos en la arquitectura de ResQ, manteniendo una distinción entre el comportamiento local propuesto y las integraciones futuras con Edge Computing y Cloud Computing.
+
 </p>
 
 ### MVP Device Prototype
 
 <p align="justify">
-El MVP físico actual se centra en la detección de gas o humo mediante un sensor MQ-2, el procesamiento de la lectura en un ESP32 DevKit V1, la visualización local en una pantalla OLED SSD1306 y el alertamiento mediante un buzzer activo y dos LEDs. El montaje se realiza sobre protoboard, utiliza resistencias de 220 Ω para proteger los LEDs, jumpers para interconexión y un cable USB compatible con la placa para alimentación y programación.
+
+El dispositivo IoT de ResQ utiliza un ESP32 como unidad central de procesamiento, encargado de recibir señales de sensores y coordinar las salidas del circuito mediante un firmware que deberá implementar las reglas correspondientes. El diseño extendido registrado en Cirkit Designer incorpora tres fuentes de información: un módulo MQ-2 para detectar variaciones relacionadas con determinados gases combustibles y humo, un sensor DHT22 o AM2302 para adquirir mediciones de temperatura y humedad relativa, y un sensor PIR para detectar movimiento mediante cambios en la radiación infrarroja del entorno.
+
 </p>
 
-| Componente | Cantidad para 1 MVP | Especificación del MVP | Función dentro de ResQ |
+<p align="justify">
+
+Para la interacción con el usuario, el circuito incluye una pantalla OLED con comunicación I2C, un buzzer y dos LEDs de señalización. Adicionalmente, incorpora un servomotor y un motor DC de 3–6 V, que pueden utilizarse para representar acciones físicas en escenarios de respuesta. El diseño del accionamiento del motor contempla un MOSFET IRLZ44N, un diodo y resistencias, junto con una fuente externa nominal de 5 V. La compatibilidad eléctrica de estos componentes, su cableado y las protecciones necesarias deberán verificarse antes del montaje o la energización.
+
+</p>
+
+<p align="justify">
+
+La siguiente tabla presenta los componentes identificados en el circuito elaborado en Cirkit Designer, tomando como referencia la evidencia gráfica incorporada al Project Report durante el Sprint 1. Se diferencian sus funciones dentro de la propuesta de ResQ, sin asumir que la totalidad de los componentes haya sido adquirida, ensamblada o validada físicamente.
+
+</p>
+
+| Componente | Cantidad | Especificación identificada | Función dentro de ResQ |
 |---|---:|---|---|
-| ESP32 DevKit V1 | 1 | 30 pines | Ejecutar la lógica local, recibir la lectura del sensor y controlar la OLED, el buzzer y los LEDs |
-| Sensor MQ-2 | 1 | Módulo sensor de gas/humo | Proporcionar la señal de sensado utilizada para validar la detección básica del MVP |
-| Pantalla OLED | 1 | SSD1306, 0.96”, I2C, 128×64 | Mostrar localmente el estado del nodo y la información breve necesaria para interpretar la condición |
-| Protoboard | 1 | MB-102, aproximadamente 830 puntos | Soportar el montaje provisional sin soldadura y facilitar ajustes durante la validación |
-| Buzzer activo | 1 | 5 V | Emitir una advertencia audible cuando la lógica local determine una condición de alerta |
-| LED rojo | 1 | 5 mm | Representar visualmente una condición de alerta |
-| LED verde | 1 | 5 mm | Representar visualmente una condición normal u operativa |
-| Resistencias | 4 | 220 Ω, 1/4 W; dos para uso y dos de repuesto | Limitar la corriente de los LEDs y disponer de repuestos para el montaje |
-| Jumpers macho-macho | 1 pack | 20 cm, idealmente 20–40 unidades | Conectar los componentes y los rieles de la protoboard |
-| Jumpers macho-hembra | 1 pack | 20 cm, idealmente 20–40 unidades | Conectar módulos cuando su disposición física requiera terminales hembra |
-| Cable USB para ESP32 | 1 | USB-C o Micro-USB según la placa adquirida | Alimentar, programar y depurar el ESP32 durante el desarrollo del MVP |
+| ESP32 | 1 | Placa de desarrollo ESP32 DevKit basada en ESP32-WROOM-32 | Centralizar la adquisición de señales, ejecutar las reglas de procesamiento local y coordinar las salidas del dispositivo. |
+| Sensor MQ-2 | 1 | Módulo sensor de gases combustibles y humo | Proporcionar una señal relacionada con la presencia de determinados gases combustibles y humo para evaluar condiciones de riesgo. |
+| Sensor DHT22 | 1 | AM2302 / DHT22 | Capturar mediciones de temperatura ambiental y humedad relativa. |
+| Sensor PIR | 1 | Módulo infrarrojo pasivo de tres conexiones | Detectar variaciones de radiación infrarroja asociadas con movimiento en el área supervisada. |
+| Pantalla OLED | 1 | Módulo de cuatro conexiones con interfaz I2C | Mostrar información breve sobre el estado del dispositivo y las variables monitoreadas. |
+| Buzzer | 1 | Zumbador electrónico de dos terminales | Proporcionar una señal sonora para advertir una condición de alerta. |
+| LED rojo | 1 | Indicador luminoso | Representar visualmente una condición de alerta o riesgo. |
+| LED verde | 1 | Indicador luminoso | Representar visualmente un estado normal u operativo. |
+| Servomotor | 1 | Actuador con alimentación y señal de control | Representar movimientos controlados asociados con un mecanismo físico de respuesta. |
+| Motor DC | 1 | Motor de corriente continua de 3–6 V | Representar una acción motorizada dentro de un escenario de respuesta. |
+| MOSFET IRLZ44N | 1 | Transistor MOSFET de canal N | Formar parte de la etapa de conmutación prevista para el accionamiento de una carga motorizada. |
+| Diodo | 1 | Diodo de protección; modelo no confirmado | Formar parte de la protección eléctrica prevista para la etapa de accionamiento del motor. |
+| Resistencias | 6 | Resistencias rotuladas como 200 Ω en el esquema | Integrar los elementos resistivos del circuito para las conexiones de señalización, sensado y control propuestas. |
+| Fuente de alimentación | 1 | Fuente nominal de 5 V | Representar el suministro eléctrico externo previsto para los componentes que requieran alimentación compatible. |
+
+<p align="justify">
+
+El esquema corresponde a una representación electrónica de componentes y conexiones, por lo que no muestra necesariamente todos los materiales requeridos para el ensamblaje físico. Para las actividades de montaje y programación pueden emplearse una protoboard, cables jumper y un cable USB compatible con el ESP32, según la disposición definitiva del dispositivo. Estos materiales permiten organizar conexiones provisionales y facilitar modificaciones durante las pruebas, pero su inclusión física deberá comprobarse en el montaje real.
+
+</p>
+
+<p align="justify">
+
+La incorporación de varios sensores permite ampliar las fuentes de información disponibles para el monitoreo. No obstante, cada sensor presenta alcances y limitaciones que deben considerarse en la lógica de detección. El MQ-2 no identifica de manera inequívoca el tipo específico de gas presente; el DHT22 proporciona mediciones ambientales que requieren reglas y umbrales definidos; y el PIR detecta movimiento, pero no confirma por sí solo la identidad ni la permanencia de una persona. Por ello, las condiciones de riesgo deberán evaluarse mediante reglas explícitas y pruebas de calibración, evitando interpretar una lectura individual como confirmación automática de una emergencia.
+
+</p>
 
 #### Physical Design
 
 <p align="justify">
-La disposición física propuesta mantiene visibles la OLED y los LEDs, ubica el MQ-2 sin obstrucciones que limiten su exposición al ambiente y separa el área de señalización del microcontrolador. La protoboard organiza el cableado y evita contactos conductores expuestos fuera del área de montaje. La siguiente imagen es una ilustración técnica provisional generada para representar de forma visual el inventario real del MVP; deberá reemplazarse por una fotografía o mockup validado del montaje definitivo cuando el equipo lo complete.
+
+El diseño físico del dispositivo considera la organización de los componentes de acuerdo con sus funciones de sensado, procesamiento, visualización y actuación. El ESP32 constituye el elemento central del prototipo, mientras que la pantalla OLED, los LEDs y el buzzer se consideran elementos de interacción local. Los sensores deben ubicarse de manera que puedan captar adecuadamente las condiciones del entorno y reducir interferencias derivadas del propio montaje.
+
+</p>
+
+<p align="justify">
+
+Para la disposición física se prioriza la visibilidad de la pantalla OLED y de los indicadores luminosos, permitiendo reconocer rápidamente una condición normal o de alerta. El sensor MQ-2 debe contar con exposición adecuada al ambiente y separarse de elementos que puedan alterar sus lecturas. El DHT22 requiere una ubicación que permita medir temperatura y humedad sin interferencias térmicas innecesarias, mientras que el PIR debe orientarse considerando el área de detección prevista. Los componentes motorizados deben ubicarse de manera que sus movimientos no obstaculicen los sensores ni comprometan las conexiones eléctricas.
+
+</p>
+
+<p align="justify">
+
+Como referencia inicial del diseño físico, la Figura 250 presenta la disposición conceptual del núcleo básico del MVP, conformado por el ESP32, el sensor MQ-2, la pantalla OLED, el buzzer y los indicadores luminosos. Esta representación sirve para ilustrar la organización física de los elementos principales de sensado y alertamiento, mientras que el esquema electrónico ampliado de la Figura 251 incorpora los sensores y actuadores adicionales contemplados en Cirkit Designer.
+
 </p>
 
 ![ResQ IoT Device Physical Design](assets/images/chapter-05-solution-ui-ux-design/resq-iot-device-physical-design.png)
 
 <p align="center">
-  <strong>Figura 250. Diseño físico propuesto del dispositivo IoT ResQ para el MVP.</strong>
+
+  <strong>Figura 250. Diseño físico conceptual del núcleo inicial del dispositivo IoT ResQ.</strong>
+
 </p>
 
 <p align="justify">
-La representación incluye el ESP32, el MQ-2, la OLED, el buzzer, ambos LEDs, las resistencias, los jumpers, la protoboard y la alimentación USB. Su finalidad es comunicar la organización conceptual del MVP; no constituye evidencia de ensamblaje, calibración o prueba eléctrica.
+
+La Figura 250 representa una propuesta de distribución física para el nodo inicial y permite identificar la posición relativa de sus principales componentes. No constituye evidencia de ensamblaje, calibración ni prueba eléctrica. La disposición definitiva deberá incorporar los elementos adicionales del circuito ampliado, considerar los requisitos de alimentación y mantener protegidas las conexiones. Asimismo, deberá contemplar acceso adecuado a los componentes para realizar mantenimiento, ajustes y verificaciones durante la implementación.
+
 </p>
 
 #### Circuit Design
 
 <p align="justify">
-El circuito conceptual utiliza el ESP32 como controlador central, recibe la señal del MQ-2, comunica la OLED mediante I2C y controla el buzzer y los LEDs. Las resistencias de 220 Ω se colocan en serie con los LEDs. La alimentación inicial proviene del cable USB compatible con el ESP32. El equipo todavía debe verificar en el montaje real los GPIO, los niveles eléctricos, la distribución de tierra, el consumo del MQ-2 y cualquier etapa adicional de acondicionamiento o protección requerida por las hojas técnicas.
+
+El diseño del circuito electrónico de ResQ fue elaborado mediante Cirkit Designer, herramienta utilizada por el equipo para representar los componentes del prototipo y las conexiones propuestas entre ellos. Este esquema constituye una evidencia de diseño desarrollada durante Sprint 1 y registrada en la sección 6.2.1.6. Execution Evidence for Sprint Review del Project Report.
+
 </p>
 
 <p align="justify">
-La siguiente ilustración provisional adopta una presentación similar a una herramienta de diseño de circuitos y evita asignar números GPIO no validados. No reemplaza la captura o exportación real que deberá obtenerse de Cirkit Designer después de comprobar el circuito físico y el firmware.
+
+El esquema presenta al ESP32 como controlador central, conectado con el módulo MQ-2, el sensor DHT22, el sensor PIR, la pantalla OLED, los indicadores LED, el buzzer y los actuadores motorizados. También incluye una etapa de control eléctrico representada mediante un MOSFET IRLZ44N, un diodo y resistencias, así como una fuente de alimentación nominal de 5 V. La existencia de estas conexiones dentro del esquema permite analizar la integración propuesta, pero no demuestra por sí sola la compatibilidad de tensión, la correcta asignación de GPIO ni el funcionamiento del firmware.
+
 </p>
 
-![ResQ IoT Circuit Design](assets/images/chapter-05-solution-ui-ux-design/resq-iot-circuit-design.png)
+<p align="justify">
+
+Los principales grupos de conexiones y su propósito funcional se resumen en la siguiente tabla. Se describen a nivel de interfaz y función, ya que la imagen disponible no permite certificar de manera inequívoca todos los números GPIO y la continuidad eléctrica de cada conexión.
+
+</p>
+
+| Elemento | Interfaz o conexión propuesta | Propósito de la interacción |
+|---|---|---|
+| MQ-2 | Alimentación y señal de salida hacia el ESP32 | Adquirir información relacionada con determinados gases combustibles y humo. |
+| DHT22 | Alimentación, GND y línea de datos | Obtener las mediciones de temperatura y humedad mediante comunicación digital. |
+| PIR | Alimentación, GND y salida digital | Comunicar un evento de detección de movimiento al microcontrolador. |
+| OLED | Alimentación y líneas I2C SDA/SCL | Presentar mediciones, estados y mensajes breves generados por el sistema. |
+| LED rojo | Línea de control y elemento limitador de corriente | Señalizar una condición de alerta. |
+| LED verde | Línea de control y elemento limitador de corriente | Señalizar una condición normal. |
+| Buzzer | Conexión de control y retorno eléctrico | Emitir advertencias sonoras cuando corresponda. |
+| Servomotor | Alimentación, referencia de tierra y señal de control | Ejecutar un movimiento angular controlado. |
+| Motor DC | Alimentación y etapa de accionamiento mediante MOSFET | Representar un mecanismo motorizado de respuesta. |
+| Diodo | Etapa de accionamiento del motor | Integrar la protección eléctrica prevista para la carga inductiva, previa verificación de su polaridad y ubicación. |
+| Fuente de 5 V | Distribución de alimentación según requerimientos de los módulos | Suministrar energía a los componentes compatibles, considerando sus necesidades eléctricas. |
+
+<p align="justify">
+
+El circuito electrónico se presenta en la Figura 251. La representación corresponde al proyecto de Cirkit Designer utilizado por el equipo y permite observar la disposición de los sensores, el microcontrolador, los dispositivos de visualización y señalización, los actuadores y los elementos auxiliares de control.
+
+</p>
+
+![ResQ IoT Circuit Design](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint1/iot-circuit.png)
 
 <p align="center">
-  <strong>Figura 251. Diseño del circuito del dispositivo IoT ResQ para el MVP.</strong>
+
+  <strong>Figura 251. Diseño del circuito electrónico ampliado del dispositivo IoT ResQ en Cirkit Designer.</strong>
+
 </p>
 
 <p align="justify">
-<strong>Validación humana requerida:</strong> antes de reemplazar la Figura 83 por la exportación definitiva de Cirkit Designer, el equipo debe verificar y documentar los GPIO reales del ESP32, los niveles de tensión, la distribución de tierra, la alimentación del MQ-2, las conexiones I2C y las protecciones del circuito.
+
+El proyecto del circuito puede consultarse en el siguiente enlace: [ResQ - Circuit Design en Cirkit Designer](https://app.cirkitdesigner.com/project/3e0f76cd-08f5-4b6b-ac4b-5b528297da13).
+
+</p>
+
+<p align="justify">
+
+Como parte de la revisión del diseño electrónico, se identifican aspectos que deben verificarse antes de realizar el montaje físico. En primer lugar, corresponde comprobar la asignación exacta de GPIO del ESP32 y la correspondencia de las conexiones con los terminales reales de cada módulo. También deben revisarse los niveles de tensión, especialmente en las señales conectadas a entradas del ESP32, cuya lógica opera a 3.3 V, y en los módulos que puedan requerir una alimentación nominal de 5 V. La distribución de GND y la referencia eléctrica común entre los componentes también deben comprobarse.
+
+</p>
+
+<p align="justify">
+
+Asimismo, se debe verificar la capacidad de alimentación para el servomotor y el motor DC, considerando que las cargas motorizadas pueden requerir corrientes superiores a las admitidas por los GPIO del microcontrolador. La etapa de accionamiento mediante MOSFET deberá revisarse en cuanto a su conexión de compuerta, drenador y fuente, así como la orientación del diodo de protección y la compatibilidad con el motor utilizado. Estas comprobaciones son necesarias para evitar interpretar el esquema conceptual como un circuito listo para energizar sin una evaluación eléctrica previa.
+
+</p>
+
+<p align="justify">
+
+En la exportación de Cirkit Designer se observan seis resistencias rotuladas como 200 Ω. Sus valores, funciones y posiciones deberán contrastarse con las hojas técnicas y las necesidades de cada conexión antes del ensamblaje definitivo. De igual manera, deberán revisarse posibles extremos de cableado sin conexión y confirmar la continuidad de las rutas eléctricas correspondientes. No se consideran validados los niveles eléctricos, las conexiones GPIO ni las protecciones únicamente por aparecer representados gráficamente.
+
+</p>
+
+<p align="justify">
+
+La documentación de implementación correspondiente al Sprint 1 presenta el circuito como parte del avance del prototipo IoT, asociado con las Technical Stories TS01 - Capturar mediciones desde los Embedded Systems y TS03 - Procesar reglas de detección localmente. Para acreditar la ejecución completa de estas funcionalidades será necesario contar con firmware, mediciones reproducibles y pruebas que demuestren la adquisición de datos, el procesamiento de reglas y el comportamiento de los dispositivos de salida.
+
 </p>
 
 #### MVP Interaction Flow
 
 <p align="justify">
-En el MVP, el MQ-2 produce una señal que el ESP32 captura y procesa localmente. El resultado se presenta en la OLED y se traduce a una señal visual: verde para condición normal y roja para condición de alerta. Cuando la condición configurada lo requiere, el buzzer proporciona una advertencia audible. Este flujo permite validar que sensado, procesamiento y alertamiento local pueden coordinarse en un único nodo antes de incorporar la integración distribuida prevista por ResQ.
+
+El flujo de interacción propuesto para el dispositivo IoT de ResQ se organiza en cuatro etapas principales: adquisición de información, evaluación local, comunicación del estado y respuesta física cuando corresponda. Este flujo busca representar cómo pueden colaborar los sensores, el microcontrolador y los elementos de salida para reconocer condiciones que requieren atención dentro de una edificación.
+
+</p>
+
+<p align="justify">
+
+Durante la adquisición, el MQ-2 proporciona información relacionada con la presencia de determinados gases combustibles o humo, el DHT22 aporta valores de temperatura y humedad, y el PIR comunica cambios asociados con movimiento. El ESP32 debe recibir y procesar estas entradas mediante un firmware que establezca los mecanismos de lectura y las condiciones necesarias para su interpretación.
+
+</p>
+
+<p align="justify">
+
+En la etapa de evaluación, las mediciones deben contrastarse con reglas y umbrales previamente definidos y validados. Para una condición considerada normal, se propone presentar el estado correspondiente en la pantalla OLED y utilizar el LED verde como señal visual. Cuando se identifique una condición de alerta conforme a las reglas establecidas, el dispositivo podrá mostrar una advertencia en la pantalla OLED, activar el LED rojo y emitir una señal audible mediante el buzzer.
+
+</p>
+
+<p align="justify">
+
+De manera complementaria, el circuito contempla el servomotor y el motor DC como mecanismos para representar respuestas físicas. Su utilización deberá vincularse con escenarios definidos y acciones previamente autorizadas, como el movimiento controlado de un mecanismo de demostración. No se plantea asumir automáticamente que estos actuadores constituyen dispositivos de evacuación, ventilación o control de infraestructura real sin contar con una implementación y validación específica para cada función.
+
+</p>
+
+<p align="justify">
+
+Esta secuencia conceptual permite relacionar los componentes físicos con las capacidades de monitoreo, detección y respuesta de ResQ. Su aplicación práctica depende de completar y verificar el firmware, comprobar las mediciones de cada sensor y validar el comportamiento de las salidas. La captura del circuito acredita el avance en diseño, pero no constituye evidencia suficiente de una ejecución integral del flujo en condiciones físicas reales.
+
 </p>
 
 ### Projected Evolution of the IoT Device
 
 <p align="justify">
-La evolución proyectada no consiste en presentar el MVP adquirido como la solución final, sino en incorporar este nodo dentro de la arquitectura distribuida ya definida. La Embedded Application capturará las mediciones; Monitoring las recibirá en Edge y podrá conservarlas temporalmente mediante el patrón store-and-forward; Risk Detection evaluará reglas locales; y Alert & Response Management coordinará las respuestas permitidas. Cuando exista conectividad, los servicios Cloud mantendrán el estado observable y la información histórica consumida por la Web Application.
+
+La evolución del dispositivo IoT de ResQ contempla su integración progresiva con la arquitectura distribuida definida en el Project Report, organizada mediante Embedded Systems, Edge Computing y Cloud Computing. En este modelo, la Embedded Application tendrá la responsabilidad de adquirir las señales de los sensores y gestionar las interacciones locales del dispositivo, mientras que los servicios Edge permitirán incorporar capacidades complementarias de procesamiento, persistencia temporal y coordinación de operaciones.
+
 </p>
 
 <p align="justify">
-Device Management administrará la identidad, capacidades y asignación de cada nodo; Connectivity Management supervisará su disponibilidad; e Incident Management conservará el seguimiento posterior de situaciones confirmadas. La arquitectura también prescribe Python, Flask, Peewee ORM y SQLite para los Edge Services, pero los repositorios inspeccionados no contienen todavía una implementación Edge verificable con esa pila. Del mismo modo, el protocolo entre el ESP32 y Edge no puede afirmarse como implementado. Estas capacidades pertenecen a la evolución esperada y deberán validarse mediante firmware, servicios Edge y contratos reales antes de considerarlas parte del MVP operativo.
+
+El Bounded Context Monitoring gestionará las mediciones recibidas desde los dispositivos, mientras que Risk Detection permitirá evaluar condiciones de riesgo mediante reglas configuradas. Alert & Response Management coordinará las acciones de advertencia y respuesta permitidas, considerando los estados del sistema y las restricciones de autorización. Device Management administrará la identificación, las capacidades y la asignación de los nodos IoT a las zonas supervisadas.
+
+</p>
+
+<p align="justify">
+
+Asimismo, Connectivity Management permitirá supervisar la disponibilidad y comunicación de los dispositivos, mientras que Incident Management registrará y facilitará el seguimiento de situaciones que requieran intervención. Cuando exista conectividad, la arquitectura proyectada permitirá sincronizar información con los servicios Cloud y poner a disposición de la Web Application los estados y registros necesarios para las actividades de supervisión y gestión.
+
+</p>
+
+<p align="justify">
+
+Para los servicios Edge, la arquitectura del proyecto considera Python, Flask, Peewee ORM y SQLite, con la posibilidad de aplicar mecanismos de almacenamiento temporal y sincronización posterior mediante el patrón store-and-forward. Sin embargo, estas capacidades forman parte del diseño arquitectónico proyectado y requieren implementación y validación antes de considerarse disponibles en el prototipo. De igual manera, la comunicación entre el ESP32 y los servicios Edge deberá definirse y comprobarse mediante protocolos y contratos concretos.
+
+</p>
+
+<p align="justify">
+
+Las siguientes etapas de desarrollo deberán concentrarse en validar las conexiones eléctricas, implementar el firmware de adquisición y procesamiento, calibrar los sensores según su aplicación, comprobar los mecanismos de señalización y verificar el accionamiento seguro de los motores. Posteriormente, será necesario evaluar la comunicación con los servicios Edge y Cloud, así como el comportamiento del sistema ante interrupciones de conectividad. Estos resultados permitirán evolucionar el circuito diseñado durante TB1 hacia un prototipo funcional con evidencias verificables, manteniendo coherencia con los requisitos y objetivos de ResQ.
+
 </p>
 
 # Capítulo VI: Product Implementation, Validation & Deployment
@@ -13564,16 +13729,17 @@ Instituto Nacional de Defensa Civil (INDECI). (2024). <em>Compendio Estadístico
 En este apartado se presenta el video de exposición correspondiente al Trabajo Parcial (TB1 – Stage Review) del proyecto ResQ, desarrollado por la startup SecurityBear. La exposición presenta los avances realizados durante esta entrega, incluyendo la evolución de los artefactos del proyecto, el diseño UX/UI de la solución, las actividades de implementación del Sprint 1 y las evidencias correspondientes a los productos digitales y al diseño del prototipo IoT.
 </p>
 
-![Video Exposicion TB1](assets/videos-exposiciones/tb1-video-exposicion.png)
+![Video Exposicion TB1](assets/images/annexes/tb1-video-exposicion.png)
 
 <p align="center">
   <strong>Figura 277. Video de exposición correspondiente a la entrega TB1 – Stage Review.</strong>
 </p>
 
 <p align="justify">
-<strong>URL:</strong> [Video de exposición TB1](URL_PENDIENTE_TB1)
+
+**URL:** [Video de exposición TB1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQCsmY-cR5luQ53A7LCgaycqAckRMiZWxzlA1lXEERdSdYc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=kQCz8a)
 </p>
 
 <p align="justify">
-<strong>Duración:</strong> Pendiente de registrar.
+<strong>Duración:</strong> 19:53
 </p>
