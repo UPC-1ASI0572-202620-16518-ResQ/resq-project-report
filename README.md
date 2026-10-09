@@ -11493,7 +11493,7 @@ Device Management administrará la identidad, capacidades y asignación de cada 
 ### 6.1.1. Software Development Environment Configuration
 
 <p align="justify">
-El entorno de desarrollo de ResQ combina herramientas de coordinación, diseño, implementación, pruebas, despliegue y documentación. La selección siguiente se sustenta en el Project Report y en los archivos de configuración de los repositorios. Cuando una versión o producto no puede verificarse, se mantiene un marcador pendiente en lugar de atribuir una herramienta al equipo sin evidencia.
+El entorno de desarrollo de ResQ combina herramientas de coordinación, diseño, implementación, pruebas, despliegue y documentación. La selección se sustenta en el Project Statement y en las configuraciones de los repositorios. Se distinguen herramientas efectivamente declaradas en el código, recursos de diseño utilizados por el equipo y tecnologías previstas para componentes IoT aún no incorporados a los repositorios.
 </p>
 
 | Categoría | Herramienta / Producto | Propósito en ResQ | Modalidad | URL oficial |
@@ -11507,40 +11507,43 @@ El entorno de desarrollo de ResQ combina herramientas de coordinación, diseño,
 | Software Development | GitHub | Alojar los cuatro repositorios de la organización, administrar ramas y revisar Pull Requests | SaaS | https://github.com/ |
 | Software Development | Angular 22.2.0 (Web Application) / 22.2.1 (Landing Page) | Construir las dos Single Page Applications con componentes y enrutamiento | Framework web | https://angular.dev/ |
 | Software Development | TypeScript 6.0.3 | Implementar la Landing Page y la Web Application con tipado estático; versión resuelta en ambos lockfiles | Lenguaje | https://www.typescriptlang.org/ |
-| Software Development | npm 11.17.0 (Web Application) / 12.1.0 (Landing Page) | Administrar dependencias y ejecutar scripts de desarrollo, build y test | Gestor de paquetes local | https://www.npmjs.com/ |
+| Software Development | npm 10.9.2 (Web Application) / 12.1.0 (Landing Page) | Administrar dependencias y ejecutar scripts de desarrollo, compilación y pruebas; versiones declaradas en package.json | Gestor de paquetes local | https://www.npmjs.com/ |
 | Software Development | .NET 10 | Proporcionar el runtime y SDK objetivo del backend, según <code>net10.0</code> y el Dockerfile | Runtime y SDK | https://dotnet.microsoft.com/ |
 | Software Development | ASP.NET Core | Implementar la RESTful API, controladores, middleware y composición de servicios del backend | Framework web | https://learn.microsoft.com/aspnet/core/ |
 | Software Development | Entity Framework Core 10.0.9 | Implementar persistencia relacional y repositorios del backend | ORM | https://learn.microsoft.com/ef/core/ |
 | Software Development | MySQL / MySql.EntityFrameworkCore 10.0.9 | Persistir los agregados implementados por los Bounded Contexts del backend | Motor de base de datos / proveedor EF Core | https://www.mysql.com/ |
-| Software Development | [PENDIENTE: confirmar IDE utilizado por el equipo] | Editar, ejecutar y depurar los productos de software | Software local | [PENDIENTE: añadir URL oficial] |
+| Software Development | Visual Code | Editar, ejecutar y depurar los productos de software | Software local | https://code.visualstudio.com/ |
 | Edge Services — prescrito, no implementado | Python | Implementar la lógica de los ResQ Edge Services según la pila establecida por el Project Statement y documentada en la arquitectura | Lenguaje | https://www.python.org/ |
 | Edge Services — prescrito, no implementado | Flask | Exponer las interfaces locales de los ResQ Edge Services; no se encontró una implementación verificable en los repositorios actuales | Framework web | https://flask.palletsprojects.com/ |
 | Edge Services — prescrito, no implementado | Peewee ORM | Administrar la persistencia local temporal y las réplicas requeridas por Monitoring, Risk Detection y Alert & Response Management en Edge | ORM | https://docs.peewee-orm.com/ |
 | Edge Services — prescrito, no implementado | SQLite | Conservar mediciones, reglas y eventos pendientes durante interrupciones de conectividad mediante almacenamiento local | Motor de base de datos embebido | https://www.sqlite.org/ |
 | Software Testing | Angular CLI Unit Test y Vitest 5.0.3 (Landing Page) | Ejecutar las pruebas unitarias configuradas para la Landing Page; la Web Application declara <code>ng test</code>, pero no se encontró una suite equivalente suficiente para afirmar su cobertura | Herramienta local | https://vitest.dev/ |
-| Software Testing | Archivo <code>ResQ.API.http</code> | Ejecutar solicitudes manuales contra la RESTful API durante el desarrollo; no sustituye una suite automatizada | Archivo de pruebas HTTP local | https://learn.microsoft.com/aspnet/core/test/http-files |
+| Software Testing | Archivo <code>ResQ.API.http</code> y scripts PowerShell | Ejecutar verificaciones manuales de endpoints y escenarios entre módulos; no sustituyen pruebas automatizadas | Herramientas locales | https://learn.microsoft.com/aspnet/core/test/http-files |
+| Software Testing | xUnit, Reqnroll y EF Core SQLite (rama <code>feature/tests</code>) | Implementar pruebas unitarias, de integración y aceptación para Building Management y Subscriptions; resultados de ejecución por adjuntar | Frameworks y librerías locales | https://xunit.net/ |
 | Software Deployment | GitHub Pages / angular-cli-ghpages 3.1.0 | Publicar la Landing Page; existe una rama <code>gh-pages</code> y configuración de despliegue en <code>angular.json</code> | Plataforma SaaS / herramienta de despliegue | https://pages.github.com/ |
 | Software Deployment | Docker | Construir una imagen multi-stage del backend con SDK y runtime de .NET 10 | Plataforma de contenedores | https://www.docker.com/ |
+| Software Deployment | Cloudflare Workers / Wrangler | Publicar los archivos estáticos de la Web Application según <code>wrangler.jsonc</code> | Plataforma SaaS / CLI | https://developers.cloudflare.com/workers/ |
 | Software Documentation | Swagger UI / Swashbuckle.AspNetCore 9.0.6 y Microsoft.AspNetCore.OpenApi 9.0.10 | Generar y exponer documentación OpenAPI para los servicios backend | Librerías y UI local | https://swagger.io/tools/swagger-ui/ |
 | Software Documentation | Markdown en GitHub | Mantener el Project Report directamente en el README general y documentar los repositorios | Formato de documentación / plataforma SaaS | https://docs.github.com/get-started/writing-on-github |
 
 <p align="justify">
-Los manifiestos de dependencias y lockfiles fijan el conjunto ejecutable de los proyectos Angular; el <code>.csproj</code> y el Dockerfile describen el runtime y las dependencias del backend; y Git conserva cada cambio junto con su rama y commit. Esta combinación favorece un entorno reproducible porque permite instalar dependencias declaradas, construir cada producto desde su configuración versionada y revisar los cambios mediante Pull Requests. Los datos pendientes deberán completarse con evidencia del equipo antes de considerar cerrada la configuración del entorno.
+Los manifiestos de dependencias y lockfiles fijan el conjunto ejecutable de los proyectos Angular; el <code>.csproj</code> y el Dockerfile describen el runtime y las dependencias del backend; y Git conserva cada cambio junto con su rama y commit. Esta combinación favorece un entorno reproducible porque permite instalar dependencias declaradas, construir cada producto desde su configuración versionada y revisar los cambios mediante Pull Requests. Se debe confirmar el IDE utilizado por el equipo y registrar las herramientas Edge y Embedded cuando exista su implementación.
 </p>
 
 <p align="justify">
-Existe una diferencia relevante entre la prescripción general del Project Statement y la implementación actual de la Landing Page. El enunciado propone HTML5, CSS3 y JavaScript, mientras que el repositorio <code>resq-landing-page</code> utiliza Angular y TypeScript. El equipo adoptó este stack para acelerar el desarrollo y mantener consistencia técnica con la Web Application; sin embargo, la diferencia debe conservarse documentada y no implica que el repositorio haya sido migrado o que la prescripción original deje de aplicar como criterio de evaluación.
+Existe una diferencia relevante entre la prescripción general del Project Statement y la implementación actual de la Landing Page. El enunciado propone HTML5, CSS3 y JavaScript, mientras que el repositorio <code>resq-landing-page</code> utiliza Angular y TypeScript. La implementación comparte Angular y TypeScript con la Web Application; sin embargo, la diferencia debe conservarse documentada y no implica que el repositorio haya sido migrado o que la prescripción original deje de aplicar como criterio de evaluación.
 </p>
 
-### 6.1.2. Source Code Management.
+### 6.1.2. Source Code Management
 
-El código fuente de ResQ se organiza en repositorios independientes dentro de la organización de GitHub del equipo, uno por cada componente de la solución que ya se encuentra en desarrollo. Los componentes Mobile Application, Edge Service y Embedded Application aún no cuentan con repositorio, por lo que se incorporarán a esta tabla cuando inicie su implementación.
+El código fuente de ResQ se organiza en repositorios independientes dentro de la organización de GitHub del equipo, uno por cada componente de la solución que ya se encuentra en desarrollo. En la organización se identificaron también ramas para trabajo colaborativo sobre el informe. No se han verificado repositorios independientes para Mobile Application, Edge Services ni Embedded Application; se añadirán al inventario cuando se creen.
 
 | Componente          | Repositorio         | Enlace                                                                                                                                             |
 |---------------------|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Backend**         | resq-backend        | [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend)                   |
 | **Landing Page**    | resq-landing-page   | [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-landing-page](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-landing-page)         |
 | **Web Application** | resq-frontend       | [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend)                 |
+| **Project Report** | resq-project-report | [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-project-report](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-project-report) |
 
 **Flujo de trabajo GitFlow**
 
@@ -11553,13 +11556,15 @@ El equipo adopta el modelo de ramificación propuesto por Vincent Driessen en *"
 
 **Ramas definidas:**
 
-- **Main branch:** contiene el código estable y entregable. Solo recibe cambios provenientes de *develop* mediante Pull Request, y cada uno debe ser revisado y aprobado por otro integrante del equipo.
-- **Develop branch:** rama de integración donde se combinan las funcionalidades terminadas y se validan antes de publicarlas en *main*.
-- **Feature branches:** cada funcionalidad o sección de trabajo se desarrolla en su propia rama (por ejemplo, `feature/chapter-06-gonzalo`), creada a partir de *develop* y fusionada nuevamente en ella mediante Pull Request.
+- **Main branch:** contiene la versión estable preparada para entrega. Se establece la integración mediante Pull Requests revisados, evitando incorporar directamente código no validado; el cumplimiento histórico de esta política se comprueba con el registro de cada repositorio.
+- **Develop branch:** rama de integración utilizada en Backend, Frontend y Project Report para reunir cambios antes de publicarlos en *main*.
+- **Feature branches:** se nombran como `feature/<nombre-descriptivo>`, por ejemplo, `feature/subscriptions` y `feature/chapter-06-gonzalo`. La rama `feature/tests` conserva las pruebas del backend a la fecha de la revisión.
+- **Release branches:** para preparar versiones se define `release/<major.minor.patch>` desde *develop*; una vez validadas, sus modificaciones se integran en *main* y *develop*. Esta es una convención prevista, no evidencia de releases ya creadas.
+- **Hotfix branches:** para corregir incidencias urgentes sobre una entrega se define `hotfix/<major.minor.patch>` desde *main*, con posterior integración hacia *main* y *develop*. Esta es una convención prevista, no evidencia de hotfixes ya ejecutados.
 
 **Nomenclatura de versiones:**
 
-Las versiones siguen el formato `MAJOR.MINOR.PATCH`:
+Las versiones publicadas deberán identificarse con el formato `MAJOR.MINOR.PATCH` (Semantic Versioning):
 
 - **Major:** cambios significativos que rompen la compatibilidad con la versión anterior (ej. `1.0.0 -> 2.0.0`).
 - **Minor:** nuevas características o mejoras compatibles (ej. `1.1.0 -> 1.2.0`).
@@ -11573,7 +11578,7 @@ Las versiones siguen el formato `MAJOR.MINOR.PATCH`:
 
 **Convención de commits:**
 
-Los mensajes de commit siguen la especificación *Conventional Commits* (por ejemplo, `feat: add alerts endpoint`, `fix: correct zone validation`, `docs: update sprint evidence`), lo que mantiene un historial legible y vinculado al autor de cada cambio.
+Se adopta como convención de mensajes *Conventional Commits* (por ejemplo, `feat: add alerts endpoint`, `fix: correct zone validation`, `docs: update sprint evidence`), lo que mantiene un historial legible y vinculado al autor de cada cambio.
 
 ### 6.1.3. Source Code Style Guide & Conventions
 
@@ -11847,13 +11852,19 @@ Como parte de las convenciones de pruebas se consideran:
 - Relacionar las pruebas con las funcionalidades y criterios de aceptación correspondientes.
 
 <p align="justify">
-Para futuras pruebas de aceptación basadas en Behavior-Driven Development se considera adoptar Gherkin, utilizando archivos <code>.feature</code> y las palabras clave <code>Feature</code>, <code>Scenario</code>, <code>Given</code>, <code>When</code> y <code>Then</code>. Esta convención todavía no se encuentra implementada en los repositorios examinados.
+La rama <code>feature/tests</code> de <code>resq-backend</code> incorpora pruebas de aceptación con Reqnroll y xUnit mediante los archivos <code>BuildingManagement.feature</code> y <code>SubscriptionManagement.feature</code>, asociados a clases Steps en C#. Ambos archivos incluyen <code># language: es</code>, por lo que emplean <code>Característica</code>, <code>Escenario</code>, <code>Dado</code>, <code>Cuando</code> y <code>Entonces</code>. El Project Statement exige adoptar nomenclatura en inglés también para Gherkin; para la siguiente normalización deben trasladarse los escenarios y sus bindings a inglés conservando las comprobaciones. Esta diferencia de idioma no significa que las pruebas no existan ni demuestra que hayan superado una ejecución.
+</p>
+
+#### Convenciones para Embedded Application y Edge Services
+
+<p align="justify">
+Para la implementación futura del firmware ESP32 se establece C++ como lenguaje de referencia, con nombres de variables y funciones en inglés, constantes identificables y separación de lectura de sensores, evaluación de riesgos y actuación. Para Edge Services se prevén Python, Flask, Peewee ORM y SQLite, con identificadores en inglés, funciones en <code>snake_case</code>, clases en <code>PascalCase</code> y documentación de las interfaces HTTP. Estas convenciones se aplicarán cuando dichos componentes dispongan de código versionado; no constituyen evidencia de una implementación Edge/Embedded terminada.
 </p>
 
 #### Documentación y mantenimiento
 
 <p align="justify">
-La documentación técnica de ResQ utiliza nombres descriptivos y comentarios que permiten comprender las responsabilidades de los componentes.
+La documentación técnica de ResQ utiliza nombres descriptivos y comentarios para explicar las responsabilidades de los componentes.
 </p>
 
 <p align="justify">
@@ -11876,146 +11887,10 @@ Asimismo, se considera la revisión continua de las convenciones de formato, org
 En conjunto, estas convenciones contribuyen a mantener una estructura coherente entre los componentes de ResQ, facilitan la colaboración de los integrantes del equipo y proporcionan una base para la evolución y mantenimiento de la solución IoT.
 </p>
 
-#### 6.1.4. Software Deployment Configuration.
 
-La estrategia de despliegue de ResQ utiliza servicios cloud para publicar de forma independiente cada uno de los productos que componen la solución. El código fuente se mantiene en repositorios de GitHub, mientras que cada artefacto utiliza una plataforma de despliegue acorde con su función.
 
-La Landing Page se publica mediante GitHub Pages, el Frontend Web se despliega mediante Cloudflare Pages y los Web Services se ejecutan en Render utilizando Docker. Para la persistencia de información, el backend se conecta a una instancia MySQL administrada por Aiven.
 
-Esta separación permite que cada componente pueda actualizarse de manera independiente sin afectar directamente al resto de la solución.
 
-<br>
-
-**Configuración de entornos:**
-
-| Entorno | Plataforma / Tecnología | Propósito |
-|---|---|---|
-| **Desarrollo local** | Rider / .NET / Docker Desktop / MySQL | Desarrollo y validación de los componentes de la solución |
-| **Producción - Landing Page** | GitHub Pages | Publicación de la página informativa de ResQ |
-| **Producción - Web Application** | Cloudflare Pages | Publicación de la aplicación web |
-| **Producción - Web Services** | Render + Docker | Ejecución de los servicios REST de ResQ |
-| **Producción - Base de datos** | Aiven MySQL | Persistencia de la información utilizada por el backend |
-
-<br>
-
-**Despliegue de Landing Page:**
-
-La Landing Page de ResQ se encuentra almacenada en un repositorio de GitHub y se publica mediante GitHub Pages.
-
-**Configuración:**
-
-- Repositorio: resq-landing-page
-- Plataforma: GitHub Pages
-- Código fuente: GitHub
-- Entorno: Producción
-
-<br>
-
-**Proceso de despliegue:**
-
-1. Se realizan los cambios en el código de la Landing Page.
-2. Los cambios se registran en el repositorio de GitHub.
-3. La versión correspondiente se publica mediante GitHub Pages.
-4. GitHub Pages genera y sirve la página web públicamente.
-
-La Landing Page funciona como el punto de entrada informativo de ResQ y se mantiene independiente del backend y del Frontend Web.
-
-<br>
-
-**Despliegue de Web Application:**
-
-La Web Application de ResQ se encuentra almacenado en GitHub y se publica mediante Cloudflare Pages.
-
-**Configuración:**
-- Repositorio: resq-frontend
-- Plataforma: Cloudflare Pages
-- Entorno: Production
-- Código fuente: GitHub
-
-Cloudflare mantiene las versiones desplegadas del Frontend y permite administrar la versión que recibe el tráfico de producción.
-
-<br>
-
-**Proceso de despliegue:**
-
-1. Se realizan los cambios en el Frontend.
-2. El código actualizado se mantiene en el repositorio de GitHub.
-3. Se genera una nueva versión del Frontend mediante Cloudflare.
-4. Cloudflare construye y publica los archivos correspondientes.
-5. La nueva versión queda disponible en el entorno de producción.
-
-El Frontend Web consume los servicios proporcionados por el backend mediante su API REST.
-
-<br>
-
-**Despliegue del Web Services:**
-
-Los Web Services de ResQ están implementados utilizando ASP.NET Core y se ejecutan en un contenedor Docker desplegado en Render.
-
-**Configuración:**
-- Repositorio: resq-backend
-- Framework: ASP.NET Core
-- Plataforma: Render
-- Runtime: Docker
-- Entorno: Production
-- Puerto interno: 10000
-
-El backend utiliza un Dockerfile multi-stage, permitiendo separar la etapa de compilación de la imagen utilizada para ejecutar la aplicación.
-
-<br>
-
-**Construcción de la imagen:**
-
-Durante el proceso de construcción:
-1. Se utiliza la imagen `mcr.microsoft.com/dotnet/sdk:10.0` para compilar la aplicación.
-2. Se restaura el proyecto mediante `dotnet restore`.
-3. Se publica la aplicación mediante `dotnet publish`.
-4. Se genera una imagen final basada en `mcr.microsoft.com/dotnet/aspnet:10.0`.
-5. Se copian únicamente los archivos publicados a la imagen final.
-6. El contenedor ejecuta `ResQ.API.dll`.
-
-<br>
-
-**Configuración de la base de datos:**
-
-La persistencia del backend se encuentra separada del contenedor de la aplicación. ResQ utiliza MySQL administrado mediante Aiven.
-
-**Configuración:**
-- Motor: MySQL
-- Proveedor: Aiven
-- Base de datos: resq_db
-- Conexión: mediante una cadena de conexión segura
-- Comunicación: conexión SSL requerida
-
-Esta separación permite que el reinicio o actualización del contenedor del backend no implique la pérdida de la información almacenada.
-
-El backend obtiene los datos de conexión mediante variables de entorno, evitando almacenar las credenciales directamente en el código fuente.
-
-<br>
-
-**Variables de entorno:**
-
-Las configuraciones sensibles y específicas del entorno de producción se mantienen fuera del código fuente.
-
-En Render se han configurado las siguientes variables:
-
-| Variable | Propósito |
-|---|---|
-| `ConnectionStrings__DefaultConnection` | Cadena de conexión con MySQL en Aiven |
-| `DevelopmentSettings__OrganizationId` | Identificador de organización utilizado por la configuración actual del backend |
-| `TokenSettings__Secret` | Clave utilizada para la generación y validación de tokens JWT |
-
-<br>
-
-**Deployment Diagram — C4 Model:**
-
-Para complementar esta configuración, el Deployment Diagram representa dónde se ejecuta cada elemento de la solución y cómo se comunican entre sí.
-
-![DeploymentDiagramC4](./assets/images/chapter-06-product-implementation-validation-deployment/DeploymentDiagramC4.png)
-
-El repositorio de GitHub funciona como origen del código fuente de los diferentes productos. La Landing Page se publica en GitHub Pages, mientras que el Frontend Web se despliega en Cloudflare Pages.
-
-El Frontend se comunica mediante HTTPS con el Backend de ResQ, que se ejecuta como un contenedor Docker administrado por Render. Finalmente, el backend establece una conexión segura mediante SSL con la instancia MySQL de Aiven, donde se almacena la información persistente de la plataforma.
 
 ## 6.2. Landing Page, Services & Applications Implementation
 
