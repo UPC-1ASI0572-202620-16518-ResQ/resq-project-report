@@ -13561,6 +13561,52 @@ En conjunto, estas evidencias permiten sustentar el trabajo colaborativo realiza
 
 </div>
 
+
+## 6.2.2. Sprint 2
+
+### 6.2.2.1. Sprint Planning 2
+
+<p align="justify">
+Durante el Sprint Planning 2, el equipo de SecurityBear definió como objetivo principal del Sprint la implementación de las capacidades de procesamiento local (Edge Computing) y la consolidación del flujo de gestión de incidentes. A diferencia del Sprint 1, centrado en el monitoreo básico y el despliegue del entorno, este ciclo priorizó el desarrollo de la <strong>Capa Edge</strong> y la integración de las respuestas automáticas con los actuadores físicos.
+</p>
+<p align="justify">
+El propósito central fue garantizar que las funciones críticas del sistema (como la detección de condiciones anómalas y la ejecución de alarmas locales) puedan operar de manera ininterrumpida incluso ante pérdidas de conectividad a Internet. Asimismo, se planificó la habilitación de los endpoints en la API RESTful para el registro de resoluciones de incidentes y la confirmación de acciones de alto impacto por parte de los administradores.
+</p>
+
+### 6.2.2.2. Aspect Leaders and Collaborators
+
+<p align="justify">
+Para la ejecución del Sprint 2, el equipo mantuvo el enfoque de liderazgo compartido, distribuyendo los aspectos técnicos de acuerdo con las fortalezas de cada integrante y la complejidad de los componentes a desarrollar:
+</p>
+
+<ul>
+  <li><strong>Frontend Web & Mobile App:</strong> Iván Sánchez Guevara (Líder) y Fabricio Quispe Barzola (Colaborador). Responsables de las vistas de atención de alertas y el panel de incidentes.</li>
+  <li><strong>Backend Web Services & API RESTful:</strong> Pedro Nanfuñay Liza (Líder) y Wilder Aliaga Urbina (Colaborador). Responsables de los controladores del ciclo de vida del incidente.</li>
+  <li><strong>Edge Computing & IoT Device Integration:</strong> Eduardo Chacaliaza Minaya (Líder) y Fabricio Quispe Barzola (Colaborador). Responsables de la lógica offline en el Gateway y los comandos hacia los actuadores.</li>
+  <li><strong>Software Configuration & QA:</strong> Wilder Aliaga Urbina (Líder) y Eduardo Chacaliaza Minaya (Colaborador). Encargados de las pruebas de integración extremo a extremo y trazabilidad en GitHub.</li>
+</ul>
+
+### 6.2.2.3. Sprint Backlog 2
+
+<p align="justify">
+A partir del Product Backlog general, el equipo seleccionó las siguientes historias de usuario (US) y técnicas (TS) de alta prioridad para ser desarrolladas durante el Sprint 2. Las historias fueron estimadas utilizando <em>Story Points</em> y organizadas en el tablero de trabajo (Trello):
+</p>
+
+| ID | Título | Story Points | Responsable Principal |
+|---|---|:---:|---|
+| **US11** | Ejecutar una respuesta automática autorizada | 8 | Eduardo Chacaliaza |
+| **US12** | Confirmar una acción de alto impacto | 5 | Iván Sánchez |
+| **US28** | Mantener funciones críticas sin Internet | 8 | Fabricio Quispe |
+| **TS03** | Procesar reglas de detección localmente | 8 | Eduardo Chacaliaza |
+| **TS04** | Ejecutar comandos de actuadores localmente | 8 | Pedro Nanfuñay |
+| **US14** | Consultar el estado de un incidente | 3 | Wilder Aliaga |
+| **US15** | Asignar un responsable de atención | 3 | Iván Sánchez |
+| **US16** | Registrar la resolución de un incidente | 3 | Pedro Nanfuñay |
+
+<p align="justify">
+El seguimiento de estas historias de usuario se gestionó asegurando que cada tarea contara con sus respectivos criterios de aceptación validados mediante las correspondientes evidencias de desarrollo y ejecución al finalizar el Sprint.
+</p>
+
 # Conclusiones y recomendaciones
 
 <p align="justify">
