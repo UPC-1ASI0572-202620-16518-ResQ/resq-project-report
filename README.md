@@ -13629,6 +13629,156 @@ A partir del Product Backlog general, el equipo seleccionó las siguientes histo
 El seguimiento de estas historias de usuario se gestionó asegurando que cada tarea contara con sus respectivos criterios de aceptación validados mediante las correspondientes evidencias de desarrollo y ejecución al finalizar el Sprint.
 </p>
 
+#### 6.2.2.9. Team Collaboration Insights during Sprint
+
+<p align="justify">
+Durante el desarrollo de ResQ, el trabajo se distribuyó entre la aplicación web, los servicios REST y el dispositivo IoT. Para evaluar la colaboración del Sprint 2 (9–22 de octubre de 2026), se contrastaron las responsabilidades de la matriz LACX con los historiales de GitHub. Es importante distinguir entre las funcionalidades construidas <strong>antes del sprint</strong>, que constituyeron la base de esta iteración, y los cambios registrados <strong>dentro del sprint</strong>. La fecha de un commit acredita su incorporación al repositorio, no necesariamente la finalización o aprobación de una User Story.
+</p>
+
+##### Implementación de Frontend y Backend utilizada como base
+
+<p align="justify">
+El repositorio <a href="https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend"><code>resq-frontend</code></a> registra <strong>36 commits en <code>main</code></strong>, incluidos 26 commits sin merge, y <strong>5 pull requests integrados</strong>. Sus principales aportes se concentraron entre el 29 de septiembre y el 6 de octubre, con un commit adicional el 9 de octubre. En la implementación destacan las vistas de edificaciones y planos, dispositivos IoT, alertas, incidentes, autenticación y una capa de acceso a datos mediante <em>gateways</em>, DTO, <em>mappers</em> y <em>facades</em>. La presencia de adaptadores <code>mock</code> y <code>http</code> en el código no significa, por sí sola, que todos los flujos estén conectados al backend desplegado.
+</p>
+
+| Evidencia | Autor | Cambio comprobable | Enlace |
+|---|---|---|---|
+| `dc54e7ef` | Fabricio Quispe (`BrooklynKarmis`) | Primera implementación amplia de la aplicación Angular de monitoreo | [Commit](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/commit/dc54e7ef1dba5792aa220a6f4b16039e07862223) |
+| `0d1b1b8a` | Fabricio Quispe | Vistas de gestión de dispositivos relacionadas con componentes físicos IoT | [Commit](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/commit/0d1b1b8a2a321e5ae25adfe7fce9e61f53610fee) |
+| `c36951ed` | Eduardo Chacaliaza (`educmz`) | Mejoras a la interfaz de monitoreo de edificaciones | [Commit](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/commit/c36951eda) |
+| `87a77548` | Fabricio Quispe | Capa de acceso a datos y flujo de sesión/autenticación para integrar Frontend con servicios | [Commit](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/commit/87a77548c) |
+| `14583faf` | Fabricio Quispe | Refinamiento de las vistas y estados del ciclo de vida de alertas e incidentes | [Commit](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/commit/14583fafe) |
+| `c0326402` | Fabricio Quispe | Claridad de alertas, autorizaciones, incidentes y notificaciones de la interfaz | [Commit](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/commit/c03264025) |
+
+<p align="justify">
+Por su parte, <a href="https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend"><code>resq-backend</code></a> contiene <strong>27 commits en <code>main</code></strong>, de los cuales 14 no son merges, y <strong>11 pull requests integrados</strong>. Wilder Aliaga trabajó principalmente en IAM, edificios, dispositivos y alertas, mientras que Pedro Nanfuñay desarrolló componentes de incidentes, suscripciones, configuración y pruebas. El código incluye controladores y servicios REST para operaciones de consulta y modificación, incluyendo un <code>IncidentsController</code> con operaciones para crear, consultar, asignar y resolver incidentes. Esta estructura respalda la preparación de los flujos US14, US15 y US16, sin demostrar por sí misma que su integración extremo a extremo se haya validado en el Sprint 2.
+</p>
+
+| Evidencia | Autor | Cambio comprobable | Enlace |
+|---|---|---|---|
+| `136b0bbe` | Wilder Aliaga (`gonzalo1905`) | IAM y perfiles de usuario, con servicios REST y modelos de persistencia | [Commit](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend/commit/136b0bbef) |
+| `9640bd7a` | Wilder Aliaga | Bounded Contexts de Building Management y Device Management | [Commit](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend/commit/9640bd7ab) |
+| `c8923823` | Pedro Nanfuñay (`PedroJ18`) | Incident Management: dominio, comandos, consultas, persistencia y controlador REST | [Commit](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend/commit/c89238230) |
+| `cb57f7a9` | Pedro Nanfuñay | Bounded Context de suscripciones | [Commit](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend/commit/cb57f7a9d) |
+| `a8e18a41` | Wilder Aliaga | Alert Management con comandos, consultas y controladores REST | [Commit](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend/commit/a8e18a412) |
+| `292e1afa` | Wilder Aliaga | Revisión de módulos centrales de IAM, alertas, incidentes y edificios | [Commit](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend/commit/292e1afa2) |
+
+<p align="justify">
+Además, la rama <a href="https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend/tree/feature/tests"><code>feature/tests</code></a> contiene casos unitarios, de integración y de aceptación para Building Management y Subscriptions, por ejemplo <a href="https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend/commit/6d1f896e1"><code>6d1f896e</code></a>. Esta rama permite comprobar trabajo de preparación de pruebas, pero no debe describirse como integrada a <code>main</code> ni como una suite ejecutada exitosamente sin los respectivos resultados.
+</p>
+
+##### Actividad registrada durante Sprint 2
+
+<p align="justify">
+Al filtrar <code>main</code> por el intervalo del <strong>9 al 22 de octubre, hora de Perú (UTC−05:00)</strong>, los resultados fueron los siguientes:
+</p>
+
+| Producto | Commits en el período | Sin merge | Interpretación |
+|---|---:|---:|---|
+| [Firmware](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-firmware/commits/main/) | 21 | 17 | Implementación y evidencias del nodo ESP32, simulación, señalización y telemetría |
+| [Frontend](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/commits/main/) | 1 | 1 | Incorporación de funcionalidad de suscripciones por Iván Sánchez (`4fdb61d5`) |
+| [Backend](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend/commits/main/) | 0 | 0 | El último commit de `main` es anterior al Sprint 2 |
+| [Landing Page](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-landing-page/commits/main/) | 0 | 0 | El último commit de `main` es anterior al Sprint 2 |
+
+<p align="justify">
+En Firmware se identificaron aportes de los cinco miembros del equipo. Pedro Nanfuñay añadió el núcleo del dispositivo (<a href="https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-firmware/commit/774fa1c9"><code>774fa1c9</code></a>), Fabricio Quispe implementó indicadores LED, buzzer y OLED (<a href="https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-firmware/commit/db166fbd"><code>db166fbd</code></a>), Eduardo Chacaliaza trabajó la conectividad Wi-Fi y el envío a ThingSpeak (<a href="https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-firmware/commit/7cb1ce74"><code>7cb1ce74</code></a>), Wilder Aliaga incorporó el programa inicial y la simulación de sensores (<a href="https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-firmware/commit/ccf9f5fa"><code>ccf9f5fa</code></a>), e Iván Sánchez registró cambios de integración (<a href="https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-firmware/commit/29e96e2a"><code>29e96e2a</code></a>). Parte de esta evidencia está organizada como trabajo de laboratorio de la sesión 9, por lo que su correspondencia con las historias TS03, TS04 y US28 debe contrastarse con los criterios de aceptación y las demostraciones efectivamente realizadas.
+</p>
+
+<p align="justify">
+Los registros reflejan especialización por producto: Frontend fue desarrollado principalmente por Fabricio Quispe y Eduardo Chacaliaza, Backend por Pedro Nanfuñay y Wilder Aliaga, y Firmware reunió cambios de los cinco integrantes. Esta distribución explica la colaboración técnica, aunque el historial de <code>main</code> no acredita participación individual de todos los integrantes en cada repositorio. Los cambios anteriores al 9 de octubre se presentan como <strong>base de desarrollo</strong>, no como nuevas implementaciones del Sprint 2.
+</p>
+
+<p align="justify">
+<strong>Evidencias visuales a insertar:</strong> capturas originales de <a href="https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/graphs/contributors">Frontend Contributors</a>, <a href="https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend/graphs/contributors">Backend Contributors</a> y <a href="https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-firmware/graphs/contributors">Firmware Contributors</a>, acompañadas de capturas del historial de commits y su intervalo. Se debe especificar cuando la gráfica muestre contribuciones acumuladas y no exclusivamente las del Sprint 2.
+</p>
+
+## 6.3. Validation Interviews
+
+### 6.3.1. Diseño de Entrevistas
+
+<p align="justify">
+Las sesiones se diseñan para evaluar la comprensión de la propuesta ResQ, la orientación en sus interfaces y la interpretación de la información sobre edificios, dispositivos, alertas e incidentes. Se consideran los dos segmentos identificados en el capítulo II, con <strong>3 a 5 participantes por segmento</strong>, tal como establece el enunciado del curso. Las tareas toman como referencia los User Flows de 5.4.4, los prototipos de 5.5 y las pantallas y servicios disponibles en los repositorios de Frontend y Backend.
+</p>
+
+| Segmento | Perfil | Producto a presentar | Aspectos que se observarán |
+|---|---|---|---|
+| Propietarios y administradores de edificaciones | Personas responsables de administración, operación o seguridad de un edificio | Landing Page, Dashboard, Buildings, Alerts e Incidents | Comprensión de la ubicación y gravedad del riesgo; seguimiento de un incidente y claridad de las acciones |
+| Empresas integradoras de automatización y edificios inteligentes | Profesionales vinculados a instalación, integración o mantenimiento de equipos IoT/BMS | Landing Page, Monitoring, Devices y demostración controlada del nodo ESP32 | Comprensión de estados y mediciones; claridad de las señales del dispositivo y de los mecanismos de comunicación |
+
+#### Tareas de validación
+
+| ID | Segmento | Instrucción al participante | Flujo o componente | Evidencia observada |
+|---|---|---|---|---|
+| C01 | Ambos | «Explore la página y explique qué hace ResQ y a quién le resultaría útil». | Landing Page | Comprende el problema atendido y la propuesta de valor |
+| C02 | Ambos | «Encuentre la forma de acceder a la aplicación o solicitar más información». | Landing Page | Identifica las opciones de navegación y su propósito |
+| E01 | Administradores | «Identifique qué edificio y zona requieren atención». | Dashboard → Buildings → Monitoring | Reconoce ubicación, condición y nivel del evento |
+| E02 | Administradores | «Revise una alerta y explique qué respuesta ya ocurrió y cuál requeriría autorización». | Alerts → Alert Detail; US11 y US12 | Diferencia información del evento y acciones autorizables |
+| E03 | Administradores | «Consulte un incidente, identifique su responsable y explique cómo comprobaría su resolución». | Incidents → Incident Detail; US14–US16 | Interpreta estado, asignación y resolución disponibles en la interfaz |
+| I01 | Integradores | «Localice un dispositivo, su zona y las mediciones o estados asociados». | Devices → Device Detail → Monitoring | Encuentra datos técnicos sin asistencia |
+| I02 | Integradores | «Indique cómo comprobaría que el dispositivo está enviando información correctamente». | Monitoring, datos de ejemplo o telemetría | Reconoce señales de conectividad y las limitaciones de información disponible |
+| I03 | Integradores | «Observe el prototipo y explique el significado del LED, el buzzer y la pantalla OLED». | Firmware ESP32; TS03 y TS04 | Interpreta estados y respuestas locales sin orientación previa |
+
+<p align="justify">
+La aplicación Angular incluye rutas reales como <code>/dashboard</code>, <code>/buildings</code>, <code>/monitoring</code>, <code>/devices</code>, <code>/alerts</code> e <code>/incidents</code>. Los servicios Backend contienen operaciones REST para consultar incidentes, asignar responsables y registrar resoluciones. <strong>La existencia de estas rutas y endpoints no acredita una integración real completa</strong>: el Frontend conserva proveedores simulados en su configuración, por lo que las tareas se ejecutarán con datos de demostración o prototipos identificados claramente, según el estado funcional disponible.
+</p>
+
+#### Procedimiento y registro
+
+<p align="justify">
+Antes de comenzar se verifican los enlaces, los datos de prueba y el consentimiento para grabar. La persona entrevistada recibe cada situación sin indicaciones sobre qué control debe utilizar y explica lo que interpreta mientras navega. La persona moderadora registra por tarea si la completó sin ayuda, con ayuda o si no pudo completarla; anota las dificultades, el tiempo aproximado, los errores de interpretación y comentarios relevantes. Al finalizar se pregunta qué información resultó confusa, qué cambiaría y qué necesitaría comprobar para utilizar ResQ en su contexto. Las pruebas de riesgo o actuación física se realizarán únicamente con simulaciones o demostraciones seguras.
+</p>
+
+| Registro por tarea | Datos |
+|---|---|
+| Participante y contexto | Segmento, perfil, fecha y producto/prototipo utilizado |
+| Ejecución | ID de tarea, completada/sin completar/no evaluable, ayuda requerida y tiempo aproximado |
+| Observación | Dudas, errores, comentarios y oportunidad de mejora |
+| Evaluación | Facilidad percibida de 1 (muy difícil) a 5 (muy fácil), si se aplica |
+
+#### Preguntas para las entrevistas de validación
+
+<p align="justify">
+Las preguntas se formularán durante y después de la interacción con ResQ, con el propósito de identificar dificultades de navegación, comprensión de la información y oportunidades de mejora. Se utilizarán preguntas abiertas para evitar condicionar las respuestas de los participantes.
+</p>
+
+**Preguntas generales para ambos segmentos**
+
+| ID | Pregunta |
+|---|---|
+| P01 | Después de explorar la Landing Page, ¿cómo describiría ResQ y qué problema considera que busca solucionar? |
+| P02 | ¿Qué información o funcionalidad le llamó más la atención y por qué? |
+| P03 | ¿Encontró alguna sección, término o elemento de navegación que le resultara confuso? |
+
+**Segmento 1: Propietarios y administradores de edificaciones**
+
+| ID | Pregunta |
+|---|---|
+| P04 | ¿Qué tan sencillo le resultó identificar el edificio y la zona donde se presenta una situación de riesgo? |
+| P05 | ¿Cómo interpretó la información mostrada en las alertas y qué datos adicionales necesitaría para tomar una decisión? |
+| P06 | ¿Le resultó claro cómo consultar el estado de un incidente e identificar a la persona responsable de atenderlo? |
+| P07 | ¿Qué información necesitaría antes de autorizar una respuesta automática ante una emergencia? |
+| P08 | ¿Qué mejoras realizaría en el Dashboard o en la gestión de incidentes para facilitar sus actividades? |
+
+**Segmento 2: Empresas integradoras de automatización y edificios inteligentes**
+
+| ID | Pregunta |
+|---|---|
+| P09 | ¿Qué tan sencillo le resultó localizar un dispositivo y comprender la información técnica presentada? |
+| P10 | ¿La información de monitoreo le permitió identificar el estado y las mediciones del dispositivo? ¿Qué datos adicionales necesitaría? |
+| P11 | ¿Cómo interpretó las señales del LED, el buzzer y la pantalla OLED durante la demostración? |
+| P12 | ¿Qué información o herramientas necesitaría para integrar ResQ con otros sistemas de automatización? |
+| P13 | ¿Qué dificultades identifica en el monitoreo o la comunicación de los dispositivos y cómo mejoraría la experiencia? |
+
+**Preguntas de cierre para ambos segmentos**
+
+| ID | Pregunta |
+|---|---|
+| P14 | ¿Cuál de las tareas realizadas le resultó más sencilla y cuál presentó mayores dificultades? |
+| P15 | ¿Qué funcionalidad considera más útil para sus actividades habituales? |
+| P16 | ¿Qué cambiaría o incorporaría antes de utilizar ResQ en un entorno real? |
+| P17 | Considerando su experiencia con la solución, ¿la utilizaría o recomendaría? ¿Por qué? |
+
+
 # Conclusiones y recomendaciones
 
 <p align="justify">
