@@ -13564,27 +13564,49 @@ En conjunto, estas evidencias permiten sustentar el trabajo colaborativo realiza
 
 ## 6.2.2. Sprint 2
 
-### 6.2.2.1. Sprint Planning 2
+#### 6.2.2.1. Sprint Planning 2
 
 <p align="justify">
-Durante el Sprint Planning 2, el equipo de SecurityBear definió como objetivo principal del Sprint la implementación de las capacidades de procesamiento local (Edge Computing) y la consolidación del flujo de gestión de incidentes. A diferencia del Sprint 1, centrado en el monitoreo básico y el despliegue del entorno, este ciclo priorizó el desarrollo de la <strong>Capa Edge</strong> y la integración de las respuestas automáticas con los actuadores físicos.
+La planificación de Sprint 2 relaciona el Product Backlog con un incremento conjunto y verificable orientado a la resiliencia del sistema y la autonomía operativa. La reunión se realizó al inicio del Sprint para alinear el valor esperado del procesamiento local, la integración de actuadores y la gestión del ciclo de vida de los incidentes. La información administrativa definida por el equipo se registra en la siguiente tabla, consolidando las estimaciones de las historias formales asignadas al Sprint.
 </p>
+
+| Campo | Detalle |
+|---|---|
+| Sprint # | Sprint 2 |
+| Sprint Start Date | 2026-10-09 |
+| Sprint End Date | 2026-10-22 |
+| Date | 2026-10-09 |
+| Time | 08:00 PM |
+| Location | Virtual meeting via Discord |
+| Prepared By | Quispe Barzola, Fabricio Fabian |
+| Attendees | Sánchez Guevara, Iván Fernando<br>Nanfuñay Liza, Pedro Jesús<br>Chacaliaza Minaya, Eduardo Fabian<br>Quispe Barzola, Fabricio Fabian<br>Aliaga Urbina, Wilder Gonzalo |
+| Sprint 1 Review Summary / Previous Iteration Review Summary | Se validó la entrega funcional de la primera versión del MVP, el despliegue del entorno y el monitoreo básico, identificando como prioridad técnica robustecer la operación sin conexión a Internet (Edge Computing). |
+| Sprint 1 Retrospective Summary / Previous Iteration Retrospective Summary | El equipo acordó mantener el esquema de liderazgo compartido y mejorar la integración concurrente entre los servicios Cloud y la capa Edge para el manejo de los actuadores y las alertas críticas. |
+| Sprint 2 Goal | Habilitar las capacidades de procesamiento local (Edge Computing) y consolidar las funcionalidades de Alert & Response Management, garantizando que la evaluación de reglas de detección y la ejecución de alarmas físicas (actuadores) operen de manera ininterrumpida ante pérdidas de conectividad. |
+| Sprint 2 Velocity | 46 Story Points |
+| Sum of Story Points | 46 Story Points |
+
 <p align="justify">
-El propósito central fue garantizar que las funciones críticas del sistema (como la detección de condiciones anómalas y la ejecución de alarmas locales) puedan operar de manera ininterrumpida incluso ante pérdidas de conectividad a Internet. Asimismo, se planificó la habilitación de los endpoints en la API RESTful para el registro de resoluciones de incidentes y la confirmación de acciones de alto impacto por parte de los administradores.
+El Sprint Goal expresa un único resultado de valor: dotar a ResQ de autonomía operativa ante fallas de red y robustecer el control sobre las emergencias. La Web Application y Mobile UI incorporan los flujos de autorización y gestión de incidentes; el backend habilita los endpoints para el ciclo de vida de la alerta; y el nodo IoT junto al Gateway validan el recorrido offline desde la detección de una condición anómala hasta la activación de la respuesta local (actuadores). A diferencia del ciclo anterior, el Sprint Backlog 2 cuenta con una asignación formal de historias (US y TS) que suman un total de 46 Story Points para este incremento.
 </p>
 
-### 6.2.2.2. Aspect Leaders and Collaborators
+#### 6.2.2.2. Aspect Leaders and Collaborators
 
 <p align="justify">
-Para la ejecución del Sprint 2, el equipo mantuvo el enfoque de liderazgo compartido, distribuyendo los aspectos técnicos de acuerdo con las fortalezas de cada integrante y la complejidad de los componentes a desarrollar:
+Durante este Sprint, el equipo se enfocó en la implementación de la capa Edge, la integración IoT avanzada y la consolidación de la gestión de incidentes en los componentes Cloud. Para organizar el trabajo y facilitar la coordinación entre los integrantes, se actualizó la Leadership-and-Collaboration Matrix (LACX), asignando un líder y colaboradores para cada aspecto incluido dentro del alcance del Sprint 2.
 </p>
 
-<ul>
-  <li><strong>Frontend Web & Mobile App:</strong> Iván Sánchez Guevara (Líder) y Fabricio Quispe Barzola (Colaborador). Responsables de las vistas de atención de alertas y el panel de incidentes.</li>
-  <li><strong>Backend Web Services & API RESTful:</strong> Pedro Nanfuñay Liza (Líder) y Wilder Aliaga Urbina (Colaborador). Responsables de los controladores del ciclo de vida del incidente.</li>
-  <li><strong>Edge Computing & IoT Device Integration:</strong> Eduardo Chacaliaza Minaya (Líder) y Fabricio Quispe Barzola (Colaborador). Responsables de la lógica offline en el Gateway y los comandos hacia los actuadores.</li>
-  <li><strong>Software Configuration & QA:</strong> Wilder Aliaga Urbina (Líder) y Eduardo Chacaliaza Minaya (Colaborador). Encargados de las pruebas de integración extremo a extremo y trazabilidad en GitHub.</li>
-</ul>
+<p align="justify">
+Los aspectos seleccionados se relacionan con las principales actividades de implementación y validación de esta iteración: Frontend & Mobile, Backend Web Services, Edge Computing & IoT, Integración y Deployment, y UX/UI Design. Esta organización permite establecer responsables claros para cada actividad técnica, manteniendo la colaboración del resto del equipo cuando el desarrollo requiere la integración extremo a extremo de diferentes componentes.
+</p>
+
+| Team Member (Last Name, First Name) | GitHub Username | Frontend & Mobile | Backend Web Services | Edge Computing & IoT | Integración y Deployment | UX/UI Design y Documentación |
+|-------------------------------------|-----------------|-------------------|----------------------|----------------------|--------------------------|------------------------------|
+| **Sánchez Guevara, Iván Fernando**    | DonFernando1   | C     | C     | C     | C     | **L** |
+| **Nanfuñay Liza, Pedro Jesús**        | PedroJ18       | C     | **L** | C     | C     | C     |
+| **Chacaliaza Minaya, Eduardo Fabian** | educmz         | **L** | C     | C     | C     | C     |
+| **Quispe Barzola, Fabricio Fabian**   | BrooklynKarmis | C     | C     | **L** | C     | C     |
+| **Aliaga Urbina, Wilder Gonzalo**     | gonzalo1905    | C     | C     | C     | **L** | C     |
 
 ### 6.2.2.3. Sprint Backlog 2
 
