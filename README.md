@@ -14134,7 +14134,7 @@ Se adopta la escala de cuatro niveles indicada en el Anexo D del enunciado. La c
 
 | N.º | Problema identificado | Severidad | Heurística o principio comprometido | Componente |
 |:---:|---|:---:|---|---|
-| H01 | El detalle de alertas muestra mensajes estáticos de tipo <em>Warning</em> aun cuando la severidad se representa mediante un dato variable. | 3 | Usabilidad: consistencia y estándares; prevención de errores | Alert Detail |
+| H01 | El listado de alertas utiliza un ícono de flecha sin una acción textual visible para indicar que una fila abre su detalle. | 2 | Usabilidad: reconocimiento antes que recuerdo; arquitectura de información: claridad de navegación | Alerts |
 | H02 | El Dashboard presenta indicadores bajo denominaciones de estado <em>Live</em> mientras parte de la información se obtiene de adaptadores simulados. | 3 | Usabilidad: visibilidad del estado del sistema; correspondencia con el mundo real | Dashboard y capa de datos |
 | H03 | El campo de búsqueda de incidentes carece de una etiqueta textual o un nombre accesible explícito en su plantilla. | 3 | Inclusive Design: experiencias comparables; Usabilidad: reconocimiento | Incidents |
 | H04 | Los mensajes de error del acceso no incluyen una región de anuncio accesible explícita. | 2 | Inclusive Design: accesibilidad de la retroalimentación; Usabilidad: recuperación de errores | Login |
@@ -14145,23 +14145,23 @@ Se adopta la escala de cuatro niveles indicada en el Anexo D del enunciado. La c
 
 #### Descripción de problemas y recomendaciones
 
-##### Problema H01. Mensajes de severidad no coherentes con el estado de la alerta
+##### Problema H01. Visibilidad insuficiente de la acción para consultar el detalle de una alerta
 
-**Severidad:** 3 — Problema mayor.  
-**Heurísticas comprometidas:** Usabilidad: consistencia y estándares; prevención de errores.  
+**Severidad:** 2 — Problema menor.  
+**Heurísticas comprometidas:** Usabilidad: reconocimiento antes que recuerdo; Information Architecture: claridad de navegación.  
 **Tarea relacionada:** E02 — Consultar una alerta e interpretar su nivel de riesgo.
 
 <p align="justify">
-La plantilla de detalle de alertas representa la severidad mediante el valor dinámico de la alerta y sus indicadores visuales. Sin embargo, el encabezado del contexto contiene el texto fijo <em>“Risk Detection created this Warning Alert”</em>, y el bloque de evidencia indica de forma estática <em>“Warning threshold exceeded”</em>. Por ello, cuando la alerta corresponda a un nivel distinto de advertencia, la interfaz puede mostrar simultáneamente una severidad dinámica y explicaciones que remiten a un estado de advertencia. Esta discrepancia resulta especialmente relevante en ResQ porque el usuario utiliza la gravedad del evento para interpretar la situación y decidir cómo proceder.
+En el listado de alertas, el acceso al detalle se realiza mediante la selección de una fila de la tabla. La última columna presenta únicamente un ícono de flecha orientada a la derecha, sin título de columna, etiqueta textual ni control visual con el nombre de la acción. Aunque el código implementa interacción mediante clic, Enter y barra espaciadora y proporciona un nombre accesible para la fila, la intención de abrir un detalle no resulta igualmente explícita para quienes exploran visualmente la tabla por primera vez. La dificultad identificada corresponde a la visibilidad de la acción y no a una ausencia total de navegación por teclado.
 </p>
 
-**Figura 285. Inconsistencia entre el nivel de la alerta y los mensajes explicativos del detalle.**
+**Figura 285. Tabla de alertas con acceso al detalle representado por una flecha sin etiqueta textual.**
 
-![Detalle de una alerta con el indicador de severidad y los textos fijos Warning del contexto y la evidencia](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h01-alerta-severidad.png)
+![Listado de alertas de ResQ con su última columna de flecha sin etiqueta de acción](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h01-alerta-acceso-detalle.png)
 
-**Recomendación:** Generar los textos explicativos a partir de la severidad y de la evidencia específica del evento. Definir variantes para los niveles de advertencia, crítico y otros estados admitidos, y verificar que título, indicadores, umbrales y descripciones coincidan para cada tipo de alerta.
+**Recomendación:** Incorporar una columna con el encabezado *Actions* y un enlace o botón visible *View details* para cada fila. Conservar la posibilidad de seleccionar la fila completa como mecanismo complementario, procurando que el control principal comunique inequívocamente su propósito.
 
-**Sustento de implementación:** [Plantilla de alertas y detalle](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/alerts/alerts.pages.ts).
+**Sustento de implementación:** [Plantilla del listado de alertas](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/alerts/alerts.pages.ts).
 
 ##### Problema H02. Falta de diferenciación explícita entre monitoreo en vivo y datos simulados
 
@@ -14292,15 +14292,15 @@ La pantalla de autenticación presenta valores numéricos fijos relacionados con
 #### Priorización de mejoras e interpretación de resultados
 
 <p align="justify">
-La inspección identifica <strong>ocho hallazgos documentales</strong>: tres clasificados preliminarmente con severidad 3 y cinco con severidad 2. No se asignan problemas de severidad 4 porque la revisión del código, sin una observación de uso que confirme un bloqueo crítico, no proporciona fundamento suficiente para esa clasificación. Las severidades son estimaciones de inspección y no resultados cuantitativos de una muestra de participantes.
+La inspección identifica <strong>ocho hallazgos documentales</strong>: dos clasificados preliminarmente con severidad 3 y seis con severidad 2. No se asignan problemas de severidad 4 porque la revisión del código, sin una observación de uso que confirme un bloqueo crítico, no proporciona fundamento suficiente para esa clasificación. Las severidades son estimaciones de inspección y no resultados cuantitativos de una muestra de participantes.
 </p>
 
 <p align="justify">
-Los hallazgos de mayor prioridad se relacionan con la interpretación correcta de la gravedad de una alerta, la identificación del carácter simulado o actual de la información de monitoreo y la accesibilidad del campo de búsqueda de incidentes. Las dos primeras condiciones merecen especial atención por la finalidad de ResQ: apoyar la supervisión de situaciones de riesgo y la comprensión de las respuestas disponibles. El tercer hallazgo afecta la posibilidad de realizar tareas equivalentes mediante tecnologías de asistencia.
+Los hallazgos de mayor prioridad se relacionan con la identificación del carácter simulado o actual de la información de monitoreo y la accesibilidad del campo de búsqueda de incidentes. El primero merece especial atención por la finalidad de ResQ: apoyar la supervisión de riesgos con datos cuya procedencia pueda interpretarse correctamente. El segundo afecta la posibilidad de realizar tareas equivalentes mediante tecnologías de asistencia.
 </p>
 
 <p align="justify">
-Como acciones de mejora se propone incorporar textos de riesgo dependientes de datos reales de cada evento, diferenciar explícitamente los modos de demostración y operación conectada, proporcionar nombres accesibles a los controles, anunciar los mensajes de error, uniformizar el comportamiento de internacionalización y mejorar la retroalimentación de filtros y estados vacíos. Estas modificaciones deben verificarse mediante pruebas de interfaz y accesibilidad antes de considerarse resueltas, y los cambios aceptados deben registrarse en el Product Backlog y en el historial de versiones del producto.
+Como acciones de mejora se propone hacer explícitas las acciones de navegación hacia el detalle de las alertas, diferenciar los modos de demostración y operación conectada, proporcionar nombres accesibles a los controles, anunciar los mensajes de error, uniformizar el comportamiento de internacionalización y mejorar la retroalimentación de filtros y estados vacíos. Estas modificaciones deben verificarse mediante pruebas de interfaz y accesibilidad antes de considerarse resueltas, y los cambios aceptados deben registrarse en el Product Backlog y en el historial de versiones del producto.
 </p>
 
 <p align="justify">
