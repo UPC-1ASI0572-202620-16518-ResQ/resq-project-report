@@ -13769,6 +13769,160 @@ A partir del Product Backlog general, el equipo seleccionó las siguientes histo
 El seguimiento de estas historias de usuario se gestionó asegurando que cada tarea contara con sus respectivos criterios de aceptación validados mediante las correspondientes evidencias de desarrollo y ejecución al finalizar el Sprint.
 </p>
 
+#### 6.2.2.6. Execution Evidence for Sprint Review
+
+<p align="justify">
+La revisión de ejecución del Sprint 2 de ResQ se centra en el incremento asociado con el procesamiento local de condiciones de riesgo, la actuación mediante dispositivos de señalización, la continuidad de funciones críticas ante fallas de conectividad y los recorridos de gestión de alertas e incidentes. Estas capacidades se vinculan con las historias US11, US12, US14, US15, US16, US28 y con las historias técnicas TS03 y TS04, consideradas en el Sprint Backlog 2. La presente sección reúne las principales vistas de ejecución y sus explicaciones, junto con la referencia audiovisual disponible, de acuerdo con el alcance establecido para el Sprint Review.
+</p>
+
+<p align="justify">
+Las evidencias se organizan por componente y escenario de uso, distinguiendo tres situaciones: comportamiento implementado en el firmware, funcionalidades representadas por la aplicación web y comunicación con un servicio externo de telemetría. Esta distinción resulta necesaria porque la existencia de una interfaz, un controlador REST o una rutina de firmware no acredita automáticamente que la integración completa entre Embedded Systems, servicios Backend y Frontend haya sido comprobada.
+</p>
+
+##### Procesamiento local de condiciones de riesgo
+
+<p align="justify">
+El firmware del nodo ResQ dispone de lógica para adquirir y evaluar mediciones desde el ESP32. El sensor MQ-2 se utiliza para obtener una lectura analógica de gas o humo expresada en unidades ADC; por tanto, estos valores no se presentan como concentraciones calibradas en partes por millón. La implementación contempla, además, lecturas de temperatura y humedad mediante DHT22, mientras que el movimiento puede representarse mediante simulación controlada. A partir de los umbrales establecidos, el dispositivo clasifica el entorno en estados de funcionamiento normal, precaución o peligro, y reconoce situaciones particulares de calentamiento o error de lectura.
+</p>
+
+<p align="justify">
+El procesamiento se ejecuta localmente y constituye el sustento de la historia técnica TS03. La visualización en la pantalla OLED permite inspeccionar simultáneamente las mediciones y el estado operativo del nodo, facilitando la interpretación de las condiciones ambientales sin requerir una consulta previa a la aplicación web.
+</p>
+
+**Figura 276. Visualización de lecturas y estado normal del nodo IoT ResQ.**
+
+![Estado normal del ESP32 y visualización de mediciones en la pantalla OLED](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-estado-normal.png)
+
+<p align="justify">
+La figura ilustra la operación del prototipo en un escenario normal, identificando el ESP32, los sensores conectados, la pantalla OLED y la señalización local correspondiente. Cuando se utilicen valores simulados, su procedencia se diferencia de las lecturas obtenidas mediante sensores físicos.
+</p>
+
+##### Ejecución local de alertas y actuadores
+
+<p align="justify">
+El control de actuadores se relaciona con la historia técnica TS04 y con el propósito de proporcionar una reacción inmediata ante condiciones de riesgo. El firmware contempla el uso de un LED verde para indicar condiciones normales, un LED rojo para representar estados de precaución o peligro y un buzzer para la señalización sonora. En una condición de peligro, la lógica mantiene el indicador rojo y solicita la activación del buzzer; adicionalmente, dispone de una orden de silenciamiento que modifica la salida sonora sin eliminar el estado de alarma detectado.
+</p>
+
+<p align="justify">
+La evidencia de ejecución corresponde a la transición entre estados y a la respuesta observable de los componentes de salida. Para preservar la seguridad del procedimiento, las condiciones de peligro pueden inducirse mediante una simulación controlada, sin liberar gases ni exponer a los participantes a una situación real de emergencia.
+</p>
+
+**Figura 277. Señalización local de una condición de peligro mediante los actuadores del nodo ResQ.**
+
+![ESP32 con alarma local activa y estado de peligro mostrado en el prototipo](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-alarma-local.png)
+
+<p align="justify">
+Esta vista permite relacionar la clasificación local de riesgo con el comportamiento de los indicadores físicos y la información presentada al usuario. La captura del estado visual complementa, pero no reemplaza, la comprobación auditiva del buzzer en el registro audiovisual.
+</p>
+
+##### Continuidad de las funciones críticas ante pérdida de conectividad
+
+<p align="justify">
+La historia US28 plantea que las funciones esenciales de ResQ no dependan exclusivamente de la disponibilidad de Internet. La arquitectura del firmware separa la adquisición y evaluación de mediciones de la publicación remota de telemetría. En consecuencia, la lógica de decisión y la señalización se encuentran implementadas en el dispositivo, mientras que la comunicación Wi-Fi se utiliza para transmitir datos hacia servicios externos.
+</p>
+
+<p align="justify">
+El escenario de ejecución se enfoca en observar el estado de conectividad y comprobar si el nodo conserva la lectura de sensores y la respuesta local durante una interrupción de red. Debe considerarse que algunas operaciones de conexión o publicación son síncronas y pueden introducir pausas transitorias; por ello, esta evidencia no se interpreta como garantía de disponibilidad ininterrumpida ni como demostración de almacenamiento y sincronización posteriores de mensajes no enviados.
+</p>
+
+**Figura 278. Estado del nodo ResQ durante una interrupción de la conexión Wi-Fi.**
+
+![Estado de conectividad y funcionamiento local del ESP32 sin Wi-Fi](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-sin-conectividad.png)
+
+<p align="justify">
+La captura se orienta a identificar el estado de red y las condiciones de funcionamiento local mediante la pantalla OLED, los indicadores y, de ser necesario, el monitor serie. Su interpretación se limita al comportamiento efectivamente observable durante el escenario presentado.
+</p>
+
+##### Visualización y transmisión de información IoT mediante ThingSpeak
+
+<p align="justify">
+El nodo incorpora una ruta de publicación de información hacia ThingSpeak para complementar la visualización local con el registro remoto de mediciones. La implementación contempla campos para el valor de gas en ADC, temperatura en grados Celsius, intensidad de señal Wi-Fi en dBm, estado de alarma, movimiento y humedad relativa. Esta separación de variables permite examinar la evolución de los datos capturados y distinguir las magnitudes ambientales de los indicadores operativos del dispositivo.
+</p>
+
+<p align="justify">
+La evidencia de ejecución se compone de la vista de los gráficos del canal y del registro de publicación generado desde el dispositivo. La comparación de valores y marcas de tiempo permite contrastar el envío con la información recibida, siempre diferenciando los datos simulados de las mediciones físicas. La presencia de registros en ThingSpeak demuestra el intercambio con ese servicio, pero no equivale a la validación integral de la comunicación entre el ESP32, la API de ResQ y la aplicación web.
+</p>
+
+**Figura 279. Visualización de los campos de telemetría del prototipo ResQ en ThingSpeak.**
+
+![Gráficos y mediciones registradas en el canal ThingSpeak de ResQ](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-thingspeak-graficos.png)
+
+**Figura 280. Registro de publicación de mediciones desde el ESP32.**
+
+![Monitor serie con valores transmitidos y resultado de publicación a ThingSpeak](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-publicacion-monitor-serie.png)
+
+<p align="justify">
+La primera figura permite revisar los datos representados gráficamente en Cloud Computing; la segunda aporta el contexto técnico de la comunicación desde el nodo, incluyendo los valores emitidos y el resultado reportado por el firmware.
+</p>
+
+##### Ejecución de los flujos de alertas y autorizaciones en la aplicación web
+
+<p align="justify">
+La aplicación web de ResQ proporciona un recorrido de consulta de alertas que permite acceder a información contextual de un evento y revisar las acciones de respuesta disponibles. Dentro de este ámbito, las historias US11 y US12 se relacionan con la respuesta automática autorizada y con la confirmación de acciones de alto impacto. La demostración se enfoca en la navegación desde las alertas hacia el detalle del evento y, cuando corresponde, en la presentación de las opciones de autorización.
+</p>
+
+<p align="justify">
+Es importante precisar el alcance de la ejecución: la aplicación conserva adaptadores de datos simulados para varios contextos y dispone de adaptadores HTTP preparados para determinados servicios. Por tanto, la evidencia de navegación permite mostrar los controles y estados de la interfaz, pero no acredita por sí sola el envío de una orden a un actuador físico ni la confirmación de una respuesta automática por parte de los servicios Backend.
+</p>
+
+**Figura 281. Detalle de alerta y acciones de autorización en la Frontend Web Application de ResQ.**
+
+![Interfaz de detalle de alerta con acciones de respuesta o autorización disponibles](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/frontend-alerta-autorizacion.png)
+
+<p align="justify">
+Esta vista documenta la forma en que el operador interpreta un evento de riesgo y localiza las acciones habilitadas según el estado presentado. El funcionamiento de dichas acciones se describe de acuerdo con el origen de datos utilizado durante la demostración, sin confundir un flujo simulado con una transacción real confirmada por el Backend.
+</p>
+
+##### Consulta, asignación y resolución de incidentes
+
+<p align="justify">
+Las historias US14, US15 y US16 abordan tres actividades complementarias del ciclo de atención de incidentes: consultar el estado de un registro, asignar un responsable y documentar su resolución. La aplicación web incluye interfaces de listado y detalle que permiten representar estos recorridos desde la perspectiva de un operador de seguridad o administrador de una edificación.
+</p>
+
+<p align="justify">
+La ejecución comienza con la identificación de un incidente en el listado, continúa con la revisión de sus datos y finaliza con la exploración de las acciones de asignación o resolución disponibles en su vista de detalle. La interfaz cuenta con una capa de acceso a datos que facilita distinguir los recorridos demostrados mediante información de prueba de aquellos que dependen de la integración con los servicios REST.
+</p>
+
+**Figura 282. Listado y consulta del estado de incidentes en ResQ.**
+
+![Listado de incidentes con estados e información contextual en la aplicación web](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/frontend-incidentes-listado.png)
+
+**Figura 283. Vista de detalle de incidente y controles de gestión.**
+
+![Detalle de incidente con opciones de asignación y resolución](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/frontend-incidentes-gestion.png)
+
+<p align="justify">
+Las capturas muestran los puntos de interacción relevantes para el seguimiento de incidentes y permiten examinar la organización visual de la información. La existencia de estos controles representa la disponibilidad del recorrido en la aplicación, mientras que la persistencia de las operaciones debe comprobarse mediante los servicios correspondientes cuando se utilice integración HTTP.
+</p>
+
+##### Registro audiovisual y recorrido de ejecución
+
+<p align="justify">
+La evidencia audiovisual complementa las capturas estáticas mediante la observación de acciones sucesivas y cambios de estado. Para revisar el incremento del Sprint 2, el recorrido comprende el acceso a la aplicación web, la consulta de alertas, la revisión de autorizaciones disponibles, la exploración de incidentes y la demostración del nodo IoT en escenarios de funcionamiento normal, alarma local y conectividad. El recorrido puede iniciarse desde la <a href="https://resq-frontend.ffaaliceht2003.workers.dev/login">Frontend Web Application desplegada</a>, mientras que la ejecución técnica del firmware cuenta con un registro audiovisual de la práctica de conectividad.
+</p>
+
+<p align="justify">
+<strong>Video técnico disponible:</strong> <a href="https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-firmware/blob/main/evidencias/sesion9/G3_E8_video.mp4">Registro audiovisual del prototipo IoT y la práctica de conectividad (repositorio resq-firmware)</a>. Este material se identifica como evidencia complementaria del dispositivo y no se presenta como una grabación integral de todos los recorridos de navegación de la aplicación web.
+</p>
+
+**Figura 284. Cuadro representativo de la demostración audiovisual del prototipo IoT de ResQ.**
+
+![Fotograma representativo del registro audiovisual de ejecución de ResQ](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/sprint2-video-ejecucion.png)
+
+<p align="justify">
+La combinación de las capturas de las vistas y el material audiovisual técnico permite relacionar la explicación documental con las operaciones observables. La validación completa del recorrido entre la interfaz web, los servicios y los actuadores físicos requiere una demostración de integración específica, independiente de la disponibilidad de cada componente por separado.
+</p>
+
+##### Síntesis y alcance de la revisión de ejecución
+
+<p align="justify">
+El incremento documentado reúne capacidades de procesamiento y señalización local en el ESP32, mecanismos de transmisión de telemetría hacia ThingSpeak y recorridos de interacción relacionados con la gestión de alertas e incidentes en la aplicación web. Los escenarios se vinculan con los objetivos de autonomía operativa, respuesta ante riesgos y seguimiento de incidentes definidos en el Sprint Backlog 2.
+</p>
+
+<p align="justify">
+La revisión evita atribuir al Sprint 2 funcionalidades web que ya formaban parte de la base implementada durante la iteración anterior. De igual manera, diferencia las capacidades identificadas en el código de las observaciones obtenidas mediante ejecución y de la integración extremo a extremo. Las evidencias aportan así trazabilidad entre las historias seleccionadas, los componentes de ResQ y los escenarios empleados para revisar su funcionamiento, sin presentar como concluidas pruebas físicas o integraciones que todavía no cuenten con sustento verificable.
+</p>
+
 #### 6.2.2.9. Team Collaboration Insights during Sprint
 
 <p align="justify">
