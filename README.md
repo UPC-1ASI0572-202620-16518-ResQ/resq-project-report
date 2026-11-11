@@ -14199,23 +14199,23 @@ En el listado de incidentes, el campo de búsqueda está contenido dentro de una
 
 **Sustento de implementación:** [Plantilla de listado de incidentes](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/incidents/incidents.pages.ts).
 
-##### Problema H04. Retroalimentación de errores de autenticación sin anuncio accesible explícito
+##### Problema H04. Ausencia de retroalimentación visible tras un intento de autenticación fallido
 
-**Severidad:** 2 — Problema menor.  
-**Heurísticas comprometidas:** Inclusive Design: acceso comparable a la retroalimentación; Usabilidad: ayuda para reconocer y recuperarse de errores.  
+**Severidad:** 3 — Problema mayor.  
+**Heurísticas comprometidas:** Usabilidad: visibilidad del estado del sistema; ayuda para reconocer, diagnosticar y recuperarse de errores. Inclusive Design: retroalimentación perceptible.  
 **Tarea relacionada:** Acceso a la aplicación web, necesario para ejecutar E01, E02, E03, I01 e I02.
 
 <p align="justify">
-La pantalla de autenticación presenta mensajes de error cuando el formulario es inválido o el servicio rechaza las credenciales. Los mensajes aparecen dentro de contenedores visuales con la clase <code>error</code>, sin que la plantilla les asigne explícitamente <code>role="alert"</code> ni una región <code>aria-live</code>. Como resultado, el código no garantiza que la aparición del mensaje sea comunicada inmediatamente a quienes utilizan tecnologías de asistencia. Se trata de una limitación de la retroalimentación accesible, no de una afirmación de que el inicio de sesión falle para todos los usuarios.
+La implementación de autenticación mediante el adaptador de demostración verifica el identificador de acceso y la contraseña y devuelve el error <code>AUTHENTICATION_FAILED</code> ante credenciales no válidas. Sin embargo, la secuencia de manejo de errores del componente <code>AuthSessionFacade</code> invoca <code>clearSession()</code> cuando falla la autenticación. Este método restablece también el estado de error almacenado en <code>IamFacade</code>, de modo que el mensaje que la plantilla de Login consulta mediante <code>session.error()</code> puede desaparecer antes de representarse. En la revisión de la interfaz se comprobó que un intento con contraseña incorrecta no produjo un aviso visible. La ausencia de retroalimentación dificulta reconocer la causa del rechazo y decidir cómo corregir el intento. Adicionalmente, los contenedores definidos para los errores no incluyen atributos explícitos de anuncio accesible.
 </p>
 
-**Figura 288. Presentación de un error de inicio de sesión y estructura de su contenedor.**
+**Figura 288. Pantalla de acceso después de un intento fallido, sin retroalimentación visible de autenticación.**
 
-![Mensaje de error de autenticación en Login y contenedor correspondiente](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h04-login-mensaje-error.png)
+![Pantalla de Login de ResQ tras introducir credenciales incorrectas sin presentar un aviso de error](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h04-login-mensaje-error.png)
 
-**Recomendación:** Presentar los errores mediante una región accesible apropiada, asociar los errores de validación con los campos pertinentes utilizando <code>aria-describedby</code> y comprobar que el anuncio sea comprensible sin interferir con el foco o la navegación.
+**Recomendación:** Conservar el error de autenticación hasta que la interfaz lo presente o el usuario inicie una nueva operación, desacoplando la limpieza de sesión del borrado del estado de error. Mostrar un mensaje genérico que no revele si el identificador o la contraseña fueron incorrectos y acompañarlo de un anuncio accesible mediante <code>role="alert"</code> o una región <code>aria-live</code>. Comprobar el resultado con credenciales válidas, inválidas y campos incompletos.
 
-**Sustento de implementación:** [Componente de acceso](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/auth/login.page.ts).
+**Sustento de implementación:** [Adaptador de autenticación de demostración](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/auth/data-access/mock-iam.gateway.ts), [manejo de errores y limpieza de sesión](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/auth/auth-session.facade.ts), [estado de sesión IAM](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/auth/data-access/iam.facade.ts) y [pantalla de Login](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/auth/login.page.ts).
 
 ##### Problema H05. Inconsistencia del idioma predeterminado entre productos digitales
 
@@ -14292,11 +14292,11 @@ La pantalla de autenticación presenta valores numéricos fijos relacionados con
 #### Priorización de mejoras e interpretación de resultados
 
 <p align="justify">
-La inspección identifica <strong>ocho hallazgos documentales</strong>: dos clasificados preliminarmente con severidad 3 y seis con severidad 2. No se asignan problemas de severidad 4 porque la revisión del código, sin una observación de uso que confirme un bloqueo crítico, no proporciona fundamento suficiente para esa clasificación. Las severidades son estimaciones de inspección y no resultados cuantitativos de una muestra de participantes.
+La inspección identifica <strong>ocho hallazgos documentales</strong>: tres clasificados preliminarmente con severidad 3 y cinco con severidad 2. No se asignan problemas de severidad 4 porque la revisión del código, sin una observación de uso que confirme un bloqueo crítico, no proporciona fundamento suficiente para esa clasificación. Las severidades son estimaciones de inspección y no resultados cuantitativos de una muestra de participantes.
 </p>
 
 <p align="justify">
-Los hallazgos de mayor prioridad se relacionan con la identificación del carácter simulado o actual de la información de monitoreo y la accesibilidad del campo de búsqueda de incidentes. El primero merece especial atención por la finalidad de ResQ: apoyar la supervisión de riesgos con datos cuya procedencia pueda interpretarse correctamente. El segundo afecta la posibilidad de realizar tareas equivalentes mediante tecnologías de asistencia.
+Los hallazgos de mayor prioridad se relacionan con la identificación del carácter simulado o actual de la información de monitoreo, la accesibilidad del campo de búsqueda de incidentes y la ausencia de retroalimentación visible ante credenciales incorrectas. La primera condición puede provocar interpretaciones equivocadas de la vigencia de los datos; las dos restantes dificultan realizar tareas con tecnologías de asistencia y recuperarse de errores durante el acceso a la aplicación.
 </p>
 
 <p align="justify">
