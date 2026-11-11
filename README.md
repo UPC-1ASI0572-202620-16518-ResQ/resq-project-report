@@ -5310,8 +5310,31 @@ El diseño separa deliberadamente la propiedad de los conceptos de detección de
 </p>
 
 <p align="justify">
-Del mismo modo, <code>RiskDetectedEvent</code> comunica que se ha detectado un riesgo, pero Risk Detection no crea alertas, no envía notificaciones, no ejecuta actuadores ni gestiona el ciclo de vida de un incidente.
+Del mismo modo, <code>RiskDetectedEvent</code> comunica que se ha detectado un riesgo, pero Risk Detection no construye alertas, no envía notificaciones, no ejecuta actuadores ni gestiona el ciclo de vida de un incidente. En la implementación Cloud, el evento se entrega a Alert & Response Management mediante su fachada ACL <code>IAlertsContextFacade</code>, y es ese Bounded Context el que genera la alerta asociada al <code>riskDetectionId</code>.
 </p>
+
+#### Implementación en ResQ Cloud RESTful API
+
+<p align="justify">
+La parte Cloud de Risk Detection está implementada en el backend <strong>ResQ.API</strong> (.NET 10, ASP.NET Core, Entity Framework Core y MySQL), en la carpeta <code>Risk-Detection/</code>, con las capas Domain, Application, Infrastructure e Interfaces. Los identificadores son <code>Guid</code> y cada agregado pertenece a una organización (<code>OrganizationId</code>). Los componentes Edge (Python, Flask, Peewee y SQLite) se mantienen como diseño proyectado.
+</p>
+
+| Concepto del diseño | Implementación en ResQ.API |
+|---|---|
+| `DetectionRule`, `RiskDetection` | Agregados `DetectionRule` y `RiskDetection` (`Domain/Model/Aggregates`). |
+| `DetectionEvidence`, `SeverityChange` | Entidades del agregado `RiskDetection`; la evidencia es inmutable y solo tiene `Id` para la persistencia. |
+| `DetectionCondition`, `RiskLocation` | Value Objects persistidos como columnas embebidas (*owned types*). |
+| `DetectionRuleStatus`, `ComparisonOperator`, `LocationResolutionStatus` | Enumeraciones `EDetectionRuleStatus`, `EComparisonOperator` y `ELocationResolutionStatus`, expuestas como `ACTIVE`, `GREATER_THAN`, `RESOLVED`, etc. |
+| `RiskType`, `SeverityLevel` | Códigos normalizados por `RiskCodes`: `riskTypeCode` en UPPER_SNAKE_CASE y `severityCode` en `Info`, `Warning` o `Critical`. |
+| `RiskEvaluationService` | Domain Service `RiskEvaluationService` (`Matches`, `SelectSatisfiedRules`). |
+| `RiskDetectedEvent` | `RiskDetectedEvent` y `RiskSeverityEscalatedEvent`. |
+| Command/Query Handlers | `DetectionRuleCommandService`, `DetectionRuleQueryService`, `RiskDetectionCommandService` y `RiskDetectionQueryService`. |
+| `MeasurementReceivedEventHandler` | `RiskDetectionCommandService.Handle(EvaluateMeasurementCommand)`, invocado por REST o por la fachada `IRiskDetectionContextFacade`. |
+| `RiskLocationResolver` | `IRiskLocationResolver`, implementado por `DeviceRiskLocationResolver` con `IDevicesContextFacade`. |
+| `RiskDetectionEventPublisher` | `IRiskDetectionEventPublisher`, implementado por `AlertManagementRiskDetectionEventPublisher` con `IAlertsContextFacade`. |
+| `DetectionRuleController`, `RiskDetectionController` | `DetectionRulesController` y `RiskDetectionsController`. |
+| Repository Adapters | `DetectionRuleRepository` y `RiskDetectionRepository` sobre EF Core; mapeo en `ModelBuilderExtensions.ApplyRiskDetectionConfiguration`. |
+| `DetectionRuleDistributor`, `RiskDetectionEventConsumer` y componentes Edge | Proyectados; aún no implementados. |
 
 ---
 
@@ -5526,6 +5549,10 @@ No se impone intencionalmente una enumeración cerrada de riesgos de incendio, g
 El dominio no impone una enumeración fija <code>LOW/MEDIUM/HIGH</code> porque los requisitos actuales establecen la existencia de un nivel de riesgo, pero no definen una escala obligatoria de severidad.
 </p>
 
+<p align="justify">
+En la implementación Cloud, <code>SeverityLevel</code> se restringe al catálogo que acepta Alert & Response Management: <code>Info</code>, <code>Warning</code> y <code>Critical</code>, de menor a mayor. Así toda detección puede continuar como alerta.
+</p>
+
 ##### DetectionRuleStatus
 
 <p align="justify">
@@ -5604,6 +5631,7 @@ La misma abstracción puede tener diferentes implementaciones de Infrastructure 
 
 - `findById(riskDetectionId)`
 - `save(riskDetection)`
+- `findOpen(riskTypeCode, location, since)`: recupera la detección más reciente del mismo tipo y ubicación cuya última evidencia está dentro de la ventana de correlación.
 
 ##### RiskEvaluationService
 
@@ -5621,6 +5649,10 @@ La misma abstracción puede tener diferentes implementaciones de Infrastructure 
 
 <p align="justify">
 El servicio coordina la comparación de dominio cuando la evaluación requiere tanto una <code>DetectionRule</code> como <code>DetectionEvidence</code>.
+</p>
+
+<p align="justify">
+Cuando varias reglas activas del mismo tipo de riesgo se satisfacen con la misma medición, se aplica la regla más severa. Por ejemplo, con <code>GAS_LEAK</code> <code>Warning</code> &gt; 300 y <code>GAS_LEAK</code> <code>Critical</code> &gt;= 600, una medición de 700 aplica la regla <code>Critical</code>.
 </p>
 
 ##### RiskDetectedEvent
@@ -5645,6 +5677,10 @@ El servicio coordina la comparación de dominio cuando la evaluación requiere t
 
 <p align="justify">
 El evento comunica el resultado de detección, pero no define la alerta, notificación, comando de actuador o incidente que otros Bounded Contexts pueden crear posteriormente.
+</p>
+
+<p align="justify">
+En Cloud, además de <code>RiskDetectedEvent</code> (detección nueva), el agregado emite <code>RiskSeverityEscalatedEvent</code> cuando sube la severidad de una detección existente. Ambos eventos se entregan a Alert & Response Management. Añadir evidencia o bajar la severidad no genera una nueva alerta.
 </p>
 
 ##### Reglas de negocio
@@ -5681,7 +5717,7 @@ El dominio de Risk Detection aplica las siguientes reglas de negocio:
 
 14. Una evaluación local satisfactoria de riesgo genera la información de dominio requerida para continuar el flujo distribuido de procesamiento de emergencias.
 
-15. Risk Detection no crea Alerts, Notifications, Actuator Commands ni Incidents directamente.
+15. Risk Detection no construye Alerts, Notifications, Actuator Commands ni Incidents. Publica sus eventos de detección, y Alert & Response Management genera la alerta asociada al `riskDetectionId` a través de su fachada ACL `IAlertsContextFacade`.
 
 16. El almacenamiento temporal y la sincronización posterior de eventos remotos durante una interrupción de Internet no pertenecen a Risk Detection; esas responsabilidades pertenecen al flujo de Connectivity.
 
@@ -5729,12 +5765,18 @@ Sus responsabilidades incluyen:
 - crear un `ChangeDetectionRuleStatusCommand`;
 - delegar las operaciones a los manejadores correspondientes de la Application Layer.
 
-Recursos conceptuales de ejemplo:
+Endpoints implementados en ResQ.API (`DetectionRulesController`):
 
 ```text
-POST /api/v1/risk-detection/rules
+POST  /api/v1/risk-detection/rules
+GET   /api/v1/risk-detection/rules?status=&variableType=
+GET   /api/v1/risk-detection/rules/{ruleId}
 PATCH /api/v1/risk-detection/rules/{ruleId}/status
 ```
+
+<p align="justify">
+<code>POST</code> recibe <code>{ riskTypeCode, severityCode, variableType, operator, threshold }</code> y crea la regla en estado <code>ACTIVE</code>. <code>PATCH</code> recibe <code>{ active }</code>. Los dos <code>GET</code> se agregaron para que el frontend pueda listar y consultar las reglas configuradas.
+</p>
 
 <p align="justify">
 El controlador no determina directamente si una condición es válida ni persiste reglas directamente.
@@ -5750,12 +5792,22 @@ El controlador no determina directamente si una condición es válida ni persist
 <code>RiskDetectionController</code> proporciona acceso autorizado a las detecciones de riesgo persistidas y sus evidencias.
 </p>
 
-Recursos conceptuales de ejemplo:
+Endpoints implementados en ResQ.API (`RiskDetectionsController`):
 
 ```text
-GET /api/v1/risk-detections/{riskDetectionId}
-GET /api/v1/risk-detections/{riskDetectionId}/evidence
+GET  /api/v1/risk-detections?buildingId=&zoneId=&riskTypeCode=
+GET  /api/v1/risk-detections/{riskDetectionId}
+GET  /api/v1/risk-detections/{riskDetectionId}/evidence
+POST /api/v1/risk-detections/evaluations
 ```
+
+<p align="justify">
+El detalle y la evidencia devuelven la detección con <code>location</code> (<code>RESOLVED</code>/<code>UNRESOLVED</code>), <code>evidence[]</code> y <code>severityChanges[]</code>. El listado se agregó para el frontend.
+</p>
+
+<p align="justify">
+<code>POST /api/v1/risk-detections/evaluations</code> recibe <code>{ deviceId, variableType, value, measuredAt, measurementId? }</code>. Es el punto de entrada provisional de mediciones mientras no exista el Bounded Context Monitoring, que luego utilizará la fachada ACL <code>IRiskDetectionContextFacade.EvaluateMeasurementAsync(...)</code>. La respuesta indica las detecciones creadas o actualizadas y los identificadores de las alertas generadas.
+</p>
 
 <p align="justify">
 El controlador delega la ejecución de consultas a <code>GetRiskDetectionQueryHandler</code> y <code>GetRiskDetectionEvidenceQueryHandler</code>.
@@ -5773,6 +5825,10 @@ No accede directamente a la base de datos.
 
 <p align="justify">
 <code>RiskDetectionEventConsumer</code> recibe información sincronizada de detección de riesgos producida por el flujo distribuido de Edge.
+</p>
+
+<p align="justify">
+<em>Componente proyectado:</em> aún no está implementado en ResQ.API, porque el entorno Edge todavía no existe.
 </p>
 
 <p align="justify">
@@ -5842,6 +5898,10 @@ Las principales capacidades de aplicación son:
 - persistencia en Cloud de detecciones sincronizadas;
 - consulta de detecciones y sus evidencias.
 
+<p align="justify">
+En ResQ.API, los Command y Query Handlers se implementan como servicios de aplicación: <code>DetectionRuleCommandService</code>, <code>DetectionRuleQueryService</code>, <code>RiskDetectionCommandService</code> y <code>RiskDetectionQueryService</code>. Cada uno expone un método <code>Handle(...)</code> por comando o consulta y se registra en <code>RiskDetectionContextDependencyInjection</code>.
+</p>
+
 ##### ConfigureDetectionRuleCommand
 
 <p align="justify">
@@ -5881,7 +5941,7 @@ Su flujo de ejecución es:
 5. Validar la condición de detección.
 6. Crear o actualizar la `DetectionRule`.
 7. Persistir el agregado mediante `DetectionRuleRepository`.
-8. Solicitar la distribución de la regla mediante `DetectionRuleDistributor`.
+8. Solicitar la distribución de la regla mediante `DetectionRuleDistributor`. Este paso es proyectado: la distribución hacia Edge aún no está implementada.
 
 <p align="justify">
 Las condiciones inválidas no deben producir una regla de detección activa.
@@ -5955,6 +6015,36 @@ Su flujo de ejecución es:
 <p align="justify">
 Este flujo está diseñado para ejecutarse localmente y, por lo tanto, no requiere una solicitud a Cloud para realizar la evaluación crítica de reglas.
 </p>
+
+##### EvaluateMeasurementCommand
+
+<p align="justify">
+<strong>Entorno de ejecución:</strong> Cloud (implementado en ResQ.API).
+</p>
+
+<p align="justify">
+Representa una medición válida que debe evaluarse en Cloud. La gestiona <code>RiskDetectionCommandService</code>, que aplica en Cloud el mismo flujo de <code>MeasurementReceivedEventHandler</code>.
+</p>
+
+**Atributos:**
+
+- `organizationId: Guid`
+- `measurementId: Guid`
+- `deviceId: Guid`
+- `variableType: String`
+- `value: Decimal`
+- `measuredAt: DateTimeOffset`
+
+<p align="justify">
+Su flujo de ejecución es:
+</p>
+
+1. Construir la `DetectionEvidence`, validando los identificadores, la variable y que `measuredAt` no esté en el futuro.
+2. Recuperar las reglas `ACTIVE` de esa variable y, por cada tipo de riesgo, seleccionar la regla satisfecha más severa.
+3. Resolver la ubicación del dispositivo mediante `IRiskLocationResolver` (`IDevicesContextFacade`). Si el dispositivo no existe, la ubicación queda `UNRESOLVED`.
+4. Buscar una detección del mismo tipo y ubicación cuya última evidencia esté dentro de `RiskDetectionSettings:CorrelationWindowMinutes` (30 minutos por defecto). Si existe, añadirle la evidencia y registrar un `SeverityChange` si la severidad cambia; si no existe, crear una nueva `RiskDetection`.
+5. Persistir los cambios mediante `IUnitOfWork`.
+6. Si `RiskDetectionSettings:RaiseAlerts` está activo, publicar los eventos mediante `IRiskDetectionEventPublisher` y devolver los identificadores de las alertas generadas.
 
 ##### UpdateLocalDetectionRuleEventHandler
 
@@ -6085,6 +6175,10 @@ La Application Layer no depende del mecanismo de transporte utilizado para la di
 Abstracción de aplicación utilizada para resolver la ubicación asociada con el dispositivo de origen.
 </p>
 
+<p align="justify">
+En Cloud se implementa como <code>IRiskLocationResolver</code> / <code>DeviceRiskLocationResolver</code>, que consulta Device Management mediante <code>IDevicesContextFacade</code> para obtener <code>buildingId</code> y <code>zoneId</code>.
+</p>
+
 **Operación:**
 
 - `resolve(deviceId)`
@@ -6111,6 +6205,10 @@ Abstracción de aplicación responsable de publicar un <code>RiskDetectedEvent</
 La interfaz aísla la Application Layer de las tecnologías de mensajería y conectividad.
 </p>
 
+<p align="justify">
+En Cloud se implementa como <code>IRiskDetectionEventPublisher</code> / <code>AlertManagementRiskDetectionEventPublisher</code>. Este publicador entrega <code>RiskDetectedEvent</code> y <code>RiskSeverityEscalatedEvent</code> a Alert & Response Management mediante <code>IAlertsContextFacade.GenerateAlertAsync(...)</code>, con el <code>riskDetectionId</code>, el tipo, la severidad, el edificio, la zona y la fecha de detección. Si Alert & Response rechaza la alerta, la detección ya persistida se mantiene.
+</p>
+
 #### 4.2.2.4. Infrastructure Layer
 
 <p align="justify">
@@ -6132,6 +6230,10 @@ Cloud y Edge utilizan diferentes implementaciones de infraestructura, manteniend
 </p>
 
 <p align="justify">
+En ResQ.API corresponde a <code>DetectionRuleRepository</code> (<code>Infrastructure/Persistence/EFC/Repositories</code>), que extiende <code>BaseRepository</code> sobre Entity Framework Core y MySQL y persiste en la tabla <code>detection_rules</code>. La condición se guarda en las columnas <code>variable_type</code>, <code>operator</code> y <code>threshold</code>.
+</p>
+
+<p align="justify">
 Sus responsabilidades son:
 </p>
 
@@ -6141,7 +6243,7 @@ Sus responsabilidades son:
 - persistir la configuración y el estado de las reglas de detección.
 
 <p align="justify">
-El framework de persistencia Cloud debe mantener la consistencia con la tecnología de Web Services seleccionada por el equipo.
+El framework de persistencia Cloud debe mantener la consistencia con la tecnología de Web Services seleccionada por el equipo. En ResQ.API es Entity Framework Core 10 con MySQL; el mapeo está en <code>ModelBuilderExtensions.ApplyRiskDetectionConfiguration</code> y usa la convención de nombres snake_case.
 </p>
 
 ##### RiskDetectionRepositoryAdapter
@@ -6164,6 +6266,10 @@ Sus responsabilidades incluyen la persistencia y reconstrucción de:
 - severidad actual;
 - referencias de ubicación resueltas o no resueltas.
 
+<p align="justify">
+En ResQ.API corresponde a <code>RiskDetectionRepository</code>, que persiste en las tablas <code>risk_detections</code>, <code>detection_evidences</code> y <code>severity_changes</code>. La ubicación se guarda embebida en <code>risk_detections</code>, en las columnas <code>building_id</code>, <code>zone_id</code> y <code>location_resolution_status</code>. Si estas tablas no existen, se crean automáticamente al iniciar la API.
+</p>
+
 ##### DetectionRuleDistributionAdapter
 
 <p align="justify">
@@ -6172,6 +6278,10 @@ Sus responsabilidades incluyen la persistencia y reconstrucción de:
 
 <p align="justify">
 <code>DetectionRuleDistributionAdapter</code> implementa <code>DetectionRuleDistributor</code>.
+</p>
+
+<p align="justify">
+<em>Componente proyectado:</em> aún no está implementado en ResQ.API.
 </p>
 
 <p align="justify">
@@ -9661,13 +9771,18 @@ La <strong>Domain Layer</strong> del Connectivity Management Bounded Context enc
 1. `SensorConnection`
    * **Propósito:** Representa el estado de red y la sesión de conectividad actual de un sensor físico específico.
    * **Atributos:**
-      * `sensorId`: Identificador del dispositivo IoT, representado como un objeto de valor `SensorId`.
-      * `macAddress`: Dirección física del sensor en la red, representado como un objeto de valor `MacAddress`.
-      * `status`: Estado operativo actual de la conexión (`ONLINE`, `OFFLINE`, `TIMEOUT`), representado como un objeto de valor `ConnectionStatus`.
+      * `id`: Identificador de la conexión (`Guid`).
+      * `organizationId`: Organización propietaria del sensor (`Guid`).
+      * `sensorId`: Identificador del sensor (`Guid`). Corresponde al id del dispositivo registrado en Device Management.
+      * `status`: Estado operativo actual de la conexión (`ONLINE`, `OFFLINE`, `TIMEOUT`), representado por la enumeración `EConnectionStatus`.
       * `lastHeartbeat`: Fecha y hora del último latido recibido exitosamente.
+      * `signalStrength`: Intensidad de señal reportada en el último latido (opcional), representada por el objeto de valor `SignalStrength`.
+      * `statusChangedAt`: Fecha y hora del último cambio de estado.
    * **Características:**
-      * Extiende `AuditableAbstractAggregateRoot`, lo que permite auditar el historial de caídas de red.
-      * Gestiona la lógica para determinar si el tiempo transcurrido desde el `lastHeartbeat` excede el límite permitido, cambiando el estado a `TIMEOUT`.
+      * Gestiona la lógica para determinar si el tiempo transcurrido desde el `lastHeartbeat` excede el límite permitido (`IsTimeoutExceeded`, `MarkAsTimedOut`), cambiando el estado a `TIMEOUT`.
+      * `RegisterHeartbeat` añade un `HeartbeatRecord`. Si el sensor estaba `OFFLINE` o `TIMEOUT`, lo devuelve a `ONLINE`; `MarkAsOffline` lo fuerza a `OFFLINE`.
+      * `GetEffectiveStatus` reporta como `TIMEOUT` a un sensor `ONLINE` cuyo latido ya venció, aunque el cambio aún no se haya persistido.
+      * La implementación actual no almacena `macAddress`: el sensor se identifica por el `Guid` del dispositivo, y Device Management no registra direcciones físicas.
 
 **Entities**
 
@@ -9681,21 +9796,26 @@ La <strong>Domain Layer</strong> del Connectivity Management Bounded Context enc
 
 1. `SensorId`
    * **Propósito:** Representa el identificador único de un sensor.
-   * **Validaciones:** El identificador no puede ser nulo ni negativo.
+   * **Validaciones:** El identificador es un `Guid` no vacío y debe corresponder a un dispositivo registrado en Device Management (validado mediante `IDevicesContextFacade`).
 2. `ConnectionStatus`
-   * **Propósito:** Enumera los estados posibles de conectividad (`ONLINE`, `OFFLINE`, `TIMEOUT`).
+   * **Propósito:** Enumera los estados posibles de conectividad (`ONLINE`, `OFFLINE`, `TIMEOUT`). Se implementa como la enumeración `EConnectionStatus`.
 3. `SignalStrength`
    * **Propósito:** Representa la calidad de la conexión inalámbrica.
-   * **Validaciones:** Debe estar dentro de rangos realistas (ej. entre -100 dBm y 0 dBm).
+   * **Validaciones:** Debe estar entre -100 dBm y 0 dBm; un valor fuera de rango produce `400 Bad Request`.
+4. `ConnectivitySettings`
+   * **Propósito:** Configuración leída de la sección `ConnectivitySettings` de `appsettings.json`. Incluye `HeartbeatTimeoutSeconds` (60 por defecto), `TimeoutScanIntervalSeconds` (15) y `RaiseDisconnectionAlerts` (`true`).
 
 **Commands**
 
 1. `RegisterHeartbeatCommand`
    * **Propósito:** Representa la solicitud para registrar un nuevo latido.
-   * **Atributos:** `sensorId`, `timestamp`, `signalStrength`.
+   * **Atributos:** `organizationId`, `sensorId`, `timestamp`, `signalStrength`.
 2. `MarkSensorOfflineCommand`
-   * **Propósito:** Solicitud interna para forzar el estado de un sensor a desconectado tras superar el tiempo de espera.
-   * **Atributos:** `sensorId`.
+   * **Propósito:** Solicitud interna para forzar el estado de un sensor a `OFFLINE`, por ejemplo desde otro Bounded Context mediante `IConnectivityContextFacade`.
+   * **Atributos:** `organizationId`, `sensorId`.
+3. `EvaluateSensorTimeoutsCommand`
+   * **Propósito:** Solicitud interna que marca como `TIMEOUT` a todo sensor `ONLINE` cuyo último latido supera `HeartbeatTimeoutSeconds`.
+   * **Atributos:** `evaluatedAt`.
 
 **Queries**
 
@@ -9708,7 +9828,7 @@ La <strong>Domain Layer</strong> del Connectivity Management Bounded Context enc
 
 1. `ConnectionLostEvent`
    * **Propósito:** Evento crítico que se dispara cuando un sensor pasa a estado `OFFLINE` o `TIMEOUT`.
-   * **Atributos:** `sensorId`, `lastHeartbeat`.
+   * **Atributos:** `sensorId`, `newStatus`, `lastHeartbeat`, `occurredAt`.
 2. `HeartbeatReceivedEvent`
    * **Propósito:** Evento que se dispara cada vez que se registra un latido exitoso.
 
@@ -9727,25 +9847,37 @@ La <strong>Interface Layer</strong> del Connectivity Management Bounded Context 
    * **Endpoints:**
       * `POST /api/v1/connectivity/heartbeats`: Registra un nuevo latido proveniente del dispositivo IoT.
       * `GET /api/v1/connectivity/sensors/{sensorId}/status`: Obtiene el estado actual de red de un sensor.
-      * `GET /api/v1/connectivity/sensors/offline`: Lista todos los sensores sin conexión.
+      * `GET /api/v1/connectivity/sensors/offline`: Lista todos los sensores sin conexión (`OFFLINE` o `TIMEOUT`) de la organización.
+   * **Comportamiento:**
+      * Todos los endpoints requieren token JWT (`[Authorize]`) y toman la organización del contexto de la petición.
+      * `POST /heartbeats` responde `404` si `sensorId` no es un dispositivo registrado y `400` si la señal está fuera de rango.
+      * `GET /status` responde `404` si el sensor nunca envió un latido.
    * **Dependencias:**
-      * `ConnectivityCommandService`: Servicio encargado de manejar los comandos relacionados con la conectividad.
-      * `ConnectivityQueryService`: Servicio encargado de manejar las consultas de conectividad.
+      * `IConnectivityCommandService`: Servicio encargado de manejar los comandos relacionados con la conectividad.
+      * `IConnectivityQueryService`: Servicio encargado de manejar las consultas de conectividad.
 
 **Resources**
 
 1. `SensorConnectionResource`
    * **Propósito:** Representa el estado de conexión expuesto a través de la API REST.
-   * **Atributos:** `sensorId`, `status`, `lastHeartbeatTime`.
+   * **Atributos:** `sensorId`, `status`, `lastHeartbeatTime`, `signalStrength`.
 2. `RegisterHeartbeatResource`
    * **Propósito:** Representa los datos necesarios enviados por el dispositivo IoT para reportar su estado.
-   * **Atributos:** `sensorId`, `signalStrength`.
+   * **Atributos:** `sensorId`, `signalStrength` (opcional, en dBm).
 
 **Transformers**
 
 1. `SensorConnectionResourceFromEntityAssembler`
    * **Propósito:** Convierte una entidad `SensorConnection` en un recurso `SensorConnectionResource`.
-   * **Método principal:** `toResourceFromEntity(SensorConnection entity)`.
+   * **Método principal:** `ToResourceFromEntity(SensorConnection entity, DateTimeOffset now, TimeSpan timeout)`. Expone el estado efectivo en el momento de la consulta.
+2. `RegisterHeartbeatCommandFromResourceAssembler`
+   * **Propósito:** Convierte un `RegisterHeartbeatResource` en un `RegisterHeartbeatCommand`, usando como `timestamp` la hora de recepción en el servidor.
+
+**ACL**
+
+1. `IConnectivityContextFacade` / `ConnectivityContextFacade`
+   * **Propósito:** Fachada expuesta a otros Bounded Contexts (por ejemplo, Monitoring).
+   * **Métodos:** `GetSensorConnectionStatusAsync(organizationId, sensorId)` y `MarkSensorOfflineAsync(organizationId, sensorId)`.
 
 ---
 #### 4.2.9.3. Application Layer
@@ -9756,33 +9888,37 @@ La <strong>Application Layer</strong> coordina las operaciones de negocio, manej
 
 **Command Services**
 
-1. `ConnectivityCommandServiceImpl`
+1. `ConnectivityCommandService`
    * **Propósito:** Gestiona las operaciones relacionadas con el procesamiento de señales de vida y actualización de estados.
    * **Métodos principales:**
-      * `handle(RegisterHeartbeatCommand command)`: Actualiza el `lastHeartbeat` del sensor. Si estaba `OFFLINE`, lo devuelve a `ONLINE`.
-      * `handle(MarkSensorOfflineCommand command)`: Cambia el estado a `TIMEOUT` tras validar los tiempos de espera.
+      * `Handle(RegisterHeartbeatCommand command)`: Verifica que el sensor exista y actualiza su `lastHeartbeat`. En el primer latido crea la `SensorConnection`; si estaba `OFFLINE` o `TIMEOUT`, la devuelve a `ONLINE`.
+      * `Handle(MarkSensorOfflineCommand command)`: Fuerza el estado `OFFLINE`.
+      * `Handle(EvaluateSensorTimeoutsCommand command)`: Cambia a `TIMEOUT` los sensores cuyo latido superó el tiempo de espera.
    * **Dependencias:**
-      * `SensorConnectionRepository`: Persistencia de las conexiones.
-      * `ExternalDeviceService`: Verifica la existencia del sensor.
+      * `ISensorConnectionRepository`: Persistencia de las conexiones.
+      * `IDevicesContextFacade`: Verifica, mediante el ACL de Device Management, que el sensor sea un dispositivo registrado y obtiene su edificio y zona.
+      * `IAlertsContextFacade`: Genera la alerta de desconexión.
 
 **Query Services**
 
-1. `ConnectivityQueryServiceImpl`
+1. `ConnectivityQueryService`
    * **Propósito:** Gestiona las consultas relacionadas con los estados de red.
    * **Métodos principales:**
-      * `handle(GetSensorConnectionStatusQuery query)`: Recupera el estado de un sensor por su ID.
+      * `Handle(GetSensorConnectionStatusQuery query)`: Recupera el estado de un sensor por su ID.
+      * `Handle(GetAllOfflineSensorsQuery query)`: Recupera los sensores `OFFLINE` o `TIMEOUT`, incluidos los que ya vencieron aunque la evaluación periódica aún no los haya marcado.
 
 **Event Handlers**
 
-1. `SensorTimeoutEventHandler`
-   * **Propósito:** Maneja el evento de evaluación de tiempos de espera para sensores que no han reportado actividad.
-   * **Método principal:** `on(EvaluateSensorTimeoutsEvent event)`: Identifica sensores desconectados y dispara el `MarkSensorOfflineCommand`.
+1. `SensorTimeoutBackgroundService`
+   * **Propósito:** Servicio en segundo plano (`BackgroundService`) que evalúa periódicamente los tiempos de espera de los sensores que no han reportado actividad.
+   * **Funcionamiento:** Cada `TimeoutScanIntervalSeconds` envía un `EvaluateSensorTimeoutsCommand`, que marca como `TIMEOUT` a los sensores cuyo último latido supera `HeartbeatTimeoutSeconds`.
 
 **Outbound Services (ACL)**
 
-1. `ExternalAlertService`
-   * **Propósito:** Interactúa con el Alert & Response Management Bounded Context para disparar alarmas de desconexión.
-   * **Método principal:** `triggerDisconnectionAlert(Long sensorId)`.
+1. `IAlertsContextFacade` (Alert & Response Management)
+   * **Propósito:** Dispara alarmas de desconexión. Por cada `ConnectionLostEvent`, `ConnectivityCommandService` invoca `GenerateAlertAsync(...)`. Usa el tipo de riesgo `SENSOR_DISCONNECTED`, la severidad `Warning`, el `riskDetectionId` `CONNECTIVITY-{sensorId}` y el edificio y la zona del dispositivo. Se puede desactivar con `ConnectivitySettings:RaiseDisconnectionAlerts`.
+2. `IDevicesContextFacade` (Device Management)
+   * **Propósito:** Verifica la existencia del sensor y obtiene su ubicación.
 
 ---
 
@@ -9792,14 +9928,18 @@ La <strong>Application Layer</strong> coordina las operaciones de negocio, manej
 La <strong>Infrastructure Layer</strong> proporciona las implementaciones técnicas necesarias para soportar las operaciones del sistema, incluyendo los repositorios para la persistencia de datos en la base de datos.
 </p>
 
-**Persistencia (JPA Repositories)**
+**Persistencia (EF Core Repositories)**
 
 1. `SensorConnectionRepository`
    * **Propósito:** Proporciona métodos para interactuar con la base de datos de conectividad.
    * **Métodos principales:**
-      * `findSensorsWithLastHeartbeatBefore(LocalDateTime time)`: Recupera todos los sensores cuyo último latido fue anterior a una fecha límite, útil para detectar caídas de red.
+      * `FindOnlineWithLastHeartbeatBeforeAsync(DateTimeOffset time)`: Recupera los sensores `ONLINE` cuyo último latido fue anterior a una fecha límite, útil para detectar caídas de red.
+      * `FindBySensorIdAsync(organizationId, sensorId)`: Recupera la conexión de un sensor.
+      * `FindDisconnectedAsync(organizationId, heartbeatLimit)`: Recupera los sensores `OFFLINE`, `TIMEOUT` o con el latido vencido.
    * **Características:**
-      * Extiende `JpaRepository`, permitiendo realizar operaciones CRUD sobre la entidad `SensorConnection`.
+      * Extiende `BaseRepository<SensorConnection>` sobre Entity Framework Core y MySQL, permitiendo realizar operaciones CRUD sobre la entidad `SensorConnection`.
+      * El mapeo se define en `ModelBuilderExtensions.ApplyConnectivityManagementConfiguration` con la convención snake_case. Usa las tablas `sensor_connections`, con índice único (`organization_id`, `sensor_id`), y `heartbeat_records`, relacionada por `sensor_connection_id` con borrado en cascada.
+      * Si las tablas no existen, se crean automáticamente al iniciar la API.
 
 **Relaciones entre componentes**
 
