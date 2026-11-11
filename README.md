@@ -14073,6 +14073,240 @@ Las preguntas se formularán durante y después de la interacción con ResQ, con
 | P17 | Considerando su experiencia con la solución, ¿la utilizaría o recomendaría? ¿Por qué? |
 
 
+### 6.3.3. Evaluaciones según heurísticas
+
+<p align="justify">
+La evaluación heurística de ResQ tiene como finalidad identificar problemas de experiencia de usuario que puedan afectar la interpretación de las condiciones de riesgo, la consulta de alertas e incidentes y la interacción con los productos digitales de la solución. La revisión considera los principios de usabilidad, arquitectura de información y diseño inclusivo establecidos en el Anexo D del Final Project Statement del curso. Su alcance comprende el Landing Page y la Frontend Web Application, con especial atención a los recorridos definidos en la sección 6.3.1, Diseño de Entrevistas.
+</p>
+
+<p align="justify">
+Los hallazgos que se presentan corresponden a una <strong>inspección heurística documental del código y de los componentes de interfaz implementados</strong>, no a resultados atribuidos a participantes de entrevistas de validación. El análisis contrasta las plantillas y la configuración de ambos productos con los principios aplicables y permite identificar problemas reproducibles o riesgos de interacción fundamentados en su implementación. La revisión de las sesiones con usuarios, sus observaciones y la comparación de resultados con esta inspección deben documentarse de forma independiente cuando se disponga de los registros correspondientes; en ningún caso se infieren testimonios ni tasas de éxito de participantes.
+</p>
+
+#### Ficha de evaluación
+
+| Campo | Descripción |
+|---|---|
+| Carrera | Ingeniería de Software |
+| Curso | 1ASI0572 — Desarrollo de Soluciones IoT |
+| Sección | NRC 16518 |
+| Docente | Jimmy Enrique Sánchez Portugal |
+| Auditor | SecurityBear, equipo de desarrollo de ResQ; inspección documental de la interfaz y su implementación |
+| Producto evaluado | ResQ Landing Page y ResQ Frontend Web Application |
+| Segmentos considerados | Propietarios y administradores de edificaciones; empresas integradoras de automatización y edificios inteligentes |
+| Tipo de evidencia | Inspección de plantillas Angular, configuración de componentes y flujos de navegación; capturas ilustrativas de los hallazgos |
+| Alcance de resultados | Evaluación experta preliminar; no equivale a una sesión de validación observada con usuarios reales |
+
+#### Tareas incluidas en la evaluación
+
+<p align="justify">
+La selección de tareas mantiene la correspondencia con los escenarios C01, C02, E01, E02, E03, I01 e I02 del diseño de entrevistas. Para cada recorrido se examinan la claridad de las etiquetas, el estado de la interfaz, la coherencia de la información, la accesibilidad de los controles y la disponibilidad de retroalimentación. La inspección no presupone que los recorridos hayan sido completados exitosamente por usuarios finales.
+</p>
+
+| ID | Producto | Tarea o recorrido considerado | Aspecto heurístico prioritario |
+|---|---|---|---|
+| C01 | Landing Page | Identificar la propuesta de valor y los segmentos a los que se dirige ResQ | Comprensibilidad, consistencia e información orientada al usuario |
+| C02 | Landing Page | Localizar las opciones para continuar hacia las soluciones o la aplicación | Arquitectura de información y facilidad de localización |
+| E01 | Web Application | Consultar indicadores de monitoreo y localizar una edificación o zona | Visibilidad del estado del sistema y fiabilidad de la información |
+| E02 | Web Application | Consultar una alerta e interpretar su nivel de riesgo | Consistencia, prevención de errores y claridad de la respuesta |
+| E03 | Web Application | Localizar un incidente, consultar su estado y revisar las acciones disponibles | Capacidad de búsqueda, retroalimentación y diseño inclusivo |
+| I01 | Web Application | Consultar un dispositivo y sus características | Reconocimiento y localización de información técnica |
+| I02 | Web Application | Interpretar mediciones y estado de conectividad | Visibilidad del origen y actualidad de los datos |
+
+<p align="justify">
+Quedan fuera del alcance de esta inspección documental la medición de tiempos reales de uso, las tareas que requieren acceso a hardware físico y la comprobación de la integración extremo a extremo con actuadores, incluidos los aspectos físicos del escenario I03. Estas actividades requieren pruebas diferenciadas y no pueden validarse únicamente examinando las plantillas de la aplicación.
+</p>
+
+#### Escala de severidad
+
+<p align="justify">
+Se adopta la escala de cuatro niveles indicada en el Anexo D del enunciado. La calificación se asigna de manera preliminar considerando el impacto potencial sobre las tareas analizadas y la posibilidad de que un usuario interprete incorrectamente información crítica o encuentre barreras de interacción.
+</p>
+
+| Nivel | Clasificación | Criterio para la priorización |
+|:---:|---|---|
+| 1 | Problema superficial | Incidencia poco frecuente o de bajo impacto que no impide completar una tarea; puede corregirse en un refinamiento posterior. |
+| 2 | Problema menor | Dificultad recurrente o evitable que incrementa el esfuerzo, reduce la claridad o afecta parcialmente una tarea; requiere corrección planificada. |
+| 3 | Problema mayor | Condición que puede producir errores significativos de interpretación o impedir el uso de una funcionalidad para determinados usuarios; requiere prioridad alta. |
+| 4 | Problema muy grave | Barrera que impide continuar con el producto o genera un impacto crítico sobre la ejecución de las tareas; debe resolverse antes de la publicación correspondiente. |
+
+#### Tabla resumen de problemas identificados
+
+| N.º | Problema identificado | Severidad | Heurística o principio comprometido | Componente |
+|:---:|---|:---:|---|---|
+| H01 | El detalle de alertas muestra mensajes estáticos de tipo <em>Warning</em> aun cuando la severidad se representa mediante un dato variable. | 3 | Usabilidad: consistencia y estándares; prevención de errores | Alert Detail |
+| H02 | El Dashboard presenta indicadores bajo denominaciones de estado <em>Live</em> mientras parte de la información se obtiene de adaptadores simulados. | 3 | Usabilidad: visibilidad del estado del sistema; correspondencia con el mundo real | Dashboard y capa de datos |
+| H03 | El campo de búsqueda de incidentes carece de una etiqueta textual o un nombre accesible explícito en su plantilla. | 3 | Inclusive Design: experiencias comparables; Usabilidad: reconocimiento | Incidents |
+| H04 | Los mensajes de error del acceso no incluyen una región de anuncio accesible explícita. | 2 | Inclusive Design: accesibilidad de la retroalimentación; Usabilidad: recuperación de errores | Login |
+| H05 | El Landing Page y la Web Application emplean idiomas predeterminados distintos en una primera visita. | 2 | Usabilidad: consistencia y estándares; Information Architecture: comprensibilidad | Landing Page y Web Application |
+| H06 | Los botones de selección de métricas y períodos del Dashboard expresan su estado activo mediante una clase visual, sin exponerlo mediante atributos de estado accesibles. | 2 | Inclusive Design: información perceptible y controles operables | Dashboard |
+| H07 | La vista de incidentes recomienda modificar filtros incluso cuando no existen registros, sin diferenciar ambos estados vacíos. | 2 | Usabilidad: retroalimentación y ayuda para reconocer estados | Incidents |
+| H08 | La pantalla de acceso presenta cantidades e indicadores operativos estáticos sin identificar expresamente su carácter ilustrativo. | 2 | Usabilidad: correspondencia con el mundo real; credibilidad de la información | Login |
+
+#### Descripción de problemas y recomendaciones
+
+##### Problema H01. Mensajes de severidad no coherentes con el estado de la alerta
+
+**Severidad:** 3 — Problema mayor.  
+**Heurísticas comprometidas:** Usabilidad: consistencia y estándares; prevención de errores.  
+**Tarea relacionada:** E02 — Consultar una alerta e interpretar su nivel de riesgo.
+
+<p align="justify">
+La plantilla de detalle de alertas representa la severidad mediante el valor dinámico de la alerta y sus indicadores visuales. Sin embargo, el encabezado del contexto contiene el texto fijo <em>“Risk Detection created this Warning Alert”</em>, y el bloque de evidencia indica de forma estática <em>“Warning threshold exceeded”</em>. Por ello, cuando la alerta corresponda a un nivel distinto de advertencia, la interfaz puede mostrar simultáneamente una severidad dinámica y explicaciones que remiten a un estado de advertencia. Esta discrepancia resulta especialmente relevante en ResQ porque el usuario utiliza la gravedad del evento para interpretar la situación y decidir cómo proceder.
+</p>
+
+**Figura 285. Inconsistencia entre el nivel de la alerta y los mensajes explicativos del detalle.**
+
+![Detalle de una alerta con el indicador de severidad y los textos fijos Warning del contexto y la evidencia](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h01-alerta-severidad.png)
+
+**Recomendación:** Generar los textos explicativos a partir de la severidad y de la evidencia específica del evento. Definir variantes para los niveles de advertencia, crítico y otros estados admitidos, y verificar que título, indicadores, umbrales y descripciones coincidan para cada tipo de alerta.
+
+**Sustento de implementación:** [Plantilla de alertas y detalle](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/alerts/alerts.pages.ts).
+
+##### Problema H02. Falta de diferenciación explícita entre monitoreo en vivo y datos simulados
+
+**Severidad:** 3 — Problema mayor.  
+**Heurísticas comprometidas:** Usabilidad: visibilidad del estado del sistema; correspondencia entre el sistema y el mundo real.  
+**Tareas relacionadas:** E01 e I02 — Interpretar indicadores de monitoreo y datos técnicos.
+
+<p align="justify">
+El Dashboard utiliza expresiones como <em>“Live space status”</em> para presentar información de los espacios y el estado de riesgo. Paralelamente, la configuración de la aplicación utiliza adaptadores de datos simulados para determinados contextos, incluidos componentes de edificaciones, dispositivos, incidentes y monitoreo. Sin una señal explícita sobre el origen y la vigencia de la información, el usuario podría interpretar datos de demostración como mediciones actuales provenientes de sensores físicos. La confusión compromete la confianza en la visualización y puede influir sobre decisiones asociadas al monitoreo de riesgos.
+</p>
+
+**Figura 286. Indicadores de monitoreo del Dashboard y ausencia de identificación visible del origen de los datos.**
+
+![Dashboard de ResQ con el estado Live y los indicadores de monitoreo](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h02-dashboard-datos-simulados.png)
+
+**Recomendación:** Incorporar un identificador persistente del modo de operación (<em>Demo</em>, <em>Simulation</em> o <em>Live</em>), registrar la fuente de datos y mostrar la última fecha de actualización. Reservar la denominación <em>Live</em> para flujos conectados a fuentes efectivamente actualizadas y diferenciarlos de los ejemplos estáticos o simulados.
+
+**Sustento de implementación:** [Dashboard](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/dashboard/dashboard.page.ts) y [configuración de proveedores de datos](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/app.config.ts).
+
+##### Problema H03. Identificación accesible insuficiente del campo de búsqueda de incidentes
+
+**Severidad:** 3 — Problema mayor.  
+**Heurística comprometida:** Inclusive Design: proporcionar experiencias comparables y controles comprensibles.  
+**Tarea relacionada:** E03 — Localizar un incidente.
+
+<p align="justify">
+En el listado de incidentes, el campo de búsqueda está contenido dentro de una etiqueta visual que incluye un ícono y un texto de marcador de posición (<em>placeholder</em>), pero no contiene una etiqueta textual persistente ni un atributo de nombre accesible explícito. El marcador de posición no constituye una alternativa robusta a una etiqueta de formulario, ya que desaparece al ingresar información y puede no ofrecer una identificación suficientemente clara en distintas tecnologías de asistencia. La presencia del ícono tampoco garantiza que el propósito del campo sea anunciado correctamente.
+</p>
+
+**Figura 287. Campo de búsqueda de incidentes y estructura de su identificación accesible.**
+
+![Campo de búsqueda del listado de incidentes y su elemento input inspeccionado](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h03-busqueda-incidentes-accesibilidad.png)
+
+**Recomendación:** Agregar un nombre programático explícito mediante una etiqueta textual asociada al campo o un atributo <code>aria-label</code> adecuado, y conservar la descripción del tipo de información admitida como ayuda adicional. Comprobar su lectura con navegación por teclado y lector de pantalla.
+
+**Sustento de implementación:** [Plantilla de listado de incidentes](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/incidents/incidents.pages.ts).
+
+##### Problema H04. Retroalimentación de errores de autenticación sin anuncio accesible explícito
+
+**Severidad:** 2 — Problema menor.  
+**Heurísticas comprometidas:** Inclusive Design: acceso comparable a la retroalimentación; Usabilidad: ayuda para reconocer y recuperarse de errores.  
+**Tarea relacionada:** Acceso a la aplicación web, necesario para ejecutar E01, E02, E03, I01 e I02.
+
+<p align="justify">
+La pantalla de autenticación presenta mensajes de error cuando el formulario es inválido o el servicio rechaza las credenciales. Los mensajes aparecen dentro de contenedores visuales con la clase <code>error</code>, sin que la plantilla les asigne explícitamente <code>role="alert"</code> ni una región <code>aria-live</code>. Como resultado, el código no garantiza que la aparición del mensaje sea comunicada inmediatamente a quienes utilizan tecnologías de asistencia. Se trata de una limitación de la retroalimentación accesible, no de una afirmación de que el inicio de sesión falle para todos los usuarios.
+</p>
+
+**Figura 288. Presentación de un error de inicio de sesión y estructura de su contenedor.**
+
+![Mensaje de error de autenticación en Login y contenedor correspondiente](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h04-login-mensaje-error.png)
+
+**Recomendación:** Presentar los errores mediante una región accesible apropiada, asociar los errores de validación con los campos pertinentes utilizando <code>aria-describedby</code> y comprobar que el anuncio sea comprensible sin interferir con el foco o la navegación.
+
+**Sustento de implementación:** [Componente de acceso](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/auth/login.page.ts).
+
+##### Problema H05. Inconsistencia del idioma predeterminado entre productos digitales
+
+**Severidad:** 2 — Problema menor.  
+**Heurísticas comprometidas:** Usabilidad: consistencia y estándares; Information Architecture: comprensibilidad.  
+**Tareas relacionadas:** C01, C02 y acceso a la Web Application.
+
+<p align="justify">
+El servicio de idiomas del Landing Page inicia en español cuando no existe una preferencia guardada; en cambio, el servicio correspondiente a la Web Application utiliza inglés de manera predeterminada. En una primera visita, la transición entre productos puede producir un cambio de idioma que no ha sido solicitado por el usuario, dificultando la continuidad de la experiencia. Adicionalmente, el Statement del curso establece el inglés como idioma predeterminado para los productos digitales y contempla español latinoamericano como alternativa de internacionalización.
+</p>
+
+**Figura 289. Diferencia entre el idioma inicial del Landing Page y el de la Web Application.**
+
+![Comparación de la interfaz inicial del Landing Page en español y la aplicación en inglés](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h05-idiomas-landing-aplicacion.png)
+
+**Recomendación:** Unificar el idioma inicial conforme a las convenciones del proyecto, hacer visible la selección de idioma y conservar la preferencia al continuar desde el Landing Page hacia la aplicación. Probar expresamente los recorridos con las configuraciones <code>en_US</code> y <code>es_419</code>.
+
+**Sustento de implementación:** [Servicio de idioma del Landing Page](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-landing-page/blob/main/src/app/language.ts) y [servicio de idioma de la aplicación](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/core/services/language.service.ts).
+
+##### Problema H06. Estado de selección no expuesto de manera accesible en controles del Dashboard
+
+**Severidad:** 2 — Problema menor.  
+**Heurística comprometida:** Inclusive Design: hacer perceptible el estado de los controles y ofrecer experiencias comparables.  
+**Tarea relacionada:** E01 — Interpretar indicadores y modificar la métrica o el período de análisis.
+
+<p align="justify">
+Los controles de selección de métricas ambientales y períodos de análisis del Dashboard utilizan botones cuyo estado activo se expresa mediante la clase visual <code>active</code>. La plantilla examinada no incorpora un atributo que comunique de manera programática cuál opción está seleccionada, como <code>aria-pressed</code> en un conjunto de botones de alternancia. Esta ausencia puede dificultar que una persona que utiliza lector de pantalla identifique el filtro o la métrica actualmente aplicada, aun cuando el cambio visual sea perceptible.
+</p>
+
+**Figura 290. Selección de métricas y períodos en el Dashboard.**
+
+![Controles del Dashboard con estado activo visible y atributos de accesibilidad inspeccionados](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h06-dashboard-estado-filtros.png)
+
+**Recomendación:** Añadir un estado programático coherente con el patrón de interacción seleccionado, mantener una indicación visual del control activo y verificar que el resultado del cambio de métrica o período sea comprensible por teclado y lector de pantalla.
+
+**Sustento de implementación:** [Plantilla de indicadores del Dashboard](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/dashboard/dashboard.page.ts).
+
+##### Problema H07. Mensaje de estado vacío no diferenciado en el listado de incidentes
+
+**Severidad:** 2 — Problema menor.  
+**Heurística comprometida:** Usabilidad: visibilidad del estado del sistema y ayuda contextual.  
+**Tarea relacionada:** E03 — Consultar un incidente y filtrar sus registros.
+
+<p align="justify">
+La vista de incidentes presenta el mismo estado vacío cuando el listado filtrado no contiene resultados, independientemente de que la colección original esté vacía o de que un filtro haya excluido todos los registros. El mensaje sugiere modificar los filtros incluso si la búsqueda todavía no ha sido utilizada y no existen incidentes cargados. Esta ambigüedad impide diferenciar claramente entre una ausencia real de datos y una búsqueda sin coincidencias.
+</p>
+
+**Figura 291. Estado vacío del listado de incidentes y mensaje de ayuda al usuario.**
+
+![Listado de incidentes con el mensaje de ausencia de resultados](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h07-incidentes-estado-vacio.png)
+
+**Recomendación:** Distinguir los estados <em>sin incidentes registrados</em>, <em>sin coincidencias para los filtros</em> y <em>error de carga</em>. Ofrecer una acción contextual para restablecer filtros únicamente cuando exista una selección activa y conservar un mensaje específico para la ausencia de datos.
+
+**Sustento de implementación:** [Condiciones de representación del listado de incidentes](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/incidents/incidents.pages.ts).
+
+##### Problema H08. Indicadores operativos fijos sin identificación como valores de demostración
+
+**Severidad:** 2 — Problema menor.  
+**Heurísticas comprometidas:** Usabilidad: correspondencia con el mundo real; claridad y credibilidad de la información.  
+**Tarea relacionada:** Acceso a la Web Application y primera interpretación del alcance del servicio.
+
+<p align="justify">
+La pantalla de autenticación presenta valores numéricos fijos relacionados con dispositivos conectados y disponibilidad del sistema, acompañados de una referencia a monitoreo continuo. Al encontrarse incorporados directamente en la plantilla, estos indicadores no representan necesariamente el estado actual de la infraestructura y tampoco se identifican en ese bloque como cifras ilustrativas. Su presentación puede inducir a interpretar que se trata de estadísticas de operación efectivamente medidas.
+</p>
+
+**Figura 292. Indicadores operativos presentados en la pantalla de autenticación.**
+
+![Pantalla de Login de ResQ con indicadores numéricos de dispositivos y disponibilidad](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h08-login-indicadores-estaticos.png)
+
+**Recomendación:** Identificar explícitamente las cifras como demostrativas, sustituirlas por métricas obtenidas de una fuente verificable cuando exista integración o prescindir de valores numéricos que no cuenten con sustento. Mantener la diferenciación entre contenido promocional, datos de ejemplo e indicadores operativos.
+
+**Sustento de implementación:** [Plantilla de acceso de ResQ](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/auth/login.page.ts).
+
+#### Priorización de mejoras e interpretación de resultados
+
+<p align="justify">
+La inspección identifica <strong>ocho hallazgos documentales</strong>: tres clasificados preliminarmente con severidad 3 y cinco con severidad 2. No se asignan problemas de severidad 4 porque la revisión del código, sin una observación de uso que confirme un bloqueo crítico, no proporciona fundamento suficiente para esa clasificación. Las severidades son estimaciones de inspección y no resultados cuantitativos de una muestra de participantes.
+</p>
+
+<p align="justify">
+Los hallazgos de mayor prioridad se relacionan con la interpretación correcta de la gravedad de una alerta, la identificación del carácter simulado o actual de la información de monitoreo y la accesibilidad del campo de búsqueda de incidentes. Las dos primeras condiciones merecen especial atención por la finalidad de ResQ: apoyar la supervisión de situaciones de riesgo y la comprensión de las respuestas disponibles. El tercer hallazgo afecta la posibilidad de realizar tareas equivalentes mediante tecnologías de asistencia.
+</p>
+
+<p align="justify">
+Como acciones de mejora se propone incorporar textos de riesgo dependientes de datos reales de cada evento, diferenciar explícitamente los modos de demostración y operación conectada, proporcionar nombres accesibles a los controles, anunciar los mensajes de error, uniformizar el comportamiento de internacionalización y mejorar la retroalimentación de filtros y estados vacíos. Estas modificaciones deben verificarse mediante pruebas de interfaz y accesibilidad antes de considerarse resueltas, y los cambios aceptados deben registrarse en el Product Backlog y en el historial de versiones del producto.
+</p>
+
+<p align="justify">
+La presente evaluación constituye una base trazable para contrastar los hallazgos técnicos con las observaciones que se obtengan en las Validation Interviews de los dos segmentos objetivo. La convergencia entre los problemas detectados por inspección y las dificultades realmente observadas permitirá ajustar la severidad y la priorización. Hasta contar con esos registros, no se declara participación de usuarios en esta evaluación, no se presentan entrevistas inexistentes ni se atribuyen mejoras a pruebas que todavía no han sido efectuadas.
+</p>
+
 # Conclusiones y recomendaciones
 
 <p align="justify">
