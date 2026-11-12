@@ -13769,6 +13769,75 @@ A partir del Product Backlog general, el equipo seleccionó las siguientes histo
 El seguimiento de estas historias de usuario se gestionó asegurando que cada tarea contara con sus respectivos criterios de aceptación validados mediante las correspondientes evidencias de desarrollo y ejecución al finalizar el Sprint.
 </p>
 
+#### 6.2.2.5. Testing Suite Evidence for Sprint Review.
+
+En esta sección se presenta el conjunto de pruebas desarrolladas para validar los Web Services de ResQ incorporados durante el Sprint 2. A diferencia del Sprint 1, en el que las pruebas se organizaron en Unit Tests, Integration Tests y Acceptance Tests dentro de la rama `feature/tests`, en esta iteración las pruebas se desarrollaron junto con cada bounded context, en la misma rama de funcionalidad, y se integraron a la rama `main` del repositorio `resq-backend` mediante los respectivos pull requests.
+
+Durante este sprint se desarrollaron pruebas para los bounded contexts Connectivity Management, Risk Detection y Monitoring. Las pruebas se implementaron como scripts en PowerShell que se ejecutan contra la API de ResQ en funcionamiento, utilizando autenticación real mediante JWT. Cada script registra o autentica un usuario de prueba, prepara los datos necesarios (edificación, zona y dispositivo) y ejecuta las peticiones HTTP sobre los endpoints del bounded context, verificando en cada paso el código de respuesta y el contenido devuelto. Cada verificación se reporta como `[PASS]` o `[FAIL]` y, al finalizar, el script muestra un resumen y termina con código de salida 1 cuando existe al menos una verificación fallida.
+
+<br>
+
+**Connectivity Management:**
+
+Para Connectivity Management se implementó el script `test_connectivity.ps1`, que contiene 15 verificaciones sobre el registro de heartbeats de los sensores y la detección de pérdida de conectividad. Las pruebas validan que un sensor sin heartbeats o desconocido devuelva 404, que se rechace una intensidad de señal fuera de rango, que el registro de un heartbeat establezca el estado `ONLINE` junto con la fecha del último heartbeat, y que, al superar el tiempo de espera configurado, el sensor pase al estado `TIMEOUT`, aparezca en el listado de sensores desconectados y se genere una alerta `SENSOR_DISCONNECTED` asociada con su zona. También se comprueba la recuperación del sensor al recibir un nuevo heartbeat y el rechazo de las peticiones sin token (401). Estas pruebas se relacionan con la User Story **US04 - Conocer el estado operativo de un dispositivo**.
+
+<br>
+
+**Risk Detection:**
+
+Para Risk Detection se implementó el script `test_risk_detection.ps1`, que contiene 32 verificaciones sobre las reglas de detección, la evaluación de mediciones y su encadenamiento con Device Management y Alert Management. Las pruebas validan la creación de reglas con niveles Warning y Critical y el rechazo de operadores o severidades inválidas, la evaluación de una medición que no supera los umbrales, la creación de una detección de riesgo con su ubicación resuelta a la edificación y zona del dispositivo, y el registro de la evidencia (medición, dispositivo y valor). Además, se comprueba el escalamiento de Warning a Critical sobre la misma detección con su historial de cambios de severidad y la generación de una alerta por cada escalamiento, la desactivación de una regla, el desescalamiento sin generar alertas adicionales, la detección con ubicación no resuelta y las consultas por edificación y tipo de riesgo, además de las respuestas 400, 404 y 401 esperadas. Estas pruebas se relacionan con las User Stories **US06 - Conocer el tipo de riesgo detectado**, **US07 - Conocer el nivel de riesgo**, **US08 - Conocer la ubicación del riesgo**, **US09 - Consultar el contexto de una detección** y **US24 - Configurar una condición de detección**.
+
+<br>
+
+**Monitoring:**
+
+Para Monitoring se implementó el script `test_monitoring.ps1`, que contiene 24 verificaciones sobre el registro de mediciones y la consulta del estado de dispositivos, zonas y edificaciones, incluyendo su encadenamiento con Device Management, Connectivity Management, Risk Detection y Alert Management. Las pruebas validan que una medición normal se registre conservando la edificación y zona del dispositivo sin generar detecciones, que una medición elevada genere una detección de riesgo y su respectiva alerta, que el estado del dispositivo refleje la disponibilidad informada por Connectivity Management, que el estado de la zona indique la condición `RISK_ACTIVE` y que el estado de la edificación incluya sus zonas y dispositivos disponibles. También se comprueba que las mediciones actuales excluyan los registros antiguos, así como las respuestas 404, 400 y 401 ante dispositivos inexistentes, fechas futuras, valores faltantes o peticiones sin token. Estas pruebas se relacionan con las User Stories **US01 - Consultar el estado general de una edificación**, **US02 - Consultar el estado de una zona**, **US03 - Consultar mediciones actuales** y **US10 - Recibir una alerta de riesgo**.
+
+<br>
+
+Adicionalmente, la rama `main` conserva los scripts `test_building_management.ps1` y `test_cross_context.ps1`, que validan los endpoints de edificaciones y zonas y la validación entre Device Management y Building Management. Estos scripts provienen de la base de desarrollo anterior al Sprint 2 y se ejecutan como pruebas de regresión del backend.
+
+<br>
+
+**Evidencia de ejecución de las pruebas:**
+
+Las siguientes figuras muestran la ejecución de los tres scripts contra la API de ResQ en un entorno local, con la rama `main` actualizada. En cada caso se observan las verificaciones aprobadas (`[PASS]`) y el mensaje final que confirma que todas las pruebas del bounded context fueron superadas.
+
+**Figura 276. Ejecución de las pruebas de Connectivity Management (`test_connectivity.ps1`).**
+
+![Resultado de test_connectivity.ps1 con todas las verificaciones aprobadas](assets/images/chapter-06-product-implementation-validation-deployment/testing-sprint2/test-connectivity.png)
+
+**Figura 277. Ejecución de las pruebas de Risk Detection (`test_risk_detection.ps1`).**
+
+![Resultado de test_risk_detection.ps1 con todas las verificaciones aprobadas](assets/images/chapter-06-product-implementation-validation-deployment/testing-sprint2/test-risk-detection.png)
+
+**Figura 278. Ejecución de las pruebas de Monitoring (`test_monitoring.ps1`).**
+
+![Resultado de test_monitoring.ps1 con todas las verificaciones aprobadas](assets/images/chapter-06-product-implementation-validation-deployment/testing-sprint2/test-monitoring.png)
+
+<br>
+
+**Relación de pruebas desarrolladas:**
+
+| **Tipo de prueba** | **Bounded Context** | **Clases / archivos** | **Principal comportamiento validado** |
+|---|---|---|---|
+| API Test (smoke test) | Connectivity Management | `test_connectivity.ps1` | Heartbeats, estados `ONLINE`/`TIMEOUT`, sensores desconectados y alerta `SENSOR_DISCONNECTED` |
+| API Test (smoke test) | Risk Detection | `test_risk_detection.ps1` | Reglas de detección, evaluación de mediciones, evidencia, escalamiento de severidad y generación de alertas |
+| API Test (smoke test) | Monitoring | `test_monitoring.ps1` | Registro de mediciones, estado de dispositivos, zonas y edificaciones, mediciones actuales y encadenamiento con Risk Detection |
+| Prueba de regresión | Building Management | `test_building_management.ps1` | Endpoints de edificaciones y zonas |
+| Prueba de regresión | Device Management / Building Management | `test_cross_context.ps1` | Validación de la asignación de dispositivos a edificaciones y zonas |
+
+<br>
+
+**Tabla de commits:**
+
+| **Repository** | **Branch** | **Commit Id** | **Commit Message** | **Commit Message Body** | **Commited on (Date)** |
+|---|---|---|---|---|---|
+| resq-backend | feature/connectivity | 0ad8eae3eedcdf9dadd98168f10c0a607c652592 | feat(connectivity-management): add sensor heartbeats, status and timeout detection | — | 11/11/2026 |
+| resq-backend | feature/connectivity | 567c23c0943aa8f695a1e186a6f651f2e5e763f8 | test(connectivity-management): fix list handling in smoke test | — | 11/11/2026 |
+| resq-backend | feature/risk-detection | e8ae1f71913698f361a2bb803ac07f4b3c69c925 | feat(risk-detection): add detection rules, risk detections, evidence and alert chaining | — | 11/11/2026 |
+| resq-backend | feature/monitoring | ba910d1829432ce3cddd4ff7576ff555f4c24991 | feat(monitoring): add monitoring bounded context. | — | 11/11/2026 |
+
 #### 6.2.2.6. Execution Evidence for Sprint Review
 
 <p align="justify">
@@ -13789,7 +13858,7 @@ El firmware del nodo ResQ dispone de lógica para adquirir y evaluar mediciones 
 El procesamiento se ejecuta localmente y constituye el sustento de la historia técnica TS03. La visualización en la pantalla OLED permite inspeccionar simultáneamente las mediciones y el estado operativo del nodo, facilitando la interpretación de las condiciones ambientales sin requerir una consulta previa a la aplicación web.
 </p>
 
-**Figura 276. Visualización de lecturas y estado normal del nodo IoT ResQ.**
+**Figura 279. Visualización de lecturas y estado normal del nodo IoT ResQ.**
 
 ![Estado normal del ESP32 y visualización de mediciones en la pantalla OLED](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-estado-normal.png)
 
@@ -13807,7 +13876,7 @@ El control de actuadores se relaciona con la historia técnica TS04 y con el pro
 La evidencia de ejecución corresponde a la transición entre estados y a la respuesta observable de los componentes de salida. Para preservar la seguridad del procedimiento, las condiciones de peligro pueden inducirse mediante una simulación controlada, sin liberar gases ni exponer a los participantes a una situación real de emergencia.
 </p>
 
-**Figura 277. Señalización local de una condición de peligro mediante los actuadores del nodo ResQ.**
+**Figura 280. Señalización local de una condición de peligro mediante los actuadores del nodo ResQ.**
 
 ![ESP32 con alarma local activa y estado de peligro mostrado en el prototipo](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-alarma-local.png)
 
@@ -13825,7 +13894,7 @@ La historia US28 plantea que las funciones esenciales de ResQ no dependan exclus
 El escenario de ejecución se enfoca en observar el estado de conectividad y comprobar si el nodo conserva la lectura de sensores y la respuesta local durante una interrupción de red. Debe considerarse que algunas operaciones de conexión o publicación son síncronas y pueden introducir pausas transitorias; por ello, esta evidencia no se interpreta como garantía de disponibilidad ininterrumpida ni como demostración de almacenamiento y sincronización posteriores de mensajes no enviados.
 </p>
 
-**Figura 278. Estado del nodo ResQ durante una interrupción de la conexión Wi-Fi.**
+**Figura 281. Estado del nodo ResQ durante una interrupción de la conexión Wi-Fi.**
 
 ![Estado de conectividad y funcionamiento local del ESP32 sin Wi-Fi](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-sin-conectividad.png)
 
@@ -13843,11 +13912,11 @@ El nodo incorpora una ruta de publicación de información hacia ThingSpeak para
 La evidencia de ejecución se compone de la vista de los gráficos del canal y del registro de publicación generado desde el dispositivo. La comparación de valores y marcas de tiempo permite contrastar el envío con la información recibida, siempre diferenciando los datos simulados de las mediciones físicas. La presencia de registros en ThingSpeak demuestra el intercambio con ese servicio, pero no equivale a la validación integral de la comunicación entre el ESP32, la API de ResQ y la aplicación web.
 </p>
 
-**Figura 279. Visualización de los campos de telemetría del prototipo ResQ en ThingSpeak.**
+**Figura 282. Visualización de los campos de telemetría del prototipo ResQ en ThingSpeak.**
 
 ![Gráficos y mediciones registradas en el canal ThingSpeak de ResQ](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-thingspeak-graficos.png)
 
-**Figura 280. Registro de publicación de mediciones desde el ESP32.**
+**Figura 283. Registro de publicación de mediciones desde el ESP32.**
 
 ![Monitor serie con valores transmitidos y resultado de publicación a ThingSpeak](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-publicacion-monitor-serie.png)
 
@@ -13865,7 +13934,7 @@ La aplicación web de ResQ proporciona un recorrido de consulta de alertas que p
 Es importante precisar el alcance de la ejecución: la aplicación conserva adaptadores de datos simulados para varios contextos y dispone de adaptadores HTTP preparados para determinados servicios. Por tanto, la evidencia de navegación permite mostrar los controles y estados de la interfaz, pero no acredita por sí sola el envío de una orden a un actuador físico ni la confirmación de una respuesta automática por parte de los servicios Backend.
 </p>
 
-**Figura 281. Detalle de alerta y acciones de autorización en la Frontend Web Application de ResQ.**
+**Figura 284. Detalle de alerta y acciones de autorización en la Frontend Web Application de ResQ.**
 
 ![Interfaz de detalle de alerta con acciones de respuesta o autorización disponibles](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/frontend-alerta-autorizacion.png)
 
@@ -13883,11 +13952,11 @@ Las historias US14, US15 y US16 abordan tres actividades complementarias del cic
 La ejecución comienza con la identificación de un incidente en el listado, continúa con la revisión de sus datos y finaliza con la exploración de las acciones de asignación o resolución disponibles en su vista de detalle. La interfaz cuenta con una capa de acceso a datos que facilita distinguir los recorridos demostrados mediante información de prueba de aquellos que dependen de la integración con los servicios REST.
 </p>
 
-**Figura 282. Listado y consulta del estado de incidentes en ResQ.**
+**Figura 285. Listado y consulta del estado de incidentes en ResQ.**
 
 ![Listado de incidentes con estados e información contextual en la aplicación web](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/frontend-incidentes-listado.png)
 
-**Figura 283. Vista de detalle de incidente y controles de gestión.**
+**Figura 286. Vista de detalle de incidente y controles de gestión.**
 
 ![Detalle de incidente con opciones de asignación y resolución](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/frontend-incidentes-gestion.png)
 
@@ -13905,7 +13974,7 @@ La evidencia audiovisual complementa las capturas estáticas mediante la observa
 <strong>Video técnico disponible:</strong> <a href="https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-firmware/blob/main/evidencias/sesion9/G3_E8_video.mp4">Registro audiovisual del prototipo IoT y la práctica de conectividad (repositorio resq-firmware)</a>. Este material se identifica como evidencia complementaria del dispositivo y no se presenta como una grabación integral de todos los recorridos de navegación de la aplicación web.
 </p>
 
-**Figura 284. Cuadro representativo de la demostración audiovisual del prototipo IoT de ResQ.**
+**Figura 287. Cuadro representativo de la demostración audiovisual del prototipo IoT de ResQ.**
 
 ![Fotograma representativo del registro audiovisual de ejecución de ResQ](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/sprint2-video-ejecucion.png)
 
@@ -13922,6 +13991,35 @@ El incremento documentado reúne capacidades de procesamiento y señalización l
 <p align="justify">
 La revisión evita atribuir al Sprint 2 funcionalidades web que ya formaban parte de la base implementada durante la iteración anterior. De igual manera, diferencia las capacidades identificadas en el código de las observaciones obtenidas mediante ejecución y de la integración extremo a extremo. Las evidencias aportan así trazabilidad entre las historias seleccionadas, los componentes de ResQ y los escenarios empleados para revisar su funcionamiento, sin presentar como concluidas pruebas físicas o integraciones que todavía no cuenten con sustento verificable.
 </p>
+
+#### 6.2.2.8. Software Deployment Evidence for Sprint Review.
+
+En esta sección se presentan las evidencias del despliegue de los productos digitales de ResQ correspondientes al Sprint 2. Se mantuvieron las mismas plataformas configuradas en el Sprint 1, por lo que las URLs públicas de la Landing Page, la Web Application y el Backend se conservan, mientras que el contenido publicado se actualiza a partir de los cambios integrados en la rama principal de cada repositorio.
+
+**Landing Page**
+
+La Landing Page continúa desplegada mediante GitHub Pages. El workflow de GitHub Actions configurado en el repositorio publica el sitio a partir de la rama `gh-pages` cada vez que se integran cambios en la rama principal. Como parte de la validación, se verificó que la URL pública siga disponible y muestre correctamente el contenido del sitio.
+
+**Enlace de la Landing Page:**  
+https://upc-1asi0572-202620-16518-resq.github.io/resq-landing-page/
+
+**Web Application**
+
+La aplicación web se mantiene publicada en Cloudflare Workers, donde se genera una nueva versión a partir de la rama principal del repositorio `resq-frontend`. Durante este Sprint se incorporó la funcionalidad de suscripciones, y se verificó el acceso a la aplicación mediante su URL pública y el funcionamiento de la pantalla de autenticación.
+
+**Enlace de la aplicación web:**  
+
+https://resq-frontend.ffaaliceht2003.workers.dev/login
+
+**Backend**
+
+El backend se mantiene desplegado en la plataforma Render mediante la configuración Docker definida en el repositorio `resq-backend`. Tras integrar en la rama `main` los bounded contexts Connectivity Management, Risk Detection y Monitoring, el servicio desplegado expone, además de los endpoints existentes de IAM, Building Management, Device Management, Alert Management, Incident Management y Subscriptions, los nuevos recursos `/api/v1/connectivity`, `/api/v1/risk-detection`, `/api/v1/risk-detections` y `/api/v1/monitoring`.
+
+Como parte de la validación del despliegue, se verificó el acceso a la documentación de la API mediante Swagger UI, desde donde es posible visualizar y probar los endpoints incorporados en este Sprint.
+
+**Enlace del backend desplegado en Render:**
+
+https://resq-api-79xy.onrender.com/swagger/index.html
 
 #### 6.2.2.9. Team Collaboration Insights during Sprint
 
@@ -14155,7 +14253,7 @@ Se adopta la escala de cuatro niveles indicada en el Anexo D del enunciado. La c
 En el listado de alertas, el acceso al detalle se realiza mediante la selección de una fila de la tabla. La última columna presenta únicamente un ícono de flecha orientada a la derecha, sin título de columna, etiqueta textual ni control visual con el nombre de la acción. Aunque el código implementa interacción mediante clic, Enter y barra espaciadora y proporciona un nombre accesible para la fila, la intención de abrir un detalle no resulta igualmente explícita para quienes exploran visualmente la tabla por primera vez. La dificultad identificada corresponde a la visibilidad de la acción y no a una ausencia total de navegación por teclado.
 </p>
 
-**Figura 285. Tabla de alertas con acceso al detalle representado por una flecha sin etiqueta textual.**
+**Figura 288. Tabla de alertas con acceso al detalle representado por una flecha sin etiqueta textual.**
 
 ![Listado de alertas de ResQ con su última columna de flecha sin etiqueta de acción](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h01-alerta-acceso-detalle.png)
 
@@ -14173,7 +14271,7 @@ En el listado de alertas, el acceso al detalle se realiza mediante la selección
 El Dashboard utiliza expresiones como <em>“Live space status”</em> para presentar información de los espacios y el estado de riesgo. Paralelamente, la configuración de la aplicación utiliza adaptadores de datos simulados para determinados contextos, incluidos componentes de edificaciones, dispositivos, incidentes y monitoreo. Sin una señal explícita sobre el origen y la vigencia de la información, el usuario podría interpretar datos de demostración como mediciones actuales provenientes de sensores físicos. La confusión compromete la confianza en la visualización y puede influir sobre decisiones asociadas al monitoreo de riesgos.
 </p>
 
-**Figura 286. Indicadores de monitoreo del Dashboard y ausencia de identificación visible del origen de los datos.**
+**Figura 289. Indicadores de monitoreo del Dashboard y ausencia de identificación visible del origen de los datos.**
 
 ![Dashboard de ResQ con el estado Live y los indicadores de monitoreo](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h02-dashboard-datos-simulados.png)
 
@@ -14191,7 +14289,7 @@ El Dashboard utiliza expresiones como <em>“Live space status”</em> para pres
 En el listado de incidentes, el campo de búsqueda está contenido dentro de una etiqueta visual que incluye un ícono y un texto de marcador de posición (<em>placeholder</em>), pero no contiene una etiqueta textual persistente ni un atributo de nombre accesible explícito. El marcador de posición no constituye una alternativa robusta a una etiqueta de formulario, ya que desaparece al ingresar información y puede no ofrecer una identificación suficientemente clara en distintas tecnologías de asistencia. La presencia del ícono tampoco garantiza que el propósito del campo sea anunciado correctamente.
 </p>
 
-**Figura 287. Campo de búsqueda de incidentes y estructura de su identificación accesible.**
+**Figura 290. Campo de búsqueda de incidentes y estructura de su identificación accesible.**
 
 ![Campo de búsqueda del listado de incidentes y su elemento input inspeccionado](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h03-busqueda-incidentes-accesibilidad.png)
 
@@ -14209,7 +14307,7 @@ En el listado de incidentes, el campo de búsqueda está contenido dentro de una
 La implementación de autenticación mediante el adaptador de demostración verifica el identificador de acceso y la contraseña y devuelve el error <code>AUTHENTICATION_FAILED</code> ante credenciales no válidas. Sin embargo, la secuencia de manejo de errores del componente <code>AuthSessionFacade</code> invoca <code>clearSession()</code> cuando falla la autenticación. Este método restablece también el estado de error almacenado en <code>IamFacade</code>, de modo que el mensaje que la plantilla de Login consulta mediante <code>session.error()</code> puede desaparecer antes de representarse. En la revisión de la interfaz se comprobó que un intento con contraseña incorrecta no produjo un aviso visible. La ausencia de retroalimentación dificulta reconocer la causa del rechazo y decidir cómo corregir el intento. Adicionalmente, los contenedores definidos para los errores no incluyen atributos explícitos de anuncio accesible.
 </p>
 
-**Figura 288. Pantalla de acceso después de un intento fallido, sin retroalimentación visible de autenticación.**
+**Figura 291. Pantalla de acceso después de un intento fallido, sin retroalimentación visible de autenticación.**
 
 ![Pantalla de Login de ResQ tras introducir credenciales incorrectas sin presentar un aviso de error](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h04-login-mensaje-error.png)
 
@@ -14227,7 +14325,7 @@ La implementación de autenticación mediante el adaptador de demostración veri
 El servicio de idiomas del Landing Page inicia en español cuando no existe una preferencia guardada; en cambio, el servicio correspondiente a la Web Application utiliza inglés de manera predeterminada. En una primera visita, la transición entre productos puede producir un cambio de idioma que no ha sido solicitado por el usuario, dificultando la continuidad de la experiencia. Adicionalmente, el Statement del curso establece el inglés como idioma predeterminado para los productos digitales y contempla español latinoamericano como alternativa de internacionalización.
 </p>
 
-**Figura 289. Diferencia entre el idioma inicial del Landing Page y el de la Web Application.**
+**Figura 292. Diferencia entre el idioma inicial del Landing Page y el de la Web Application.**
 
 ![Comparación de la interfaz inicial del Landing Page en español y la aplicación en inglés](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h05-idiomas-landing-aplicacion.png)
 
@@ -14245,7 +14343,7 @@ El servicio de idiomas del Landing Page inicia en español cuando no existe una 
 Los controles de selección de métricas ambientales y períodos de análisis del Dashboard utilizan botones cuyo estado activo se expresa mediante la clase visual <code>active</code>. La plantilla examinada no incorpora un atributo que comunique de manera programática cuál opción está seleccionada, como <code>aria-pressed</code> en un conjunto de botones de alternancia. Esta ausencia puede dificultar que una persona que utiliza lector de pantalla identifique el filtro o la métrica actualmente aplicada, aun cuando el cambio visual sea perceptible.
 </p>
 
-**Figura 290. Selección de métricas y períodos en el Dashboard.**
+**Figura 293. Selección de métricas y períodos en el Dashboard.**
 
 ![Controles del Dashboard con estado activo visible y atributos de accesibilidad inspeccionados](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h06-dashboard-estado-filtros.png)
 
@@ -14263,7 +14361,7 @@ Los controles de selección de métricas ambientales y períodos de análisis de
 La vista de incidentes presenta el mismo estado vacío cuando el listado filtrado no contiene resultados, independientemente de que la colección original esté vacía o de que un filtro haya excluido todos los registros. El mensaje sugiere modificar los filtros incluso si la búsqueda todavía no ha sido utilizada y no existen incidentes cargados. Esta ambigüedad impide diferenciar claramente entre una ausencia real de datos y una búsqueda sin coincidencias.
 </p>
 
-**Figura 291. Estado vacío del listado de incidentes y mensaje de ayuda al usuario.**
+**Figura 294. Estado vacío del listado de incidentes y mensaje de ayuda al usuario.**
 
 ![Listado de incidentes con el mensaje de ausencia de resultados](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h07-incidentes-estado-vacio.png)
 
@@ -14281,7 +14379,7 @@ La vista de incidentes presenta el mismo estado vacío cuando el listado filtrad
 La pantalla de autenticación presenta valores numéricos fijos relacionados con dispositivos conectados y disponibilidad del sistema, acompañados de una referencia a monitoreo continuo. Al encontrarse incorporados directamente en la plantilla, estos indicadores no representan necesariamente el estado actual de la infraestructura y tampoco se identifican en ese bloque como cifras ilustrativas. Su presentación puede inducir a interpretar que se trata de estadísticas de operación efectivamente medidas.
 </p>
 
-**Figura 292. Indicadores operativos presentados en la pantalla de autenticación.**
+**Figura 295. Indicadores operativos presentados en la pantalla de autenticación.**
 
 ![Pantalla de Login de ResQ con indicadores numéricos de dispositivos y disponibilidad](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h08-login-indicadores-estaticos.png)
 
