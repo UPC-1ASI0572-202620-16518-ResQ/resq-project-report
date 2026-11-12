@@ -13714,7 +13714,7 @@ La planificación de Sprint 2 relaciona el Product Backlog con un incremento con
 |---|---|
 | Sprint # | Sprint 2 |
 | Sprint Start Date | 2026-10-09 |
-| Sprint End Date | 2026-10-22 |
+| Sprint End Date | 2026-11-12 |
 | Date | 2026-10-09 |
 | Time | 08:00 PM |
 | Location | Virtual meeting via Discord |
