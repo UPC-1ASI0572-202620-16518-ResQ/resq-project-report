@@ -13992,6 +13992,49 @@ El incremento documentado reúne capacidades de procesamiento y señalización l
 La revisión evita atribuir al Sprint 2 funcionalidades web que ya formaban parte de la base implementada durante la iteración anterior. De igual manera, diferencia las capacidades identificadas en el código de las observaciones obtenidas mediante ejecución y de la integración extremo a extremo. Las evidencias aportan así trazabilidad entre las historias seleccionadas, los componentes de ResQ y los escenarios empleados para revisar su funcionamiento, sin presentar como concluidas pruebas físicas o integraciones que todavía no cuenten con sustento verificable.
 </p>
 
+#### 6.2.2.7. Services Documentation Evidence for Sprint Review.
+
+En esta sección se presentan los avances realizados durante el Sprint 2 en la documentación de los Web Services desarrollados para ResQ.
+
+Durante este Sprint se ampliaron los servicios correspondientes a los bounded contexts de Risk Detection, Monitoring y Connectivity Management, incorporando operaciones para configurar reglas de detección, consultar detecciones y evidencias, consultar el estado de las edificaciones, zonas y dispositivos, registrar mediciones provenientes del entorno Edge y supervisar la conectividad de los sensores mediante heartbeats.
+
+Todos los endpoints protegidos requieren autenticación mediante un token JWT enviado en el header Authorization: Bearer <token>, salvo `sign-in` y `sign-up`, que son públicos.
+
+**Backend repository:** [https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-backend)
+
+| endpoint | verbo http | descripción | parámetros | request body | response body | explicación |
+|---|---|---|---|---|---|---|
+| /api/v1/risk-detection/rules | POST | Configura una nueva regla de detección de riesgos. | - | Objeto JSON con riskTypeCode, severityCode, variableType, operator y threshold. | Regla de detección creada. | Permite definir las condiciones que serán utilizadas para identificar situaciones de riesgo a partir de las mediciones recibidas. |
+| /api/v1/risk-detection/rules/{ruleId}/status | PATCH | Cambia el estado de una regla de detección. | ruleId (path, UUID) | Objeto JSON con active. | Regla con su nuevo estado. | Permite activar o desactivar una regla de detección sin modificar su configuración. |
+| /api/v1/risk-detections/{riskDetectionId} | GET | Obtiene una detección de riesgo específica. | riskDetectionId (path, UUID) | - | Representación de la detección de riesgo persistida. | Permite consultar el riesgo identificado y su información contextual. |
+| /api/v1/risk-detections/{riskDetectionId}/evidence | GET | Obtiene la evidencia asociada a una detección. | riskDetectionId (path, UUID) | - | Evidencia de medición, dispositivo de origen, tipo de riesgo, severidad, ubicación y cambios de severidad. | Permite mantener la trazabilidad de la información que originó la detección. |
+| /edge/v1/measurements | POST | Registra una medición proveniente del entorno Edge. | - | Objeto JSON con deviceId, variableType, value, unit y measuredAt. | Resultado del registro de la medición. | Constituye el punto de entrada para recibir información de monitoreo generada por los dispositivos IoT. |
+| /api/v1/monitoring/buildings/{buildingId}/status | GET | Consulta el estado actual de una edificación. | buildingId (path, UUID) | - | Información correspondiente al estado de monitoreo de la edificación. | Permite conocer la situación operacional de una edificación monitoreada. |
+| /api/v1/monitoring/zones/{zoneId}/status | GET | Consulta el estado actual de una zona. | zoneId (path, UUID) | - | Estado de la zona, incluyendo información de actualización y riesgo activo cuando corresponda. | Permite conocer la condición actual de una zona dentro de una edificación. |
+| /api/v1/monitoring/devices/{deviceId}/status | GET | Consulta el estado operacional de un dispositivo. | deviceId (path, UUID) | - | Información del dispositivo, disponibilidad y última medición registrada. | Permite verificar si un dispositivo se encuentra disponible y cuándo fue actualizada su información. |
+| /api/v1/monitoring/devices/{deviceId}/measurements/current | GET | Obtiene las mediciones actuales de un dispositivo. | deviceId (path, UUID) | - | Medición con measurementId, deviceId, buildingId, zoneId, variableType, value, unit y measuredAt. | Permite consultar la información de monitoreo más reciente asociada a un dispositivo. |
+| /api/v1/connectivity/heartbeats | POST | Registra un heartbeat enviado por un sensor IoT. | - | Objeto JSON con sensorId, signalStrength y la información temporal correspondiente. | Estado actualizado de la conexión del sensor. | Permite registrar que un sensor continúa conectado y actualizar la información de conectividad. |
+| /api/v1/connectivity/sensors/{sensorId}/status | GET | Obtiene el estado de conectividad de un sensor. | sensorId (path) | - | sensorId, status y lastHeartbeatTime. | Permite conocer el estado actual de red y el último heartbeat recibido de un sensor. |
+| /api/v1/connectivity/sensors/offline | GET | Lista los sensores que se encuentran sin conexión. | - | - | Lista de sensores con sensorId, status y lastHeartbeatTime. | Permite identificar rápidamente los sensores que presentan pérdida de conectividad. |
+
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint2/servicesdoc1-sprint2-resq.png" alt="Swagger ResQ API - endpoints Risk Detection" width="70%">
+  <br>
+  <strong>Figura 288. Swagger ResQ API - endpoints de Risk Detection.</strong>
+  <br>
+  <br><br>
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint2/servicesdoc2-sprint2-resq.png" alt="Swagger ResQ API - endpoints Monitoring" width="70%">
+  <br>
+  <strong>Figura 289. Swagger ResQ API - endpoints de Monitoring.</strong>
+  <br>
+  <br><br>
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint2/servicesdoc3-sprint2-resq.png" alt="Swagger ResQ API - endpoints Connectivity Management" width="70%">
+  <br>
+  <strong>Figura 290. Swagger ResQ API - endpoints de Connectivity Management.</strong>
+  <br><br>
+</p>
+
 #### 6.2.2.8. Software Deployment Evidence for Sprint Review.
 
 En esta sección se presentan las evidencias del despliegue de los productos digitales de ResQ correspondientes al Sprint 2. Se mantuvieron las mismas plataformas configuradas en el Sprint 1, por lo que las URLs públicas de la Landing Page, la Web Application y el Backend se conservan, mientras que el contenido publicado se actualiza a partir de los cambios integrados en la rama principal de cada repositorio.
