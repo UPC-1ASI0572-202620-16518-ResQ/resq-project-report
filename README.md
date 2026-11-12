@@ -13769,6 +13769,160 @@ A partir del Product Backlog general, el equipo seleccionó las siguientes histo
 El seguimiento de estas historias de usuario se gestionó asegurando que cada tarea contara con sus respectivos criterios de aceptación validados mediante las correspondientes evidencias de desarrollo y ejecución al finalizar el Sprint.
 </p>
 
+#### 6.2.2.6. Execution Evidence for Sprint Review
+
+<p align="justify">
+La revisión de ejecución del Sprint 2 de ResQ se centra en el incremento asociado con el procesamiento local de condiciones de riesgo, la actuación mediante dispositivos de señalización, la continuidad de funciones críticas ante fallas de conectividad y los recorridos de gestión de alertas e incidentes. Estas capacidades se vinculan con las historias US11, US12, US14, US15, US16, US28 y con las historias técnicas TS03 y TS04, consideradas en el Sprint Backlog 2. La presente sección reúne las principales vistas de ejecución y sus explicaciones, junto con la referencia audiovisual disponible, de acuerdo con el alcance establecido para el Sprint Review.
+</p>
+
+<p align="justify">
+Las evidencias se organizan por componente y escenario de uso, distinguiendo tres situaciones: comportamiento implementado en el firmware, funcionalidades representadas por la aplicación web y comunicación con un servicio externo de telemetría. Esta distinción resulta necesaria porque la existencia de una interfaz, un controlador REST o una rutina de firmware no acredita automáticamente que la integración completa entre Embedded Systems, servicios Backend y Frontend haya sido comprobada.
+</p>
+
+##### Procesamiento local de condiciones de riesgo
+
+<p align="justify">
+El firmware del nodo ResQ dispone de lógica para adquirir y evaluar mediciones desde el ESP32. El sensor MQ-2 se utiliza para obtener una lectura analógica de gas o humo expresada en unidades ADC; por tanto, estos valores no se presentan como concentraciones calibradas en partes por millón. La implementación contempla, además, lecturas de temperatura y humedad mediante DHT22, mientras que el movimiento puede representarse mediante simulación controlada. A partir de los umbrales establecidos, el dispositivo clasifica el entorno en estados de funcionamiento normal, precaución o peligro, y reconoce situaciones particulares de calentamiento o error de lectura.
+</p>
+
+<p align="justify">
+El procesamiento se ejecuta localmente y constituye el sustento de la historia técnica TS03. La visualización en la pantalla OLED permite inspeccionar simultáneamente las mediciones y el estado operativo del nodo, facilitando la interpretación de las condiciones ambientales sin requerir una consulta previa a la aplicación web.
+</p>
+
+**Figura 276. Visualización de lecturas y estado normal del nodo IoT ResQ.**
+
+![Estado normal del ESP32 y visualización de mediciones en la pantalla OLED](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-estado-normal.png)
+
+<p align="justify">
+La figura ilustra la operación del prototipo en un escenario normal, identificando el ESP32, los sensores conectados, la pantalla OLED y la señalización local correspondiente. Cuando se utilicen valores simulados, su procedencia se diferencia de las lecturas obtenidas mediante sensores físicos.
+</p>
+
+##### Ejecución local de alertas y actuadores
+
+<p align="justify">
+El control de actuadores se relaciona con la historia técnica TS04 y con el propósito de proporcionar una reacción inmediata ante condiciones de riesgo. El firmware contempla el uso de un LED verde para indicar condiciones normales, un LED rojo para representar estados de precaución o peligro y un buzzer para la señalización sonora. En una condición de peligro, la lógica mantiene el indicador rojo y solicita la activación del buzzer; adicionalmente, dispone de una orden de silenciamiento que modifica la salida sonora sin eliminar el estado de alarma detectado.
+</p>
+
+<p align="justify">
+La evidencia de ejecución corresponde a la transición entre estados y a la respuesta observable de los componentes de salida. Para preservar la seguridad del procedimiento, las condiciones de peligro pueden inducirse mediante una simulación controlada, sin liberar gases ni exponer a los participantes a una situación real de emergencia.
+</p>
+
+**Figura 277. Señalización local de una condición de peligro mediante los actuadores del nodo ResQ.**
+
+![ESP32 con alarma local activa y estado de peligro mostrado en el prototipo](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-alarma-local.png)
+
+<p align="justify">
+Esta vista permite relacionar la clasificación local de riesgo con el comportamiento de los indicadores físicos y la información presentada al usuario. La captura del estado visual complementa, pero no reemplaza, la comprobación auditiva del buzzer en el registro audiovisual.
+</p>
+
+##### Continuidad de las funciones críticas ante pérdida de conectividad
+
+<p align="justify">
+La historia US28 plantea que las funciones esenciales de ResQ no dependan exclusivamente de la disponibilidad de Internet. La arquitectura del firmware separa la adquisición y evaluación de mediciones de la publicación remota de telemetría. En consecuencia, la lógica de decisión y la señalización se encuentran implementadas en el dispositivo, mientras que la comunicación Wi-Fi se utiliza para transmitir datos hacia servicios externos.
+</p>
+
+<p align="justify">
+El escenario de ejecución se enfoca en observar el estado de conectividad y comprobar si el nodo conserva la lectura de sensores y la respuesta local durante una interrupción de red. Debe considerarse que algunas operaciones de conexión o publicación son síncronas y pueden introducir pausas transitorias; por ello, esta evidencia no se interpreta como garantía de disponibilidad ininterrumpida ni como demostración de almacenamiento y sincronización posteriores de mensajes no enviados.
+</p>
+
+**Figura 278. Estado del nodo ResQ durante una interrupción de la conexión Wi-Fi.**
+
+![Estado de conectividad y funcionamiento local del ESP32 sin Wi-Fi](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-sin-conectividad.png)
+
+<p align="justify">
+La captura se orienta a identificar el estado de red y las condiciones de funcionamiento local mediante la pantalla OLED, los indicadores y, de ser necesario, el monitor serie. Su interpretación se limita al comportamiento efectivamente observable durante el escenario presentado.
+</p>
+
+##### Visualización y transmisión de información IoT mediante ThingSpeak
+
+<p align="justify">
+El nodo incorpora una ruta de publicación de información hacia ThingSpeak para complementar la visualización local con el registro remoto de mediciones. La implementación contempla campos para el valor de gas en ADC, temperatura en grados Celsius, intensidad de señal Wi-Fi en dBm, estado de alarma, movimiento y humedad relativa. Esta separación de variables permite examinar la evolución de los datos capturados y distinguir las magnitudes ambientales de los indicadores operativos del dispositivo.
+</p>
+
+<p align="justify">
+La evidencia de ejecución se compone de la vista de los gráficos del canal y del registro de publicación generado desde el dispositivo. La comparación de valores y marcas de tiempo permite contrastar el envío con la información recibida, siempre diferenciando los datos simulados de las mediciones físicas. La presencia de registros en ThingSpeak demuestra el intercambio con ese servicio, pero no equivale a la validación integral de la comunicación entre el ESP32, la API de ResQ y la aplicación web.
+</p>
+
+**Figura 279. Visualización de los campos de telemetría del prototipo ResQ en ThingSpeak.**
+
+![Gráficos y mediciones registradas en el canal ThingSpeak de ResQ](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-thingspeak-graficos.png)
+
+**Figura 280. Registro de publicación de mediciones desde el ESP32.**
+
+![Monitor serie con valores transmitidos y resultado de publicación a ThingSpeak](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-publicacion-monitor-serie.png)
+
+<p align="justify">
+La primera figura permite revisar los datos representados gráficamente en Cloud Computing; la segunda aporta el contexto técnico de la comunicación desde el nodo, incluyendo los valores emitidos y el resultado reportado por el firmware.
+</p>
+
+##### Ejecución de los flujos de alertas y autorizaciones en la aplicación web
+
+<p align="justify">
+La aplicación web de ResQ proporciona un recorrido de consulta de alertas que permite acceder a información contextual de un evento y revisar las acciones de respuesta disponibles. Dentro de este ámbito, las historias US11 y US12 se relacionan con la respuesta automática autorizada y con la confirmación de acciones de alto impacto. La demostración se enfoca en la navegación desde las alertas hacia el detalle del evento y, cuando corresponde, en la presentación de las opciones de autorización.
+</p>
+
+<p align="justify">
+Es importante precisar el alcance de la ejecución: la aplicación conserva adaptadores de datos simulados para varios contextos y dispone de adaptadores HTTP preparados para determinados servicios. Por tanto, la evidencia de navegación permite mostrar los controles y estados de la interfaz, pero no acredita por sí sola el envío de una orden a un actuador físico ni la confirmación de una respuesta automática por parte de los servicios Backend.
+</p>
+
+**Figura 281. Detalle de alerta y acciones de autorización en la Frontend Web Application de ResQ.**
+
+![Interfaz de detalle de alerta con acciones de respuesta o autorización disponibles](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/frontend-alerta-autorizacion.png)
+
+<p align="justify">
+Esta vista documenta la forma en que el operador interpreta un evento de riesgo y localiza las acciones habilitadas según el estado presentado. El funcionamiento de dichas acciones se describe de acuerdo con el origen de datos utilizado durante la demostración, sin confundir un flujo simulado con una transacción real confirmada por el Backend.
+</p>
+
+##### Consulta, asignación y resolución de incidentes
+
+<p align="justify">
+Las historias US14, US15 y US16 abordan tres actividades complementarias del ciclo de atención de incidentes: consultar el estado de un registro, asignar un responsable y documentar su resolución. La aplicación web incluye interfaces de listado y detalle que permiten representar estos recorridos desde la perspectiva de un operador de seguridad o administrador de una edificación.
+</p>
+
+<p align="justify">
+La ejecución comienza con la identificación de un incidente en el listado, continúa con la revisión de sus datos y finaliza con la exploración de las acciones de asignación o resolución disponibles en su vista de detalle. La interfaz cuenta con una capa de acceso a datos que facilita distinguir los recorridos demostrados mediante información de prueba de aquellos que dependen de la integración con los servicios REST.
+</p>
+
+**Figura 282. Listado y consulta del estado de incidentes en ResQ.**
+
+![Listado de incidentes con estados e información contextual en la aplicación web](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/frontend-incidentes-listado.png)
+
+**Figura 283. Vista de detalle de incidente y controles de gestión.**
+
+![Detalle de incidente con opciones de asignación y resolución](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/frontend-incidentes-gestion.png)
+
+<p align="justify">
+Las capturas muestran los puntos de interacción relevantes para el seguimiento de incidentes y permiten examinar la organización visual de la información. La existencia de estos controles representa la disponibilidad del recorrido en la aplicación, mientras que la persistencia de las operaciones debe comprobarse mediante los servicios correspondientes cuando se utilice integración HTTP.
+</p>
+
+##### Registro audiovisual y recorrido de ejecución
+
+<p align="justify">
+La evidencia audiovisual complementa las capturas estáticas mediante la observación de acciones sucesivas y cambios de estado. Para revisar el incremento del Sprint 2, el recorrido comprende el acceso a la aplicación web, la consulta de alertas, la revisión de autorizaciones disponibles, la exploración de incidentes y la demostración del nodo IoT en escenarios de funcionamiento normal, alarma local y conectividad. El recorrido puede iniciarse desde la <a href="https://resq-frontend.ffaaliceht2003.workers.dev/login">Frontend Web Application desplegada</a>, mientras que la ejecución técnica del firmware cuenta con un registro audiovisual de la práctica de conectividad.
+</p>
+
+<p align="justify">
+<strong>Video técnico disponible:</strong> <a href="https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-firmware/blob/main/evidencias/sesion9/G3_E8_video.mp4">Registro audiovisual del prototipo IoT y la práctica de conectividad (repositorio resq-firmware)</a>. Este material se identifica como evidencia complementaria del dispositivo y no se presenta como una grabación integral de todos los recorridos de navegación de la aplicación web.
+</p>
+
+**Figura 284. Cuadro representativo de la demostración audiovisual del prototipo IoT de ResQ.**
+
+![Fotograma representativo del registro audiovisual de ejecución de ResQ](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/sprint2-video-ejecucion.png)
+
+<p align="justify">
+La combinación de las capturas de las vistas y el material audiovisual técnico permite relacionar la explicación documental con las operaciones observables. La validación completa del recorrido entre la interfaz web, los servicios y los actuadores físicos requiere una demostración de integración específica, independiente de la disponibilidad de cada componente por separado.
+</p>
+
+##### Síntesis y alcance de la revisión de ejecución
+
+<p align="justify">
+El incremento documentado reúne capacidades de procesamiento y señalización local en el ESP32, mecanismos de transmisión de telemetría hacia ThingSpeak y recorridos de interacción relacionados con la gestión de alertas e incidentes en la aplicación web. Los escenarios se vinculan con los objetivos de autonomía operativa, respuesta ante riesgos y seguimiento de incidentes definidos en el Sprint Backlog 2.
+</p>
+
+<p align="justify">
+La revisión evita atribuir al Sprint 2 funcionalidades web que ya formaban parte de la base implementada durante la iteración anterior. De igual manera, diferencia las capacidades identificadas en el código de las observaciones obtenidas mediante ejecución y de la integración extremo a extremo. Las evidencias aportan así trazabilidad entre las historias seleccionadas, los componentes de ResQ y los escenarios empleados para revisar su funcionamiento, sin presentar como concluidas pruebas físicas o integraciones que todavía no cuenten con sustento verificable.
+</p>
+
 #### 6.2.2.9. Team Collaboration Insights during Sprint
 
 <p align="justify">
@@ -13918,6 +14072,240 @@ Las preguntas se formularán durante y después de la interacción con ResQ, con
 | P16 | ¿Qué cambiaría o incorporaría antes de utilizar ResQ en un entorno real? |
 | P17 | Considerando su experiencia con la solución, ¿la utilizaría o recomendaría? ¿Por qué? |
 
+
+### 6.3.3. Evaluaciones según heurísticas
+
+<p align="justify">
+La evaluación heurística de ResQ tiene como finalidad identificar problemas de experiencia de usuario que puedan afectar la interpretación de las condiciones de riesgo, la consulta de alertas e incidentes y la interacción con los productos digitales de la solución. La revisión considera los principios de usabilidad, arquitectura de información y diseño inclusivo establecidos en el Anexo D del Final Project Statement del curso. Su alcance comprende el Landing Page y la Frontend Web Application, con especial atención a los recorridos definidos en la sección 6.3.1, Diseño de Entrevistas.
+</p>
+
+<p align="justify">
+Los hallazgos que se presentan corresponden a una <strong>inspección heurística documental del código y de los componentes de interfaz implementados</strong>, no a resultados atribuidos a participantes de entrevistas de validación. El análisis contrasta las plantillas y la configuración de ambos productos con los principios aplicables y permite identificar problemas reproducibles o riesgos de interacción fundamentados en su implementación. La revisión de las sesiones con usuarios, sus observaciones y la comparación de resultados con esta inspección deben documentarse de forma independiente cuando se disponga de los registros correspondientes; en ningún caso se infieren testimonios ni tasas de éxito de participantes.
+</p>
+
+#### Ficha de evaluación
+
+| Campo | Descripción |
+|---|---|
+| Carrera | Ingeniería de Software |
+| Curso | 1ASI0572 — Desarrollo de Soluciones IoT |
+| Sección | NRC 16518 |
+| Docente | Jimmy Enrique Sánchez Portugal |
+| Auditor | SecurityBear, equipo de desarrollo de ResQ; inspección documental de la interfaz y su implementación |
+| Producto evaluado | ResQ Landing Page y ResQ Frontend Web Application |
+| Segmentos considerados | Propietarios y administradores de edificaciones; empresas integradoras de automatización y edificios inteligentes |
+| Tipo de evidencia | Inspección de plantillas Angular, configuración de componentes y flujos de navegación; capturas ilustrativas de los hallazgos |
+| Alcance de resultados | Evaluación experta preliminar; no equivale a una sesión de validación observada con usuarios reales |
+
+#### Tareas incluidas en la evaluación
+
+<p align="justify">
+La selección de tareas mantiene la correspondencia con los escenarios C01, C02, E01, E02, E03, I01 e I02 del diseño de entrevistas. Para cada recorrido se examinan la claridad de las etiquetas, el estado de la interfaz, la coherencia de la información, la accesibilidad de los controles y la disponibilidad de retroalimentación. La inspección no presupone que los recorridos hayan sido completados exitosamente por usuarios finales.
+</p>
+
+| ID | Producto | Tarea o recorrido considerado | Aspecto heurístico prioritario |
+|---|---|---|---|
+| C01 | Landing Page | Identificar la propuesta de valor y los segmentos a los que se dirige ResQ | Comprensibilidad, consistencia e información orientada al usuario |
+| C02 | Landing Page | Localizar las opciones para continuar hacia las soluciones o la aplicación | Arquitectura de información y facilidad de localización |
+| E01 | Web Application | Consultar indicadores de monitoreo y localizar una edificación o zona | Visibilidad del estado del sistema y fiabilidad de la información |
+| E02 | Web Application | Consultar una alerta e interpretar su nivel de riesgo | Consistencia, prevención de errores y claridad de la respuesta |
+| E03 | Web Application | Localizar un incidente, consultar su estado y revisar las acciones disponibles | Capacidad de búsqueda, retroalimentación y diseño inclusivo |
+| I01 | Web Application | Consultar un dispositivo y sus características | Reconocimiento y localización de información técnica |
+| I02 | Web Application | Interpretar mediciones y estado de conectividad | Visibilidad del origen y actualidad de los datos |
+
+<p align="justify">
+Quedan fuera del alcance de esta inspección documental la medición de tiempos reales de uso, las tareas que requieren acceso a hardware físico y la comprobación de la integración extremo a extremo con actuadores, incluidos los aspectos físicos del escenario I03. Estas actividades requieren pruebas diferenciadas y no pueden validarse únicamente examinando las plantillas de la aplicación.
+</p>
+
+#### Escala de severidad
+
+<p align="justify">
+Se adopta la escala de cuatro niveles indicada en el Anexo D del enunciado. La calificación se asigna de manera preliminar considerando el impacto potencial sobre las tareas analizadas y la posibilidad de que un usuario interprete incorrectamente información crítica o encuentre barreras de interacción.
+</p>
+
+| Nivel | Clasificación | Criterio para la priorización |
+|:---:|---|---|
+| 1 | Problema superficial | Incidencia poco frecuente o de bajo impacto que no impide completar una tarea; puede corregirse en un refinamiento posterior. |
+| 2 | Problema menor | Dificultad recurrente o evitable que incrementa el esfuerzo, reduce la claridad o afecta parcialmente una tarea; requiere corrección planificada. |
+| 3 | Problema mayor | Condición que puede producir errores significativos de interpretación o impedir el uso de una funcionalidad para determinados usuarios; requiere prioridad alta. |
+| 4 | Problema muy grave | Barrera que impide continuar con el producto o genera un impacto crítico sobre la ejecución de las tareas; debe resolverse antes de la publicación correspondiente. |
+
+#### Tabla resumen de problemas identificados
+
+| N.º | Problema identificado | Severidad | Heurística o principio comprometido | Componente |
+|:---:|---|:---:|---|---|
+| H01 | El listado de alertas utiliza un ícono de flecha sin una acción textual visible para indicar que una fila abre su detalle. | 2 | Usabilidad: reconocimiento antes que recuerdo; arquitectura de información: claridad de navegación | Alerts |
+| H02 | El Dashboard presenta indicadores bajo denominaciones de estado <em>Live</em> mientras parte de la información se obtiene de adaptadores simulados. | 3 | Usabilidad: visibilidad del estado del sistema; correspondencia con el mundo real | Dashboard y capa de datos |
+| H03 | El campo de búsqueda de incidentes carece de una etiqueta textual o un nombre accesible explícito en su plantilla. | 3 | Inclusive Design: experiencias comparables; Usabilidad: reconocimiento | Incidents |
+| H04 | Los mensajes de error del acceso no incluyen una región de anuncio accesible explícita. | 2 | Inclusive Design: accesibilidad de la retroalimentación; Usabilidad: recuperación de errores | Login |
+| H05 | El Landing Page y la Web Application emplean idiomas predeterminados distintos en una primera visita. | 2 | Usabilidad: consistencia y estándares; Information Architecture: comprensibilidad | Landing Page y Web Application |
+| H06 | Los botones de selección de métricas y períodos del Dashboard expresan su estado activo mediante una clase visual, sin exponerlo mediante atributos de estado accesibles. | 2 | Inclusive Design: información perceptible y controles operables | Dashboard |
+| H07 | La vista de incidentes recomienda modificar filtros incluso cuando no existen registros, sin diferenciar ambos estados vacíos. | 2 | Usabilidad: retroalimentación y ayuda para reconocer estados | Incidents |
+| H08 | La pantalla de acceso presenta cantidades e indicadores operativos estáticos sin identificar expresamente su carácter ilustrativo. | 2 | Usabilidad: correspondencia con el mundo real; credibilidad de la información | Login |
+
+#### Descripción de problemas y recomendaciones
+
+##### Problema H01. Visibilidad insuficiente de la acción para consultar el detalle de una alerta
+
+**Severidad:** 2 — Problema menor.  
+**Heurísticas comprometidas:** Usabilidad: reconocimiento antes que recuerdo; Information Architecture: claridad de navegación.  
+**Tarea relacionada:** E02 — Consultar una alerta e interpretar su nivel de riesgo.
+
+<p align="justify">
+En el listado de alertas, el acceso al detalle se realiza mediante la selección de una fila de la tabla. La última columna presenta únicamente un ícono de flecha orientada a la derecha, sin título de columna, etiqueta textual ni control visual con el nombre de la acción. Aunque el código implementa interacción mediante clic, Enter y barra espaciadora y proporciona un nombre accesible para la fila, la intención de abrir un detalle no resulta igualmente explícita para quienes exploran visualmente la tabla por primera vez. La dificultad identificada corresponde a la visibilidad de la acción y no a una ausencia total de navegación por teclado.
+</p>
+
+**Figura 285. Tabla de alertas con acceso al detalle representado por una flecha sin etiqueta textual.**
+
+![Listado de alertas de ResQ con su última columna de flecha sin etiqueta de acción](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h01-alerta-acceso-detalle.png)
+
+**Recomendación:** Incorporar una columna con el encabezado *Actions* y un enlace o botón visible *View details* para cada fila. Conservar la posibilidad de seleccionar la fila completa como mecanismo complementario, procurando que el control principal comunique inequívocamente su propósito.
+
+**Sustento de implementación:** [Plantilla del listado de alertas](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/alerts/alerts.pages.ts).
+
+##### Problema H02. Falta de diferenciación explícita entre monitoreo en vivo y datos simulados
+
+**Severidad:** 3 — Problema mayor.  
+**Heurísticas comprometidas:** Usabilidad: visibilidad del estado del sistema; correspondencia entre el sistema y el mundo real.  
+**Tareas relacionadas:** E01 e I02 — Interpretar indicadores de monitoreo y datos técnicos.
+
+<p align="justify">
+El Dashboard utiliza expresiones como <em>“Live space status”</em> para presentar información de los espacios y el estado de riesgo. Paralelamente, la configuración de la aplicación utiliza adaptadores de datos simulados para determinados contextos, incluidos componentes de edificaciones, dispositivos, incidentes y monitoreo. Sin una señal explícita sobre el origen y la vigencia de la información, el usuario podría interpretar datos de demostración como mediciones actuales provenientes de sensores físicos. La confusión compromete la confianza en la visualización y puede influir sobre decisiones asociadas al monitoreo de riesgos.
+</p>
+
+**Figura 286. Indicadores de monitoreo del Dashboard y ausencia de identificación visible del origen de los datos.**
+
+![Dashboard de ResQ con el estado Live y los indicadores de monitoreo](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h02-dashboard-datos-simulados.png)
+
+**Recomendación:** Incorporar un identificador persistente del modo de operación (<em>Demo</em>, <em>Simulation</em> o <em>Live</em>), registrar la fuente de datos y mostrar la última fecha de actualización. Reservar la denominación <em>Live</em> para flujos conectados a fuentes efectivamente actualizadas y diferenciarlos de los ejemplos estáticos o simulados.
+
+**Sustento de implementación:** [Dashboard](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/dashboard/dashboard.page.ts) y [configuración de proveedores de datos](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/app.config.ts).
+
+##### Problema H03. Identificación accesible insuficiente del campo de búsqueda de incidentes
+
+**Severidad:** 3 — Problema mayor.  
+**Heurística comprometida:** Inclusive Design: proporcionar experiencias comparables y controles comprensibles.  
+**Tarea relacionada:** E03 — Localizar un incidente.
+
+<p align="justify">
+En el listado de incidentes, el campo de búsqueda está contenido dentro de una etiqueta visual que incluye un ícono y un texto de marcador de posición (<em>placeholder</em>), pero no contiene una etiqueta textual persistente ni un atributo de nombre accesible explícito. El marcador de posición no constituye una alternativa robusta a una etiqueta de formulario, ya que desaparece al ingresar información y puede no ofrecer una identificación suficientemente clara en distintas tecnologías de asistencia. La presencia del ícono tampoco garantiza que el propósito del campo sea anunciado correctamente.
+</p>
+
+**Figura 287. Campo de búsqueda de incidentes y estructura de su identificación accesible.**
+
+![Campo de búsqueda del listado de incidentes y su elemento input inspeccionado](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h03-busqueda-incidentes-accesibilidad.png)
+
+**Recomendación:** Agregar un nombre programático explícito mediante una etiqueta textual asociada al campo o un atributo <code>aria-label</code> adecuado, y conservar la descripción del tipo de información admitida como ayuda adicional. Comprobar su lectura con navegación por teclado y lector de pantalla.
+
+**Sustento de implementación:** [Plantilla de listado de incidentes](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/incidents/incidents.pages.ts).
+
+##### Problema H04. Ausencia de retroalimentación visible tras un intento de autenticación fallido
+
+**Severidad:** 3 — Problema mayor.  
+**Heurísticas comprometidas:** Usabilidad: visibilidad del estado del sistema; ayuda para reconocer, diagnosticar y recuperarse de errores. Inclusive Design: retroalimentación perceptible.  
+**Tarea relacionada:** Acceso a la aplicación web, necesario para ejecutar E01, E02, E03, I01 e I02.
+
+<p align="justify">
+La implementación de autenticación mediante el adaptador de demostración verifica el identificador de acceso y la contraseña y devuelve el error <code>AUTHENTICATION_FAILED</code> ante credenciales no válidas. Sin embargo, la secuencia de manejo de errores del componente <code>AuthSessionFacade</code> invoca <code>clearSession()</code> cuando falla la autenticación. Este método restablece también el estado de error almacenado en <code>IamFacade</code>, de modo que el mensaje que la plantilla de Login consulta mediante <code>session.error()</code> puede desaparecer antes de representarse. En la revisión de la interfaz se comprobó que un intento con contraseña incorrecta no produjo un aviso visible. La ausencia de retroalimentación dificulta reconocer la causa del rechazo y decidir cómo corregir el intento. Adicionalmente, los contenedores definidos para los errores no incluyen atributos explícitos de anuncio accesible.
+</p>
+
+**Figura 288. Pantalla de acceso después de un intento fallido, sin retroalimentación visible de autenticación.**
+
+![Pantalla de Login de ResQ tras introducir credenciales incorrectas sin presentar un aviso de error](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h04-login-mensaje-error.png)
+
+**Recomendación:** Conservar el error de autenticación hasta que la interfaz lo presente o el usuario inicie una nueva operación, desacoplando la limpieza de sesión del borrado del estado de error. Mostrar un mensaje genérico que no revele si el identificador o la contraseña fueron incorrectos y acompañarlo de un anuncio accesible mediante <code>role="alert"</code> o una región <code>aria-live</code>. Comprobar el resultado con credenciales válidas, inválidas y campos incompletos.
+
+**Sustento de implementación:** [Adaptador de autenticación de demostración](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/auth/data-access/mock-iam.gateway.ts), [manejo de errores y limpieza de sesión](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/auth/auth-session.facade.ts), [estado de sesión IAM](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/auth/data-access/iam.facade.ts) y [pantalla de Login](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/auth/login.page.ts).
+
+##### Problema H05. Inconsistencia del idioma predeterminado entre productos digitales
+
+**Severidad:** 2 — Problema menor.  
+**Heurísticas comprometidas:** Usabilidad: consistencia y estándares; Information Architecture: comprensibilidad.  
+**Tareas relacionadas:** C01, C02 y acceso a la Web Application.
+
+<p align="justify">
+El servicio de idiomas del Landing Page inicia en español cuando no existe una preferencia guardada; en cambio, el servicio correspondiente a la Web Application utiliza inglés de manera predeterminada. En una primera visita, la transición entre productos puede producir un cambio de idioma que no ha sido solicitado por el usuario, dificultando la continuidad de la experiencia. Adicionalmente, el Statement del curso establece el inglés como idioma predeterminado para los productos digitales y contempla español latinoamericano como alternativa de internacionalización.
+</p>
+
+**Figura 289. Diferencia entre el idioma inicial del Landing Page y el de la Web Application.**
+
+![Comparación de la interfaz inicial del Landing Page en español y la aplicación en inglés](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h05-idiomas-landing-aplicacion.png)
+
+**Recomendación:** Unificar el idioma inicial conforme a las convenciones del proyecto, hacer visible la selección de idioma y conservar la preferencia al continuar desde el Landing Page hacia la aplicación. Probar expresamente los recorridos con las configuraciones <code>en_US</code> y <code>es_419</code>.
+
+**Sustento de implementación:** [Servicio de idioma del Landing Page](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-landing-page/blob/main/src/app/language.ts) y [servicio de idioma de la aplicación](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/core/services/language.service.ts).
+
+##### Problema H06. Estado de selección no expuesto de manera accesible en controles del Dashboard
+
+**Severidad:** 2 — Problema menor.  
+**Heurística comprometida:** Inclusive Design: hacer perceptible el estado de los controles y ofrecer experiencias comparables.  
+**Tarea relacionada:** E01 — Interpretar indicadores y modificar la métrica o el período de análisis.
+
+<p align="justify">
+Los controles de selección de métricas ambientales y períodos de análisis del Dashboard utilizan botones cuyo estado activo se expresa mediante la clase visual <code>active</code>. La plantilla examinada no incorpora un atributo que comunique de manera programática cuál opción está seleccionada, como <code>aria-pressed</code> en un conjunto de botones de alternancia. Esta ausencia puede dificultar que una persona que utiliza lector de pantalla identifique el filtro o la métrica actualmente aplicada, aun cuando el cambio visual sea perceptible.
+</p>
+
+**Figura 290. Selección de métricas y períodos en el Dashboard.**
+
+![Controles del Dashboard con estado activo visible y atributos de accesibilidad inspeccionados](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h06-dashboard-estado-filtros.png)
+
+**Recomendación:** Añadir un estado programático coherente con el patrón de interacción seleccionado, mantener una indicación visual del control activo y verificar que el resultado del cambio de métrica o período sea comprensible por teclado y lector de pantalla.
+
+**Sustento de implementación:** [Plantilla de indicadores del Dashboard](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/dashboard/dashboard.page.ts).
+
+##### Problema H07. Mensaje de estado vacío no diferenciado en el listado de incidentes
+
+**Severidad:** 2 — Problema menor.  
+**Heurística comprometida:** Usabilidad: visibilidad del estado del sistema y ayuda contextual.  
+**Tarea relacionada:** E03 — Consultar un incidente y filtrar sus registros.
+
+<p align="justify">
+La vista de incidentes presenta el mismo estado vacío cuando el listado filtrado no contiene resultados, independientemente de que la colección original esté vacía o de que un filtro haya excluido todos los registros. El mensaje sugiere modificar los filtros incluso si la búsqueda todavía no ha sido utilizada y no existen incidentes cargados. Esta ambigüedad impide diferenciar claramente entre una ausencia real de datos y una búsqueda sin coincidencias.
+</p>
+
+**Figura 291. Estado vacío del listado de incidentes y mensaje de ayuda al usuario.**
+
+![Listado de incidentes con el mensaje de ausencia de resultados](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h07-incidentes-estado-vacio.png)
+
+**Recomendación:** Distinguir los estados <em>sin incidentes registrados</em>, <em>sin coincidencias para los filtros</em> y <em>error de carga</em>. Ofrecer una acción contextual para restablecer filtros únicamente cuando exista una selección activa y conservar un mensaje específico para la ausencia de datos.
+
+**Sustento de implementación:** [Condiciones de representación del listado de incidentes](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/incidents/incidents.pages.ts).
+
+##### Problema H08. Indicadores operativos fijos sin identificación como valores de demostración
+
+**Severidad:** 2 — Problema menor.  
+**Heurísticas comprometidas:** Usabilidad: correspondencia con el mundo real; claridad y credibilidad de la información.  
+**Tarea relacionada:** Acceso a la Web Application y primera interpretación del alcance del servicio.
+
+<p align="justify">
+La pantalla de autenticación presenta valores numéricos fijos relacionados con dispositivos conectados y disponibilidad del sistema, acompañados de una referencia a monitoreo continuo. Al encontrarse incorporados directamente en la plantilla, estos indicadores no representan necesariamente el estado actual de la infraestructura y tampoco se identifican en ese bloque como cifras ilustrativas. Su presentación puede inducir a interpretar que se trata de estadísticas de operación efectivamente medidas.
+</p>
+
+**Figura 292. Indicadores operativos presentados en la pantalla de autenticación.**
+
+![Pantalla de Login de ResQ con indicadores numéricos de dispositivos y disponibilidad](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h08-login-indicadores-estaticos.png)
+
+**Recomendación:** Identificar explícitamente las cifras como demostrativas, sustituirlas por métricas obtenidas de una fuente verificable cuando exista integración o prescindir de valores numéricos que no cuenten con sustento. Mantener la diferenciación entre contenido promocional, datos de ejemplo e indicadores operativos.
+
+**Sustento de implementación:** [Plantilla de acceso de ResQ](https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-frontend/blob/main/src/app/features/auth/login.page.ts).
+
+#### Priorización de mejoras e interpretación de resultados
+
+<p align="justify">
+La inspección identifica <strong>ocho hallazgos documentales</strong>: tres clasificados preliminarmente con severidad 3 y cinco con severidad 2. No se asignan problemas de severidad 4 porque la revisión del código, sin una observación de uso que confirme un bloqueo crítico, no proporciona fundamento suficiente para esa clasificación. Las severidades son estimaciones de inspección y no resultados cuantitativos de una muestra de participantes.
+</p>
+
+<p align="justify">
+Los hallazgos de mayor prioridad se relacionan con la identificación del carácter simulado o actual de la información de monitoreo, la accesibilidad del campo de búsqueda de incidentes y la ausencia de retroalimentación visible ante credenciales incorrectas. La primera condición puede provocar interpretaciones equivocadas de la vigencia de los datos; las dos restantes dificultan realizar tareas con tecnologías de asistencia y recuperarse de errores durante el acceso a la aplicación.
+</p>
+
+<p align="justify">
+Como acciones de mejora se propone hacer explícitas las acciones de navegación hacia el detalle de las alertas, diferenciar los modos de demostración y operación conectada, proporcionar nombres accesibles a los controles, anunciar los mensajes de error, uniformizar el comportamiento de internacionalización y mejorar la retroalimentación de filtros y estados vacíos. Estas modificaciones deben verificarse mediante pruebas de interfaz y accesibilidad antes de considerarse resueltas, y los cambios aceptados deben registrarse en el Product Backlog y en el historial de versiones del producto.
+</p>
+
+<p align="justify">
+La presente evaluación constituye una base trazable para contrastar los hallazgos técnicos con las observaciones que se obtengan en las Validation Interviews de los dos segmentos objetivo. La convergencia entre los problemas detectados por inspección y las dificultades realmente observadas permitirá ajustar la severidad y la priorización. Hasta contar con esos registros, no se declara participación de usuarios en esta evaluación, no se presentan entrevistas inexistentes ni se atribuyen mejoras a pruebas que todavía no han sido efectuadas.
+</p>
 
 # Conclusiones y recomendaciones
 
