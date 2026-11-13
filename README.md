@@ -2360,7 +2360,7 @@ Para representar visualmente las características objetivas del primer segmento,
 
 <p align="justify">
 
-Los resultados presentados en la Figura 12 evidencian que las características más comunes del primer segmento son la formación profesional, las responsabilidades de administración y el uso habitual de herramientas digitales. El 100 % utiliza computadoras y smartphones, aunque se observa diversidad en los sistemas operativos y navegadores. Estos hallazgos permiten reconocer la importancia de considerar una experiencia digital adaptable a diferentes dispositivos y entornos tecnológicos. Asimismo, la utilización de múltiples herramientas de comunicación y supervisión refleja la necesidad de acceder a información procedente de distintas fuentes durante las actividades de gestión de edificaciones.
+Los resultados presentados en la Figura 15 evidencian que las características más comunes del primer segmento son la formación profesional, las responsabilidades de administración y el uso habitual de herramientas digitales. El 100 % utiliza computadoras y smartphones, aunque se observa diversidad en los sistemas operativos y navegadores. Estos hallazgos permiten reconocer la importancia de considerar una experiencia digital adaptable a diferentes dispositivos y entornos tecnológicos. Asimismo, la utilización de múltiples herramientas de comunicación y supervisión refleja la necesidad de acceder a información procedente de distintas fuentes durante las actividades de gestión de edificaciones.
 
 </p>
 
@@ -2430,7 +2430,7 @@ Con la finalidad de visualizar las características subjetivas predominantes ent
 
 <p align="justify">
 
-Los resultados de la Figura 13 muestran que la integración tecnológica, la disponibilidad de información confiable, la identificación de zonas afectadas, la continuidad de funciones críticas y la automatización supervisada constituyen necesidades compartidas por el 100 % de los entrevistados. Asimismo, las dificultades para consultar información histórica, documentadas explícitamente en el 66.7 % de los casos, evidencian oportunidades para mejorar los mecanismos de registro y seguimiento de incidentes. Estos hallazgos permiten identificar características relevantes para orientar las funcionalidades de monitoreo, alerta y gestión de información propuestas para ResQ.
+Los resultados de la Figura 16 muestran que la integración tecnológica, la disponibilidad de información confiable, la identificación de zonas afectadas, la continuidad de funciones críticas y la automatización supervisada constituyen necesidades compartidas por el 100 % de los entrevistados. Asimismo, las dificultades para consultar información histórica, documentadas explícitamente en el 66.7 % de los casos, evidencian oportunidades para mejorar los mecanismos de registro y seguimiento de incidentes. Estos hallazgos permiten identificar características relevantes para orientar las funcionalidades de monitoreo, alerta y gestión de información propuestas para ResQ.
 
 </p>
 
@@ -2524,7 +2524,7 @@ Para representar las características objetivas del segundo segmento, se elabor�
 
 <p align="justify">
 
-Los resultados de la Figura 14 permiten identificar que el segundo segmento está representado por profesionales con formación en ingeniería y experiencia relacionada con automatización e integración tecnológica. Aunque existen diferencias en edad, trayectoria y cargo, el 100 % participa en actividades que requieren conocimientos técnicos o gestión de proyectos tecnológicos. La diversidad de responsabilidades demuestra que la evaluación e incorporación de nuevas soluciones involucra diferentes perfiles dentro de las organizaciones. Asimismo, la información tecnológica documentada destaca la importancia de proporcionar herramientas y recursos técnicos adecuados para los entornos profesionales de estas empresas.
+Los resultados de la Figura 17 permiten identificar que el segundo segmento está representado por profesionales con formación en ingeniería y experiencia relacionada con automatización e integración tecnológica. Aunque existen diferencias en edad, trayectoria y cargo, el 100 % participa en actividades que requieren conocimientos técnicos o gestión de proyectos tecnológicos. La diversidad de responsabilidades demuestra que la evaluación e incorporación de nuevas soluciones involucra diferentes perfiles dentro de las organizaciones. Asimismo, la información tecnológica documentada destaca la importancia de proporcionar herramientas y recursos técnicos adecuados para los entornos profesionales de estas empresas.
 
 </p>
 
@@ -2606,7 +2606,7 @@ Con la finalidad de visualizar las características subjetivas del segundo segme
 
 <p align="justify">
 
-Los resultados presentados en la Figura 15 evidencian que la compatibilidad tecnológica, las pruebas de validación, la disponibilidad de soporte y el mantenimiento posterior constituyen criterios compartidos por el 100 % de los entrevistados. Asimismo, el 66.7 % describe dificultades concretas de interoperabilidad, destaca la importancia de la documentación técnica y considera necesario mantener determinadas funciones críticas localmente. Estos hallazgos permiten reconocer que la incorporación de nuevas soluciones depende de factores técnicos, operativos y comerciales que deben considerarse durante el diseño y posicionamiento de ResQ.
+Los resultados presentados en la Figura 18 evidencian que la compatibilidad tecnológica, las pruebas de validación, la disponibilidad de soporte y el mantenimiento posterior constituyen criterios compartidos por el 100 % de los entrevistados. Asimismo, el 66.7 % describe dificultades concretas de interoperabilidad, destaca la importancia de la documentación técnica y considera necesario mantener determinadas funciones críticas localmente. Estos hallazgos permiten reconocer que la incorporación de nuevas soluciones depende de factores técnicos, operativos y comerciales que deben considerarse durante el diseño y posicionamiento de ResQ.
 
 </p>
 
@@ -2728,7 +2728,7 @@ Su principal objetivo es garantizar la seguridad de los ocupantes mediante la id
 
 <p align="justify">
 
-La Figura 16 presenta el User Persona de Carlos Mendoza, incluyendo sus características profesionales, motivaciones, objetivos, frustraciones y preferencias tecnológicas.
+La Figura 19 presenta el User Persona de Carlos Mendoza, incluyendo sus características profesionales, motivaciones, objetivos, frustraciones y preferencias tecnológicas.
 
 </p>
 
@@ -2756,7 +2756,7 @@ Su principal objetivo es incorporar soluciones tecnológicas compatibles, establ
 
 <p align="justify">
 
-La Figura 17 presenta el User Persona de Alex Rivera, sintetizando sus responsabilidades, habilidades, objetivos, frustraciones y criterios de evaluación tecnológica.
+La Figura 20 presenta el User Persona de Alex Rivera, sintetizando sus responsabilidades, habilidades, objetivos, frustraciones y criterios de evaluación tecnológica.
 
 </p>
 
@@ -2965,7 +2965,7 @@ El mapa de empatía de Carlos Mendoza refleja a un administrador que necesita su
 
 <p align="justify">
 
-La Figura 20 presenta el mapa de empatía de Carlos Mendoza, sintetizando sus percepciones, preocupaciones y expectativas como representante del primer segmento objetivo.
+La Figura 23 presenta el mapa de empatía de Carlos Mendoza, sintetizando sus percepciones, preocupaciones y expectativas como representante del primer segmento objetivo.
 
 </p>
 
@@ -2987,7 +2987,7 @@ El mapa de empatía de Alex Rivera representa a un integrador que debe evaluar s
 
 <p align="justify">
 
-La Figura 21 presenta el mapa de empatía de Alex Rivera, reuniendo sus percepciones, criterios técnicos y expectativas como representante del segundo segmento objetivo.
+La Figura 24 presenta el mapa de empatía de Alex Rivera, reuniendo sus percepciones, criterios técnicos y expectativas como representante del segundo segmento objetivo.
 
 </p>
 
@@ -3397,7 +3397,7 @@ Lograr que al menos el <strong>60 % de las organizaciones participantes que comp
 
 <p align="justify">
 
-La Figura 23 representa la relación entre los Business Goals, los User Personas, los Impacts, los Deliverables y las User Stories. El mapa debe actualizarse en UXPressia con los actores y las historias vigentes antes de reemplazar la imagen del informe.
+La Figura 31 representa la relación entre los Business Goals, los User Personas, los Impacts, los Deliverables y las User Stories. El mapa debe actualizarse en UXPressia con los actores y las historias vigentes antes de reemplazar la imagen del informe.
 
 </p>
 
@@ -3513,7 +3513,7 @@ El Product Backlog se gestiona en Trello. Cada tarjeta debe reflejar el ID, tít
 
 <p align="justify">
 
-La Figura 24 corresponde a la evidencia del Product Backlog en Trello. Antes de la entrega deberá reemplazarse por una captura del tablero actualizado y comprobar que el enlace permita su consulta pública.
+La Figura 32 corresponde a la evidencia del Product Backlog en Trello. Antes de la entrega deberá reemplazarse por una captura del tablero actualizado y comprobar que el enlace permita su consulta pública.
 
 </p>
 
@@ -3580,7 +3580,7 @@ El flujo principal comienza con la configuración de la infraestructura y contin
 
 <p align="justify">
 
-La Figura 25 presenta el Design-Level EventStorming de ResQ, mostrando los procesos identificados y las relaciones entre actores, comandos, eventos, agregados, políticas, modelos de lectura y sistemas externos.
+La Figura 33 presenta el Design-Level EventStorming de ResQ, mostrando los procesos identificados y las relaciones entre actores, comandos, eventos, agregados, políticas, modelos de lectura y sistemas externos.
 
 </p>
 
@@ -3608,7 +3608,7 @@ A partir del Design-Level EventStorming, se realizó el <strong>Candidate Contex
 
 <p align="justify">
 
-En la primera etapa se agruparon los comandos y eventos relacionados con autenticación, suscripciones, configuración de edificios y dispositivos, monitoreo, detección, alertas e incidentes, sin establecer aún límites entre contextos. La Figura 26 muestra este EventStorm inicial.
+En la primera etapa se agruparon los comandos y eventos relacionados con autenticación, suscripciones, configuración de edificios y dispositivos, monitoreo, detección, alertas e incidentes, sin establecer aún límites entre contextos. La Figura 34 muestra este EventStorm inicial.
 
 </p>
 
@@ -3620,7 +3620,7 @@ En la primera etapa se agruparon los comandos y eventos relacionados con autenti
 
 <p align="justify">
 
-Mediante <strong>start-with-value</strong> se identificaron <code>Risk Detection</code> y <code>Alert &amp; Response Management</code> como capacidades del <strong>Core Domain</strong>, por su participación directa en la detección de riesgos y la coordinación de respuestas. Con <strong>look-for-pivotal-events</strong> se reconocieron las transiciones marcadas por <code>Measurement Recorded</code>, <code>Risk Classified and Located</code>, <code>Alert Generated</code> e <code>Incident Registered</code>. La Figura 27 presenta estos eventos y las responsabilidades transversales identificadas, incluida la vigencia de suscripciones y la conectividad.
+Mediante <strong>start-with-value</strong> se identificaron <code>Risk Detection</code> y <code>Alert &amp; Response Management</code> como capacidades del <strong>Core Domain</strong>, por su participación directa en la detección de riesgos y la coordinación de respuestas. Con <strong>look-for-pivotal-events</strong> se reconocieron las transiciones marcadas por <code>Measurement Recorded</code>, <code>Risk Classified and Located</code>, <code>Alert Generated</code> e <code>Incident Registered</code>. La Figura 35 presenta estos eventos y las responsabilidades transversales identificadas, incluida la vigencia de suscripciones y la conectividad.
 
 </p>
 
@@ -3651,7 +3651,7 @@ El refinamiento permitió identificar <strong>diez Candidate Bounded Contexts</s
 
 <p align="justify">
 
-La Figura 28 presenta la delimitación resultante: <strong>Risk Detection</strong> y <strong>Alert &amp; Response Management</strong> como Core Domain; siete contextos de soporte; e <strong>IAM</strong> como contexto genérico. Los sistemas externos se consideran fuentes o destinos de integración y no contextos adicionales.
+La Figura 36 presenta la delimitación resultante: <strong>Risk Detection</strong> y <strong>Alert &amp; Response Management</strong> como Core Domain; siete contextos de soporte; e <strong>IAM</strong> como contexto genérico. Los sistemas externos se consideran fuentes o destinos de integración y no contextos adicionales.
 
 </p>
 
@@ -3685,7 +3685,7 @@ El administrador se autentica mediante <strong>IAM</strong> y consulta en <stron
 
 <p align="justify">
 
-La Figura 29 representa los mensajes intercambiados entre el administrador, el integrador y los contextos responsables de la configuración de la infraestructura.
+La Figura 37 representa los mensajes intercambiados entre el administrador, el integrador y los contextos responsables de la configuración de la infraestructura.
 
 </p>
 
@@ -3707,7 +3707,7 @@ El proceso comienza cuando un dispositivo IoT genera una medición y la transmit
 
 <p align="justify">
 
-La Figura 30 muestra la colaboración entre los contextos de conectividad, monitoreo, detección, alertas e incidentes. El flujo IoT y la ejecución física corresponden al diseño previsto y requieren validación de integración.
+La Figura 38 muestra la colaboración entre los contextos de conectividad, monitoreo, detección, alertas e incidentes. El flujo IoT y la ejecución física corresponden al diseño previsto y requieren validación de integración.
 
 </p>
 
@@ -3729,7 +3729,7 @@ Cuando <strong>Risk Detection</strong> identifica una situación de riesgo, <str
 
 <p align="justify">
 
-La Figura 31 representa los mensajes de solicitud, validación de identidad y decisión humana asociados con las acciones de alto impacto.
+La Figura 39 representa los mensajes de solicitud, validación de identidad y decisión humana asociados con las acciones de alto impacto.
 
 </p>
 
@@ -3751,7 +3751,7 @@ El responsable de seguridad consulta el incidente mediante <strong>Incident Mana
 
 <p align="justify">
 
-La Figura 32 representa las consultas, asignaciones y transiciones del incidente, diferenciando los estados de atención, resolución y cierre.
+La Figura 40 representa las consultas, asignaciones y transiciones del incidente, diferenciando los estados de atención, resolución y cierre.
 
 </p>
 
@@ -12488,7 +12488,7 @@ El entorno de desarrollo de ResQ combina herramientas de coordinación, diseño,
 | Requirements Management | Trello | Mantener el Product Backlog con User Stories, Technical Stories, Business Value, Story Points y Acceptance Criteria | SaaS | https://trello.com/ |
 | Requirements Management | Miro | Elaborar el Big Picture EventStorming enlazado desde el Project Report | SaaS | https://miro.com/ |
 | Product UX/UI Design | Figma | Elaborar Wireframes, Mock-ups y Prototypes para la Landing Page y las aplicaciones de ResQ | SaaS | https://www.figma.com/ |
-| IoT Design | Cirkit Designer | Diseñar, verificar y exportar el circuito definitivo del MVP IoT; la Figura 83 actual es provisional y deberá reemplazarse por la exportación validada | SaaS | https://www.cirkitdesigner.com/ |
+| IoT Design | Cirkit Designer | Diseñar, verificar y exportar el circuito definitivo del MVP IoT; la Figura 251 actual es provisional y deberá reemplazarse por la exportación validada | SaaS | https://www.cirkitdesigner.com/ |
 | Software Development | Git | Controlar versiones y conservar la trazabilidad de los cambios | Software local | https://git-scm.com/ |
 | Software Development | GitHub | Alojar los cuatro repositorios de la organización, administrar ramas y revisar Pull Requests | SaaS | https://github.com/ |
 | Software Development | Angular 22.2.0 (Web Application) / 22.2.1 (Landing Page) | Construir las dos Single Page Applications con componentes y enrutamiento | Framework web | https://angular.dev/ |
@@ -13845,7 +13845,7 @@ La revisión de ejecución del Sprint 2 de ResQ se centra en el incremento asoci
 </p>
 
 <p align="justify">
-Las evidencias se organizan por componente y escenario de uso, distinguiendo tres situaciones: comportamiento implementado en el firmware, funcionalidades representadas por la aplicación web y comunicación con un servicio externo de telemetría. Esta distinción resulta necesaria porque la existencia de una interfaz, un controlador REST o una rutina de firmware no acredita automáticamente que la integración completa entre Embedded Systems, servicios Backend y Frontend haya sido comprobada.
+Las capturas documentan los estados visibles del prototipo, los registros del canal de ThingSpeak y las vistas de la aplicación web. La validación extremo a extremo requiere una prueba que siga un mismo evento desde el dispositivo hasta la API y la aplicación web.
 </p>
 
 ##### Procesamiento local de condiciones de riesgo
@@ -13863,7 +13863,7 @@ El procesamiento se ejecuta localmente y constituye el sustento de la historia t
 ![Estado normal del ESP32 y visualización de mediciones en la pantalla OLED](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-estado-normal.png)
 
 <p align="justify">
-La figura ilustra la operación del prototipo en un escenario normal, identificando el ESP32, los sensores conectados, la pantalla OLED y la señalización local correspondiente. Cuando se utilicen valores simulados, su procedencia se diferencia de las lecturas obtenidas mediante sensores físicos.
+La Figura 279 muestra el prototipo físico en estado normal, con el LED verde activo y la pantalla OLED en modo REAL.
 </p>
 
 ##### Ejecución local de alertas y actuadores
@@ -13873,15 +13873,15 @@ El control de actuadores se relaciona con la historia técnica TS04 y con el pro
 </p>
 
 <p align="justify">
-La evidencia de ejecución corresponde a la transición entre estados y a la respuesta observable de los componentes de salida. Para preservar la seguridad del procedimiento, las condiciones de peligro pueden inducirse mediante una simulación controlada, sin liberar gases ni exponer a los participantes a una situación real de emergencia.
+El modo demostración permite simular una condición de peligro para observar la respuesta visual del prototipo.
 </p>
 
-**Figura 280. Señalización local de una condición de peligro mediante los actuadores del nodo ResQ.**
+**Figura 280. Alerta local de gas en modo demostración.**
 
-![ESP32 con alarma local activa y estado de peligro mostrado en el prototipo](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-alarma-local.png)
+![Prototipo con LED rojo y alerta de gas en la pantalla OLED durante el modo demostración](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-alarma-local.png)
 
 <p align="justify">
-Esta vista permite relacionar la clasificación local de riesgo con el comportamiento de los indicadores físicos y la información presentada al usuario. La captura del estado visual complementa, pero no reemplaza, la comprobación auditiva del buzzer en el registro audiovisual.
+La Figura 280 muestra el LED rojo activo y la alerta de gas en la pantalla OLED durante el modo demostración. La prueba documenta la señalización visual de una condición simulada.
 </p>
 
 ##### Continuidad de las funciones críticas ante pérdida de conectividad
@@ -13891,15 +13891,15 @@ La historia US28 plantea que las funciones esenciales de ResQ no dependan exclus
 </p>
 
 <p align="justify">
-El escenario de ejecución se enfoca en observar el estado de conectividad y comprobar si el nodo conserva la lectura de sensores y la respuesta local durante una interrupción de red. Debe considerarse que algunas operaciones de conexión o publicación son síncronas y pueden introducir pausas transitorias; por ello, esta evidencia no se interpreta como garantía de disponibilidad ininterrumpida ni como demostración de almacenamiento y sincronización posteriores de mensajes no enviados.
+La prueba de pérdida de conectividad permite observar los mensajes de diagnóstico del nodo. Comprobar la continuidad de la lectura y de la respuesta local durante toda la interrupción requiere un registro del comportamiento del dispositivo a lo largo del ensayo.
 </p>
 
 **Figura 281. Estado del nodo ResQ durante una interrupción de la conexión Wi-Fi.**
 
-![Estado de conectividad y funcionamiento local del ESP32 sin Wi-Fi](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-sin-conectividad.png)
+![Pantalla OLED con avisos de pérdida de Wi-Fi y error de comunicación con ThingSpeak](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-sin-conectividad.png)
 
 <p align="justify">
-La captura se orienta a identificar el estado de red y las condiciones de funcionamiento local mediante la pantalla OLED, los indicadores y, de ser necesario, el monitor serie. Su interpretación se limita al comportamiento efectivamente observable durante el escenario presentado.
+La Figura 281 muestra en la pantalla OLED los mensajes «WiFi: SIN RED» y «ThingSpeak: ERROR». El LED verde permanece encendido en el instante de la captura.
 </p>
 
 ##### Visualización y transmisión de información IoT mediante ThingSpeak
@@ -13909,20 +13909,12 @@ El nodo incorpora una ruta de publicación de información hacia ThingSpeak para
 </p>
 
 <p align="justify">
-La evidencia de ejecución se compone de la vista de los gráficos del canal y del registro de publicación generado desde el dispositivo. La comparación de valores y marcas de tiempo permite contrastar el envío con la información recibida, siempre diferenciando los datos simulados de las mediciones físicas. La presencia de registros en ThingSpeak demuestra el intercambio con ese servicio, pero no equivale a la validación integral de la comunicación entre el ESP32, la API de ResQ y la aplicación web.
+La Figura 282 muestra seis gráficas con datos registrados del prototipo en ThingSpeak. Los canales incluyen lecturas de gas, temperatura, humedad e intensidad de señal Wi-Fi, además del estado de alarma y el movimiento, que puede simularse. La captura documenta los registros visibles en ThingSpeak. Para verificar el origen de cada muestra o su correspondencia con un envío concreto se requiere un registro de la prueba.
 </p>
 
 **Figura 282. Visualización de los campos de telemetría del prototipo ResQ en ThingSpeak.**
 
 ![Gráficos y mediciones registradas en el canal ThingSpeak de ResQ](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-thingspeak-graficos.png)
-
-**Figura 283. Registro de publicación de mediciones desde el ESP32.**
-
-![Monitor serie con valores transmitidos y resultado de publicación a ThingSpeak](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/iot-publicacion-monitor-serie.png)
-
-<p align="justify">
-La primera figura permite revisar los datos representados gráficamente en Cloud Computing; la segunda aporta el contexto técnico de la comunicación desde el nodo, incluyendo los valores emitidos y el resultado reportado por el firmware.
-</p>
 
 ##### Ejecución de los flujos de alertas y autorizaciones en la aplicación web
 
@@ -13934,12 +13926,12 @@ La aplicación web de ResQ proporciona un recorrido de consulta de alertas que p
 Es importante precisar el alcance de la ejecución: la aplicación conserva adaptadores de datos simulados para varios contextos y dispone de adaptadores HTTP preparados para determinados servicios. Por tanto, la evidencia de navegación permite mostrar los controles y estados de la interfaz, pero no acredita por sí sola el envío de una orden a un actuador físico ni la confirmación de una respuesta automática por parte de los servicios Backend.
 </p>
 
-**Figura 284. Detalle de alerta y acciones de autorización en la Frontend Web Application de ResQ.**
+**Figura 283. Detalle de una alerta de advertencia en la aplicación web de ResQ.**
 
-![Interfaz de detalle de alerta con acciones de respuesta o autorización disponibles](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/frontend-alerta-autorizacion.png)
+![Pantalla de detalle de una alerta de advertencia en la aplicación web](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/frontend-alerta-autorizacion.png)
 
 <p align="justify">
-Esta vista documenta la forma en que el operador interpreta un evento de riesgo y localiza las acciones habilitadas según el estado presentado. El funcionamiento de dichas acciones se describe de acuerdo con el origen de datos utilizado durante la demostración, sin confundir un flujo simulado con una transacción real confirmada por el Backend.
+La Figura 283 muestra el detalle de una advertencia de incendio activa, con el valor de humo y los umbrales que presenta la interfaz. La ejecución de una autorización y su efecto sobre un actuador físico requieren una prueba específica.
 </p>
 
 ##### Consulta, asignación y resolución de incidentes
@@ -13949,37 +13941,29 @@ Las historias US14, US15 y US16 abordan tres actividades complementarias del cic
 </p>
 
 <p align="justify">
-La ejecución comienza con la identificación de un incidente en el listado, continúa con la revisión de sus datos y finaliza con la exploración de las acciones de asignación o resolución disponibles en su vista de detalle. La interfaz cuenta con una capa de acceso a datos que facilita distinguir los recorridos demostrados mediante información de prueba de aquellos que dependen de la integración con los servicios REST.
+Las Figuras 284 y 285 muestran el listado con incidentes activos, en atención y resueltos, y el detalle de un incidente crítico de fuga de gas, respectivamente. Los datos visibles corresponden a registros presentados por la interfaz durante la demostración.
 </p>
 
-**Figura 285. Listado y consulta del estado de incidentes en ResQ.**
+**Figura 284. Listado de incidentes en la aplicación web de ResQ.**
 
 ![Listado de incidentes con estados e información contextual en la aplicación web](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/frontend-incidentes-listado.png)
 
-**Figura 286. Vista de detalle de incidente y controles de gestión.**
+**Figura 285. Detalle de un incidente crítico en la aplicación web de ResQ.**
 
-![Detalle de incidente con opciones de asignación y resolución](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/frontend-incidentes-gestion.png)
+![Pantalla de detalle de un incidente crítico](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/frontend-incidentes-gestion.png)
 
 <p align="justify">
-Las capturas muestran los puntos de interacción relevantes para el seguimiento de incidentes y permiten examinar la organización visual de la información. La existencia de estos controles representa la disponibilidad del recorrido en la aplicación, mientras que la persistencia de las operaciones debe comprobarse mediante los servicios correspondientes cuando se utilice integración HTTP.
+El detalle del incidente incluye un control para que el operador se asigne el caso. La asignación de responsables, el registro de una resolución y su persistencia requieren una prueba que confirme los cambios en los servicios correspondientes.
 </p>
 
 ##### Registro audiovisual y recorrido de ejecución
 
 <p align="justify">
-La evidencia audiovisual complementa las capturas estáticas mediante la observación de acciones sucesivas y cambios de estado. Para revisar el incremento del Sprint 2, el recorrido comprende el acceso a la aplicación web, la consulta de alertas, la revisión de autorizaciones disponibles, la exploración de incidentes y la demostración del nodo IoT en escenarios de funcionamiento normal, alarma local y conectividad. El recorrido puede iniciarse desde la <a href="https://resq-frontend.ffaaliceht2003.workers.dev/login">Frontend Web Application desplegada</a>, mientras que la ejecución técnica del firmware cuenta con un registro audiovisual de la práctica de conectividad.
+El video técnico documenta la práctica de conectividad del prototipo IoT. Las vistas de alertas e incidentes se pueden consultar en la <a href="https://resq-frontend.ffaaliceht2003.workers.dev/login">Frontend Web Application desplegada</a>.
 </p>
 
 <p align="justify">
 <strong>Video técnico disponible:</strong> <a href="https://github.com/UPC-1ASI0572-202620-16518-ResQ/resq-firmware/blob/main/evidencias/sesion9/G3_E8_video.mp4">Registro audiovisual del prototipo IoT y la práctica de conectividad (repositorio resq-firmware)</a>. Este material se identifica como evidencia complementaria del dispositivo y no se presenta como una grabación integral de todos los recorridos de navegación de la aplicación web.
-</p>
-
-**Figura 287. Cuadro representativo de la demostración audiovisual del prototipo IoT de ResQ.**
-
-![Fotograma representativo del registro audiovisual de ejecución de ResQ](assets/images/chapter-06-product-implementation-validation-deployment/execution-sprint2/sprint2-video-ejecucion.png)
-
-<p align="justify">
-La combinación de las capturas de las vistas y el material audiovisual técnico permite relacionar la explicación documental con las operaciones observables. La validación completa del recorrido entre la interfaz web, los servicios y los actuadores físicos requiere una demostración de integración específica, independiente de la disponibilidad de cada componente por separado.
 </p>
 
 ##### Síntesis y alcance de la revisión de ejecución
@@ -14021,17 +14005,17 @@ Todos los endpoints protegidos requieren autenticación mediante un token JWT en
 <p align="center">
   <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint2/servicesdoc1-sprint2-resq.png" alt="Swagger ResQ API - endpoints Risk Detection" width="70%">
   <br>
-  <strong>Figura 288. Swagger ResQ API - endpoints de Risk Detection.</strong>
+  <strong>Figura 286. Swagger ResQ API - endpoints de Risk Detection.</strong>
   <br>
   <br><br>
   <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint2/servicesdoc2-sprint2-resq.png" alt="Swagger ResQ API - endpoints Monitoring" width="70%">
   <br>
-  <strong>Figura 289. Swagger ResQ API - endpoints de Monitoring.</strong>
+  <strong>Figura 287. Swagger ResQ API - endpoints de Monitoring.</strong>
   <br>
   <br><br>
   <img src="assets/images/chapter-06-product-implementation-validation-deployment/services-sprint2/servicesdoc3-sprint2-resq.png" alt="Swagger ResQ API - endpoints Connectivity Management" width="70%">
   <br>
-  <strong>Figura 290. Swagger ResQ API - endpoints de Connectivity Management.</strong>
+  <strong>Figura 288. Swagger ResQ API - endpoints de Connectivity Management.</strong>
   <br><br>
 </p>
 
@@ -14296,7 +14280,7 @@ Se adopta la escala de cuatro niveles indicada en el Anexo D del enunciado. La c
 En el listado de alertas, el acceso al detalle se realiza mediante la selección de una fila de la tabla. La última columna presenta únicamente un ícono de flecha orientada a la derecha, sin título de columna, etiqueta textual ni control visual con el nombre de la acción. Aunque el código implementa interacción mediante clic, Enter y barra espaciadora y proporciona un nombre accesible para la fila, la intención de abrir un detalle no resulta igualmente explícita para quienes exploran visualmente la tabla por primera vez. La dificultad identificada corresponde a la visibilidad de la acción y no a una ausencia total de navegación por teclado.
 </p>
 
-**Figura 288. Tabla de alertas con acceso al detalle representado por una flecha sin etiqueta textual.**
+**Figura 289. Tabla de alertas con acceso al detalle representado por una flecha sin etiqueta textual.**
 
 ![Listado de alertas de ResQ con su última columna de flecha sin etiqueta de acción](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h01-alerta-acceso-detalle.png)
 
@@ -14314,7 +14298,7 @@ En el listado de alertas, el acceso al detalle se realiza mediante la selección
 El Dashboard utiliza expresiones como <em>“Live space status”</em> para presentar información de los espacios y el estado de riesgo. Paralelamente, la configuración de la aplicación utiliza adaptadores de datos simulados para determinados contextos, incluidos componentes de edificaciones, dispositivos, incidentes y monitoreo. Sin una señal explícita sobre el origen y la vigencia de la información, el usuario podría interpretar datos de demostración como mediciones actuales provenientes de sensores físicos. La confusión compromete la confianza en la visualización y puede influir sobre decisiones asociadas al monitoreo de riesgos.
 </p>
 
-**Figura 289. Indicadores de monitoreo del Dashboard y ausencia de identificación visible del origen de los datos.**
+**Figura 290. Indicadores de monitoreo del Dashboard y ausencia de identificación visible del origen de los datos.**
 
 ![Dashboard de ResQ con el estado Live y los indicadores de monitoreo](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h02-dashboard-datos-simulados.png)
 
@@ -14332,7 +14316,7 @@ El Dashboard utiliza expresiones como <em>“Live space status”</em> para pres
 En el listado de incidentes, el campo de búsqueda está contenido dentro de una etiqueta visual que incluye un ícono y un texto de marcador de posición (<em>placeholder</em>), pero no contiene una etiqueta textual persistente ni un atributo de nombre accesible explícito. El marcador de posición no constituye una alternativa robusta a una etiqueta de formulario, ya que desaparece al ingresar información y puede no ofrecer una identificación suficientemente clara en distintas tecnologías de asistencia. La presencia del ícono tampoco garantiza que el propósito del campo sea anunciado correctamente.
 </p>
 
-**Figura 290. Campo de búsqueda de incidentes y estructura de su identificación accesible.**
+**Figura 291. Campo de búsqueda de incidentes y estructura de su identificación accesible.**
 
 ![Campo de búsqueda del listado de incidentes y su elemento input inspeccionado](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h03-busqueda-incidentes-accesibilidad.png)
 
@@ -14350,7 +14334,7 @@ En el listado de incidentes, el campo de búsqueda está contenido dentro de una
 La implementación de autenticación mediante el adaptador de demostración verifica el identificador de acceso y la contraseña y devuelve el error <code>AUTHENTICATION_FAILED</code> ante credenciales no válidas. Sin embargo, la secuencia de manejo de errores del componente <code>AuthSessionFacade</code> invoca <code>clearSession()</code> cuando falla la autenticación. Este método restablece también el estado de error almacenado en <code>IamFacade</code>, de modo que el mensaje que la plantilla de Login consulta mediante <code>session.error()</code> puede desaparecer antes de representarse. En la revisión de la interfaz se comprobó que un intento con contraseña incorrecta no produjo un aviso visible. La ausencia de retroalimentación dificulta reconocer la causa del rechazo y decidir cómo corregir el intento. Adicionalmente, los contenedores definidos para los errores no incluyen atributos explícitos de anuncio accesible.
 </p>
 
-**Figura 291. Pantalla de acceso después de un intento fallido, sin retroalimentación visible de autenticación.**
+**Figura 292. Pantalla de acceso después de un intento fallido, sin retroalimentación visible de autenticación.**
 
 ![Pantalla de Login de ResQ tras introducir credenciales incorrectas sin presentar un aviso de error](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h04-login-mensaje-error.png)
 
@@ -14368,7 +14352,7 @@ La implementación de autenticación mediante el adaptador de demostración veri
 El servicio de idiomas del Landing Page inicia en español cuando no existe una preferencia guardada; en cambio, el servicio correspondiente a la Web Application utiliza inglés de manera predeterminada. En una primera visita, la transición entre productos puede producir un cambio de idioma que no ha sido solicitado por el usuario, dificultando la continuidad de la experiencia. Adicionalmente, el Statement del curso establece el inglés como idioma predeterminado para los productos digitales y contempla español latinoamericano como alternativa de internacionalización.
 </p>
 
-**Figura 292. Diferencia entre el idioma inicial del Landing Page y el de la Web Application.**
+**Figura 293. Diferencia entre el idioma inicial del Landing Page y el de la Web Application.**
 
 ![Comparación de la interfaz inicial del Landing Page en español y la aplicación en inglés](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h05-idiomas-landing-aplicacion.png)
 
@@ -14386,7 +14370,7 @@ El servicio de idiomas del Landing Page inicia en español cuando no existe una 
 Los controles de selección de métricas ambientales y períodos de análisis del Dashboard utilizan botones cuyo estado activo se expresa mediante la clase visual <code>active</code>. La plantilla examinada no incorpora un atributo que comunique de manera programática cuál opción está seleccionada, como <code>aria-pressed</code> en un conjunto de botones de alternancia. Esta ausencia puede dificultar que una persona que utiliza lector de pantalla identifique el filtro o la métrica actualmente aplicada, aun cuando el cambio visual sea perceptible.
 </p>
 
-**Figura 293. Selección de métricas y períodos en el Dashboard.**
+**Figura 294. Selección de métricas y períodos en el Dashboard.**
 
 ![Controles del Dashboard con estado activo visible y atributos de accesibilidad inspeccionados](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h06-dashboard-estado-filtros.png)
 
@@ -14404,7 +14388,7 @@ Los controles de selección de métricas ambientales y períodos de análisis de
 La vista de incidentes presenta el mismo estado vacío cuando el listado filtrado no contiene resultados, independientemente de que la colección original esté vacía o de que un filtro haya excluido todos los registros. El mensaje sugiere modificar los filtros incluso si la búsqueda todavía no ha sido utilizada y no existen incidentes cargados. Esta ambigüedad impide diferenciar claramente entre una ausencia real de datos y una búsqueda sin coincidencias.
 </p>
 
-**Figura 294. Estado vacío del listado de incidentes y mensaje de ayuda al usuario.**
+**Figura 295. Estado vacío del listado de incidentes y mensaje de ayuda al usuario.**
 
 ![Listado de incidentes con el mensaje de ausencia de resultados](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h07-incidentes-estado-vacio.png)
 
@@ -14422,7 +14406,7 @@ La vista de incidentes presenta el mismo estado vacío cuando el listado filtrad
 La pantalla de autenticación presenta valores numéricos fijos relacionados con dispositivos conectados y disponibilidad del sistema, acompañados de una referencia a monitoreo continuo. Al encontrarse incorporados directamente en la plantilla, estos indicadores no representan necesariamente el estado actual de la infraestructura y tampoco se identifican en ese bloque como cifras ilustrativas. Su presentación puede inducir a interpretar que se trata de estadísticas de operación efectivamente medidas.
 </p>
 
-**Figura 295. Indicadores operativos presentados en la pantalla de autenticación.**
+**Figura 296. Indicadores operativos presentados en la pantalla de autenticación.**
 
 ![Pantalla de Login de ResQ con indicadores numéricos de dispositivos y disponibilidad](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h08-login-indicadores-estaticos.png)
 
@@ -14601,7 +14585,7 @@ Instituto Nacional de Defensa Civil (INDECI). (2024). <em>Compendio Estadístico
 ![Video de exposición AV1](assets/images/general/collaboration/av1-sprint-review.png)
 
 <p align="center">
-  <strong>Figura 276. Video de exposición correspondiente a la entrega AV1.</strong>
+  <strong>Figura 297. Video de exposición correspondiente a la entrega AV1.</strong>
 </p>
 
 **URL:** [Video exposición AV1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQCm8NIQa-7hSJu5uKB_dQbpAf0R6cugKBeBCTA1hMliXKs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3OfZUl)
@@ -14619,7 +14603,7 @@ En este apartado se presenta el video de exposición correspondiente al Trabajo 
 ![Video Exposicion TB1](assets/images/annexes/tb1-video-exposicion.png)
 
 <p align="center">
-  <strong>Figura 277. Video de exposición correspondiente a la entrega TB1 – Stage Review.</strong>
+  <strong>Figura 298. Video de exposición correspondiente a la entrega TB1 – Stage Review.</strong>
 </p>
 
 <p align="justify">
