@@ -14152,13 +14152,25 @@ La Landing Page continúa desplegada mediante GitHub Pages. El workflow de GitHu
 **Enlace de la Landing Page:**  
 https://upc-1asi0572-202620-16518-resq.github.io/resq-landing-page/
 
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/deployment-sprint2/deploy-sprint2-landing-page.png" alt="Landing Page de ResQ publicada en GitHub Pages" width="85%">
+  <br>
+  <strong>Figura 291. Landing Page de ResQ desplegada en GitHub Pages.</strong>
+</p>
+
 **Web Application**
 
-La aplicación web se mantiene publicada en Cloudflare Workers, donde se genera una nueva versión a partir de la rama principal del repositorio `resq-frontend`. Durante este Sprint se incorporó la funcionalidad de suscripciones, y se verificó el acceso a la aplicación mediante su URL pública y el funcionamiento de la pantalla de autenticación.
+La aplicación web se mantiene publicada en Cloudflare Workers, donde se genera una nueva versión a partir de la rama principal del repositorio `resq-frontend`. Durante este Sprint se incorporó la funcionalidad de suscripciones y la aplicación pasó a consumir la API desplegada en Render. Se verificó el acceso mediante su URL pública, el inicio de sesión y la consulta de alertas generadas a partir de mediciones persistidas del prototipo ESP32.
 
 **Enlace de la aplicación web:**  
 
 https://resq-frontend.ffaaliceht2003.workers.dev/login
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/deployment-sprint2/deploy-sprint2-web-app.png" alt="Vista de alertas de la aplicación web de ResQ desplegada en Cloudflare Workers" width="85%">
+  <br>
+  <strong>Figura 292. Vista de alertas de la Web Application desplegada en Cloudflare Workers, con datos obtenidos de la API.</strong>
+</p>
 
 **Backend**
 
@@ -14169,6 +14181,12 @@ Como parte de la validación del despliegue, se verificó el acceso a la documen
 **Enlace del backend desplegado en Render:**
 
 https://resq-api-79xy.onrender.com/swagger/index.html
+
+<p align="center">
+  <img src="assets/images/chapter-06-product-implementation-validation-deployment/deployment-sprint2/deploy-sprint2-swagger-render.png" alt="Swagger UI de ResQ.API desplegado en Render" width="85%">
+  <br>
+  <strong>Figura 293. Documentación Swagger UI de ResQ.API desplegada en Render.</strong>
+</p>
 
 #### 6.2.2.9. Team Collaboration Insights during Sprint
 
@@ -14351,7 +14369,7 @@ Las preguntas se formularán durante y después de la interacción con ResQ, con
 | **Link del video** | https://youtu.be/B8mQFaKEYuo?si=DZyHIi5L5HOnLBd1 |
 
 ![Entrevista Andrea Roncal Vargas](assets/Validation/S1E1.png)
-*Figura 291. Entrevista 1 - Andrea Roncal Vargas.*
+*Figura 294. Entrevista 1 - Andrea Roncal Vargas.*
 
 **Resumen de la entrevista**
 Andrea Roncal Vargas, de 32 años, es copropietaria y administradora de un edificio de uso mixto. En la validación de ResQ, destacó la modernidad del sistema, pero señaló la necesidad de explicar mejor la adaptación a sistemas antiguos y aclarar términos técnicos como "Edge Computing". Le pareció intuitiva la asignación de responsables de incidentes y valoró la confirmación humana para respuestas automáticas, aunque sugirió mostrar el número de personas en la zona afectada. Apreció el panel de control, sugiriendo un modo oscuro, y consideró las métricas de falsas alarmas como lo más útil. Finalmente, recomendó incluir un simulador de emergencias para capacitación antes de su uso real.
@@ -14375,7 +14393,7 @@ Andrea Roncal Vargas, de 32 años, es copropietaria y administradora de un edifi
 | **Link del video** | https://youtu.be/hLTRy8DDTL0?si=K5IPkgKzS9LsjDAP |
 
 ![Entrevista Christian Dayer Vargas](assets/Validation/S1E2.png)
-*Figura 292. Entrevista 2 - Christian Dayer Vargas.*
+*Figura 295. Entrevista 2 - Christian Dayer Vargas.*
 
 **Resumen de la entrevista**
 Christian Dayer Vargas es un administrador de edificio residencial de 37 años. Al evaluar ResQ, consideró útil la centralización de alarmas, pero recomendó incluir ejemplos gráficos sobre el funcionamiento sin internet. Valoró positivamente la rápida actualización del monitoreo por zonas y la intuición del plano del edificio, sugiriendo mejorar el contraste de colores. Interpretó claramente el nivel de gravedad de las alertas, aunque solicitó mayor detalle sobre el sensor activado. Encontró el dashboard bien estructurado, sugiriendo atajos a cámaras de seguridad. Consideró sencillo ver el estado de los dispositivos, pero tuvo dificultades para descargar reportes en PDF. En general, consideró a ResQ un sistema de gran valor y lo recomendaría.
@@ -14399,7 +14417,7 @@ Christian Dayer Vargas es un administrador de edificio residencial de 37 años. 
 | **Link del video** | https://youtu.be/f6kHzDKii1g?si=e3nDCE3YrrC_QHGG |
 
 ![Entrevista Andrés Coca Lavado](assets/Validation/S1E3.png)
-*Figura 293. Entrevista 3 - Andrés Coca Lavado.*
+*Figura 296. Entrevista 3 - Andrés Coca Lavado.*
 
 **Resumen de la entrevista**
 Andrés Coca Lavado, Facility Manager corporativo de 30 años, destacó la gestión multizona de ResQ. Aunque encontró la tipografía legible, sugirió mejorar la claridad de algunos íconos. Le resultó rápido ubicar alertas en el mapa, pero recomendó optimizar el zoom para edificios grandes. Consideró adecuada la alerta sonora/visual, pidiendo incluir el nivel de batería del dispositivo. Apoyó la confirmación para acciones de alto impacto y sugirió permitir roles de usuario personalizados con acceso de solo lectura. Consideró a ResQ un producto sólido, recomendando incluir casos de éxito reales en la Landing Page.
@@ -14424,7 +14442,7 @@ Andrés Coca Lavado, Facility Manager corporativo de 30 años, destacó la gesti
 | **Link del video** | https://youtu.be/jHIZ68mNJNs?si=8g_osol5qq2yKdOc |
 
 ![Entrevista Cesar Vargas Ascue](assets/Validation/S2E1.png)
-*Figura 294. Entrevista 4 - Cesar Vargas Ascue.*
+*Figura 297. Entrevista 4 - Cesar Vargas Ascue.*
 
 **Resumen de la entrevista**
 Cesar Vargas Ascue es un Gerente Técnico de 42 años. Al revisar ResQ, lo consideró robusto para unificar la gestión, pero sugirió aclarar en la Landing Page el soporte a protocolos como BACnet y los esquemas de precios para integradores. Le resultó fácil ubicar sensores, pidiendo mostrar direcciones MAC/IP en la vista principal. Elogió la gráfica en tiempo real y la mención de una API REST, solicitando documentación técnica accesible (Swagger/Postman). Consideró sencillo crear edificios, pero laborioso vincular dispositivos externos manualmente. Calificó a ResQ como un excelente complemento y lo utilizaría.
@@ -14447,7 +14465,7 @@ Cesar Vargas Ascue es un Gerente Técnico de 42 años. Al revisar ResQ, lo consi
 | **Link del video** | https://youtu.be/izvq5Ow6AtA?si=Nr1ce-bQL4qUm0Wc |
 
 ![Entrevista Juan Jose Meza Huanacune](assets/Validation/S2E2.png)
-*Figura 295. Entrevista 5 - Juan Jose Meza Huanacune.*
+*Figura 298. Entrevista 5 - Juan Jose Meza Huanacune.*
 
 **Resumen de la entrevista**
 Juan Jose Meza Huanacune, Ingeniero de Proyectos IoT de 26 años, destacó la operación offline de ResQ, pidiendo explicar cómo se sincronizan luego los logs perdidos. Encontró la interfaz atractiva, pero sugirió mejorar el acceso a los ajustes avanzados. Valoró el panel de datos del sensor, pidiendo poder ajustar umbrales desde allí. Las alarmas fueron claras, pero sugirió mostrar códigos de error específicos en la pantalla OLED en lugar de iconos generales. Calificó el sistema como estable y apreció la asignación de dispositivos a planos, sugiriendo drag and drop. Recomendó incluir una herramienta de simulación de carga masiva antes del uso real.
@@ -14473,7 +14491,7 @@ Juan Jose Meza Huanacune, Ingeniero de Proyectos IoT de 26 años, destacó la op
 | **Link del video** | https://youtu.be/POdv7awNIy8?si=ynzcOzG54H6KPiKE|
 
 ![Entrevista Alvaro Cristian Gonzales Yupanqui](assets/Validation/S2E3.png)
-*Figura 296. Entrevista 6 - Alvaro Cristian Gonzales Yupanqui.*
+*Figura 299. Entrevista 6 - Alvaro Cristian Gonzales Yupanqui.*
 
 **Resumen de la entrevista**
 Alvaro Cristian Gonzales Yupanqui es Jefe de Proyecto de Integración de 32 años, y cuenta con especializaciones en gestión de proyectos con ocho años de experiencia en el sector. Al evaluar ResQ, lo vio como una propuesta inteligente para el control de edificios, elogiando la interfaz del Dashboard principal, aunque sugiriendo mejorar la visibilidad del estado de los Gateways. Le resultó ágil acceder al panel de los equipos, pero recomendó ser más conciso con datos de firmware. Apreció las herramientas de integración, solicitando un "Sandbox" oficial. Encontró el flujo de datos fluido y sin latencias, sugiriendo perfiles técnicos temporales para instaladores. Recomendaría implementar ResQ, pidiendo mayor claridad en el soporte técnico post-venta.
@@ -14562,7 +14580,7 @@ Se adopta la escala de cuatro niveles indicada en el Anexo D del enunciado. La c
 En el listado de alertas, el acceso al detalle se realiza mediante la selección de una fila de la tabla. La última columna presenta únicamente un ícono de flecha orientada a la derecha, sin título de columna, etiqueta textual ni control visual con el nombre de la acción. Aunque el código implementa interacción mediante clic, Enter y barra espaciadora y proporciona un nombre accesible para la fila, la intención de abrir un detalle no resulta igualmente explícita para quienes exploran visualmente la tabla por primera vez. La dificultad identificada corresponde a la visibilidad de la acción y no a una ausencia total de navegación por teclado.
 </p>
 
-**Figura 297. Tabla de alertas con acceso al detalle representado por una flecha sin etiqueta textual.**
+**Figura 300. Tabla de alertas con acceso al detalle representado por una flecha sin etiqueta textual.**
 
 ![Listado de alertas de ResQ con su última columna de flecha sin etiqueta de acción](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h01-alerta-acceso-detalle.png)
 
@@ -14580,7 +14598,7 @@ En el listado de alertas, el acceso al detalle se realiza mediante la selección
 El Dashboard utiliza expresiones como <em>“Live space status”</em> para presentar información de los espacios y el estado de riesgo. Paralelamente, la configuración de la aplicación utiliza adaptadores de datos simulados para determinados contextos, incluidos componentes de edificaciones, dispositivos, incidentes y monitoreo. Sin una señal explícita sobre el origen y la vigencia de la información, el usuario podría interpretar datos de demostración como mediciones actuales provenientes de sensores físicos. La confusión compromete la confianza en la visualización y puede influir sobre decisiones asociadas al monitoreo de riesgos.
 </p>
 
-**Figura 298. Indicadores de monitoreo del Dashboard y ausencia de identificación visible del origen de los datos.**
+**Figura 301. Indicadores de monitoreo del Dashboard y ausencia de identificación visible del origen de los datos.**
 
 ![Dashboard de ResQ con el estado Live y los indicadores de monitoreo](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h02-dashboard-datos-simulados.png)
 
@@ -14598,7 +14616,7 @@ El Dashboard utiliza expresiones como <em>“Live space status”</em> para pres
 En el listado de incidentes, el campo de búsqueda está contenido dentro de una etiqueta visual que incluye un ícono y un texto de marcador de posición (<em>placeholder</em>), pero no contiene una etiqueta textual persistente ni un atributo de nombre accesible explícito. El marcador de posición no constituye una alternativa robusta a una etiqueta de formulario, ya que desaparece al ingresar información y puede no ofrecer una identificación suficientemente clara en distintas tecnologías de asistencia. La presencia del ícono tampoco garantiza que el propósito del campo sea anunciado correctamente.
 </p>
 
-**Figura 299. Campo de búsqueda de incidentes y estructura de su identificación accesible.**
+**Figura 302. Campo de búsqueda de incidentes y estructura de su identificación accesible.**
 
 ![Campo de búsqueda del listado de incidentes y su elemento input inspeccionado](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h03-busqueda-incidentes-accesibilidad.png)
 
@@ -14616,7 +14634,7 @@ En el listado de incidentes, el campo de búsqueda está contenido dentro de una
 La implementación de autenticación mediante el adaptador de demostración verifica el identificador de acceso y la contraseña y devuelve el error <code>AUTHENTICATION_FAILED</code> ante credenciales no válidas. Sin embargo, la secuencia de manejo de errores del componente <code>AuthSessionFacade</code> invoca <code>clearSession()</code> cuando falla la autenticación. Este método restablece también el estado de error almacenado en <code>IamFacade</code>, de modo que el mensaje que la plantilla de Login consulta mediante <code>session.error()</code> puede desaparecer antes de representarse. En la revisión de la interfaz se comprobó que un intento con contraseña incorrecta no produjo un aviso visible. La ausencia de retroalimentación dificulta reconocer la causa del rechazo y decidir cómo corregir el intento. Adicionalmente, los contenedores definidos para los errores no incluyen atributos explícitos de anuncio accesible.
 </p>
 
-**Figura 300. Pantalla de acceso después de un intento fallido, sin retroalimentación visible de autenticación.**
+**Figura 303. Pantalla de acceso después de un intento fallido, sin retroalimentación visible de autenticación.**
 
 ![Pantalla de Login de ResQ tras introducir credenciales incorrectas sin presentar un aviso de error](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h04-login-mensaje-error.png)
 
@@ -14634,7 +14652,7 @@ La implementación de autenticación mediante el adaptador de demostración veri
 El servicio de idiomas del Landing Page inicia en español cuando no existe una preferencia guardada; en cambio, el servicio correspondiente a la Web Application utiliza inglés de manera predeterminada. En una primera visita, la transición entre productos puede producir un cambio de idioma que no ha sido solicitado por el usuario, dificultando la continuidad de la experiencia. Adicionalmente, el Statement del curso establece el inglés como idioma predeterminado para los productos digitales y contempla español latinoamericano como alternativa de internacionalización.
 </p>
 
-**Figura 301. Diferencia entre el idioma inicial del Landing Page y el de la Web Application.**
+**Figura 304. Diferencia entre el idioma inicial del Landing Page y el de la Web Application.**
 
 ![Comparación de la interfaz inicial del Landing Page en español y la aplicación en inglés](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h05-idiomas-landing-aplicacion.png)
 
@@ -14652,7 +14670,7 @@ El servicio de idiomas del Landing Page inicia en español cuando no existe una 
 Los controles de selección de métricas ambientales y períodos de análisis del Dashboard utilizan botones cuyo estado activo se expresa mediante la clase visual <code>active</code>. La plantilla examinada no incorpora un atributo que comunique de manera programática cuál opción está seleccionada, como <code>aria-pressed</code> en un conjunto de botones de alternancia. Esta ausencia puede dificultar que una persona que utiliza lector de pantalla identifique el filtro o la métrica actualmente aplicada, aun cuando el cambio visual sea perceptible.
 </p>
 
-**Figura 302. Selección de métricas y períodos en el Dashboard.**
+**Figura 305. Selección de métricas y períodos en el Dashboard.**
 
 ![Controles del Dashboard con estado activo visible y atributos de accesibilidad inspeccionados](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h06-dashboard-estado-filtros.png)
 
@@ -14670,7 +14688,7 @@ Los controles de selección de métricas ambientales y períodos de análisis de
 La vista de incidentes presenta el mismo estado vacío cuando el listado filtrado no contiene resultados, independientemente de que la colección original esté vacía o de que un filtro haya excluido todos los registros. El mensaje sugiere modificar los filtros incluso si la búsqueda todavía no ha sido utilizada y no existen incidentes cargados. Esta ambigüedad impide diferenciar claramente entre una ausencia real de datos y una búsqueda sin coincidencias.
 </p>
 
-**Figura 303. Estado vacío del listado de incidentes y mensaje de ayuda al usuario.**
+**Figura 306. Estado vacío del listado de incidentes y mensaje de ayuda al usuario.**
 
 ![Listado de incidentes con el mensaje de ausencia de resultados](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h07-incidentes-estado-vacio.png)
 
@@ -14688,7 +14706,7 @@ La vista de incidentes presenta el mismo estado vacío cuando el listado filtrad
 La pantalla de autenticación presenta valores numéricos fijos relacionados con dispositivos conectados y disponibilidad del sistema, acompañados de una referencia a monitoreo continuo. Al encontrarse incorporados directamente en la plantilla, estos indicadores no representan necesariamente el estado actual de la infraestructura y tampoco se identifican en ese bloque como cifras ilustrativas. Su presentación puede inducir a interpretar que se trata de estadísticas de operación efectivamente medidas.
 </p>
 
-**Figura 304. Indicadores operativos presentados en la pantalla de autenticación.**
+**Figura 307. Indicadores operativos presentados en la pantalla de autenticación.**
 
 ![Pantalla de Login de ResQ con indicadores numéricos de dispositivos y disponibilidad](assets/images/chapter-06-product-implementation-validation-deployment/heuristic-evaluation/h08-login-indicadores-estaticos.png)
 
@@ -14879,7 +14897,7 @@ Instituto Nacional de Defensa Civil (INDECI). (2024). <em>Compendio Estadístico
 ![Video de exposición AV1](assets/images/general/collaboration/av1-sprint-review.png)
 
 <p align="center">
-  <strong>Figura 305. Video de exposición correspondiente a la entrega AV1.</strong>
+  <strong>Figura 308. Video de exposición correspondiente a la entrega AV1.</strong>
 </p>
 
 **URL:** [Video exposición AV1](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQCm8NIQa-7hSJu5uKB_dQbpAf0R6cugKBeBCTA1hMliXKs?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3OfZUl)
@@ -14897,7 +14915,7 @@ En este apartado se presenta el video de exposición correspondiente al Trabajo 
 ![Video Exposicion TB1](assets/images/annexes/tb1-video-exposicion.png)
 
 <p align="center">
-  <strong>Figura 306. Video de exposición correspondiente a la entrega TB1 – Stage Review.</strong>
+  <strong>Figura 309. Video de exposición correspondiente a la entrega TB1 – Stage Review.</strong>
 </p>
 
 <p align="justify">
