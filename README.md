@@ -14198,6 +14198,154 @@ Las preguntas se formularán durante y después de la interacción con ResQ, con
 | P17 | Considerando su experiencia con la solución, ¿la utilizaría o recomendaría? ¿Por qué? |
 
 
+### 6.3.2. Realizacion de Entrevistas
+
+### Segmento objetivo #1: Propietarios y administradores de edificaciones
+
+#### Entrevista 1 — Andrea Roncal Vargas
+*(Anteriormente Entrevista 2 del perfil de administradora de edificio mixto)*
+
+| Información | Detalle |
+| :--- | :--- |
+| **Nombres** | Andrea |
+| **Apellidos** | Roncal Vargas |
+| **Edad** | 32 años |
+| **Género** | Femenino |
+| **Ocupación / Cargo** | Copropietaria y administradora de edificio de uso mixto |
+| **Segmento objetivo** | Propietarios y administradores de edificaciones |
+| **Fecha de entrevista** | Noviembre 2026 |
+| **Link del video** | https://youtu.be/B8mQFaKEYuo?si=DZyHIi5L5HOnLBd1 |
+
+![Entrevista Andrea Roncal Vargas](assets/Validation/S1E1.png)
+*Figura 12. Entrevista 1 - Andrea Roncal Vargas.*
+
+**Resumen de la entrevista**
+Andrea Roncal Vargas, de 32 años, es copropietaria y administradora de un edificio de uso mixto. En la validación de ResQ, destacó la modernidad del sistema, pero señaló la necesidad de explicar mejor la adaptación a sistemas antiguos y aclarar términos técnicos como "Edge Computing". Le pareció intuitiva la asignación de responsables de incidentes y valoró la confirmación humana para respuestas automáticas, aunque sugirió mostrar el número de personas en la zona afectada. Apreció el panel de control, sugiriendo un modo oscuro, y consideró las métricas de falsas alarmas como lo más útil. Finalmente, recomendó incluir un simulador de emergencias para capacitación antes de su uso real.
+
+
+
+---
+
+#### Entrevista 2 — Christian Dayer Vargas
+*(Anteriormente Entrevista 1 del perfil de administrador de edificio residencial)*
+
+| Información | Detalle |
+| :--- | :--- |
+| **Nombres** | Christian Dayer |
+| **Apellidos** | Vargas |
+| **Edad** | 37 años |
+| **Género** | Masculino |
+| **Ocupación / Cargo** | Administrador de edificio residencial |
+| **Segmento objetivo** | Propietarios y administradores de edificaciones |
+| **Fecha de entrevista** | Noviembre 2026 |
+| **Link del video** | https://youtu.be/hLTRy8DDTL0?si=K5IPkgKzS9LsjDAP |
+
+![Entrevista Christian Dayer Vargas](assets/Validation/S1E2.png)
+*Figura 13. Entrevista 2 - Christian Dayer Vargas.*
+
+**Resumen de la entrevista**
+Christian Dayer Vargas es un administrador de edificio residencial de 37 años. Al evaluar ResQ, consideró útil la centralización de alarmas, pero recomendó incluir ejemplos gráficos sobre el funcionamiento sin internet. Valoró positivamente la rápida actualización del monitoreo por zonas y la intuición del plano del edificio, sugiriendo mejorar el contraste de colores. Interpretó claramente el nivel de gravedad de las alertas, aunque solicitó mayor detalle sobre el sensor activado. Encontró el dashboard bien estructurado, sugiriendo atajos a cámaras de seguridad. Consideró sencillo ver el estado de los dispositivos, pero tuvo dificultades para descargar reportes en PDF. En general, consideró a ResQ un sistema de gran valor y lo recomendaría.
+
+
+
+---
+
+#### Entrevista 3 — Andrés Coca Lavado
+*(Perfil de Facility Manager corporativo)*
+
+| Información | Detalle |
+| :--- | :--- |
+| **Nombres** | Andrés |
+| **Apellidos** | Coca Lavado |
+| **Edad** | 30 años |
+| **Género** | Masculino |
+| **Ocupación / Cargo** | Facility Manager de edificio corporativo |
+| **Segmento objetivo** | Propietarios y administradores de edificaciones |
+| **Fecha de entrevista** | Noviembre 2026 |
+| **Link del video** | https://youtu.be/f6kHzDKii1g?si=e3nDCE3YrrC_QHGG |
+
+![Entrevista Andrés Coca Lavado](assets/Validation/S1E3.png)
+*Figura 14. Entrevista 3 - Andrés Coca Lavado.*
+
+**Resumen de la entrevista**
+Andrés Coca Lavado, Facility Manager corporativo de 30 años, destacó la gestión multizona de ResQ. Aunque encontró la tipografía legible, sugirió mejorar la claridad de algunos íconos. Le resultó rápido ubicar alertas en el mapa, pero recomendó optimizar el zoom para edificios grandes. Consideró adecuada la alerta sonora/visual, pidiendo incluir el nivel de batería del dispositivo. Apoyó la confirmación para acciones de alto impacto y sugirió permitir roles de usuario personalizados con acceso de solo lectura. Consideró a ResQ un producto sólido, recomendando incluir casos de éxito reales en la Landing Page.
+
+
+***
+
+### Segmento objetivo #2: Empresas integradoras de automatización y gestión de edificios inteligentes
+
+#### Entrevista 4 — Cesar Vargas Ascue
+*(Perfil de Gerente Técnico)*
+
+| Información | Detalle |
+| :--- | :--- |
+| **Nombres** | Cesar |
+| **Apellidos** | Vargas Ascue |
+| **Edad** | 42 años |
+| **Género** | Masculino |
+| **Ocupación / Cargo** | Gerente técnico |
+| **Segmento objetivo** | Empresas integradoras de automatización y gestión |
+| **Fecha de entrevista** | Noviembre 2026 |
+| **Link del video** | https://youtu.be/jHIZ68mNJNs?si=8g_osol5qq2yKdOc |
+
+![Entrevista Cesar Vargas Ascue](assets/Validation/S2E1.png)
+*Figura 15. Entrevista 4 - Cesar Vargas Ascue.*
+
+**Resumen de la entrevista**
+Cesar Vargas Ascue es un Gerente Técnico de 42 años. Al revisar ResQ, lo consideró robusto para unificar la gestión, pero sugirió aclarar en la Landing Page el soporte a protocolos como BACnet y los esquemas de precios para integradores. Le resultó fácil ubicar sensores, pidiendo mostrar direcciones MAC/IP en la vista principal. Elogió la gráfica en tiempo real y la mención de una API REST, solicitando documentación técnica accesible (Swagger/Postman). Consideró sencillo crear edificios, pero laborioso vincular dispositivos externos manualmente. Calificó a ResQ como un excelente complemento y lo utilizaría.
+
+
+---
+
+#### Entrevista 5 — Juan Jose Meza Huanacune
+*(Perfil de Ingeniero de Proyectos e Integración IoT)*
+
+| Información | Detalle |
+| :--- | :--- |
+| **Nombres** | Juan Jose |
+| **Apellidos** | Meza Huanacune |
+| **Edad** | 26 años |
+| **Género** | Masculino |
+| **Ocupación / Cargo** | Ingeniero de proyectos e integración IoT |
+| **Segmento objetivo** | Empresas integradoras de automatización y gestión |
+| **Fecha de entrevista** | Noviembre 2026 |
+| **Link del video** | https://youtu.be/izvq5Ow6AtA?si=Nr1ce-bQL4qUm0Wc |
+
+![Entrevista Juan Jose Meza Huanacune](assets/Validation/S2E2.png)
+*Figura 16. Entrevista 5 - Juan Jose Meza Huanacune.*
+
+**Resumen de la entrevista**
+Juan Jose Meza Huanacune, Ingeniero de Proyectos IoT de 26 años, destacó la operación offline de ResQ, pidiendo explicar cómo se sincronizan luego los logs perdidos. Encontró la interfaz atractiva, pero sugirió mejorar el acceso a los ajustes avanzados. Valoró el panel de datos del sensor, pidiendo poder ajustar umbrales desde allí. Las alarmas fueron claras, pero sugirió mostrar códigos de error específicos en la pantalla OLED en lugar de iconos generales. Calificó el sistema como estable y apreció la asignación de dispositivos a planos, sugiriendo drag and drop. Recomendó incluir una herramienta de simulación de carga masiva antes del uso real.
+
+
+
+---
+
+#### Entrevista 6 — Alvaro Cristian Gonzales Yupanqui
+*(Perfil de Jefe de Proyectos de Integración)*
+
+| Información | Detalle |
+| :--- | :--- |
+| **Nombres** | Alvaro Cristian |
+| **Apellidos** | Gonzales Yupanqui |
+| **Edad** | 32 años |
+| **Género** | Masculino |
+| **Ocupación / Cargo** | Jefe de proyecto de integración |
+| **Segmento objetivo** | Empresas integradoras de automatización y gestión |
+| **Fecha de entrevista** | 18 de septiembre de 2026 |
+| **Inicio en el video** | 00:00:00 |
+| **Duración** | 05:20 aprox. |
+| **Link del video** | https://youtu.be/POdv7awNIy8?si=ynzcOzG54H6KPiKE|
+
+![Entrevista Alvaro Cristian Gonzales Yupanqui](assets/Validation/S2E3.png)
+*Figura 17. Entrevista 6 - Alvaro Cristian Gonzales Yupanqui.*
+
+**Resumen de la entrevista**
+Alvaro Cristian Gonzales Yupanqui es Jefe de Proyecto de Integración de 32 años, y cuenta con especializaciones en gestión de proyectos con ocho años de experiencia en el sector. Al evaluar ResQ, lo vio como una propuesta inteligente para el control de edificios, elogiando la interfaz del Dashboard principal, aunque sugiriendo mejorar la visibilidad del estado de los Gateways. Le resultó ágil acceder al panel de los equipos, pero recomendó ser más conciso con datos de firmware. Apreció las herramientas de integración, solicitando un "Sandbox" oficial. Encontró el flujo de datos fluido y sin latencias, sugiriendo perfiles técnicos temporales para instaladores. Recomendaría implementar ResQ, pidiendo mayor claridad en el soporte técnico post-venta.
+
+
+
 ### 6.3.3. Evaluaciones según heurísticas
 
 <p align="justify">
