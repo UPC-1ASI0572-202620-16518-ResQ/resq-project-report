@@ -14884,6 +14884,14 @@ Para TB2 se recomienda completar las entrevistas de validación con representant
 
 <div style="page-break-before: always; break-before: page;"></div>
 
+# Video About-the-Team
+
+En esta sección se presenta el video about the team, donde se detalla las responsabilidades, actividades y opiniones en relación al proceso y flujo de trabajo seguido en ResQ.
+
+![AboutTheTeam-ResQ](assets/images/chapter-06-product-implementation-validation-deployment/AboutTheTeam_ResQ.png)
+
+Enlace: [https://upcedupe-my.sharepoint.com/:v:/g/personal/u202215462_upc_edu_pe/IQB0Prdx0pc5Qq9Dd8_J3Pz2ATS9W7iyP6yfW8s0hcLBZrg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3qeqYz](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202215462_upc_edu_pe/IQB0Prdx0pc5Qq9Dd8_J3Pz2ATS9W7iyP6yfW8s0hcLBZrg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=3qeqYz)
+
 # Bibliografía
 
 Brown, S. (s. f.). <em>The C4 model for visualising software architecture</em>. https://c4model.com/
