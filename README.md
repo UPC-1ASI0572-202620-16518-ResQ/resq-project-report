@@ -14955,3 +14955,9 @@ En este apartado se presenta el video de exposición correspondiente al Trabajo 
 En este apartado se presenta el video de exposición correspondiente a la entrega AV2 – Sprint Review del proyecto ResQ, desarrollado por la startup SecurityBear. La exposición presenta los avances del Sprint 2, incluyendo el prototipo IoT con procesamiento local, los nuevos servicios del Backend, la integración de la Frontend Web Application con la API desplegada y las evidencias de pruebas, ejecución y despliegue.
 </p>
 
+**URL:** [Video de exposición AV2](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202320442_upc_edu_pe/IQDlpvRKfiQJTL_7zKfIeh0rAdxbLiWbiCH5_9xCLa2_M28?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=aumDXg)
+</p>
+
+<p align="justify">
+<strong>Duración:</strong> 29:50
+</p>
