@@ -14886,7 +14886,21 @@ Para TB2 se recomienda completar las entrevistas de validación con representant
 
 # Bibliografía
 
+Brown, S. (s. f.). <em>The C4 model for visualising software architecture</em>. https://c4model.com/
+
+Espressif Systems. (s. f.). <em>ESP32 series datasheet</em>. https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf
+
+Evans, E. (2003). <em>Domain-Driven Design: Tackling complexity in the heart of software</em>. Addison-Wesley.
+
+Gothelf, J., & Seiden, J. (2021). <em>Lean UX: Creating great products with agile teams</em> (3.ª ed.). O'Reilly Media.
+
 Instituto Nacional de Defensa Civil (INDECI). (2024). <em>Compendio Estadístico de la Gestión Reactiva 2024</em>. https://cdn.www.gob.pe/uploads/document/file/7186480/6158260-compendio-estadistico-2024.pdf
+
+Microsoft. (s. f.). <em>ASP.NET Core documentation</em>. https://learn.microsoft.com/aspnet/core/
+
+Nielsen, J. (1994). <em>10 usability heuristics for user interface design</em>. Nielsen Norman Group. https://www.nngroup.com/articles/ten-usability-heuristics/
+
+Schwaber, K., & Sutherland, J. (2020). <em>The Scrum Guide</em>. https://scrumguides.org/scrum-guide.html
 
 # Anexos
 
